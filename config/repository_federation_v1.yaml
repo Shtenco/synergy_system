@@ -1,0 +1,247 @@
+schema: synergy.repository-federation/v1
+as_of: 2026-08-21
+architecture_root: Shtenco/synergy_system
+policy:
+  federation_not_monorepo: true
+  preserve_legacy_generations: true
+  one_authority_per_fact: true
+  no_new_repo_without_unique_responsibility: true
+  presentation_is_not_authority: true
+  ai_is_not_execution_authority: true
+  blockchain_is_not_accounting_authority: true
+
+exclusive_authorities:
+  architecture_governance: Shtenco/synergy_system
+  host_kernel: Shtenco/turbo_linux
+  p2p_transport: Shtenco/synergynet
+  node_orchestration: Shtenco/synergy_meta_os
+  nexus_core: Shtenco/agi_nexus
+  science_research_orchestration: Shtenco/nexus_science_agent
+  trading_intelligence: Shtenco/midas_ai
+  settlement: Shtenco/synergy_pay_system
+  canonical_accounting: Shtenco/synergy_financial_os
+  household_maturity: Shtenco/synergy_matrix_sota
+  productive_project_model: Shtenco/synergy_eurasian
+  trust_commitment: Shtenco/synergy_ai_blockchain
+  requirement_semantics: Shtenco/ai_language
+  engineering_change_evidence: Shtenco/ai_coder
+  compression_archive: Shtenco/ai_compress
+
+repositories:
+  - repo: Shtenco/synergy_system
+    class: CANONICAL_ROOT
+    role: architecture_governance
+    execution_authority: NONE
+
+  - repo: Shtenco/synergy_meta_os
+    class: NEW_CANONICAL_TARGET
+    role: runtime_node_orchestration
+    status: BOOTSTRAP
+
+  - repo: Shtenco/synergynet
+    class: NEW_CANONICAL_TARGET
+    role: p2p_mesh_content_transport
+    status: EMPTY_BOOTSTRAP
+
+  - repo: Shtenco/turbo_linux
+    class: ACTIVE_RND_TARGET
+    role: host_kernel_capability_substrate
+
+  - repo: Shtenco/synergy_ai_blockchain
+    class: CANONICAL_TARGET
+    role: pq_blockchain_typed_trust_commitments
+
+  - repo: Shtenco/synergy_financial_os
+    class: CANONICAL_TARGET
+    role: accounting_nav_solvency_liquidity_authority
+
+  - repo: Shtenco/synergy_pay_system
+    class: CANONICAL_DOMAIN
+    role: metapay_routing_execution_settlement
+
+  - repo: Shtenco/synergy_matrix_sota
+    class: CANONICAL_DOMAIN_TARGET
+    role: household_savings_maturity_mutual_credit
+
+  - repo: Shtenco/synergy_eurasian
+    class: CANONICAL_DOMAIN_TARGET
+    role: productive_project_macro_economic_model
+
+  - repo: Shtenco/agi_nexus
+    class: NEW_CANONICAL_TARGET
+    role: nexus_core
+    status: BOOTSTRAP
+
+  - repo: Shtenco/nexus_science_agent
+    class: NEW_CANONICAL_TARGET
+    role: scientific_search_evidence_falsification_agent
+    status: BOOTSTRAP
+
+  - repo: Shtenco/agi_olga
+    class: ACTIVE_RND_SOURCE
+    role: olga_smallworld_nexus_lineage
+
+  - repo: Shtenco/midas_ai
+    class: NEW_CANONICAL_TARGET
+    role: institutional_trading_intelligence
+    status: BOOTSTRAP
+
+  - repo: Shtenco/midas_ai_trading_system
+    class: RND_SOURCE
+    role: midas_institutional_architecture_lineage
+
+  - repo: Shtenco/midas_lite
+    class: LEGACY_SOURCE
+    role: lightweight_midas_lineage
+
+  - repo: Shtenco/ai_trade_terminal
+    class: LEGACY_SOURCE
+    role: cassandra_trading_terminal_lineage
+
+  - repo: Shtenco/algotrading_graph_system
+    class: RND_PLACEHOLDER
+    role: graph_trading_research
+
+  - repo: Shtenco/3D_bars_market_structure
+    class: TRADING_RND_SOURCE
+    role: volume_time_price_3d_market_representation
+
+  - repo: Shtenco/computer_vision_trading_metatrader_5
+    class: TRADING_RND_SOURCE
+    role: computer_vision_market_representation
+
+  - repo: Shtenco/cross_forex_arbitrage_trading_metatrader_5
+    class: TRADING_RND_SOURCE
+    role: synthetic_cross_rate_graph_arbitrage
+
+  - repo: Shtenco/swap_arbitrage_metatrader_5
+    class: TRADING_RND_SOURCE
+    role: carry_swap_portfolio_research
+
+  - repo: Shtenco/global_liquidity_dataminer
+    class: TRADING_RND_SOURCE
+    role: global_central_bank_liquidity_features
+
+  - repo: Shtenco/multi_threaded_trading_robot_with_machine_learning_python
+    class: TRADING_RND_SOURCE
+    role: parallel_ml_trading_lineage
+
+  - repo: Shtenco/quantum-trading_metatrader5
+    class: LEGACY_RND
+    role: quantum_trading_experiment
+
+  - repo: Shtenco/ai_financial_system
+    class: FINANCIAL_RND_SOURCE
+    role: ai_cb_amm_qe_qt_mev_financial_research
+
+  - repo: Shtenco/usds
+    class: MONETARY_RND
+    role: stable_money_mint_sell_restore_experiment
+
+  - repo: Shtenco/cashero
+    class: LEGACY_TOKENOMIC_RND
+    role: cyclic_liquidity_tokenomics_lineage
+
+  - repo: Shtenco/ai_language
+    class: ENGINEERING_CORE
+    role: semantic_requirements_traceability
+
+  - repo: Shtenco/ai_coder
+    class: ENGINEERING_CONTROL
+    role: change_set_evidence_review_orchestration
+
+  - repo: Shtenco/ai_compress
+    class: COMPRESSION_ARCHIVE_CORE
+    role: lossless_compression_dedup_content_archive
+
+  - repo: Shtenco/info_graph_theory
+    class: SCIENTIFIC_RND
+    role: fundamental_math_physics_candidate_theory
+
+  - repo: Shtenco/cold_nuclear
+    class: SCIENTIFIC_RND
+    role: computational_lenr_transmutation_research
+
+  - repo: Shtenco/synergychain
+    class: APPLICATION_CONTROL_PLANE
+    role: growth_os_business_ai_portal
+    financial_authority: NONE
+
+  - repo: Shtenco/synergychain.github.io
+    class: PRESENTATION
+    role: public_static_portal
+    authority: NONE
+
+  - repo: Shtenco/sinergy-super-app
+    class: APPLICATION_CLIENT
+    role: mobile_super_app
+    authority: NONE
+
+  - repo: Shtenco/shtencoauantai.github.io
+    class: PUBLIC_PROVENANCE
+    role: quant_ai_public_showcase
+    authority: NONE
+
+  - repo: Shtenco/shtenco.github.io
+    class: PUBLIC_PROVENANCE
+    role: personal_research_portfolio
+    authority: NONE
+
+canonical_dependency_direction:
+  - from: Shtenco/synergy_matrix_sota
+    to: Shtenco/synergy_financial_os
+    contract: maturity_and_household_funding_evidence
+  - from: Shtenco/synergy_eurasian
+    to: Shtenco/synergy_financial_os
+    contract: project_proposal_and_project_evidence
+  - from: Shtenco/synergy_financial_os
+    to: Shtenco/synergy_pay_system
+    contract: authorization_and_execution_ticket
+  - from: Shtenco/synergy_pay_system
+    to: Shtenco/synergy_financial_os
+    contract: settlement_and_reconciliation_evidence
+  - from: Shtenco/midas_ai
+    to: Shtenco/synergy_financial_os
+    contract: realized_reconciled_external_trading_result
+  - from: Shtenco/agi_nexus
+    to: Shtenco/synergy_financial_os
+    contract: bounded_policy_proposal_only
+  - from: Shtenco/synergy_financial_os
+    to: Shtenco/synergy_ai_blockchain
+    contract: typed_financial_artifacts_for_commitment
+  - from: Shtenco/synergy_pay_system
+    to: Shtenco/synergy_ai_blockchain
+    contract: typed_settlement_artifacts_for_commitment
+  - from: Shtenco/synergy_ai_blockchain
+    to: Shtenco/synergychain
+    contract: read_only_trust_proofs
+  - from: Shtenco/ai_language
+    to: Shtenco/ai_coder
+    contract: requirement_registry_binding
+  - from: Shtenco/ai_compress
+    to: Shtenco/synergynet
+    contract: validated_codec_and_dedup_profiles
+  - from: Shtenco/turbo_linux
+    to: Shtenco/synergy_meta_os
+    contract: host_capability_runtime
+  - from: Shtenco/synergynet
+    to: Shtenco/synergy_meta_os
+    contract: p2p_transport_runtime
+  - from: Shtenco/agi_nexus
+    to: Shtenco/nexus_science_agent
+    contract: versioned_nexus_inference_core
+
+status_vocabulary:
+  - CANONICAL
+  - CANDIDATE
+  - RND
+  - LEGACY
+  - ARCHIVE
+  - PRESENTATION
+
+verification_vocabulary:
+  - IMPLEMENTED
+  - TESTS_PRESENT
+  - RUNNER_EXECUTED
+  - VERIFIED
+  - PRODUCTION_READY
