@@ -1,0 +1,8 @@
+{
+  "schema":"synergy.cross-repo-schema-overlay/v1",
+  "base_registry":"config/cross_repo_schema_registry_v1.json",
+  "additions":[
+    {"id":"synergy.node-admission-decision/v2","producer":"Shtenco/synergy_meta_os","consumers":["Shtenco/synergy_system"],"status":"CURRENT_DRAFT","visibility":"FEDERATION","authority":"NODE_ADMISSION_AUDIT_ONLY"}
+  ],
+  "execution_authority":"NONE"
+}
