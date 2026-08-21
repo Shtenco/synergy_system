@@ -1,0 +1,27 @@
+name: science-research-node-profile-v1
+
+on:
+  pull_request:
+    paths:
+      - 'fixtures/node_profiles/science_research_node_v1.json'
+      - 'src/synergy_system/science_node_profile_v1.py'
+      - 'tests/test_science_research_node_profile_v1.py'
+      - 'config/node_profile_catalog_overlay_science_v1.json'
+      - '.github/workflows/science-research-node-profile-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pip pytest
+      - run: PYTHONPATH=src pytest -q tests/test_science_research_node_profile_v1.py
+      - run: python -m json.tool fixtures/node_profiles/science_research_node_v1.json >/dev/null
+      - run: python -m json.tool config/node_profile_catalog_overlay_science_v1.json >/dev/null
