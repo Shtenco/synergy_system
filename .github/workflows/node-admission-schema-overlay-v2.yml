@@ -1,0 +1,25 @@
+name: node-admission-schema-overlay-v2
+
+on:
+  pull_request:
+    paths:
+      - 'config/cross_repo_schema_overlay_node_admission_v2.json'
+      - 'tests/test_node_admission_schema_overlay_v2.py'
+      - 'docs/NODE_ADMISSION_CONTRACT_OWNERSHIP_V2.md'
+      - '.github/workflows/node-admission-schema-overlay-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pip pytest
+      - run: PYTHONPATH=src pytest -q tests/test_node_admission_schema_overlay_v2.py
+      - run: python -m json.tool config/cross_repo_schema_overlay_node_admission_v2.json >/dev/null
