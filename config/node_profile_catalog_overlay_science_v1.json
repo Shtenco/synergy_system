@@ -1,0 +1,14 @@
+{
+  "schema":"synergy.node-profile-catalog-overlay/v1",
+  "profiles":[
+    {
+      "profile_id":"SCIENCE_RESEARCH_NODE",
+      "profile_schema":"synergy.node-profile/v1",
+      "profile_digest":"0c9b82e591c5aa30d1f9b499edee02c0b56643af825bbb7eecb93f8651659107",
+      "producer":"Shtenco/synergy_system",
+      "consumer":"Shtenco/synergy_meta_os",
+      "status":"ARCHITECTURE_PROFILE_ONLY"
+    }
+  ],
+  "execution_authority":"NONE"
+}
