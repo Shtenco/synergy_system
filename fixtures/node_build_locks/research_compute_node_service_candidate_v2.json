@@ -1,0 +1,53 @@
+{
+  "schema": "synergy.node-build-lock/v2",
+  "lock_id": "RESEARCH_COMPUTE_NODE_SERVICE_CANDIDATE_20260821",
+  "profile_digest": "406740705e853fa51ad4eacf7a01925fbe4b5cec491be35ea12ba777d217d714",
+  "supersedes_lock_digest": "14c763218602585d49e12060e1e6cf21d33815fda0cb18711a6522a26157ace2",
+  "services": [
+    {
+      "service_id": "content-cache",
+      "kind": "CONTENT_CACHE",
+      "repository": "Shtenco/synergynet",
+      "source_commit": "0aa548ee8f1b4dc7046cefa5694f9b496d312145",
+      "source_ref": "feat/persistent-content-service-v1-20260821",
+      "service_descriptor_path": "config/persistent_content_service_v2.json",
+      "service_descriptor_digest": "648f0b8bcbcff244e7dfd2e5d4d660e48a6c30dbbe9310e8f45b72dd73e35c63",
+      "required_capabilities": ["CONTENT_CACHE"],
+      "service_source_status": "SERVICE_SOURCE_CANDIDATE_NOT_BUILD_VERIFIED",
+      "build_artifact_digest": null,
+      "build_status": "BUILD_ARTIFACT_MISSING"
+    },
+    {
+      "service_id": "nexus",
+      "kind": "NEXUS",
+      "repository": "Shtenco/agi_nexus",
+      "source_commit": "ef1a6e3675e53fda4bf91566aec61f1b62fa9336",
+      "source_ref": "feat/smallworld-service-protocol-v1-20260821",
+      "service_descriptor_path": "config/smallworld_compute_service_v1.json",
+      "service_descriptor_digest": "69806f75f21bb34f818a3455c61269685d11922d5540e27752df7360ebff2a2d",
+      "required_capabilities": ["NEXUS_COMPUTE"],
+      "service_source_status": "SERVICE_SOURCE_CANDIDATE_NOT_BUILD_VERIFIED",
+      "build_artifact_digest": null,
+      "build_status": "BUILD_ARTIFACT_MISSING"
+    },
+    {
+      "service_id": "synergynet",
+      "kind": "SYNERGYNET",
+      "repository": "Shtenco/synergynet",
+      "source_commit": "874a83b6510420ec43ce99fc4b7936e106ad2339",
+      "source_ref": "feat/static-peer-relay-service-v1-20260821",
+      "service_descriptor_path": "config/static_peer_relay_service_v1.json",
+      "service_descriptor_digest": "0e4fe4aed2d4eb1339e930ccb7c7ce2d574acdd94c0759dbefd2167e61659e18",
+      "required_capabilities": ["P2P_RELAY"],
+      "service_source_status": "SERVICE_SOURCE_CANDIDATE_NOT_BUILD_VERIFIED",
+      "build_artifact_digest": null,
+      "build_status": "BUILD_ARTIFACT_MISSING"
+    }
+  ],
+  "verification_status": "SERVICE_SOURCE_GRAPH_FROZEN_BUILD_NOT_VERIFIED",
+  "financial_authority": "NONE",
+  "payment_authority": "NONE",
+  "accounting_authority": "NONE",
+  "execution_authority": "NONE",
+  "lock_digest": "14aa9c6e1ce246a740fe36ea514b2abc704f4f26dc9b9e797bab1b263e4a3666"
+}
