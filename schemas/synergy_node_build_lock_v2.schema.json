@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.node-build-lock/v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "lock_id", "profile_digest", "supersedes_lock_digest", "services",
+    "verification_status", "financial_authority", "payment_authority", "accounting_authority",
+    "execution_authority", "lock_digest"
+  ],
+  "properties": {
+    "schema": {"const": "synergy.node-build-lock/v2"},
+    "lock_id": {"const": "RESEARCH_COMPUTE_NODE_SERVICE_CANDIDATE_20260821"},
+    "profile_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "supersedes_lock_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "services": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "service_id", "kind", "repository", "source_commit", "source_ref",
+          "service_descriptor_path", "service_descriptor_digest", "required_capabilities",
+          "service_source_status", "build_artifact_digest", "build_status"
+        ],
+        "properties": {
+          "service_id": {"enum": ["content-cache", "nexus", "synergynet"]},
+          "kind": {"enum": ["CONTENT_CACHE", "NEXUS", "SYNERGYNET"]},
+          "repository": {"type": "string", "pattern": "^Shtenco/"},
+          "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "source_ref": {"type": "string", "minLength": 1},
+          "service_descriptor_path": {"type": "string", "minLength": 1},
+          "service_descriptor_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "required_capabilities": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {"enum": ["CONTENT_CACHE", "NEXUS_COMPUTE", "P2P_RELAY"]}
+          },
+          "service_source_status": {"const": "SERVICE_SOURCE_CANDIDATE_NOT_BUILD_VERIFIED"},
+          "build_artifact_digest": {"type": "null"},
+          "build_status": {"const": "BUILD_ARTIFACT_MISSING"}
+        }
+      }
+    },
+    "verification_status": {"const": "SERVICE_SOURCE_GRAPH_FROZEN_BUILD_NOT_VERIFIED"},
+    "financial_authority": {"const": "NONE"},
+    "payment_authority": {"const": "NONE"},
+    "accounting_authority": {"const": "NONE"},
+    "execution_authority": {"const": "NONE"},
+    "lock_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
