@@ -1,0 +1,28 @@
+name: science-node-build-lock-v2
+
+on:
+  pull_request:
+    paths:
+      - 'fixtures/node_build_locks/science_research_node_source_candidate_v2.json'
+      - 'src/synergy_system/node_build_lock_v2.py'
+      - 'tests/test_science_node_build_lock_v2.py'
+      - 'schemas/synergy_node_build_lock_v2.schema.json'
+      - 'config/cross_repo_schema_overlay_node_build_lock_v2.json'
+      - '.github/workflows/science-node-build-lock-v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pip pytest
+      - run: PYTHONPATH=src pytest -q tests/test_science_node_build_lock_v2.py
+      - run: python -m json.tool fixtures/node_build_locks/science_research_node_source_candidate_v2.json >/dev/null
+      - run: python -m json.tool schemas/synergy_node_build_lock_v2.schema.json >/dev/null

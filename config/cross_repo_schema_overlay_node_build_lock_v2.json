@@ -1,0 +1,13 @@
+{
+  "schema_registry_overlay":"synergy.cross-repo-schema-overlay/v1",
+  "entries":[
+    {
+      "schema_id":"synergy.node-build-lock/v2",
+      "producer":"Shtenco/synergy_system",
+      "consumers":["Shtenco/synergy_meta_os"],
+      "authority":"BUILD_PROVENANCE_METADATA_ONLY",
+      "status":"DRAFT_CANONICAL_CANDIDATE"
+    }
+  ],
+  "execution_authority":"NONE"
+}
