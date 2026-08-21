@@ -1,0 +1,28 @@
+name: capability-registry-v1
+
+on:
+  pull_request:
+    paths:
+      - 'fixtures/capabilities/**'
+      - 'src/synergy_system/capability_registry_v1.py'
+      - 'schemas/synergy_capability_registry_v1.schema.json'
+      - 'tests/test_capability_registry_v1.py'
+      - 'config/cross_repo_schema_overlay_capability_registry_v1.json'
+      - '.github/workflows/capability-registry-v1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pip pytest
+      - run: PYTHONPATH=src pytest -q tests/test_capability_registry_v1.py
+      - run: python -m json.tool schemas/synergy_capability_registry_v1.schema.json >/dev/null
+      - run: python -m json.tool fixtures/capabilities/synergy_capability_registry_v1.json >/dev/null
