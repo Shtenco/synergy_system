@@ -1,0 +1,41 @@
+name: SYNERGY Federation Validator v1
+
+on:
+  pull_request:
+    paths:
+      - "config/repository_federation_v1.yaml"
+      - "config/expected_repositories_v1.json"
+      - "src/synergy_system/**"
+      - "tests/**"
+      - "tools/validate_federation.py"
+      - "docs/FEDERATION_VALIDATOR_V1.md"
+      - ".github/workflows/federation-validator-v1.yml"
+  push:
+    paths:
+      - "config/repository_federation_v1.yaml"
+      - "config/expected_repositories_v1.json"
+      - "src/synergy_system/**"
+      - "tests/**"
+      - "tools/validate_federation.py"
+      - "docs/FEDERATION_VALIDATOR_V1.md"
+      - ".github/workflows/federation-validator-v1.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip pytest
+      - run: python -m pip install -e .
+      - run: python tools/validate_federation.py
+      - run: python -m pytest -q
+      - run: python -m py_compile src/synergy_system/*.py tools/validate_federation.py
