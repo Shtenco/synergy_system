@@ -1,0 +1,15 @@
+{
+  "schema": "synergy.authority-lint-policy/v1",
+  "scan_path_prefixes": ["config/", "contracts/", "integration/", "schemas/", "src/"],
+  "fields": {
+    "architecture_authority": {"non_none_allowed_repositories": ["Shtenco/synergy_system"]},
+    "accounting_authority": {"non_none_allowed_repositories": ["Shtenco/synergy_financial_os"]},
+    "authorization_authority": {"non_none_allowed_repositories": ["Shtenco/synergy_financial_os"]},
+    "payment_authority": {"non_none_allowed_repositories": ["Shtenco/synergy_pay_system"]},
+    "settlement_authority": {"non_none_allowed_repositories": ["Shtenco/synergy_pay_system"]},
+    "scientific_truth_authority": {"non_none_allowed_repositories": []},
+    "execution_authority": {"non_none_allowed_repositories": ["Shtenco/midas_ai", "Shtenco/synergy_meta_os", "Shtenco/synergy_pay_system"]}
+  },
+  "none_values": ["NONE", "NO_AUTHORITY"],
+  "status": "DETERMINISTIC_PR_LINT_POLICY_NOT_SECURITY_PROOF"
+}
