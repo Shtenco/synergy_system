@@ -6,18 +6,6 @@
   "source_build_lock_digest": "de35e3f31d85b9ab559180a12535ecdaa58fd70c6d3575d215994064933e1274",
   "recipes": [
     {
-      "recipe_id": "NEXUS_SMALLWORLD_EXACT_STDLIB_BUILD_RECIPE_V2",
-      "repository": "Shtenco/agi_nexus",
-      "recipe_ref": "feat/smallworld-exact-build-recipe-v2-20260822",
-      "recipe_commit": "d8ef528f1633262d6d5f0b008b1338dd89fcc58b",
-      "recipe_schema": "nexus.service-build-recipe/v2",
-      "recipe_digest": "3e255804dbd420492fc5481fe11d6333be2a50c8834bd4a8e3896de726f44089",
-      "service_ids": ["nexus"],
-      "source_commit": "2ee8f2a29ad2497afca6c7386375a296cd0bdbcf",
-      "dependency_lock_status": "STDLIB_ONLY_NO_THIRD_PARTY_RUNTIME_DEPENDENCIES",
-      "build_status": "RECIPE_DEFINED_ARTIFACT_NOT_EMITTED"
-    },
-    {
       "recipe_id": "NEXUS_SCIENCE_LOCAL_SERVICE_BUILD_RECIPE_V1",
       "repository": "Shtenco/nexus_science_agent",
       "recipe_ref": "feat/local-science-service-build-recipe-v1-20260821",
@@ -26,6 +14,18 @@
       "recipe_digest": "3b1f7a64a943a0a144a52ead894c1e0c2d454e67657992ebcb434a6fdcd18c78",
       "service_ids": ["science-agent"],
       "source_commit": "0607690c3036d2fdce2ac3e044094a8e4da0311b",
+      "dependency_lock_status": "STDLIB_ONLY_NO_THIRD_PARTY_RUNTIME_DEPENDENCIES",
+      "build_status": "RECIPE_DEFINED_ARTIFACT_NOT_EMITTED"
+    },
+    {
+      "recipe_id": "NEXUS_SMALLWORLD_EXACT_STDLIB_BUILD_RECIPE_V2",
+      "repository": "Shtenco/agi_nexus",
+      "recipe_ref": "feat/smallworld-exact-build-recipe-v2-20260822",
+      "recipe_commit": "d8ef528f1633262d6d5f0b008b1338dd89fcc58b",
+      "recipe_schema": "nexus.service-build-recipe/v2",
+      "recipe_digest": "3e255804dbd420492fc5481fe11d6333be2a50c8834bd4a8e3896de726f44089",
+      "service_ids": ["nexus"],
+      "source_commit": "2ee8f2a29ad2497afca6c7386375a296cd0bdbcf",
       "dependency_lock_status": "STDLIB_ONLY_NO_THIRD_PARTY_RUNTIME_DEPENDENCIES",
       "build_status": "RECIPE_DEFINED_ARTIFACT_NOT_EMITTED"
     },
@@ -47,5 +47,5 @@
   "overall_status": "BUILD_RECIPES_FROZEN_ARTIFACTS_NOT_EMITTED",
   "authority": "BUILD_ORCHESTRATION_METADATA_ONLY",
   "execution_authority": "NONE",
-  "registry_digest": "935cfed1029e3bf594a772c9fe26a202c4a065df4b431dab19d665c74c5650b4"
+  "registry_digest": "93b92cb99a38f95b044ec2b3123f37ebf90a603c2768ec47556cf72baa8c7529"
 }
