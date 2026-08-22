@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.service-build-recipe-registry/v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "registry_id", "node_profile_digest", "capability_registry_digest", "source_build_lock_digest", "recipes", "artifact_digests", "build_evidence_digests", "overall_status", "authority", "execution_authority", "registry_digest"],
+  "properties": {
+    "schema": {"const": "synergy.service-build-recipe-registry/v2"},
+    "registry_id": {"const": "SCIENCE_RESEARCH_NODE_BUILD_RECIPES_20260822"},
+    "node_profile_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "capability_registry_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_build_lock_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "recipes": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["recipe_id", "repository", "recipe_ref", "recipe_commit", "recipe_schema", "recipe_digest", "service_ids", "source_commit", "dependency_lock_status", "build_status"],
+        "properties": {
+          "recipe_id": {"type": "string", "minLength": 1},
+          "repository": {"type": "string", "pattern": "^Shtenco/"},
+          "recipe_ref": {"type": "string", "minLength": 1},
+          "recipe_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "recipe_schema": {"type": "string", "minLength": 1},
+          "recipe_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "service_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "dependency_lock_status": {"const": "STDLIB_ONLY_NO_THIRD_PARTY_RUNTIME_DEPENDENCIES"},
+          "build_status": {"const": "RECIPE_DEFINED_ARTIFACT_NOT_EMITTED"}
+        }
+      }
+    },
+    "artifact_digests": {"type": "array", "maxItems": 0},
+    "build_evidence_digests": {"type": "array", "maxItems": 0},
+    "overall_status": {"const": "BUILD_RECIPES_FROZEN_ARTIFACTS_NOT_EMITTED"},
+    "authority": {"const": "BUILD_ORCHESTRATION_METADATA_ONLY"},
+    "execution_authority": {"const": "NONE"},
+    "registry_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
