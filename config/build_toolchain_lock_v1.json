@@ -1,0 +1,37 @@
+{
+  "artifact_format": "PYTHON_ZIPAPP_ZIP_STORED",
+  "builder": {
+    "name": "deterministic_zipapp_builder_v1.py",
+    "semantics": {
+      "compression": "ZIP_STORED",
+      "create_system": 3,
+      "entry_order": "UTF8_PATH_ASCENDING",
+      "file_mode_octal": "100644",
+      "manifest_json": "UTF8_SORT_KEYS_COMPACT_LF",
+      "timestamp": "1980-01-01T00:00:00",
+      "zip64": false,
+      "zip_comment": "EMPTY",
+      "zip_extra": "EMPTY"
+    },
+    "sha256": "5fe5d1e8b8e12d1c6408590e93d3e5abe1a208d921ae20066c45a813e036eaed"
+  },
+  "execution_authority": "NONE",
+  "lock_digest": "af92c9f1909ae3b64aaea78bdce2c6d05deb974ad242482b36e0c8ce820a2848",
+  "lock_id": "SYNERGY_DETERMINISTIC_PYTHON_ZIPAPP_V1_20260822",
+  "network_required_to_build": false,
+  "reference_builder_environment": {
+    "architecture": "x86_64",
+    "os_family": "linux",
+    "python_executable_sha256": "17b78e0a93175e86f9ac03141924fd7a7f0c0c52e66b34bfa0de20ffef989df1",
+    "python_implementation": "CPython",
+    "python_version": "3.13.5",
+    "zipfile_module_sha256": "6c4dc603a4e63d262a3ddb8671dd68eeacfe26ab868bd8898ca52e85885fca44"
+  },
+  "runtime_contract": {
+    "external_runtime_requirements": [],
+    "python_requires": ">=3.11"
+  },
+  "schema": "synergy.build-toolchain-lock/v1",
+  "setuptools_required_to_build": false,
+  "wheel_required_to_build": false
+}
