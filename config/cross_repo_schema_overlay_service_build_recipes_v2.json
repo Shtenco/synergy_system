@@ -1,0 +1,34 @@
+{
+  "schema_registry_overlay": "synergy.cross-repo-schema-overlay/v1",
+  "entries": [
+    {
+      "schema_id": "nexus.service-build-recipe/v2",
+      "producer": "Shtenco/agi_nexus",
+      "consumers": ["Shtenco/synergy_meta_os", "Shtenco/synergy_system"],
+      "authority": "SOURCE_BUILD_RECIPE_ONLY",
+      "status": "DRAFT_CANONICAL_CANDIDATE"
+    },
+    {
+      "schema_id": "nexus-science.service-build-recipe/v1",
+      "producer": "Shtenco/nexus_science_agent",
+      "consumers": ["Shtenco/synergy_meta_os", "Shtenco/synergy_system"],
+      "authority": "SOURCE_BUILD_RECIPE_ONLY",
+      "status": "DRAFT_CANONICAL_CANDIDATE"
+    },
+    {
+      "schema_id": "synergynet.service-build-recipe/v1",
+      "producer": "Shtenco/synergynet",
+      "consumers": ["Shtenco/synergy_meta_os", "Shtenco/synergy_system"],
+      "authority": "SOURCE_BUILD_RECIPE_ONLY",
+      "status": "DRAFT_CANONICAL_CANDIDATE"
+    },
+    {
+      "schema_id": "synergy.service-build-recipe-registry/v2",
+      "producer": "Shtenco/synergy_system",
+      "consumers": ["Shtenco/synergy_meta_os"],
+      "authority": "BUILD_ORCHESTRATION_METADATA_ONLY",
+      "status": "DRAFT_CANONICAL_CANDIDATE"
+    }
+  ],
+  "execution_authority": "NONE"
+}
