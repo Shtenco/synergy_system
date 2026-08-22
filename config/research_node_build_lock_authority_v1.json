@@ -1,0 +1,9 @@
+{
+  "schema": "synergy.node-build-lock-authority/v1",
+  "architecture_authority": "NONE",
+  "financial_authority": "NONE",
+  "payment_authority": "NONE",
+  "accounting_authority": "NONE",
+  "execution_authority": "NONE",
+  "deployment_authority": "NONE"
+}

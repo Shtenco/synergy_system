@@ -1,0 +1,1 @@
+The canonical source-lock pins profile digest and source commit identities but intentionally does not assert reproducible build verification. Build verification requires a later generation with non-null artifact digests and independent evidence.
