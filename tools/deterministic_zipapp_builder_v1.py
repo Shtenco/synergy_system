@@ -1,5 +1,6 @@
 from __future__ import annotations
-import argparse, hashlib, json, pathlib, zipfile
+import argparse, hashlib, json, os, pathlib, stat, zipfile
+from typing import Iterable
 
 FIXED_TIME=(1980,1,1,0,0,0)
 MODE_FILE=0o100644
