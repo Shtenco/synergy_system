@@ -60,10 +60,14 @@ def _canonical(value: Any) -> bytes:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
 
 
-def plan_digest(payload: dict[str, Any]) -> str:
+def _digest_without(payload: dict[str, Any], field: str) -> str:
     body = dict(payload)
-    body.pop("plan_digest", None)
+    body.pop(field, None)
     return hashlib.sha256(_canonical(body)).hexdigest()
+
+
+def plan_digest(payload: dict[str, Any]) -> str:
+    return _digest_without(payload, "plan_digest")
 
 
 def verify_research_node_build_plan_v1(payload: dict[str, Any]) -> dict[str, Any]:
@@ -122,3 +126,64 @@ def verify_research_node_build_plan_v1(payload: dict[str, Any]) -> dict[str, Any
     if supplied != recomputed or recomputed != _PLAN_DIGEST:
         raise NodeBuildPlanError("research node build-plan digest mismatch")
     return payload
+
+
+def _verify_source_lock_wire(source_lock: dict[str, Any]) -> None:
+    if not isinstance(source_lock, dict) or source_lock.get("schema") != "synergy.node-build-lock/v1":
+        raise NodeBuildPlanError("invalid source-lock payload")
+    if source_lock.get("lock_digest") != _SOURCE_LOCK_DIGEST:
+        raise NodeBuildPlanError("source-lock digest mismatch")
+    if _digest_without(source_lock, "lock_digest") != _SOURCE_LOCK_DIGEST:
+        raise NodeBuildPlanError("source-lock bytes do not match source-lock digest")
+    if source_lock.get("profile_digest") != _PROFILE_DIGEST:
+        raise NodeBuildPlanError("source-lock profile mismatch")
+    if source_lock.get("verification_status") != "SOURCE_IDENTITY_FROZEN_BUILD_NOT_VERIFIED":
+        raise NodeBuildPlanError("source-lock overclaims build verification")
+    if source_lock.get("execution_authority") != "NONE":
+        raise NodeBuildPlanError("source-lock grants execution authority")
+
+
+def _verify_recipe_wire(recipe: dict[str, Any], repository: str, source_commit: str, expected_digest: str) -> None:
+    if not isinstance(recipe, dict) or recipe.get("schema") != "synergy.build-recipe/v1":
+        raise NodeBuildPlanError("invalid domain build-recipe payload")
+    if recipe.get("repository") != repository or recipe.get("source_commit") != source_commit:
+        raise NodeBuildPlanError("domain build-recipe source identity mismatch")
+    if recipe.get("recipe_digest") != expected_digest or _digest_without(recipe, "recipe_digest") != expected_digest:
+        raise NodeBuildPlanError("domain build-recipe digest mismatch")
+    if recipe.get("reproducibility_status") != "NOT_REPRODUCIBLE_TOOLCHAIN_NOT_FROZEN":
+        raise NodeBuildPlanError("domain build recipe overclaims reproducibility")
+    if recipe.get("artifact_digest") is not None:
+        raise NodeBuildPlanError("domain v1 build recipe cannot contain artifact digest")
+    if recipe.get("execution_authority") != "NONE":
+        raise NodeBuildPlanError("domain build recipe grants execution authority")
+
+
+def verify_research_node_build_plan_context_v1(
+    plan: dict[str, Any],
+    source_lock: dict[str, Any],
+    recipes_by_repository: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    """Verify the build plan against the actual cross-root wire payloads.
+
+    The architecture root does not decide how domain packages are built. It does,
+    however, require the bytes referenced by the plan to match the declared digests,
+    source commits and non-reproducible status before it accepts the aggregate plan.
+    """
+    verify_research_node_build_plan_v1(plan)
+    _verify_source_lock_wire(source_lock)
+    required_repositories = {value[0] for value in _EXPECTED.values()}
+    if set(recipes_by_repository) != required_repositories:
+        raise NodeBuildPlanError("domain build-recipe set incomplete")
+    for repository in sorted(required_repositories):
+        matching = [value for value in _EXPECTED.values() if value[0] == repository]
+        source_commits = {value[1] for value in matching}
+        recipe_digests = {value[2] for value in matching}
+        if len(source_commits) != 1 or len(recipe_digests) != 1:
+            raise NodeBuildPlanError("repository maps to inconsistent source/build recipe identities")
+        _verify_recipe_wire(
+            recipes_by_repository[repository],
+            repository,
+            next(iter(source_commits)),
+            next(iter(recipe_digests)),
+        )
+    return plan
