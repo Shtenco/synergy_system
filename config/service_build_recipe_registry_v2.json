@@ -1,0 +1,51 @@
+{
+  "schema": "synergy.service-build-recipe-registry/v2",
+  "registry_id": "SCIENCE_RESEARCH_NODE_BUILD_RECIPES_20260822",
+  "node_profile_digest": "0c9b82e591c5aa30d1f9b499edee02c0b56643af825bbb7eecb93f8651659107",
+  "capability_registry_digest": "3727810480e5660129fc63a2d7999b988ed9ae387365d4501bb50b7ae7257913",
+  "source_build_lock_digest": "de35e3f31d85b9ab559180a12535ecdaa58fd70c6d3575d215994064933e1274",
+  "recipes": [
+    {
+      "recipe_id": "NEXUS_SMALLWORLD_EXACT_STDLIB_BUILD_RECIPE_V2",
+      "repository": "Shtenco/agi_nexus",
+      "recipe_ref": "feat/smallworld-exact-build-recipe-v2-20260822",
+      "recipe_commit": "d8ef528f1633262d6d5f0b008b1338dd89fcc58b",
+      "recipe_schema": "nexus.service-build-recipe/v2",
+      "recipe_digest": "3e255804dbd420492fc5481fe11d6333be2a50c8834bd4a8e3896de726f44089",
+      "service_ids": ["nexus"],
+      "source_commit": "2ee8f2a29ad2497afca6c7386375a296cd0bdbcf",
+      "dependency_lock_status": "STDLIB_ONLY_NO_THIRD_PARTY_RUNTIME_DEPENDENCIES",
+      "build_status": "RECIPE_DEFINED_ARTIFACT_NOT_EMITTED"
+    },
+    {
+      "recipe_id": "NEXUS_SCIENCE_LOCAL_SERVICE_BUILD_RECIPE_V1",
+      "repository": "Shtenco/nexus_science_agent",
+      "recipe_ref": "feat/local-science-service-build-recipe-v1-20260821",
+      "recipe_commit": "2e4e86484d842f1283204fa87d86927603278e5b",
+      "recipe_schema": "nexus-science.service-build-recipe/v1",
+      "recipe_digest": "3b1f7a64a943a0a144a52ead894c1e0c2d454e67657992ebcb434a6fdcd18c78",
+      "service_ids": ["science-agent"],
+      "source_commit": "0607690c3036d2fdce2ac3e044094a8e4da0311b",
+      "dependency_lock_status": "STDLIB_ONLY_NO_THIRD_PARTY_RUNTIME_DEPENDENCIES",
+      "build_status": "RECIPE_DEFINED_ARTIFACT_NOT_EMITTED"
+    },
+    {
+      "recipe_id": "SYNERGYNET_RESEARCH_TRANSPORT_BUILD_RECIPE_V1",
+      "repository": "Shtenco/synergynet",
+      "recipe_ref": "feat/research-transport-build-recipe-v1-20260821",
+      "recipe_commit": "a187551e121350edf690d7570ca4dc76f749d17f",
+      "recipe_schema": "synergynet.service-build-recipe/v1",
+      "recipe_digest": "16d3456cddfd9b6e6f876967aac67b8d54b58b6ff6d997a33163feb12daa8792",
+      "service_ids": ["content-cache", "synergynet"],
+      "source_commit": "874a83b6510420ec43ce99fc4b7936e106ad2339",
+      "dependency_lock_status": "STDLIB_ONLY_NO_THIRD_PARTY_RUNTIME_DEPENDENCIES",
+      "build_status": "RECIPE_DEFINED_ARTIFACT_NOT_EMITTED"
+    }
+  ],
+  "artifact_digests": [],
+  "build_evidence_digests": [],
+  "overall_status": "BUILD_RECIPES_FROZEN_ARTIFACTS_NOT_EMITTED",
+  "authority": "BUILD_ORCHESTRATION_METADATA_ONLY",
+  "execution_authority": "NONE",
+  "registry_digest": "935cfed1029e3bf594a772c9fe26a202c4a065df4b431dab19d665c74c5650b4"
+}
