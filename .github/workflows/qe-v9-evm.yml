@@ -1,0 +1,26 @@
+name: QE V9 EVM Test
+
+on:
+  push:
+    branches:
+      - qe-v9-evm-test-20260825
+
+jobs:
+  evm-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: research/qe_v9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: stable
+      - name: Forge build
+        run: forge build
+      - name: Forge EVM tests
+        run: forge test -vvv
+      - name: Gas report
+        run: forge test --gas-report
