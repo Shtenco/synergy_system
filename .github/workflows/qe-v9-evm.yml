@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - qe-v9-evm-test-20260825
+  pull_request:
+    branches:
+      - main
 
 jobs:
   evm-test:
