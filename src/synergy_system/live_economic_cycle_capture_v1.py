@@ -6,7 +6,7 @@ from datetime import datetime, UTC
 from decimal import Decimal, InvalidOperation
 from typing import Any, Mapping
 
-SCHEMA = "synergy.live-economic-cycle-evidence/v1"
+SCHEMA = "synergy.live-economic-cycle-capture-candidate/v1"
 ECONOMIC_CYCLE_V1 = "83f9c3ee0c168ca50212ebaa1e64c58c08eb87fd040a8b5f214ee4987242f3f1"
 ECONOMIC_OS_RC4 = "51566c3c87f21b1a22ddef9bb6aea6abd9170042790f37ac3ff559bf7ad89c60"
 HEX = frozenset("0123456789abcdef")
@@ -69,21 +69,23 @@ def _decimal(value: Any, name: str, *, positive: bool = False, allow_negative: b
     return result
 
 
-def _verify_external_evidence(value: Any, phase: str) -> None:
+def _verify_external_evidence_claim(value: Any, phase: str) -> None:
     if not isinstance(value, Mapping):
-        raise LiveEconomicCycleCaptureV1Error(f"{phase} requires external evidence")
+        raise LiveEconomicCycleCaptureV1Error(f"{phase} requires external evidence claim")
     provider = _text(value.get("provider"), f"{phase}.provider")
     reference = _text(value.get("provider_reference"), f"{phase}.provider_reference")
     environment = _text(value.get("environment"), f"{phase}.environment").upper()
     _hex(value.get("provider_evidence_digest"), f"{phase}.provider_evidence_digest")
     combined = f"{provider} {reference} {environment}".upper()
     if environment != "LIVE_EXTERNAL" or any(token in combined for token in FORBIDDEN_EXTERNALITY_TOKENS):
-        raise LiveEconomicCycleCaptureV1Error(f"{phase} is not admissible live external evidence")
+        raise LiveEconomicCycleCaptureV1Error(f"{phase} is not an admissible live-external evidence claim")
+    if value.get("verification_status") != "PENDING_EXTERNAL_VERIFICATION":
+        raise LiveEconomicCycleCaptureV1Error(f"{phase} cannot self-assert external verification")
 
 
-def verify_live_economic_cycle_capture_v1(payload: Mapping[str, Any]) -> dict[str, Any]:
+def verify_live_economic_cycle_capture_candidate_v1(payload: Mapping[str, Any]) -> dict[str, Any]:
     if not isinstance(payload, Mapping) or payload.get("schema") != SCHEMA:
-        raise LiveEconomicCycleCaptureV1Error("unsupported live cycle schema")
+        raise LiveEconomicCycleCaptureV1Error("unsupported live cycle capture schema")
     item = dict(payload)
     supplied = item.pop("digest", None)
     if supplied != canonical_digest(item):
@@ -109,7 +111,7 @@ def verify_live_economic_cycle_capture_v1(payload: Mapping[str, Any]) -> dict[st
         observed = _time(raw.get("observed_at"), f"{phase}.observed_at")
         times.append(observed)
         if requires_external:
-            _verify_external_evidence(raw.get("external_evidence"), phase)
+            _verify_external_evidence_claim(raw.get("external_evidence"), phase)
         elif raw.get("external_evidence") is not None:
             raise LiveEconomicCycleCaptureV1Error(f"{phase} cannot fabricate external evidence")
         if phase == "HUMAN_GOVERNANCE_HANDOFF":
@@ -125,16 +127,22 @@ def verify_live_economic_cycle_capture_v1(payload: Mapping[str, Any]) -> dict[st
     pnl_after = _decimal(item.get("realized_external_pnl_after"), "realized_external_pnl_after", allow_negative=True)
     next_capacity = _decimal(item.get("next_cycle_final_available_capacity"), "next_cycle_final_available_capacity", positive=True)
     if nav_after <= nav_before:
-        raise LiveEconomicCycleCaptureV1Error("live cycle did not increase canonical HardNAV")
+        raise LiveEconomicCycleCaptureV1Error("candidate does not show canonical HardNAV increase")
     if pnl_after <= pnl_before:
-        raise LiveEconomicCycleCaptureV1Error("live cycle did not increase realized external P&L")
+        raise LiveEconomicCycleCaptureV1Error("candidate does not show realized external P&L increase")
     if item.get("next_cycle_capacity_status") != "CAPACITY_AVAILABLE" or next_capacity <= 0:
-        raise LiveEconomicCycleCaptureV1Error("positive next capacity not proven")
+        raise LiveEconomicCycleCaptureV1Error("positive next capacity not structurally shown")
     if _decimal(item.get("internal_mint_or_revaluation_counted_as_profit"), "internal_mint_or_revaluation_counted_as_profit") != 0:
         raise LiveEconomicCycleCaptureV1Error("internal value counted as profit")
-    if item.get("capture_status") != "LIVE_EXTERNAL_VALUE_TO_NEXT_CAPACITY_VERIFIED":
-        raise LiveEconomicCycleCaptureV1Error("capture status escalation/drift")
+    if item.get("capture_status") != "STRUCTURALLY_COMPLETE_PENDING_EXTERNAL_VERIFICATION":
+        raise LiveEconomicCycleCaptureV1Error("capture cannot self-promote to live verified")
+    if item.get("external_verification_status") != "PENDING" or item.get("live_execution_claim") is not False:
+        raise LiveEconomicCycleCaptureV1Error("external verification/live claim escalation")
     if item.get("authority") != "PROVENANCE_ONLY" or item.get("execution_authority") != "NONE" or item.get("ai_authority") != "NONE" or item.get("blockchain_submission_authority") != "NONE":
         raise LiveEconomicCycleCaptureV1Error("capture authority escalation")
     item["digest"] = supplied
     return item
+
+
+# Compatibility alias deliberately returns only a capture candidate. It never means LIVE VERIFIED.
+verify_live_economic_cycle_capture_v1 = verify_live_economic_cycle_capture_candidate_v1
