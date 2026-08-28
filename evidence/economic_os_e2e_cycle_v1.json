@@ -1,0 +1,87 @@
+{
+  "schema": "synergy.economic-cycle/v1",
+  "cycle_id": "economic-os-convergence-20260828",
+  "generated_at": "2026-08-28T09:15:00Z",
+  "authority": "SYNERGY_SYSTEM_PROVENANCE_ONLY",
+  "accounting_authority": "Shtenco/synergy_financial_os",
+  "settlement_authority": "Shtenco/synergy_pay_system",
+  "governance_authority": "HUMAN_COMMITTEE_OR_MULTISIG_ONLY",
+  "ai_authority": "NONE",
+  "execution_authority": "NONE",
+  "blockchain_submission_authority": "NONE",
+  "protocol_status": "E2E_PROTOCOL_DAG_CLOSED_NOT_LIVE_EXECUTED",
+  "canonical_merge_status": "STACKED_PR_CANDIDATE_NOT_MERGED",
+  "trust_finalization": "EXTERNAL_COMMITMENT_REQUIRED",
+  "live_execution_claim": false,
+  "repository_bindings": {
+    "financial_os": {
+      "repository": "Shtenco/synergy_financial_os",
+      "external_revenue_lineage_pr": 6,
+      "external_revenue_lineage_commit": "a09213bca4f8282dc63bc359f3b94e94773b0ddb",
+      "ledger_close_trace_v6_pr": 9,
+      "ledger_close_trace_v6_commit": "8727b2ff44d1425d84f37c051fc67c083534f4b7",
+      "budget_state_v2_pr": 26,
+      "budget_state_v2_commit": "7034ebe6413f15a550d91e882339a178af237bf4",
+      "available_capacity_v3_pr": 27,
+      "available_capacity_v3_commit": "17fbac0f45b1c0835f113a2a45cda9522858e8b5",
+      "handoff_v3_pr": 28,
+      "handoff_v3_commit": "08ad477bd8ad6551f842763e8ae8b6aa2b549bae",
+      "fee_accounting_v3_pr": 29,
+      "fee_accounting_v3_commit": "6ad688fe6fd2fc41fe59ada97a6f560a0eed3d0b",
+      "reversal_accounting_v2_pr": 30,
+      "reversal_accounting_v2_commit": "73b2560455d765c9c143b5af8d099cad45343746",
+      "budget_state_v3_pr": 31,
+      "budget_state_v3_commit": "753ed935ca704626e3ebdfa79a898d34f58d3732",
+      "available_capacity_v4_pr": 32,
+      "available_capacity_v4_commit": "d21ce6b5bd91422c45f938b2d4ec641974106944"
+    },
+    "metapay": {
+      "repository": "Shtenco/synergy_pay_system",
+      "settlement_v3_pr": 13,
+      "settlement_v3_commit": "8bda0d9853af905cd043b94b12f0b62bac58a1d6",
+      "reversal_v2_pr": 14,
+      "reversal_v2_commit": "a4b7b2876915e7f70089947a5b40f3cff81458d9"
+    },
+    "system": {
+      "repository": "Shtenco/synergy_system",
+      "compute_preproduction_rc5_root": "0dd56320df6a1e18a7f77470b0609f55cb9c134ac67bbedeebdd3600e724124b"
+    }
+  },
+  "lifecycle": [
+    {"ordinal":1,"phase":"EXTERNAL_VALUE_EVIDENCE","owner":"Shtenco/synergy_pay_system","schema":"settlement.receipt/v2","required":true},
+    {"ordinal":2,"phase":"REVENUE_RECOGNITION","owner":"Shtenco/synergy_financial_os","schema":"revenue.recognition/v2","required":true},
+    {"ordinal":3,"phase":"CANONICAL_LEDGER_AND_CLOSE","owner":"Shtenco/synergy_financial_os","schema":"economic.cycle-trace/v6","required":true},
+    {"ordinal":4,"phase":"FEE_AWARE_DISTRIBUTION_ENTITLEMENT","owner":"Shtenco/synergy_financial_os","schema":"distribution.budget-state/v2","required":true},
+    {"ordinal":5,"phase":"CURRENT_DISTRIBUTION_CAPACITY","owner":"Shtenco/synergy_financial_os","schema":"distribution.available-capacity/v3","required":true},
+    {"ordinal":6,"phase":"HUMAN_GOVERNANCE_HANDOFF","owner":"Shtenco/synergy_financial_os","schema":"distribution.execution-ticket/v3","required":true},
+    {"ordinal":7,"phase":"METAPAY_SETTLEMENT","owner":"Shtenco/synergy_pay_system","schema":"distribution.utilization/v3","required":true},
+    {"ordinal":8,"phase":"SETTLEMENT_ACCOUNTING","owner":"Shtenco/synergy_financial_os","schema":"distribution.fee-accounting-decision/v3","required":true},
+    {"ordinal":9,"phase":"LATER_SETTLEMENT_REVERSAL","owner":"Shtenco/synergy_pay_system","schema":"distribution.settlement-reversal/v2","required":true},
+    {"ordinal":10,"phase":"REVERSAL_ACCOUNTING","owner":"Shtenco/synergy_financial_os","schema":"distribution.reversal-accounting-decision/v2","required":true},
+    {"ordinal":11,"phase":"ENTITLEMENT_RESTORATION","owner":"Shtenco/synergy_financial_os","schema":"distribution.budget-state/v3","required":true},
+    {"ordinal":12,"phase":"NEXT_CYCLE_CAPACITY","owner":"Shtenco/synergy_financial_os","schema":"distribution.available-capacity/v4","required":true}
+  ],
+  "economic_invariants": {
+    "canonical_wealth": "EXTERNAL_ASSETS+CANONICAL_RESERVES+REALIZED_EXTERNAL_PNL-LIABILITIES-EXTERNAL_COSTS",
+    "internal_mint_or_revaluation_is_profit": false,
+    "distribution_principal_is_realized_pnl": false,
+    "beneficiary_principal_can_be_reduced_by_fee": false,
+    "settlement_fee_pnl_effect": "-ACTUAL_EXTERNAL_FEE",
+    "fee_refund_pnl_effect": "+REFUNDED_ORIGINAL_FEE",
+    "reversal_processing_fee_pnl_effect": "-REVERSAL_PROCESSING_FEE",
+    "reversal_authorization_reactivated": false,
+    "next_capacity_formula": "MIN(RESTORED_REMAINING_ENTITLEMENT,CURRENT_HARDNAV_SOLVENCY_HEADROOM,CURRENT_LIQUIDITY_DISTRIBUTION_CAPACITY)"
+  },
+  "reference_vectors": {
+    "external_revenue_lineage": {"settled_external_amount":"125","recognized_external_revenue":"118","tax_liability":"5","refund_reserve":"2","source":"financial_os_pr6_canonical_vector"},
+    "distribution_reversal_lineage": {"gross_period_profit_budget":"25","post_close_settlement_fee":"1.5","refunded_original_fee":"0.5","reversal_processing_fee":"0.1","principal_distribution":"10","principal_return":"10","restored_remaining_entitlement":"23.9","next_cycle_liquidity_limited_capacity":"8","source":"financial_os_pr31_pr32_canonical_vector"},
+    "cross_vector_execution_status": "PROTOCOL_LINKED_NOT_ONE_LIVE_RUNTIME_FIXTURE"
+  },
+  "blockers": [
+    "STACKED_PR_CHAIN_NOT_CANONICALLY_MERGED",
+    "ONE_LIVE_EXTERNAL_VALUE_TO_NEXT_CAPACITY_EXECUTION_NOT_CAPTURED",
+    "ECONOMIC_BLOCKCHAIN_COMMITMENT_NOT_CREATED",
+    "ECONOMIC_TESTNET_NOT_EXECUTED"
+  ],
+  "digest": "83f9c3ee0c168ca50212ebaa1e64c58c08eb87fd040a8b5f214ee4987242f3f1"
+}
