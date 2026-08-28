@@ -57,14 +57,14 @@ def _time(value: Any, name: str) -> datetime:
     return parsed
 
 
-def _decimal(value: Any, name: str, *, positive: bool = False) -> Decimal:
+def _decimal(value: Any, name: str, *, positive: bool = False, allow_negative: bool = False) -> Decimal:
     if not isinstance(value, str) or not value:
         raise LiveEconomicCycleCaptureV1Error(f"{name} must be decimal text")
     try:
         result = Decimal(value)
     except InvalidOperation as exc:
         raise LiveEconomicCycleCaptureV1Error(f"{name} invalid") from exc
-    if not result.is_finite() or result < 0 or (positive and result <= 0):
+    if not result.is_finite() or (not allow_negative and result < 0) or (positive and result <= 0):
         raise LiveEconomicCycleCaptureV1Error(f"{name} invalid amount")
     return result
 
@@ -121,8 +121,8 @@ def verify_live_economic_cycle_capture_v1(payload: Mapping[str, Any]) -> dict[st
         raise LiveEconomicCycleCaptureV1Error("phase chronology invalid")
     nav_before = _decimal(item.get("canonical_hard_nav_before"), "canonical_hard_nav_before")
     nav_after = _decimal(item.get("canonical_hard_nav_after"), "canonical_hard_nav_after")
-    pnl_before = _decimal(item.get("realized_external_pnl_before"), "realized_external_pnl_before")
-    pnl_after = _decimal(item.get("realized_external_pnl_after"), "realized_external_pnl_after")
+    pnl_before = _decimal(item.get("realized_external_pnl_before"), "realized_external_pnl_before", allow_negative=True)
+    pnl_after = _decimal(item.get("realized_external_pnl_after"), "realized_external_pnl_after", allow_negative=True)
     next_capacity = _decimal(item.get("next_cycle_final_available_capacity"), "next_cycle_final_available_capacity", positive=True)
     if nav_after <= nav_before:
         raise LiveEconomicCycleCaptureV1Error("live cycle did not increase canonical HardNAV")
