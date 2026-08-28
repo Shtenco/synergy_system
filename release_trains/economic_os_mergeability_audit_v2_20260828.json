@@ -21,14 +21,14 @@
     "prs": [27, 28, 29, 30, 31],
     "all_open": true,
     "all_mergeable_against_declared_base": true,
-    "terminal_head": "43180a8e4c5cbccfb6f9bd02040e09425943486e"
+    "rc4_release_head_before_audit": "43180a8e4c5cbccfb6f9bd02040e09425943486e"
   },
   "trust_layer": {
     "repository": "Shtenco/synergy_ai_blockchain",
     "prs": [12, 13, 14, 15, 16],
     "all_open": true,
     "all_mergeable_against_declared_base": true,
-    "terminal_head": "72a7853fba49d20c208bd2d9776d6c107648b882"
+    "persistence_release_head": "72a7853fba49d20c208bd2d9776d6c107648b882"
   },
   "declared_base_mergeability": "ALL_REQUIRED_CURRENT_STACK_PRS_MERGEABLE_TRUE",
   "main_promotion_readiness": "NOT_AUTHORIZED",
@@ -41,5 +41,5 @@
   "ai_merge_authority": "NONE",
   "recommended_next_action": "PREPARE_ORDERED_BOTTOM_UP_MERGE_PLAN_WITH_EXACT_BASE_TRANSITIONS_NO_MERGE",
   "observed_at": "2026-08-28T11:40:00Z",
-  "digest": "5c4ad0083e56d3d458891c2828cabc7de156781fd80136540af651146a0254af"
+  "digest": "d6540c12e2887ee8ebafd1612e53fa69686168f470c5bae63028cf9079b369d3"
 }
