@@ -1,0 +1,45 @@
+{
+  "schema": "synergy.economic-os-mergeability-audit/v2",
+  "audit_id": "SYNERGY_ECONOMIC_OS_MERGEABILITY_AUDIT_V2_20260828",
+  "release_candidate_digest": "51566c3c87f21b1a22ddef9bb6aea6abd9170042790f37ac3ff559bf7ad89c60",
+  "financial_os": {
+    "repository": "Shtenco/synergy_financial_os",
+    "prs": [25, 26, 27, 28, 29, 30, 31, 32],
+    "all_open": true,
+    "all_mergeable_against_declared_base": true,
+    "terminal_head": "d21ce6b5bd91422c45f938b2d4ec641974106944"
+  },
+  "metapay": {
+    "repository": "Shtenco/synergy_pay_system",
+    "prs": [12, 13, 14],
+    "all_open": true,
+    "all_mergeable_against_declared_base": true,
+    "terminal_head": "a4b7b2876915e7f70089947a5b40f3cff81458d9"
+  },
+  "federation": {
+    "repository": "Shtenco/synergy_system",
+    "prs": [27, 28, 29, 30, 31],
+    "all_open": true,
+    "all_mergeable_against_declared_base": true,
+    "terminal_head": "43180a8e4c5cbccfb6f9bd02040e09425943486e"
+  },
+  "trust_layer": {
+    "repository": "Shtenco/synergy_ai_blockchain",
+    "prs": [12, 13, 14, 15, 16],
+    "all_open": true,
+    "all_mergeable_against_declared_base": true,
+    "terminal_head": "72a7853fba49d20c208bd2d9776d6c107648b882"
+  },
+  "declared_base_mergeability": "ALL_REQUIRED_CURRENT_STACK_PRS_MERGEABLE_TRUE",
+  "main_promotion_readiness": "NOT_AUTHORIZED",
+  "main_promotion_reason": [
+    "STACKED_FEATURE_BASES_REQUIRE_ORDERED_BOTTOM_UP_PROMOTION",
+    "HOSTED_CI_HAS_NO_EXECUTED_STEP_LOG_EVIDENCE",
+    "MERGE_AUTHORITY_HUMAN_MAINTAINER_ONLY"
+  ],
+  "automatic_merge_allowed": false,
+  "ai_merge_authority": "NONE",
+  "recommended_next_action": "PREPARE_ORDERED_BOTTOM_UP_MERGE_PLAN_WITH_EXACT_BASE_TRANSITIONS_NO_MERGE",
+  "observed_at": "2026-08-28T11:40:00Z",
+  "digest": "5c4ad0083e56d3d458891c2828cabc7de156781fd80136540af651146a0254af"
+}
