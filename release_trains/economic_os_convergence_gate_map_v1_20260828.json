@@ -23,7 +23,7 @@
       "gate_digest": "2d053095eac57dbf22e3fceaeec0aeadfa11577b42b7eb418f3661b18d20d40f",
       "source_repository": "Shtenco/synergy_meta_os",
       "source_pr": 24,
-      "source_head": "34b65c6e387c413d7c42cba0aaf16921a34467eb",
+      "source_head": "430c2bcf229fdca3cc11538699f875eb2f8ddfb3",
       "current_status": "GATE_READY_NO_EXTERNAL_HOST_EVIDENCE",
       "completion_requires": "THREE_DISTINCT_PERSISTENT_EXTERNAL_HOSTS_PLUS_CROSS_HOST_TRANSCRIPT_AND_INDEPENDENT_VERIFICATION"
     }
@@ -36,5 +36,5 @@
   "ai_authority": "NONE",
   "execution_authority": "NONE",
   "generated_at": "2026-08-28T12:00:00Z",
-  "digest": "9fcad6d03411d08fbb7ea387709f6f65133e7e255145abc2df8fea1e25912e41"
+  "digest": "5c4914f6ffcbd11107d012dbc354dfe5cc416379a39b235a31365ffaa6689bee"
 }
