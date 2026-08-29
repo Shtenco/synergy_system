@@ -1,0 +1,41 @@
+{
+  "schema": "synergy.economic-os-convergence-gate-map/v2",
+  "map_id": "SYNERGY_ECONOMIC_OS_CONVERGENCE_GATE_MAP_V2_20260829",
+  "previous_map_digest": "5c4914f6ffcbd11107d012dbc354dfe5cc416379a39b235a31365ffaa6689bee",
+  "economic_os_rc5_digest": "b06425fdba3b69e1371c987714176d0435f90b511a7167abd13a4fb0a91476b8",
+  "gates": [
+    {
+      "blocker": "CANONICAL_MAIN_PROMOTION_NOT_EXECUTED",
+      "gate_type": "FOUR_REPOSITORY_CANONICALIZATION_SURFACE",
+      "gate_digest": "0af8c4768129948cd773ed3f7bab5706a1d936a352d659c84d8d85468fa9edb8",
+      "current_status": "READY_NOT_MERGED",
+      "completion_requires": "HUMAN_MAINTAINER_PROMOTION_WITH_REQUIRED_EVIDENCE"
+    },
+    {
+      "blocker": "ONE_LIVE_EXTERNAL_VALUE_TO_NEXT_CAPACITY_EXECUTION_NOT_CAPTURED",
+      "gate_type": "HARDENED_LIVE_ECONOMIC_CYCLE_CAPTURE_READINESS",
+      "gate_digest": "94ac1c5a03218c7e680ff85aa7e68cc072afdbd04628b76366139bf57193d21f",
+      "current_status": "HARDENED_CAPTURE_READY_NO_ADMISSIBLE_EXISTING_LIVE_FIXTURE",
+      "completion_requires": "INDEPENDENT_PROVIDER_EVIDENCE_VERIFICATION_OF_ONE_12_PHASE_RUN"
+    },
+    {
+      "blocker": "EXTERNAL_HOST_MULTI_NODE_DEPLOYMENT_EXECUTION_NOT_CAPTURED",
+      "gate_type": "META_OS_EXTERNAL_DEPLOYMENT_GATE",
+      "gate_digest": "2d053095eac57dbf22e3fceaeec0aeadfa11577b42b7eb418f3661b18d20d40f",
+      "source_repository": "Shtenco/synergy_meta_os",
+      "source_pr": 24,
+      "source_head": "430c2bcf229fdca3cc11538699f875eb2f8ddfb3",
+      "current_status": "GATE_READY_NO_EXTERNAL_HOST_EVIDENCE",
+      "completion_requires": "THREE_DISTINCT_PERSISTENT_EXTERNAL_HOSTS_PLUS_CROSS_HOST_TRANSCRIPT_AND_INDEPENDENT_VERIFICATION"
+    }
+  ],
+  "all_remaining_blockers_have_explicit_fail_closed_gates": true,
+  "all_remaining_blockers_closed": false,
+  "live_execution_claim": false,
+  "external_testnet_claim": false,
+  "automatic_merge_allowed": false,
+  "ai_authority": "NONE",
+  "execution_authority": "NONE",
+  "generated_at": "2026-08-29T19:02:00Z",
+  "digest": "c024633760d35b9aff683b84acc9f54e12cc3b7a23cfb7214fbd01dabdc0e3f6"
+}
