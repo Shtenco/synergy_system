@@ -1,0 +1,442 @@
+{
+  "as_of": "2026-08-29",
+  "federation_digest": "7de7c2dda23db2581294176bb262ae4aa8cbdc4ba97cdd4326278e88a9713a05",
+  "owner": "Shtenco",
+  "policy": {
+    "ai_accounting_authority": "NONE",
+    "ai_blockchain_submission_authority": "NONE",
+    "ai_financial_authority": "NONE",
+    "ai_payment_authority": "NONE",
+    "ai_production_deployment_authority": "NONE",
+    "auto_merge": false,
+    "historical_evidence_preserved": true,
+    "internal_mint_or_revaluation_is_external_profit": false,
+    "merge_authority": "HUMAN_MAINTAINER_ONLY",
+    "status_promotion_requires_executed_evidence": true
+  },
+  "repositories": [
+    {
+      "authority": "NONE",
+      "classification": "CANONICAL_ROOT",
+      "maturity": "ACTIVE_CANDIDATE",
+      "next_milestone": "Federation v2 + Economic OS convergence",
+      "portfolio_cluster": "architecture-governance",
+      "repository": "Shtenco/synergy_system",
+      "role": "Architecture constitution, repository federation, authority boundaries",
+      "top20_steps": [1, 2, 5, 6, 20]
+    },
+    {
+      "authority": "FINANCIAL_ACCOUNTING",
+      "classification": "CANONICAL_DOMAIN",
+      "maturity": "ACTIVE_CANDIDATE",
+      "next_milestone": "Deployable reference service + live-cycle evidence",
+      "portfolio_cluster": "financial-core",
+      "repository": "Shtenco/synergy_financial_os",
+      "role": "Double-entry ledger, revenue recognition, HardNAV, liquidity, distribution capacity",
+      "top20_steps": [2, 3, 5, 6, 8]
+    },
+    {
+      "authority": "SETTLEMENT",
+      "classification": "CANONICAL_DOMAIN",
+      "maturity": "WORKING_REFERENCE_PRELIVE",
+      "next_milestone": "Real provider corridor + independent settlement evidence",
+      "portfolio_cluster": "payments",
+      "repository": "Shtenco/synergy_pay_system",
+      "role": "MetaPay fiat/crypto/CBDC routing, settlement and reconciliation",
+      "top20_steps": [3, 5, 6, 7]
+    },
+    {
+      "authority": "TRUST_COMMITMENT",
+      "classification": "CANONICAL_DOMAIN",
+      "maturity": "LOCAL_TESTNET_EVIDENCE",
+      "next_milestone": "External 3-host testnet evidence",
+      "portfolio_cluster": "trust-blockchain",
+      "repository": "Shtenco/synergy_ai_blockchain",
+      "role": "Trust commitments, checkpoint/testnet and PQ blockchain R&D",
+      "top20_steps": [4, 5, 6, 17]
+    },
+    {
+      "authority": "NETWORK_TRANSPORT",
+      "classification": "CANONICAL_DOMAIN",
+      "maturity": "R&D_BOOTSTRAP",
+      "next_milestone": "3-10 node benchmarked transport testbed",
+      "portfolio_cluster": "network",
+      "repository": "Shtenco/synergynet",
+      "role": "P2P content-addressed deduplicated network",
+      "top20_steps": [5, 6, 14]
+    },
+    {
+      "authority": "RUNTIME_ORCHESTRATION",
+      "classification": "CANONICAL_DOMAIN",
+      "maturity": "PREPRODUCTION_EVIDENCE",
+      "next_milestone": "Persistent external node deployment",
+      "portfolio_cluster": "runtime-os",
+      "repository": "Shtenco/synergy_meta_os",
+      "role": "Node/service orchestration with capability boundaries",
+      "top20_steps": [4, 5, 6, 15]
+    },
+    {
+      "authority": "HOST_EXECUTION",
+      "classification": "ACTIVE_R&D",
+      "maturity": "KERNEL_R&D",
+      "next_milestone": "Close VM/guest/hardware evidence and stable host profile",
+      "portfolio_cluster": "host-os",
+      "repository": "Shtenco/turbo_linux",
+      "role": "Host/kernel/capability/IPC/VM substrate",
+      "top20_steps": [6, 16]
+    },
+    {
+      "authority": "AI_INFERENCE",
+      "classification": "CANONICAL_TARGET",
+      "maturity": "BOOTSTRAP",
+      "next_milestone": "Migrate strongest reproducible NEXUS generation with frozen benchmark",
+      "portfolio_cluster": "ai-core",
+      "repository": "Shtenco/agi_nexus",
+      "role": "Canonical validated NEXUS model/runtime target",
+      "top20_steps": [5, 6, 11]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "ACTIVE_R&D_SOURCE",
+      "maturity": "ADVANCED_R&D",
+      "next_milestone": "Reproduce and promote validated components into agi_nexus",
+      "portfolio_cluster": "ai-research",
+      "repository": "Shtenco/agi_olga",
+      "role": "SmallWorld AGI, ARC DSL, NEXUS-600K and OLGA research lineage",
+      "top20_steps": [6, 11, 20]
+    },
+    {
+      "authority": "AI_PROPOSAL_ONLY",
+      "classification": "CANONICAL_PRODUCT_CANDIDATE",
+      "maturity": "PREPRODUCTION_EVIDENCE",
+      "next_milestone": "Persistent sandbox deployment with bounded business actions",
+      "portfolio_cluster": "ai-autopilot",
+      "repository": "Shtenco/agi_autopilot",
+      "role": "Bounded NEXUS business/SMM/autopilot node",
+      "top20_steps": [6, 12]
+    },
+    {
+      "authority": "RESEARCH_ORCHESTRATION",
+      "classification": "CANONICAL_TARGET",
+      "maturity": "BOOTSTRAP",
+      "next_milestone": "Reproducible evidence-agent pipeline over scientific repos",
+      "portfolio_cluster": "science-ai",
+      "repository": "Shtenco/nexus_science_agent",
+      "role": "Scientific search, evidence graph, falsification and research orchestration",
+      "top20_steps": [6, 19, 20]
+    },
+    {
+      "authority": "PRESENTATION_CONTROL",
+      "classification": "PRODUCT",
+      "maturity": "WORKING_SOURCE",
+      "next_milestone": "Metered SaaS backend, tenants, billing and audit integration",
+      "portfolio_cluster": "business-os",
+      "repository": "Shtenco/synergychain",
+      "role": "Growth OS, OLGA chat, AI SMM/CRM/Sales/CFO control plane",
+      "top20_steps": [5, 6, 9]
+    },
+    {
+      "authority": "PRESENTATION_ONLY",
+      "classification": "PRESENTATION",
+      "maturity": "PUBLIC_PRESENTATION",
+      "next_milestone": "Unify product/IR architecture and live status dashboard",
+      "portfolio_cluster": "public-portal",
+      "repository": "Shtenco/synergychain.github.io",
+      "role": "Public static portal/deployment",
+      "top20_steps": [6, 20]
+    },
+    {
+      "authority": "CLIENT_ONLY",
+      "classification": "PRODUCT",
+      "maturity": "STORE_RELEASE_READY",
+      "next_milestone": "Production backend integration, analytics and paid conversion",
+      "portfolio_cluster": "finance-app",
+      "repository": "Shtenco/synergy_app",
+      "role": "SINERGY Finance Android/iOS store release lineage",
+      "top20_steps": [5, 6, 10]
+    },
+    {
+      "authority": "CLIENT_NODE",
+      "classification": "PRODUCT_R&D",
+      "maturity": "MOBILE_R&D",
+      "next_milestone": "Unify identity, wallet/read-only trust and backend services",
+      "portfolio_cluster": "super-app",
+      "repository": "Shtenco/sinergy-super-app",
+      "role": "Mobile/super-app and native node lineage",
+      "top20_steps": [5, 6, 10, 15]
+    },
+    {
+      "authority": "NONE",
+      "classification": "PLACEHOLDER",
+      "maturity": "EMPTY",
+      "next_milestone": "Declare redirect/archive policy without deleting provenance",
+      "portfolio_cluster": "empty-old-app",
+      "repository": "Shtenco/sinergy_app",
+      "role": "Empty/old application target",
+      "top20_steps": [6, 20]
+    },
+    {
+      "authority": "DOMAIN_EVIDENCE",
+      "classification": "CANONICAL_DOMAIN",
+      "maturity": "R&D_DOMAIN",
+      "next_milestone": "Turn model into deterministic household capital engine/API",
+      "portfolio_cluster": "household-finance",
+      "repository": "Shtenco/synergy_matrix_sota",
+      "role": "Savings, maturity ladder and mutual credit modelling",
+      "top20_steps": [5, 6, 8, 10]
+    },
+    {
+      "authority": "DOMAIN_EVIDENCE",
+      "classification": "CANONICAL_DOMAIN",
+      "maturity": "R&D_DOMAIN",
+      "next_milestone": "Project cash-flow/evidence API feeding Financial OS screening",
+      "portfolio_cluster": "real-economy",
+      "repository": "Shtenco/synergy_eurasian",
+      "role": "Productive projects and Eurasian economic/resource model",
+      "top20_steps": [5, 6, 8]
+    },
+    {
+      "authority": "PUBLIC_TRACE_EVIDENCE",
+      "classification": "PRODUCT_CANDIDATE",
+      "maturity": "WORKING_R&D",
+      "next_milestone": "Real-data pilot package and deployable audit dashboard",
+      "portfolio_cluster": "public-sector-os",
+      "repository": "Shtenco/blochain_budget",
+      "role": "Public budget/procurement traceability and Merkle evidence engine",
+      "top20_steps": [6, 18]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "R&D_LAB",
+      "maturity": "ACTIVE_R&D",
+      "next_milestone": "Formal falsification corpus + safe handoff of proven components",
+      "portfolio_cluster": "financial-rnd",
+      "repository": "Shtenco/ai_financial_system",
+      "role": "QE/QT, AMM, arbitrage, flash loans, market-making research",
+      "top20_steps": [2, 6, 13, 20]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "R&D_LAB",
+      "maturity": "R&D",
+      "next_milestone": "Adversarial solvency and external-value benchmark",
+      "portfolio_cluster": "monetary-rnd",
+      "repository": "Shtenco/usds",
+      "role": "Stable-money monetary experiment",
+      "top20_steps": [2, 6, 20]
+    },
+    {
+      "authority": "NONE",
+      "classification": "LEGACY_SOURCE",
+      "maturity": "LEGACY",
+      "next_milestone": "Freeze provenance; extract only independently validated mechanisms",
+      "portfolio_cluster": "legacy-tokenomics",
+      "repository": "Shtenco/cashero",
+      "role": "Historical cyclic liquidity/tokenomics lineage",
+      "top20_steps": [6, 20]
+    },
+    {
+      "authority": "AI_TRADING_PROPOSAL",
+      "classification": "CANONICAL_TARGET",
+      "maturity": "BOOTSTRAP",
+      "next_milestone": "Consolidate validated strategies and risk/decision artifacts",
+      "portfolio_cluster": "canonical-trading",
+      "repository": "Shtenco/midas_ai",
+      "role": "Canonical MIDAS bounded investment/trading intelligence",
+      "top20_steps": [5, 6, 13]
+    },
+    {
+      "authority": "TRADING_R&D",
+      "classification": "ACTIVE_R&D_SOURCE",
+      "maturity": "WORKING_R&D",
+      "next_milestone": "Canonical OOF/live-shadow track record and handoff into midas_ai",
+      "portfolio_cluster": "trading-platform",
+      "repository": "Shtenco/midas_ai_trading_system",
+      "role": "Institutional multi-agent trading architecture",
+      "top20_steps": [6, 13]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "LEGACY_SOURCE",
+      "maturity": "LEGACY_R&D",
+      "next_milestone": "Benchmark and migrate useful low-latency components",
+      "portfolio_cluster": "trading-source",
+      "repository": "Shtenco/midas_lite",
+      "role": "Lightweight MIDAS lineage",
+      "top20_steps": [6, 13, 20]
+    },
+    {
+      "authority": "EXECUTION_ADAPTER_R&D",
+      "classification": "LEGACY_SOURCE",
+      "maturity": "LEGACY_R&D",
+      "next_milestone": "Extract hardened execution/control components into MIDAS",
+      "portfolio_cluster": "trading-terminal",
+      "repository": "Shtenco/ai_trade_terminal",
+      "role": "Trading terminal/control lineage",
+      "top20_steps": [6, 13, 20]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "R&D_PLACEHOLDER",
+      "maturity": "EMPTY_OR_MINIMAL",
+      "next_milestone": "Either implement graph-arbitrage benchmark core or mark dormant",
+      "portfolio_cluster": "graph-trading",
+      "repository": "Shtenco/algotrading_graph_system",
+      "role": "Graph trading placeholder",
+      "top20_steps": [6, 13, 20]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "LEGACY_R&D",
+      "maturity": "R&D",
+      "next_milestone": "Rebenchmark against classical baselines; preserve negative results",
+      "portfolio_cluster": "trading-rnd",
+      "repository": "Shtenco/quantum-trading_metatrader5",
+      "role": "Historical quantum-themed trading experiment",
+      "top20_steps": [6, 13, 20]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "R&D_SOURCE",
+      "maturity": "R&D",
+      "next_milestone": "Leakage-safe OOF benchmark and feature export contract",
+      "portfolio_cluster": "trading-rnd",
+      "repository": "Shtenco/computer_vision_trading_metatrader_5",
+      "role": "Computer-vision market representation",
+      "top20_steps": [6, 13]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "R&D_SOURCE",
+      "maturity": "R&D",
+      "next_milestone": "Cost-aware carry benchmark and MIDAS strategy adapter",
+      "portfolio_cluster": "trading-rnd",
+      "repository": "Shtenco/swap_arbitrage_metatrader_5",
+      "role": "Swap/carry portfolio research",
+      "top20_steps": [6, 13]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "R&D_SOURCE",
+      "maturity": "R&D",
+      "next_milestone": "Executable-cost graph benchmark and MIDAS adapter",
+      "portfolio_cluster": "trading-rnd",
+      "repository": "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
+      "role": "Cross-rate/graph FX arbitrage",
+      "top20_steps": [6, 13]
+    },
+    {
+      "authority": "DATA_EVIDENCE",
+      "classification": "R&D_SOURCE",
+      "maturity": "R&D",
+      "next_milestone": "Versioned macro data provenance + leakage-safe features",
+      "portfolio_cluster": "trading-data",
+      "repository": "Shtenco/global_liquidity_dataminer",
+      "role": "Macro/global-liquidity feature source",
+      "top20_steps": [6, 13]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "R&D_SOURCE",
+      "maturity": "R&D",
+      "next_milestone": "Ablation benchmark versus standard OHLCV representations",
+      "portfolio_cluster": "trading-rnd",
+      "repository": "Shtenco/3D_bars_market_structure",
+      "role": "3D market representation research",
+      "top20_steps": [6, 13]
+    },
+    {
+      "authority": "RESEARCH_ONLY",
+      "classification": "LEGACY_R&D",
+      "maturity": "R&D",
+      "next_milestone": "Extract concurrency/data pipeline after reproducible benchmark",
+      "portfolio_cluster": "trading-rnd",
+      "repository": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+      "role": "Parallel ML trading lineage",
+      "top20_steps": [6, 13, 20]
+    },
+    {
+      "authority": "ENGINEERING_TRACE",
+      "classification": "PRODUCT_ENGINEERING_CORE",
+      "maturity": "PUBLISHED_PACKAGE",
+      "next_milestone": "Enterprise CI mode, repo federation integration and usage telemetry",
+      "portfolio_cluster": "coding-semantic-ai",
+      "repository": "Shtenco/ai_language",
+      "role": "Repository-aware coding agent and semantic traceability",
+      "top20_steps": [5, 6, 19]
+    },
+    {
+      "authority": "ENGINEERING_REVIEW",
+      "classification": "ENGINEERING_CORE",
+      "maturity": "R&D",
+      "next_milestone": "Bind changes to AI Language semantic traces and review gates",
+      "portfolio_cluster": "engineering-control",
+      "repository": "Shtenco/ai_coder",
+      "role": "Engineering change orchestration and evidence gates",
+      "top20_steps": [5, 6, 19]
+    },
+    {
+      "authority": "COMPRESSION_IDENTITY",
+      "classification": "ENGINEERING_R&D_CORE",
+      "maturity": "ACTIVE_R&D",
+      "next_milestone": "Corpus benchmark and SynergyNet codec policy integration",
+      "portfolio_cluster": "compression",
+      "repository": "Shtenco/ai_compress",
+      "role": "Lossless codecs, MDL routing, Gabriel Horn, dedup/archive",
+      "top20_steps": [6, 14, 19]
+    },
+    {
+      "authority": "COMPRESSION_R&D",
+      "classification": "R&D_PRODUCT_CANDIDATE",
+      "maturity": "ACTIVE_R&D",
+      "next_milestone": "Cross-corpus benchmark and content-addressed model registry",
+      "portfolio_cluster": "temporal-compression",
+      "repository": "Shtenco/qr_compress",
+      "role": "QTC1/QTC2 shared temporal model and QR transport",
+      "top20_steps": [6, 14, 19]
+    },
+    {
+      "authority": "SCIENTIFIC_RESEARCH",
+      "classification": "SCIENTIFIC_R&D",
+      "maturity": "ADVANCED_R&D",
+      "next_milestone": "Freeze physical predictions and independent falsification protocol",
+      "portfolio_cluster": "fundamental-science",
+      "repository": "Shtenco/binary_quantum_theory",
+      "role": "Binary quantum gravity candidate mathematical/computational theory",
+      "top20_steps": [6, 20]
+    },
+    {
+      "authority": "SCIENTIFIC_RESEARCH",
+      "classification": "SCIENTIFIC_R&D",
+      "maturity": "R&D",
+      "next_milestone": "Evidence ladder separating simulation from external experiment",
+      "portfolio_cluster": "scientific-rnd",
+      "repository": "Shtenco/cold_nuclear",
+      "role": "Computational LENR/transmutation research",
+      "top20_steps": [6, 20]
+    },
+    {
+      "authority": "PRESENTATION_ONLY",
+      "classification": "PRESENTATION",
+      "maturity": "PUBLIC_PRESENTATION",
+      "next_milestone": "Unified portfolio/benchmark provenance pages",
+      "portfolio_cluster": "public-showcase",
+      "repository": "Shtenco/shtencoauantai.github.io",
+      "role": "Quant/AI public showcase",
+      "top20_steps": [6, 20]
+    },
+    {
+      "authority": "PRESENTATION_ONLY",
+      "classification": "PRESENTATION",
+      "maturity": "PUBLIC_PRESENTATION",
+      "next_milestone": "Unified investor/technical portfolio with canonical status badges",
+      "portfolio_cluster": "public-portfolio",
+      "repository": "Shtenco/shtenco.github.io",
+      "role": "Personal/research/quant portfolio provenance",
+      "top20_steps": [6, 20]
+    }
+  ],
+  "repository_count": 42,
+  "schema": "synergy.repository-federation/v2",
+  "source": "authenticated GitHub repository inventory"
+}
