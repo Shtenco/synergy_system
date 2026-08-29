@@ -11,6 +11,15 @@ ECONOMIC_CYCLE_V1 = "83f9c3ee0c168ca50212ebaa1e64c58c08eb87fd040a8b5f214ee498724
 ECONOMIC_OS_RC4 = "51566c3c87f21b1a22ddef9bb6aea6abd9170042790f37ac3ff559bf7ad89c60"
 HEX = frozenset("0123456789abcdef")
 FORBIDDEN_EXTERNALITY_TOKENS = ("MOCK", "SYNTH", "SIMULAT", "LOCAL_ONLY", "TEST_FIXTURE")
+TOP_LEVEL_FIELDS = frozenset({
+    "schema", "run_id", "economic_cycle_v1_digest", "economic_os_rc4_digest", "started_at", "completed_at", "phases",
+    "canonical_hard_nav_before", "canonical_hard_nav_after", "realized_external_pnl_before", "realized_external_pnl_after",
+    "next_cycle_final_available_capacity", "next_cycle_capacity_status", "internal_mint_or_revaluation_counted_as_profit",
+    "capture_status", "external_verification_status", "live_execution_claim", "authority", "execution_authority", "ai_authority",
+    "blockchain_submission_authority", "digest",
+})
+BASE_PHASE_FIELDS = frozenset({"ordinal", "phase", "owner", "schema", "artifact_digest", "observed_at"})
+EXTERNAL_FIELDS = frozenset({"provider", "provider_reference", "environment", "provider_evidence_digest", "verification_status"})
 PHASES = (
     (1, "EXTERNAL_VALUE_EVIDENCE", "Shtenco/synergy_pay_system", "settlement.receipt/v2", True),
     (2, "REVENUE_RECOGNITION", "Shtenco/synergy_financial_os", "revenue.recognition/v2", False),
@@ -72,6 +81,8 @@ def _decimal(value: Any, name: str, *, positive: bool = False, allow_negative: b
 def _verify_external_evidence_claim(value: Any, phase: str) -> None:
     if not isinstance(value, Mapping):
         raise LiveEconomicCycleCaptureV1Error(f"{phase} requires external evidence claim")
+    if set(value) != EXTERNAL_FIELDS:
+        raise LiveEconomicCycleCaptureV1Error(f"{phase} external evidence fields mismatch")
     provider = _text(value.get("provider"), f"{phase}.provider")
     reference = _text(value.get("provider_reference"), f"{phase}.provider_reference")
     environment = _text(value.get("environment"), f"{phase}.environment").upper()
@@ -83,9 +94,22 @@ def _verify_external_evidence_claim(value: Any, phase: str) -> None:
         raise LiveEconomicCycleCaptureV1Error(f"{phase} cannot self-assert external verification")
 
 
+def _required_phase_fields(phase: str, requires_external: bool) -> frozenset[str]:
+    fields = set(BASE_PHASE_FIELDS)
+    if requires_external:
+        fields.add("external_evidence")
+    if phase == "HUMAN_GOVERNANCE_HANDOFF":
+        fields.update(("decision_authority", "ai_authority"))
+    if phase == "LATER_SETTLEMENT_REVERSAL":
+        fields.add("authorization_consumption")
+    return frozenset(fields)
+
+
 def verify_live_economic_cycle_capture_candidate_v1(payload: Mapping[str, Any]) -> dict[str, Any]:
     if not isinstance(payload, Mapping) or payload.get("schema") != SCHEMA:
         raise LiveEconomicCycleCaptureV1Error("unsupported live cycle capture schema")
+    if set(payload) != TOP_LEVEL_FIELDS:
+        raise LiveEconomicCycleCaptureV1Error("capture top-level fields mismatch")
     item = dict(payload)
     supplied = item.pop("digest", None)
     if supplied != canonical_digest(item):
@@ -105,6 +129,8 @@ def verify_live_economic_cycle_capture_candidate_v1(payload: Mapping[str, Any]) 
         if not isinstance(raw, Mapping):
             raise LiveEconomicCycleCaptureV1Error("phase must be object")
         ordinal, phase, owner, schema, requires_external = expected
+        if set(raw) != _required_phase_fields(phase, requires_external):
+            raise LiveEconomicCycleCaptureV1Error(f"phase fields mismatch: {phase}")
         if (raw.get("ordinal"), raw.get("phase"), raw.get("owner"), raw.get("schema")) != (ordinal, phase, owner, schema):
             raise LiveEconomicCycleCaptureV1Error(f"phase contract mismatch: {phase}")
         _hex(raw.get("artifact_digest"), f"{phase}.artifact_digest")
@@ -112,8 +138,6 @@ def verify_live_economic_cycle_capture_candidate_v1(payload: Mapping[str, Any]) 
         times.append(observed)
         if requires_external:
             _verify_external_evidence_claim(raw.get("external_evidence"), phase)
-        elif raw.get("external_evidence") is not None:
-            raise LiveEconomicCycleCaptureV1Error(f"{phase} cannot fabricate external evidence")
         if phase == "HUMAN_GOVERNANCE_HANDOFF":
             if raw.get("decision_authority") not in ("HUMAN_COMMITTEE", "MULTISIG_GOVERNANCE") or raw.get("ai_authority") != "NONE":
                 raise LiveEconomicCycleCaptureV1Error("governance authority invalid")
@@ -143,6 +167,4 @@ def verify_live_economic_cycle_capture_candidate_v1(payload: Mapping[str, Any]) 
     item["digest"] = supplied
     return item
 
-
-# Compatibility alias deliberately returns only a capture candidate. It never means LIVE VERIFIED.
 verify_live_economic_cycle_capture_v1 = verify_live_economic_cycle_capture_candidate_v1
