@@ -1,0 +1,54 @@
+{
+  "schema": "synergy.live-economic-cycle-capture-readiness/v2",
+  "readiness_id": "SYNERGY_LIVE_ECONOMIC_CYCLE_CAPTURE_V2_20260829",
+  "previous_readiness_digest": "252fe1f12f326a6b31d18bb9b16f2bd31a8a72d12ad2053ae437864db8ef2eef",
+  "economic_cycle_v1_digest": "83f9c3ee0c168ca50212ebaa1e64c58c08eb87fd040a8b5f214ee4987242f3f1",
+  "economic_os_rc4_digest": "51566c3c87f21b1a22ddef9bb6aea6abd9170042790f37ac3ff559bf7ad89c60",
+  "economic_os_rc5_digest": "b06425fdba3b69e1371c987714176d0435f90b511a7167abd13a4fb0a91476b8",
+  "capture_schema": "synergy.live-economic-cycle-capture-candidate/v1",
+  "hardened_source_branch": "feat/economic-os-rc5-canonical-capture-ready-20260828",
+  "hardened_terminal_commit": "ee5cf914a01827d80ada03137fd5a299676a57bb",
+  "implementation_propagation_commit": "e67e3084d5d06acf12d746a845348d432188cab2",
+  "implementation_blob_sha": "390a00800bd26169d0e62a0d9853f6604594190f",
+  "test_hardening_commit": "ee5cf914a01827d80ada03137fd5a299676a57bb",
+  "test_blob_sha": "194513b06ff5b30fa5c7e5a6ebad80a80b4d12af",
+  "parent_capture_test_hardening_commit": "fbc00f93d66e1ea1229932f6496f94d3453566f5",
+  "targeted_metapay_audit_digest": "26867356d4bed8c6fbc7b2da8d9d0e83a4b53350dd8e8e6d6d88ef2eb81d7d47",
+  "targeted_metapay_audit_scope": "TARGETED_AUDIT_NOT_EXHAUSTIVE_REPOSITORY_CONTENT_PROOF",
+  "inadmissible_known_candidates": [
+    {
+      "path": "fixtures/conformance/settlement_receipt_v2_revenue.json",
+      "blob_sha": "0f9235d56e8f757479d5ce3e8472f8e480e04b62",
+      "classification": "CONFORMANCE_FIXTURE_NOT_LIVE"
+    },
+    {
+      "path": "config/live-manifest.example.json",
+      "blob_sha": "f6f2e08aae243e65e409e740fbd7a0eeba1f7666",
+      "classification": "EXAMPLE_TEMPLATE_NOT_LIVE"
+    },
+    {
+      "path": "src/synergy_pay/providers/mock.py",
+      "blob_sha": "cdf3872e2afc9f8d103d2a8e6ac730c24d4a4c16",
+      "classification": "MOCK_PROVIDER_IMPLEMENTATION_NOT_SETTLEMENT_EVIDENCE"
+    }
+  ],
+  "hardening_guarantees": [
+    "EXACT_TOP_LEVEL_FIELD_SET_ENFORCED",
+    "EXACT_PHASE_FIELD_SET_ENFORCED",
+    "EXACT_EXTERNAL_EVIDENCE_FIELD_SET_ENFORCED",
+    "HIDDEN_LIVE_STATUS_FIELD_REJECTED_AFTER_FRESH_REHASH",
+    "HIDDEN_PHASE_EXECUTION_AUTHORITY_REJECTED_AFTER_FRESH_REHASH",
+    "HIDDEN_PROVIDER_VERIFICATION_FIELD_REJECTED_AFTER_FRESH_REHASH"
+  ],
+  "capture_protocol_status": "HARDENED_CAPTURE_READY_NO_ADMISSIBLE_EXISTING_LIVE_FIXTURE",
+  "external_verification_status": "NOT_EXECUTED",
+  "live_execution_claim": false,
+  "current_blocker": "ONE_LIVE_EXTERNAL_VALUE_TO_NEXT_CAPACITY_EXECUTION_NOT_CAPTURED",
+  "blocker_removed": false,
+  "authority": "PROVENANCE_ONLY",
+  "execution_authority": "NONE",
+  "ai_authority": "NONE",
+  "blockchain_submission_authority": "NONE",
+  "generated_at": "2026-08-29T18:58:00Z",
+  "digest": "94ac1c5a03218c7e680ff85aa7e68cc072afdbd04628b76366139bf57193d21f"
+}
