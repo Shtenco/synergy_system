@@ -159,3 +159,27 @@ def test_internal_revaluation_cannot_be_counted_as_profit():
     rehash(item)
     with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="internal value counted"):
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
+
+
+def test_hidden_top_level_live_flag_is_rejected_even_with_fresh_digest():
+    item = candidate()
+    item["live_verified"] = True
+    rehash(item)
+    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="capture top-level fields mismatch"):
+        MOD.verify_live_economic_cycle_capture_candidate_v1(item)
+
+
+def test_hidden_phase_execution_authority_is_rejected_even_with_fresh_digest():
+    item = candidate()
+    item["phases"][1]["execution_authority"] = "AI"
+    rehash(item)
+    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="phase fields mismatch"):
+        MOD.verify_live_economic_cycle_capture_candidate_v1(item)
+
+
+def test_hidden_external_provider_verified_flag_is_rejected_even_with_fresh_digest():
+    item = candidate()
+    item["phases"][0]["external_evidence"]["provider_verified"] = True
+    rehash(item)
+    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="external evidence fields mismatch"):
+        MOD.verify_live_economic_cycle_capture_candidate_v1(item)
