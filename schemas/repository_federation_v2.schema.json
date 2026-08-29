@@ -1,0 +1,87 @@
+{
+  "$id": "https://synergy.local/schema/repository_federation_v2.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "as_of": {"format": "date", "type": "string"},
+    "federation_digest": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "owner": {"const": "Shtenco"},
+    "policy": {
+      "additionalProperties": false,
+      "properties": {
+        "ai_accounting_authority": {"const": "NONE"},
+        "ai_blockchain_submission_authority": {"const": "NONE"},
+        "ai_financial_authority": {"const": "NONE"},
+        "ai_payment_authority": {"const": "NONE"},
+        "ai_production_deployment_authority": {"const": "NONE"},
+        "auto_merge": {"const": false},
+        "historical_evidence_preserved": {"const": true},
+        "internal_mint_or_revaluation_is_external_profit": {"const": false},
+        "merge_authority": {"const": "HUMAN_MAINTAINER_ONLY"},
+        "status_promotion_requires_executed_evidence": {"const": true}
+      },
+      "required": [
+        "historical_evidence_preserved",
+        "auto_merge",
+        "merge_authority",
+        "ai_financial_authority",
+        "ai_payment_authority",
+        "ai_accounting_authority",
+        "ai_blockchain_submission_authority",
+        "ai_production_deployment_authority",
+        "status_promotion_requires_executed_evidence",
+        "internal_mint_or_revaluation_is_external_profit"
+      ],
+      "type": "object"
+    },
+    "repositories": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "authority": {"minLength": 1, "type": "string"},
+          "classification": {"minLength": 1, "type": "string"},
+          "maturity": {"minLength": 1, "type": "string"},
+          "next_milestone": {"minLength": 1, "type": "string"},
+          "portfolio_cluster": {"minLength": 1, "type": "string"},
+          "repository": {"pattern": "^Shtenco/.+", "type": "string"},
+          "role": {"minLength": 1, "type": "string"},
+          "top20_steps": {
+            "items": {"maximum": 20, "minimum": 1, "type": "integer"},
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "repository",
+          "portfolio_cluster",
+          "classification",
+          "maturity",
+          "role",
+          "authority",
+          "next_milestone",
+          "top20_steps"
+        ],
+        "type": "object"
+      },
+      "maxItems": 42,
+      "minItems": 42,
+      "type": "array"
+    },
+    "repository_count": {"const": 42},
+    "schema": {"const": "synergy.repository-federation/v2"},
+    "source": {"minLength": 1, "type": "string"}
+  },
+  "required": [
+    "schema",
+    "as_of",
+    "owner",
+    "repository_count",
+    "source",
+    "policy",
+    "repositories",
+    "federation_digest"
+  ],
+  "title": "SYNERGY Repository Federation v2",
+  "type": "object"
+}
