@@ -119,6 +119,8 @@ Every repo becomes explicitly `CANONICAL`, `PRODUCT`, `R&D`, `LEGACY`, `PRESENTA
 
 ## Implementation status
 
-Step 1 is implemented on this branch through `registry/repository_federation_v2_20260829.json`, its schema, verifier, adversarial tests and isolated CI. The registry binds every repository to its lifecycle class, authority, next milestone and applicable Top-20 steps.
+Step 1 is implemented through `registry/repository_federation_v2_20260829.json`, its schema, verifier, adversarial tests and isolated CI. The registry binds every repository to its lifecycle class, authority, next milestone and applicable Top-20 steps.
 
-Step 2 continues on the existing Economic OS terminal lineage. The remaining live economic and external-host facts are not manufactured; they stay blocked until real evidence exists.
+Step 2 hardening is now materially advanced on the Economic OS terminal lineage: the live-cycle candidate verifier enforces exact top-level, phase and external-evidence field sets; fresh-rehash hidden-field regressions are present; additive Capture Readiness v2 pins exact hardened implementation/test identities and the targeted MetaPay negative audit; Convergence Gate Map v2 keeps all three physical blockers explicit.
+
+The following physical facts are deliberately still open and cannot be manufactured by repository status: human canonical promotion, one independently verified real 12-phase external settlement/economic run, and a three-distinct-host external deployment transcript.
