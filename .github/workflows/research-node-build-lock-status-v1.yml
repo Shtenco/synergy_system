@@ -1,0 +1,20 @@
+name: Research Node Build Lock Status v1
+
+on:
+  pull_request:
+    paths:
+      - 'docs/RESEARCH_NODE_BUILD_LOCK_STATUS_20260821.md'
+      - 'tests/test_research_node_build_lock_status_v1.py'
+      - '.github/workflows/research-node-build-lock-status-v1.yml'
+  workflow_dispatch:
+
+jobs:
+  status-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pytest
+      - run: python -m pytest -q tests/test_research_node_build_lock_status_v1.py

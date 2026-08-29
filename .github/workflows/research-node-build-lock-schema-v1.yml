@@ -1,0 +1,29 @@
+name: Research Node Build Lock Schema v1
+
+on:
+  pull_request:
+    paths:
+      - 'schemas/synergy_node_build_lock_v1.schema.json'
+      - 'fixtures/node_build_locks/research_compute_node_source_candidate_v1.json'
+      - 'tests/test_node_build_lock_schema_v1.py'
+      - '.github/workflows/research-node-build-lock-schema-v1.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: research-node-build-lock-schema-v1-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  schema:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install pytest jsonschema
+      - run: python -m pytest -q tests/test_node_build_lock_schema_v1.py

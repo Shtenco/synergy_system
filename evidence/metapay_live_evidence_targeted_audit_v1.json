@@ -1,0 +1,47 @@
+{
+  "schema": "synergy.metapay-live-evidence-audit/v1",
+  "audit_id": "SYNERGY_METAPAY_LIVE_EVIDENCE_TARGETED_AUDIT_V1_20260828",
+  "repository": "Shtenco/synergy_pay_system",
+  "terminal_commit": "a4b7b2876915e7f70089947a5b40f3cff81458d9",
+  "audit_scope": "TARGETED_KNOWN_CANDIDATE_ARTIFACTS",
+  "candidates": [
+    {
+      "path": "fixtures/conformance/settlement_receipt_v2_revenue.json",
+      "blob_sha": "0f9235d56e8f757479d5ce3e8472f8e480e04b62",
+      "classification": "CONFORMANCE_FIXTURE_NOT_LIVE",
+      "reasons": [
+        "PATH_UNDER_FIXTURES_CONFORMANCE",
+        "PROVIDERS_EMPTY",
+        "EXTERNAL_EVIDENCE_CLASSES_EMPTY",
+        "SETTLEMENT_EVIDENCE_DIGEST_SYNTHETIC_REPEATED_7"
+      ]
+    },
+    {
+      "path": "config/live-manifest.example.json",
+      "blob_sha": "f6f2e08aae243e65e409e740fbd7a0eeba1f7666",
+      "classification": "EXAMPLE_TEMPLATE_NOT_LIVE",
+      "reasons": [
+        "FILENAME_EXAMPLE",
+        "PLACEHOLDER_LEGAL_ENTITY",
+        "PLACEHOLDER_DEPLOYED_COMMIT",
+        "METADATA_EXPLICIT_EXAMPLE_ONLY",
+        "SIGNATURE_NULL"
+      ]
+    },
+    {
+      "path": "src/synergy_pay/providers/mock.py",
+      "blob_sha": "cdf3872e2afc9f8d103d2a8e6ac730c24d4a4c16",
+      "classification": "MOCK_PROVIDER_IMPLEMENTATION_NOT_SETTLEMENT_EVIDENCE",
+      "reasons": [
+        "MOCK_PROVIDER_CODE",
+        "IMPLEMENTATION_NOT_RUNTIME_EVIDENCE"
+      ]
+    }
+  ],
+  "result": "NO_ADMISSIBLE_EXISTING_LIVE_SETTLEMENT_FIXTURE_IDENTIFIED_IN_TARGETED_AUDIT",
+  "audit_completeness": "TARGETED_AUDIT_NOT_EXHAUSTIVE_REPOSITORY_CONTENT_PROOF",
+  "live_cycle_blocker_removed": false,
+  "recommended_action": "CAPTURE_NEW_EXTERNAL_SETTLEMENT_AND_PROVIDER_EVIDENCE_UNDER_LIVE_CYCLE_CONTRACT",
+  "generated_at": "2026-08-28T12:05:00Z",
+  "digest": "26867356d4bed8c6fbc7b2da8d9d0e83a4b53350dd8e8e6d6d88ef2eb81d7d47"
+}

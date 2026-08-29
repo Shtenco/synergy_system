@@ -1,0 +1,30 @@
+{
+  "schema": "synergy.cross-repo-schema-registry/v1",
+  "policy": {
+    "one_producer_authority_per_schema_generation": true,
+    "consumer_is_not_producer_authority": true,
+    "superseded_generations_remain_registered": true,
+    "schema_registration_is_not_execution_authority": true
+  },
+  "contracts": [
+    {"id":"financial.snapshot/v2","producer":"Shtenco/synergy_financial_os","consumers":["Shtenco/synergy_ai_blockchain","Shtenco/synergychain"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"ledger.event/v2","producer":"Shtenco/synergy_financial_os","consumers":["Shtenco/synergy_ai_blockchain","Shtenco/synergychain"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"accounting.close/v2","producer":"Shtenco/synergy_financial_os","consumers":["Shtenco/synergy_ai_blockchain","Shtenco/synergychain"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"settlement.receipt/v2","producer":"Shtenco/synergy_pay_system","consumers":["Shtenco/synergy_financial_os"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"maturity.snapshot/v1","producer":"Shtenco/synergy_matrix_sota","consumers":["Shtenco/synergy_financial_os"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"project.proposal/v2","producer":"Shtenco/synergy_eurasian","consumers":["Shtenco/synergy_financial_os"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"project.screening/v1","producer":"Shtenco/synergy_financial_os","consumers":["Shtenco/synergychain"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"ai.policy-proposal/v2","producer":"Shtenco/agi_olga","consumers":["Shtenco/synergy_financial_os"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"commitment.envelope/v4","producer":"Shtenco/synergy_ai_blockchain","consumers":["Shtenco/synergychain"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"distribution.execution-ticket/v1","producer":"Shtenco/synergy_financial_os","consumers":["Shtenco/synergy_pay_system"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"distribution.utilization/v1","producer":"Shtenco/synergy_pay_system","consumers":["Shtenco/synergy_financial_os"],"status":"CURRENT_DRAFT","visibility":"FEDERATION"},
+    {"id":"midas.model-bundle/v1","producer":"Shtenco/midas_ai","consumers":["Shtenco/midas_ai"],"status":"DOMAIN_CANDIDATE","visibility":"DOMAIN_INTERNAL"},
+    {"id":"midas.inference-bundle/v1","producer":"Shtenco/midas_ai","consumers":["Shtenco/midas_ai"],"status":"DOMAIN_CANDIDATE","visibility":"DOMAIN_INTERNAL"},
+    {"id":"midas.trading-decision/v1","producer":"Shtenco/midas_ai","consumers":["Shtenco/midas_ai"],"status":"DOMAIN_CANDIDATE","visibility":"DOMAIN_INTERNAL"},
+    {"id":"midas.risk-decision/v1","producer":"Shtenco/midas_ai","consumers":["Shtenco/midas_ai"],"status":"DOMAIN_CANDIDATE","visibility":"DOMAIN_INTERNAL"},
+    {"id":"synergy.node-manifest/v1","producer":"Shtenco/synergy_meta_os","consumers":["Shtenco/synergy_meta_os"],"status":"DOMAIN_CANDIDATE","visibility":"DOMAIN_INTERNAL"},
+    {"id":"nexus.source-assessment/v3","producer":"Shtenco/nexus_science_agent","consumers":["Shtenco/nexus_science_agent"],"status":"DOMAIN_CANDIDATE","visibility":"DOMAIN_INTERNAL"}
+  ],
+  "authority": "ARCHITECTURE_REGISTRY_ONLY",
+  "execution_authority": "NONE"
+}

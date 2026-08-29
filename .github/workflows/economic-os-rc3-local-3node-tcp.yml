@@ -1,0 +1,22 @@
+name: economic-os-rc3-local-3node-tcp
+
+on:
+  pull_request:
+    paths:
+      - 'releases/economic_os_rc3_local_3node_tcp_20260828.json'
+      - 'verify/verify_economic_os_rc3_local_3node_tcp.py'
+      - 'tests/test_economic_os_rc3_local_3node_tcp.py'
+      - 'docs/ECONOMIC_OS_RC3_LOCAL_3NODE_TCP_20260828.md'
+      - '.github/workflows/economic-os-rc3-local-3node-tcp.yml'
+  workflow_dispatch:
+
+jobs:
+  rc3-selftest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_economic_os_rc2_local_testnet_execution.py tests/test_economic_os_rc3_local_3node_tcp.py
