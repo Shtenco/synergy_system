@@ -41,7 +41,13 @@ class ReadinessV2Error(ValueError):
 def canonical_digest(value: Mapping[str, Any]) -> str:
     body = dict(value)
     body.pop("digest", None)
-    encoded = json.dumps(body, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False).encode("utf-8")
+    encoded = json.dumps(
+        body,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+        allow_nan=False,
+    ).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
 
 
@@ -81,11 +87,18 @@ def verify_readiness_v2(value: Mapping[str, Any]) -> dict[str, Any]:
         raise ReadinessV2Error("authority escalation")
 
     candidates = value.get("inadmissible_known_candidates")
-    observed = tuple((x.get("path"), x.get("blob_sha"), x.get("classification")) for x in candidates) if isinstance(candidates, list) else ()
+    if not isinstance(candidates, list):
+        raise ReadinessV2Error("known candidate list mismatch")
+    observed = tuple(
+        (item.get("path"), item.get("blob_sha"), item.get("classification"))
+        for item in candidates
+        if isinstance(item, Mapping)
+    )
     if observed != EXPECTED_CANDIDATES:
         raise ReadinessV2Error("known candidate classification mismatch")
+
     guarantees = value.get("hardening_guarantees")
-    if tuple(guarantees) != EXPECTED_GUARANTEES if isinstance(guarantees, list) else True:
+    if not isinstance(guarantees, list) or tuple(guarantees) != EXPECTED_GUARANTEES:
         raise ReadinessV2Error("hardening guarantees mismatch")
 
     return {
@@ -100,7 +113,14 @@ def verify_readiness_v2(value: Mapping[str, Any]) -> dict[str, Any]:
 
 def main() -> int:
     value = json.loads(EVIDENCE.read_text(encoding="utf-8"))
-    print(json.dumps(verify_readiness_v2(value), ensure_ascii=False, indent=2, sort_keys=True))
+    print(
+        json.dumps(
+            verify_readiness_v2(value),
+            ensure_ascii=False,
+            indent=2,
+            sort_keys=True,
+        )
+    )
     return 0
 
 
