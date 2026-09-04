@@ -1,0 +1,40 @@
+{
+  "schema": "synergy.repository-engineering-baseline-ci-evidence/v1",
+  "evidence_id": "SYNERGY_REPOSITORY_ENGINEERING_BASELINE_CI_20260904",
+  "source_repository": "Shtenco/synergy_system",
+  "source_pull_request": 41,
+  "source_head": "9ce0864bbe0b989e39c63c0d2bae1be1851851ee",
+  "policy_digest": "8ba39de2763c72eb99e7586c34bbbeac6caac9cf5904639373d6eca5a0d883ec",
+  "federation_v2_digest": "7de7c2dda23db2581294176bb262ae4aa8cbdc4ba97cdd4326278e88a9713a05",
+  "parent_step5_ci_evidence_digest": "c78bc336a45bb16bfcd7ac5fb32a2b169afec02edb8c1cb99eab4c7938f937bb",
+  "executed_workflows": [
+    {
+      "name": "repository-engineering-security-baseline-v1",
+      "run_id": 33900828767,
+      "conclusion": "success",
+      "jobs": [
+        {"python": "3.11", "job_id": 101114248046, "pytest": "success", "py_compile": "success"},
+        {"python": "3.12", "job_id": 101114247725, "pytest": "success", "py_compile": "success"}
+      ]
+    },
+    {
+      "name": "SYNERGY Federation Validator v1",
+      "run_id": 33900828266,
+      "conclusion": "success",
+      "jobs": [
+        {"python": "3.11", "job_id": 101114246271, "federation_validator": "success", "full_pytest": "success", "py_compile": "success"},
+        {"python": "3.12", "job_id": 101114246663, "federation_validator": "success", "full_pytest": "success", "py_compile": "success"}
+      ]
+    }
+  ],
+  "status": "EXECUTED_CI_VERIFIED_BASELINE_CONTRACT_NOT_PORTFOLIO_COMPLIANCE",
+  "portfolio_compliance_claim": false,
+  "repository_compliance_claim": false,
+  "canonical_merge_status": "NOT_EXECUTED",
+  "auto_merge": false,
+  "merge_authority": "HUMAN_MAINTAINER_ONLY",
+  "ai_authority": "NONE",
+  "execution_authority": "NONE",
+  "generated_at": "2026-09-04T17:31:00Z",
+  "digest": "5e354ecd033dc9a58586b3545e3b8ecd60510243bdffeea08c762f0a76bdab0f"
+}
