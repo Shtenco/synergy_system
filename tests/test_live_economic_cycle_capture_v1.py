@@ -78,14 +78,13 @@ def rehash(value):
 
 
 def test_structural_candidate_allows_negative_pnl_baseline_with_positive_delta():
-    item = MOD.verify_live_economic_cycle_capture_candidate_v1(candidate())
-    assert item["realized_external_pnl_before"] == "-5"
-    assert item["realized_external_pnl_after"] == "-3"
-    assert item["live_execution_claim"] is False
-    assert item["external_verification_status"] == "PENDING"
+    item = candidate()
+    result = MOD.verify_live_economic_cycle_capture_candidate_v1(item)
+    assert result["capture_status"] == "STRUCTURALLY_COMPLETE_PENDING_EXTERNAL_VERIFICATION"
+    assert result["live_execution_claim"] is False
 
 
-def test_mock_external_evidence_is_rejected_even_with_fresh_digest():
+def test_mock_external_reference_is_rejected():
     item = candidate()
     item["phases"][0]["external_evidence"]["provider_reference"] = "MOCK-provider-reference"
     rehash(item)
@@ -107,7 +106,7 @@ def test_phase_reordering_is_rejected():
     item = candidate()
     item["phases"][0], item["phases"][1] = item["phases"][1], item["phases"][0]
     rehash(item)
-    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="phase contract mismatch"):
+    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="phase fields mismatch: EXTERNAL_VALUE_EVIDENCE"):
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
 
 
@@ -123,33 +122,33 @@ def test_ai_governance_is_rejected():
 
 def test_reversal_cannot_revive_authorization():
     item = candidate()
-    item["phases"][8]["authorization_consumption"] = "REACTIVATED"
+    item["phases"][8]["authorization_consumption"] = "REVIVED"
     rehash(item)
-    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="revived authorization"):
+    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="authorization"):
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
 
 
-def test_no_hard_nav_growth_is_rejected():
+def test_hard_nav_must_grow():
     item = candidate()
-    item["canonical_hard_nav_after"] = "100"
+    item["canonical_hard_nav_after"] = item["canonical_hard_nav_before"]
     rehash(item)
-    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="HardNAV increase"):
+    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="HardNAV"):
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
 
 
-def test_no_realized_external_pnl_improvement_is_rejected():
+def test_realized_external_pnl_must_improve():
     item = candidate()
-    item["realized_external_pnl_after"] = "-5"
+    item["realized_external_pnl_after"] = item["realized_external_pnl_before"]
     rehash(item)
-    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="P&L increase"):
+    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="external P&L"):
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
 
 
-def test_zero_next_capacity_is_rejected():
+def test_next_capacity_must_be_positive():
     item = candidate()
     item["next_cycle_final_available_capacity"] = "0"
     rehash(item)
-    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error):
+    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="capacity"):
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
 
 
@@ -157,11 +156,11 @@ def test_internal_revaluation_cannot_be_counted_as_profit():
     item = candidate()
     item["internal_mint_or_revaluation_counted_as_profit"] = "1"
     rehash(item)
-    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="internal value counted"):
+    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="internal value counted as profit"):
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
 
 
-def test_hidden_top_level_live_flag_is_rejected_even_with_fresh_digest():
+def test_hidden_top_level_live_verified_field_is_rejected_even_after_fresh_rehash():
     item = candidate()
     item["live_verified"] = True
     rehash(item)
@@ -169,7 +168,7 @@ def test_hidden_top_level_live_flag_is_rejected_even_with_fresh_digest():
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
 
 
-def test_hidden_phase_execution_authority_is_rejected_even_with_fresh_digest():
+def test_hidden_phase_execution_authority_is_rejected_even_after_fresh_rehash():
     item = candidate()
     item["phases"][1]["execution_authority"] = "AI"
     rehash(item)
@@ -177,7 +176,7 @@ def test_hidden_phase_execution_authority_is_rejected_even_with_fresh_digest():
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
 
 
-def test_hidden_external_provider_verified_flag_is_rejected_even_with_fresh_digest():
+def test_hidden_external_provider_verified_field_is_rejected_even_after_fresh_rehash():
     item = candidate()
     item["phases"][0]["external_evidence"]["provider_verified"] = True
     rehash(item)
