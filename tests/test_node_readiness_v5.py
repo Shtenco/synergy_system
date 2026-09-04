@@ -31,13 +31,15 @@ def bundle():
 def verify(b):
     return verify_readiness_v5(b["readiness"],b["plan"],b["aset"],b["negative"],b["build_input"],b["nexus_recipe"],b["nexus_evidence"],b["nexus_runtime"],b["nexus_location"],b["net_recipe"],b["net_evidence"],b["content_runtime"],b["relay_runtime"],b["net_location"])
 
-def test_canonical_v5_passes_without_authority():
-    b=bundle(); out=verify(b)
-    assert out["blockers"]==[]
-    assert out["node_status"]=="NODE_ADMISSION_READY_NOT_RUNNING"
-    assert out["auto_start"] is False
-    for field in ("financial_authority","payment_authority","accounting_authority","execution_authority"):
-        assert out[field]=="NONE"
+def test_v5_historical_bundle_is_rejected_after_location_self_digest_audit():
+    b=bundle()
+    # v5 bound the historical claimed location root 65945f..., but a later
+    # canonical audit proved that the v1 bytes rehash to b5fbec38.... v6 is
+    # the additive corrected successor and is the generation allowed to pass.
+    assert b["nexus_location"]["location_evidence_digest"] == "65945f7cce45b6e7da40a59121b84013483da13f61027a1c93a8dc37fc659568"
+    assert digest(b["nexus_location"],"location_evidence_digest") == "b5fbec38847392e9986cb6cc02b83d87247bba2425e5b50b7c598e203ab1ed33"
+    with pytest.raises(NodeReadinessV5Error, match="location_evidence_digest mismatch"):
+        verify(b)
 
 def test_old_self_digest_invalid_artifact_set_is_not_v3_root():
     b=bundle(); old=load("fixtures/artifact_sets/research_compute_node_artifact_set_v2.json")
