@@ -1,0 +1,147 @@
+{
+  "artifact_evidence_envelope_schema": "synergy.artifact-evidence-envelope/v1",
+  "auto_merge": false,
+  "digest": "8ba39de2763c72eb99e7586c34bbbeac6caac9cf5904639373d6eca5a0d883ec",
+  "federation_digest": "7de7c2dda23db2581294176bb262ae4aa8cbdc4ba97cdd4326278e88a9713a05",
+  "generated_at": "2026-09-04T17:20:00Z",
+  "global_authorities": {
+    "accounting_authority": "NONE",
+    "ai_authority": "NONE",
+    "blockchain_submission_authority": "NONE",
+    "execution_authority": "NONE",
+    "financial_authority": "NONE",
+    "merge_execution_authority": "NONE",
+    "payment_authority": "NONE",
+    "production_deployment_authority": "NONE",
+    "signing_authority": "NONE"
+  },
+  "merge_policy": "HUMAN_MAINTAINER_ONLY",
+  "policy_id": "SYNERGY_REPOSITORY_ENGINEERING_BASELINE_V1_20260904",
+  "policy_status": "BASELINE_POLICY_DEFINED_NO_REPOSITORY_COMPLIANCE_CLAIM",
+  "profiles": {
+    "ENGINEERING_TOOLING": {
+      "production_claim_requires_all_controls_evidenced": true,
+      "repositories": [
+        "Shtenco/ai_coder",
+        "Shtenco/ai_compress",
+        "Shtenco/ai_language",
+        "Shtenco/nexus_science_agent",
+        "Shtenco/qr_compress"
+      ],
+      "required_controls": [
+        "HUMAN_MAINTAINER_MERGE_ONLY",
+        "NO_AUTO_MERGE",
+        "DEPENDENCY_LOCK_OR_EXPLICIT_NO_DEPENDENCIES",
+        "TEST_SUITE_OR_EXPLICIT_STATIC_ONLY",
+        "CI_WORKFLOW",
+        "SECRET_MATERIAL_NOT_COMMITTED",
+        "BUILD_IDENTITY_BY_COMMIT",
+        "SBOM_ON_RELEASE",
+        "REPRODUCIBLE_BUILD_OR_DOCUMENTED_EXCEPTION",
+        "RELEASE_POLICY",
+        "ARTIFACT_EVIDENCE_ENVELOPE"
+      ]
+    },
+    "LEGACY_PLACEHOLDER": {
+      "production_claim_requires_all_controls_evidenced": false,
+      "repositories": [
+        "Shtenco/cashero",
+        "Shtenco/sinergy_app"
+      ],
+      "required_controls": [
+        "HUMAN_MAINTAINER_MERGE_ONLY",
+        "NO_AUTO_MERGE",
+        "PROVENANCE_PRESERVED",
+        "LEGACY_OR_PLACEHOLDER_STATUS_DECLARED",
+        "NO_PRODUCTION_CLAIM",
+        "NO_OPERATIONAL_AUTHORITY"
+      ]
+    },
+    "PRESENTATION": {
+      "production_claim_requires_all_controls_evidenced": true,
+      "repositories": [
+        "Shtenco/shtenco.github.io",
+        "Shtenco/shtencoauantai.github.io",
+        "Shtenco/synergychain.github.io"
+      ],
+      "required_controls": [
+        "HUMAN_MAINTAINER_MERGE_ONLY",
+        "NO_AUTO_MERGE",
+        "SECRET_MATERIAL_NOT_COMMITTED",
+        "DEPLOYMENT_SOURCE_IDENTITY",
+        "NO_FINANCIAL_OR_EXECUTION_AUTHORITY",
+        "RELEASE_OR_DEPLOY_POLICY",
+        "ARTIFACT_EVIDENCE_ENVELOPE"
+      ]
+    },
+    "RESEARCH": {
+      "production_claim_requires_all_controls_evidenced": true,
+      "repositories": [
+        "Shtenco/3D_bars_market_structure",
+        "Shtenco/agi_olga",
+        "Shtenco/ai_financial_system",
+        "Shtenco/ai_trade_terminal",
+        "Shtenco/algotrading_graph_system",
+        "Shtenco/binary_quantum_theory",
+        "Shtenco/cold_nuclear",
+        "Shtenco/computer_vision_trading_metatrader_5",
+        "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
+        "Shtenco/global_liquidity_dataminer",
+        "Shtenco/midas_ai_trading_system",
+        "Shtenco/midas_lite",
+        "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+        "Shtenco/quantum-trading_metatrader5",
+        "Shtenco/swap_arbitrage_metatrader_5",
+        "Shtenco/synergy_eurasian",
+        "Shtenco/synergy_matrix_sota",
+        "Shtenco/usds"
+      ],
+      "required_controls": [
+        "HUMAN_MAINTAINER_MERGE_ONLY",
+        "NO_AUTO_MERGE",
+        "DEPENDENCY_LOCK_OR_EXPLICIT_NO_DEPENDENCIES",
+        "TEST_SUITE_OR_EXPLICIT_RESEARCH_NOTE",
+        "SECRET_MATERIAL_NOT_COMMITTED",
+        "SOURCE_AND_DATA_PROVENANCE",
+        "RESEARCH_STATUS_DECLARED",
+        "NO_PRODUCTION_CLAIM_WITHOUT_PROMOTION_EVIDENCE",
+        "ARTIFACT_EVIDENCE_ENVELOPE"
+      ]
+    },
+    "RUNTIME_PRODUCT": {
+      "production_claim_requires_all_controls_evidenced": true,
+      "repositories": [
+        "Shtenco/agi_autopilot",
+        "Shtenco/agi_nexus",
+        "Shtenco/blochain_budget",
+        "Shtenco/midas_ai",
+        "Shtenco/sinergy-super-app",
+        "Shtenco/synergy_ai_blockchain",
+        "Shtenco/synergy_app",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_system",
+        "Shtenco/synergychain",
+        "Shtenco/synergynet",
+        "Shtenco/turbo_linux"
+      ],
+      "required_controls": [
+        "HUMAN_MAINTAINER_MERGE_ONLY",
+        "NO_AUTO_MERGE",
+        "DEPENDENCY_LOCK_OR_EXPLICIT_NO_DEPENDENCIES",
+        "TEST_SUITE_OR_EXPLICIT_STATIC_ONLY",
+        "CI_WORKFLOW",
+        "SECRET_MATERIAL_NOT_COMMITTED",
+        "BUILD_IDENTITY_BY_COMMIT",
+        "SBOM_ON_RELEASE",
+        "REPRODUCIBLE_BUILD_OR_DOCUMENTED_EXCEPTION",
+        "RELEASE_POLICY",
+        "ARTIFACT_EVIDENCE_ENVELOPE"
+      ]
+    }
+  },
+  "repository_count": 42,
+  "schema": "synergy.repository-engineering-baseline-policy/v1",
+  "unknown_or_missing_evidence_status": "NOT_ASSESSED"
+}
