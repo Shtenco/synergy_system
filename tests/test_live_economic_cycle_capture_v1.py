@@ -106,8 +106,6 @@ def test_phase_reordering_is_rejected():
     item = candidate()
     item["phases"][0], item["phases"][1] = item["phases"][1], item["phases"][0]
     rehash(item)
-    # Exact per-phase field contracts now reject the reordered external-value
-    # object before the later ordinal/name contract check. This is stricter.
     with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="phase fields mismatch: EXTERNAL_VALUE_EVIDENCE"):
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
 
@@ -158,7 +156,7 @@ def test_internal_revaluation_cannot_be_counted_as_profit():
     item = candidate()
     item["internal_mint_or_revaluation_counted_as_profit"] = "1"
     rehash(item)
-    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="internal mint/revaluation"):
+    with pytest.raises(MOD.LiveEconomicCycleCaptureV1Error, match="internal value counted as profit"):
         MOD.verify_live_economic_cycle_capture_candidate_v1(item)
 
 
