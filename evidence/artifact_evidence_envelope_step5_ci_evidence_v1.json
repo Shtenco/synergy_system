@@ -1,0 +1,47 @@
+{
+  "schema": "synergy.artifact-evidence-envelope-step5-ci-evidence/v1",
+  "evidence_id": "SYNERGY_ARTIFACT_EVIDENCE_ENVELOPE_STEP5_CI_20260904",
+  "source_repository": "Shtenco/synergy_system",
+  "source_pull_request": 39,
+  "source_head": "996f98879148384b5ac13f9bfdc40456826345a7",
+  "federation_v2_digest": "7de7c2dda23db2581294176bb262ae4aa8cbdc4ba97cdd4326278e88a9713a05",
+  "artifact_evidence_envelope_schema": "synergy.artifact-evidence-envelope/v1",
+  "executed_workflows": [
+    {"name": "artifact-evidence-envelope-v1", "run_id": 33900617222, "conclusion": "success"},
+    {"name": "economic-os-rc1-testnet-ready", "run_id": 33900617195, "conclusion": "success"},
+    {"name": "live-economic-cycle-capture-v1", "run_id": 33900617226, "conclusion": "success"},
+    {"name": "Live Economic Cycle Capture Readiness v2", "run_id": 33900617124, "conclusion": "success"},
+    {"name": "Research Node Build Lock PR v1", "run_id": 33900617218, "conclusion": "success"},
+    {"name": "Research Node Build Lock Schema v1", "run_id": 33900617212, "conclusion": "success"},
+    {"name": "Research Node Readiness v5", "run_id": 33900617263, "conclusion": "success"},
+    {"name": "SYNERGY Federation Validator v1", "run_id": 33900617238, "conclusion": "success"}
+  ],
+  "full_suite": {
+    "python_versions": ["3.11", "3.12"],
+    "pytest_passed": 229,
+    "pytest_failed": 0,
+    "subtests_passed": 27,
+    "federation_validator_step": "success",
+    "py_compile_step": "success",
+    "job_ids": {"3.11": 101113559436, "3.12": 101113559264}
+  },
+  "lineage_corrections": [
+    "FEDERATION_CI_INSTALLED_JSONSCHEMA_REQUIRED_BY_EXISTING_TESTS",
+    "RC1_FRESH_REHASH_EXPECTATION_ALIGNED_TO_STRONGER_PINNED_RELEASE_ROOT",
+    "LIVE_CAPTURE_PHASE_REORDER_EXPECTATION_ALIGNED_TO_EXACT_FIELD_FAIL_CLOSED_CHECK",
+    "LIVE_CAPTURE_INTERNAL_VALUE_ERROR_EXPECTATION_ALIGNED_WITH_VERIFIER",
+    "RESEARCH_SOURCE_BUILD_LOCK_CANONICAL_SCHEMA_PROFILE_ADDED_WITH_LEGACY_SCHEMA_PRESERVED",
+    "RESEARCH_BUILD_LOCK_PR_WORKFLOW_INSTALLS_EDITABLE_PACKAGE_BEFORE_IMPORT_TESTS",
+    "READINESS_V5_RECLASSIFIED_AS_HISTORICAL_INVALID_LOCATION_SELF_DIGEST_GENERATION_WITH_V6_AS_CORRECTED_SUCCESSOR"
+  ],
+  "status": "EXECUTED_CI_VERIFIED_NOT_CANONICAL_MERGE",
+  "canonical_merge_status": "NOT_EXECUTED",
+  "live_execution_claim": false,
+  "production_claim": false,
+  "auto_merge": false,
+  "merge_authority": "HUMAN_MAINTAINER_ONLY",
+  "ai_authority": "NONE",
+  "execution_authority": "NONE",
+  "generated_at": "2026-09-04T17:28:00Z",
+  "digest": "c78bc336a45bb16bfcd7ac5fb32a2b169afec02edb8c1cb99eab4c7938f937bb"
+}
