@@ -1,0 +1,27 @@
+name: repository-engineering-security-baseline-v1
+
+on:
+  pull_request:
+    paths:
+      - 'config/repository_engineering_baseline_policy_v1.json'
+      - 'src/synergy_system/repository_engineering_baseline_v1.py'
+      - 'schemas/repository_engineering_baseline_assessment_v1.schema.json'
+      - 'tests/test_repository_engineering_baseline_v1.py'
+      - 'docs/REPOSITORY_ENGINEERING_SECURITY_BASELINE_V1_20260904.md'
+      - '.github/workflows/repository-engineering-security-baseline-v1.yml'
+  workflow_dispatch:
+
+jobs:
+  baseline-contract-selftest:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_repository_engineering_baseline_v1.py
+      - run: python -m py_compile src/synergy_system/repository_engineering_baseline_v1.py
