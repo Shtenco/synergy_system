@@ -6,6 +6,7 @@ on:
       - 'src/synergy_system/node_build_lock_v1.py'
       - 'fixtures/node_build_locks/research_compute_node_source_candidate_v1.json'
       - 'schemas/synergy_node_build_lock_v1.schema.json'
+      - 'schemas/research_source_node_build_lock_v1.schema.json'
       - 'config/research_node_build_lock_policy_v1.json'
       - 'config/research_node_build_lock_authority_v1.json'
       - 'tests/test_research_node_build_lock_v1.py'
@@ -29,4 +30,5 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -m pip install --upgrade pip pytest jsonschema
+      - run: python -m pip install -e .
       - run: pytest -q tests/test_research_node_build_lock_v1.py tests/test_node_build_lock_schema_v1.py tests/test_research_node_build_lock_policy_v1.py tests/test_research_node_build_lock_status_v1.py
