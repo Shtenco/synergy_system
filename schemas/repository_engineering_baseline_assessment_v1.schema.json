@@ -1,0 +1,79 @@
+{
+  "$id": "https://synergy.local/schema/repository_engineering_baseline_assessment_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Repository Engineering Baseline Assessment v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema": {"const": "synergy.repository-engineering-baseline-assessment/v1"},
+    "assessment_id": {"type": "string", "minLength": 1},
+    "policy_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "federation_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "generated_at": {"type": "string", "pattern": "^.+Z$"},
+    "repositories": {
+      "type": "array",
+      "minItems": 42,
+      "maxItems": 42,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["repository", "profile", "controls"],
+        "properties": {
+          "repository": {"type": "string", "pattern": "^Shtenco/[^/]+$"},
+          "profile": {
+            "type": "string",
+            "enum": ["RUNTIME_PRODUCT", "ENGINEERING_TOOLING", "RESEARCH", "PRESENTATION", "LEGACY_PLACEHOLDER"]
+          },
+          "controls": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["control", "status", "evidence_digest", "evidence_source"],
+              "properties": {
+                "control": {"type": "string", "minLength": 1},
+                "status": {"type": "string", "enum": ["EVIDENCED_PASS", "EVIDENCED_FAIL", "NOT_ASSESSED"]},
+                "evidence_digest": {
+                  "oneOf": [
+                    {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                    {"type": "null"}
+                  ]
+                },
+                "evidence_source": {
+                  "oneOf": [
+                    {"type": "string", "minLength": 1},
+                    {"type": "null"}
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "overall_status": {
+      "type": "string",
+      "enum": [
+        "INCOMPLETE_NOT_ASSESSED",
+        "EVIDENCED_FAILURE_PRESENT",
+        "EVIDENCE_COMPLETE_PENDING_INDEPENDENT_REVIEW"
+      ]
+    },
+    "portfolio_compliance_claim": {"const": false},
+    "promotion_authority": {"const": "NONE"},
+    "assessment_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "required": [
+    "schema",
+    "assessment_id",
+    "policy_digest",
+    "federation_digest",
+    "generated_at",
+    "repositories",
+    "overall_status",
+    "portfolio_compliance_claim",
+    "promotion_authority",
+    "assessment_digest"
+  ]
+}
