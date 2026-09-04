@@ -55,5 +55,7 @@ def test_fresh_hash_cannot_remove_live_execution_blocker():
     item = load()
     item["blockers"] = [x for x in item["blockers"] if x != "ONE_LIVE_EXTERNAL_VALUE_TO_NEXT_CAPACITY_EXECUTION_NOT_CAPTURED"]
     rehash(item)
-    with pytest.raises(MOD.EconomicOSRC1Error, match="blockers"):
+    # RC1 is an immutable release root. A fresh hash of mutated blocker content
+    # is rejected at the stronger pinned-root boundary before semantic blocker checks.
+    with pytest.raises(MOD.EconomicOSRC1Error, match="release digest mismatch"):
         MOD.verify(item)
