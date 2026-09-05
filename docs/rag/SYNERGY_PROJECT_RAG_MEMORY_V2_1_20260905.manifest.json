@@ -1,13 +1,49 @@
 {
   "auto_merge": false,
   "canonical_status": "NON_CANONICAL_MEMORY_ARTIFACT",
+  "ci_evidence": {
+    "dex_to_metapay": [
+      "33986241236:success"
+    ],
+    "financial_os_canonical_core": [
+      "33987930501:failure_inherited_baseline"
+    ],
+    "financial_os_external_profit_import": [
+      "33987930535:success"
+    ],
+    "metapay_external_profit_bus": [
+      "33987602125:success",
+      "33987602160:success"
+    ],
+    "metapay_repo_wide_ci": [
+      "33987602132:failure_inherited_baseline"
+    ],
+    "metapay_solidity": [
+      "33987602150:success"
+    ],
+    "print_machine_model": [
+      "33986927975:success"
+    ],
+    "synergy_convergence": [
+      "33986944441:success",
+      "33986944236:success"
+    ]
+  },
   "economic_invariants": {
     "capital_reallocation_creates_system_pnl": false,
     "external_profit_requires_realized_settlement": true,
     "financial_os_final_classifier": true,
+    "flash_principal_is_external_profit": false,
     "internal_mint_is_external_profit": false,
     "internal_revaluation_is_external_profit": false,
     "usd_equals_usdt": false
+  },
+  "exact_heads": {
+    "ai_financial_system_pr20": "549e6796ca44a50438d8590d3821e77a9e85b31c",
+    "print_money_synergychain_pr1": "0b0fc5b8a63ac411006dbfdc6f9c899a16285672",
+    "synergy_financial_os_pr38": "bf67bf9b2a5e98d44bd02e40e9a704b44492a3a6",
+    "synergy_pay_system_pr18": "4852a450950fb6716675612d6eb9720b97af86df",
+    "synergy_system_pr44_pre_manifest_refresh": "71805e87b00145cf29f4a1ea240da028d40a3223"
   },
   "generated_at": "2026-09-05",
   "memory_file": "SYNERGY_PROJECT_RAG_MEMORY_V2_1_20260905.md",
@@ -16,6 +52,7 @@
   "new_convergence_prs": {
     "ai_financial_system": 20,
     "print_money_synergychain": 1,
+    "synergy_financial_os": 38,
     "synergy_pay_system": 18,
     "synergy_system": 44
   },
@@ -23,6 +60,6 @@
   "parent_v2_sha256": "ceec28d5f8f02992b82d13c0ce70e1daa8ce8faf9843d534d584a5ca23c646d9",
   "repository_count": 45,
   "schema": "synergy.rag-memory-manifest/v2.1",
-  "sha256": "dd5edface1df4179100208577594b7e14e852f8b67f817e358fba4a94ff151fc",
-  "size_bytes": 110021
+  "sha256": "e0625ff4ddf0b98b92336075bfd1e0fe0ee6074f04aa2429bb37f55ebb857f20",
+  "size_bytes": 117592
 }
