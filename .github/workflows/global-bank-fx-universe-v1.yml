@@ -4,10 +4,12 @@ on:
   pull_request:
     paths:
       - 'registry/global_bank_fx_universe_v1_20260906.json'
+      - 'registry/global_currency_universe_v2_20260906.json'
       - 'research/global_bank_fx_quotes_v1_20260906.json'
       - 'research/global_bank_fx_quotes_addendum_v1_20260906.json'
       - 'research/global_bank_fx_arbitrage_findings_v1_20260906.md'
       - 'verify/verify_global_bank_fx_universe_v1.py'
+      - 'verify/verify_global_currency_universe_v2.py'
       - 'tests/test_global_bank_fx_universe_v1.py'
       - '.github/workflows/global-bank-fx-universe-v1.yml'
   workflow_dispatch:
@@ -25,11 +27,16 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install pytest
         run: python -m pip install --upgrade pip pytest
-      - name: Verify registry and primary quote snapshot
+      - name: Verify 50-bank registry and quote snapshot
         run: python verify/verify_global_bank_fx_universe_v1.py
+      - name: Verify BIS Top-20 plus regional extension
+        run: python verify/verify_global_currency_universe_v2.py
       - name: Parse research addendum
         run: python -m json.tool research/global_bank_fx_quotes_addendum_v1_20260906.json >/dev/null
       - name: Run adversarial tests
         run: PYTHONPATH=. pytest -q tests/test_global_bank_fx_universe_v1.py
-      - name: Compile verifier
-        run: python -m py_compile verify/verify_global_bank_fx_universe_v1.py
+      - name: Compile verifiers
+        run: >-
+          python -m py_compile
+          verify/verify_global_bank_fx_universe_v1.py
+          verify/verify_global_currency_universe_v2.py
