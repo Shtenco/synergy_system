@@ -7,6 +7,7 @@ on:
       - 'verify/verify_metapay_dex_print_machine_convergence_v1.py'
       - 'tests/test_metapay_dex_print_machine_convergence_v1.py'
       - 'docs/METAPAY_DEX_PRINT_MACHINE_CONVERGENCE_V1_20260905.md'
+      - 'docs/rag/SYNERGY_PROJECT_RAG_MEMORY_V2_1_20260905.manifest.json'
       - '.github/workflows/metapay-dex-print-machine-convergence-v1.yml'
   workflow_dispatch:
 
