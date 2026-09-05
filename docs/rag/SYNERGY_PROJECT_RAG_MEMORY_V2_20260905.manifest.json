@@ -1,0 +1,19 @@
+{
+  "schema": "synergy.rag-memory-manifest/v2",
+  "memory_file": "SYNERGY_PROJECT_RAG_MEMORY_V2_20260905.md",
+  "memory_version": 2,
+  "generated_at": "2026-09-05",
+  "size_bytes": 97873,
+  "sha256": "f3a62289c71c10d29bc0e1a54863c4badef159807ef095acf3ef8c011a54c24c",
+  "parent_v1_sha256": "b9004e4c19074e924e892d587e5269c7c2cc230d8f64f3497c3ed3dec704b295",
+  "repository_count": 45,
+  "repository_evidence_audit_root": "450d50d0c746e8c36cd0e5e5036f9aece1b9b48e1bfcbe79052a827f8283172f",
+  "federation_v3_candidate_root": "ded2c2482b0c74a79886cec5ffaf9d37b0392f5a1bc8faa325a94ca516a36022",
+  "federation_v3_pr": 43,
+  "federation_v3_head": "e8653a94ae314e5976f53c253a3d2928f9a98398",
+  "federation_v3_ci": "EXECUTED_CI_VERIFIED_NOT_CANONICAL_MERGE",
+  "canonical_status": "NON_CANONICAL_MEMORY_ARTIFACT",
+  "merge_authority": "HUMAN_MAINTAINER_ONLY",
+  "auto_merge": false,
+  "contains_raw_secrets": false
+}
