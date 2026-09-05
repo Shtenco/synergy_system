@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.repository-federation/v3-candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema","candidate_id","as_of","owner","parent","repository_count","combined_repository_names","post_v2_additions","evidence_audit","policy","candidate_status","canonical_promotion","federation_candidate_digest"],
+  "properties": {
+    "schema": {"const":"synergy.repository-federation/v3-candidate"},
+    "candidate_id": {"const":"SYNERGY_REPOSITORY_FEDERATION_V3_CANDIDATE_20260905"},
+    "as_of": {"const":"2026-09-05"},
+    "owner": {"const":"Shtenco"},
+    "repository_count": {"const":45},
+    "candidate_status": {"const":"AUDITED_SCOPE_EXPANSION_PENDING_HUMAN_REVIEW"},
+    "canonical_promotion": {"const":false},
+    "federation_candidate_digest": {"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "combined_repository_names": {"type":"array","minItems":45,"maxItems":45,"uniqueItems":true,"items":{"type":"string","pattern":"^Shtenco/.+$"}},
+    "parent": {
+      "type":"object","additionalProperties":false,
+      "required":["schema","repository_count","federation_digest","membership_inherited"],
+      "properties":{"schema":{"const":"synergy.repository-federation/v2"},"repository_count":{"const":42},"federation_digest":{"const":"7de7c2dda23db2581294176bb262ae4aa8cbdc4ba97cdd4326278e88a9713a05"},"membership_inherited":{"const":true}}
+    },
+    "evidence_audit": {
+      "type":"object","additionalProperties":false,"required":["audit_id","audit_digest"],
+      "properties":{"audit_id":{"const":"SYNERGY_REPOSITORY_EVIDENCE_AUDIT_V1_20260905"},"audit_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"}}
+    },
+    "policy": {
+      "type":"object","additionalProperties":false,
+      "required":["ai_accounting_authority","ai_blockchain_submission_authority","ai_financial_authority","ai_payment_authority","ai_production_deployment_authority","auto_merge","historical_evidence_preserved","internal_mint_or_revaluation_is_external_profit","merge_authority","status_promotion_requires_executed_evidence"],
+      "properties": {
+        "ai_accounting_authority":{"const":"NONE"},"ai_blockchain_submission_authority":{"const":"NONE"},"ai_financial_authority":{"const":"NONE"},"ai_payment_authority":{"const":"NONE"},"ai_production_deployment_authority":{"const":"NONE"},"auto_merge":{"const":false},"historical_evidence_preserved":{"const":true},"internal_mint_or_revaluation_is_external_profit":{"const":false},"merge_authority":{"const":"HUMAN_MAINTAINER_ONLY"},"status_promotion_requires_executed_evidence":{"const":true}
+      }
+    },
+    "post_v2_additions": {
+      "type":"array","minItems":3,"maxItems":3,
+      "items": {
+        "type":"object","additionalProperties":false,
+        "required":["repository","origin","authority","classification","maturity","portfolio_cluster","role","next_milestone","top20_steps"],
+        "properties": {
+          "repository":{"enum":["Shtenco/synergy_metachain","Shtenco/motherboard_xpu_xml","Shtenco/print_money_synergychain"]},
+          "origin":{"const":"DISCOVERED_AFTER_FEDERATION_V2"},
+          "authority":{"enum":["RESEARCH_ONLY","NONE"]},
+          "classification":{"type":"string"},"maturity":{"type":"string"},"portfolio_cluster":{"type":"string"},"role":{"type":"string"},"next_milestone":{"type":"string"},
+          "top20_steps":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"integer","minimum":1,"maximum":20}}
+        }
+      }
+    }
+  }
+}
