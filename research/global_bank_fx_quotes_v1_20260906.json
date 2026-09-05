@@ -1,0 +1,295 @@
+{
+  "schema": "synergy.global-bank-fx-research-snapshot/v1",
+  "generated_at": "2026-09-06",
+  "price_date_focus": "2026-09-05 with latest previous business-day data where weekend/current public tables are unavailable",
+  "status": "RESEARCH_EVIDENCE_NOT_EXECUTION_PROOF",
+  "quotes": [
+    {
+      "institution":"Bank CenterCredit",
+      "country":"Kazakhstan",
+      "scope":"PUBLIC_FX_PLATFORM; business eligibility not inferred",
+      "observed_at":"2026-09-05T14:31:31+06:00",
+      "base":"KZT",
+      "rates":{
+        "USD":{"client_sell":453.45,"client_buy":454.85},
+        "EUR":{"client_sell":526.04,"client_buy":528.07},
+        "RUB":{"client_sell":5.0196,"client_buy":5.3313},
+        "GBP":{"client_sell":612.3,"client_buy":614.59},
+        "CNY":{"client_sell":67.3283,"client_buy":68.0115},
+        "AED":{"client_sell":123.26,"client_buy":124.03},
+        "CHF":{"client_sell":559.01,"client_buy":561.56},
+        "TRY":{"client_sell":9.2846,"client_buy":9.4667},
+        "UZS":{"client_sell":0.034,"client_buy":0.04224},
+        "JPY":{"client_sell":2.8521,"client_buy":2.9608}
+      },
+      "cross_rates":{
+        "EUR/USD":{"client_sell":1.16034,"client_buy":1.16168},
+        "USD/RUB":{"client_sell":85.5,"client_buy":86.15},
+        "GBP/USD":{"client_sell":1.35061,"client_buy":1.35193},
+        "EUR/RUB":{"client_sell":99.247,"client_buy":100.0256},
+        "USD/CNY":{"client_sell":6.7021,"client_buy":6.7153},
+        "CNY/RUB":{"client_sell":12.6838,"client_buy":12.8948},
+        "USD/AED":{"client_sell":3.6674,"client_buy":3.6786},
+        "AED/RUB":{"client_sell":23.2417,"client_buy":23.4773},
+        "USD/JPY":{"client_sell":156.055,"client_buy":156.459},
+        "USD/CHF":{"client_sell":0.808,"client_buy":0.812}
+      },
+      "evidence_class":"PUBLIC_BANK_QUOTE",
+      "source":"https://www.bcc.kz/personal/savings/fx-exchange/"
+    },
+    {
+      "institution":"Optima Bank",
+      "country":"Kyrgyzstan",
+      "scope":"NON_CASH_RATES_FOR_LEGAL_ENTITIES_AND_IP_UP_TO_USD_10000_EQUIVALENT",
+      "observed_at":"2026-09-05T01:10:00+06:00",
+      "base":"KGS",
+      "rates":{
+        "USD":{"bank_buy":87.4,"bank_sell":87.8},
+        "EUR":{"bank_buy":101.2,"bank_sell":102.2},
+        "KZT":{"bank_buy":0.185,"bank_sell":0.2},
+        "RUB":{"bank_buy":0.99,"bank_sell":1.04},
+        "CNY":{"bank_buy":12.25,"bank_sell":13.75}
+      },
+      "evidence_class":"PUBLIC_BANK_QUOTE",
+      "source":"https://optimabank.kg/ru/for-individuals/more/archive-of-exchange-rates?view=default"
+    },
+    {
+      "institution":"Kapitalbank Uzbekistan",
+      "country":"Uzbekistan",
+      "scope":"BUSINESS_ENTITIES_LEGAL_ENTITIES_AND_IP",
+      "observed_at":"2026-09-05",
+      "base":"UZS",
+      "rates":{
+        "USD":{"bank_buy":11759.62,"bank_sell":11830.39},
+        "EUR":{"bank_buy":13562.0,"bank_sell":13835.71},
+        "RUB":{"bank_buy":129.01,"bank_sell":137.43}
+      },
+      "evidence_class":"PUBLIC_BANK_QUOTE",
+      "source":"https://kapitalbank.uz/en/loan-repayment/"
+    },
+    {
+      "institution":"Amonatbank",
+      "country":"Tajikistan",
+      "scope":"PUBLIC_TABLE_INDIVIDUAL_PRICING; legal-entity tab exists but exact legal prices not extracted",
+      "observed_at":"2026-09-05",
+      "base":"TJS",
+      "rates":{
+        "USD":{"bank_buy":9.18,"bank_sell":9.27},
+        "EUR":{"bank_buy":10.35,"bank_sell":10.5},
+        "RUB":{"bank_buy":0.095,"bank_sell":0.1}
+      },
+      "evidence_class":"PUBLIC_REFERENCE_ONLY",
+      "source":"https://newss.amonatbonk.tj/?lang=en"
+    },
+    {
+      "institution":"Bank of China",
+      "country":"China",
+      "scope":"PUBLIC_BOC_EXCHANGE_RATE; values are CNY per 100 foreign-currency units unless source-specific convention differs",
+      "observed_at":"2026-09-05T10:30:00+08:00",
+      "base":"CNY",
+      "unit_scale":100,
+      "rates":{
+        "AED":{"bank_buy":181.47,"bank_sell":184.03},
+        "CAD":{"bank_buy":483.55,"bank_sell":487.35},
+        "CHF":{"bank_buy":825.49,"bank_sell":831.87},
+        "EUR":{"bank_buy":776.92,"bank_sell":782.61},
+        "GBP":{"bank_buy":904.3,"bank_sell":911.02},
+        "HKD":{"bank_buy":85.45,"bank_sell":85.79},
+        "JPY":{"bank_buy":4.2792,"bank_sell":4.3123},
+        "KRW":{"bank_buy":0.494,"bank_sell":0.5043},
+        "KZT":{"bank_buy":1.44,"bank_sell":1.5},
+        "RUB":{"bank_buy":7.53,"bank_sell":7.92},
+        "SGD":{"bank_buy":527.97,"bank_sell":531.94},
+        "THB":{"bank_buy":20.32,"bank_sell":20.48},
+        "TRY":{"bank_buy":12.89,"bank_sell":14.83},
+        "USD":{"bank_buy":670.13,"bank_sell":672.95}
+      },
+      "evidence_class":"PUBLIC_BANK_QUOTE",
+      "source":"https://www.boc.cn/english/bocinfo/exr/index.html"
+    },
+    {
+      "institution":"SMBC",
+      "country":"Japan",
+      "scope":"REALTIME_INTERNET_FOREIGN_DEPOSIT_RATE_UNDER_USD1M_EQUIVALENT; not automatically corporate SWIFT",
+      "observed_at":"2026-09-05T05:35:00+09:00",
+      "base":"JPY",
+      "rates":{
+        "USD":{"TTB":155.77,"TTS":156.27},
+        "EUR":{"TTB":180.76,"TTS":181.46},
+        "GBP":{"TTB":209.21,"TTS":211.21},
+        "CHF":{"TTB":192.46,"TTS":192.91}
+      },
+      "evidence_class":"PUBLIC_BANK_QUOTE",
+      "source":"https://www.smbc.co.jp/ex/ExchangeServlet?ScreenID=real&code=130051"
+    },
+    {
+      "institution":"MUFG Bank",
+      "country":"Japan",
+      "scope":"LATEST_PREVIOUS_BUSINESS_DAY_PUBLIC_SPOT_TABLE",
+      "observed_at":"2026-09-04T10:26:00+09:00",
+      "base":"JPY",
+      "rates":{
+        "USD":{"TTB":154.68,"TTS":156.68},
+        "GBP":{"TTB":206.68,"TTS":214.68},
+        "CAD":{"TTB":111.29,"TTS":114.49},
+        "CHF":{"TTB":191.82,"TTS":193.62},
+        "EUR":{"TTB":179.57,"TTS":182.57}
+      },
+      "evidence_class":"PUBLIC_BANK_QUOTE",
+      "source":"https://www.bk.mufg.jp/gdocs/kinri/list_j/kinri/kawase_xls.htm"
+    },
+    {
+      "institution":"Halyk Bank",
+      "country":"Kazakhstan",
+      "scope":"PUBLIC_TABLE_HAS_BUSINESS_TAB_BUT_INDEXED_VALUES_ARE_OLDER_THAN_TARGET_DATE",
+      "observed_at":"2026-08-27",
+      "base":"KZT",
+      "rates":{
+        "USD":{"bank_buy":458.8,"bank_sell":465.8},
+        "EUR":{"bank_buy":533.25,"bank_sell":541.25},
+        "RUB":{"bank_buy":4.58,"bank_sell":5.39},
+        "CNY":{"bank_buy":63.86,"bank_sell":73.86}
+      },
+      "evidence_class":"REFERENCE_ONLY_STALE",
+      "source":"https://halykbank.kz/exchange-rates"
+    },
+    {
+      "institution":"Nurbank",
+      "country":"Kazakhstan",
+      "scope":"PUBLIC_CASH_RATE_NOT_BUSINESS_WIRE_RATE",
+      "observed_at":"2026-09-05_OR_2026-09-06_CRAWL",
+      "base":"KZT",
+      "rates":{
+        "USD":{"bank_buy":451.0,"bank_sell":457.0},
+        "EUR":{"bank_buy":525.3,"bank_sell":531.3},
+        "RUB":{"bank_buy":4.28,"bank_sell":5.28}
+      },
+      "evidence_class":"PUBLIC_REFERENCE_ONLY",
+      "source":"https://nurbank.kz/en/bank/"
+    },
+    {
+      "institution":"OCBC",
+      "country":"Singapore",
+      "scope":"BUSINESS_TELEGRAPHIC_TRANSFER_TABLE_BUT_STALE_FOR_TARGET_DATE",
+      "observed_at":"2026-07-31T16:28:51+08:00",
+      "base":"SGD",
+      "rates":{
+        "USD":{"bank_buy":1.2716,"bank_sell":1.2930},
+        "CAD":{"bank_buy":0.8984,"bank_sell":0.9314},
+        "GBP":{"bank_buy":1.7003,"bank_sell":1.7432},
+        "CHF100":{"bank_buy":155.9187,"bank_sell":161.6602}
+      },
+      "evidence_class":"REFERENCE_ONLY_STALE",
+      "source":"https://www.ocbc.com/business-banking/foreign-exchange-rates.page"
+    }
+  ],
+  "pricing_or_tariff_capabilities": [
+    {
+      "institution":"Kaspi Pay",
+      "scope":"BUSINESS",
+      "details":"Foreign transfer: USD/CNY 0.15% min USD35 max USD200; EUR/other freely convertible 0.15% min EUR45 max EUR200; RUB 0.12% min KZT3000 max KZT20000; FX buy/sell/cross conversion commission 0; actual rate in authenticated app.",
+      "source":"https://guide.kaspi.kz/partner/ru/transfers/conditions/q806"
+    },
+    {
+      "institution":"Eurasian Bank",
+      "scope":"BUSINESS",
+      "details":"Smart Business real-time online conversion with narrow spreads, 11-13 pairs, no conversion commission, no amount limit; import FX contract required.",
+      "source":"https://eubank.kz/en/fx-operations"
+    },
+    {
+      "institution":"T-Bank",
+      "scope":"BUSINESS",
+      "details":"Outgoing CNY transfer fee tiers 0.20%/0.15%/0.10% plus currency-control fee tiers; incoming FX transfer fee 0 but currency-control fee remains. Public tariffs exist; actual FX quote is authenticated.",
+      "source":"https://www.tbank.ru/business/help/account/currency/transactions/commission/"
+    },
+    {
+      "institution":"VTB",
+      "scope":"BUSINESS_CHINA",
+      "details":"2026 China promo: 0.2% direct to other China banks, 0.5% through VTB infrastructure, minimum USD40; special RUB/CNY pricing; CNY payments to mainland China available and CIPS/CNAPS codes used.",
+      "source":"https://www.vtb.ru/malyj-biznes/raschetnoe-obsluzhivanie/ved-i-valyutnyy-kontrol/valutniy-schet-kitay/"
+    },
+    {
+      "institution":"Gazprombank",
+      "scope":"BUSINESS",
+      "details":"Accounts in BYN/AMD/CNY/INR; payments additionally in KZT/UZS/KGS/VND/HKD and other listed national currencies; actual FX quote requires bank channel.",
+      "source":"https://www.gazprombank.ru/business/valutnyi-schet/"
+    },
+    {
+      "institution":"NatWest",
+      "scope":"BUSINESS_CURRENT_ACCOUNT",
+      "details":"Live indicative international-payment FX calculator; core-currency margin up to 2.65%, non-core up to 3.5%; CNY/non-core via Bankline; SWIFT fees documented separately.",
+      "source":"https://www.natwest.com/business/support-centre/making-and-accepting-payments/electronic-payments/international-transfers/fx-currency-calculator.html"
+    },
+    {
+      "institution":"Lloyds Bank",
+      "scope":"BUSINESS",
+      "details":"Standard international-payment FX margin 2.60% at GBP25k or less, lower tiers above; additional correspondent/payment charges may apply.",
+      "source":"https://www.lloydsbank.com/business/fx-margins.html"
+    },
+    {
+      "institution":"Santander UK",
+      "scope":"BUSINESS",
+      "details":"International-payment FX markup 3% up to GBP10k, 2% for GBP10,001-50k, 1% above GBP50k; SWIFT used outside EEA and for some EEA currencies.",
+      "source":"https://www.santander.co.uk/business/support/payments/making-international-payments"
+    },
+    {
+      "institution":"Deutsche Bank",
+      "scope":"CORPORATE",
+      "details":"FX4Cash links FX conversion and cross-border payment; realtime rates at pre-agreed conditions; approximately 125 payment currencies across 175 countries.",
+      "source":"https://www.deutsche-bank.de/ub/unsere-loesungen/internationales-geschaeft/waehrungsmanagement/elektronischer-waehrungshandel.html"
+    },
+    {
+      "institution":"Commerzbank",
+      "scope":"CORPORATE",
+      "details":"FX Live Trader provides realtime prices for 100+ pairs; bank continuously determines bid/offer for payment conversion during settlement period.",
+      "source":"https://www.commerzbank.de/unternehmerkunden/zahlungsverkehr/devisenhandel/"
+    },
+    {
+      "institution":"TBC Bank",
+      "scope":"BUSINESS_API",
+      "details":"Commercial-rates production API returns GEL-base buy/sell; cross-conversion API exists; developer API key required.",
+      "source":"https://developers.tbcbank.ge/docs/exchangerates-get-commercial-rates"
+    },
+    {
+      "institution":"UBS",
+      "scope":"INTERNATIONAL_PAYMENTS",
+      "details":"Pay Worldwide supports broad Asian/CIS currency set including CNY/HKD/INR/JPY/KZT/KGS/TJS/UZS and many others; final executable FX rate requires bank channel.",
+      "source":"https://www.ubs.com/ch/en/services/payments/international-payments/pay-worldwide.html"
+    }
+  ],
+  "payment_rails": [
+    {
+      "rail":"SWIFT_2026_PAYMENTS_SCHEME",
+      "pricing_role":"TRANSFER_RAIL_NOT_FX_PRICE",
+      "details":"50+ banks support the 2026 framework; initial corridors target cost certainty, full-value delivery, fast settlement and traceability. Individual bank adoption timing varies.",
+      "source":"https://www.swift.com/news-events/news/transforming-consumer-payments-banks-roll-out-new-framework-retail-transactions"
+    },
+    {
+      "rail":"CIPS",
+      "pricing_role":"CNY_SETTLEMENT_RAIL_NOT_FX_PRICE",
+      "details":"As of June 2026 CIPS reports 210 direct and 1619 indirect participants, including 1157 indirect participants in Asia and 267 in Europe.",
+      "source":"https://www.cips.com.cn/kjjqgsyyingw/index/index.shtml"
+    },
+    {
+      "rail":"ALIPAY_PLUS",
+      "pricing_role":"MERCHANT_PAYMENT_AND_SETTLEMENT_RAIL; NOT_GENERIC_CNY_CRYPTO_EXCHANGE",
+      "details":"Pay API returns settlementAmount and settlementQuote when transaction and settlement currencies differ. Default acquiring settlement is typically T+2 working days. Settlement reports are for reconciliation and do not themselves provide the FX quote.",
+      "source":"https://docs.alipayplus.com/alipayplus/alipayplus/api_acq_tile/pay_user_presented_mode"
+    },
+    {
+      "rail":"UNIONPAY",
+      "pricing_role":"CARD_NETWORK_REFERENCE_RATE",
+      "details":"UnionPay publishes system exchange-rate query; issuer fees excluded and transaction-date or settlement-date rate can apply. Not treated as corporate SWIFT FX.",
+      "source":"https://www.unionpayintl.com/cardholderServ/serviceCenter/rate?language=en"
+    }
+  ],
+  "invariants": {
+    "bank_supports_currency_does_not_imply_current_price":true,
+    "swift_is_not_fx_rate":true,
+    "cips_is_not_fx_rate":true,
+    "alipay_plus_is_not_generic_cny_to_crypto_exchange":true,
+    "cash_or_card_rate_is_not_business_wire_rate":true,
+    "stale_public_quote_is_not_live_executable":true,
+    "public_quote_requires_account_eligibility_before_execution":true
+  }
+}
