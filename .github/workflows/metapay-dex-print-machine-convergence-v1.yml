@@ -17,6 +17,8 @@ jobs:
       matrix:
         python-version: ['3.11', '3.12']
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: ${{ github.workspace }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -24,6 +26,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install pytest
         run: python -m pip install --upgrade pip pytest
+      - name: Import verifier from repo
+        run: python -c "from verify.verify_metapay_dex_print_machine_convergence_v1 import verify; print(verify.__name__)"
       - name: Compile verifier
         run: python -m py_compile verify/verify_metapay_dex_print_machine_convergence_v1.py
       - name: Verify canonical candidate policy
