@@ -1,0 +1,152 @@
+{
+  "schema": "synergy.metapay-dex-print-machine-convergence/v1",
+  "id": "SYNERGY_METAPAY_DEX_PRINT_MACHINE_CONVERGENCE_V1_20260905",
+  "status": "RND_CANDIDATE_NOT_CANONICAL",
+  "canonical_promotion": false,
+  "repositories": {
+    "economic_constitution": "Shtenco/synergy_system",
+    "canonical_accounting": "Shtenco/synergy_financial_os",
+    "metapay_execution_and_evidence": "Shtenco/synergy_pay_system",
+    "dex_finance_rnd": "Shtenco/ai_financial_system",
+    "print_machine_rnd_placeholder": "Shtenco/print_money_synergychain"
+  },
+  "graph": {
+    "external_nodes": [
+      "KZT",
+      "RUB",
+      "USD",
+      "EUR",
+      "USDT",
+      "USDC",
+      "BTC",
+      "ETH",
+      "BANK_BALANCE",
+      "PAYMENT_PROVIDER_BALANCE",
+      "CEX_BALANCE",
+      "DASP_BALANCE",
+      "DEX_EXTERNAL_RESERVE"
+    ],
+    "internal_or_rnd_nodes": [
+      "SYNA",
+      "SYNR",
+      "USDS",
+      "RUBC",
+      "RUBX",
+      "INTERNAL_LP_POSITION",
+      "INTERNAL_BRIDGE_UNIT"
+    ],
+    "edge_kinds": [
+      "PAY_API",
+      "BANK_FX",
+      "P2P",
+      "CEX_SPOT",
+      "DEX_SWAP",
+      "BRIDGE",
+      "CAPITAL_REALLOCATION",
+      "INTERNAL_AMM",
+      "MINT",
+      "BURN",
+      "INTERNAL_REVALUATION"
+    ],
+    "required_edge_fields": [
+      "provider_or_venue",
+      "jurisdiction",
+      "account_eligibility",
+      "from_asset",
+      "to_asset",
+      "bid_or_ask_or_executable_rate",
+      "fee",
+      "slippage_or_depth_model",
+      "min_amount",
+      "max_amount",
+      "settlement_time",
+      "quote_timestamp",
+      "expiry",
+      "inventory_requirement",
+      "external_value_classification"
+    ],
+    "usd_and_usdt_are_distinct_nodes": true,
+    "synthetic_fx_reference_is_not_executable_edge": true
+  },
+  "economic_invariants": {
+    "internal_mint_is_external_profit": false,
+    "internal_burn_is_external_profit": false,
+    "internal_revaluation_is_external_profit": false,
+    "own_token_mcap_is_canonical_nav": false,
+    "flash_principal_is_external_profit": false,
+    "unused_authorization_capacity_is_profit": false,
+    "capital_reallocation_creates_system_pnl": false,
+    "dex_hard_tvl_equals_system_hard_nav": false,
+    "external_profit_requires_realized_settlement": true,
+    "external_profit_requires_principal_accounted": true,
+    "external_profit_requires_flash_repayment_when_used": true,
+    "external_profit_requires_explicit_costs_deducted": true,
+    "external_profit_requires_independent_external_counterparty_evidence": true,
+    "issuance_cash_is_automatically_profit": false,
+    "financial_os_is_final_economic_classifier": true
+  },
+  "external_profit_bus": {
+    "sources": [
+      "METAPAY_CLASSIC_ARBITRAGE",
+      "PAYMENT_ROUTING_SAVINGS",
+      "TREASURY_FX",
+      "DEX_ARBITRAGE",
+      "HYBRID_CLASSIC_DEX_ARBITRAGE"
+    ],
+    "candidate_formula": "settled_output - input_principal - external_costs - flash_premium",
+    "classifications": [
+      "REALIZED_EXTERNAL_PNL",
+      "EXTERNAL_INFLOW_REQUIRES_ACCOUNTING_CLASSIFICATION",
+      "CAPITAL_REALLOCATION_PNL_ZERO",
+      "INTERNAL_MARK_NOT_EXTERNAL_VALUE",
+      "NOT_REALIZED",
+      "NON_POSITIVE_EXTERNAL_PNL",
+      "INADMISSIBLE"
+    ],
+    "canonical_owner": "Shtenco/synergy_financial_os"
+  },
+  "print_machine_role": {
+    "status": "RND_OPPORTUNITY_AMPLIFIER_NOT_VALUE_SOURCE",
+    "allowed_sequence": [
+      "REALIZED_EXTERNAL_PNL_RECOGNIZED",
+      "HUMAN_AUTHORIZED_CAPITAL_ALLOCATION",
+      "BOUNDED_EXTERNAL_RESERVE_OR_INVENTORY",
+      "OPTIONAL_INTERNAL_QE_OR_PRICE_GEOMETRY_CHANGE",
+      "METAPAY_OR_DEX_ROUTE_DISCOVERY",
+      "EXTERNALLY_CLOSABLE_ROUTE",
+      "REAL_SETTLEMENT",
+      "EXTERNAL_PROFIT_BUS",
+      "FINANCIAL_OS_ACCOUNTING",
+      "NAV_AND_CAPACITY_RECOMPUTE"
+    ],
+    "forbidden_claims": [
+      "PERPETUAL_YIELD_FROM_MINT",
+      "PROFIT_FROM_INTERNAL_MARK_ONLY",
+      "PROFIT_FROM_MOVING_OWN_RESERVES",
+      "SOLVENCY_FROM_UNBACKED_BRIDGE_REDEMPTION"
+    ]
+  },
+  "compounding_identity": "R[t+1] = R[t] + P_classic[t] + P_dex[t] - C[t] - distributions[t]",
+  "hard_tvl_rule": {
+    "description": "DEX HardTVL may increase when externally owned reserves are allocated to pools, but this is a balance-sheet reclassification unless new external value is realized.",
+    "hard_tvl_growth_alone_is_system_profit": false
+  },
+  "market_evidence_policy": {
+    "quotes_are_ephemeral": true,
+    "stale_quote_must_fail_closed": true,
+    "jurisdiction_mismatch_must_fail_closed": true,
+    "payment_method_mismatch_must_fail_closed": true,
+    "limit_or_depth_mismatch_must_fail_closed": true,
+    "public_p2p_snapshot_is_not_execution_proof": true
+  },
+  "authority": {
+    "ai_financial_authority": "NONE",
+    "ai_payment_authority": "NONE",
+    "ai_accounting_authority": "NONE",
+    "ai_signing_authority": "NONE",
+    "ai_blockchain_submission_authority": "NONE",
+    "ai_production_deployment_authority": "NONE",
+    "merge_authority": "HUMAN_MAINTAINER_ONLY",
+    "auto_merge": false
+  }
+}
