@@ -1,0 +1,152 @@
+{
+  "schema":"synergy.global-bank-fx-research-addendum/v1",
+  "generated_at":"2026-09-06",
+  "status":"RESEARCH_EVIDENCE_NOT_EXECUTION_PROOF",
+  "fresh_or_recent_quotes":[
+    {
+      "institution":"MBANK Kyrgyzstan",
+      "country":"Kyrgyzstan",
+      "observed_date":"2026-09-04",
+      "base":"KGS",
+      "scope":"PUBLIC_NON_CASH_TABLE; business account eligibility not inferred by rate page",
+      "rates":{
+        "USD":{"bank_buy":87.45,"bank_sell":87.50},
+        "EUR":{"bank_buy":101.40,"bank_sell":102.40},
+        "RUB":{"bank_buy":0.986,"bank_sell":1.035},
+        "KZT":{"bank_buy":0.182,"bank_sell":0.197}
+      },
+      "swift_promo_until":"2026-09-30",
+      "swift_tariffs":{
+        "USD":{"fee_percent":0.2,"minimum":35,"maximum":300,"fee_currency":"USD"},
+        "CNY":{"fee_percent":0.2,"minimum":50,"maximum":1000,"fee_currency":"CNY"}
+      },
+      "evidence_class":"PUBLIC_BANK_QUOTE",
+      "sources":[
+        "https://mbank.kg/exchange_rates",
+        "https://mbank.kg/news/mbank-snizhaet-minimalnuyu-summu-komissii-na-swift"
+      ]
+    },
+    {
+      "institution":"DemirBank",
+      "country":"Kyrgyzstan",
+      "observed_date":"CURRENT_CRAWL_2026-09",
+      "base":"KGS",
+      "scope":"PUBLIC_CASH_TABLE_UP_TO_KGS50000; not business wire pricing",
+      "rates":{
+        "USD":{"bank_buy":87.40,"bank_sell":87.80},
+        "EUR":{"bank_buy":101.20,"bank_sell":102.20},
+        "RUB":{"bank_buy":0.900,"bank_sell":1.050},
+        "TRY":{"bank_buy":1.72,"bank_sell":1.95},
+        "KZT":{"bank_buy":0.1700,"bank_sell":0.2000}
+      },
+      "evidence_class":"PUBLIC_REFERENCE_ONLY",
+      "source":"https://demirbank.kg/"
+    },
+    {
+      "institution":"Bank Eskhata",
+      "country":"Tajikistan",
+      "observed_date":"2026-09-04",
+      "base":"TJS",
+      "scope":"PUBLIC_CONVERSION_TABLE; page has individual/legal-entity tabs but exact displayed subsection must be bound before business execution",
+      "rates_primary":{
+        "USD":{"bank_buy":9.1800,"bank_sell":9.2700},
+        "EUR":{"bank_buy":10.4500,"bank_sell":10.6500},
+        "RUB":{"bank_buy":0.1000,"bank_sell":0.1020}
+      },
+      "broader_public_block":{
+        "USD":{"bank_buy":9.1800,"bank_sell":9.2700},
+        "EUR":{"bank_buy":10.6000,"bank_sell":10.8100},
+        "RUB":{"bank_buy":0.1060,"bank_sell":0.1081},
+        "CNY":{"bank_buy":1.3500,"bank_sell":1.3900},
+        "KZT":{"bank_buy":0.1970,"bank_sell":0.2050},
+        "AED":{"bank_buy":2.4800,"bank_sell":2.5300},
+        "TRY":{"bank_buy":0.1800,"bank_sell":0.2100}
+      },
+      "evidence_class":"PUBLIC_BANK_QUOTE_REQUIRES_SCOPE_BINDING",
+      "source":"https://www.eskhata.com/"
+    },
+    {
+      "institution":"Ipak Yuli Bank",
+      "country":"Uzbekistan",
+      "observed_date":"2026-09-05",
+      "scope":"LEGAL_ENTITIES_RESIDENTS_DEALING_CAPABILITY",
+      "supported_dealing_currencies":["USD","EUR","GBP","CHF","JPY","RUB"],
+      "separate_fee":0,
+      "pricing_note":"Bank fee is embedded in the dealer transaction rate; exact executable rate is on demand.",
+      "evidence_class":"AUTHENTICATED_QUOTE_REQUIRED",
+      "source":"https://en.ipakyulibank.uz/legal/account/dealing-operations"
+    },
+    {
+      "institution":"Freedom Bank Kazakhstan",
+      "country":"Kazakhstan",
+      "observed_at":"2026-09-05T08:45:00+05:00",
+      "base":"KZT",
+      "scope":"THIRD_PARTY_DISCOVERY_OF_APP_AND_BRANCH_RATES; not canonical bank API",
+      "rates":{
+        "USD":{"app_buy":452.00,"app_sell":459.00,"branch_buy":452.00,"branch_sell":459.00},
+        "EUR":{"app_buy":525.00,"app_sell":532.00,"branch_buy":525.00,"branch_sell":532.00},
+        "RUB":{"app_buy":5.06,"app_sell":5.41,"branch_buy":4.78,"branch_sell":5.28},
+        "CNY":{"app_buy":67.15,"app_sell":68.65},
+        "AED":{"app_buy":122.49,"app_sell":125.75},
+        "TRY":{"app_buy":9.24,"app_sell":9.57},
+        "KGS":{"app_buy":5.08,"app_sell":5.34},
+        "TJS":{"app_buy":48.31,"app_sell":50.55}
+      },
+      "cross_rates":{
+        "USD/RUB":{"app_buy":83.63,"app_sell":90.53},
+        "USD/CNY":{"app_buy":6.67,"app_sell":6.77},
+        "USD/AED":{"app_buy":3.65,"app_sell":3.69},
+        "EUR/USD":{"app_buy":1.15,"app_sell":1.17},
+        "CNY/RUB":{"app_buy":12.41,"app_sell":13.57},
+        "AED/CNY":{"app_buy":1.81,"app_sell":1.85}
+      },
+      "evidence_class":"THIRD_PARTY_DISCOVERY_ONLY",
+      "source":"https://creditbureau.kz/currency/freedom-bank/"
+    },
+    {
+      "institution":"ForteBank",
+      "country":"Kazakhstan",
+      "observed_at":"2026-09-04T21:24:00+05:00",
+      "base":"KZT",
+      "scope":"THIRD_PARTY_DISCOVERY_ONLY; official live business price still required",
+      "rates":{
+        "USD":{"bank_buy":454.91,"bank_sell":455.02},
+        "EUR":{"bank_buy":528.55,"bank_sell":530.00},
+        "RUB":{"bank_buy":5.26,"bank_sell":5.27}
+      },
+      "evidence_class":"THIRD_PARTY_DISCOVERY_ONLY",
+      "source":"https://kazfin.info/banks/fortebank/"
+    }
+  ],
+  "additional_capabilities":[
+    {
+      "institution":"DBS Singapore",
+      "scope":"SME_CORPORATE_FX",
+      "details":"FX service states access to 130+ currencies; FX Online gives live transparent pricing over 40 pairs; telegraphic transfer supports 33 currencies with 1-4 day external delivery.",
+      "evidence_class":"AUTHENTICATED_APP_OR_TRADER",
+      "sources":[
+        "https://www.dbs.com.sg/sme/global-financial-markets/foreign-exchange/spot-fx",
+        "https://www.dbs.com.sg/sme/global-financial-markets/foreign-exchange/online-fx-trading-fx-online",
+        "https://www.dbs.com.sg/sme/day-to-day/payments/cross-border-fund-transfers/telegraphic-transfers"
+      ]
+    },
+    {
+      "institution":"UOB Singapore",
+      "scope":"BUSINESS_TELEGRAPHIC_TRANSFER",
+      "details":"Business TT supports multiple currencies and real-time FX locking; promotional handling fee SGD15 for certain business accounts through 2027; actual price is authenticated.",
+      "evidence_class":"AUTHENTICATED_APP_OR_TRADER",
+      "source":"https://www.uob.com.sg/business/transact/payments/telegraphic-transfers.page"
+    },
+    {
+      "institution":"Standard Chartered Singapore",
+      "scope":"BUSINESS_TELEGRAPHIC_TRANSFER",
+      "details":"From 23 May 2026 inward TT must use BIC SCBLSG22. Separate new-to-bank promo can waive commission in lieu of exchange and price handling commission at SGD10/USD10 for eligible accounts; actual FX price remains authenticated.",
+      "evidence_class":"AUTHENTICATED_APP_OR_TRADER",
+      "sources":[
+        "https://www.sc.com/sg/important-information/bic-scblsg/",
+        "https://www.sc.com/sg/terms-and-conditions/casa-fx/"
+      ]
+    }
+  ],
+  "invariant":"Third-party discovery, cash tables, retail/deposit tables and capability pages never become LIVE_EXECUTABLE without exact account-eligible quote and transfer-edge evidence."
+}
