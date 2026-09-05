@@ -1,0 +1,28 @@
+{
+  "auto_merge": false,
+  "canonical_status": "NON_CANONICAL_MEMORY_ARTIFACT",
+  "economic_invariants": {
+    "capital_reallocation_creates_system_pnl": false,
+    "external_profit_requires_realized_settlement": true,
+    "financial_os_final_classifier": true,
+    "internal_mint_is_external_profit": false,
+    "internal_revaluation_is_external_profit": false,
+    "usd_equals_usdt": false
+  },
+  "generated_at": "2026-09-05",
+  "memory_file": "SYNERGY_PROJECT_RAG_MEMORY_V2_1_20260905.md",
+  "memory_version": "2.1",
+  "merge_authority": "HUMAN_MAINTAINER_ONLY",
+  "new_convergence_prs": {
+    "ai_financial_system": 20,
+    "print_money_synergychain": 1,
+    "synergy_pay_system": 18,
+    "synergy_system": 44
+  },
+  "parent_v2_file": "SYNERGY_PROJECT_RAG_MEMORY_V2_20260905.md",
+  "parent_v2_sha256": "ceec28d5f8f02992b82d13c0ce70e1daa8ce8faf9843d534d584a5ca23c646d9",
+  "repository_count": 45,
+  "schema": "synergy.rag-memory-manifest/v2.1",
+  "sha256": "dd5edface1df4179100208577594b7e14e852f8b67f817e358fba4a94ff151fc",
+  "size_bytes": 110021
+}
