@@ -1,0 +1,33 @@
+{
+  "schema": "synergy.external-resources-gate/v1",
+  "gate_id": "SYNERGY_EXTERNAL_RESOURCES_GATE_V1_20260905",
+  "purpose": "Bind the minimum real-world resources required to close Real Economic E2E, External 3-host Testnet and the first MetaPay capped-canary revenue corridor without allowing resource presence to self-authorize production execution.",
+  "requirements": [
+    {"id":"ER-01","name":"live_payment_provider_account","required":true,"status":"REQUIRED_NOT_PROVIDED","acceptance":"Provider account supports real payment/capture and refund/reversal with provider-generated references/webhooks/API evidence."},
+    {"id":"ER-02","name":"eligible_merchant_or_operator_entity","required":true,"status":"REQUIRED_NOT_PROVIDED","acceptance":"Exact legal/operator entity is accepted by the chosen provider for the intended capped-canary corridor."},
+    {"id":"ER-03","name":"settlement_account_or_wallet","required":true,"status":"REQUIRED_NOT_PROVIDED","acceptance":"Provider-approved settlement destination exists and can be reconciled to the live transaction."},
+    {"id":"ER-04","name":"small_real_canary_notional","required":true,"status":"REQUIRED_NOT_PROVIDED","acceptance":"A deliberately small real amount is authorized for one bounded live canary; size does not substitute for external reality."},
+    {"id":"ER-05","name":"public_https_webhook_endpoint","required":true,"status":"REQUIRED_NOT_PROVIDED","acceptance":"Public HTTPS endpoint can receive authenticated provider events and retain immutable evidence references."},
+    {"id":"ER-06","name":"three_distinct_persistent_external_hosts","required":true,"status":"REQUIRED_NOT_PROVIDED","acceptance":"Exactly three distinct persistent external hosts exist with durable storage, unique host fingerprints, restart recovery and non-loopback cross-host transport."},
+    {"id":"ER-07","name":"safe_execution_access_path","required":true,"status":"REQUIRED_NOT_PROVIDED","acceptance":"Operator-controlled connector or bootstrap execution path exists. Raw API keys, wallet private keys and SSH private keys are never pasted into chat or committed to Git."}
+  ],
+  "blocks": [
+    "REAL_ECONOMIC_E2E",
+    "EXTERNAL_THREE_HOST_ECONOMIC_TESTNET",
+    "METAPAY_CAPPED_CANARY_REVENUE_CORRIDOR"
+  ],
+  "non_authority": {
+    "financial_authority": "NONE",
+    "payment_authority": "NONE",
+    "accounting_authority": "NONE",
+    "execution_authority": "NONE",
+    "signing_authority": "NONE",
+    "blockchain_submission_authority": "NONE",
+    "production_deployment_authority": "NONE",
+    "merge_authority": "HUMAN_MAINTAINER_ONLY"
+  },
+  "secret_handling": "NO_RAW_SECRETS_IN_CHAT_OR_GIT",
+  "auto_merge": false,
+  "gate_status": "BLOCKED_AWAITING_EXTERNAL_RESOURCES",
+  "generated_at": "2026-09-05T17:25:18Z"
+}
