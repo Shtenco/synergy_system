@@ -1,0 +1,57 @@
+{
+  "schema":"synergy.global-currency-universe/v2",
+  "generated_at":"2026-09-06",
+  "status":"RESEARCH_UNIVERSE_NOT_EXECUTION_PROOF",
+  "global_top20_basis":{
+    "source":"BIS 2025 Triennial Central Bank Survey, OTC FX turnover by currency, net-net basis",
+    "source_url":"https://data.bis.org/topics/DER/tables-and-dashboards/BIS%2CDER_D11_3%2C1.0",
+    "ranking_date":"2025-04",
+    "note":"Currencies are ordered by reported 2025 OTC FX turnover in the BIS D11.3 publication table. Because every FX transaction has two currency sides, percentage shares sum to 200 rather than 100."
+  },
+  "global_top20":[
+    {"rank":1,"currency":"USD","reported_share_percent":89.2},
+    {"rank":2,"currency":"EUR","reported_share_percent":28.9},
+    {"rank":3,"currency":"JPY","reported_share_percent":16.8},
+    {"rank":4,"currency":"GBP","reported_share_percent":10.2},
+    {"rank":5,"currency":"CNY","reported_share_percent":8.5},
+    {"rank":6,"currency":"CHF","reported_share_percent":6.4},
+    {"rank":7,"currency":"AUD","reported_share_percent":6.1},
+    {"rank":8,"currency":"CAD","reported_share_percent":5.8},
+    {"rank":9,"currency":"HKD","reported_share_percent":3.8},
+    {"rank":10,"currency":"SGD","reported_share_percent":2.4},
+    {"rank":11,"currency":"INR","reported_share_percent":1.9},
+    {"rank":12,"currency":"KRW","reported_share_percent":1.8},
+    {"rank":13,"currency":"SEK","reported_share_percent":1.6},
+    {"rank":14,"currency":"MXN","reported_share_percent":1.6},
+    {"rank":15,"currency":"NZD","reported_share_percent":1.5},
+    {"rank":16,"currency":"NOK","reported_share_percent":1.3},
+    {"rank":17,"currency":"TWD","reported_share_percent":1.2},
+    {"rank":18,"currency":"BRL","reported_share_percent":0.9},
+    {"rank":19,"currency":"ZAR","reported_share_percent":0.8},
+    {"rank":20,"currency":"PLN","reported_share_percent":0.8}
+  ],
+  "regional_strategic_extension":[
+    {"currency":"RUB","reason":"Russia/CIS bank and P2P settlement node"},
+    {"currency":"KZT","reason":"Kazakhstan merchant/bank/P2P settlement node"},
+    {"currency":"UZS","reason":"Uzbekistan bank settlement node"},
+    {"currency":"KGS","reason":"Kyrgyzstan bank settlement node"},
+    {"currency":"TJS","reason":"Tajikistan bank settlement node"},
+    {"currency":"BYN","reason":"Belarus bank settlement node"},
+    {"currency":"GEL","reason":"Georgia bank/API settlement node"},
+    {"currency":"AED","reason":"UAE correspondent and Asia/CIS settlement bridge"},
+    {"currency":"TRY","reason":"Turkey/CIS/Europe regional payment bridge"},
+    {"currency":"THB","reason":"Southeast Asia payment/QR settlement bridge"}
+  ],
+  "effective_fiat_graph_assets":[
+    "USD","EUR","JPY","GBP","CNY","CHF","AUD","CAD","HKD","SGD","INR","KRW","SEK","MXN","NZD","NOK","TWD","BRL","ZAR","PLN",
+    "RUB","KZT","UZS","KGS","TJS","BYN","GEL","AED","TRY","THB"
+  ],
+  "crypto_extension_is_separate":true,
+  "crypto_graph_assets_initial":["USDT","USDC","BTC","ETH","SOL","BNB","XRP","TON"],
+  "invariants":{
+    "global_top20_is_bis_ranked":true,
+    "regional_extension_does_not_relabel_itself_as_global_top20":true,
+    "fiat_and_stablecoin_assets_are_distinct_nodes":true,
+    "registry_membership_is_not_executable_quote":true
+  }
+}
