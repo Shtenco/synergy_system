@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synergy.local/schemas/data-fabric/archive-manifest-v1.schema.json",
+  "title": "SYNERGY Data Fabric ArchiveManifest V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "object_id",
+    "object_class",
+    "producer_repo",
+    "semantic_owner_repo",
+    "canonical_content_sha256",
+    "archive_sha256",
+    "codec_id",
+    "codec_version",
+    "original_size",
+    "archive_size",
+    "storage_tier",
+    "created_at"
+  ],
+  "properties": {
+    "schema": {"const": "synergy.archive-manifest/v1"},
+    "object_id": {"type": "string", "minLength": 8, "maxLength": 256},
+    "object_class": {
+      "enum": [
+        "SOURCE_RELEASE_BUNDLE",
+        "LOG_AUDIT_EVENT_PACKAGE",
+        "MARKET_HISTORY_DATASET",
+        "MODEL_CHECKPOINT",
+        "BENCHMARK_EVIDENCE",
+        "ACCOUNTING_CLOSE",
+        "SETTLEMENT_EVIDENCE",
+        "SCIENCE_REPRO_PACKAGE",
+        "PUBLIC_BUDGET_RAW_ARTIFACT",
+        "PUBLIC_BUDGET_PROOF_BUNDLE",
+        "DEPLOYMENT_RUNTIME_ARTIFACT",
+        "CHAIN_PROOF_CHECKPOINT",
+        "USER_BACKUP_PACKAGE",
+        "OFFLINE_QR_PAYLOAD_BUNDLE"
+      ]
+    },
+    "producer_repo": {"type": "string", "pattern": "^Shtenco/[A-Za-z0-9_.-]+$"},
+    "semantic_owner_repo": {"type": "string", "pattern": "^Shtenco/[A-Za-z0-9_.-]+$"},
+    "canonical_content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "archive_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "codec_id": {"type": "string", "minLength": 1, "maxLength": 128},
+    "codec_version": {"type": "string", "minLength": 1, "maxLength": 128},
+    "dictionary_or_model_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "original_size": {"type": "integer", "minimum": 0},
+    "archive_size": {"type": "integer", "minimum": 0},
+    "chunk_sha256": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+    },
+    "random_access": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "supported": {"type": "boolean"},
+        "index_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
+      },
+      "required": ["supported"]
+    },
+    "provenance_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "encryption": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "encrypted": {"type": "boolean"},
+        "algorithm": {"type": ["string", "null"]},
+        "key_reference": {"type": ["string", "null"]}
+      },
+      "required": ["encrypted"]
+    },
+    "retention_class": {"enum": ["EPHEMERAL", "STANDARD", "REGULATORY", "IMMUTABLE", "USER_CONTROLLED"]},
+    "storage_tier": {
+      "enum": [
+        "HOT_LOCAL",
+        "WARM_NODE_CACHE",
+        "DISTRIBUTED_SYNERGYNET",
+        "COLD_IMMUTABLE_ARCHIVE",
+        "AIR_GAPPED_QR_QTC",
+        "FUTURE_XPU_PERSISTENT_STATE"
+      ]
+    },
+    "created_at": {"type": "string", "format": "date-time"}
+  }
+}
