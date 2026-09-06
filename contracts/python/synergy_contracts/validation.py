@@ -18,7 +18,7 @@ def canonical_payload_hash(payload: dict[str, Any]) -> str:
 
 
 class ContractValidator:
-    def __init__(self, schema_dir: str | Path):
+    def __init__(self, schema_dir: str | Path, registry_path: str | Path | None = None):
         self.schema_dir = Path(schema_dir)
         self._schemas: dict[str, dict[str, Any]] = {}
         self._schema_store: dict[str, dict[str, Any]] = {}
@@ -31,6 +31,14 @@ class ContractValidator:
             if "$id" in schema:
                 self._schemas[schema["$id"]] = schema
                 self._schema_store[schema["$id"]] = schema
+
+        if registry_path is None:
+            candidate = self.schema_dir.parent / "config" / "contract_registry_v1.json"
+            registry_path = candidate if candidate.exists() else None
+        self._registry: dict[str, dict[str, Any]] = {}
+        if registry_path is not None:
+            registry = json.loads(Path(registry_path).read_text(encoding="utf-8"))
+            self._registry = {entry["type"]: entry for entry in registry["contracts"]}
 
     def validate(self, contract: dict[str, Any], schema_file: str) -> None:
         schema = self._schemas[schema_file]
@@ -46,6 +54,7 @@ class ContractValidator:
             rendered = "; ".join(f"{list(e.absolute_path)}: {e.message}" for e in errors)
             raise ContractValidationError(rendered)
         self._validate_payload_hash(contract)
+        self._validate_registry_binding(contract, schema_file)
         self._validate_authority_invariants(contract)
 
     @staticmethod
@@ -54,6 +63,28 @@ class ContractValidator:
         actual = contract["evidence"]["payload_hash"]
         if expected != actual:
             raise ContractValidationError("payload_hash does not match canonical payload SHA-256")
+
+    def _validate_registry_binding(self, contract: dict[str, Any], schema_file: str) -> None:
+        if not self._registry:
+            return
+        ctype = contract["contract_type"]
+        entry = self._registry.get(ctype)
+        if entry is None:
+            raise ContractValidationError(f"unregistered contract_type: {ctype}")
+        if entry["schema"] != schema_file:
+            raise ContractValidationError(f"{ctype} must validate against {entry['schema']}")
+
+        producer = contract["producer"]
+        if producer["repo"] != entry["producer"]:
+            raise ContractValidationError(f"{ctype} producer repo must be {entry['producer']}")
+        if producer["authority"] != entry["producer_authority"]:
+            raise ContractValidationError(f"{ctype} producer authority must be {entry['producer_authority']}")
+
+        consumer = contract["consumer"]
+        if entry["consumer"] != "DOMAIN_DEPENDENT" and consumer["repo"] != entry["consumer"]:
+            raise ContractValidationError(f"{ctype} consumer repo must be {entry['consumer']}")
+        if entry["consumer_authority"] != "DOMAIN_DEPENDENT" and consumer["authority"] != entry["consumer_authority"]:
+            raise ContractValidationError(f"{ctype} consumer authority must be {entry['consumer_authority']}")
 
     @staticmethod
     def _validate_authority_invariants(contract: dict[str, Any]) -> None:
