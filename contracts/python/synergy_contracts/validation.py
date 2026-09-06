@@ -21,16 +21,25 @@ class ContractValidator:
     def __init__(self, schema_dir: str | Path):
         self.schema_dir = Path(schema_dir)
         self._schemas: dict[str, dict[str, Any]] = {}
+        self._schema_store: dict[str, dict[str, Any]] = {}
         for path in self.schema_dir.glob("*.json"):
             schema = json.loads(path.read_text(encoding="utf-8"))
+            file_uri = path.resolve().as_uri()
+            self._schemas[path.name] = schema
+            self._schema_store[path.name] = schema
+            self._schema_store[file_uri] = schema
             if "$id" in schema:
                 self._schemas[schema["$id"]] = schema
-            self._schemas[path.name] = schema
+                self._schema_store[schema["$id"]] = schema
 
     def validate(self, contract: dict[str, Any], schema_file: str) -> None:
         schema = self._schemas[schema_file]
         base_uri = self.schema_dir.resolve().as_uri() + "/"
-        resolver = RefResolver(base_uri=base_uri, referrer=schema)
+        resolver = RefResolver(
+            base_uri=base_uri,
+            referrer=schema,
+            store=self._schema_store,
+        )
         validator = Draft202012Validator(schema, resolver=resolver, format_checker=FormatChecker())
         errors = sorted(validator.iter_errors(contract), key=lambda e: list(e.absolute_path))
         if errors:
