@@ -1,0 +1,165 @@
+schema: synergy.repository-federation/v3
+as_of: 2026-09-06
+architecture_root: Shtenco/synergy_system
+observed_repository_count: 45
+origin_document:
+  title: "Новая Россия 2025 / Единая интеллектуальная система"
+  role: SYNERGY_ORIGIN_CONCEPTUAL_CONSTITUTION_V0
+  era: "2018-2025"
+  interpretation: >-
+    Historical conceptual source. Preserve mission, feedback-loop structure and domain taxonomy;
+    do not treat historical yield, growth, AI-uplift or market assumptions as verified production facts.
+
+constitution:
+  federation_not_monorepo: true
+  one_authority_per_fact: true
+  evidence_before_claim: true
+  external_settlement_before_external_profit: true
+  ai_is_not_execution_authority: true
+  blockchain_is_not_accounting_authority: true
+  presentation_is_not_authority: true
+  preserve_legacy_generations: true
+  no_new_repo_without_unique_responsibility: true
+  network_growth_must_be_value_backed: true
+  recruitment_is_not_revenue: true
+  scientific_hypothesis_is_not_scientific_truth: true
+
+origin_levels:
+  L1_PERSONAL_CAPITAL:
+    source_sections: ["III.1", "III.2", "III.3", "III.4", "III.5"]
+    modern_domains: [personal_finance, household_capital, financial_freedom, investment_ladder]
+  L2_NETWORK_BUSINESS:
+    source_sections: ["IV.1", "IV.2", "IV.3", "IV.4", "IV.5", "IV.6", "X", "XI"]
+    modern_domains: [business_network, crm, referrals_for_real_sales, franchises, growth_os]
+  L3_CAPITAL_FINANCE:
+    source_sections: ["V.1", "V.2", "V.3", "V.4", "V.5", "V.6", "V.7", "V.8", "V.9"]
+    modern_domains: [fund, accounting, liquidity, investments, market_making, arbitrage, trading, settlement]
+  L4_SCIENCE:
+    source_sections: ["VI.1", "VI.2", "VI.3", "VI.4", "VI.5", "VI.6", "VI.7", "VI.8", "VI.9", "VI.10"]
+    modern_domains: [science, lenr, physics, biotech, robotics, ai, cybersecurity, commercialization, patents]
+  L5_INDUSTRY_REGIONS:
+    source_sections: ["VII", "XI", "XII"]
+    modern_domains: [industry, manufacturing, infrastructure, housing, agriculture, regional_development, jobs]
+  L6_AI_GOVERNANCE:
+    source_sections: ["VIII", "XIII", "XIV", "XV"]
+    modern_domains: [nexus, autopilot, distributed_ai, optimization, system_dynamics, roadmap, governance]
+  MONETARY_PAYMENT_LAYER:
+    source_sections: ["IX"]
+    modern_domains: [payments, reserve_assets, units_of_account, token_research, settlement, pq_trust]
+
+exclusive_authorities:
+  architecture_governance: Shtenco/synergy_system
+  runtime_orchestration: Shtenco/synergy_meta_os
+  host_kernel: Shtenco/turbo_linux
+  compute_substrate_rnd: Shtenco/motherboard_xpu_xml
+  p2p_transport: Shtenco/synergynet
+  reasoning_core: Shtenco/agi_nexus
+  action_orchestration: Shtenco/agi_autopilot
+  science_research_orchestration: Shtenco/nexus_science_agent
+  canonical_accounting: Shtenco/synergy_financial_os
+  payment_execution_settlement: Shtenco/synergy_pay_system
+  trading_intelligence: Shtenco/midas_ai
+  productive_project_model: Shtenco/synergy_eurasian
+  household_capital_product: Shtenco/synergy_app
+  household_capital_model: Shtenco/synergy_matrix_sota
+  pq_chain_trust: Shtenco/synergy_ai_blockchain
+  cross_chain_trust: Shtenco/synergy_metachain
+  state_budget_traceability: Shtenco/blochain_budget
+  business_growth_control_plane: Shtenco/synergychain
+  requirements_semantics: Shtenco/ai_language
+  engineering_change_evidence: Shtenco/ai_coder
+  compression_archive: Shtenco/ai_compress
+
+repositories:
+  - {repo: Shtenco/shtenco.github.io, layer: presentation, class: PUBLIC_PROVENANCE, role: personal_research_portfolio, authority: NONE, origin: [XV]}
+  - {repo: Shtenco/quantum-trading_metatrader5, layer: trading, class: LEGACY_RND, role: quantum_trading_experiment, authority: NONE, origin: [V]}
+  - {repo: Shtenco/computer_vision_trading_metatrader_5, layer: trading, class: RND_SOURCE, role: computer_vision_market_representation, authority: NONE, origin: [V]}
+  - {repo: Shtenco/swap_arbitrage_metatrader_5, layer: trading, class: RND_SOURCE, role: carry_swap_portfolio_research, authority: NONE, origin: [V]}
+  - {repo: Shtenco/cross_forex_arbitrage_trading_metatrader_5, layer: trading, class: RND_SOURCE, role: cross_rate_graph_arbitrage, authority: NONE, origin: [V]}
+  - {repo: Shtenco/global_liquidity_dataminer, layer: trading_data, class: RND_SOURCE, role: global_liquidity_macro_features, authority: NONE, origin: [V, XIII]}
+  - {repo: Shtenco/3D_bars_market_structure, layer: trading_data, class: RND_SOURCE, role: volume_time_price_market_representation, authority: NONE, origin: [V]}
+  - {repo: Shtenco/multi_threaded_trading_robot_with_machine_learning_python, layer: trading, class: RND_SOURCE, role: parallel_ml_trading_lineage, authority: NONE, origin: [V, VIII]}
+  - {repo: Shtenco/midas_ai_trading_system, layer: trading, class: RND_SOURCE, role: institutional_midas_lineage, authority: NONE, origin: [V]}
+  - {repo: Shtenco/midas_lite, layer: trading, class: LEGACY_SOURCE, role: lightweight_midas_lineage, authority: NONE, origin: [V]}
+  - {repo: Shtenco/turbo_linux, layer: host, class: ACTIVE_RND_TARGET, role: host_kernel_virtualization_runtime, authority: host_kernel, origin: [VI, VII, VIII]}
+  - {repo: Shtenco/agi_olga, layer: ai, class: ACTIVE_RND_SOURCE, role: olga_cybernetic_logic_smallworld_nexus_lineage, authority: NONE, origin: [VIII]}
+  - {repo: Shtenco/ai_coder, layer: engineering, class: ENGINEERING_CONTROL, role: code_change_evidence_review_orchestration, authority: engineering_change_evidence, origin: [VI, VIII]}
+  - {repo: Shtenco/ai_trade_terminal, layer: trading_app, class: LEGACY_SOURCE, role: trading_terminal_lineage, authority: NONE, origin: [V]}
+  - {repo: Shtenco/shtencoauantai.github.io, layer: presentation, class: PUBLIC_PROVENANCE, role: quant_ai_public_showcase, authority: NONE, origin: [XV]}
+  - {repo: Shtenco/cashero, layer: monetary_rnd, class: LEGACY_TOKENOMIC_RND, role: cyclic_liquidity_tokenomics_lineage, authority: NONE, origin: [IX]}
+  - {repo: Shtenco/ai_language, layer: engineering, class: ENGINEERING_CORE, role: semantic_requirements_repository_understanding_traceability, authority: requirements_semantics, origin: [VI, VIII]}
+  - {repo: Shtenco/sinergy-super-app, layer: application, class: APPLICATION_CLIENT, role: legacy_super_app_client_lineage, authority: NONE, origin: [III, X, XI]}
+  - {repo: Shtenco/binary_quantum_theory, layer: science, class: SCIENTIFIC_RND, role: fundamental_math_physics_candidate_theory, authority: NONE, origin: [VI, XIII]}
+  - {repo: Shtenco/ai_financial_system, layer: financial_rnd, class: RND_SOURCE, role: ai_cb_amm_qe_qt_mev_financial_research, authority: NONE, origin: [V, IX, XIII]}
+  - {repo: Shtenco/algotrading_graph_system, layer: trading, class: RND_PLACEHOLDER, role: global_capacitated_market_graph_research, authority: NONE, origin: [V, XIII]}
+  - {repo: Shtenco/ai_compress, layer: data, class: ENGINEERING_CORE, role: lossless_compression_dedup_content_archive, authority: compression_archive, origin: [VI, VIII]}
+  - {repo: Shtenco/synergy_pay_system, layer: payments, class: CANONICAL_DOMAIN, role: metapay_routing_funding_reservation_execution_settlement_reconciliation, authority: payment_execution_settlement, origin: [V, IX]}
+  - {repo: Shtenco/synergy_ai_blockchain, layer: trust, class: CANONICAL_TARGET, role: pq_blockchain_typed_commitments_and_checkpointing, authority: pq_chain_trust, origin: [VIII, IX]}
+  - {repo: Shtenco/synergychain, layer: business, class: APPLICATION_CONTROL_PLANE, role: business_growth_os_crm_smm_sales_ai_cfo_portal, authority: business_growth_control_plane, origin: [IV, X, XI]}
+  - {repo: Shtenco/synergychain.github.io, layer: presentation, class: PRESENTATION, role: public_static_synergy_portal, authority: NONE, origin: [XV]}
+  - {repo: Shtenco/cold_nuclear, layer: science, class: SCIENTIFIC_RND, role: computational_lenr_transmutation_materials_research, authority: NONE, origin: [VI]}
+  - {repo: Shtenco/usds, layer: monetary_rnd, class: MONETARY_RND, role: stable_money_reserve_mint_restore_experiment, authority: NONE, origin: [IX]}
+  - {repo: Shtenco/synergy_financial_os, layer: financial_truth, class: CANONICAL_TARGET, role: double_entry_hardnav_liquidity_solvency_revenue_recognition_distribution_authority, authority: canonical_accounting, origin: [III, V, XIII]}
+  - {repo: Shtenco/synergy_eurasian, layer: economy, class: CANONICAL_DOMAIN_TARGET, role: productive_projects_industry_infrastructure_agriculture_regions_macro_model, authority: productive_project_model, origin: [VII, XI, XII, XIII, XIV]}
+  - {repo: Shtenco/synergy_matrix_sota, layer: household, class: CANONICAL_DOMAIN_TARGET, role: household_savings_maturity_mutual_credit_capital_model, authority: household_capital_model, origin: [III]}
+  - {repo: Shtenco/agi_nexus, layer: ai, class: CANONICAL_TARGET, role: bounded_reasoning_world_models_provenance_unknown_handling, authority: reasoning_core, origin: [VIII, XIII, XV]}
+  - {repo: Shtenco/midas_ai, layer: trading, class: CANONICAL_TARGET, role: institutional_alpha_quality_risk_portfolio_execution_intelligence, authority: trading_intelligence, origin: [V, XIII]}
+  - {repo: Shtenco/synergy_system, layer: governance, class: CANONICAL_ROOT, role: machine_readable_constitution_registry_authority_evidence_release_graph, authority: architecture_governance, origin: [I, II, XIII, XIV, XV]}
+  - {repo: Shtenco/nexus_science_agent, layer: science_ai, class: CANONICAL_TARGET, role: hypothesis_search_simulation_falsification_experiment_ip_commercialization_pipeline, authority: science_research_orchestration, origin: [VI, VII, XIII]}
+  - {repo: Shtenco/synergynet, layer: network, class: CANONICAL_TARGET, role: p2p_mesh_transport_content_evidence_distribution_store_forward, authority: p2p_transport, origin: [VIII]}
+  - {repo: Shtenco/synergy_meta_os, layer: orchestration, class: CANONICAL_TARGET, role: node_runtime_service_capability_artifact_orchestration, authority: runtime_orchestration, origin: [VIII, XIV]}
+  - {repo: Shtenco/blochain_budget, layer: state, class: CANONICAL_DOMAIN_TARGET, role: budget_procurement_traceability_merkle_audit_anomaly_roi_state_plane, authority: state_budget_traceability, origin: [XII, XIII, XV]}
+  - {repo: Shtenco/agi_autopilot, layer: control, class: CANONICAL_TARGET, role: policy_capability_approval_domain_action_orchestration, authority: action_orchestration, origin: [VIII, XIV, XV]}
+  - {repo: Shtenco/sinergy_app, layer: application, class: LEGACY_PLACEHOLDER, role: empty_legacy_app_name, authority: NONE, origin: [III]}
+  - {repo: Shtenco/synergy_app, layer: household_app, class: CANONICAL_PRODUCT_TARGET, role: personal_capital_budget_reserve_debt_investing_goals_compound_capital_ui, authority: household_capital_product, origin: [III]}
+  - {repo: Shtenco/qr_compress, layer: data, class: RND_TARGET, role: compact_qr_offline_payload_identity_payment_evidence_transport, authority: NONE, origin: [VIII, IX]}
+  - {repo: Shtenco/synergy_metachain, layer: trust, class: CANONICAL_TARGET, role: pq_cross_chain_light_clients_bridge_proofs_interoperability, authority: cross_chain_trust, origin: [VIII, IX]}
+  - {repo: Shtenco/motherboard_xpu_xml, layer: compute, class: ACTIVE_RND_TARGET, role: compiled_graph_wavefront_xpu_execution_substrate, authority: compute_substrate_rnd, origin: [VI, VII, VIII]}
+  - {repo: Shtenco/print_money_synergychain, layer: financial_rnd, class: FALSIFICATION_RND, role: external_profit_hardnav_token_liquidity_generation_falsification, authority: NONE, origin: [V, IX, XIII]}
+
+canonical_dependency_direction:
+  - {from: Shtenco/synergy_app, to: Shtenco/synergy_financial_os, contract: household_accounting_and_capital_evidence}
+  - {from: Shtenco/synergy_matrix_sota, to: Shtenco/synergy_financial_os, contract: household_maturity_and_funding_evidence}
+  - {from: Shtenco/synergy_eurasian, to: Shtenco/synergy_financial_os, contract: productive_project_proposals_and_real_economic_evidence}
+  - {from: Shtenco/blochain_budget, to: Shtenco/synergy_financial_os, contract: public_finance_settlement_and_audit_evidence}
+  - {from: Shtenco/midas_ai, to: Shtenco/synergy_pay_system, contract: bounded_execution_intent}
+  - {from: Shtenco/synergy_pay_system, to: Shtenco/synergy_financial_os, contract: settlement_and_reconciliation_evidence}
+  - {from: Shtenco/synergy_financial_os, to: Shtenco/synergy_pay_system, contract: authorized_payment_ticket}
+  - {from: Shtenco/synergy_financial_os, to: Shtenco/synergy_ai_blockchain, contract: typed_accounting_commitments}
+  - {from: Shtenco/synergy_pay_system, to: Shtenco/synergy_ai_blockchain, contract: typed_settlement_commitments}
+  - {from: Shtenco/synergy_ai_blockchain, to: Shtenco/synergy_metachain, contract: chain_state_commitment_and_light_client_inputs}
+  - {from: Shtenco/agi_nexus, to: Shtenco/agi_autopilot, contract: proposal_reasoning_provenance_uncertainty}
+  - {from: Shtenco/agi_autopilot, to: Shtenco/synergy_meta_os, contract: bounded_runtime_action_request}
+  - {from: Shtenco/turbo_linux, to: Shtenco/synergy_meta_os, contract: host_capability_runtime}
+  - {from: Shtenco/motherboard_xpu_xml, to: Shtenco/synergy_meta_os, contract: optional_compiled_compute_capability}
+  - {from: Shtenco/synergynet, to: Shtenco/synergy_meta_os, contract: p2p_transport_runtime}
+  - {from: Shtenco/ai_compress, to: Shtenco/synergynet, contract: validated_codec_and_dedup_profiles}
+  - {from: Shtenco/qr_compress, to: Shtenco/synergy_pay_system, contract: offline_compact_payment_and_receipt_payloads}
+  - {from: Shtenco/ai_language, to: Shtenco/ai_coder, contract: requirements_repository_semantics}
+  - {from: Shtenco/agi_nexus, to: Shtenco/nexus_science_agent, contract: bounded_reasoning_core}
+  - {from: Shtenco/nexus_science_agent, to: Shtenco/synergy_eurasian, contract: evidence_backed_commercialization_candidate}
+  - {from: Shtenco/synergychain, to: Shtenco/synergy_pay_system, contract: real_customer_payment_intents}
+  - {from: Shtenco/synergychain, to: Shtenco/synergy_financial_os, contract: business_event_and_revenue_evidence}
+
+modernized_origin_rules:
+  historical_mlm:
+    keep: [network_effects, referrals_for_real_sales, franchise_templates, regional_distribution]
+    reject: [recruitment_funded_returns, guaranteed_downline_income, participant_entry_as_revenue]
+  historical_ai_uplift:
+    status: SCENARIO_ONLY
+    rule: quantify by controlled benchmark, causal test or live evidence
+  historical_yield_targets:
+    status: SCENARIO_ONLY
+    rule: require costs, drawdown, capacity, OOS, shadow/live and settlement evidence
+  historical_currency_backing:
+    status: RND
+    rule: separate unit_of_account, payment_asset, reserve_asset and risk_asset
+  historical_science_claims:
+    status: HYPOTHESIS
+    rule: require falsification, reproducible experiment and independent evidence
+  historical_system_growth:
+    status: MODEL
+    rule: use system_dynamics, saturation, capacity and stress scenarios rather than unconstrained exponential growth
+
+status_vocabulary: [CANONICAL, CANDIDATE, RND, LEGACY, ARCHIVE, PRESENTATION, PLACEHOLDER]
+verification_vocabulary: [CONCEPT, IMPLEMENTED, TESTS_PRESENT, RUNNER_EXECUTED, VERIFIED, SHADOW, LIVE_SETTLED, PRODUCTION_READY]
