@@ -4,6 +4,7 @@ import json
 import sqlite3
 from contextlib import contextmanager
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Iterator
 
@@ -16,6 +17,7 @@ class OutboxRecord:
     state: str
     attempts: int
     next_attempt_at: str
+    lease_until: str | None
     last_error: str | None
 
 
@@ -34,7 +36,9 @@ class DurableEventStore:
         self.conn.execute("PRAGMA foreign_keys=ON")
         self.conn.execute("PRAGMA journal_mode=WAL")
         self.conn.execute("PRAGMA synchronous=FULL")
+        self.conn.execute("PRAGMA busy_timeout=5000")
         self._create_schema()
+        self._migrate_schema()
 
     def close(self) -> None:
         self.conn.close()
@@ -50,6 +54,7 @@ class DurableEventStore:
                 state TEXT NOT NULL CHECK(state IN ('PENDING','INFLIGHT','RETRY','DELIVERED','DEAD')),
                 attempts INTEGER NOT NULL DEFAULT 0 CHECK(attempts >= 0),
                 next_attempt_at TEXT NOT NULL,
+                lease_until TEXT,
                 created_at TEXT NOT NULL,
                 updated_at TEXT NOT NULL,
                 last_error TEXT,
@@ -71,6 +76,7 @@ class DurableEventStore:
                 consumer_repo TEXT NOT NULL,
                 contract_id TEXT NOT NULL,
                 first_event_id TEXT NOT NULL,
+                first_payload_hash TEXT NOT NULL,
                 first_seen_at TEXT NOT NULL,
                 PRIMARY KEY(consumer_repo, contract_id)
             );
@@ -104,10 +110,33 @@ class DurableEventStore:
 
             CREATE INDEX IF NOT EXISTS idx_outbox_ready
               ON event_outbox(state, next_attempt_at, created_at);
+            CREATE INDEX IF NOT EXISTS idx_outbox_lease
+              ON event_outbox(state, lease_until);
             CREATE INDEX IF NOT EXISTS idx_attempts_event
               ON delivery_attempts(event_id, attempt_no);
             """
         )
+
+    def _migrate_schema(self) -> None:
+        """Small forward migrations for DBs created by early Secure Event Fabric builds."""
+        outbox_columns = {row["name"] for row in self.conn.execute("PRAGMA table_info(event_outbox)").fetchall()}
+        if "lease_until" not in outbox_columns:
+            self.conn.execute("ALTER TABLE event_outbox ADD COLUMN lease_until TEXT")
+
+        replay_columns = {row["name"] for row in self.conn.execute("PRAGMA table_info(replay_ledger)").fetchall()}
+        if "first_payload_hash" not in replay_columns:
+            self.conn.execute("ALTER TABLE replay_ledger ADD COLUMN first_payload_hash TEXT")
+            self.conn.execute(
+                """
+                UPDATE replay_ledger
+                SET first_payload_hash=(
+                    SELECT contract_payload_hash FROM event_inbox i
+                    WHERE i.consumer_repo=replay_ledger.consumer_repo
+                      AND i.contract_id=replay_ledger.contract_id
+                )
+                WHERE first_payload_hash IS NULL
+                """
+            )
 
     @contextmanager
     def transaction(self) -> Iterator[sqlite3.Connection]:
@@ -121,6 +150,19 @@ class DurableEventStore:
             self.conn.execute("COMMIT")
 
     @staticmethod
+    def _parse_time(value: str) -> datetime:
+        if value.endswith("Z"):
+            value = value[:-1] + "+00:00"
+        parsed = datetime.fromisoformat(value)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed
+
+    @staticmethod
+    def _format_time(value: datetime) -> str:
+        return value.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+
+    @staticmethod
     def _dump_event(event: SecureEventEnvelope) -> str:
         return json.dumps(event.to_dict(), ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
@@ -129,23 +171,61 @@ class DurableEventStore:
         return SecureEventEnvelope.from_dict(json.loads(raw))
 
     def enqueue_outbox(self, event: SecureEventEnvelope, now: str) -> bool:
-        """Insert once. A duplicate contract/topic pair is a replay, not a new send."""
+        """Insert once; conflicting reuse of contract_id is rejected, not deduplicated."""
         with self.transaction() as tx:
+            existing = tx.execute(
+                "SELECT topic, event_json FROM event_outbox WHERE contract_id=? LIMIT 1",
+                (event.contract_id,),
+            ).fetchone()
+            if existing is not None:
+                first = self._load_event(existing["event_json"])
+                if first.contract_payload_hash != event.contract_payload_hash:
+                    raise ValueError("outbox contract_id replay has conflicting payload hash")
+                if first.topic != event.topic:
+                    raise ValueError("outbox contract_id replay targets a conflicting topic")
+                return False
+
             cursor = tx.execute(
                 """
-                INSERT OR IGNORE INTO event_outbox(
+                INSERT INTO event_outbox(
                     event_id, contract_id, topic, event_json, state, attempts,
-                    next_attempt_at, created_at, updated_at, last_error
-                ) VALUES (?, ?, ?, ?, 'PENDING', 0, ?, ?, ?, NULL)
+                    next_attempt_at, lease_until, created_at, updated_at, last_error
+                ) VALUES (?, ?, ?, ?, 'PENDING', 0, ?, NULL, ?, ?, NULL)
                 """,
                 (event.event_id, event.contract_id, event.topic, self._dump_event(event), now, now, now),
             )
             return cursor.rowcount == 1
 
-    def claim_ready(self, now: str, limit: int = 100) -> list[OutboxRecord]:
+    def recover_stale_inflight(self, now: str) -> int:
+        """Return abandoned leased deliveries to RETRY after a worker crash."""
+        with self.transaction() as tx:
+            cursor = tx.execute(
+                """
+                UPDATE event_outbox
+                SET state='RETRY', lease_until=NULL, updated_at=?,
+                    last_error=COALESCE(last_error, 'delivery lease expired before ack')
+                WHERE state='INFLIGHT' AND lease_until IS NOT NULL AND lease_until <= ?
+                """,
+                (now, now),
+            )
+            return cursor.rowcount
+
+    def claim_ready(self, now: str, limit: int = 100, lease_seconds: int = 30) -> list[OutboxRecord]:
         if limit <= 0:
             return []
+        if lease_seconds <= 0:
+            raise ValueError("lease_seconds must be positive")
+        lease_until = self._format_time(self._parse_time(now) + timedelta(seconds=lease_seconds))
         with self.transaction() as tx:
+            tx.execute(
+                """
+                UPDATE event_outbox
+                SET state='RETRY', lease_until=NULL, updated_at=?,
+                    last_error=COALESCE(last_error, 'delivery lease expired before ack')
+                WHERE state='INFLIGHT' AND lease_until IS NOT NULL AND lease_until <= ?
+                """,
+                (now, now),
+            )
             rows = tx.execute(
                 """
                 SELECT * FROM event_outbox
@@ -158,20 +238,23 @@ class DurableEventStore:
             claimed: list[OutboxRecord] = []
             for row in rows:
                 attempts = int(row["attempts"]) + 1
-                tx.execute(
+                cursor = tx.execute(
                     """
                     UPDATE event_outbox
-                    SET state='INFLIGHT', attempts=?, updated_at=?
+                    SET state='INFLIGHT', attempts=?, lease_until=?, updated_at=?
                     WHERE event_id=? AND state IN ('PENDING','RETRY')
                     """,
-                    (attempts, now, row["event_id"]),
+                    (attempts, lease_until, now, row["event_id"]),
                 )
+                if cursor.rowcount != 1:
+                    continue
                 claimed.append(
                     OutboxRecord(
                         event=self._load_event(row["event_json"]),
                         state="INFLIGHT",
                         attempts=attempts,
                         next_attempt_at=row["next_attempt_at"],
+                        lease_until=lease_until,
                         last_error=row["last_error"],
                     )
                 )
@@ -179,11 +262,13 @@ class DurableEventStore:
 
     def mark_delivered(self, event_id: str, now: str) -> None:
         with self.transaction() as tx:
-            row = tx.execute("SELECT attempts FROM event_outbox WHERE event_id=?", (event_id,)).fetchone()
+            row = tx.execute("SELECT attempts, state FROM event_outbox WHERE event_id=?", (event_id,)).fetchone()
             if row is None:
                 raise KeyError(event_id)
+            if row["state"] != "INFLIGHT":
+                raise ValueError("only INFLIGHT event can be acknowledged as delivered")
             tx.execute(
-                "UPDATE event_outbox SET state='DELIVERED', updated_at=?, last_error=NULL WHERE event_id=?",
+                "UPDATE event_outbox SET state='DELIVERED', lease_until=NULL, updated_at=?, last_error=NULL WHERE event_id=?",
                 (now, event_id),
             )
             tx.execute(
@@ -203,6 +288,8 @@ class DurableEventStore:
             row = tx.execute("SELECT * FROM event_outbox WHERE event_id=?", (event_id,)).fetchone()
             if row is None:
                 raise KeyError(event_id)
+            if row["state"] != "INFLIGHT":
+                raise ValueError("only INFLIGHT event can fail a delivery attempt")
             attempts = int(row["attempts"])
             tx.execute(
                 "INSERT INTO delivery_attempts(event_id, attempt_no, outcome, error, attempted_at) VALUES (?, ?, 'FAILED', ?, ?)",
@@ -210,7 +297,7 @@ class DurableEventStore:
             )
             if attempts >= max_attempts:
                 tx.execute(
-                    "UPDATE event_outbox SET state='DEAD', updated_at=?, last_error=? WHERE event_id=?",
+                    "UPDATE event_outbox SET state='DEAD', lease_until=NULL, updated_at=?, last_error=? WHERE event_id=?",
                     (now, error, event_id),
                 )
                 tx.execute(
@@ -228,7 +315,7 @@ class DurableEventStore:
             tx.execute(
                 """
                 UPDATE event_outbox
-                SET state='RETRY', next_attempt_at=?, updated_at=?, last_error=?
+                SET state='RETRY', lease_until=NULL, next_attempt_at=?, updated_at=?, last_error=?
                 WHERE event_id=?
                 """,
                 (retry_at, now, error, event_id),
@@ -240,17 +327,31 @@ class DurableEventStore:
             raise ValueError("event delivered to wrong consumer repo")
         with self.transaction() as tx:
             existing = tx.execute(
-                "SELECT first_event_id FROM replay_ledger WHERE consumer_repo=? AND contract_id=?",
+                """
+                SELECT first_event_id, first_payload_hash
+                FROM replay_ledger
+                WHERE consumer_repo=? AND contract_id=?
+                """,
                 (consumer_repo, event.contract_id),
             ).fetchone()
             if existing is not None:
+                known_hash = existing["first_payload_hash"]
+                if not known_hash:
+                    inbox = tx.execute(
+                        "SELECT contract_payload_hash FROM event_inbox WHERE consumer_repo=? AND contract_id=?",
+                        (consumer_repo, event.contract_id),
+                    ).fetchone()
+                    known_hash = None if inbox is None else inbox["contract_payload_hash"]
+                if known_hash and known_hash != event.contract_payload_hash:
+                    raise ValueError("replayed contract_id has conflicting payload hash")
                 return False
             tx.execute(
                 """
-                INSERT INTO replay_ledger(consumer_repo, contract_id, first_event_id, first_seen_at)
-                VALUES (?, ?, ?, ?)
+                INSERT INTO replay_ledger(
+                    consumer_repo, contract_id, first_event_id, first_payload_hash, first_seen_at
+                ) VALUES (?, ?, ?, ?, ?)
                 """,
-                (consumer_repo, event.contract_id, event.event_id, now),
+                (consumer_repo, event.contract_id, event.event_id, event.contract_payload_hash, now),
             )
             tx.execute(
                 """
