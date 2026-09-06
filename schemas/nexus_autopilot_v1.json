@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synergy.local/schemas/nexus_autopilot_v1.json",
+  "title": "NEXUS to AUTOPILOT contracts v1",
+  "oneOf": [
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "NexusPolicyProposal"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["proposal_id", "domain", "objective", "recommended_action", "confidence", "constraints", "risk_flags"],
+              "properties": {
+                "proposal_id": {"type": "string", "format": "uuid"},
+                "domain": {"type": "string"},
+                "objective": {"type": "string", "minLength": 1},
+                "recommended_action": {"type": "string", "minLength": 1},
+                "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+                "constraints": {"type": "array", "items": {"type": "string"}},
+                "risk_flags": {"type": "array", "items": {"type": "string"}},
+                "expires_at": {"type": ["string", "null"], "format": "date-time"}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "AutopilotPolicyDecision"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["proposal_id", "decision", "policy_id", "capabilities", "required_approvals", "reason"],
+              "properties": {
+                "proposal_id": {"type": "string", "format": "uuid"},
+                "decision": {"enum": ["ALLOW", "DENY", "REQUIRE_APPROVAL", "DEFER"]},
+                "policy_id": {"type": "string"},
+                "capabilities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+                "required_approvals": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+                "reason": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
