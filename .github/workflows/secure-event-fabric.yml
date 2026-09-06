@@ -1,0 +1,43 @@
+name: Federation V3 Secure Event Fabric
+
+on:
+  push:
+    paths:
+      - 'contracts/python/synergy_event_fabric/**'
+      - 'config/secure_event_*.json'
+      - 'tests/test_secure_event_fabric.py'
+      - 'tests/test_event_store_hardening.py'
+      - 'tests/test_event_store_migration.py'
+      - 'tests/test_midas_trust_e2e_fabric.py'
+      - '.github/workflows/secure-event-fabric.yml'
+  pull_request:
+    paths:
+      - 'contracts/python/synergy_event_fabric/**'
+      - 'config/secure_event_*.json'
+      - 'tests/test_secure_event_fabric.py'
+      - 'tests/test_event_store_hardening.py'
+      - 'tests/test_event_store_migration.py'
+      - 'tests/test_midas_trust_e2e_fabric.py'
+      - '.github/workflows/secure-event-fabric.yml'
+
+jobs:
+  secure-event-fabric:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install federation package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest
+      - name: Compile Python runtime
+        run: python -m compileall -q contracts/python
+      - name: Run Secure Event Fabric tests
+        run: >-
+          pytest -q
+          tests/test_secure_event_fabric.py
+          tests/test_event_store_hardening.py
+          tests/test_event_store_migration.py
+          tests/test_midas_trust_e2e_fabric.py

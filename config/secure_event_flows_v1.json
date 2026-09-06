@@ -1,0 +1,52 @@
+{
+  "schema": "synergy.secure-event-flows/v1",
+  "as_of": "2026-09-06",
+  "global_invariants": {
+    "same_correlation_id_across_flow": true,
+    "strict_previous_contract_causation": true,
+    "every_domain_contract_validated_before_publish": true,
+    "every_event_signed_before_transport": true,
+    "every_consumer_idempotent_by_contract_id": true,
+    "transport_ack_is_not_domain_success": true,
+    "dlq_is_not_domain_success": true
+  },
+  "flows": [
+    {
+      "flow_id": "midas-to-trust/e2e-v1",
+      "purpose": "Carry one approved MIDAS intent through settlement, accounting truth, chain commitment and MetaChain verification without transferring authority between domains.",
+      "steps": [
+        {"contract_type":"TradingExecutionIntent","producer":"Shtenco/midas_ai","consumer":"Shtenco/synergy_pay_system"},
+        {"contract_type":"SettlementEvidence","producer":"Shtenco/synergy_pay_system","consumer":"Shtenco/synergy_financial_os"},
+        {"contract_type":"ReconciledTradingResult","producer":"Shtenco/synergy_financial_os","consumer":"Shtenco/midas_ai"},
+        {"contract_type":"FinancialCommitmentArtifact","producer":"Shtenco/synergy_financial_os","consumer":"Shtenco/synergy_ai_blockchain","transition":"INTERNAL_FINANCIAL_CLOSE_AFTER_RECONCILIATION"},
+        {"contract_type":"ChainCommitmentReceipt","producer":"Shtenco/synergy_ai_blockchain","consumer":"Shtenco/synergy_metachain"},
+        {"contract_type":"MetaChainCheckpointProof","producer":"Shtenco/synergy_metachain","consumer":"Shtenco/synergy_system"}
+      ],
+      "terminal_success": "MetaChainCheckpointProof.verification_status=VERIFIED",
+      "economic_truth_rule": "profit_is_authoritative_at_ReconciledTradingResult_only_after_external_SettlementEvidence",
+      "trust_rule": "blockchain_and_metachain_commit_or_verify_accounting_truth_but_never_recalculate_it"
+    },
+    {
+      "flow_id": "midas-settlement-failure/compensation-v1",
+      "purpose": "Recover from a failed/partial/reversed settlement while preserving immutable history.",
+      "trigger": [
+        "SettlementEvidence.status=FAILED",
+        "SettlementEvidence.status=PARTIAL",
+        "SettlementEvidence.status=REVERSED",
+        "ReconciledTradingResult.reconciliation_status=EXCEPTION"
+      ],
+      "recovery": [
+        "emit CompensationRequest control event",
+        "domain authority decides reversal or compensating action",
+        "create a new immutable domain contract",
+        "publish the new contract through the same signed durable fabric"
+      ],
+      "forbidden": [
+        "delete original contract",
+        "overwrite original settlement",
+        "treat transport retry as financial reversal",
+        "allow SynergyNet or Meta-OS to invent accounting corrections"
+      ]
+    }
+  ]
+}
