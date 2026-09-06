@@ -1,0 +1,37 @@
+{
+  "schema": "synergy.contract-compatibility/v1",
+  "policy": {
+    "current_major": 1,
+    "v1_semantics_immutable": true,
+    "backward_compatible_changes": [
+      "add_optional_payload_property",
+      "widen_documentation",
+      "add_new_contract_type_without_reusing_existing_type",
+      "add_non_authoritative_evidence_ref"
+    ],
+    "breaking_changes_require_new_major": [
+      "remove_required_property",
+      "rename_required_property",
+      "change_property_meaning",
+      "narrow_existing_enum",
+      "change_canonical_producer",
+      "change_canonical_producer_authority",
+      "change_consumer_required_authority",
+      "weaken_evidence_hash_requirement",
+      "weaken_causation_requirement"
+    ],
+    "forbidden_without_constitution_change": [
+      "grant_execution_authority_to_nexus",
+      "grant_accounting_authority_to_blockchain",
+      "allow_settlement_without_external_reference_for_settled_external_payment",
+      "recognize_internal_mark_change_as_external_profit"
+    ]
+  },
+  "supported_chains": {
+    "nexus_autopilot": {"major": 1, "status": "CANDIDATE"},
+    "midas_metapay_financial": {"major": 1, "status": "CANDIDATE"},
+    "science_eurasian_financial": {"major": 1, "status": "CANDIDATE"},
+    "budget_metapay_financial": {"major": 1, "status": "CANDIDATE"},
+    "financial_blockchain_metachain": {"major": 1, "status": "CANDIDATE"}
+  }
+}
