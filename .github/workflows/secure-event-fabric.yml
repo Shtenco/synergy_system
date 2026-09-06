@@ -6,6 +6,8 @@ on:
       - 'contracts/python/synergy_event_fabric/**'
       - 'config/secure_event_*.json'
       - 'tests/test_secure_event_fabric.py'
+      - 'tests/test_event_store_hardening.py'
+      - 'tests/test_event_store_migration.py'
       - 'tests/test_midas_trust_e2e_fabric.py'
       - '.github/workflows/secure-event-fabric.yml'
   pull_request:
@@ -13,6 +15,8 @@ on:
       - 'contracts/python/synergy_event_fabric/**'
       - 'config/secure_event_*.json'
       - 'tests/test_secure_event_fabric.py'
+      - 'tests/test_event_store_hardening.py'
+      - 'tests/test_event_store_migration.py'
       - 'tests/test_midas_trust_e2e_fabric.py'
       - '.github/workflows/secure-event-fabric.yml'
 
@@ -31,4 +35,9 @@ jobs:
       - name: Compile Python runtime
         run: python -m compileall -q contracts/python
       - name: Run Secure Event Fabric tests
-        run: pytest -q tests/test_secure_event_fabric.py tests/test_midas_trust_e2e_fabric.py
+        run: >-
+          pytest -q
+          tests/test_secure_event_fabric.py
+          tests/test_event_store_hardening.py
+          tests/test_event_store_migration.py
+          tests/test_midas_trust_e2e_fabric.py
