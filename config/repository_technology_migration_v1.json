@@ -1,0 +1,41 @@
+{
+  "schema": "synergy.repository-technology-migration/v1",
+  "as_of": "2026-09-06",
+  "technical_repositories": 45,
+  "observed_repositories_including_master_dossier": 46,
+  "promotion_rule": {
+    "required": ["exact_source_commit", "provenance", "reproducible_tests", "evidence_artifact", "target_owner_review", "explicit_promotion_decision"],
+    "automatic_promotion": false
+  },
+  "migrations": [
+    {"source": "Shtenco/quantum-trading_metatrader5", "targets": ["Shtenco/midas_ai"], "technology": ["quantum trading experiment", "Qiskit integration"], "status": "LEGACY_RND"},
+    {"source": "Shtenco/computer_vision_trading_metatrader_5", "targets": ["Shtenco/midas_ai", "Shtenco/ai_compress"], "technology": ["RGB market representation", "attention/CNN/BiLSTM", "vision artifacts"], "status": "RND_SOURCE"},
+    {"source": "Shtenco/swap_arbitrage_metatrader_5", "targets": ["Shtenco/midas_ai", "Shtenco/algotrading_graph_system"], "technology": ["carry/swap portfolio research", "financing-cost features"], "status": "RND_SOURCE"},
+    {"source": "Shtenco/cross_forex_arbitrage_trading_metatrader_5", "targets": ["Shtenco/algotrading_graph_system", "Shtenco/midas_ai"], "technology": ["synthetic cross rates", "path discrepancy graph"], "status": "RND_SOURCE"},
+    {"source": "Shtenco/global_liquidity_dataminer", "targets": ["Shtenco/midas_ai", "Shtenco/synergy_eurasian", "Shtenco/synergy_system"], "technology": ["central-bank liquidity datasets", "macro liquidity index", "stress/scenario features"], "status": "RND_SOURCE"},
+    {"source": "Shtenco/3D_bars_market_structure", "targets": ["Shtenco/midas_ai"], "technology": ["time-price-volume voxelization", "3D reversal features", "visualization"], "status": "RND_SOURCE"},
+    {"source": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python", "targets": ["Shtenco/midas_ai", "Shtenco/synergy_meta_os"], "technology": ["parallel trading workers", "GMM regimes", "XGBoost baseline", "thread-safe logging/risk patterns"], "status": "RND_SOURCE"},
+    {"source": "Shtenco/midas_ai_trading_system", "targets": ["Shtenco/midas_ai", "Shtenco/ai_compress", "Shtenco/synergy_system"], "technology": ["institutional MIDAS lineage", "independent risk veto", "forward-first validation", "Unified Data Archive"], "status": "MAJOR_RND_SOURCE"},
+    {"source": "Shtenco/midas_lite", "targets": ["Shtenco/midas_ai"], "technology": ["compact MIDAS lineage"], "status": "LEGACY_SOURCE"},
+    {"source": "Shtenco/agi_olga", "targets": ["Shtenco/agi_nexus", "Shtenco/nexus_science_agent", "Shtenco/ai_compress"], "technology": ["SmallWorld reasoning", "symbolic DSL", "MDL synthesis", "NEXUS lineage", "model/benchmark archive"], "status": "MAJOR_RND_SOURCE"},
+    {"source": "Shtenco/ai_trade_terminal", "targets": ["Shtenco/midas_ai", "Shtenco/synergy_meta_os", "Shtenco/synergynet", "Shtenco/ai_compress"], "technology": ["DataHub", "process supervisor", "WebSocket event stream", "watchdog", "operator UI", "event/history cache"], "status": "LEGACY_SOURCE"},
+    {"source": "Shtenco/cashero", "targets": ["Shtenco/ai_financial_system", "Shtenco/print_money_synergychain"], "technology": ["cyclic liquidity experiments", "Polygon bot lineage", "tokenomics simulations"], "status": "SECURITY_REVIEW_REQUIRED"},
+    {"source": "Shtenco/ai_language", "targets": ["Shtenco/ai_coder", "Shtenco/synergy_system"], "technology": ["semantic requirements", "repository understanding", "change/impact graph", "AILang compiler"], "status": "ENGINEERING_CORE"},
+    {"source": "Shtenco/binary_quantum_theory", "targets": ["Shtenco/nexus_science_agent", "Shtenco/ai_compress"], "technology": ["candidate mathematical physics", "held-out evidence", "research corpus archive"], "status": "SCIENTIFIC_RND"},
+    {"source": "Shtenco/ai_financial_system", "targets": ["Shtenco/midas_ai", "Shtenco/synergy_pay_system", "Shtenco/synergy_financial_os", "Shtenco/synergy_ai_blockchain", "Shtenco/print_money_synergychain"], "technology": ["AMM/QE/QT", "MEV/orderflow", "bridge solvency", "solver auction", "economic simulations"], "status": "RND_SOURCE"},
+    {"source": "Shtenco/ai_compress", "targets": ["Shtenco/synergynet", "Shtenco/synergy_meta_os", "Shtenco/midas_ai", "Shtenco/agi_nexus", "Shtenco/nexus_science_agent", "Shtenco/synergy_financial_os", "Shtenco/synergy_pay_system", "Shtenco/blochain_budget", "Shtenco/synergy_ai_blockchain", "Shtenco/synergy_metachain", "Shtenco/synergychain", "Shtenco/synergy_app", "Shtenco/motherboard_xpu_xml"], "technology": ["lossless codec registry", "deduplication", "content addressing", "random access", "archive manifests", "Data Fabric"], "status": "CANONICAL_DATA_FABRIC_TARGET"},
+    {"source": "Shtenco/qr_compress", "targets": ["Shtenco/synergy_pay_system", "Shtenco/synergy_app", "Shtenco/sinergy-super-app", "Shtenco/blochain_budget", "Shtenco/nexus_science_agent", "Shtenco/synergy_meta_os", "Shtenco/synergynet", "Shtenco/synergy_metachain"], "technology": ["QTC1/QTC2", "temporal dictionary", "residual patching", "QF1 multi-frame QR", "offline payload manifests"], "status": "OFFLINE_DATA_FABRIC_TARGET", "authority": "NONE"},
+    {"source": "Shtenco/cold_nuclear", "targets": ["Shtenco/nexus_science_agent", "Shtenco/ai_compress", "Shtenco/synergy_eurasian"], "technology": ["reproducible LENR/transmutation computation", "materials selection", "falsification package"], "status": "SCIENTIFIC_RND"},
+    {"source": "Shtenco/usds", "targets": ["Shtenco/print_money_synergychain", "Shtenco/synergy_financial_os"], "technology": ["mint/sell/restore model", "external-value separation", "Base fork harness"], "status": "MONETARY_RND"},
+    {"source": "Shtenco/synergychain", "targets": ["Shtenco/ai_compress", "Shtenco/synergy_pay_system", "Shtenco/synergy_financial_os"], "technology": ["source release bundles", "compressed conversation memory", "business events", "real customer payment intents"], "status": "APPLICATION_CONTROL_PLANE"},
+    {"source": "Shtenco/blochain_budget", "targets": ["Shtenco/ai_compress", "Shtenco/synergynet", "Shtenco/synergy_financial_os", "Shtenco/synergy_ai_blockchain"], "technology": ["official raw artifact archive", "KBK provenance", "Merkle proof bundles", "networked archive/data node"], "status": "CANONICAL_DOMAIN_TARGET"},
+    {"source": "Shtenco/nexus_science_agent", "targets": ["Shtenco/ai_compress", "Shtenco/synergynet", "Shtenco/synergy_eurasian"], "technology": ["content-addressed research cache", "reproducibility packages", "evidence/falsification graph"], "status": "CANONICAL_TARGET"},
+    {"source": "Shtenco/motherboard_xpu_xml", "targets": ["Shtenco/synergy_meta_os", "Shtenco/ai_compress"], "technology": ["Persistent State", "content-addressed programs/models/files/snapshots", "compiled graph execution"], "status": "ACTIVE_RND_TARGET"}
+  ],
+  "non_runtime_repository": {
+    "repo": "Shtenco/synergy_project",
+    "role": "master regulatory/grant/investor dossier",
+    "authority": "NONE",
+    "included_in_technical_federation_count": false
+  }
+}
