@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synergy.local/schemas/financial_blockchain_metachain_v1.json",
+  "title": "Financial OS to Blockchain to MetaChain contracts v1",
+  "oneOf": [
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "FinancialCommitmentArtifact"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["close_id", "snapshot_hash", "merkle_root", "hardnav", "liquid_nav", "liabilities", "accounting_period_end"],
+              "properties": {
+                "close_id": {"type": "string", "format": "uuid"},
+                "snapshot_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "merkle_root": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "hardnav": {"type": "number"},
+                "liquid_nav": {"type": "number"},
+                "liabilities": {"type": "number", "minimum": 0},
+                "accounting_period_end": {"type": "string", "format": "date-time"}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "ChainCommitmentReceipt"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["close_id", "chain_id", "block_height", "tx_hash", "commitment_hash", "finality_status"],
+              "properties": {
+                "close_id": {"type": "string", "format": "uuid"},
+                "chain_id": {"type": "string"},
+                "block_height": {"type": "integer", "minimum": 0},
+                "tx_hash": {"type": "string", "minLength": 1},
+                "commitment_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "finality_status": {"enum": ["PENDING", "FINAL", "REORGED"]}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "MetaChainCheckpointProof"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["source_chain_id", "source_block_height", "source_commitment_hash", "verification_method", "verification_status", "proof_ref"],
+              "properties": {
+                "source_chain_id": {"type": "string"},
+                "source_block_height": {"type": "integer", "minimum": 0},
+                "source_commitment_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                "verification_method": {"enum": ["LIGHT_CLIENT", "FINALITY_PROOF", "BRIDGE_PROOF"]},
+                "verification_status": {"enum": ["VERIFIED", "REJECTED", "PENDING"]},
+                "proof_ref": {"type": "string", "minLength": 1},
+                "security_assumptions": {"type": "array", "items": {"type": "string"}}
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
