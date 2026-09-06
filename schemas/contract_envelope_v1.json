@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synergy.local/schemas/contract_envelope_v1.json",
+  "title": "SYNERGY Contract Envelope v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_id", "contract_type", "contract_version", "contract_id", "created_at", "producer", "consumer", "correlation_id", "provenance", "authorization", "evidence", "payload"],
+  "properties": {
+    "schema_id": {"const": "synergy.contract-envelope/v1"},
+    "contract_type": {"type": "string", "minLength": 1},
+    "contract_version": {"const": 1},
+    "contract_id": {"type": "string", "format": "uuid"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "producer": {"$ref": "#/$defs/endpoint"},
+    "consumer": {"$ref": "#/$defs/endpoint"},
+    "correlation_id": {"type": "string", "format": "uuid"},
+    "causation_id": {"type": ["string", "null"], "format": "uuid"},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "authorization": {"$ref": "#/$defs/authorization"},
+    "evidence": {"$ref": "#/$defs/evidence"},
+    "payload": {"type": "object"}
+  },
+  "$defs": {
+    "endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repo", "component", "authority"],
+      "properties": {
+        "repo": {"type": "string", "pattern": "^Shtenco/[A-Za-z0-9_.-]+$"},
+        "component": {"type": "string", "minLength": 1},
+        "authority": {"type": "string", "minLength": 1}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code_commit", "epistemic_state", "source_refs"],
+      "properties": {
+        "code_commit": {"type": "string", "pattern": "^[0-9a-f]{7,64}$"},
+        "model_id": {"type": ["string", "null"]},
+        "data_cutoff": {"type": ["string", "null"], "format": "date-time"},
+        "epistemic_state": {"enum": ["KNOWN", "LEARNED", "INFERRED", "UNKNOWN"]},
+        "source_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "authorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_authority", "decision"],
+      "properties": {
+        "required_authority": {"type": "string", "minLength": 1},
+        "decision": {"enum": ["PROPOSAL_ONLY", "PENDING", "APPROVED", "REJECTED", "NOT_REQUIRED"]},
+        "granted_by": {"type": ["string", "null"]},
+        "grant_ref": {"type": ["string", "null"]}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hash_alg", "payload_hash", "refs"],
+      "properties": {
+        "hash_alg": {"const": "sha256"},
+        "payload_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    }
+  }
+}
