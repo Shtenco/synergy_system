@@ -1,0 +1,41 @@
+name: Federation V3.1 Data Fabric
+
+on:
+  push:
+    paths:
+      - 'contracts/python/synergy_data_fabric/**'
+      - 'config/data_fabric_*.json'
+      - 'schemas/data_fabric/**'
+      - 'tests/test_data_fabric.py'
+      - 'docs/FEDERATION_V3_DATA_FABRIC.md'
+      - '.github/workflows/data-fabric.yml'
+  pull_request:
+    paths:
+      - 'contracts/python/synergy_data_fabric/**'
+      - 'config/data_fabric_*.json'
+      - 'schemas/data_fabric/**'
+      - 'tests/test_data_fabric.py'
+      - 'docs/FEDERATION_V3_DATA_FABRIC.md'
+      - '.github/workflows/data-fabric.yml'
+
+jobs:
+  data-fabric:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install federation package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e . pytest
+      - name: Compile Python runtime
+        run: python -m compileall -q contracts/python/synergy_data_fabric
+      - name: Validate JSON configuration and schemas
+        run: |
+          python -m json.tool config/data_fabric_v1.json >/dev/null
+          python -m json.tool schemas/data_fabric/archive_manifest_v1.schema.json >/dev/null
+          python -m json.tool schemas/data_fabric/offline_payload_manifest_v1.schema.json >/dev/null
+      - name: Run Data Fabric tests
+        run: pytest -q tests/test_data_fabric.py
