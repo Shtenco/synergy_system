@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synergy.local/schemas/data-fabric/offline-payload-manifest-v1.schema.json",
+  "title": "SYNERGY Data Fabric OfflinePayloadManifest V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "payload_id",
+    "payload_type",
+    "issuer_repo",
+    "target_repo",
+    "canonical_content_sha256",
+    "encoding_profile",
+    "created_at",
+    "expires_at",
+    "replay_nonce",
+    "verification"
+  ],
+  "properties": {
+    "schema": {"const": "synergy.offline-payload-manifest/v1"},
+    "payload_id": {"type": "string", "minLength": 8, "maxLength": 256},
+    "payload_type": {
+      "enum": [
+        "PAYMENT_INTENT_REFERENCE",
+        "SETTLEMENT_RECEIPT_REFERENCE",
+        "IDENTITY_PUBLIC_KEY_REFERENCE",
+        "EVIDENCE_MANIFEST_REFERENCE",
+        "NODE_ENROLLMENT_REFERENCE",
+        "SCIENCE_SAMPLE_REFERENCE",
+        "PUBLIC_BUDGET_PROOF_REFERENCE",
+        "CHAIN_PROOF_REFERENCE",
+        "USER_BACKUP_FRAGMENT"
+      ]
+    },
+    "issuer_repo": {"type": "string", "pattern": "^Shtenco/[A-Za-z0-9_.-]+$"},
+    "target_repo": {"type": "string", "pattern": "^Shtenco/[A-Za-z0-9_.-]+$"},
+    "canonical_content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "encoding_profile": {"enum": ["QTC1", "QTC2_EXACT", "QTC2_PATCH", "QTC2_STANDALONE", "QF1_RAW_REFERENCE"]},
+    "shared_model_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "temporal_slot": {"type": ["integer", "null"], "minimum": 0},
+    "frame_set_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "replay_nonce": {"type": "string", "minLength": 16, "maxLength": 256},
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["signature_algorithm", "signing_key_reference", "authorization_conferred"],
+      "properties": {
+        "signature_algorithm": {"type": "string", "minLength": 1},
+        "signing_key_reference": {"type": "string", "minLength": 1},
+        "authorization_conferred": {"const": false}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"encoding_profile": {"enum": ["QTC2_EXACT", "QTC2_PATCH"]}}},
+      "then": {"required": ["shared_model_sha256", "temporal_slot"]}
+    }
+  ]
+}
