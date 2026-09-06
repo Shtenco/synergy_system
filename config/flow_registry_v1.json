@@ -1,0 +1,44 @@
+{
+  "schema": "synergy.flow-registry/v1",
+  "as_of": "2026-09-06",
+  "global_invariants": {
+    "same_correlation_id_within_flow": true,
+    "strict_previous_contract_causation": true,
+    "unknown_contract_type_rejected": true,
+    "authority_registry_enforced": true,
+    "payload_hash_required": true
+  },
+  "flows": [
+    {
+      "flow_id": "nexus-autopilot/v1",
+      "purpose": "Turn bounded reasoning into a policy decision without transferring authority to NEXUS.",
+      "steps": ["NexusPolicyProposal", "AutopilotPolicyDecision"],
+      "terminal_decisions": ["ALLOW", "DENY", "REQUIRE_APPROVAL", "DEFER"]
+    },
+    {
+      "flow_id": "midas-metapay-financial/v1",
+      "purpose": "Turn an approved trading intent into externally settled and reconciled accounting truth.",
+      "steps": ["TradingExecutionIntent", "SettlementEvidence", "ReconciledTradingResult"],
+      "terminal_settlement_states": ["SETTLED", "FAILED", "REVERSED"],
+      "profit_rule": "realized_pnl_is_authoritative_only_after_settlement_and_financial_reconciliation"
+    },
+    {
+      "flow_id": "science-eurasian-financial/v1",
+      "purpose": "Convert evidence-backed research into a productive project proposal and independent underwriting decision.",
+      "steps": ["CommercializationCandidate", "ProductiveProjectProposal", "ProjectUnderwritingDecision"],
+      "terminal_underwriting_states": ["APPROVE", "REJECT", "CONDITIONAL", "DEFER"]
+    },
+    {
+      "flow_id": "budget-metapay-financial/v1",
+      "purpose": "Authorize a traceable public payment, settle it externally and recognize it in the canonical ledger.",
+      "steps": ["BudgetPaymentAuthorization", "BudgetSettlementEvidence", "BudgetAccountingRecognition"],
+      "terminal_accounting_states": ["RECOGNIZED", "EXCEPTION", "REVERSED"]
+    },
+    {
+      "flow_id": "financial-blockchain-metachain/v1",
+      "purpose": "Commit an already-closed financial snapshot to a chain and verify its cross-chain checkpoint without changing accounting truth.",
+      "steps": ["FinancialCommitmentArtifact", "ChainCommitmentReceipt", "MetaChainCheckpointProof"],
+      "terminal_verification_states": ["VERIFIED", "REJECTED"]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synergy.local/schemas/budget_metapay_financial_v1.json",
+  "title": "Budget to MetaPay to Financial OS contracts v1",
+  "oneOf": [
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "BudgetPaymentAuthorization"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["authorization_id", "budget_entity", "contract_ref", "beneficiary", "asset", "amount", "purpose", "delivery_evidence_refs", "appropriation_ref"],
+              "properties": {
+                "authorization_id": {"type": "string", "format": "uuid"},
+                "budget_entity": {"type": "string"},
+                "contract_ref": {"type": "string"},
+                "beneficiary": {"type": "string"},
+                "asset": {"type": "string"},
+                "amount": {"type": "number", "exclusiveMinimum": 0},
+                "purpose": {"type": "string", "minLength": 1},
+                "delivery_evidence_refs": {"type": "array", "items": {"type": "string"}},
+                "appropriation_ref": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "BudgetSettlementEvidence"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["authorization_id", "status", "asset", "gross_amount", "fees", "net_amount", "external_reference", "settled_at"],
+              "properties": {
+                "authorization_id": {"type": "string", "format": "uuid"},
+                "status": {"enum": ["SETTLED", "PARTIAL", "FAILED", "REVERSED"]},
+                "asset": {"type": "string"},
+                "gross_amount": {"type": "number"},
+                "fees": {"type": "number", "minimum": 0},
+                "net_amount": {"type": "number"},
+                "external_reference": {"type": "string", "minLength": 1},
+                "settled_at": {"type": "string", "format": "date-time"}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "BudgetAccountingRecognition"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["authorization_id", "settlement_contract_id", "ledger_entry_ref", "recognition_status", "economic_classification"],
+              "properties": {
+                "authorization_id": {"type": "string", "format": "uuid"},
+                "settlement_contract_id": {"type": "string", "format": "uuid"},
+                "ledger_entry_ref": {"type": "string"},
+                "recognition_status": {"enum": ["RECOGNIZED", "EXCEPTION", "REVERSED"]},
+                "economic_classification": {"type": "string"}
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

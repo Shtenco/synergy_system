@@ -1,0 +1,20 @@
+{
+  "schema": "synergy.contract-registry/v1",
+  "as_of": "2026-09-06",
+  "contracts": [
+    {"type":"NexusPolicyProposal","schema":"nexus_autopilot_v1.json","producer":"Shtenco/agi_nexus","producer_authority":"reasoning_core","consumer":"Shtenco/agi_autopilot","consumer_authority":"action_orchestration"},
+    {"type":"AutopilotPolicyDecision","schema":"nexus_autopilot_v1.json","producer":"Shtenco/agi_autopilot","producer_authority":"action_orchestration","consumer":"DOMAIN_DEPENDENT","consumer_authority":"DOMAIN_DEPENDENT"},
+    {"type":"TradingExecutionIntent","schema":"midas_metapay_financial_v1.json","producer":"Shtenco/midas_ai","producer_authority":"trading_intelligence","consumer":"Shtenco/synergy_pay_system","consumer_authority":"payment_execution_settlement"},
+    {"type":"SettlementEvidence","schema":"midas_metapay_financial_v1.json","producer":"Shtenco/synergy_pay_system","producer_authority":"payment_execution_settlement","consumer":"Shtenco/synergy_financial_os","consumer_authority":"canonical_accounting"},
+    {"type":"ReconciledTradingResult","schema":"midas_metapay_financial_v1.json","producer":"Shtenco/synergy_financial_os","producer_authority":"canonical_accounting","consumer":"Shtenco/midas_ai","consumer_authority":"trading_intelligence"},
+    {"type":"CommercializationCandidate","schema":"science_eurasian_financial_v1.json","producer":"Shtenco/nexus_science_agent","producer_authority":"science_research_orchestration","consumer":"Shtenco/synergy_eurasian","consumer_authority":"productive_project_model"},
+    {"type":"ProductiveProjectProposal","schema":"science_eurasian_financial_v1.json","producer":"Shtenco/synergy_eurasian","producer_authority":"productive_project_model","consumer":"Shtenco/synergy_financial_os","consumer_authority":"canonical_accounting"},
+    {"type":"ProjectUnderwritingDecision","schema":"science_eurasian_financial_v1.json","producer":"Shtenco/synergy_financial_os","producer_authority":"canonical_accounting","consumer":"Shtenco/synergy_eurasian","consumer_authority":"productive_project_model"},
+    {"type":"BudgetPaymentAuthorization","schema":"budget_metapay_financial_v1.json","producer":"Shtenco/blochain_budget","producer_authority":"state_budget_traceability","consumer":"Shtenco/synergy_pay_system","consumer_authority":"payment_execution_settlement"},
+    {"type":"BudgetSettlementEvidence","schema":"budget_metapay_financial_v1.json","producer":"Shtenco/synergy_pay_system","producer_authority":"payment_execution_settlement","consumer":"Shtenco/synergy_financial_os","consumer_authority":"canonical_accounting"},
+    {"type":"BudgetAccountingRecognition","schema":"budget_metapay_financial_v1.json","producer":"Shtenco/synergy_financial_os","producer_authority":"canonical_accounting","consumer":"Shtenco/blochain_budget","consumer_authority":"state_budget_traceability"},
+    {"type":"FinancialCommitmentArtifact","schema":"financial_blockchain_metachain_v1.json","producer":"Shtenco/synergy_financial_os","producer_authority":"canonical_accounting","consumer":"Shtenco/synergy_ai_blockchain","consumer_authority":"pq_chain_trust"},
+    {"type":"ChainCommitmentReceipt","schema":"financial_blockchain_metachain_v1.json","producer":"Shtenco/synergy_ai_blockchain","producer_authority":"pq_chain_trust","consumer":"Shtenco/synergy_metachain","consumer_authority":"cross_chain_trust"},
+    {"type":"MetaChainCheckpointProof","schema":"financial_blockchain_metachain_v1.json","producer":"Shtenco/synergy_metachain","producer_authority":"cross_chain_trust","consumer":"Shtenco/synergy_system","consumer_authority":"architecture_governance"}
+  ]
+}

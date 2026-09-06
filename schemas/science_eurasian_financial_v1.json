@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synergy.local/schemas/science_eurasian_financial_v1.json",
+  "title": "Science to Eurasian to Financial OS contracts v1",
+  "oneOf": [
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "CommercializationCandidate"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["candidate_id", "technology", "hypothesis_status", "trl", "reproduction_status", "evidence_refs", "target_industries"],
+              "properties": {
+                "candidate_id": {"type": "string", "format": "uuid"},
+                "technology": {"type": "string", "minLength": 1},
+                "hypothesis_status": {"enum": ["HYPOTHESIS", "SUPPORTED", "FALSIFIED", "INCONCLUSIVE"]},
+                "trl": {"type": "integer", "minimum": 1, "maximum": 9},
+                "reproduction_status": {"enum": ["NONE", "INTERNAL", "INDEPENDENT"]},
+                "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+                "target_industries": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "ProductiveProjectProposal"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["project_id", "candidate_id", "region", "industry", "capex", "opex_annual", "expected_external_revenue", "jobs", "stress_case", "funding_requested"],
+              "properties": {
+                "project_id": {"type": "string", "format": "uuid"},
+                "candidate_id": {"type": "string", "format": "uuid"},
+                "region": {"type": "string"},
+                "industry": {"type": "string"},
+                "capex": {"type": "number", "minimum": 0},
+                "opex_annual": {"type": "number", "minimum": 0},
+                "expected_external_revenue": {"type": "number", "minimum": 0},
+                "jobs": {"type": "integer", "minimum": 0},
+                "stress_case": {"type": "object"},
+                "funding_requested": {"type": "number", "minimum": 0}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "ProjectUnderwritingDecision"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["project_id", "decision", "approved_capacity", "required_reserves", "conditions", "underwriting_snapshot_ref"],
+              "properties": {
+                "project_id": {"type": "string", "format": "uuid"},
+                "decision": {"enum": ["APPROVE", "REJECT", "CONDITIONAL", "DEFER"]},
+                "approved_capacity": {"type": "number", "minimum": 0},
+                "required_reserves": {"type": "number", "minimum": 0},
+                "conditions": {"type": "array", "items": {"type": "string"}},
+                "underwriting_snapshot_ref": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
