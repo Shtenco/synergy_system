@@ -5,6 +5,7 @@ on:
     paths:
       - 'schemas/**'
       - 'contracts/**'
+      - 'config/contract_*.json'
       - 'tests/**'
       - 'pyproject.toml'
       - '.github/workflows/contracts-v1.yml'
@@ -12,6 +13,7 @@ on:
     paths:
       - 'schemas/**'
       - 'contracts/**'
+      - 'config/contract_*.json'
       - 'tests/**'
       - 'pyproject.toml'
       - '.github/workflows/contracts-v1.yml'
@@ -29,4 +31,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e . pytest
       - name: Validate Federation V3 contracts
-        run: pytest -q tests/test_contract_chains.py
+        run: pytest -q tests/test_contract_chains.py tests/test_contract_registry.py
