@@ -1,0 +1,76 @@
+{
+  "schema": "synergy.secure-event-fabric/v1",
+  "as_of": "2026-09-06",
+  "authority": {
+    "protocol_governance": "Shtenco/synergy_system",
+    "p2p_transport": "Shtenco/synergynet",
+    "runtime_orchestration": "Shtenco/synergy_meta_os",
+    "domain_execution": "DOMAIN_OWNER_ONLY",
+    "accounting_truth": "Shtenco/synergy_financial_os",
+    "payment_settlement": "Shtenco/synergy_pay_system",
+    "chain_trust": "Shtenco/synergy_ai_blockchain",
+    "cross_chain_trust": "Shtenco/synergy_metachain"
+  },
+  "delivery_semantics": {
+    "claim": "AT_LEAST_ONCE_WITH_IDEMPOTENT_CONSUMPTION",
+    "exactly_once_claim_forbidden": true,
+    "persistent_outbox_required": true,
+    "persistent_inbox_required": true,
+    "persistent_replay_ledger_required": true,
+    "atomic_domain_write_plus_outbox_required_in_production": true,
+    "consumer_side_effect_plus_inbox_commit_required_in_production": true
+  },
+  "event_invariants": {
+    "domain_contract_is_immutable": true,
+    "event_wraps_validated_contract_reference": true,
+    "payload_hash_binding_required": true,
+    "correlation_id_binding_required": true,
+    "causation_id_binding_required": true,
+    "producer_authority_binding_required": true,
+    "consumer_authority_binding_required": true,
+    "validation_receipt_required": true,
+    "retry_must_not_mutate_signed_event": true,
+    "network_transport_must_not_gain_domain_authority": true,
+    "meta_os_must_not_gain_domain_execution_authority": true
+  },
+  "signature_policy": {
+    "production_requires_post_quantum": true,
+    "production_algorithms": [
+      "ML-DSA-44",
+      "ML-DSA-65",
+      "ML-DSA-87",
+      "SLH-DSA-SHA2-128S",
+      "SLH-DSA-SHA2-192S",
+      "SLH-DSA-SHA2-256S"
+    ],
+    "test_only_algorithms": ["HMAC-SHA256-DEV"],
+    "private_keys_must_not_be_stored_by_fabric": true,
+    "network_identity_key_must_not_equal_treasury_key": true,
+    "network_identity_key_must_not_equal_validator_key": true,
+    "domain_signing_key_scope_required": true
+  },
+  "failure_policy": {
+    "default_max_attempts": 5,
+    "backoff": "EXPONENTIAL_BOUNDED",
+    "quarantine_on_signature_failure": true,
+    "quarantine_on_authority_mismatch": true,
+    "dead_letter_after_retry_exhaustion": true,
+    "dead_letter_is_not_success": true,
+    "manual_replay_requires_new_audit_record": true
+  },
+  "compensation_policy": {
+    "original_contract_never_deleted_or_overwritten": true,
+    "reversal_creates_new_contract": true,
+    "compensating_action_creates_new_contract": true,
+    "compensation_requires_domain_authority": true,
+    "transport_cannot_compensate_domain_state": true
+  },
+  "observability": {
+    "delivery_attempt_log_required": true,
+    "correlation_trace_required": true,
+    "contract_id_trace_required": true,
+    "dlq_metrics_required": true,
+    "quarantine_metrics_required": true,
+    "end_to_end_latency_metrics_required": true
+  }
+}
