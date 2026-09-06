@@ -1,0 +1,102 @@
+{
+  "schema": "synergy.data-fabric/v1",
+  "as_of": "2026-09-06",
+  "technical_federation_repositories": 45,
+  "observed_shtenco_repositories_including_master_dossier": 46,
+  "architecture_owner": "Shtenco/synergy_system",
+  "archive_codec_authority": "Shtenco/ai_compress",
+  "offline_temporal_payload_source": "Shtenco/qr_compress",
+  "transport_owner": "Shtenco/synergynet",
+  "runtime_orchestrator": "Shtenco/synergy_meta_os",
+  "semantic_authority_rule": "domain_owner_retains_semantic_truth",
+  "hash_model": {
+    "canonical_content_sha256": "SHA-256 of canonical original uncompressed bytes",
+    "archive_sha256": "SHA-256 of the exact encoded archive bytes",
+    "rule": "re-encoding with another codec MUST NOT change the canonical semantic digest"
+  },
+  "storage_tiers": [
+    "HOT_LOCAL",
+    "WARM_NODE_CACHE",
+    "DISTRIBUTED_SYNERGYNET",
+    "COLD_IMMUTABLE_ARCHIVE",
+    "AIR_GAPPED_QR_QTC",
+    "FUTURE_XPU_PERSISTENT_STATE"
+  ],
+  "object_classes": [
+    "SOURCE_RELEASE_BUNDLE",
+    "LOG_AUDIT_EVENT_PACKAGE",
+    "MARKET_HISTORY_DATASET",
+    "MODEL_CHECKPOINT",
+    "BENCHMARK_EVIDENCE",
+    "ACCOUNTING_CLOSE",
+    "SETTLEMENT_EVIDENCE",
+    "SCIENCE_REPRO_PACKAGE",
+    "PUBLIC_BUDGET_RAW_ARTIFACT",
+    "PUBLIC_BUDGET_PROOF_BUNDLE",
+    "DEPLOYMENT_RUNTIME_ARTIFACT",
+    "CHAIN_PROOF_CHECKPOINT",
+    "USER_BACKUP_PACKAGE",
+    "OFFLINE_QR_PAYLOAD_BUNDLE"
+  ],
+  "required_invariants": {
+    "lossless_round_trip_for_lossless_profiles": true,
+    "canonical_digest_independent_of_codec": true,
+    "archive_digest_required": true,
+    "codec_id_and_version_required": true,
+    "producer_and_semantic_owner_required": true,
+    "raw_secret_material_forbidden": true,
+    "transport_does_not_grant_authority": true,
+    "archive_does_not_grant_authority": true,
+    "qr_does_not_grant_authority": true,
+    "blockchain_commits_digest_not_large_blob": true,
+    "dictionary_or_shared_model_digest_required_when_used": true
+  },
+  "codec_sources": {
+    "Shtenco/ai_compress": [
+      "EGD-256",
+      "SABF-X",
+      "HACE-X",
+      "TSC-X",
+      "AMCE-100X",
+      "UMC-256",
+      "Graph-AI Compression V5.2",
+      "GRAAL-IGC",
+      "Gabriel Horn SGH1",
+      "Arithmetic",
+      "rANS",
+      "Huffman",
+      "Graph Delta"
+    ],
+    "Shtenco/qr_compress": [
+      "QTC1",
+      "QTC2",
+      "QTD1 temporal dictionary",
+      "QF1 multi-frame QR transport"
+    ]
+  },
+  "domain_consumers": {
+    "Shtenco/midas_ai": ["market data", "features", "signals", "decisions", "trades", "latent states", "benchmark evidence"],
+    "Shtenco/agi_nexus": ["model checkpoints", "frozen benchmarks", "inference evidence"],
+    "Shtenco/nexus_science_agent": ["source cache", "datasets", "reproducibility packages", "negative results"],
+    "Shtenco/synergy_financial_os": ["accounting closes", "financial snapshots", "replay/restatement evidence"],
+    "Shtenco/synergy_pay_system": ["settlement evidence", "reconciliation packages", "offline receipt references"],
+    "Shtenco/blochain_budget": ["official raw artifacts", "normalized corpora", "Merkle proof bundles"],
+    "Shtenco/synergy_ai_blockchain": ["content/manifest digests only"],
+    "Shtenco/synergy_metachain": ["proof/checkpoint packages and content refs"],
+    "Shtenco/synergychain": ["reproducible release bundles", "conversation-memory archives"],
+    "Shtenco/synergy_app": ["encrypted portable user backup packages", "offline evidence refs"],
+    "Shtenco/motherboard_xpu_xml": ["future persistent-state programs/models/files/snapshots"]
+  },
+  "security_threats": [
+    "decompression_bomb",
+    "codec_parser_supply_chain",
+    "dictionary_poisoning",
+    "dedup_side_channel",
+    "cache_presence_probe",
+    "compression_oracle_leakage",
+    "stale_or_wrong_shared_model",
+    "resource_exhaustion",
+    "unauthorized_personal_data_retention",
+    "secret_material_in_archive"
+  ]
+}
