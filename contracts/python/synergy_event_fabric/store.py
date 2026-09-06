@@ -39,6 +39,7 @@ class DurableEventStore:
         self.conn.execute("PRAGMA busy_timeout=5000")
         self._create_schema()
         self._migrate_schema()
+        self._create_indexes()
 
     def close(self) -> None:
         self.conn.close()
@@ -107,13 +108,6 @@ class DurableEventStore:
                 event_json TEXT NOT NULL,
                 failed_at TEXT NOT NULL
             );
-
-            CREATE INDEX IF NOT EXISTS idx_outbox_ready
-              ON event_outbox(state, next_attempt_at, created_at);
-            CREATE INDEX IF NOT EXISTS idx_outbox_lease
-              ON event_outbox(state, lease_until);
-            CREATE INDEX IF NOT EXISTS idx_attempts_event
-              ON delivery_attempts(event_id, attempt_no);
             """
         )
 
@@ -137,6 +131,19 @@ class DurableEventStore:
                 WHERE first_payload_hash IS NULL
                 """
             )
+
+    def _create_indexes(self) -> None:
+        """Create indexes only after migrations have installed every referenced column."""
+        self.conn.executescript(
+            """
+            CREATE INDEX IF NOT EXISTS idx_outbox_ready
+              ON event_outbox(state, next_attempt_at, created_at);
+            CREATE INDEX IF NOT EXISTS idx_outbox_lease
+              ON event_outbox(state, lease_until);
+            CREATE INDEX IF NOT EXISTS idx_attempts_event
+              ON delivery_attempts(event_id, attempt_no);
+            """
+        )
 
     @contextmanager
     def transaction(self) -> Iterator[sqlite3.Connection]:
@@ -276,14 +283,7 @@ class DurableEventStore:
                 (event_id, int(row["attempts"]), now),
             )
 
-    def fail_attempt(
-        self,
-        event_id: str,
-        error: str,
-        now: str,
-        retry_at: str,
-        max_attempts: int,
-    ) -> str:
+    def fail_attempt(self, event_id: str, error: str, now: str, retry_at: str, max_attempts: int) -> str:
         with self.transaction() as tx:
             row = tx.execute("SELECT * FROM event_outbox WHERE event_id=?", (event_id,)).fetchone()
             if row is None:
@@ -306,10 +306,7 @@ class DurableEventStore:
                         event_id, contract_id, topic, attempts, reason, event_json, failed_at
                     ) VALUES (?, ?, ?, ?, ?, ?, ?)
                     """,
-                    (
-                        row["event_id"], row["contract_id"], row["topic"], attempts,
-                        error, row["event_json"], now,
-                    ),
+                    (row["event_id"], row["contract_id"], row["topic"], attempts, error, row["event_json"], now),
                 )
                 return "DEAD"
             tx.execute(
@@ -327,11 +324,7 @@ class DurableEventStore:
             raise ValueError("event delivered to wrong consumer repo")
         with self.transaction() as tx:
             existing = tx.execute(
-                """
-                SELECT first_event_id, first_payload_hash
-                FROM replay_ledger
-                WHERE consumer_repo=? AND contract_id=?
-                """,
+                "SELECT first_event_id, first_payload_hash FROM replay_ledger WHERE consumer_repo=? AND contract_id=?",
                 (consumer_repo, event.contract_id),
             ).fetchone()
             if existing is not None:
@@ -360,20 +353,14 @@ class DurableEventStore:
                     status, first_seen_at, updated_at
                 ) VALUES (?, ?, ?, ?, 'RECEIVED', ?, ?)
                 """,
-                (
-                    consumer_repo, event.contract_id, event.event_id,
-                    event.contract_payload_hash, now, now,
-                ),
+                (consumer_repo, event.contract_id, event.event_id, event.contract_payload_hash, now, now),
             )
             return True
 
     def mark_inbox_processed(self, consumer_repo: str, contract_id: str, now: str) -> None:
         with self.transaction() as tx:
             cursor = tx.execute(
-                """
-                UPDATE event_inbox SET status='PROCESSED', updated_at=?
-                WHERE consumer_repo=? AND contract_id=?
-                """,
+                "UPDATE event_inbox SET status='PROCESSED', updated_at=? WHERE consumer_repo=? AND contract_id=?",
                 (now, consumer_repo, contract_id),
             )
             if cursor.rowcount != 1:
