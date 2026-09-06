@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://synergy.local/schemas/midas_metapay_financial_v1.json",
+  "title": "MIDAS to MetaPay to Financial OS contracts v1",
+  "oneOf": [
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "TradingExecutionIntent"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["strategy_id", "instrument", "side", "quantity", "max_total_cost", "settlement_date", "venue_constraints", "risk_budget_ref"],
+              "properties": {
+                "strategy_id": {"type": "string"},
+                "instrument": {"type": "string"},
+                "side": {"enum": ["BUY", "SELL", "MULTILEG"]},
+                "quantity": {"type": "number", "exclusiveMinimum": 0},
+                "max_total_cost": {"type": "number", "minimum": 0},
+                "settlement_date": {"type": "string", "format": "date"},
+                "venue_constraints": {"type": "array", "items": {"type": "string"}},
+                "risk_budget_ref": {"type": "string"},
+                "expected_edge_bps": {"type": ["number", "null"]}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "SettlementEvidence"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["execution_intent_id", "status", "asset", "gross_amount", "fees", "net_amount", "external_reference", "settled_at"],
+              "properties": {
+                "execution_intent_id": {"type": "string", "format": "uuid"},
+                "status": {"enum": ["SETTLED", "PARTIAL", "FAILED", "REVERSED"]},
+                "asset": {"type": "string"},
+                "gross_amount": {"type": "number"},
+                "fees": {"type": "number", "minimum": 0},
+                "net_amount": {"type": "number"},
+                "external_reference": {"type": "string", "minLength": 1},
+                "settled_at": {"type": "string", "format": "date-time"},
+                "counterparty": {"type": ["string", "null"]}
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "allOf": [
+        {"$ref": "contract_envelope_v1.json"},
+        {
+          "properties": {
+            "contract_type": {"const": "ReconciledTradingResult"},
+            "payload": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["execution_intent_id", "settlement_contract_id", "realized_pnl", "hardnav_delta", "reconciliation_status"],
+              "properties": {
+                "execution_intent_id": {"type": "string", "format": "uuid"},
+                "settlement_contract_id": {"type": "string", "format": "uuid"},
+                "realized_pnl": {"type": "number"},
+                "hardnav_delta": {"type": "number"},
+                "reconciliation_status": {"enum": ["MATCHED", "EXCEPTION", "REVERSED"]}
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
