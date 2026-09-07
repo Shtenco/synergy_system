@@ -1,0 +1,91 @@
+name: AICB V5 Multi-Repo E2E
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  literal-native-and-solidity-e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      FEDERATION_READ_TOKEN: ${{ secrets.FEDERATION_READ_TOKEN }}
+    steps:
+      - name: Require federation-scoped read credential
+        run: |
+          if [ -z "$FEDERATION_READ_TOKEN" ]; then
+            echo "FEDERATION_READ_TOKEN is required to checkout private federation repositories." >&2
+            exit 2
+          fi
+
+      - name: Checkout federation governance harness
+        uses: actions/checkout@v4
+        with:
+          path: system
+
+      - name: Checkout AICB V5 implementation
+        uses: actions/checkout@v4
+        with:
+          repository: Shtenco/ai_financial_system
+          ref: feat/real-asset-emission-escrow-v1
+          token: ${{ secrets.FEDERATION_READ_TOKEN }}
+          path: aicb
+
+      - name: Checkout Synergy Eurasian productive evidence
+        uses: actions/checkout@v4
+        with:
+          repository: Shtenco/synergy_eurasian
+          ref: federation-v3-domain-expansion
+          token: ${{ secrets.FEDERATION_READ_TOKEN }}
+          path: eurasian
+
+      - name: Checkout Financial OS accounting evidence
+        uses: actions/checkout@v4
+        with:
+          repository: Shtenco/synergy_financial_os
+          ref: federation-v3-domain-expansion
+          token: ${{ secrets.FEDERATION_READ_TOKEN }}
+          path: financial
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run literal native-class cross-repo evidence chain
+        run: |
+          python system/integration/aicb_v5_multi_repo_e2e.py \
+            --aicb-root aicb \
+            --eurasian-root eurasian \
+            --financial-root financial \
+            --out aicb-v5-e2e-result.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: aicb/package-lock.json
+
+      - name: Install and compile AICB Solidity implementation
+        working-directory: aicb
+        run: |
+          npm ci
+          npx hardhat compile
+
+      - name: Prove on-chain two-key release gate
+        working-directory: aicb
+        run: npx hardhat test test/productive_monetary_escrow_v2.js
+
+      - name: Re-run native domain contract tests
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e eurasian -e financial pytest
+          pytest -q eurasian/tests/test_contracts.py financial/tests/test_contracts.py
+
+      - name: Show integration result
+        if: always()
+        run: |
+          if [ -f aicb-v5-e2e-result.json ]; then
+            cat aicb-v5-e2e-result.json
+          fi
