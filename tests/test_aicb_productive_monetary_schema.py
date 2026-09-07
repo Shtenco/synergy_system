@@ -125,12 +125,11 @@ def test_reference_e2e_vector_obeys_two_key_release_and_coverage():
 
     coverage_ratio = 2.0
     dual_credit = min(productive["credited_productive_growth"], financial["credited_growth"])
-    releasable = proposal["requested_emission"] * dual_credit / (
-        proposal["requested_emission"] * coverage_ratio
-    )
-    released_units = proposal["requested_emission"] * releasable
+    required_growth = proposal["requested_emission"] * coverage_ratio
+    released_units = proposal["requested_emission"] * dual_credit / required_growth
     # 80 value of weaker evidence against 200 required backing releases 40 units.
     assert dual_credit == 80.0
+    assert required_growth == 200.0
     assert released_units == 40.0
 
     receipt = {
