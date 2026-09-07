@@ -7,16 +7,7 @@
     "TargetEmissionProposalV5": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "period_id",
-        "requested_emission",
-        "raw_policy_limit",
-        "matching_capital_limit",
-        "policy_score",
-        "blocked",
-        "block_reason",
-        "policy_version"
-      ],
+      "required": ["period_id","requested_emission","raw_policy_limit","matching_capital_limit","policy_score","blocked","block_reason","policy_version"],
       "properties": {
         "period_id": {"type": "string", "minLength": 1},
         "requested_emission": {"type": "number", "minimum": 0},
@@ -31,29 +22,11 @@
     "ProductiveGrowthAttestation": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "close_id",
-        "close_sequence",
-        "project_ids",
-        "goods_output_growth_units",
-        "capacity_growth_units",
-        "verified_goods_value_growth",
-        "verified_capacity_value_growth",
-        "fraud_or_quality_haircut_value",
-        "physical_consistency_gap",
-        "valuation_method_ref",
-        "evidence_refs",
-        "credited_productive_growth"
-      ],
+      "required": ["close_id","close_sequence","project_ids","goods_output_growth_units","capacity_growth_units","verified_goods_value_growth","verified_capacity_value_growth","fraud_or_quality_haircut_value","physical_consistency_gap","valuation_method_ref","evidence_refs","credited_productive_growth"],
       "properties": {
         "close_id": {"type": "string", "minLength": 1},
         "close_sequence": {"type": "integer", "minimum": 1},
-        "project_ids": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {"type": "string", "minLength": 1}
-        },
+        "project_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
         "goods_output_growth_units": {"type": "number", "minimum": 0},
         "capacity_growth_units": {"type": "number", "minimum": 0},
         "verified_goods_value_growth": {"type": "number", "minimum": 0},
@@ -61,31 +34,14 @@
         "fraud_or_quality_haircut_value": {"type": "number", "minimum": 0},
         "physical_consistency_gap": {"const": 0},
         "valuation_method_ref": {"type": "string", "minLength": 1},
-        "evidence_refs": {
-          "type": "array",
-          "minItems": 1,
-          "items": {"type": "string", "minLength": 1}
-        },
+        "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
         "credited_productive_growth": {"type": "number", "minimum": 0}
       }
     },
     "EligibleAssetGrowthAttestation": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "close_id",
-        "close_sequence",
-        "previous_hardnav",
-        "current_hardnav",
-        "previous_liabilities",
-        "current_liabilities",
-        "eligible_asset_gross_growth",
-        "internal_mark_change",
-        "flash_principal_inflow",
-        "eligible_asset_classes",
-        "evidence_refs",
-        "credited_growth"
-      ],
+      "required": ["close_id","close_sequence","previous_hardnav","current_hardnav","previous_liabilities","current_liabilities","eligible_asset_gross_growth","internal_mark_change","flash_principal_inflow","eligible_asset_classes","evidence_refs","credited_growth"],
       "properties": {
         "close_id": {"type": "string", "minLength": 1},
         "close_sequence": {"type": "integer", "minimum": 1},
@@ -96,35 +52,39 @@
         "eligible_asset_gross_growth": {"type": "number", "minimum": 0},
         "internal_mark_change": {"type": "number"},
         "flash_principal_inflow": {"type": "number", "minimum": 0},
-        "eligible_asset_classes": {
-          "type": "array",
-          "items": {
-            "enum": ["EXTERNAL_CASH", "SETTLED_RECEIVABLE", "VERIFIED_PRODUCTIVE_ASSET"]
-          }
-        },
-        "evidence_refs": {
-          "type": "array",
-          "items": {"type": "string", "minLength": 1}
-        },
+        "eligible_asset_classes": {"type": "array", "items": {"enum": ["EXTERNAL_CASH","SETTLED_RECEIVABLE","VERIFIED_PRODUCTIVE_ASSET"]}},
+        "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
         "credited_growth": {"type": "number", "minimum": 0}
       }
     },
     "DualGateReleaseReceipt": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "proposal_id",
-        "financial_growth_consumed",
-        "productive_growth_consumed",
-        "released_emission",
-        "release_status"
-      ],
+      "required": ["proposal_id","financial_growth_consumed","productive_growth_consumed","released_emission","release_status"],
       "properties": {
         "proposal_id": {"type": "string", "minLength": 1},
         "financial_growth_consumed": {"type": "number", "minimum": 0},
         "productive_growth_consumed": {"type": "number", "minimum": 0},
         "released_emission": {"type": "number", "minimum": 0},
-        "release_status": {"enum": ["PARTIAL", "FULL", "CANCELLED", "EXPIRED"]}
+        "release_status": {"enum": ["PARTIAL","FULL","CANCELLED","EXPIRED"]}
+      }
+    },
+    "EmissionReleaseRecognition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proposal_id","release_tx_ref","financial_growth_attestation_ref","productive_growth_attestation_ref","released_units","unit_value","released_monetary_value","accounting_classification","recognition_status","recognized_revenue","recognized_profit"],
+      "properties": {
+        "proposal_id": {"type": "string", "minLength": 1},
+        "release_tx_ref": {"type": "string", "minLength": 1},
+        "financial_growth_attestation_ref": {"type": "string", "minLength": 1},
+        "productive_growth_attestation_ref": {"type": "string", "minLength": 1},
+        "released_units": {"type": "number", "exclusiveMinimum": 0},
+        "unit_value": {"type": "number", "minimum": 0},
+        "released_monetary_value": {"type": "number", "minimum": 0},
+        "accounting_classification": {"enum": ["MONETARY_LIABILITY","EQUITY_LIKE_CIRCULATION","OFF_BALANCE_SHEET_UNIT"]},
+        "recognition_status": {"enum": ["RECOGNIZED","EXCEPTION","REVERSED"]},
+        "recognized_revenue": {"const": 0},
+        "recognized_profit": {"const": 0}
       }
     }
   }
