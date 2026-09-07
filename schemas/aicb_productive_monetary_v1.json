@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy://schemas/aicb_productive_monetary_v1.json",
+  "title": "SYNERGY AICB V5 Productive Monetary Contracts",
+  "description": "Candidate federation contracts for bounded AI monetary-policy proposals and two independent release evidence streams. Candidate only until governance promotion.",
+  "$defs": {
+    "TargetEmissionProposalV5": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "period_id",
+        "requested_emission",
+        "raw_policy_limit",
+        "matching_capital_limit",
+        "policy_score",
+        "blocked",
+        "block_reason",
+        "policy_version"
+      ],
+      "properties": {
+        "period_id": {"type": "string", "minLength": 1},
+        "requested_emission": {"type": "number", "minimum": 0},
+        "raw_policy_limit": {"type": "number", "minimum": 0},
+        "matching_capital_limit": {"type": "number", "minimum": 0},
+        "policy_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "blocked": {"type": "boolean"},
+        "block_reason": {"type": "string"},
+        "policy_version": {"const": "AICB_V5_DUAL_GATE_1"}
+      }
+    },
+    "ProductiveGrowthAttestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "close_id",
+        "close_sequence",
+        "project_ids",
+        "goods_output_growth_units",
+        "capacity_growth_units",
+        "verified_goods_value_growth",
+        "verified_capacity_value_growth",
+        "fraud_or_quality_haircut_value",
+        "physical_consistency_gap",
+        "valuation_method_ref",
+        "evidence_refs",
+        "credited_productive_growth"
+      ],
+      "properties": {
+        "close_id": {"type": "string", "minLength": 1},
+        "close_sequence": {"type": "integer", "minimum": 1},
+        "project_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "goods_output_growth_units": {"type": "number", "minimum": 0},
+        "capacity_growth_units": {"type": "number", "minimum": 0},
+        "verified_goods_value_growth": {"type": "number", "minimum": 0},
+        "verified_capacity_value_growth": {"type": "number", "minimum": 0},
+        "fraud_or_quality_haircut_value": {"type": "number", "minimum": 0},
+        "physical_consistency_gap": {"const": 0},
+        "valuation_method_ref": {"type": "string", "minLength": 1},
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "credited_productive_growth": {"type": "number", "minimum": 0}
+      }
+    },
+    "EligibleAssetGrowthAttestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "close_id",
+        "close_sequence",
+        "previous_hardnav",
+        "current_hardnav",
+        "previous_liabilities",
+        "current_liabilities",
+        "eligible_asset_gross_growth",
+        "internal_mark_change",
+        "flash_principal_inflow",
+        "eligible_asset_classes",
+        "evidence_refs",
+        "credited_growth"
+      ],
+      "properties": {
+        "close_id": {"type": "string", "minLength": 1},
+        "close_sequence": {"type": "integer", "minimum": 1},
+        "previous_hardnav": {"type": "number", "minimum": 0},
+        "current_hardnav": {"type": "number", "minimum": 0},
+        "previous_liabilities": {"type": "number", "minimum": 0},
+        "current_liabilities": {"type": "number", "minimum": 0},
+        "eligible_asset_gross_growth": {"type": "number", "minimum": 0},
+        "internal_mark_change": {"type": "number"},
+        "flash_principal_inflow": {"type": "number", "minimum": 0},
+        "eligible_asset_classes": {
+          "type": "array",
+          "items": {
+            "enum": ["EXTERNAL_CASH", "SETTLED_RECEIVABLE", "VERIFIED_PRODUCTIVE_ASSET"]
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1}
+        },
+        "credited_growth": {"type": "number", "minimum": 0}
+      }
+    },
+    "DualGateReleaseReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "proposal_id",
+        "financial_growth_consumed",
+        "productive_growth_consumed",
+        "released_emission",
+        "release_status"
+      ],
+      "properties": {
+        "proposal_id": {"type": "string", "minLength": 1},
+        "financial_growth_consumed": {"type": "number", "minimum": 0},
+        "productive_growth_consumed": {"type": "number", "minimum": 0},
+        "released_emission": {"type": "number", "minimum": 0},
+        "release_status": {"enum": ["PARTIAL", "FULL", "CANCELLED", "EXPIRED"]}
+      }
+    }
+  }
+}
