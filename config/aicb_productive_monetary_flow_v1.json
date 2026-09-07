@@ -1,0 +1,107 @@
+{
+  "schema": "synergy.aicb-productive-monetary-flow/v1",
+  "status": "CANDIDATE_SANDBOX_FLOW",
+  "as_of": "2026-09-07",
+  "name": "SYNERGY AI Central Bank V5 — Productive Monetary System",
+  "principle": "circulating emission requires both productive and accounting evidence",
+  "authorities": {
+    "policy_proposal": {
+      "repo": "Shtenco/ai_financial_system",
+      "component": "AICBPolicyV5",
+      "authority_status": "PROPOSAL_ONLY_RND",
+      "may_mint": false,
+      "may_attest": false,
+      "may_release": false
+    },
+    "productive_evidence": {
+      "repo": "Shtenco/synergy_eurasian",
+      "authority": "productive_project_model",
+      "contract": "ProductiveGrowthAttestation"
+    },
+    "accounting_evidence": {
+      "repo": "Shtenco/synergy_financial_os",
+      "authority": "canonical_accounting",
+      "contract": "EligibleAssetGrowthAttestation"
+    },
+    "risk_approval": {
+      "component": "independent_risk_authority",
+      "status": "SANDBOX_ROLE_PENDING_FEDERATION_GOVERNANCE"
+    },
+    "escrow_enforcement": {
+      "repo": "Shtenco/ai_financial_system",
+      "component": "ProductiveMonetaryEscrowV2",
+      "authority_status": "DETERMINISTIC_ENFORCEMENT_NOT_EVIDENCE_AUTHORITY"
+    },
+    "release_accounting": {
+      "repo": "Shtenco/synergy_financial_os",
+      "authority": "canonical_accounting",
+      "contract": "EmissionReleaseRecognition"
+    }
+  },
+  "steps": [
+    {
+      "n": 1,
+      "contract": "TargetEmissionProposalV5",
+      "producer": "AICBPolicyV5",
+      "result": "PROPOSAL_ONLY",
+      "invariant": "proposal does not mint or release"
+    },
+    {
+      "n": 2,
+      "action": "RISK_APPROVE_AND_LOCK",
+      "result": "MINT_TO_ESCROW_ONLY",
+      "invariant": "beneficiary balance does not increase"
+    },
+    {
+      "n": 3,
+      "contract": "ProductiveGrowthAttestation",
+      "producer": "Shtenco/synergy_eurasian",
+      "invariant": "completed projects + physical evidence + valuation method + zero physical gap"
+    },
+    {
+      "n": 4,
+      "contract": "EligibleAssetGrowthAttestation",
+      "producer": "Shtenco/synergy_financial_os",
+      "invariant": "credit <= positive HardNAV growth and <= eligible asset growth net of new liabilities"
+    },
+    {
+      "n": 5,
+      "action": "DUAL_GATE_RELEASE",
+      "contract": "DualGateReleaseReceipt",
+      "formula": "usable_credit=min(financial_credit,productive_credit,risk_max,proposal_remaining_backing)",
+      "invariant": "same usable credit is consumed from both independent evidence pools"
+    },
+    {
+      "n": 6,
+      "contract": "EmissionReleaseRecognition",
+      "producer": "Shtenco/synergy_financial_os",
+      "invariant": "mint/release creates zero recognized revenue and zero recognized profit"
+    }
+  ],
+  "hard_firewall": {
+    "internal_mark_creates_financial_credit": false,
+    "mint_creates_profit": false,
+    "rebase_creates_profit": false,
+    "flash_principal_creates_credit": false,
+    "liability_funded_asset_growth_creates_credit": false,
+    "project_forecast_creates_productive_credit": false,
+    "nonzero_physical_gap_allowed": false,
+    "one_sided_evidence_can_release": false,
+    "evidence_credit_can_be_reused_after_release": false
+  },
+  "release_constraints": [
+    "released_monetary_value <= consumed_productive_growth_value",
+    "released_monetary_value <= consumed_financial_growth_value",
+    "released_monetary_value * coverage_ratio <= dual_evidence_value",
+    "unreleased_locked_emission remains escrowed or is cancelled/expired and burned"
+  ],
+  "production_gates": [
+    "independent valuation methodology for physical goods/capacity",
+    "legally defined accounting classification of circulating unit",
+    "share-aware or wrapped adapter before using globally rebasing SYNA",
+    "external smart-contract audit and fuzz/invariant suite",
+    "HSM/multisig/timelock key custody",
+    "regulatory sandbox approval where required",
+    "literal multi-repo signed-event E2E through Federation Secure Event Fabric"
+  ]
+}
