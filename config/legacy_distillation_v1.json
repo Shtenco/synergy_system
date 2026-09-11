@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "audit_date": "2026-09-11",
+  "source_archives": 8,
+  "local_inventory_records": 1206,
+  "classes": {
+    "GREEN": 7,
+    "YELLOW_REVIEW": 646,
+    "RED_QUARANTINE": 147,
+    "ARCHIVE": 406
+  },
+  "authority_migrations": [
+    {
+      "repo": "Shtenco/synergy_financial_os",
+      "path": "tests/test_legacy_falsification_v1.py",
+      "role": "canonical accounting regression gates",
+      "class": "CANONICAL_TEST"
+    },
+    {
+      "repo": "Shtenco/synergy_graph_print_money",
+      "path": "tests/test_legacy_conservation_v1.py",
+      "role": "HardNAV/conservation falsification gates",
+      "class": "CANONICAL_TEST"
+    },
+    {
+      "repo": "Shtenco/synergy_pay_system",
+      "path": "research/legacy_distillation_v1/debt_netting_v2.py",
+      "role": "deterministic off-chain multilateral netting",
+      "class": "CANDIDATE"
+    },
+    {
+      "repo": "Shtenco/synergynet",
+      "path": "research/legacy_distillation_v1/verification_network_v2.py",
+      "role": "adaptive evidence/Sybil verification research",
+      "class": "R&D"
+    },
+    {
+      "repo": "Shtenco/ai_financial_system",
+      "path": "simulation/aicb_scenario_evidence_v1.py",
+      "role": "AICB scenario-only evidence boundary",
+      "class": "R&D"
+    },
+    {
+      "repo": "Shtenco/synergy_eurasian",
+      "path": "interfaces/aicb_scenario.schema.json",
+      "role": "typed scenario import boundary",
+      "class": "CANDIDATE_INTERFACE"
+    },
+    {
+      "repo": "Shtenco/usds",
+      "path": "docs/STABLECOIN_STRESS_GATE_V1.md",
+      "role": "transient depeg and left-tail acceptance gate",
+      "class": "R&D_GATE"
+    },
+    {
+      "repo": "Shtenco/synergy_meta_os",
+      "path": "docs/LEGACY_KEEPER_SANITIZATION_V1.md",
+      "role": "keeper/GasGuard least-privilege migration policy",
+      "class": "ARCHITECTURE_GATE"
+    }
+  ],
+  "permanent_quarantine": [
+    "raw private keys",
+    "seed/mnemonic material",
+    "legacy live-signing scripts with embedded credentials",
+    "production-ready claims contradicted by later correction evidence"
+  ],
+  "economic_invariants": [
+    "own-token mark != external profit",
+    "internal AMM mark != external profit",
+    "self-LP movement != consolidated income",
+    "flash principal != owned NAV",
+    "new capital != revenue",
+    "synthetic yield requires external source and settlement evidence",
+    "QE requires a balanced counter-entry",
+    "participant deposits remain liabilities",
+    "near-zero ROI denominator must be rejected",
+    "simulation != observed economic fact"
+  ]
+}
