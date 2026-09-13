@@ -12,10 +12,12 @@ names=[x['name'] for x in repos]; assert len(set(names))==51
 urls=[x['repo'] for x in repos]; assert len(set(urls))==51
 for r in repos:
     assert r['name'] and r['repo'].startswith('https://github.com/Shtenco/')
-    assert r['capability_policy'] in {'DENY','ALLOWLIST'}
-    if r['capability_policy']=='DENY': assert r['rpc_allow']==[]
-assert next(x for x in repos if x['name']=='agi_autopilot')['rpc_allow']==[
- 'autopilot.submit','autopilot.status','autopilot.approve','autopilot.execute','autopilot.capabilities']
-assert next(x for x in repos if x['name']=='agi_nexus')['rpc_allow']==[
- 'nexus.runtime','nexus.memory.search','nexus.memory.upsert']
-print(json.dumps({'ok':True,'repositories':len(repos),'deny_by_default':sum(not x['rpc_allow'] for x in repos)}))
+    assert r['capability_policy']=='DENY' and r['rpc_allow']==[]
+principals=d.get('control_principals') or []
+assert len(principals)==1
+c=principals[0]
+assert c['name']=='synergy_ai_company' and c['capability_policy']=='ALLOWLIST'
+assert set(c['rpc_allow'])=={
+ 'autopilot.submit','autopilot.status','autopilot.approve','autopilot.execute','autopilot.capabilities',
+ 'nexus.runtime','nexus.memory.search','nexus.memory.upsert'}
+print(json.dumps({'ok':True,'repositories':len(repos),'control_principals':len(principals),'repository_rpc_deny':sum(not x['rpc_allow'] for x in repos),'control_routes':len(c['rpc_allow'])}))
