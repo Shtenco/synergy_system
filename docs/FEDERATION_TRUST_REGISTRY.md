@@ -11,10 +11,11 @@ offline federation root secret (ML-DSA-87 AND SLH-DSA-SHAKE-256s)
         |
         +-> signed federation registry sequence N
                  |
-                 +-> exact 51 repository metadata entries
+                 +-> exact 51 capability-repository entries
+                 +-> separate control-plane principals
                  +-> active/retiring/revoked node public identities
-                 +-> per-repository roles/risk/integration metadata
-                 +-> deny-by-default RPC allowlists
+                 +-> roles/risk/integration metadata
+                 +-> caller RPC ACLs
                  +-> previous_registry_hash
 ```
 
@@ -22,9 +23,9 @@ A registry is accepted only when every required root signature verifies, the reg
 
 ## Provisioning
 
-Production provisioning is performed by `shttps-federation` with a standards-conformant OQS provider. `root-init` writes the root private identity to a secret/HSM path and a separate public root file. `provision-all` consumes `config/federation_trust_source_v1.json`, creates one independent PQ node identity for every registered repository, writes the 51 private identities only to the configured secret directory, and emits a signed public registry.
+Production provisioning is performed by `shttps-federation` with a standards-conformant OQS provider. `root-init` writes the root private identity to a secret/HSM path and a separate public root file. `provision-all` consumes `config/federation_trust_source_v1.json`, creates an independent PQ node identity for all 51 capability repositories and any explicit control-plane principals, writes private identities only to the configured secret directory, and emits a signed public registry.
 
-High-impact repositories (`financial`, `blockchain`, plus `synergy_system`) receive ML-DSA-87 **AND** SLH-DSA-SHAKE-256s node identities. Other repositories receive ML-DSA-87 by default. This identity policy is separate from payment, treasury, validator or blockchain keys.
+High-impact repositories (`financial`, `blockchain`, plus `synergy_system`) receive ML-DSA-87 **AND** SLH-DSA-SHAKE-256s node identities. Other repositories and the Auto-Company control principal receive ML-DSA-87 by default. This identity policy is separate from payment, treasury, validator or blockchain keys.
 
 ## Rotation and revocation
 
@@ -34,9 +35,13 @@ High-impact repositories (`financial`, `blockchain`, plus `synergy_system`) rece
 
 Federation root rotation is separately cross-signed by the old MAX root before a new public root can be trusted.
 
-## Capabilities
+## Caller capabilities
 
-Registration does not grant execution. `capability_policy=DENY` means the repository is known and can receive a PQ identity, but has no inbound federation RPC authority. An `ALLOWLIST` entry authorizes only exact versioned routes. The initial source permits only the already implemented Autopilot and NEXUS RPC contracts; all other repositories remain deny-by-default until their service contract exists and is reviewed.
+Registration does not grant execution. All 51 capability repositories start with `capability_policy=DENY` and an empty caller RPC list. Ownership of an endpoint never grants the repository the right to call that endpoint.
+
+`synergy_ai_company` is represented separately as a control-plane principal. Its initial allowlist contains only the already implemented Auto-Company -> Autopilot and Auto-Company -> NEXUS RPC routes. New callers or routes require an explicit governance update and a newly signed registry sequence.
+
+Transport authorization is still not domain authorization: a permitted SHTTPS RPC route cannot bypass Autopilot approvals, NEXUS execution_authority=NONE, financial policy, payment signing, accounting or blockchain controls.
 
 ## Deployment rule
 
@@ -45,7 +50,7 @@ A service must be configured with:
 - its private identity secret path;
 - the signed federation registry;
 - the pinned public federation root;
-- its canonical repository name;
+- its canonical repository/principal name;
 - local accepted-registry state for rollback protection.
 
-SHTTPS derives peer trust from the signed registry. Manual peer trust files are legacy migration mode only and require an explicit override.
+SHTTPS derives peer trust and caller ACLs from the signed registry. Manual peer trust files are legacy migration mode only and require an explicit override.
