@@ -1,62 +1,112 @@
-# SYNERGY Federation Trust Registry v1
+# SYNERGY Federation Trust Registry v2
 
-`Shtenco/synergy_system` owns federation governance metadata. `Shtenco/shttps` implements PQ identities, registry signing/verification, trust-store derivation, rotation, revocation and RPC enforcement. Private keys are runtime secrets and are never governance-repository content.
+`Shtenco/synergy_system` owns canonical federation governance metadata. `Shtenco/shttps` implements cryptographic identity, delegated registry signing/verification, trust derivation, rotation, revocation and RPC caller enforcement. Private keys never belong in the governance repository.
 
 ## Trust chain
 
 ```text
-federation root identity (ML-DSA-87 AND SLH-DSA-SHAKE-256s)
+cold/offline Federation Root
+ML-DSA-87 AND SLH-DSA-SHAKE-256s
         |
-        +-> public federation root document (pinned out-of-band)
+        +-> pinned public Federation Root
         |
-        +-> signed federation registry sequence N
-                 |
-                 +-> exact 51 capability-repository entries
+        +-> Root-signed Registry Signer Certificate
+        |      +-> non-exportable PKCS#11 ML-DSA-87 public identity
+        |      +-> signer generation + validity interval
+        |      +-> governance_hash
+        |      +-> capability = federation.registry.lifecycle.sign
+        |      +-> maximum delegated registry lifetime
+        |
+        +-> Root-signed Registry Signer Revocation State
+               +-> monotonic sequence
+               +-> previous_hash
+               +-> revoked signer IDs
+
+online PKCS#11 Registry Signer
+        |
+        +-> delegated signed Registry Sequence N
+                 +-> exact 51 capability repositories
                  +-> separate control-plane principals
-                 +-> active/retiring/revoked node public identities
-                 +-> roles/risk/integration metadata
-                 +-> caller RPC ACLs
+                 +-> active/retiring/revoked node identities
+                 +-> immutable governance projection
                  +-> previous_registry_hash
 ```
 
-A registry is accepted only when every required root signature verifies, the registry is inside its validity window, the monotonic sequence does not roll back, and the previous-hash chain matches the locally accepted state.
+The Federation Root private identity is not present on the online maintenance node. Routine Registry N -> N+1 signing is performed by the HSM-resident delegated signer.
 
-## Provisioning
+## Governance boundary
 
-Production-candidate provisioning is performed by `shttps-federation` with the pinned OQS provider. `root-init` writes the root private identity to the configured protected secret path and a separate public root file. `provision-all` consumes `config/federation_trust_source_v1.json`, creates an independent PQ node identity for all 51 capability repositories and any explicit control-plane principals, writes private identities only to the configured secret directory, and emits a signed public registry.
+The Root-signed signer certificate contains a `governance_hash` over the static federation governance surface:
 
-The current `liboqs-python` provider exports secret-key bytes. Therefore the current automated profile is **encrypted file-secret storage on a protected signing node**, not a non-exportable HSM profile and not a cold/offline root. A future HSM/delegated-signer provider must remove the root private identity from routine registry maintenance.
+- repository/control-principal names and repository URLs;
+- domain, risk class, role and integration metadata;
+- enabled status;
+- caller `rpc_allow` lists;
+- root id and repository count.
 
-High-impact repositories (`financial`, `blockchain`, plus `synergy_system`) receive ML-DSA-87 **AND** SLH-DSA-SHAKE-256s node identities. Other repositories and the Auto-Company control principal receive ML-DSA-87 by default. This identity policy is separate from payment, treasury, validator or blockchain keys.
+Node lifecycle records, registry sequence/timestamps and the previous-registry hash are deliberately outside this projection. Therefore the online delegated signer may rotate/revoke nodes and renew the registry, but it cannot add repositories, enable a caller, alter roles or expand RPC authorization. Any governance change requires the cold Root to issue a new signer certificate bound to the new governance hash.
+
+## Signer revocation
+
+Signer revocation is a separate Root-signed control plane. The revocation document has its own monotonic sequence and previous-hash chain. A service verifies the latest distributed revocation state together with every delegated registry.
+
+A newer valid revocation state may invalidate an older registry signed by a now-compromised signer. The registry envelope records the revocation sequence/hash it was created against, but verification accepts a newer Root-signed revocation sequence while rejecting rollback, same-sequence equivocation and a signer ID that is now revoked.
+
+This property allows emergency signer revocation without requiring a compromised HSM signer to cooperate.
+
+## Initial provisioning
+
+The production path is split into two ceremonies.
+
+The cold/offline Root environment:
+
+1. creates the Federation Root identity;
+2. receives only the online HSM signer public descriptor;
+3. signs the Registry Signer Certificate;
+4. creates/signs the initial Registry Signer Revocation State.
+
+The online HSM environment:
+
+1. generates ML-DSA-87 in a PKCS#11 token with `SENSITIVE=true`, `EXTRACTABLE=false`, `PRIVATE=true`;
+2. proves HSM/OQS interoperability using an immediate challenge signature;
+3. imports only the public Root document, signer certificate and signer revocation state;
+4. creates independent SHTTPS node identities for all 51 capability repositories plus the separate `synergy_ai_company` control principal;
+5. emits delegated Registry Sequence 1 signed by the HSM signer.
+
+The HSM Registry Signer private key is never exported. Node transport identities are still protected file secrets in this version; they are a separate key class and require a future per-service HSM provider if non-exportability is required for all 52 transport principals.
 
 ## Rotation, renewal and revocation
 
-`rotate` creates a new independent key generation. The previous active node becomes `retiring` for a bounded grace interval, so clients can accept old and new IDs while preferring the newest active generation. After the grace interval the old node disappears from derived trust automatically.
+The online signer can perform lifecycle-only maintenance without Root access:
 
-Registry lifetime and node-key lifetime are independent. Automatic maintenance renews a signed registry before its own expiry even when no node key is due, preserving monotonic sequence and the `previous_registry_hash` chain.
+- renew the signed registry before expiry;
+- rotate due node identities using active -> retiring -> expired lifecycle;
+- revoke a compromised transport node;
+- advance monotonic registry sequence and `previous_registry_hash`.
 
-Batched `rotate-due` is crash-safe: generation and `.next` private files are created first, Registry N+1 is signed and atomically published next, and only then are pending private identities atomically promoted to stable paths. Either crash boundary leaves a registry/private-key combination that still authenticates.
+Rotation remains crash-safe: new generation/private `.next` material is created first, delegated Registry N+1 is signed and atomically published, and pending node identity material is promoted only after publication. The old node remains accepted as `retiring` during the bounded grace interval.
 
-`revoke` marks a node `revoked`; revoked IDs are omitted from derived trust immediately. Every rotation/renewal/revocation that changes the registry produces `sequence+1` and binds `previous_registry_hash` to the prior signed registry.
+A compromised Registry Signer itself is different: its signer ID must be added to a new Root-signed revocation document offline. A replacement HSM key then receives a new Root-signed signer certificate/generation.
 
-Federation root rotation is separately cross-signed by the old MAX root before a new public root can be trusted.
+Federation Root rotation remains a separate cold-root operation cross-signed by the previous Root according to SHTTPS root-transition rules.
 
 ## Caller capabilities
 
-Registration does not grant execution. All 51 capability repositories start with `capability_policy=DENY` and an empty caller RPC list. Ownership of an endpoint never grants the repository the right to call that endpoint.
+Registration does not grant execution. All 51 capability repositories remain caller-deny with empty caller RPC lists. Endpoint ownership does not imply caller authority.
 
-`synergy_ai_company` is represented separately as a control-plane principal. Its initial allowlist contains only the already implemented Auto-Company -> Autopilot and Auto-Company -> NEXUS RPC routes. New callers or routes require an explicit governance update and a newly signed registry sequence.
+`synergy_ai_company` remains a separate control-plane principal. Its allowlist contains only the currently implemented five Autopilot and three NEXUS routes. The delegated signer cannot expand this list because it is covered by `governance_hash`.
 
-Transport authorization is still not domain authorization: a permitted SHTTPS RPC route cannot bypass Autopilot approvals, NEXUS execution_authority=NONE, financial policy, payment signing, accounting or blockchain controls.
+Transport authorization is not domain authorization: SHTTPS cannot bypass Autopilot approval gates, NEXUS `execution_authority=NONE`, financial limits, payment signing, accounting or blockchain authority.
 
-## Deployment rule
+## Service deployment rule
 
-A service must be configured with:
+Every production federation service using delegated Registry v2 must receive:
 
-- its private identity secret path;
-- the signed federation registry;
-- the pinned public federation root;
-- its canonical repository/principal name;
-- local accepted-registry state for rollback protection.
+- its own transport private identity secret path;
+- delegated `federation-registry.signed.json`;
+- pinned public `federation-root.json`;
+- Root-signed `registry-signer.revocations.json`;
+- its canonical repository/control-principal name;
+- local anti-rollback state.
 
-SHTTPS derives peer trust and caller ACLs from the signed registry. Manual peer trust files are legacy migration mode only and require an explicit override.
+The signer certificate is embedded in the delegated registry envelope; the independently distributed Root-signed revocation state is mandatory so services can invalidate a previously trusted signer. Manual trust files remain legacy migration mode only.
