@@ -4,7 +4,7 @@ set -euo pipefail
 : "${OQS_INSTALL_PATH:=/opt/synergy/oqs/0.16.0}"
 : "${SYNERGY_PYTHON_VENV:=/opt/synergy/venv}"
 : "${SHTTPS_CHECKOUT:=/opt/synergy/src/shttps}"
-: "${SHTTPS_COMMIT:=1776c255dd1af37a376784f771456176e6a4a8cc}"
+: "${SHTTPS_COMMIT:=7f3072d5a86b95fa4bb1da52fbad7395fee4e88f}"
 : "${AI_COMPRESS_CHECKOUT:=/opt/synergy/src/ai_compress}"
 : "${AI_COMPRESS_COMMIT:=551fae36eacb5713aa503fc9da2fbc44fe8f2e84}"
 
