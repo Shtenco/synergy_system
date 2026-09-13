@@ -9,6 +9,12 @@ install -m 0755 scripts/federation_preflight.sh /usr/local/libexec/synergy-feder
 install -m 0644 deploy/systemd/synergy-federation-maintenance.service /etc/systemd/system/synergy-federation-maintenance.service
 install -m 0644 deploy/systemd/synergy-federation-maintenance.timer /etc/systemd/system/synergy-federation-maintenance.timer
 
+if [[ ! -e /etc/synergy-federation-operator.env ]]; then
+  install -m 0600 config/federation_operator.env.example /etc/synergy-federation-operator.env
+else
+  echo "preserving existing /etc/synergy-federation-operator.env"
+fi
+
 systemctl daemon-reload
 systemctl enable synergy-federation-maintenance.timer
 
