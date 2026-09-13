@@ -1,0 +1,12 @@
+[Unit]
+Description=Daily SYNERGY Federation Registry maintenance
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+RandomizedDelaySec=15m
+AccuracySec=1m
+Unit=synergy-federation-maintenance.service
+
+[Install]
+WantedBy=timers.target
