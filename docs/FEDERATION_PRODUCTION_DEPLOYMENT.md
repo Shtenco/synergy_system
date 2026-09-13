@@ -1,42 +1,123 @@
-# Federation production-candidate deployment
+# Federation production deployment — cold Root + delegated PKCS#11 signer
 
-This runbook deploys the SYNERGY Federation Trust Registry on a protected Ubuntu/Debian-family signing node. It does **not** claim a completed third-party cryptographic audit. The current OQS provider exports private-key bytes, so this profile is file-secret backed; true non-exportable HSM signing requires a separate HSM provider.
+This runbook deploys the SYNERGY Federation Trust Registry with a **cold/offline Federation Root** and a separate **non-exportable PKCS#11 ML-DSA-87 Registry Signer**. Routine online maintenance does not read or possess the Federation Root private key.
 
-## Pinned cryptographic substrate
+This remains a production-candidate implementation rather than a claim of completed third-party cryptographic certification. The transport layer uses OQS/liboqs and the online registry signer uses the token's PKCS#11 implementation; both must pass the supplied interop/preflight gates.
 
-- liboqs release 0.16.0, commit `5a1a854b0dc9f2141bdc771c555ee60c37950183`
-- liboqs-python release 0.16.0, commit `c6378cd5c8db74c0adf34ddcfbb96ee9c99f8061`
-- SHTTPS commit `e8bb87fae6d98417782d51a583d4b9bee7896680`
+## Trust split
+
+```text
+offline/cold Federation Root
+ML-DSA-87 AND SLH-DSA-SHAKE-256s
+        |
+        +-- signs Registry Signer Certificate
+        |      signer public key: ML-DSA-87
+        |      governance_hash: pinned
+        |      capability: federation.registry.lifecycle.sign only
+        |      bounded not_before/not_after
+        |      bounded max registry lifetime
+        |
+        +-- signs Registry Signer Revocation State
+               monotonic sequence + previous hash
+
+online protected signing node
+PKCS#11 token / HSM
+non-exportable ML-DSA-87 signer private key
+        |
+        +-- Registry Sequence N -> N+1
+        +-- node active/retiring/revoked lifecycle
+        +-- registry renewal
+        +-- cannot alter repositories, roles or rpc_allow
+```
+
+A compromised online signer therefore does not gain governance authority. `governance_hash` binds the signer certificate to the static federation policy. Changing repository membership, roles, enabled flags, integration metadata or caller ACLs requires a new certificate signed by the offline Root.
+
+## Pinned software substrate
+
+- liboqs `0.16.0`, commit `5a1a854b0dc9f2141bdc771c555ee60c37950183`
+- liboqs-python `0.16.0`, commit `c6378cd5c8db74c0adf34ddcfbb96ee9c99f8061`
+- python-pkcs11 `0.10.0`
+- SHTTPS delegated-signing lineage pinned by `scripts/install_synergy_federation_stack.sh`
 - ai_compress commit `551fae36eacb5713aa503fc9da2fbc44fe8f2e84`
 
-The preflight requires `ML-KEM-1024`, `ML-DSA-87`, `SLH-DSA-SHAKE-256s`, X25519 hybrid mode and SGH1. A version/algorithm mismatch fails closed.
+Preflight requires ML-KEM-1024, ML-DSA-87, SLH-DSA-SHAKE-256s, X25519 hybrid mode, SGH1, python-pkcs11 0.10.0 and the PKCS#11 ML-DSA mechanisms.
 
-## Host preparation
+## 1. Offline Root ceremony
 
-Use an encrypted/root-protected filesystem for `/var/lib/synergy/federation/private`. Restrict interactive access to the signing host. Keep independent offline backups of the public root and encrypted private material. Do not copy private node identities into Git or general-purpose configuration management.
+Run this on an isolated/offline machine or equivalent cold-root environment. Never copy `federation-root.identity.json` to the online signer.
 
-From a reviewed checkout of `synergy_system`:
+```bash
+export SYNERGY_FEDERATION_SOURCE=/secure/synergy_system/config/federation_trust_source_v1.json
+export SYNERGY_FEDERATION_ROOT_PUBLIC=/secure/export/federation-root.json
+export SYNERGY_FEDERATION_ROOT_SECRET=/secure/cold/federation-root.identity.json
+
+scripts/federation_offline_root.sh root-init
+```
+
+The root public document may be exported to the online environment; the root private identity remains offline.
+
+## 2. Online HSM signer key generation
+
+On the protected online signing node install the pinned stack and systemd profile:
 
 ```bash
 sudo bash scripts/install_oqs_ubuntu.sh
 sudo bash scripts/install_synergy_federation_stack.sh
 sudo bash scripts/install_federation_systemd.sh
-sudo cp -n config/federation_operator.env.example /etc/synergy-federation-operator.env
-sudo chmod 0600 /etc/synergy-federation-operator.env
+sudo editor /etc/synergy-federation-hsm.env
 ```
 
-Review `/etc/synergy-federation-stack.env` and `/etc/synergy-federation-operator.env`, then run:
+Configure the vendor PKCS#11 module, token label, unique key label and a protected PIN file. Then initialize the signer:
 
 ```bash
-sudo bash scripts/federation_preflight.sh
-sudo bash scripts/federation_first_boot.sh
+set -a
+source /etc/synergy-federation-stack.env
+source /etc/synergy-federation-hsm.env
+set +a
+sudo -E /usr/local/libexec/synergy-federation-hsm-operator hsm-init
+sudo -E /usr/local/libexec/synergy-federation-hsm-operator hsm-check
 ```
 
-The ceremony refuses to overwrite an existing root/registry. On success it creates one independent identity for each of the 51 capability repositories plus the `synergy_ai_company` control principal and emits Registry Sequence 1.
+The key is generated with `SENSITIVE=true`, `EXTRACTABLE=false` and `PRIVATE=true`. Immediately after generation SHTTPS asks the HSM to sign an interoperability challenge and verifies it through OQS. A format/mechanism mismatch fails closed.
 
-## First maintenance validation
+Export only `registry-signer.public.json` to the offline Root environment.
 
-Before starting the timer:
+## 3. Offline signer certification + signer revocation state
+
+On the cold Root machine:
+
+```bash
+scripts/federation_offline_root.sh issue-signer-cert \
+  /secure/import/registry-signer.public.json \
+  /secure/export/registry-signer.certificate.json 1
+
+scripts/federation_offline_root.sh revocations-init \
+  /secure/export/registry-signer.revocations.json
+```
+
+The default signer certificate is short-lived and permits only lifecycle signing. Copy the public Root document, signer certificate and signer revocation state to `/etc/synergy/federation/` on the online signing node.
+
+## 4. Registry Sequence 1 + 51 repositories + Auto-Company control principal
+
+On the online node:
+
+```bash
+set -a
+source /etc/synergy-federation-stack.env
+source /etc/synergy-federation-hsm.env
+set +a
+sudo -E /usr/local/libexec/synergy-federation-preflight
+sudo -E /usr/local/libexec/synergy-federation-hsm-operator provision-initial
+sudo -E /usr/local/libexec/synergy-federation-hsm-operator verify
+```
+
+`provision-initial` creates independent SHTTPS node identities for the canonical 51 capability repositories plus the separate `synergy_ai_company` control principal and emits delegated Registry Sequence 1 signed by the HSM key.
+
+Node transport identities are still protected file secrets in this version. They are **not** falsely represented as HSM-resident. A separate per-service HSM identity provider is required before those keys can also become non-exportable.
+
+## 5. Automatic online maintenance
+
+Before enabling the timer, test the one-shot:
 
 ```bash
 sudo systemctl start synergy-federation-maintenance.service
@@ -44,43 +125,62 @@ sudo systemctl status synergy-federation-maintenance.service --no-pager
 sudo journalctl -u synergy-federation-maintenance.service -n 100 --no-pager
 ```
 
-Only after the one-shot service succeeds:
+Then:
 
 ```bash
 sudo systemctl start synergy-federation-maintenance.timer
 sudo systemctl list-timers synergy-federation-maintenance.timer
 ```
 
-The daily maintenance path runs `preflight -> verify -> rotate/renew -> verify` with no network address family except local UNIX sockets. The service is read-only except for the federation registry/state/private directories.
+The systemd service performs:
 
-## Registry renewal and node rotation
-
-Registry lifetime and node-key lifetime are independent. The default policy uses a 30-day signed registry and 90-day node identities. Maintenance renews the registry seven days before registry expiry even if no node key is due. Node identities rotate seven days before their own expiry.
-
-Rotation is crash-safe:
-
-1. create immutable generation secret and `.next` candidate;
-2. sign Registry N+1 containing the new public identity and mark the old identity `retiring`;
-3. atomically publish Registry N+1;
-4. atomically promote `.next` to the stable private identity path;
-5. restart the affected service under supervision;
-6. after the signed grace window, the old identity is no longer accepted.
-
-A crash before step 3 leaves the old identity active under the old registry. A crash after step 3 but before step 4 remains valid because the old identity is still signed as `retiring` during the grace period.
-
-## Revocation
-
-For a compromised node identity:
-
-```bash
-sudo /usr/local/libexec/synergy-federation-operator revoke <NODE_ID>
-sudo /usr/local/libexec/synergy-federation-operator verify
+```text
+preflight
+  -> HSM interop check
+  -> verify root/certificate/revocations/registry/rollback state
+  -> rotate node identities if due OR renew registry if due
+  -> HSM signs Registry N+1
+  -> atomically publish Registry N+1
+  -> promote pending node identities
+  -> verify again
 ```
 
-Then restart federation clients/servers so every process reloads the new registry. Revocation removes the node from derived trust immediately at the next registry load.
+The unit intentionally has no Federation Root private-key condition and `/etc/synergy-federation-hsm.env` is rejected if it contains `SYNERGY_FEDERATION_ROOT_SECRET`.
 
-## Root key handling
+## 6. Online node revocation
 
-The current implementation signs registry updates with the federation root identity. Therefore the automated file-secret profile requires the root secret on the protected signing node. This is intentionally **not described as offline-root or HSM-backed**. A future delegated-registry-signer/HSM provider should remove the root private key from routine maintenance entirely.
+A compromised transport node can be revoked by the delegated signer without waking the Root:
 
-Until that provider exists, compensate by using an encrypted dedicated signing host, strict filesystem permissions, minimal login access, offline encrypted backup, service sandboxing, and independent monitoring of registry sequence/hash changes.
+```bash
+sudo -E /usr/local/libexec/synergy-federation-hsm-operator revoke-node <NODE_ID>
+sudo -E /usr/local/libexec/synergy-federation-hsm-operator verify
+```
+
+This changes only node lifecycle state and cannot modify governance/ACL metadata.
+
+## 7. Emergency Registry Signer revocation
+
+A compromised HSM signer is revoked by the offline Root. Bring the cold Root environment online only for the ceremony:
+
+```bash
+scripts/federation_offline_root.sh revoke-signer \
+  /secure/current/registry-signer.revocations.json \
+  <COMPROMISED_SIGNER_ID> \
+  /secure/export/registry-signer.revocations.next.json
+```
+
+Distribute the new root-signed revocation state to federation services. They reject registries signed by the revoked signer even if the old registry signature itself is cryptographically valid.
+
+Provision a new HSM key under a new label, issue a new Root certificate with a higher generation, and resume registry maintenance with the new signer.
+
+## 8. What the Root still controls
+
+The cold Root is required for:
+
+- initial root generation;
+- authorization of a new Registry Signer;
+- revocation of a Registry Signer;
+- changes to the governance hash (repositories, roles, `rpc_allow`, enabled status, integration metadata);
+- Root rotation.
+
+It is **not** required for routine registry renewal, node rotation, node revocation or hash-chain advancement.
