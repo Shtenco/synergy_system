@@ -24,9 +24,10 @@ case "$cmd" in
     shttps-federation verify --root-public "$SYNERGY_FEDERATION_ROOT_PUBLIC" --registry "$SYNERGY_FEDERATION_REGISTRY" --state "$SYNERGY_FEDERATION_VERIFY_STATE"
     ;;
   rotate-due)
-    tmp="${SYNERGY_FEDERATION_REGISTRY}.next"
-    shttps-federation-rotate-due --root-secret "$SYNERGY_FEDERATION_ROOT_SECRET" --root-public "$SYNERGY_FEDERATION_ROOT_PUBLIC" --registry "$SYNERGY_FEDERATION_REGISTRY" --secrets-dir "$SYNERGY_FEDERATION_NODE_SECRETS" --out "$tmp" --rotate-before-seconds "$SYNERGY_FEDERATION_ROTATE_BEFORE_SECONDS" --grace-seconds "$SYNERGY_FEDERATION_ROTATION_GRACE_SECONDS" --node-valid-days "$SYNERGY_FEDERATION_NODE_VALID_DAYS"
-    mv "$tmp" "$SYNERGY_FEDERATION_REGISTRY"
+    # Crash-safe ordering is implemented inside SHTTPS:
+    # 1) write generation + pending secrets, 2) atomically publish registry N+1,
+    # 3) atomically promote pending identities to stable paths.
+    shttps-federation-rotate-due --root-secret "$SYNERGY_FEDERATION_ROOT_SECRET" --root-public "$SYNERGY_FEDERATION_ROOT_PUBLIC" --registry "$SYNERGY_FEDERATION_REGISTRY" --secrets-dir "$SYNERGY_FEDERATION_NODE_SECRETS" --commit-live --rotate-before-seconds "$SYNERGY_FEDERATION_ROTATE_BEFORE_SECONDS" --grace-seconds "$SYNERGY_FEDERATION_ROTATION_GRACE_SECONDS" --node-valid-days "$SYNERGY_FEDERATION_NODE_VALID_DAYS"
     ;;
   revoke)
     node_id="${2:?usage: federation_operator.sh revoke NODE_ID}"
