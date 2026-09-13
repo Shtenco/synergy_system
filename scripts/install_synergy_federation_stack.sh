@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SHTTPS_COMMIT="${SHTTPS_COMMIT:-e8bb87fae6d98417782d51a583d4b9bee7896680}"
+SHTTPS_COMMIT="${SHTTPS_COMMIT:-1776c255dd1af37a376784f771456176e6a4a8cc}"
 AI_COMPRESS_COMMIT="${AI_COMPRESS_COMMIT:-551fae36eacb5713aa503fc9da2fbc44fe8f2e84}"
 SRC_ROOT="${SYNERGY_BUILD_ROOT:-/opt/synergy/src}"
 VENV="${SYNERGY_PYTHON_VENV:-/opt/synergy/venv}"
@@ -24,7 +24,7 @@ clone_pin() {
 clone_pin https://github.com/Shtenco/shttps.git "$SRC_ROOT/shttps" "$SHTTPS_COMMIT"
 clone_pin https://github.com/Shtenco/ai_compress.git "$SRC_ROOT/ai_compress" "$AI_COMPRESS_COMMIT"
 
-"$VENV/bin/python" -m pip install -e "$SRC_ROOT/shttps[pq]"
+"$VENV/bin/python" -m pip install -e "$SRC_ROOT/shttps[production]"
 
 cat >/etc/synergy-federation-stack.env <<EOF
 OQS_INSTALL_PATH=/opt/synergy/oqs/0.16.0
@@ -40,4 +40,4 @@ SHTTPS_REQUIRE_HYBRID=1
 EOF
 chmod 0644 /etc/synergy-federation-stack.env
 
-echo "SYNERGY_FEDERATION_STACK_INSTALLED shttps=$SHTTPS_COMMIT ai_compress=$AI_COMPRESS_COMMIT"
+echo "SYNERGY_FEDERATION_STACK_INSTALLED shttps=$SHTTPS_COMMIT ai_compress=$AI_COMPRESS_COMMIT pkcs11=0.10.0"
