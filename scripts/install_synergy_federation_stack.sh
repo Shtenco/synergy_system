@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SHTTPS_COMMIT="${SHTTPS_COMMIT:-1776c255dd1af37a376784f771456176e6a4a8cc}"
+SHTTPS_COMMIT="${SHTTPS_COMMIT:-7f3072d5a86b95fa4bb1da52fbad7395fee4e88f}"
 AI_COMPRESS_COMMIT="${AI_COMPRESS_COMMIT:-551fae36eacb5713aa503fc9da2fbc44fe8f2e84}"
 SRC_ROOT="${SYNERGY_BUILD_ROOT:-/opt/synergy/src}"
 VENV="${SYNERGY_PYTHON_VENV:-/opt/synergy/venv}"
