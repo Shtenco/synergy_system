@@ -5,7 +5,7 @@
 ## Trust chain
 
 ```text
-offline federation root secret (ML-DSA-87 AND SLH-DSA-SHAKE-256s)
+federation root identity (ML-DSA-87 AND SLH-DSA-SHAKE-256s)
         |
         +-> public federation root document (pinned out-of-band)
         |
@@ -23,15 +23,21 @@ A registry is accepted only when every required root signature verifies, the reg
 
 ## Provisioning
 
-Production provisioning is performed by `shttps-federation` with a standards-conformant OQS provider. `root-init` writes the root private identity to a secret/HSM path and a separate public root file. `provision-all` consumes `config/federation_trust_source_v1.json`, creates an independent PQ node identity for all 51 capability repositories and any explicit control-plane principals, writes private identities only to the configured secret directory, and emits a signed public registry.
+Production-candidate provisioning is performed by `shttps-federation` with the pinned OQS provider. `root-init` writes the root private identity to the configured protected secret path and a separate public root file. `provision-all` consumes `config/federation_trust_source_v1.json`, creates an independent PQ node identity for all 51 capability repositories and any explicit control-plane principals, writes private identities only to the configured secret directory, and emits a signed public registry.
+
+The current `liboqs-python` provider exports secret-key bytes. Therefore the current automated profile is **encrypted file-secret storage on a protected signing node**, not a non-exportable HSM profile and not a cold/offline root. A future HSM/delegated-signer provider must remove the root private identity from routine registry maintenance.
 
 High-impact repositories (`financial`, `blockchain`, plus `synergy_system`) receive ML-DSA-87 **AND** SLH-DSA-SHAKE-256s node identities. Other repositories and the Auto-Company control principal receive ML-DSA-87 by default. This identity policy is separate from payment, treasury, validator or blockchain keys.
 
-## Rotation and revocation
+## Rotation, renewal and revocation
 
 `rotate` creates a new independent key generation. The previous active node becomes `retiring` for a bounded grace interval, so clients can accept old and new IDs while preferring the newest active generation. After the grace interval the old node disappears from derived trust automatically.
 
-`revoke` marks a node `revoked`; revoked IDs are omitted from derived trust immediately. Every rotation/revocation produces registry `sequence+1` and binds `previous_registry_hash` to the prior signed registry.
+Registry lifetime and node-key lifetime are independent. Automatic maintenance renews a signed registry before its own expiry even when no node key is due, preserving monotonic sequence and the `previous_registry_hash` chain.
+
+Batched `rotate-due` is crash-safe: generation and `.next` private files are created first, Registry N+1 is signed and atomically published next, and only then are pending private identities atomically promoted to stable paths. Either crash boundary leaves a registry/private-key combination that still authenticates.
+
+`revoke` marks a node `revoked`; revoked IDs are omitted from derived trust immediately. Every rotation/renewal/revocation that changes the registry produces `sequence+1` and binds `previous_registry_hash` to the prior signed registry.
 
 Federation root rotation is separately cross-signed by the old MAX root before a new public root can be trusted.
 
