@@ -1,0 +1,37 @@
+[Unit]
+Description=SYNERGY Federation Registry verify/renew/rotate maintenance
+Documentation=https://github.com/Shtenco/synergy_system
+After=local-fs.target
+ConditionPathExists=/etc/synergy/federation/federation-root.json
+ConditionPathExists=/etc/synergy/federation/federation-registry.signed.json
+ConditionPathExists=/var/lib/synergy/federation/private/federation-root.identity.json
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/synergy-federation-stack.env
+EnvironmentFile=/etc/synergy-federation-operator.env
+Environment=PATH=/opt/synergy/venv/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStartPre=/usr/local/libexec/synergy-federation-preflight
+ExecStartPre=/usr/local/libexec/synergy-federation-operator verify
+ExecStart=/usr/local/libexec/synergy-federation-operator rotate-due
+ExecStartPost=/usr/local/libexec/synergy-federation-operator verify
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictRealtime=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+RestrictAddressFamilies=AF_UNIX
+ReadWritePaths=/etc/synergy/federation /var/lib/synergy/federation
+ReadOnlyPaths=/opt/synergy /usr/local/libexec /etc/synergy-federation-stack.env /etc/synergy-federation-operator.env
+
+[Install]
+WantedBy=multi-user.target
