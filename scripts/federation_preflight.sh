@@ -4,7 +4,7 @@ set -euo pipefail
 : "${OQS_INSTALL_PATH:=/opt/synergy/oqs/0.16.0}"
 : "${SYNERGY_PYTHON_VENV:=/opt/synergy/venv}"
 : "${SHTTPS_CHECKOUT:=/opt/synergy/src/shttps}"
-: "${SHTTPS_COMMIT:=e8bb87fae6d98417782d51a583d4b9bee7896680}"
+: "${SHTTPS_COMMIT:=1776c255dd1af37a376784f771456176e6a4a8cc}"
 : "${AI_COMPRESS_CHECKOUT:=/opt/synergy/src/ai_compress}"
 : "${AI_COMPRESS_COMMIT:=551fae36eacb5713aa503fc9da2fbc44fe8f2e84}"
 
@@ -22,13 +22,18 @@ export SHTTPS_REQUIRE_HYBRID=1
 [[ "$(git -C "$AI_COMPRESS_CHECKOUT" rev-parse HEAD)" == "$AI_COMPRESS_COMMIT" ]] || { echo "ai_compress commit mismatch" >&2; exit 3; }
 
 "$SYNERGY_PYTHON_VENV/bin/python" - <<'PY'
+from importlib.metadata import version
 import oqs
+import pkcs11
 assert oqs.oqs_version() == "0.16.0", oqs.oqs_version()
 assert oqs.oqs_python_version() == "0.16.0", oqs.oqs_python_version()
+assert version("python-pkcs11") == "0.10.0", version("python-pkcs11")
 assert "ML-KEM-1024" in oqs.get_enabled_kem_mechanisms()
 assert "ML-DSA-87" in oqs.get_enabled_sig_mechanisms()
 assert "SLH-DSA-SHAKE-256s" in oqs.get_enabled_sig_mechanisms()
-print("OQS_VERSION_AND_ALGORITHMS_OK")
+assert hasattr(pkcs11.KeyType,"ML_DSA")
+assert hasattr(pkcs11.Mechanism,"ML_DSA") and hasattr(pkcs11.Mechanism,"ML_DSA_KEY_PAIR_GEN")
+print("OQS_AND_PKCS11_VERSION_ALGORITHMS_OK")
 PY
 
 "$SYNERGY_PYTHON_VENV/bin/shttps-diagnose"
