@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.capability.v2",
+  "title": "SYNERGY Capability Request V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol",
+    "request_id",
+    "source_principal",
+    "target_principal",
+    "capability",
+    "input",
+    "constraints",
+    "approval_context",
+    "idempotency_key",
+    "trace_id"
+  ],
+  "properties": {
+    "protocol": {
+      "const": "synergy.capability.v2"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_principal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_principal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capability": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(\\\\.[a-z][a-z0-9_]*)+$"
+    },
+    "input": {
+      "type": "object",
+      "required": [
+        "object_type",
+        "schema_version",
+        "payload"
+      ],
+      "properties": {
+        "object_type": {
+          "type": "string"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "payload": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "constraints": {
+      "type": "object"
+    },
+    "approval_context": {
+      "type": "object"
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trace_id": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}
