@@ -2,7 +2,7 @@
 
 **Date:** 2026-09-17  
 **Architecture root:** `Shtenco/synergy_system`  
-**Scope:** all 58 repositories currently accessible under `Shtenco`  
+**Scope:** all repositories currently accessible under `Shtenco`; observed inventory was 58 at design approval and is 59 as of 2026-09-18 after `synergy_agi_trader` appeared  
 **Status:** approved design specification; implementation pending  
 
 ## 1. Goal
@@ -172,7 +172,7 @@ Two `CANONICAL` repositories may not own the same exclusive authority. CI must f
 
 ## 6. Federation membership and trust eligibility
 
-The 58-repository GitHub inventory is not identical to the runtime principal set.
+The live GitHub inventory is not identical to the runtime principal set. Repository count is intentionally dynamic and is derived from the canonical catalog.
 
 The model is:
 
@@ -460,7 +460,7 @@ Regression gates must preserve the currently approved Auto-Company routes to Aut
 
 ### Phase V4-A — Catalog normalization
 
-Create the full 58-repository canonical catalog, normalize lifecycle statuses and separate lifecycle from system kind.
+Create the full live-inventory canonical catalog, normalize lifecycle statuses and separate lifecycle from system kind.
 
 ### Phase V4-B — Authority and capability model
 
@@ -518,4 +518,4 @@ The target federation guarantees that source-code presence and runtime authority
 
 A repository becomes operational only through explicit catalog classification, capability ownership, authority policy, trust eligibility, authenticated SHTTPS identity, caller ACL and canonical-object validation.
 
-This is the governance boundary that turns the 58 repositories into one controlled distributed system rather than a set of mutually trusting programs.
+This is the governance boundary that turns the live repository estate into one controlled distributed system rather than a set of mutually trusting programs.
