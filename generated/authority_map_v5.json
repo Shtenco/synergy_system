@@ -1,0 +1,603 @@
+{
+  "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+  "exclusive_authorities": {
+    "accounting": "synergy_financial_os",
+    "blockchain_submission": "synergy_ai_blockchain",
+    "financial": "synergy_financial_os",
+    "payment": "synergy_pay_system",
+    "settlement": "synergy_pay_system"
+  },
+  "repositories": {
+    "3D_bars_market_structure": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "agi_autopilot": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "BOUNDED",
+      "external_side_effect": "BOUNDED",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "agi_nexus": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "agi_olga": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "ai_coder": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "ai_compress": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "BOUNDED",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "ai_financial_system": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "ai_language": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "BOUNDED",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "ai_trade_terminal": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "algotrading_graph_system": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "binary_quantum_theory": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "blochain_budget": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "cashero": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "cold_nuclear": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "computer_vision_trading_metatrader_5": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "cross_forex_arbitrage_trading_metatrader_5": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "crypto_pump": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "dlp_solver": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "gguf_compress": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "global_liquidity_dataminer": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "midas_ai": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "midas_ai_trading_system": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "midas_lite": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "motherboard_xpu_xml": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "multi_threaded_trading_robot_with_machine_learning_python": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "nexus_science_agent": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "print_money_synergychain": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "qr_compress": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "quantum-trading_metatrader5": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "shhts": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "shtenco.github.io": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "shtencoauantai.github.io": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "shttps": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "BOUNDED",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "sinergy-super-app": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "sinergy_app": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "swap_arbitrage_metatrader_5": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_agi_trader": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_ai_blockchain": {
+      "accounting": "NONE",
+      "blockchain_submission": "CANONICAL",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_ai_company": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_app": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_app_family": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_apps": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_chain_print_money": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_eurasian": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_financial_os": {
+      "accounting": "CANONICAL",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "CANONICAL",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_gllm_nexus": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_graph_print_money": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_matrix_sota": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_messenger": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_meta_os": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "BOUNDED",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_metachain": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_pay_system": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "BOUNDED",
+      "financial": "NONE",
+      "payment": "CANONICAL",
+      "settlement": "CANONICAL"
+    },
+    "synergy_project": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergy_system": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "BOUNDED",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergychain": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergychain.github.io": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "synergynet": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "BOUNDED",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "turbo_linux": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "BOUNDED",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    },
+    "usds": {
+      "accounting": "NONE",
+      "blockchain_submission": "NONE",
+      "code_write": "NONE",
+      "execution": "NONE",
+      "external_side_effect": "NONE",
+      "financial": "NONE",
+      "payment": "NONE",
+      "settlement": "NONE"
+    }
+  },
+  "schema": "synergy.authority-map/v5"
+}
