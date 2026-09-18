@@ -204,3 +204,32 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
+def build_capability_registry(catalog: dict[str, Any]) -> dict[str, Any]:
+    providers: dict[str, str] = {}
+    consumers: dict[str, set[str]] = {}
+    for repo in catalog.get("repositories") or []:
+        name = str(repo["name"])
+        for capability in repo.get("capabilities_provided") or []:
+            capability = str(capability)
+            owner = providers.get(capability)
+            if owner is not None && owner != name:
+                raise ValueError(f"E_CAPABILITY_AMBIGUOUS:{capability}:{owner},{name}")
+            providers[capability] = name
+        for capability in repo.get("capabilities_consumed") or []:
+            consumers.setdefault(str(capability), set()).add(name)
+
+    return {
+        "schema": "synergy.capability-registry/v2",
+        "catalog_digest": catalog_digest(catalog),
+        "default_policy": "DENY",
+        "capabilities": [
+            {
+                "capability": capability,
+                "canonical_provider": providers[capability],
+                "consumers": sorted(consumers.get(capability, set())),
+            }
+            for capability in sorted(providers)
+        ],
+    }
