@@ -1,6 +1,6 @@
 {
   "schema": "synergy.capability-registry/v2",
-  "catalog_digest": null,
+  "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
   "default_policy": "DENY",
   "capabilities": [
     {
