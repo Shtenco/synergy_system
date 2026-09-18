@@ -1,0 +1,78 @@
+{
+  "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+  "objects": [
+    {
+      "federation_owner": "synergy_system",
+      "name": "AccountingSnapshot",
+      "provenance": "Federation V5",
+      "schema_ref": "config/exchange_objects/accounting_snapshot.schema.json",
+      "schema_version": "v1",
+      "semantic_owner": "synergy_financial_os"
+    },
+    {
+      "federation_owner": "synergy_system",
+      "name": "CapitalAuthorization",
+      "provenance": "Federation V5",
+      "schema_ref": "config/exchange_objects/capital_authorization.schema.json",
+      "schema_version": "v1",
+      "semantic_owner": "synergy_financial_os"
+    },
+    {
+      "federation_owner": "synergy_system",
+      "name": "DemandSignal",
+      "provenance": "Shtenco/synergy_eurasian/interfaces/demand_signal.schema.json",
+      "schema_ref": "https://github.com/Shtenco/synergy_eurasian/blob/main/interfaces/demand_signal.schema.json",
+      "schema_version": "v1",
+      "semantic_owner": "producer-dependent"
+    },
+    {
+      "federation_owner": "synergy_system",
+      "name": "EvidencePackage",
+      "provenance": "Shtenco/synergy_eurasian/interfaces/evidence_package.schema.json",
+      "schema_ref": "https://github.com/Shtenco/synergy_eurasian/blob/main/interfaces/evidence_package.schema.json",
+      "schema_version": "v1",
+      "semantic_owner": "producer-dependent"
+    },
+    {
+      "federation_owner": "synergy_system",
+      "name": "PaymentIntent",
+      "provenance": "Federation V5",
+      "schema_ref": "config/exchange_objects/payment_intent.schema.json",
+      "schema_version": "v1",
+      "semantic_owner": "synergy_financial_os"
+    },
+    {
+      "federation_owner": "synergy_system",
+      "name": "ProjectProposal",
+      "provenance": "Shtenco/synergy_eurasian/interfaces/project_proposal.schema.json",
+      "schema_ref": "https://github.com/Shtenco/synergy_eurasian/blob/main/interfaces/project_proposal.schema.json",
+      "schema_version": "v1",
+      "semantic_owner": "synergy_eurasian"
+    },
+    {
+      "federation_owner": "synergy_system",
+      "name": "ResourceState",
+      "provenance": "Shtenco/synergy_eurasian/interfaces/resource_state.schema.json",
+      "schema_ref": "https://github.com/Shtenco/synergy_eurasian/blob/main/interfaces/resource_state.schema.json",
+      "schema_version": "v1",
+      "semantic_owner": "producer-dependent"
+    },
+    {
+      "federation_owner": "synergy_system",
+      "name": "SettlementReceipt",
+      "provenance": "Federation V5",
+      "schema_ref": "config/exchange_objects/settlement_receipt.schema.json",
+      "schema_version": "v1",
+      "semantic_owner": "synergy_pay_system"
+    },
+    {
+      "federation_owner": "synergy_system",
+      "name": "TechnologyCandidate",
+      "provenance": "Shtenco/synergy_eurasian/interfaces/technology_candidate.schema.json",
+      "schema_ref": "https://github.com/Shtenco/synergy_eurasian/blob/main/interfaces/technology_candidate.schema.json",
+      "schema_version": "v1",
+      "semantic_owner": "federated_research"
+    }
+  ],
+  "schema": "synergy.exchange-object-registry/v1"
+}

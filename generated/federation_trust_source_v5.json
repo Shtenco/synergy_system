@@ -1,0 +1,559 @@
+{
+  "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+  "control_principals": [
+    {
+      "allowed_exchange_objects": [
+        "DemandSignal",
+        "ProjectProposal",
+        "EvidencePackage"
+      ],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "NONE",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [
+        "business.execute_approved_task",
+        "reasoning.infer",
+        "memory.search",
+        "memory.upsert"
+      ],
+      "capabilities_provided": [
+        "business.orchestrate"
+      ],
+      "capability_policy": "ALLOWLIST",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "control",
+      "enabled": true,
+      "integration": "shttps.rpc/v1",
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_ai_company",
+      "repo": "https://github.com/Shtenco/synergy_ai_company",
+      "risk_class": "code_write",
+      "role": "business_orchestrator",
+      "rpc_allow": [
+        "autopilot.submit",
+        "autopilot.status",
+        "autopilot.approve",
+        "autopilot.execute",
+        "autopilot.capabilities",
+        "nexus.runtime",
+        "nexus.memory.search",
+        "nexus.memory.upsert"
+      ],
+      "system_kind": "CONTROL_PLANE",
+      "transport_roles": [
+        "business_orchestrator"
+      ]
+    }
+  ],
+  "owner": "Shtenco/synergy_system",
+  "policy": {
+    "capability_default": "DENY",
+    "control_principal_count": 1,
+    "high_impact_node_policy": [
+      "ML-DSA-87",
+      "SLH-DSA-SHAKE-256s"
+    ],
+    "node_default_lifetime_seconds": 7776000,
+    "registry_max_lifetime_seconds": 2592000,
+    "repository_count": 14,
+    "root_identity_policy": [
+      "ML-DSA-87",
+      "SLH-DSA-SHAKE-256s"
+    ],
+    "rotation_grace_seconds": 3600,
+    "standard_node_policy": [
+      "ML-DSA-87"
+    ],
+    "transport_authority": "NONE"
+  },
+  "repositories": [
+    {
+      "allowed_exchange_objects": [
+        "DemandSignal",
+        "ProjectProposal",
+        "EvidencePackage"
+      ],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "NONE",
+        "execution": "BOUNDED",
+        "external_side_effect": "BOUNDED",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [
+        "reasoning.infer",
+        "memory.search"
+      ],
+      "capabilities_provided": [
+        "business.execute_approved_task"
+      ],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "control",
+      "enabled": true,
+      "integration": "contract_only:executor_sidecar_required",
+      "lifecycle_status": "CANONICAL",
+      "name": "agi_autopilot",
+      "repo": "https://github.com/Shtenco/agi_autopilot",
+      "risk_class": "code_write",
+      "role": "bounded_business_executor",
+      "rpc_allow": [],
+      "system_kind": "CONTROL_PLANE",
+      "transport_roles": [
+        "bounded_business_executor"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "NONE",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [
+        "reasoning.infer",
+        "memory.search",
+        "memory.upsert"
+      ],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "ai_research",
+      "enabled": true,
+      "integration": "contract_only:inference_memory_sidecar_required",
+      "lifecycle_status": "CANONICAL",
+      "name": "agi_nexus",
+      "repo": "https://github.com/Shtenco/agi_nexus",
+      "risk_class": "code_write",
+      "role": "reasoning_memory",
+      "rpc_allow": [],
+      "system_kind": "CONTROL_PLANE",
+      "transport_roles": [
+        "reasoning_memory"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "BOUNDED",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [
+        "compression.lossless"
+      ],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "compression",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "ai_compress",
+      "repo": "https://github.com/Shtenco/ai_compress",
+      "risk_class": "code_write",
+      "role": "lossless_compression",
+      "rpc_allow": [],
+      "system_kind": "INFRASTRUCTURE",
+      "transport_roles": [
+        "lossless_compression"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [
+        "DemandSignal",
+        "EvidencePackage"
+      ],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "NONE",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [
+        "trading.propose_portfolio"
+      ],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "trading",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "midas_ai",
+      "repo": "https://github.com/Shtenco/midas_ai",
+      "risk_class": "trading",
+      "role": "trading_intelligence",
+      "rpc_allow": [],
+      "system_kind": "DOMAIN_SERVICE",
+      "transport_roles": [
+        "trading_intelligence"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [
+        "TechnologyCandidate",
+        "EvidencePackage"
+      ],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "NONE",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [
+        "science.build_evidence_package"
+      ],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "ai_research",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "nexus_science_agent",
+      "repo": "https://github.com/Shtenco/nexus_science_agent",
+      "risk_class": "code_write",
+      "role": "science_evidence_orchestrator",
+      "rpc_allow": [],
+      "system_kind": "DOMAIN_SERVICE",
+      "transport_roles": [
+        "science_evidence_orchestrator"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "BOUNDED",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [
+        "trust.authenticate"
+      ],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "infrastructure",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "shttps",
+      "repo": "https://github.com/Shtenco/shttps",
+      "risk_class": "code_write",
+      "role": "pq_trust_transport_security",
+      "rpc_allow": [],
+      "system_kind": "INFRASTRUCTURE",
+      "transport_roles": [
+        "pq_trust_transport_security"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [
+        "SettlementReceipt",
+        "AccountingSnapshot",
+        "EvidencePackage"
+      ],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "CANONICAL",
+        "code_write": "NONE",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "blockchain",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_ai_blockchain",
+      "repo": "https://github.com/Shtenco/synergy_ai_blockchain",
+      "risk_class": "blockchain",
+      "role": "trust_commitment",
+      "rpc_allow": [],
+      "system_kind": "DOMAIN_SERVICE",
+      "transport_roles": [
+        "trust_commitment"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [
+        "DemandSignal",
+        "ResourceState",
+        "TechnologyCandidate",
+        "ProjectProposal",
+        "EvidencePackage"
+      ],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "NONE",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [
+        "science.build_evidence_package"
+      ],
+      "capabilities_provided": [
+        "project.propose"
+      ],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "real_economy",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_eurasian",
+      "repo": "https://github.com/Shtenco/synergy_eurasian",
+      "risk_class": "code_write",
+      "role": "real_economy_project_factory",
+      "rpc_allow": [],
+      "system_kind": "DOMAIN_SERVICE",
+      "transport_roles": [
+        "real_economy_project_factory"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [
+        "CapitalAuthorization",
+        "SettlementReceipt",
+        "EvidencePackage",
+        "AccountingSnapshot"
+      ],
+      "authority": {
+        "accounting": "CANONICAL",
+        "blockchain_submission": "NONE",
+        "code_write": "NONE",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "CANONICAL",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [
+        "accounting.recognize_external_profit",
+        "accounting.snapshot",
+        "finance.authorize_capital"
+      ],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "finance",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_financial_os",
+      "repo": "https://github.com/Shtenco/synergy_financial_os",
+      "risk_class": "financial",
+      "role": "canonical_accounting",
+      "rpc_allow": [],
+      "system_kind": "DOMAIN_SERVICE",
+      "transport_roles": [
+        "canonical_accounting"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "BOUNDED",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "infrastructure",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_meta_os",
+      "repo": "https://github.com/Shtenco/synergy_meta_os",
+      "risk_class": "code_write",
+      "role": "node_orchestrator",
+      "rpc_allow": [],
+      "system_kind": "INFRASTRUCTURE",
+      "transport_roles": [
+        "node_orchestrator"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [
+        "PaymentIntent",
+        "SettlementReceipt",
+        "EvidencePackage"
+      ],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "NONE",
+        "execution": "NONE",
+        "external_side_effect": "BOUNDED",
+        "financial": "NONE",
+        "payment": "CANONICAL",
+        "settlement": "CANONICAL"
+      },
+      "capabilities_consumed": [
+        "finance.authorize_capital"
+      ],
+      "capabilities_provided": [
+        "payment.route",
+        "settlement.reconcile",
+        "settlement.receipt"
+      ],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "finance",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_pay_system",
+      "repo": "https://github.com/Shtenco/synergy_pay_system",
+      "risk_class": "financial",
+      "role": "payment_settlement",
+      "rpc_allow": [],
+      "system_kind": "DOMAIN_SERVICE",
+      "transport_roles": [
+        "payment_settlement"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "BOUNDED",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "infrastructure",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_system",
+      "repo": "https://github.com/Shtenco/synergy_system",
+      "risk_class": "code_write",
+      "role": "architecture_governance",
+      "rpc_allow": [],
+      "system_kind": "INFRASTRUCTURE",
+      "transport_roles": [
+        "architecture_governance"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "BOUNDED",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "infrastructure",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "synergynet",
+      "repo": "https://github.com/Shtenco/synergynet",
+      "risk_class": "code_write",
+      "role": "p2p_data_plane",
+      "rpc_allow": [],
+      "system_kind": "INFRASTRUCTURE",
+      "transport_roles": [
+        "p2p_data_plane"
+      ]
+    },
+    {
+      "allowed_exchange_objects": [],
+      "authority": {
+        "accounting": "NONE",
+        "blockchain_submission": "NONE",
+        "code_write": "BOUNDED",
+        "execution": "NONE",
+        "external_side_effect": "NONE",
+        "financial": "NONE",
+        "payment": "NONE",
+        "settlement": "NONE"
+      },
+      "capabilities_consumed": [],
+      "capabilities_provided": [],
+      "capability_policy": "DENY",
+      "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+      "domain": "infrastructure",
+      "enabled": true,
+      "integration": "synergy.capability.v2",
+      "lifecycle_status": "CANONICAL",
+      "name": "turbo_linux",
+      "repo": "https://github.com/Shtenco/turbo_linux",
+      "risk_class": "code_write",
+      "role": "host_capability_substrate",
+      "rpc_allow": [],
+      "system_kind": "INFRASTRUCTURE",
+      "transport_roles": [
+        "host_capability_substrate"
+      ]
+    }
+  ],
+  "schema": "synergy.federation-trust-source/v5"
+}

@@ -1,0 +1,101 @@
+{
+  "capabilities": [
+    {
+      "canonical_provider": "synergy_financial_os",
+      "capability": "accounting.recognize_external_profit",
+      "consumers": []
+    },
+    {
+      "canonical_provider": "synergy_financial_os",
+      "capability": "accounting.snapshot",
+      "consumers": []
+    },
+    {
+      "canonical_provider": "agi_autopilot",
+      "capability": "business.execute_approved_task",
+      "consumers": [
+        "synergy_ai_company"
+      ]
+    },
+    {
+      "canonical_provider": "synergy_ai_company",
+      "capability": "business.orchestrate",
+      "consumers": []
+    },
+    {
+      "canonical_provider": "ai_compress",
+      "capability": "compression.lossless",
+      "consumers": []
+    },
+    {
+      "canonical_provider": "synergy_financial_os",
+      "capability": "finance.authorize_capital",
+      "consumers": [
+        "synergy_pay_system"
+      ]
+    },
+    {
+      "canonical_provider": "agi_nexus",
+      "capability": "memory.search",
+      "consumers": [
+        "agi_autopilot",
+        "synergy_ai_company"
+      ]
+    },
+    {
+      "canonical_provider": "agi_nexus",
+      "capability": "memory.upsert",
+      "consumers": [
+        "synergy_ai_company"
+      ]
+    },
+    {
+      "canonical_provider": "synergy_pay_system",
+      "capability": "payment.route",
+      "consumers": []
+    },
+    {
+      "canonical_provider": "synergy_eurasian",
+      "capability": "project.propose",
+      "consumers": []
+    },
+    {
+      "canonical_provider": "agi_nexus",
+      "capability": "reasoning.infer",
+      "consumers": [
+        "agi_autopilot",
+        "synergy_ai_company"
+      ]
+    },
+    {
+      "canonical_provider": "nexus_science_agent",
+      "capability": "science.build_evidence_package",
+      "consumers": [
+        "synergy_eurasian"
+      ]
+    },
+    {
+      "canonical_provider": "synergy_pay_system",
+      "capability": "settlement.receipt",
+      "consumers": []
+    },
+    {
+      "canonical_provider": "synergy_pay_system",
+      "capability": "settlement.reconcile",
+      "consumers": []
+    },
+    {
+      "canonical_provider": "midas_ai",
+      "capability": "trading.propose_portfolio",
+      "consumers": []
+    },
+    {
+      "canonical_provider": "shttps",
+      "capability": "trust.authenticate",
+      "consumers": []
+    }
+  ],
+  "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+  "default_policy": "DENY",
+  "schema": "synergy.capability-registry/v2"
+}
