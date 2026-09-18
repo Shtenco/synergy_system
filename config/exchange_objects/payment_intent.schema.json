@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.exchange.PaymentIntent/v1",
+  "title": "SYNERGY PaymentIntent v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "object_id",
+    "created_at",
+    "producer",
+    "trace_id",
+    "authorization_id",
+    "currency",
+    "amount",
+    "beneficiary",
+    "purpose",
+    "authorization_owner"
+  ],
+  "properties": {
+    "schema": {
+      "const": "synergy.exchange.PaymentIntent/v1"
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "producer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trace_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authorization_id": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "beneficiary": {
+      "type": "object"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "authorization_owner": {
+      "const": "synergy_financial_os"
+    }
+  }
+}
