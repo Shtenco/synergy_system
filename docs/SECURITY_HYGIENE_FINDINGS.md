@@ -1,6 +1,6 @@
 # 🔐 SYNERGY — Documentation Security Hygiene Findings
 
-> Срез: 28 сентября 2026.
+> Срез: 29 сентября 2026.
 > Цель: зафиксировать наличие потенциально чувствительных credential artifacts в Git, не публикуя содержимое секретов.
 
 ## Правило
@@ -59,3 +59,21 @@ secret scanner + CI guard
 ## Следующий gate
 
 Добавить в `synergy_system` federation CI отдельную проверку repository manifests на запрещённые credential filename patterns и централизованный security checklist.
+
+
+## Реализованный security gate
+
+Добавлены:
+
+```text
+registry/SECURITY_BLOCKERS.json
+integration/security_gate.py
+.github/workflows/federation-security-gate.yml
+```
+
+Gate fail-closed проверяет, что:
+
+- repository с `federation_promotion_blocked=true` не повышен выше `ARCHITECTURAL_ONLY`;
+- repository с `deployment_blocked=true` не имеет edge со статусом `DEPLOYED`.
+
+Для `Shtenco/synergy_usds` дополнительно добавлены `.gitignore` patterns для credential-файлов и локальный `SECURITY_FEDERATION_BLOCKER.md`. Это предотвращает новые случайные коммиты такого типа, но **не считается rotation или history cleanup**.
