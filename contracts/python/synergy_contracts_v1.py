@@ -153,6 +153,20 @@ class AccountingRecognitionPayload(BaseModel):
     policy_refs: list[str] = []
 
 
+class FundingAuthorizationPayload(BaseModel):
+    project_event_id: UUID
+    authorization_id: UUID
+    decision: Literal["AUTHORIZE", "REJECT", "DEFER"]
+    max_amount: Decimal = Field(ge=0)
+    currency: str
+    authorized_rails: list[str]
+    expires_at: datetime
+    conditions: list[str]
+    approver_refs: list[str] = Field(min_length=1)
+    policy_version: str | None = None
+    underwriting_evidence_ids: list[str] = []
+
+
 class TrustCommitmentPayload(BaseModel):
     source_event_id: UUID
     source_contract_id: str
@@ -174,6 +188,7 @@ CONTRACT_PAYLOAD_MODELS = {
     "synergy.settlement.evidence/v1": SettlementEvidencePayload,
     "synergy.accounting.recognition/v1": AccountingRecognitionPayload,
     "synergy.trust.commitment/v1": TrustCommitmentPayload,
+    "synergy.economy.funding-authorization/v1": FundingAuthorizationPayload,
 }
 
 
