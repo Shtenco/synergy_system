@@ -1,0 +1,16 @@
+{
+  "schema": "synergy.m4-wave5-scope/v1",
+  "edge_count": 2,
+  "edges": [
+    {
+      "from": "Shtenco/synergy_app",
+      "to": "Shtenco/synergy_meta_os",
+      "contract_id": "synergy.app.store-source-evidence/v1"
+    },
+    {
+      "from": "Shtenco/sinergy_super_app",
+      "to": "Shtenco/synergy_meta_os",
+      "contract_id": "synergy.app.superapp-surface/v1"
+    }
+  ]
+}
