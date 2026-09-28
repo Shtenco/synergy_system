@@ -1,0 +1,25 @@
+name: SYNERGY Federation Security Gate
+
+on:
+  push:
+    paths:
+      - "registry/SECURITY_BLOCKERS.json"
+      - "registry/REPOSITORY_INTERFACES.json"
+      - "integration/security_gate.py"
+  pull_request:
+    paths:
+      - "registry/SECURITY_BLOCKERS.json"
+      - "registry/REPOSITORY_INTERFACES.json"
+      - "integration/security_gate.py"
+  workflow_dispatch:
+
+jobs:
+  security-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Enforce unresolved security blockers
+        run: python integration/security_gate.py
