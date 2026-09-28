@@ -1,0 +1,51 @@
+{
+  "schema": "synergy.m4-wave4-lock/v1",
+  "generated_at": "2026-09-29",
+  "repositories": [
+    {
+      "repo": "Shtenco/synergy_motherboard_xpu_xml",
+      "commit": "edf538992746b8474cb019c2e907b0678d5ef105",
+      "role": "hardware model producer"
+    },
+    {
+      "repo": "Shtenco/binary_quantum_theory",
+      "commit": "d47fe3bdbd90caf1b5b5f427a7d8d61b588e717b",
+      "role": "quantum reference producer"
+    },
+    {
+      "repo": "Shtenco/synergy_graph_print_money",
+      "commit": "3bcac56deaafca498d815b5166a2a2f44a3e9524",
+      "role": "monetary simulation producer"
+    },
+    {
+      "repo": "Shtenco/epstein_network",
+      "commit": "9fa78f7aa33fb2e4840571bc2c6515f587df8140",
+      "role": "provenance graph producer"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_olga",
+      "commit": "1f75fba31a22b09c8de39ccf98ec5645d5fb4ab5",
+      "role": "benchmark suite producer"
+    },
+    {
+      "repo": "Shtenco/synergy_meta_os",
+      "commit": "258a0b2322531af78d44125b39d63c573ec34401",
+      "role": "hardware evidence consumer"
+    },
+    {
+      "repo": "Shtenco/synergy_nexus_science_agent",
+      "commit": "190a96391c230ea00bc5ce11e6f613716f436afb",
+      "role": "science evidence consumer"
+    },
+    {
+      "repo": "Shtenco/synergy_financial_os",
+      "commit": "65143c575afca5478ce5faecefc305d5fd88223b",
+      "role": "monetary simulation consumer"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_nexus",
+      "commit": "d2dd3bbd95d6995b25141b139a6c54ff51f776fe",
+      "role": "benchmark suite consumer"
+    }
+  ]
+}
