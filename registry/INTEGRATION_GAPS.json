@@ -2,10 +2,10 @@
   "schema": "synergy.integration-gaps/v1",
   "as_of": "2026-09-29",
   "totals": {
-    "contracts": 37,
-    "no_missing_endpoints": 37,
+    "contracts": 39,
+    "no_missing_endpoints": 39,
     "contracts_with_gaps": 0,
-    "runtime_adapter_edges": 42,
+    "runtime_adapter_edges": 44,
     "e2e_tested_edges": 0
   },
   "contracts": [
@@ -384,6 +384,26 @@
       ],
       "missing_endpoints": [],
       "next_gate": "M4 Wave-4 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.app.store-source-evidence/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_app",
+      "consumers": [
+        "Shtenco/synergy_meta_os"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-5 app-source E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.app.superapp-surface/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/sinergy_super_app",
+      "consumers": [
+        "Shtenco/synergy_meta_os"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-5 app-source E2E harness and evidence bundle"
     }
   ]
 }
