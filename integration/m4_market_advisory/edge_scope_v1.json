@@ -1,0 +1,31 @@
+{
+  "schema": "synergy.m4-market-advisory-scope/v1",
+  "edge_count": 5,
+  "edges": [
+    {
+      "from": "Shtenco/synergy_marketvision",
+      "to": "Shtenco/synergy_midas_ai",
+      "contract_id": "synergy.trading.market-features/v1"
+    },
+    {
+      "from": "Shtenco/synergy_adaptive_engine",
+      "to": "Shtenco/synergy_midas_ai",
+      "contract_id": "synergy.trading.market-regime/v1"
+    },
+    {
+      "from": "Shtenco/synergy_market_graph",
+      "to": "Shtenco/synergy_midas_ai",
+      "contract_id": "synergy.trading.fair-value/v1"
+    },
+    {
+      "from": "Shtenco/synergy_market_maker",
+      "to": "Shtenco/synergy_midas_ai",
+      "contract_id": "synergy.trading.liquidity-quote/v1"
+    },
+    {
+      "from": "Shtenco/synergy_ai_investment_committee",
+      "to": "Shtenco/synergy_midas_ai",
+      "contract_id": "synergy.trading.investment-thesis/v1"
+    }
+  ]
+}
