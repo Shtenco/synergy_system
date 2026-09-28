@@ -865,6 +865,54 @@
         "Shtenco/synergy_agi_nexus:contracts/benchmark_suite_v1.py",
         "Shtenco/synergy_agi_nexus:tests/test_benchmark_suite_contract.py"
       ]
+    },
+    {
+      "contract_id": "synergy.app.store-source-evidence/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_app",
+      "consumers": [
+        "Shtenco/synergy_meta_os"
+      ],
+      "authority": "mobile_source_integrity",
+      "schema_path": "contracts/schemas/app-store-source-evidence-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_meta_os": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_app:federation/release_contract.py",
+        "Shtenco/synergy_app:tests/test_federation_release_contract.py",
+        "Shtenco/synergy_meta_os:runtime/app_release_contracts.py",
+        "Shtenco/synergy_meta_os:tests/test_app_release_contracts.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.app.superapp-surface/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/sinergy_super_app",
+      "consumers": [
+        "Shtenco/synergy_meta_os"
+      ],
+      "authority": "superapp_source_surface",
+      "schema_path": "contracts/schemas/app-superapp-surface-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_meta_os": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/sinergy_super_app:federation/surface_contract.py",
+        "Shtenco/sinergy_super_app:mobile/test_federation_surface_contract.py",
+        "Shtenco/synergy_meta_os:runtime/app_release_contracts.py",
+        "Shtenco/synergy_meta_os:tests/test_app_release_contracts.py"
+      ]
     }
   ],
   "integration_status_vocabulary": [
