@@ -1,4 +1,15 @@
 # SYNERGY SYSTEM
+> ## 📚 Канонический комплект архитектуры — 28.09.2026
+>
+> - [🌐 Master Architecture V4](docs/MASTER_ARCHITECTURE_V4.md)
+> - [🧭 Атлас 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
+> - [🧾 Registry 75 repositories](registry/SYNERGY_REPOSITORIES.json)
+> - [⚙️ Federation V2](config/repository_federation_v2.yaml)
+> - [🛡️ Authority Boundaries](docs/AUTHORITY_BOUNDARIES.md)
+> - [📘 README Standard](docs/README_STANDARD.md)
+>
+> `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
+
 
 **Architecture & Governance Root for the complete SYNERGY ecosystem**
 
