@@ -2,17 +2,27 @@
 > ## 📚 Канонический комплект архитектуры — 28.09.2026
 >
 > - [🌐 Master Architecture V4](docs/MASTER_ARCHITECTURE_V4.md)
+> - [🧠 System Semantic Model V1](docs/SYNERGY_SYSTEM_SEMANTIC_MODEL_V1.md)
+> - [⚙️ Executable Topology V1](docs/EXECUTABLE_TOPOLOGY_V1.md)
+> - [🔗 Integration Status V1](docs/INTEGRATION_STATUS_V1.md)
 > - [🧭 Атлас 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
-> - [🧾 Registry 75 repositories](registry/SYNERGY_REPOSITORIES.json)
+> - [🧾 Repository Registry](registry/SYNERGY_REPOSITORIES.json)
+> - [🏛️ Authority Registry](registry/AUTHORITY_REGISTRY.json)
+> - [📜 Contract Registry](registry/CONTRACT_REGISTRY.json)
+> - [🕸️ Dependency Graph](registry/DEPENDENCY_GRAPH.json)
+> - [🔌 Repository Interfaces — 75/75](registry/REPOSITORY_INTERFACES.json)
+> - [🧩 Integration Gaps](registry/INTEGRATION_GAPS.json)
+> - [🛡️ Invariant Registry](registry/INVARIANT_REGISTRY.json)
 > - [⚙️ Federation V2](config/repository_federation_v2.yaml)
-> - [🛡️ Authority Boundaries](docs/AUTHORITY_BOUNDARIES.md)
 > - [📘 README Standard](docs/README_STANDARD.md)
-- [✅ README Deep Pass 75/75](docs/README_DEEPENING_PLAN_75.md)
-- [🔐 Security Hygiene Findings](docs/SECURITY_HYGIENE_FINDINGS.md)
+> - [✅ README Deep Pass 75/75](docs/README_DEEPENING_PLAN_75.md)
+> - [🔐 Security Hygiene Findings](docs/SECURITY_HYGIENE_FINDINGS.md)
 >
 > `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
 >
-> **Documentation deep pass:** **75/75 COMPLETE** — каждый репозиторий прошёл отдельный предметный аудит README/main/docs/tests/evidence по фактически доступным артефактам.
+> **Documentation deep pass:** **75/75 COMPLETE**.
+> **Typed architecture:** **17 contract families · 10 runtime edges ADAPTER_IMPLEMENTED · 0 E2E_TESTED · 0 DEPLOYED**.
+> **Rule:** ни один edge не повышается до `E2E_TESTED` без фактического cross-repo evidence.
 
 
 **Architecture & Governance Root for the complete SYNERGY ecosystem**
