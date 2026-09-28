@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Trading Liquidity Quote V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id",
+    "symbol",
+    "mid",
+    "inventory",
+    "sigma",
+    "bid",
+    "ask",
+    "reservation",
+    "half_spread",
+    "status",
+    "authorization"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "symbol": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mid": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "inventory": {
+      "type": "number"
+    },
+    "sigma": {
+      "type": "number",
+      "minimum": 0
+    },
+    "bid": {
+      "type": "number",
+      "minimum": 0
+    },
+    "ask": {
+      "type": "number",
+      "minimum": 0
+    },
+    "reservation": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "half_spread": {
+      "type": "number",
+      "minimum": 0
+    },
+    "status": {
+      "enum": [
+        "QUOTE",
+        "INVENTORY_LIMIT"
+      ]
+    },
+    "authorization": {
+      "const": false
+    }
+  }
+}
