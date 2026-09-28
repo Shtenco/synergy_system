@@ -11,6 +11,9 @@
 > - [🧱 M4 Wave 2 — Institutional / Crypto / Economic Evidence](integration/m4_wave2/README.md)
 > - [🔬 M4 Wave 3 — Research / Intelligence / Compression](integration/m4_wave3/README.md)
 > - [🧪 M4 Wave 4 — Hardware / Physics / Monetary / Provenance / Benchmark](integration/m4_wave4/README.md)
+> - [📱 M4 Wave 5 — App Source Evidence](integration/m4_wave5/README.md)
+> - [📋 Federation Backlog V2](registry/FEDERATION_BACKLOG.json)
+> - [✅ Federation Maturity Gate](integration/federation_maturity_gate.py)
 > - [🔐 Federation Security Blockers](registry/SECURITY_BLOCKERS.json)
 > - [🧭 Атлас 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
 > - [🧾 Repository Registry](registry/SYNERGY_REPOSITORIES.json)
@@ -29,7 +32,8 @@
 >
 > **Documentation deep pass:** **75/75 COMPLETE**.
 > **M2 frozen baseline:** **17/17 contract families endpoint-complete · 22 runtime edges · 20 integrated repos**.  
-> **Current M4 frontier:** **37/37 contract families endpoint-complete · 42 runtime edges ADAPTER_IMPLEMENTED · 40 repos ADAPTER_INTEGRATED · 35 ARCHITECTURAL_ONLY · 0 E2E_TESTED · 0 DEPLOYED**.
+> **Current federation frontier:** **39/39 contract families endpoint-complete · 44 runtime edges ADAPTER_IMPLEMENTED · 42 repos ADAPTER_INTEGRATED · 0 UNCLASSIFIED/ARCHITECTURAL_ONLY · 0 E2E_TESTED · 0 DEPLOYED**.  
+> **75/75 maturity-classified:** 42 adapter-integrated · 11 external-runtime pending · 14 documentation-only · 3 non-runtime surfaces · 2 needs-hardening · 2 security-blocked · 1 governance-root.
 > **Rule:** ни один edge не повышается до `E2E_TESTED` без фактического cross-repo evidence.
 
 
