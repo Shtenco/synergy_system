@@ -2,10 +2,10 @@
   "schema": "synergy.integration-gaps/v1",
   "as_of": "2026-09-29",
   "totals": {
-    "contracts": 27,
-    "no_missing_endpoints": 27,
+    "contracts": 32,
+    "no_missing_endpoints": 32,
     "contracts_with_gaps": 0,
-    "runtime_adapter_edges": 32,
+    "runtime_adapter_edges": 37,
     "e2e_tested_edges": 0
   },
   "contracts": [
@@ -284,6 +284,56 @@
       ],
       "missing_endpoints": [],
       "next_gate": "M4 Wave-2 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.trading.relative-value-signal/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_relative_value",
+      "consumers": [
+        "Shtenco/synergy_midas_ai"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-3 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.agent.economy-simulation/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_agentic_ai_economy",
+      "consumers": [
+        "Shtenco/synergy_agi_nexus"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-3 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.science.constraint-benchmark/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/dlp_solver",
+      "consumers": [
+        "Shtenco/synergy_nexus_science_agent"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-3 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.science.model-consistency/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_cold_nuclear",
+      "consumers": [
+        "Shtenco/synergy_nexus_science_agent"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-3 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.archive.benchmark-evidence/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_qr_compress",
+      "consumers": [
+        "Shtenco/synergy_meta_os"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-3 cross-repository E2E harness and evidence bundle"
     }
   ]
 }
