@@ -463,14 +463,24 @@
       "produces": [
         {
           "contract_id": "synergy.archive.evidence/v1",
-          "status": "DEFINED",
+          "status": "IMPLEMENTED",
           "authority": "compression_identity"
         }
       ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_meta_os",
+          "contract_id": "synergy.archive.evidence/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synegy_ai_compress:compression_lab/synergy_contracts.py",
+            "Shtenco/synergy_meta_os:runtime/archive_contracts.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "CONTRACT_DEFINED"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_gguf_compress",
@@ -813,7 +823,7 @@
       "consumes": [
         {
           "contract_id": "synergy.archive.evidence/v1",
-          "status": "DEFINED",
+          "status": "IMPLEMENTED",
           "authority": "compression_identity"
         },
         {
@@ -828,8 +838,18 @@
         }
       ],
       "runtime_out": [],
-      "runtime_in": [],
-      "interface_status": "PARTIAL_IMPLEMENTATION"
+      "runtime_in": [
+        {
+          "from": "Shtenco/synegy_ai_compress",
+          "contract_id": "synergy.archive.evidence/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synegy_ai_compress:compression_lab/synergy_contracts.py",
+            "Shtenco/synergy_meta_os:runtime/archive_contracts.py"
+          ]
+        }
+      ],
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_project",
