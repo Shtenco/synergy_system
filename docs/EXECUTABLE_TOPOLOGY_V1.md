@@ -8,14 +8,14 @@
 ```text
 Repositories                         75
 Typed contract families             17
-Runtime edges ADAPTER_IMPLEMENTED   10
+Runtime edges ADAPTER_IMPLEMENTED   22
 Runtime edges E2E_TESTED             0
 Runtime edges DEPLOYED               0
 
 Repository interface states:
-  ADAPTER_INTEGRATED                12
-  PARTIAL_IMPLEMENTATION             1
-  CONTRACT_DEFINED                   7
+  ADAPTER_INTEGRATED                20
+  PARTIAL_IMPLEMENTATION             0
+  CONTRACT_DEFINED                   0
   ARCHITECTURAL_ONLY                55
 ```
 
@@ -123,7 +123,7 @@ flowchart LR
 - Meta-OS сверяет evidence с реальным artifact file;
 - Meta-OS уже умеет hash-check manifests, role/capability ceilings, attestation, resource limits и fail-closed dangerous capabilities.
 
-`Meta-OS → TURBO Linux` пока только producer-implemented: TURBO consumer contract ещё не материализован.
+`Meta-OS → TURBO Linux` теперь materialized как `ADAPTER_IMPLEMENTED`: TURBO consumer проверяет profile, SHA-256, resource limits и требует attestation для dangerous capabilities.
 
 ---
 
@@ -138,8 +138,9 @@ flowchart LR
 Текущее состояние:
 
 - AI Language producer реально строится из `SemanticTrace`, `REQ-*`, mutation/validation events и coverage;
-- AI Coder в текущем `main` пока не имеет executable consumer/runtime, поэтому edge остаётся `CONTRACT_DEFINED`;
-- Meta-OS не принимает generated code как deployment permission.
+- AI Coder теперь consume’ит `requirement-trace/v1` и выпускает `change-evidence/v1`;
+- Meta-OS принимает change evidence только при `APPROVED`, всех checks=`PASS` и requirement provenance;
+- generated code по-прежнему не является deployment permission сам по себе.
 
 ---
 
@@ -151,7 +152,7 @@ flowchart LR
     SA -->|science.evidence-package/v1| M[🌍 Megaproject]
 ```
 
-Контракты определены, но Science Agent `main` пока архитектурный bootstrap. Поэтому runtime edges не создаются искусственно.
+Science Agent теперь имеет минимальное fail-closed epistemic ядро: NEXUS остаётся advisory-only, evidence package разделяет `SOURCE/MEASURED/DERIVED/SIMULATION/HYPOTHESIS/FALSIFIED/UNRESOLVED`, а Megaproject принимает пакет только в curated review queue без автоматической мутации канонического графа.
 
 ---
 
@@ -166,7 +167,7 @@ flowchart LR
 
 Financial OS → Blockchain уже materialized через authority-preserving domain commitment.
 
-MetaChain и Apps consumers пока не доказаны executable adapters, поэтому остаются contract-defined.
+MetaChain теперь consume’ит только `FINALIZED` trust commitments и блокирует replay; Apps consume’ят accounting/trust только как read-only projections без переноса authority.
 
 ---
 
@@ -226,10 +227,11 @@ urn:synergy:evidence:<repo>:<kind>:sha256:<digest>
 
 # 12. Что блокирует E2E_TESTED
 
-Первый cross-repo harness уже существует:
+Cross-repo promotion gates теперь существуют для двух уровней:
 
 ```text
 integration/trading_truth_path/
+integration/m3_federation/
 ```
 
 но promotion не выполнен, потому что GitHub Actions текущего private repo создаёт jobs, завершающиеся без выполненных steps; job logs недоступны. Поэтому CI намеренно не помечен GREEN.
@@ -238,17 +240,9 @@ integration/trading_truth_path/
 
 ---
 
-# 13. Следующие самые ценные endpoints
+# 13. Следующий рубеж
 
-По `INTEGRATION_GAPS.json` приоритеты:
-
-1. Science Agent producer/consumer runtime;
-2. AI Coder consumer requirement-trace + producer change-evidence;
-3. TURBO Linux consumer node-manifest;
-4. SynergyNet consumer archive evidence + producer transport evidence;
-5. MetaChain consumer trust commitment;
-6. Apps read-only accounting/trust consumers;
-7. полный cross-repo E2E harness торгового и real-economy paths.
+`INTEGRATION_GAPS.json` теперь показывает `17/17` контрактов без missing endpoints. Следующая цель — не новые adapters, а **M3 cross-repo E2E evidence** для всех 22 runtime edges, после чего подтверждённые связи можно повысить с `ADAPTER_IMPLEMENTED` до `E2E_TESTED`.
 
 ---
 
