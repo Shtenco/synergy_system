@@ -1,0 +1,113 @@
+{
+  "schema": "synergy.invariant-registry/v1",
+  "as_of": "2026-09-28",
+  "invariants": [
+    {
+      "id": "INV-AUTH-001",
+      "title": "AI proposal is never execution authorization",
+      "severity": "CRITICAL",
+      "rule": "FORBID_DIRECT_RUNTIME_EDGE",
+      "from_authorities": [
+        "nexus_core",
+        "trading_intelligence",
+        "science_research"
+      ],
+      "to_authorities": [
+        "payment_settlement",
+        "canonical_accounting"
+      ],
+      "allowed_via": [
+        "trading_validation",
+        "trading_risk",
+        "trade_execution",
+        "payment_settlement"
+      ]
+    },
+    {
+      "id": "INV-FIN-001",
+      "title": "Trade execution cannot bypass settlement/reconciliation",
+      "severity": "CRITICAL",
+      "rule": "FORBID_EDGE",
+      "from_repos": [
+        "Shtenco/synergy_trademux"
+      ],
+      "to_repos": [
+        "Shtenco/synergy_financial_os"
+      ]
+    },
+    {
+      "id": "INV-FIN-002",
+      "title": "Accounting recognition requires payment settlement authority upstream",
+      "severity": "CRITICAL",
+      "rule": "REQUIRE_PREDECESSOR_CONTRACT",
+      "contract_id": "synergy.accounting.recognition/v1",
+      "required_contract_id": "synergy.settlement.evidence/v1"
+    },
+    {
+      "id": "INV-TRUST-001",
+      "title": "Blockchain cannot become accounting authority",
+      "severity": "CRITICAL",
+      "rule": "FORBID_AUTHORITY_REVERSE_FLOW",
+      "from_authority": "blockchain_trust",
+      "to_authority": "canonical_accounting"
+    },
+    {
+      "id": "INV-UI-001",
+      "title": "Presentation cannot author domain truth",
+      "severity": "CRITICAL",
+      "rule": "FORBID_AUTHORITY_OWNER",
+      "authority": "presentation",
+      "forbidden_contract_authorities": [
+        "canonical_accounting",
+        "payment_settlement",
+        "trading_risk",
+        "blockchain_trust"
+      ]
+    },
+    {
+      "id": "INV-RUNTIME-001",
+      "title": "Root/process privilege does not grant treasury authority",
+      "severity": "CRITICAL",
+      "rule": "FORBID_AUTHORITY_REVERSE_FLOW",
+      "from_authority": "runtime_orchestration",
+      "to_authority": "canonical_accounting"
+    },
+    {
+      "id": "INV-EVID-001",
+      "title": "Runtime dependency requires concrete evidence",
+      "severity": "HIGH",
+      "rule": "RUNTIME_EDGE_REQUIRES_EVIDENCE"
+    },
+    {
+      "id": "INV-EVID-002",
+      "title": "E2E promotion requires integration evidence",
+      "severity": "HIGH",
+      "rule": "STATUS_REQUIRES_EVIDENCE",
+      "statuses": [
+        "E2E_TESTED",
+        "DEPLOYED"
+      ]
+    },
+    {
+      "id": "INV-VERSION-001",
+      "title": "Breaking contract change requires new major contract ID",
+      "severity": "HIGH",
+      "rule": "SEMVER_MAJOR_ON_BREAKING_CHANGE"
+    },
+    {
+      "id": "INV-TRACE-001",
+      "title": "Economic truth path preserves a single trace identity",
+      "severity": "HIGH",
+      "rule": "TRACE_ID_PROPAGATION",
+      "contracts": [
+        "synergy.trading.portfolio-decision/v1",
+        "synergy.trading.validation-decision/v1",
+        "synergy.trading.risk-decision/v1",
+        "synergy.trading.execution-result/v1",
+        "synergy.settlement.evidence/v1",
+        "synergy.accounting.recognition/v1",
+        "synergy.trust.commitment/v1"
+      ]
+    }
+  ]
+}
