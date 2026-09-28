@@ -7,14 +7,14 @@
 
 ```text
 Repositories                         75
-Typed contract families             32
-Contracts without endpoint gaps     32
+Typed contract families             37
+Contracts without endpoint gaps     37
 Contracts with endpoint gaps         0
-Runtime edges ADAPTER_IMPLEMENTED   37
+Runtime edges ADAPTER_IMPLEMENTED   42
 Runtime edges E2E_TESTED             0
 Runtime edges DEPLOYED               0
-Repos ADAPTER_INTEGRATED            35
-Repos ARCHITECTURAL_ONLY            40
+Repos ADAPTER_INTEGRATED            40
+Repos ARCHITECTURAL_ONLY            35
 ```
 
 ## Исторический M2 baseline
@@ -268,4 +268,50 @@ integration/security_gate.py
 ARCHITECTURAL_ONLY = 40
 ADAPTER_INTEGRATED = 35
 M4 Wave 4 → следующий локально-воспроизводимый набор
+```
+
+
+## M4 — Wave 4 Hardware / Physics / Monetary / Provenance / Benchmark
+
+Добавлены пять новых boundaries:
+
+```text
+Motherboard XPU XML ─────→ Meta-OS
+Binary Quantum Theory ───→ Science Agent
+Graph Print Money ───────→ Financial OS
+Epstein Network ─────────→ Science Agent
+AGI OLGA ────────────────→ NEXUS
+```
+
+Новые contracts:
+
+```text
+synergy.runtime.hardware-model/v1
+synergy.science.quantum-reference-control/v1
+synergy.economy.monetary-simulation/v1
+synergy.science.provenance-graph/v1
+synergy.ai.benchmark-suite/v1
+```
+
+Claim boundaries:
+
+- XPU analytical model не является measured silicon;
+- Bell/CHSH standard reference control не является экспериментальным подтверждением новой физики;
+- monetary simulation не является realized external P&L или canonical accounting;
+- provenance graph edge не является доказательством wrongdoing, identity или causal relation;
+- deterministic benchmark suite не является доказательством AGI или качества модели.
+
+Создан pinned gate:
+
+```text
+integration/m4_wave4/
+.github/workflows/m4-wave4-e2e.yml
+```
+
+Current expansion frontier:
+
+```text
+ARCHITECTURAL_ONLY = 35
+ADAPTER_INTEGRATED = 40
+M4 Wave 5 → maturity-ranked backlog
 ```
