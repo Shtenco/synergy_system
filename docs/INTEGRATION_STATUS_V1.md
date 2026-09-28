@@ -7,14 +7,14 @@
 
 ```text
 Repositories                         75
-Typed contract families             37
-Contracts without endpoint gaps     37
+Typed contract families             39
+Contracts without endpoint gaps     39
 Contracts with endpoint gaps         0
-Runtime edges ADAPTER_IMPLEMENTED   42
+Runtime edges ADAPTER_IMPLEMENTED   44
 Runtime edges E2E_TESTED             0
 Runtime edges DEPLOYED               0
-Repos ADAPTER_INTEGRATED            40
-Repos ARCHITECTURAL_ONLY            35
+Repos ADAPTER_INTEGRATED            42
+Repos ARCHITECTURAL_ONLY             0
 ```
 
 ## Исторический M2 baseline
@@ -314,4 +314,91 @@ Current expansion frontier:
 ARCHITECTURAL_ONLY = 35
 ADAPTER_INTEGRATED = 40
 M4 Wave 5 → maturity-ranked backlog
+```
+
+
+## M4 — Wave 5 App Source Evidence
+
+Wave 5 добавляет две доказуемые app-source границы:
+
+```text
+synergy_app ────────→ Meta-OS
+sinergy_super_app ──→ Meta-OS
+```
+
+Контракты:
+
+```text
+synergy.app.store-source-evidence/v1
+synergy.app.superapp-surface/v1
+```
+
+Они подтверждают source/configuration state, но не утверждают, что APK/AAB/IPA собран, магазин пройден или релиз развернут.
+
+`synergy_messenger` не повышен: текущий `package.json` ссылается на отсутствующие в current main `scripts/` и `tests/v3/`, тогда как `RELEASE-MANIFEST.json` заявляет `249/249 tests passed`. Статус: `NEEDS_HARDENING`.
+
+## Полная maturity-классификация 75/75
+
+После Wave 5 универсальный статус `ARCHITECTURAL_ONLY` больше не используется для уже проаудированных репозиториев:
+
+```text
+ADAPTER_INTEGRATED         42
+EXTERNAL_RUNTIME_PENDING   11
+DOCUMENTATION_ONLY         14
+NON_RUNTIME_SURFACE         3
+NEEDS_HARDENING             2
+SECURITY_BLOCKED            2
+GOVERNANCE_ROOT             1
+ARCHITECTURAL_ONLY          0
+──────────────────────────────
+TOTAL                       75
+```
+
+Это **не означает 75 runtime integrations**. Это означает **75/75 repositories maturity-classified** без подмены статических, документационных или заблокированных репозиториев runtime-сервисами.
+
+## Registry consistency gate
+
+Добавлены:
+
+```text
+registry/FEDERATION_BACKLOG.json        schema v2
+integration/federation_maturity_gate.py
+.github/workflows/federation-maturity-gate.yml
+```
+
+Maturity gate сверяет:
+
+- ровно 75 уникальных repositories;
+- допустимый maturity status каждого repo;
+- отсутствие неразобранного `ARCHITECTURAL_ONLY`;
+- совпадение CONTRACT_REGISTRY и INTEGRATION_GAPS;
+- reciprocal runtime_out/runtime_in;
+- producer/consumer соответствие contract registry;
+- runtime edge totals;
+- точное совпадение non-integrated repos с backlog;
+- точное совпадение SECURITY_BLOCKED с unresolved promotion blockers.
+
+## Следующий настоящий frontier
+
+Теперь расширение уже нельзя измерять только уменьшением `ARCHITECTURAL_ONLY`: он равен нулю.
+
+Правильные следующие оси:
+
+```text
+A. observed E2E execution:
+   0 → 22 M3 edges → + Wave 1..5
+
+B. EXTERNAL_RUNTIME_PENDING:
+   11 → isolate deterministic broker/device/network boundaries
+
+C. NEEDS_HARDENING:
+   synergy_messenger
+   synergy_chain
+
+D. SECURITY_BLOCKED:
+   synergy_usds
+   synergy_cashero
+
+E. DOCUMENTATION_ONLY:
+   materialize code only where project genuinely needs runtime capability
 ```
