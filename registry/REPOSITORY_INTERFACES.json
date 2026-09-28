@@ -122,12 +122,32 @@
       "domain": "BLOCKCHAIN_MONETARY",
       "role": "Двухцепочечный QE/арбитражный R&D и модели ликвидности на fork/DeFi окружениях.",
       "federation_parent": "Shtenco/synergy_ai_blockchain",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "bridge_solvency_telemetry"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.economy.bridge-health/v1",
+          "status": "IMPLEMENTED",
+          "authority": "bridge_solvency_telemetry"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_financial_os",
+          "contract_id": "synergy.economy.bridge-health/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_2chain_qe:federation/bridge_health_contract.py",
+            "Shtenco/synergy_2chain_qe:federation/test_bridge_health_contract.py",
+            "Shtenco/synergy_financial_os:contracts/research_inputs_v1.py",
+            "Shtenco/synergy_financial_os:tests/test_research_inputs_contract.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_ai_blockchain",
@@ -154,6 +174,11 @@
           "contract_id": "synergy.transport.evidence/v1",
           "status": "IMPLEMENTED",
           "authority": "p2p_transport"
+        },
+        {
+          "contract_id": "synergy.economy.budget-proof/v1",
+          "status": "IMPLEMENTED",
+          "authority": "public_budget_provenance"
         }
       ],
       "runtime_out": [
@@ -200,6 +225,16 @@
             "Shtenco/synergy_ai_blockchain:src/federation_contracts.rs",
             "Shtenco/synergy_ai_blockchain:src/lib_v2.rs"
           ]
+        },
+        {
+          "from": "Shtenco/synergy_blochain_budget",
+          "contract_id": "synergy.economy.budget-proof/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_blochain_budget:src/synergy_budget/synergy_contracts.py",
+            "Shtenco/synergy_blochain_budget:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_ai_blockchain:src/federation_contracts.rs"
+          ]
         }
       ],
       "interface_status": "ADAPTER_INTEGRATED"
@@ -209,12 +244,31 @@
       "domain": "BLOCKCHAIN_MONETARY",
       "role": "Блокчейн-трассируемость бюджетов/потоков и provenance финансовых операций.",
       "federation_parent": "Shtenco/synergy_ai_blockchain",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "public_budget_provenance"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.economy.budget-proof/v1",
+          "status": "IMPLEMENTED",
+          "authority": "public_budget_provenance"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_ai_blockchain",
+          "contract_id": "synergy.economy.budget-proof/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_blochain_budget:src/synergy_budget/synergy_contracts.py",
+            "Shtenco/synergy_blochain_budget:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_ai_blockchain:src/federation_contracts.rs"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_chain",
@@ -313,12 +367,32 @@
       "domain": "FINANCE_REAL_ECONOMY",
       "role": "R&D по AI-управлению финансовыми моделями, капиталом и экономическими контурами.",
       "federation_parent": "Shtenco/synergy_financial_os",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "financial_scenario_research"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.economy.scenario-evidence/v1",
+          "status": "IMPLEMENTED",
+          "authority": "financial_scenario_research"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_financial_os",
+          "contract_id": "synergy.economy.scenario-evidence/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_ai_financial_system:simulation/synergy_contracts.py",
+            "Shtenco/synergy_ai_financial_system:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_financial_os:contracts/research_inputs_v1.py",
+            "Shtenco/synergy_financial_os:tests/test_research_inputs_contract.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_cashero",
@@ -399,6 +473,16 @@
           "contract_id": "synergy.settlement.evidence/v1",
           "status": "IMPLEMENTED",
           "authority": "payment_settlement"
+        },
+        {
+          "contract_id": "synergy.economy.bridge-health/v1",
+          "status": "IMPLEMENTED",
+          "authority": "bridge_solvency_telemetry"
+        },
+        {
+          "contract_id": "synergy.economy.scenario-evidence/v1",
+          "status": "IMPLEMENTED",
+          "authority": "financial_scenario_research"
         }
       ],
       "runtime_out": [
@@ -430,6 +514,28 @@
           "evidence": [
             "Shtenco/synergy_pay_system:src/synergy_pay/synergy_contracts.py",
             "Shtenco/synergy_financial_os:contracts/accounting_recognition_v1.py"
+          ]
+        },
+        {
+          "from": "Shtenco/synergy_2chain_qe",
+          "contract_id": "synergy.economy.bridge-health/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_2chain_qe:federation/bridge_health_contract.py",
+            "Shtenco/synergy_2chain_qe:federation/test_bridge_health_contract.py",
+            "Shtenco/synergy_financial_os:contracts/research_inputs_v1.py",
+            "Shtenco/synergy_financial_os:tests/test_research_inputs_contract.py"
+          ]
+        },
+        {
+          "from": "Shtenco/synergy_ai_financial_system",
+          "contract_id": "synergy.economy.scenario-evidence/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_ai_financial_system:simulation/synergy_contracts.py",
+            "Shtenco/synergy_ai_financial_system:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_financial_os:contracts/research_inputs_v1.py",
+            "Shtenco/synergy_financial_os:tests/test_research_inputs_contract.py"
           ]
         }
       ],
@@ -1414,12 +1520,32 @@
       "domain": "TRADING_MARKET_INTELLIGENCE",
       "role": "ML-исследования раннего обнаружения криптовалютных импульсов/pump-режимов.",
       "federation_parent": "Shtenco/synergy_midas_ai",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "crypto_market_anomaly"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.trading.crypto-anomaly-score/v1",
+          "status": "IMPLEMENTED",
+          "authority": "crypto_market_anomaly"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_midas_ai",
+          "contract_id": "synergy.trading.crypto-anomaly-score/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_crypto_pump:src/crypto_pump/synergy_contracts.py",
+            "Shtenco/synergy_crypto_pump:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+            "Shtenco/synergy_midas_ai:tests/test_m4_wave2_advisory_contract.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_market_graph",
@@ -1562,6 +1688,16 @@
           "contract_id": "synergy.trading.investment-thesis/v1",
           "status": "IMPLEMENTED",
           "authority": "investment_committee"
+        },
+        {
+          "contract_id": "synergy.trading.institutional-assessment/v1",
+          "status": "IMPLEMENTED",
+          "authority": "institutional_research"
+        },
+        {
+          "contract_id": "synergy.trading.crypto-anomaly-score/v1",
+          "status": "IMPLEMENTED",
+          "authority": "crypto_market_anomaly"
         }
       ],
       "runtime_out": [
@@ -1639,6 +1775,28 @@
             "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
             "Shtenco/synergy_midas_ai:tests/test_m4_market_advisory_contract.py"
           ]
+        },
+        {
+          "from": "Shtenco/synergy_midas_institutional",
+          "contract_id": "synergy.trading.institutional-assessment/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_midas_institutional:src/synergy_midas/synergy_contracts.py",
+            "Shtenco/synergy_midas_institutional:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+            "Shtenco/synergy_midas_ai:tests/test_m4_wave2_advisory_contract.py"
+          ]
+        },
+        {
+          "from": "Shtenco/synergy_crypto_pump",
+          "contract_id": "synergy.trading.crypto-anomaly-score/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_crypto_pump:src/crypto_pump/synergy_contracts.py",
+            "Shtenco/synergy_crypto_pump:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+            "Shtenco/synergy_midas_ai:tests/test_m4_wave2_advisory_contract.py"
+          ]
         }
       ],
       "interface_status": "ADAPTER_INTEGRATED"
@@ -1660,12 +1818,32 @@
       "domain": "TRADING_MARKET_INTELLIGENCE",
       "role": "Институциональная архитектура MIDAS и интеграция data→model→portfolio→risk→execution.",
       "federation_parent": "Shtenco/synergy_midas_ai",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "institutional_research"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.trading.institutional-assessment/v1",
+          "status": "IMPLEMENTED",
+          "authority": "institutional_research"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_midas_ai",
+          "contract_id": "synergy.trading.institutional-assessment/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_midas_institutional:src/synergy_midas/synergy_contracts.py",
+            "Shtenco/synergy_midas_institutional:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+            "Shtenco/synergy_midas_ai:tests/test_m4_wave2_advisory_contract.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_quantlab",
