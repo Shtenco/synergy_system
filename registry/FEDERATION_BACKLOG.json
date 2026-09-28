@@ -1,0 +1,294 @@
+{
+  "schema": "synergy.federation-backlog/v1",
+  "as_of": "2026-09-29",
+  "totals": {
+    "architectural_only": 35,
+    "security_blocked": 2,
+    "readme_only": 8,
+    "external_runtime": 11,
+    "needs_hardening": 1,
+    "unassessed": 13
+  },
+  "entries": [
+    {
+      "repo": "Shtenco/shtenco.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичная web-витрина и навигационный интерфейс к проектам Shtenco.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/shtencoauantai.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичный web-интерфейс/сайт для представления отдельных направлений экосистемы.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/sinergy_app",
+      "domain": "APPS_INTERFACES",
+      "role": "Приложенческий shell/концепт SINERGY.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/sinergy_super_app",
+      "domain": "APPS_INTERFACES",
+      "role": "Концептуальная/продуктовая оболочка super-app для пользовательских сервисов SINERGY.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_app",
+      "domain": "APPS_INTERFACES",
+      "role": "Пользовательский финансовый интерфейс/приложение SINERGY.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_app_family",
+      "domain": "APPS_INTERFACES",
+      "role": "Концептуальный семейный продуктовый слой/семейство приложений.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_messenger",
+      "domain": "APPS_INTERFACES",
+      "role": "Мессенджер/коммуникационный слой SYNERGY и пользовательская клиентская оболочка.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergychain.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичная web-витрина SINERGYCHAIN.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/print_money_synergychain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "R&D по программируемой эмиссии, ликвидности, mint/burn и внешне обеспеченному экономическому эффекту.",
+      "blocker_class": "README_ONLY",
+      "reason": "current main exposes no executable source/test surface",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_chain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Экспериментальная блокчейн- и token/economic-ветка SINERGYCHAIN.",
+      "blocker_class": "NEEDS_HARDENING",
+      "reason": "qe_v10 contains toy monetary contracts; test token mint surface is not production authority",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_chain_print_money",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Концептуальный узел интеграции chain-механики и monetary/emission R&D.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_qe",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Концептуальный узел QE Engine; текущий main содержит только минимальный README.",
+      "blocker_class": "README_ONLY",
+      "reason": "current main is minimal README",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_usds",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Экспериментальная денежная/стейблкоин-модель USDS и Base-fork экономика.",
+      "blocker_class": "SECURITY_BLOCKED",
+      "reason": "credential-like deployer key filename; rotation/cleanup evidence required",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_cashero",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Финансово-экономическая R&D-ветка, связанная с денежными потоками и платёжными сценариями.",
+      "blocker_class": "SECURITY_BLOCKED",
+      "reason": "credential-like env files require scan/rotation/cleanup",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_matrix_sota",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Владелец части debt/credit lifecycle механизмов и матричной оценки зрелости/архитектуры.",
+      "blocker_class": "README_ONLY",
+      "reason": "current main is documentation-only",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_gguf_compress",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Лаборатория компрессии GGUF/LLM-моделей; на текущем main README остаётся минимальным, поэтому зрелость не предполагается.",
+      "blocker_class": "README_ONLY",
+      "reason": "current main is minimal README",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_post_quantum_radio",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Концептуальный узел post-quantum radio/physical transport; текущий main пока не доказывает готовую реализацию.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_shhts",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Экспериментальный security/transport placeholder; назначение должно подтверждаться будущими артефактами, а не названием.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_shttps",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Экспериментальный secure-transport/HTTPS-like placeholder; реализация пока не должна считаться доказанной по одному названию.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_autopilot",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Агентный автопилот: планирование задач, DAG/оркестрация и ограниченное автономное исполнение.",
+      "blocker_class": "README_ONLY",
+      "reason": "current main does not expose the claimed runtime implementation",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_company",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Концепт AI-native компании: агенты, процессы, контракты и автоматизация организации.",
+      "blocker_class": "README_ONLY",
+      "reason": "current main is documentation-only",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_gllm_nexus",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Активный research runtime NEXUS/GLLM, бенчмарки, замороженные OOS-протоколы и генерации.",
+      "blocker_class": "README_ONLY",
+      "reason": "current main did not expose a pinned executable runtime during audit",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_system",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Главный архитектурный и governance-корень всей федерации SYNERGY.",
+      "blocker_class": "UNASSESSED",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/3D_bars_market_structure",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Эксперименты с трёхмерным представлением цена-время-объём и рыночной структурой.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "module imports MetaTrader5 at runtime/import boundary",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/computer_vision_trading_metatrader_5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Исследования компьютерного зрения для распознавания рыночных структур и торговых сигналов.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "MetaTrader5-dependent trading research",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Исследовательский движок cross-FX и синтетического валютного арбитража.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "MetaTrader5/external market runtime dependency",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/global_liquidity_dataminer",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Сбор и подготовка глобальных макроликвидностных данных для рыночных моделей.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "MT5/FRED/yfinance and external data dependencies",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/midas_lite",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Облегчённая исследовательская ветка MIDAS с торговыми прототипами и системами.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "legacy trading prototypes require runtime isolation before pinned offline federation",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Многопоточный ML-прототип торгового робота на Python.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "trading runtime must be isolated from broker/runtime dependencies",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/quantum-trading_metatrader5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Ранняя R&D-линия квантово-ассистированного трейдинга и интеграции с MetaTrader 5.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "MetaTrader5-bound research",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/swap_arbitrage_metatrader_5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "R&D по swap/carry-арбитражу и синтетическим портфелям в MetaTrader 5.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "MetaTrader5-bound swap/carry research",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_trader",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "AGI/AI трейдер: объединение reasoning и торговых контуров под риск-ограничениями.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "trading/model runtime requires deterministic offline boundary extraction",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_trade_terminal",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Терминал и управляющий интерфейс для AI/algorithmic trading workloads.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "terminal/control runtime requires isolated non-executing contract first",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_algotrading_graph_system",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Графовая архитектура алгоритмического трейдинга, маршрутов и взаимосвязанных рыночных состояний.",
+      "blocker_class": "README_ONLY",
+      "reason": "current main is documentation-only",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_ai_trading_system",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Техническая и экспериментальная ветка MIDAS AI trading system.",
+      "blocker_class": "EXTERNAL_RUNTIME",
+      "reason": "large legacy/experimental trading surface requires capability extraction before federation",
+      "promotion_target": "typed local capability → consumer → tests → pinned evidence"
+    }
+  ]
+}
