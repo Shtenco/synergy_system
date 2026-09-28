@@ -1,0 +1,54 @@
+{
+  "schema": "synergy.security-blockers/v1",
+  "as_of": "2026-09-29",
+  "blockers": [
+    {
+      "repo": "Shtenco/synergy_usds",
+      "finding": "root-level deployer credential filename present",
+      "observed_path": "base-mainnet-deployer.key",
+      "secret_contents_inspected": false,
+      "status": "UNRESOLVED",
+      "deployment_blocked": true,
+      "federation_promotion_blocked": true,
+      "remediation": [
+        "rotate/revoke credential if real",
+        "remove secret material from current tree",
+        "purge sensitive history if applicable",
+        "enable secret scanning",
+        "verify dependents no longer use old credential"
+      ]
+    },
+    {
+      "repo": "Shtenco/synergy_cashero",
+      "finding": "credential-like environment files present",
+      "observed_path": ".env / owner.env / bot1.env / bot2.env",
+      "secret_contents_inspected": false,
+      "status": "UNRESOLVED",
+      "deployment_blocked": true,
+      "federation_promotion_blocked": true,
+      "remediation": [
+        "secret-scan files",
+        "rotate any real credentials",
+        "replace committed secrets with placeholders",
+        "remove sensitive history if applicable",
+        "enable secret scanning"
+      ]
+    },
+    {
+      "repo": "Shtenco/synergy_turbo_linux",
+      "finding": "PuTTY private-key-like filename present",
+      "observed_path": "Linux Ubuntu.ppk",
+      "secret_contents_inspected": false,
+      "status": "UNRESOLVED",
+      "deployment_blocked": true,
+      "federation_promotion_blocked": false,
+      "remediation": [
+        "verify whether credential is real",
+        "rotate/revoke if real",
+        "remove private key from repository/history",
+        "use external secret store",
+        "enable secret scanning"
+      ]
+    }
+  ]
+}
