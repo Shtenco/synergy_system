@@ -1,0 +1,31 @@
+{
+  "schema": "synergy.m4-wave4-scope/v1",
+  "edge_count": 5,
+  "edges": [
+    {
+      "from": "Shtenco/synergy_motherboard_xpu_xml",
+      "to": "Shtenco/synergy_meta_os",
+      "contract_id": "synergy.runtime.hardware-model/v1"
+    },
+    {
+      "from": "Shtenco/binary_quantum_theory",
+      "to": "Shtenco/synergy_nexus_science_agent",
+      "contract_id": "synergy.science.quantum-reference-control/v1"
+    },
+    {
+      "from": "Shtenco/synergy_graph_print_money",
+      "to": "Shtenco/synergy_financial_os",
+      "contract_id": "synergy.economy.monetary-simulation/v1"
+    },
+    {
+      "from": "Shtenco/epstein_network",
+      "to": "Shtenco/synergy_nexus_science_agent",
+      "contract_id": "synergy.science.provenance-graph/v1"
+    },
+    {
+      "from": "Shtenco/synergy_agi_olga",
+      "to": "Shtenco/synergy_agi_nexus",
+      "contract_id": "synergy.ai.benchmark-suite/v1"
+    }
+  ]
+}
