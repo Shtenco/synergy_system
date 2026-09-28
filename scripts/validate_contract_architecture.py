@@ -12,6 +12,9 @@ AUTH = ROOT / "registry" / "AUTHORITY_REGISTRY.json"
 CONTRACTS = ROOT / "registry" / "CONTRACT_REGISTRY.json"
 GRAPH = ROOT / "registry" / "DEPENDENCY_GRAPH.json"
 SCHEMAS = ROOT / "contracts" / "schemas"
+INTERFACES = ROOT / "registry" / "REPOSITORY_INTERFACES.json"
+GAPS = ROOT / "registry" / "INTEGRATION_GAPS.json"
+INVARIANTS = ROOT / "registry" / "INVARIANT_REGISTRY.json"
 
 def fail(msg: str) -> None:
     print(f"ERROR: {msg}")
@@ -25,8 +28,19 @@ def main() -> int:
     auth = load(AUTH)
     contracts = load(CONTRACTS)
     graph = load(GRAPH)
+    interfaces = load(INTERFACES)
+    gaps = load(GAPS)
+    invariants = load(INVARIANTS)
 
     repo_names = {r["full_name"] for r in repos["repositories"]}
+    interface_names = {r["repo"] for r in interfaces["repositories"]}
+    if interfaces.get("repository_count") != len(repo_names) or interface_names != repo_names:
+        fail("repository interface registry drift")
+    if gaps.get("totals", {}).get("contracts") != len(contracts["contracts"]):
+        fail("integration gap registry contract count drift")
+    invariant_ids = [x["id"] for x in invariants.get("invariants", [])]
+    if len(invariant_ids) != len(set(invariant_ids)):
+        fail("duplicate invariant ids")
     authority_names = set(auth["authorities"])
     contract_ids: set[str] = set()
     cross_repo_ids: set[str] = set()
@@ -92,6 +106,8 @@ def main() -> int:
     print(f"OK: {len(contract_ids)} typed contracts")
     print(f"OK: {len(graph['edges'])} dependency edges")
     print(f"OK: {actual_adapter} runtime edges at ADAPTER_IMPLEMENTED")
+    print(f"OK: {len(interface_names)} repository interfaces synchronized")
+    print(f"OK: {len(invariant_ids)} architecture invariants registered")
     print("OK: all producers/consumers/authorities/schemas resolve")
     return 0
 
