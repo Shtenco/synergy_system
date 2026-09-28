@@ -7,14 +7,14 @@
 
 ```text
 Repositories                         75
-Typed contract families             22
-Contracts without endpoint gaps     22
+Typed contract families             27
+Contracts without endpoint gaps     27
 Contracts with endpoint gaps         0
-Runtime edges ADAPTER_IMPLEMENTED   27
+Runtime edges ADAPTER_IMPLEMENTED   32
 Runtime edges E2E_TESTED             0
 Runtime edges DEPLOYED               0
-Repos ADAPTER_INTEGRATED            25
-Repos ARCHITECTURAL_ONLY            50
+Repos ADAPTER_INTEGRATED            30
+Repos ARCHITECTURAL_ONLY            45
 ```
 
 ## Исторический M2 baseline
@@ -161,4 +161,53 @@ M3: получить наблюдаемый PASS frozen 22-edge federation gate
 M4 Wave 1: получить наблюдаемый PASS 5-edge market advisory gate
 +
 M4 Wave 2: продолжить уменьшать ARCHITECTURAL_ONLY = 50
+```
+
+
+## M4 — Wave 2 Institutional / Crypto / Economic Evidence
+
+Добавлены ещё пять cross-repository boundaries:
+
+```text
+MIDAS Institutional ───────→ MIDAS
+Crypto Pump ───────────────→ MIDAS
+2Chain QE bridge health ───→ Financial OS
+AI Financial scenarios ────→ Financial OS
+Budget Merkle proof ───────→ AI Blockchain
+```
+
+Новые contracts:
+
+```text
+synergy.trading.institutional-assessment/v1
+synergy.trading.crypto-anomaly-score/v1
+synergy.economy.bridge-health/v1
+synergy.economy.scenario-evidence/v1
+synergy.economy.budget-proof/v1
+```
+
+Критические границы authority сохранены:
+
+- Institutional `EXECUTION_READY` не является канонической торговой авторизацией;
+- Crypto Pump score не является order intent;
+- 2Chain QE интегрирован только через read-only bridge health telemetry;
+- текущий `ArbitrageExecutor.executeCycleB` не повышен в федерацию из-за прямо отмеченной в исходнике проблемы направления swap и упрощённого profit calculation;
+- AI Financial System scenarios остаются scenario/stress/counterfactual evidence;
+- Budget Merkle root является provenance proof, а не бухгалтерской записью.
+
+Создан pinned gate:
+
+```text
+integration/m4_wave2/
+.github/workflows/m4-wave2-e2e.yml
+```
+
+До наблюдаемого PASS пять новых edge остаются `ADAPTER_IMPLEMENTED`.
+
+Current expansion frontier:
+
+```text
+ARCHITECTURAL_ONLY = 45
+ADAPTER_INTEGRATED = 30
+M4 Wave 3 → следующий набор code-heavy repositories
 ```
