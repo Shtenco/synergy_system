@@ -1,0 +1,117 @@
+{
+  "schema": "synergy.m3-edge-scope/v1",
+  "frozen_from_registry_date": "2026-09-28",
+  "edge_count": 22,
+  "edges": [
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_metachain",
+      "contract_id": "synergy.trust.commitment/v1"
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_apps",
+      "contract_id": "synergy.trust.commitment/v1"
+    },
+    {
+      "from": "Shtenco/synergy_eurasian",
+      "to": "Shtenco/synergy_project",
+      "contract_id": "synergy.economy.project-proposal/v1"
+    },
+    {
+      "from": "Shtenco/synergy_financial_os",
+      "to": "Shtenco/synergy_ai_blockchain",
+      "contract_id": "synergy.accounting.recognition/v1"
+    },
+    {
+      "from": "Shtenco/synergy_financial_os",
+      "to": "Shtenco/synergy_apps",
+      "contract_id": "synergy.accounting.recognition/v1"
+    },
+    {
+      "from": "Shtenco/synergy_pay_system",
+      "to": "Shtenco/synergy_financial_os",
+      "contract_id": "synergy.settlement.evidence/v1"
+    },
+    {
+      "from": "Shtenco/synegy_ai_compress",
+      "to": "Shtenco/synergy_meta_os",
+      "contract_id": "synergy.archive.evidence/v1"
+    },
+    {
+      "from": "Shtenco/synegy_ai_compress",
+      "to": "Shtenco/synergy_net",
+      "contract_id": "synergy.archive.evidence/v1"
+    },
+    {
+      "from": "Shtenco/synergy_net",
+      "to": "Shtenco/synergy_meta_os",
+      "contract_id": "synergy.transport.evidence/v1"
+    },
+    {
+      "from": "Shtenco/synergy_net",
+      "to": "Shtenco/synergy_ai_blockchain",
+      "contract_id": "synergy.transport.evidence/v1"
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_midas_ai",
+      "contract_id": "synergy.ai.proposal/v1"
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_nexus_science_agent",
+      "contract_id": "synergy.ai.proposal/v1"
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_eurasian",
+      "contract_id": "synergy.ai.proposal/v1"
+    },
+    {
+      "from": "Shtenco/synergy_ai_coder",
+      "to": "Shtenco/synergy_meta_os",
+      "contract_id": "synergy.engineering.change-evidence/v1"
+    },
+    {
+      "from": "Shtenco/synergy_ai_language",
+      "to": "Shtenco/synergy_ai_coder",
+      "contract_id": "synergy.engineering.requirement-trace/v1"
+    },
+    {
+      "from": "Shtenco/synergy_nexus_science_agent",
+      "to": "Shtenco/synergy_megaproject",
+      "contract_id": "synergy.science.evidence-package/v1"
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_turbo_linux",
+      "contract_id": "synergy.runtime.node-manifest/v1"
+    },
+    {
+      "from": "Shtenco/synergy_project",
+      "to": "Shtenco/synergy_pay_system",
+      "contract_id": "synergy.economy.funding-authorization/v1"
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_quantlab",
+      "contract_id": "synergy.trading.portfolio-decision/v1"
+    },
+    {
+      "from": "Shtenco/synergy_quantlab",
+      "to": "Shtenco/synergy_riskguard",
+      "contract_id": "synergy.trading.validation-decision/v1"
+    },
+    {
+      "from": "Shtenco/synergy_riskguard",
+      "to": "Shtenco/synergy_trademux",
+      "contract_id": "synergy.trading.risk-decision/v1"
+    },
+    {
+      "from": "Shtenco/synergy_trademux",
+      "to": "Shtenco/synergy_pay_system",
+      "contract_id": "synergy.trading.execution-result/v1"
+    }
+  ]
+}
