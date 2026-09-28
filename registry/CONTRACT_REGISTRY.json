@@ -217,14 +217,19 @@
       ],
       "authority": "requirements_semantics",
       "schema_path": "contracts/schemas/engineering-requirement-trace-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "PRODUCER_IMPLEMENTED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
       "evidence_required": true,
-      "producer_status": "DEFINED",
+      "producer_status": "IMPLEMENTED",
       "consumer_status": {
         "Shtenco/synergy_ai_coder": "DEFINED"
       },
-      "scope": "CROSS_REPOSITORY"
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_ai_language:src/ai_language/semantic_trace.py",
+        "Shtenco/synergy_ai_language:src/ai_language/synergy_contracts.py",
+        "Shtenco/synergy_ai_language:tests/test_synergy_contracts.py"
+      ]
     },
     {
       "contract_id": "synergy.engineering.change-evidence/v1",
@@ -253,14 +258,19 @@
       ],
       "authority": "runtime_orchestration",
       "schema_path": "contracts/schemas/runtime-node-manifest-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "PRODUCER_IMPLEMENTED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
       "evidence_required": true,
-      "producer_status": "DEFINED",
+      "producer_status": "IMPLEMENTED",
       "consumer_status": {
         "Shtenco/synergy_turbo_linux": "DEFINED"
       },
-      "scope": "CROSS_REPOSITORY"
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_meta_os:runtime/orchestrator.py",
+        "Shtenco/synergy_meta_os:runtime/synergy_contracts.py",
+        "Shtenco/synergy_meta_os:tests/test_synergy_contracts.py"
+      ]
     },
     {
       "contract_id": "synergy.transport.evidence/v1",
