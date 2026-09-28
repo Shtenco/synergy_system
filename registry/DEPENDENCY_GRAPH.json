@@ -1362,7 +1362,7 @@
       "from": "Shtenco/synegy_ai_compress",
       "to": "Shtenco/synergy_meta_os",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.archive.evidence/v1",
       "evidence": [
@@ -1498,6 +1498,18 @@
         "Shtenco/synergy_project:contracts/capital_governance_v1.py",
         "Shtenco/synergy_pay_system:src/synergy_pay/synergy_contracts.py"
       ]
+    },
+    {
+      "from": "Shtenco/synegy_ai_compress",
+      "to": "Shtenco/synergy_meta_os",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.archive.evidence/v1",
+      "evidence": [
+        "Shtenco/synegy_ai_compress:compression_lab/synergy_contracts.py",
+        "Shtenco/synergy_meta_os:runtime/archive_contracts.py"
+      ]
     }
   ],
   "semantics": {
@@ -1518,7 +1530,7 @@
   "integration_summary": {
     "repositories": 75,
     "typed_contracts": 17,
-    "adapter_implemented_runtime_edges": 9,
+    "adapter_implemented_runtime_edges": 10,
     "e2e_tested_runtime_edges": 0,
     "deployed_runtime_edges": 0
   }
