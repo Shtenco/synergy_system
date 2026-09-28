@@ -1912,6 +1912,30 @@
         "registry/CONTRACT_REGISTRY.json",
         "registry/REPOSITORY_INTERFACES.json"
       ]
+    },
+    {
+      "from": "Shtenco/synergy_app",
+      "to": "Shtenco/synergy_meta_os",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.app.store-source-evidence/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/sinergy_super_app",
+      "to": "Shtenco/synergy_meta_os",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.app.superapp-surface/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
     }
   ],
   "semantics": {
