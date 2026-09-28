@@ -1219,7 +1219,7 @@
       "from": "Shtenco/synergy_financial_os",
       "to": "Shtenco/synergy_apps",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.accounting.recognition/v1",
       "evidence": [
@@ -1230,7 +1230,7 @@
       "from": "Shtenco/synergy_ai_blockchain",
       "to": "Shtenco/synergy_metachain",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.trust.commitment/v1",
       "evidence": [
@@ -1241,7 +1241,7 @@
       "from": "Shtenco/synergy_ai_blockchain",
       "to": "Shtenco/synergy_apps",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.trust.commitment/v1",
       "evidence": [
@@ -1263,7 +1263,7 @@
       "from": "Shtenco/synergy_agi_nexus",
       "to": "Shtenco/synergy_nexus_science_agent",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.ai.proposal/v1",
       "evidence": [
@@ -1274,7 +1274,7 @@
       "from": "Shtenco/synergy_agi_nexus",
       "to": "Shtenco/synergy_eurasian",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.ai.proposal/v1",
       "evidence": [
@@ -1285,7 +1285,7 @@
       "from": "Shtenco/synergy_nexus_science_agent",
       "to": "Shtenco/synergy_megaproject",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.science.evidence-package/v1",
       "evidence": [
@@ -1296,7 +1296,7 @@
       "from": "Shtenco/synergy_ai_language",
       "to": "Shtenco/synergy_ai_coder",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.engineering.requirement-trace/v1",
       "evidence": [
@@ -1307,7 +1307,7 @@
       "from": "Shtenco/synergy_ai_coder",
       "to": "Shtenco/synergy_meta_os",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.engineering.change-evidence/v1",
       "evidence": [
@@ -1318,7 +1318,7 @@
       "from": "Shtenco/synergy_meta_os",
       "to": "Shtenco/synergy_turbo_linux",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.runtime.node-manifest/v1",
       "evidence": [
@@ -1329,7 +1329,7 @@
       "from": "Shtenco/synergy_net",
       "to": "Shtenco/synergy_meta_os",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.transport.evidence/v1",
       "evidence": [
@@ -1340,7 +1340,7 @@
       "from": "Shtenco/synergy_net",
       "to": "Shtenco/synergy_ai_blockchain",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.transport.evidence/v1",
       "evidence": [
@@ -1351,7 +1351,7 @@
       "from": "Shtenco/synegy_ai_compress",
       "to": "Shtenco/synergy_net",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.archive.evidence/v1",
       "evidence": [
@@ -1510,6 +1510,168 @@
         "Shtenco/synegy_ai_compress:compression_lab/synergy_contracts.py",
         "Shtenco/synergy_meta_os:runtime/archive_contracts.py"
       ]
+    },
+    {
+      "from": "Shtenco/synergy_financial_os",
+      "to": "Shtenco/synergy_apps",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.accounting.recognition/v1",
+      "evidence": [
+        "Shtenco/synergy_financial_os:contracts/accounting_recognition_v1.py",
+        "Shtenco/synergy_apps:runtime/read_models.py",
+        "Shtenco/synergy_apps:tests/test_read_models.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_metachain",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trust.commitment/v1",
+      "evidence": [
+        "Shtenco/synergy_ai_blockchain:src/federation_contracts.rs",
+        "Shtenco/synergy_ai_blockchain:src/lib_v2.rs",
+        "Shtenco/synergy_metachain:runtime/trust_contracts.py",
+        "Shtenco/synergy_metachain:tests/test_trust_contracts.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_apps",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trust.commitment/v1",
+      "evidence": [
+        "Shtenco/synergy_ai_blockchain:src/federation_contracts.rs",
+        "Shtenco/synergy_ai_blockchain:src/lib_v2.rs",
+        "Shtenco/synergy_apps:runtime/read_models.py",
+        "Shtenco/synergy_apps:tests/test_read_models.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_nexus_science_agent",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.ai.proposal/v1",
+      "evidence": [
+        "Shtenco/synergy_agi_nexus:contracts/ai_proposal_v1.py",
+        "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
+        "Shtenco/synergy_nexus_science_agent:tests/test_science_contracts.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_eurasian",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.ai.proposal/v1",
+      "evidence": [
+        "Shtenco/synergy_agi_nexus:contracts/ai_proposal_v1.py",
+        "Shtenco/synergy_eurasian:interfaces/ai_contracts.py",
+        "Shtenco/synergy_eurasian:tests/test_ai_contracts.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_nexus_science_agent",
+      "to": "Shtenco/synergy_megaproject",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.science.evidence-package/v1",
+      "evidence": [
+        "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
+        "Shtenco/synergy_nexus_science_agent:tests/test_science_contracts.py",
+        "Shtenco/synergy_megaproject:tools/science_contracts.py",
+        "Shtenco/synergy_megaproject:tests/test_science_contracts.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_language",
+      "to": "Shtenco/synergy_ai_coder",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.engineering.requirement-trace/v1",
+      "evidence": [
+        "Shtenco/synergy_ai_language:src/ai_language/synergy_contracts.py",
+        "Shtenco/synergy_ai_coder:runtime/contracts.py",
+        "Shtenco/synergy_ai_coder:tests/test_contracts.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_coder",
+      "to": "Shtenco/synergy_meta_os",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.engineering.change-evidence/v1",
+      "evidence": [
+        "Shtenco/synergy_ai_coder:runtime/contracts.py",
+        "Shtenco/synergy_ai_coder:tests/test_contracts.py",
+        "Shtenco/synergy_meta_os:runtime/change_contracts.py",
+        "Shtenco/synergy_meta_os:tests/test_change_contracts.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_turbo_linux",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.runtime.node-manifest/v1",
+      "evidence": [
+        "Shtenco/synergy_meta_os:runtime/synergy_contracts.py",
+        "Shtenco/synergy_turbo_linux:turbo_orchestrator/synergy_contracts.py",
+        "Shtenco/synergy_turbo_linux:tests/test_synergy_contracts.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_net",
+      "to": "Shtenco/synergy_meta_os",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.transport.evidence/v1",
+      "evidence": [
+        "Shtenco/synergy_net:runtime/synergy_contracts.py",
+        "Shtenco/synergy_net:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_meta_os:runtime/transport_contracts.py",
+        "Shtenco/synergy_meta_os:tests/test_transport_contracts.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_net",
+      "to": "Shtenco/synergy_ai_blockchain",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.transport.evidence/v1",
+      "evidence": [
+        "Shtenco/synergy_net:runtime/synergy_contracts.py",
+        "Shtenco/synergy_net:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_ai_blockchain:src/federation_contracts.rs",
+        "Shtenco/synergy_ai_blockchain:src/lib_v2.rs"
+      ]
+    },
+    {
+      "from": "Shtenco/synegy_ai_compress",
+      "to": "Shtenco/synergy_net",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.archive.evidence/v1",
+      "evidence": [
+        "Shtenco/synegy_ai_compress:compression_lab/synergy_contracts.py",
+        "Shtenco/synergy_net:runtime/synergy_contracts.py",
+        "Shtenco/synergy_net:tests/test_synergy_contracts.py"
+      ]
     }
   ],
   "semantics": {
@@ -1530,7 +1692,7 @@
   "integration_summary": {
     "repositories": 75,
     "typed_contracts": 17,
-    "adapter_implemented_runtime_edges": 10,
+    "adapter_implemented_runtime_edges": 22,
     "e2e_tested_runtime_edges": 0,
     "deployed_runtime_edges": 0
   }
