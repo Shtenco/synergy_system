@@ -1,6 +1,6 @@
 {
   "schema": "synergy.contract-registry/v1",
-  "as_of": "2026-09-28",
+  "as_of": "2026-09-29",
   "contracts": [
     {
       "contract_id": "synergy.trading.portfolio-decision/v1",
@@ -385,6 +385,126 @@
       "implementation_evidence": [
         "Shtenco/synergy_project:contracts/capital_governance_v1.py",
         "Shtenco/synergy_pay_system:src/synergy_pay/synergy_contracts.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.trading.market-features/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_marketvision",
+      "consumers": [
+        "Shtenco/synergy_midas_ai"
+      ],
+      "authority": "market_perception",
+      "schema_path": "contracts/schemas/trading-market-features-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_midas_ai": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_marketvision:src/synergy_marketvision/synergy_contracts.py",
+        "Shtenco/synergy_marketvision:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+        "Shtenco/synergy_midas_ai:tests/test_m4_market_advisory_contract.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.trading.market-regime/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_adaptive_engine",
+      "consumers": [
+        "Shtenco/synergy_midas_ai"
+      ],
+      "authority": "adaptive_policy",
+      "schema_path": "contracts/schemas/trading-market-regime-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_midas_ai": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_adaptive_engine:src/synergy_adaptive_engine/synergy_contracts.py",
+        "Shtenco/synergy_adaptive_engine:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+        "Shtenco/synergy_midas_ai:tests/test_m4_market_advisory_contract.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.trading.fair-value/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_market_graph",
+      "consumers": [
+        "Shtenco/synergy_midas_ai"
+      ],
+      "authority": "market_graph",
+      "schema_path": "contracts/schemas/trading-fair-value-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_midas_ai": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_market_graph:src/synergy_market_graph/synergy_contracts.py",
+        "Shtenco/synergy_market_graph:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+        "Shtenco/synergy_midas_ai:tests/test_m4_market_advisory_contract.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.trading.liquidity-quote/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_market_maker",
+      "consumers": [
+        "Shtenco/synergy_midas_ai"
+      ],
+      "authority": "market_making",
+      "schema_path": "contracts/schemas/trading-liquidity-quote-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_midas_ai": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_market_maker:src/synergy_market_maker/synergy_contracts.py",
+        "Shtenco/synergy_market_maker:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+        "Shtenco/synergy_midas_ai:tests/test_m4_market_advisory_contract.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.trading.investment-thesis/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_ai_investment_committee",
+      "consumers": [
+        "Shtenco/synergy_midas_ai"
+      ],
+      "authority": "investment_committee",
+      "schema_path": "contracts/schemas/trading-investment-thesis-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_midas_ai": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_ai_investment_committee:src/synergy_ai_committee/synergy_contracts.py",
+        "Shtenco/synergy_ai_investment_committee:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+        "Shtenco/synergy_midas_ai:tests/test_m4_market_advisory_contract.py"
       ]
     }
   ],
