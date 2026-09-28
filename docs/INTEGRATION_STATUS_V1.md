@@ -7,14 +7,14 @@
 
 ```text
 Repositories                         75
-Typed contract families             27
-Contracts without endpoint gaps     27
+Typed contract families             32
+Contracts without endpoint gaps     32
 Contracts with endpoint gaps         0
-Runtime edges ADAPTER_IMPLEMENTED   32
+Runtime edges ADAPTER_IMPLEMENTED   37
 Runtime edges E2E_TESTED             0
 Runtime edges DEPLOYED               0
-Repos ADAPTER_INTEGRATED            30
-Repos ARCHITECTURAL_ONLY            45
+Repos ADAPTER_INTEGRATED            35
+Repos ARCHITECTURAL_ONLY            40
 ```
 
 ## Исторический M2 baseline
@@ -210,4 +210,62 @@ Current expansion frontier:
 ARCHITECTURAL_ONLY = 45
 ADAPTER_INTEGRATED = 30
 M4 Wave 3 → следующий набор code-heavy repositories
+```
+
+
+## M4 — Wave 3 Research / Intelligence / Compression
+
+Добавлены ещё пять локально воспроизводимых boundaries:
+
+```text
+Relative Value ─────────→ MIDAS
+Agentic AI Economy ─────→ NEXUS
+DLP Solver ─────────────→ Science Agent
+Cold Nuclear ───────────→ Science Agent
+QR Compress ────────────→ Meta-OS
+```
+
+Контракты:
+
+```text
+synergy.trading.relative-value-signal/v1
+synergy.agent.economy-simulation/v1
+synergy.science.constraint-benchmark/v1
+synergy.science.model-consistency/v1
+synergy.archive.benchmark-evidence/v1
+```
+
+Границы authority:
+
+- relative-value signal остаётся advisory-only;
+- agent economy state не даёт payment/accounting authority;
+- DLP benchmark не может сам объявить cryptographic break;
+- cold-nuclear computational consistency не может сам объявить наблюдаемый физический эффект;
+- compression benchmark не даёт deployment authority.
+
+Создан pinned gate:
+
+```text
+integration/m4_wave3/
+.github/workflows/m4-wave3-e2e.yml
+```
+
+## Federation security gate
+
+Созданы:
+
+```text
+registry/SECURITY_BLOCKERS.json
+integration/security_gate.py
+.github/workflows/federation-security-gate.yml
+```
+
+Незакрытые credential findings теперь отделены от runtime maturity. Репозиторий может иметь adapter, но `DEPLOYED` запрещён при unresolved deployment blocker.
+
+Текущий expansion frontier:
+
+```text
+ARCHITECTURAL_ONLY = 40
+ADAPTER_INTEGRATED = 35
+M4 Wave 4 → следующий локально-воспроизводимый набор
 ```
