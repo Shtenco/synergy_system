@@ -263,6 +263,19 @@
         "model_authority",
         "blockchain_finality"
       ]
+    },
+    "capital_governance": {
+      "owner": "Shtenco/synergy_project",
+      "facts": [
+        "funding_authorization",
+        "capital_allocation_policy",
+        "underwriting_decision"
+      ],
+      "forbidden": [
+        "payment_execution",
+        "settlement_finality",
+        "accounting_recognition"
+      ]
     }
   }
 }
