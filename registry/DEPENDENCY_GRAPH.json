@@ -1,0 +1,1421 @@
+{
+  "schema": "synergy.dependency-graph/v1",
+  "as_of": "2026-09-28",
+  "nodes": [
+    {
+      "repo": "Shtenco/shtenco.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичная web-витрина и навигационный интерфейс к проектам Shtenco."
+    },
+    {
+      "repo": "Shtenco/shtencoauantai.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичный web-интерфейс/сайт для представления отдельных направлений экосистемы."
+    },
+    {
+      "repo": "Shtenco/sinergy_app",
+      "domain": "APPS_INTERFACES",
+      "role": "Приложенческий shell/концепт SINERGY."
+    },
+    {
+      "repo": "Shtenco/sinergy_super_app",
+      "domain": "APPS_INTERFACES",
+      "role": "Концептуальная/продуктовая оболочка super-app для пользовательских сервисов SINERGY."
+    },
+    {
+      "repo": "Shtenco/synergy_app",
+      "domain": "APPS_INTERFACES",
+      "role": "Пользовательский финансовый интерфейс/приложение SINERGY."
+    },
+    {
+      "repo": "Shtenco/synergy_app_family",
+      "domain": "APPS_INTERFACES",
+      "role": "Концептуальный семейный продуктовый слой/семейство приложений."
+    },
+    {
+      "repo": "Shtenco/synergy_messenger",
+      "domain": "APPS_INTERFACES",
+      "role": "Мессенджер/коммуникационный слой SYNERGY и пользовательская клиентская оболочка."
+    },
+    {
+      "repo": "Shtenco/synergychain.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичная web-витрина SINERGYCHAIN."
+    },
+    {
+      "repo": "Shtenco/print_money_synergychain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "R&D по программируемой эмиссии, ликвидности, mint/burn и внешне обеспеченному экономическому эффекту."
+    },
+    {
+      "repo": "Shtenco/synergy_2chain_qe",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Двухцепочечный QE/арбитражный R&D и модели ликвидности на fork/DeFi окружениях."
+    },
+    {
+      "repo": "Shtenco/synergy_ai_blockchain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Блокчейн/доверительный слой SYNERGY, включая PQ/EVM и привязку проверяемых состояний."
+    },
+    {
+      "repo": "Shtenco/synergy_blochain_budget",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Блокчейн-трассируемость бюджетов/потоков и provenance финансовых операций."
+    },
+    {
+      "repo": "Shtenco/synergy_chain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Экспериментальная блокчейн- и token/economic-ветка SINERGYCHAIN."
+    },
+    {
+      "repo": "Shtenco/synergy_chain_print_money",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Концептуальный узел интеграции chain-механики и monetary/emission R&D."
+    },
+    {
+      "repo": "Shtenco/synergy_graph_print_money",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Графовый Economic OS / денежная топология и исследование внешне-обеспеченных контуров эмиссии."
+    },
+    {
+      "repo": "Shtenco/synergy_metachain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Cross-chain/bridge архитектура и правила уникального lock/burn → mint/claim соответствия."
+    },
+    {
+      "repo": "Shtenco/synergy_qe",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Концептуальный узел QE Engine; текущий main содержит только минимальный README."
+    },
+    {
+      "repo": "Shtenco/synergy_usds",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Экспериментальная денежная/стейблкоин-модель USDS и Base-fork экономика."
+    },
+    {
+      "repo": "Shtenco/synergy_ai_financial_system",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "R&D по AI-управлению финансовыми моделями, капиталом и экономическими контурами."
+    },
+    {
+      "repo": "Shtenco/synergy_cashero",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Финансово-экономическая R&D-ветка, связанная с денежными потоками и платёжными сценариями."
+    },
+    {
+      "repo": "Shtenco/synergy_eurasian",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Контур реальной экономики/индустрии и долгосрочной экономической архитектуры EURASIAN."
+    },
+    {
+      "repo": "Shtenco/synergy_financial_os",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Канонический финансовый слой: учёт, NAV, обязательства, ликвидность, риск и экономическая истинность."
+    },
+    {
+      "repo": "Shtenco/synergy_matrix_sota",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Владелец части debt/credit lifecycle механизмов и матричной оценки зрелости/архитектуры."
+    },
+    {
+      "repo": "Shtenco/synergy_pay_system",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Платёжные маршруты, котировки, settlement/reconciliation и MetaPay-подобные контуры."
+    },
+    {
+      "repo": "Shtenco/dlp_solver",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Reverse-EXP / anti-exponential cryptographic research lab с эпистемической дисциплиной и воспроизводимыми экспериментами."
+    },
+    {
+      "repo": "Shtenco/synegy_ai_compress",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "R&D по компрессии AI-данных/моделей и архивному субстрату."
+    },
+    {
+      "repo": "Shtenco/synergy_gguf_compress",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Лаборатория компрессии GGUF/LLM-моделей; на текущем main README остаётся минимальным, поэтому зрелость не предполагается."
+    },
+    {
+      "repo": "Shtenco/synergy_motherboard_xpu_xml",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Экспериментальный аппаратно-описательный слой XPU/EML и конфигурация вычислительной платформы."
+    },
+    {
+      "repo": "Shtenco/synergy_net",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "P2P/mesh/data-plane сеть и транспорт между узлами SYNERGY."
+    },
+    {
+      "repo": "Shtenco/synergy_post_quantum_radio",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Концептуальный узел post-quantum radio/physical transport; текущий main пока не доказывает готовую реализацию."
+    },
+    {
+      "repo": "Shtenco/synergy_qr_compress",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Temporal dictionary / QR-compression R&D и повторное использование общей структуры данных."
+    },
+    {
+      "repo": "Shtenco/synergy_shhts",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Экспериментальный security/transport placeholder; назначение должно подтверждаться будущими артефактами, а не названием."
+    },
+    {
+      "repo": "Shtenco/synergy_shttps",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Экспериментальный secure-transport/HTTPS-like placeholder; реализация пока не должна считаться доказанной по одному названию."
+    },
+    {
+      "repo": "Shtenco/synergy_turbo_linux",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Хостовый/OS-слой SYNERGY: системная изоляция, сервисы, устройство узла и экспериментальный runtime."
+    },
+    {
+      "repo": "Shtenco/synergy_agentic_ai_economy",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Экономика AI-агентов: задания, контракты, рынки, заработок и agent-to-agent workflows."
+    },
+    {
+      "repo": "Shtenco/synergy_agi_autopilot",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Агентный автопилот: планирование задач, DAG/оркестрация и ограниченное автономное исполнение."
+    },
+    {
+      "repo": "Shtenco/synergy_agi_nexus",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Каноническая архитектура AGI NEXUS и поколений reasoning/world-model исследований."
+    },
+    {
+      "repo": "Shtenco/synergy_agi_olga",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Историческая линия OLGA/AGI и источник части поколений NEXUS."
+    },
+    {
+      "repo": "Shtenco/synergy_ai_coder",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Подсистема AI Coder и воспроизводимый compiler/build-tooling контур."
+    },
+    {
+      "repo": "Shtenco/synergy_ai_company",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Концепт AI-native компании: агенты, процессы, контракты и автоматизация организации."
+    },
+    {
+      "repo": "Shtenco/synergy_ai_language",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Семантический и языковой слой: формализация, язык взаимодействия и AI language tooling."
+    },
+    {
+      "repo": "Shtenco/synergy_gllm_nexus",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Активный research runtime NEXUS/GLLM, бенчмарки, замороженные OOS-протоколы и генерации."
+    },
+    {
+      "repo": "Shtenco/synergy_nexus_science_agent",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Научный агент NEXUS: поиск, гипотезы, доказательства и исследовательская оркестрация."
+    },
+    {
+      "repo": "Shtenco/synergy_apps",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Реестр и master-слой пользовательских приложений SYNERGY."
+    },
+    {
+      "repo": "Shtenco/synergy_megaproject",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Цивилизационный master-graph: мегапроекты, фронтирные технологии, научные идеи и их доказательные связи."
+    },
+    {
+      "repo": "Shtenco/synergy_meta_os",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Runtime-оркестратор полного узла SYNERGY поверх host OS и сетевых/AI/финансовых сервисов."
+    },
+    {
+      "repo": "Shtenco/synergy_project",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Master dossier: экономическая и продуктовая картина SYNERGY поверх архитектурного корня."
+    },
+    {
+      "repo": "Shtenco/synergy_system",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Главный архитектурный и governance-корень всей федерации SYNERGY."
+    },
+    {
+      "repo": "Shtenco/binary_quantum_theory",
+      "domain": "SCIENCE_RESEARCH",
+      "role": "Теоретико-физическая исследовательская ветка Binary Quantum Gravity."
+    },
+    {
+      "repo": "Shtenco/epstein_network",
+      "domain": "SCIENCE_RESEARCH",
+      "role": "Отдельный исследовательский knowledge-graph/дистиллированный граф источников; не runtime-компонент финансовой системы."
+    },
+    {
+      "repo": "Shtenco/synergy_cold_nuclear",
+      "domain": "SCIENCE_RESEARCH",
+      "role": "Воспроизводимый вычислительный R&D-контур для исследований низкоэнергетических/«cold nuclear» гипотез."
+    },
+    {
+      "repo": "Shtenco/3D_bars_market_structure",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Эксперименты с трёхмерным представлением цена-время-объём и рыночной структурой."
+    },
+    {
+      "repo": "Shtenco/computer_vision_trading_metatrader_5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Исследования компьютерного зрения для распознавания рыночных структур и торговых сигналов."
+    },
+    {
+      "repo": "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Исследовательский движок cross-FX и синтетического валютного арбитража."
+    },
+    {
+      "repo": "Shtenco/global_liquidity_dataminer",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Сбор и подготовка глобальных макроликвидностных данных для рыночных моделей."
+    },
+    {
+      "repo": "Shtenco/midas_lite",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Облегчённая исследовательская ветка MIDAS с торговыми прототипами и системами."
+    },
+    {
+      "repo": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Многопоточный ML-прототип торгового робота на Python."
+    },
+    {
+      "repo": "Shtenco/quantum-trading_metatrader5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Ранняя R&D-линия квантово-ассистированного трейдинга и интеграции с MetaTrader 5."
+    },
+    {
+      "repo": "Shtenco/swap_arbitrage_metatrader_5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "R&D по swap/carry-арбитражу и синтетическим портфелям в MetaTrader 5."
+    },
+    {
+      "repo": "Shtenco/synergy_adaptive_engine",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Адаптивный движок параметров/режимов и переключения политик по состоянию рынка."
+    },
+    {
+      "repo": "Shtenco/synergy_agi_trader",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "AGI/AI трейдер: объединение reasoning и торговых контуров под риск-ограничениями."
+    },
+    {
+      "repo": "Shtenco/synergy_ai_investment_committee",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "AI investment committee: агрегирование исследований и формирование ограниченных инвестиционных рекомендаций."
+    },
+    {
+      "repo": "Shtenco/synergy_ai_trade_terminal",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Терминал и управляющий интерфейс для AI/algorithmic trading workloads."
+    },
+    {
+      "repo": "Shtenco/synergy_algotrading_graph_system",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Графовая архитектура алгоритмического трейдинга, маршрутов и взаимосвязанных рыночных состояний."
+    },
+    {
+      "repo": "Shtenco/synergy_crypto_pump",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "ML-исследования раннего обнаружения криптовалютных импульсов/pump-режимов."
+    },
+    {
+      "repo": "Shtenco/synergy_market_graph",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Граф рыночных сущностей, зависимостей и отношений для моделей/стратегий."
+    },
+    {
+      "repo": "Shtenco/synergy_market_maker",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Market-making R&D: котирование, inventory/risk и микроструктурные контуры."
+    },
+    {
+      "repo": "Shtenco/synergy_marketvision",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Рыночное восприятие/vision-layer для признаков, режимов и структур."
+    },
+    {
+      "repo": "Shtenco/synergy_midas_ai",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Интегрированный слой MIDAS AI: рыночный интеллект, модели и стратегия."
+    },
+    {
+      "repo": "Shtenco/synergy_midas_ai_trading_system",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Техническая и экспериментальная ветка MIDAS AI trading system."
+    },
+    {
+      "repo": "Shtenco/synergy_midas_institutional",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Институциональная архитектура MIDAS и интеграция data→model→portfolio→risk→execution."
+    },
+    {
+      "repo": "Shtenco/synergy_quantlab",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Quant R&D лаборатория для исследований стратегий, данных и статистических проверок."
+    },
+    {
+      "repo": "Shtenco/synergy_relative_value",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Relative-value/market-neutral исследования и сравнение относительных оценок."
+    },
+    {
+      "repo": "Shtenco/synergy_riskguard",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Независимый риск-контур, лимиты и veto-политики для торговых/финансовых систем."
+    },
+    {
+      "repo": "Shtenco/synergy_trademux",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Маршрутизация и мультиплексирование торговых intents/стратегий к исполнимым каналам."
+    }
+  ],
+  "edges": [
+    {
+      "from": "Shtenco/synergy_apps",
+      "to": "Shtenco/shtenco.github.io",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_apps",
+      "to": "Shtenco/shtencoauantai.github.io",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_apps",
+      "to": "Shtenco/sinergy_app",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_apps",
+      "to": "Shtenco/sinergy_super_app",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_apps",
+      "to": "Shtenco/synergy_app",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_apps",
+      "to": "Shtenco/synergy_app_family",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_apps",
+      "to": "Shtenco/synergy_messenger",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_apps",
+      "to": "Shtenco/synergychain.github.io",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/print_money_synergychain",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_2chain_qe",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_blochain_budget",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_chain",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_chain_print_money",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_graph_print_money",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_metachain",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_qe",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_usds",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_financial_os",
+      "to": "Shtenco/synergy_ai_financial_system",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_financial_os",
+      "to": "Shtenco/synergy_cashero",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_financial_os",
+      "to": "Shtenco/synergy_eurasian",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_financial_os",
+      "to": "Shtenco/synergy_matrix_sota",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_financial_os",
+      "to": "Shtenco/synergy_pay_system",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/dlp_solver",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synegy_ai_compress",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_gguf_compress",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_motherboard_xpu_xml",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_net",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_post_quantum_radio",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_qr_compress",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_shhts",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_shttps",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_turbo_linux",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_agentic_ai_economy",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_agi_autopilot",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_agi_olga",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_ai_coder",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_ai_company",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_ai_language",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_gllm_nexus",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_nexus_science_agent",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_system",
+      "to": "Shtenco/synergy_apps",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_system",
+      "to": "Shtenco/synergy_megaproject",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_system",
+      "to": "Shtenco/synergy_meta_os",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_system",
+      "to": "Shtenco/synergy_project",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_megaproject",
+      "to": "Shtenco/binary_quantum_theory",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_megaproject",
+      "to": "Shtenco/epstein_network",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_megaproject",
+      "to": "Shtenco/synergy_cold_nuclear",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/3D_bars_market_structure",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/computer_vision_trading_metatrader_5",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/global_liquidity_dataminer",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/midas_lite",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/quantum-trading_metatrader5",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/swap_arbitrage_metatrader_5",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_adaptive_engine",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_agi_trader",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_ai_investment_committee",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_ai_trade_terminal",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_algotrading_graph_system",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_crypto_pump",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_market_graph",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_market_maker",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_marketvision",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_midas_ai_trading_system",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_midas_institutional",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_quantlab",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_relative_value",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_riskguard",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_trademux",
+      "type": "ARCHITECTURAL_PARENT",
+      "status": "DOCUMENTED",
+      "authority_transfer": false,
+      "contract_id": null,
+      "evidence": [
+        "registry/SYNERGY_REPOSITORIES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_midas_ai",
+      "to": "Shtenco/synergy_quantlab",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.portfolio-decision/v1",
+      "evidence": [
+        "contracts/schemas/trading-portfolio-decision-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_quantlab",
+      "to": "Shtenco/synergy_riskguard",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.validation-decision/v1",
+      "evidence": [
+        "contracts/schemas/trading-validation-decision-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_riskguard",
+      "to": "Shtenco/synergy_trademux",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.risk-decision/v1",
+      "evidence": [
+        "contracts/schemas/trading-risk-decision-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_trademux",
+      "to": "Shtenco/synergy_pay_system",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.execution-plan/v1",
+      "evidence": [
+        "contracts/schemas/trading-execution-plan-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_trademux",
+      "to": "Shtenco/synergy_pay_system",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.execution-result/v1",
+      "evidence": [
+        "contracts/schemas/trading-execution-result-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_trademux",
+      "to": "Shtenco/synergy_financial_os",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.execution-result/v1",
+      "evidence": [
+        "contracts/schemas/trading-execution-result-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_pay_system",
+      "to": "Shtenco/synergy_financial_os",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.settlement.evidence/v1",
+      "evidence": [
+        "contracts/schemas/settlement-evidence-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_financial_os",
+      "to": "Shtenco/synergy_ai_blockchain",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.accounting.recognition/v1",
+      "evidence": [
+        "contracts/schemas/accounting-recognition-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_financial_os",
+      "to": "Shtenco/synergy_apps",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.accounting.recognition/v1",
+      "evidence": [
+        "contracts/schemas/accounting-recognition-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_metachain",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trust.commitment/v1",
+      "evidence": [
+        "contracts/schemas/trust-commitment-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_blockchain",
+      "to": "Shtenco/synergy_apps",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trust.commitment/v1",
+      "evidence": [
+        "contracts/schemas/trust-commitment-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_midas_ai",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.ai.proposal/v1",
+      "evidence": [
+        "contracts/schemas/ai-proposal-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_nexus_science_agent",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.ai.proposal/v1",
+      "evidence": [
+        "contracts/schemas/ai-proposal-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_eurasian",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.ai.proposal/v1",
+      "evidence": [
+        "contracts/schemas/ai-proposal-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_nexus_science_agent",
+      "to": "Shtenco/synergy_megaproject",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.science.evidence-package/v1",
+      "evidence": [
+        "contracts/schemas/science-evidence-package-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_eurasian",
+      "to": "Shtenco/synergy_financial_os",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.economy.project-proposal/v1",
+      "evidence": [
+        "contracts/schemas/economy-project-proposal-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_language",
+      "to": "Shtenco/synergy_ai_coder",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.engineering.requirement-trace/v1",
+      "evidence": [
+        "contracts/schemas/engineering-requirement-trace-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_coder",
+      "to": "Shtenco/synergy_meta_os",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.engineering.change-evidence/v1",
+      "evidence": [
+        "contracts/schemas/engineering-change-evidence-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_meta_os",
+      "to": "Shtenco/synergy_turbo_linux",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.runtime.node-manifest/v1",
+      "evidence": [
+        "contracts/schemas/runtime-node-manifest-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_net",
+      "to": "Shtenco/synergy_meta_os",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.transport.evidence/v1",
+      "evidence": [
+        "contracts/schemas/transport-evidence-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_net",
+      "to": "Shtenco/synergy_ai_blockchain",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.transport.evidence/v1",
+      "evidence": [
+        "contracts/schemas/transport-evidence-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synegy_ai_compress",
+      "to": "Shtenco/synergy_net",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.archive.evidence/v1",
+      "evidence": [
+        "contracts/schemas/archive-evidence-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synegy_ai_compress",
+      "to": "Shtenco/synergy_meta_os",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.archive.evidence/v1",
+      "evidence": [
+        "contracts/schemas/archive-evidence-v1.schema.json"
+      ]
+    }
+  ],
+  "semantics": {
+    "ARCHITECTURAL_PARENT": "Logical federation placement only; never implies import/runtime call.",
+    "CONTRACT_FLOW": "Producer may emit a typed artifact consumed by the target; authority remains with producer for producer-owned facts.",
+    "RUNTIME_DEPENDENCY": "Reserved for verified executable dependency backed by code/deployment/test evidence.",
+    "EVIDENCE_FLOW": "Evidence is transferred without transferring domain authority."
+  },
+  "status_vocabulary": [
+    "DOCUMENTED",
+    "CONTRACT_DEFINED",
+    "PRODUCER_IMPLEMENTED",
+    "CONSUMER_IMPLEMENTED",
+    "ADAPTER_IMPLEMENTED",
+    "E2E_TESTED",
+    "DEPLOYED"
+  ]
+}
