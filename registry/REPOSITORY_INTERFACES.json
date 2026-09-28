@@ -6,7 +6,8 @@
     "ARCHITECTURAL_ONLY": "No typed producer/consumer interface is defined yet.",
     "CONTRACT_DEFINED": "At least one typed contract is defined but no endpoint adapter is proven.",
     "PARTIAL_IMPLEMENTATION": "At least one producer or consumer implementation exists.",
-    "ADAPTER_INTEGRATED": "At least one runtime dependency has executable adapters on both endpoints."
+    "ADAPTER_INTEGRATED": "At least one runtime dependency has executable adapters on both endpoints.",
+    "interface_status_rule": "Only ADAPTER_INTEGRATED denotes a materialized cross-repository runtime/source-evidence boundary. Other statuses classify legitimate non-runtime roles or explicit blockers; they must not be counted as integrated."
   },
   "repositories": [
     {
@@ -19,7 +20,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "NON_RUNTIME_SURFACE"
     },
     {
       "repo": "Shtenco/shtencoauantai.github.io",
@@ -31,7 +32,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "NON_RUNTIME_SURFACE"
     },
     {
       "repo": "Shtenco/sinergy_app",
@@ -43,7 +44,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/sinergy_super_app",
@@ -119,7 +120,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_messenger",
@@ -131,7 +132,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "NEEDS_HARDENING"
     },
     {
       "repo": "Shtenco/synergychain.github.io",
@@ -143,7 +144,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "NON_RUNTIME_SURFACE"
     },
     {
       "repo": "Shtenco/print_money_synergychain",
@@ -155,7 +156,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_2chain_qe",
@@ -320,7 +321,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "NEEDS_HARDENING"
     },
     {
       "repo": "Shtenco/synergy_chain_print_money",
@@ -332,7 +333,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_graph_print_money",
@@ -408,7 +409,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_usds",
@@ -420,7 +421,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "SECURITY_BLOCKED"
     },
     {
       "repo": "Shtenco/synergy_ai_financial_system",
@@ -464,7 +465,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "SECURITY_BLOCKED"
     },
     {
       "repo": "Shtenco/synergy_eurasian",
@@ -627,7 +628,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_pay_system",
@@ -771,7 +772,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_motherboard_xpu_xml",
@@ -875,7 +876,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_qr_compress",
@@ -919,7 +920,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_shttps",
@@ -931,7 +932,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_turbo_linux",
@@ -1006,7 +1007,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_agi_nexus",
@@ -1183,7 +1184,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_ai_language",
@@ -1226,7 +1227,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_nexus_science_agent",
@@ -1619,7 +1620,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "GOVERNANCE_ROOT"
     },
     {
       "repo": "Shtenco/binary_quantum_theory",
@@ -1727,7 +1728,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/computer_vision_trading_metatrader_5",
@@ -1739,7 +1740,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
@@ -1751,7 +1752,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/global_liquidity_dataminer",
@@ -1763,7 +1764,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/midas_lite",
@@ -1775,7 +1776,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
@@ -1787,7 +1788,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/quantum-trading_metatrader5",
@@ -1799,7 +1800,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/swap_arbitrage_metatrader_5",
@@ -1811,7 +1812,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/synergy_adaptive_engine",
@@ -1855,7 +1856,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/synergy_ai_investment_committee",
@@ -1899,7 +1900,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/synergy_algotrading_graph_system",
@@ -1911,7 +1912,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_crypto_pump",
@@ -2225,7 +2226,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
       "repo": "Shtenco/synergy_midas_institutional",
@@ -2439,5 +2440,15 @@
       ],
       "interface_status": "ADAPTER_INTEGRATED"
     }
+  ],
+  "interface_status_vocabulary": [
+    "ADAPTER_INTEGRATED",
+    "GOVERNANCE_ROOT",
+    "NON_RUNTIME_SURFACE",
+    "DOCUMENTATION_ONLY",
+    "EXTERNAL_RUNTIME_PENDING",
+    "NEEDS_HARDENING",
+    "SECURITY_BLOCKED",
+    "ARCHITECTURAL_ONLY"
   ]
 }
