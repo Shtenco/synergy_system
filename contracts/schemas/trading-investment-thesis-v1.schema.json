@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Trading Investment Thesis V1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "observation_id",
+    "symbol",
+    "score",
+    "action",
+    "votes",
+    "capital_guardian",
+    "authorization",
+    "requires_domain_validation"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "symbol": {
+      "type": "string",
+      "minLength": 1
+    },
+    "score": {
+      "type": "number",
+      "minimum": -1,
+      "maximum": 1
+    },
+    "action": {
+      "enum": [
+        "BUY",
+        "SELL",
+        "NO_TRADE"
+      ]
+    },
+    "votes": {
+      "type": "array"
+    },
+    "capital_guardian": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authorization": {
+      "const": false
+    },
+    "requires_domain_validation": {
+      "const": true
+    }
+  }
+}
