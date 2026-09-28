@@ -44,6 +44,8 @@ jobs:
           SYNERGY_VERIFY_LOCK: "1"
         run: python synergy_system/integration/m3_federation/run.py
 
+      - name: Verify M3 evidence
+        run: python synergy_system/integration/m3_federation/verify_evidence.py
       - name: Upload M3 evidence
         if: always()
         uses: actions/upload-artifact@v4
