@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Economy Scenario Evidence V1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "scenario_id",
+    "status",
+    "model_sha256",
+    "config_sha256",
+    "seed",
+    "horizon_months",
+    "calibration_status",
+    "assumptions",
+    "outputs",
+    "evidence_digest",
+    "accounting_authority",
+    "settlement_authority",
+    "capital_authorization"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "SCENARIO",
+        "STRESS",
+        "COUNTERFACTUAL"
+      ]
+    },
+    "model_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "config_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "horizon_months": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "calibration_status": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assumptions": {
+      "type": "object"
+    },
+    "outputs": {
+      "type": "object"
+    },
+    "evidence_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "accounting_authority": {
+      "const": false
+    },
+    "settlement_authority": {
+      "const": false
+    },
+    "capital_authorization": {
+      "const": false
+    }
+  }
+}
