@@ -50,24 +50,64 @@
       "domain": "APPS_INTERFACES",
       "role": "Концептуальная/продуктовая оболочка super-app для пользовательских сервисов SINERGY.",
       "federation_parent": "Shtenco/synergy_apps",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "superapp_source_surface"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.app.superapp-surface/v1",
+          "status": "IMPLEMENTED",
+          "authority": "superapp_source_surface"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_meta_os",
+          "contract_id": "synergy.app.superapp-surface/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/sinergy_super_app:federation/surface_contract.py",
+            "Shtenco/sinergy_super_app:mobile/test_federation_surface_contract.py",
+            "Shtenco/synergy_meta_os:runtime/app_release_contracts.py",
+            "Shtenco/synergy_meta_os:tests/test_app_release_contracts.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_app",
       "domain": "APPS_INTERFACES",
       "role": "Пользовательский финансовый интерфейс/приложение SINERGY.",
       "federation_parent": "Shtenco/synergy_apps",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "mobile_source_integrity"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.app.store-source-evidence/v1",
+          "status": "IMPLEMENTED",
+          "authority": "mobile_source_integrity"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_meta_os",
+          "contract_id": "synergy.app.store-source-evidence/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_app:federation/release_contract.py",
+            "Shtenco/synergy_app:tests/test_federation_release_contract.py",
+            "Shtenco/synergy_meta_os:runtime/app_release_contracts.py",
+            "Shtenco/synergy_meta_os:tests/test_app_release_contracts.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_app_family",
@@ -1418,6 +1458,16 @@
           "contract_id": "synergy.runtime.hardware-model/v1",
           "status": "IMPLEMENTED",
           "authority": "hardware_architecture_model"
+        },
+        {
+          "contract_id": "synergy.app.store-source-evidence/v1",
+          "status": "IMPLEMENTED",
+          "authority": "mobile_source_integrity"
+        },
+        {
+          "contract_id": "synergy.app.superapp-surface/v1",
+          "status": "IMPLEMENTED",
+          "authority": "superapp_source_surface"
         }
       ],
       "runtime_out": [
@@ -1484,6 +1534,28 @@
             "Shtenco/synergy_motherboard_xpu_xml:calculations/test_synergy_contracts.py",
             "Shtenco/synergy_meta_os:runtime/hardware_model_contracts.py",
             "Shtenco/synergy_meta_os:tests/test_hardware_model_contract.py"
+          ]
+        },
+        {
+          "from": "Shtenco/synergy_app",
+          "contract_id": "synergy.app.store-source-evidence/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_app:federation/release_contract.py",
+            "Shtenco/synergy_app:tests/test_federation_release_contract.py",
+            "Shtenco/synergy_meta_os:runtime/app_release_contracts.py",
+            "Shtenco/synergy_meta_os:tests/test_app_release_contracts.py"
+          ]
+        },
+        {
+          "from": "Shtenco/sinergy_super_app",
+          "contract_id": "synergy.app.superapp-surface/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/sinergy_super_app:federation/surface_contract.py",
+            "Shtenco/sinergy_super_app:mobile/test_federation_surface_contract.py",
+            "Shtenco/synergy_meta_os:runtime/app_release_contracts.py",
+            "Shtenco/synergy_meta_os:tests/test_app_release_contracts.py"
           ]
         }
       ],
