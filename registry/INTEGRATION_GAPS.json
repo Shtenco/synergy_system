@@ -1,0 +1,288 @@
+{
+  "schema": "synergy.integration-gaps/v1",
+  "as_of": "2026-09-28",
+  "totals": {
+    "contracts": 17,
+    "no_missing_endpoints": 8,
+    "contracts_with_gaps": 9,
+    "runtime_adapter_edges": 9,
+    "e2e_tested_edges": 0
+  },
+  "contracts": [
+    {
+      "contract_id": "synergy.trading.portfolio-decision/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_midas_ai",
+      "consumers": [
+        "Shtenco/synergy_quantlab"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "Cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.trading.validation-decision/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_quantlab",
+      "consumers": [
+        "Shtenco/synergy_riskguard"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "Cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.trading.risk-decision/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_riskguard",
+      "consumers": [
+        "Shtenco/synergy_trademux"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "Cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.trading.execution-plan/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_trademux",
+      "consumers": [
+        "Shtenco/synergy_trademux"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "Keep as intra-repository contract; no federation runtime edge required"
+    },
+    {
+      "contract_id": "synergy.trading.execution-result/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_trademux",
+      "consumers": [
+        "Shtenco/synergy_pay_system"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "Cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.settlement.evidence/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_pay_system",
+      "consumers": [
+        "Shtenco/synergy_financial_os"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "Cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.accounting.recognition/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED_PARTIAL",
+      "producer": "Shtenco/synergy_financial_os",
+      "consumers": [
+        "Shtenco/synergy_ai_blockchain",
+        "Shtenco/synergy_apps"
+      ],
+      "missing_endpoints": [
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_apps",
+          "status": "DEFINED"
+        }
+      ],
+      "next_gate": "Implement missing endpoint adapters before E2E promotion"
+    },
+    {
+      "contract_id": "synergy.trust.commitment/v1",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "producer": "Shtenco/synergy_ai_blockchain",
+      "consumers": [
+        "Shtenco/synergy_metachain",
+        "Shtenco/synergy_apps"
+      ],
+      "missing_endpoints": [
+        {
+          "kind": "PRODUCER",
+          "repo": "Shtenco/synergy_ai_blockchain",
+          "status": "PARTIAL"
+        },
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_metachain",
+          "status": "DEFINED"
+        },
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_apps",
+          "status": "DEFINED"
+        }
+      ],
+      "next_gate": "Implement missing endpoint adapters before E2E promotion"
+    },
+    {
+      "contract_id": "synergy.ai.proposal/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED_PARTIAL",
+      "producer": "Shtenco/synergy_agi_nexus",
+      "consumers": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_nexus_science_agent",
+        "Shtenco/synergy_eurasian"
+      ],
+      "missing_endpoints": [
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_nexus_science_agent",
+          "status": "DEFINED"
+        },
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_eurasian",
+          "status": "DEFINED"
+        }
+      ],
+      "next_gate": "Implement missing endpoint adapters before E2E promotion"
+    },
+    {
+      "contract_id": "synergy.science.evidence-package/v1",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "producer": "Shtenco/synergy_nexus_science_agent",
+      "consumers": [
+        "Shtenco/synergy_megaproject"
+      ],
+      "missing_endpoints": [
+        {
+          "kind": "PRODUCER",
+          "repo": "Shtenco/synergy_nexus_science_agent",
+          "status": "DEFINED"
+        },
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_megaproject",
+          "status": "DEFINED"
+        }
+      ],
+      "next_gate": "Implement missing endpoint adapters before E2E promotion"
+    },
+    {
+      "contract_id": "synergy.economy.project-proposal/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_eurasian",
+      "consumers": [
+        "Shtenco/synergy_project"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "Cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.engineering.requirement-trace/v1",
+      "lifecycle_status": "PRODUCER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_ai_language",
+      "consumers": [
+        "Shtenco/synergy_ai_coder"
+      ],
+      "missing_endpoints": [
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_ai_coder",
+          "status": "DEFINED"
+        }
+      ],
+      "next_gate": "Implement missing endpoint adapters before E2E promotion"
+    },
+    {
+      "contract_id": "synergy.engineering.change-evidence/v1",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "producer": "Shtenco/synergy_ai_coder",
+      "consumers": [
+        "Shtenco/synergy_meta_os"
+      ],
+      "missing_endpoints": [
+        {
+          "kind": "PRODUCER",
+          "repo": "Shtenco/synergy_ai_coder",
+          "status": "DEFINED"
+        },
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_meta_os",
+          "status": "DEFINED"
+        }
+      ],
+      "next_gate": "Implement missing endpoint adapters before E2E promotion"
+    },
+    {
+      "contract_id": "synergy.runtime.node-manifest/v1",
+      "lifecycle_status": "PRODUCER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_meta_os",
+      "consumers": [
+        "Shtenco/synergy_turbo_linux"
+      ],
+      "missing_endpoints": [
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_turbo_linux",
+          "status": "DEFINED"
+        }
+      ],
+      "next_gate": "Implement missing endpoint adapters before E2E promotion"
+    },
+    {
+      "contract_id": "synergy.transport.evidence/v1",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "producer": "Shtenco/synergy_net",
+      "consumers": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_blockchain"
+      ],
+      "missing_endpoints": [
+        {
+          "kind": "PRODUCER",
+          "repo": "Shtenco/synergy_net",
+          "status": "DEFINED"
+        },
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_meta_os",
+          "status": "DEFINED"
+        },
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_ai_blockchain",
+          "status": "DEFINED"
+        }
+      ],
+      "next_gate": "Implement missing endpoint adapters before E2E promotion"
+    },
+    {
+      "contract_id": "synergy.archive.evidence/v1",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "producer": "Shtenco/synegy_ai_compress",
+      "consumers": [
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_meta_os"
+      ],
+      "missing_endpoints": [
+        {
+          "kind": "PRODUCER",
+          "repo": "Shtenco/synegy_ai_compress",
+          "status": "DEFINED"
+        },
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_net",
+          "status": "DEFINED"
+        },
+        {
+          "kind": "CONSUMER",
+          "repo": "Shtenco/synergy_meta_os",
+          "status": "DEFINED"
+        }
+      ],
+      "next_gate": "Implement missing endpoint adapters before E2E promotion"
+    },
+    {
+      "contract_id": "synergy.economy.funding-authorization/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_project",
+      "consumers": [
+        "Shtenco/synergy_pay_system"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "Cross-repository E2E harness and evidence bundle"
+    }
+  ]
+}
