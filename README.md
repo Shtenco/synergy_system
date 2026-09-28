@@ -9,6 +9,8 @@
 > - [🧪 M3 Federation E2E Gate](integration/m3_federation/README.md)
 > - [🚀 M4 Wave 1 — Market Advisory Federation](integration/m4_market_advisory/README.md)
 > - [🧱 M4 Wave 2 — Institutional / Crypto / Economic Evidence](integration/m4_wave2/README.md)
+> - [🔬 M4 Wave 3 — Research / Intelligence / Compression](integration/m4_wave3/README.md)
+> - [🔐 Federation Security Blockers](registry/SECURITY_BLOCKERS.json)
 > - [🧭 Атлас 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
 > - [🧾 Repository Registry](registry/SYNERGY_REPOSITORIES.json)
 > - [🏛️ Authority Registry](registry/AUTHORITY_REGISTRY.json)
@@ -26,7 +28,7 @@
 >
 > **Documentation deep pass:** **75/75 COMPLETE**.
 > **M2 frozen baseline:** **17/17 contract families endpoint-complete · 22 runtime edges · 20 integrated repos**.  
-> **Current M4 frontier:** **27/27 contract families endpoint-complete · 32 runtime edges ADAPTER_IMPLEMENTED · 30 repos ADAPTER_INTEGRATED · 45 ARCHITECTURAL_ONLY · 0 E2E_TESTED · 0 DEPLOYED**.
+> **Current M4 frontier:** **32/32 contract families endpoint-complete · 37 runtime edges ADAPTER_IMPLEMENTED · 35 repos ADAPTER_INTEGRATED · 40 ARCHITECTURAL_ONLY · 0 E2E_TESTED · 0 DEPLOYED**.
 > **Rule:** ни один edge не повышается до `E2E_TESTED` без фактического cross-repo evidence.
 
 
