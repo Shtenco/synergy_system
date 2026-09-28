@@ -1293,17 +1293,6 @@
       ]
     },
     {
-      "from": "Shtenco/synergy_eurasian",
-      "to": "Shtenco/synergy_financial_os",
-      "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
-      "authority_transfer": false,
-      "contract_id": "synergy.economy.project-proposal/v1",
-      "evidence": [
-        "contracts/schemas/economy-project-proposal-v1.schema.json"
-      ]
-    },
-    {
       "from": "Shtenco/synergy_ai_language",
       "to": "Shtenco/synergy_ai_coder",
       "type": "CONTRACT_FLOW",
@@ -1451,6 +1440,28 @@
         "Shtenco/synergy_financial_os:contracts/accounting_recognition_v1.py",
         "Shtenco/synergy_ai_blockchain:src/domain_commitment.rs"
       ]
+    },
+    {
+      "from": "Shtenco/synergy_eurasian",
+      "to": "Shtenco/synergy_project",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.economy.project-proposal/v1",
+      "evidence": [
+        "contracts/schemas/economy-project-proposal-v1.schema.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_project",
+      "to": "Shtenco/synergy_pay_system",
+      "type": "CONTRACT_FLOW",
+      "status": "CONTRACT_DEFINED",
+      "authority_transfer": false,
+      "contract_id": "synergy.economy.funding-authorization/v1",
+      "evidence": [
+        "contracts/schemas/economy-funding-authorization-v1.schema.json"
+      ]
     }
   ],
   "semantics": {
@@ -1470,7 +1481,7 @@
   ],
   "integration_summary": {
     "repositories": 75,
-    "typed_contracts": 16,
+    "typed_contracts": 17,
     "adapter_implemented_runtime_edges": 6,
     "e2e_tested_runtime_edges": 0,
     "deployed_runtime_edges": 0
