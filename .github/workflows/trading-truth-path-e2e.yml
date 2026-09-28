@@ -5,8 +5,9 @@ on:
 
 jobs:
   e2e:
-    if: ${{ secrets.SYNERGY_FEDERATION_TOKEN != '' }}
     runs-on: ubuntu-latest
+    env:
+      FEDERATION_TOKEN: ${{ secrets.SYNERGY_FEDERATION_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -15,9 +16,16 @@ jobs:
         with:
           python-version: "3.12"
       - uses: dtolnay/rust-toolchain@stable
+      - name: Require federation token
+        shell: bash
+        run: |
+          if [ -z "$FEDERATION_TOKEN" ]; then
+            echo "SYNERGY_FEDERATION_TOKEN is required to checkout private federation repositories."
+            exit 1
+          fi
       - name: Checkout federation repositories at locked commits
         env:
-          GH_TOKEN: ${{ secrets.SYNERGY_FEDERATION_TOKEN }}
+          GH_TOKEN: ${{ env.FEDERATION_TOKEN }}
         run: |
           python - <<'PY'
           import json, os, subprocess
