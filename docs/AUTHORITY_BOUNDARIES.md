@@ -35,7 +35,7 @@ May NOT:
 
 ### Host / kernel
 
-**Owner:** `Shtenco/turbo_linux`
+**Owner:** `Shtenco/synergy_turbo_linux`
 
 May define host isolation/capability/kernel contracts.
 
@@ -43,7 +43,7 @@ May NOT infer economic authority from process privilege.
 
 ### P2P transport
 
-**Owner:** `Shtenco/synergynet`
+**Owner:** `Shtenco/synergy_net`
 
 May assert transport observations such as:
 - content hash received;
@@ -122,7 +122,7 @@ AI authority for direct approval remains `NONE` unless a future constitutional g
 
 ### NEXUS model authority
 
-**Owner:** `Shtenco/agi_nexus`
+**Owner:** `Shtenco/synergy_agi_nexus`
 
 May assert:
 - model identity/version;
@@ -134,7 +134,7 @@ May NOT assert that its financial recommendation has been authorized or executed
 
 ### Scientific research orchestration
 
-**Owner:** `Shtenco/nexus_science_agent`
+**Owner:** `Shtenco/synergy_nexus_science_agent`
 
 May produce:
 - evidence graphs;
@@ -147,7 +147,7 @@ May NOT relabel simulation or synthesis as experimental scientific confirmation.
 
 ### MIDAS trading intelligence
 
-**Owner:** `Shtenco/midas_ai`
+**Owner:** `Shtenco/synergy_midas_ai`
 
 May produce bounded trading/portfolio decisions under its risk constitution.
 
@@ -167,13 +167,13 @@ May NOT derive accounting meaning that was not present in the committed authorit
 
 ### Requirements semantics
 
-**Owner:** `Shtenco/ai_language`
+**Owner:** `Shtenco/synergy_ai_language`
 
 May assert requirement-registry identity and requirement/change/test trace relationships.
 
 ### Engineering evidence
 
-**Owner:** `Shtenco/ai_coder`
+**Owner:** `Shtenco/synergy_ai_coder`
 
 May produce engineering change/evidence/review artifacts.
 
@@ -181,7 +181,7 @@ May produce engineering change/evidence/review artifacts.
 
 ### Compression / archive identity
 
-**Owner:** `Shtenco/ai_compress`
+**Owner:** `Shtenco/synegy_ai_compress`
 
 May assert codec/archive/hash/round-trip facts.
 
@@ -190,9 +190,9 @@ Compression ratio or archive presence does not confer authority over the archive
 ### Presentation
 
 Owners include:
-- `Shtenco/synergychain`;
-- `Shtenco/synergychain.github.io`;
-- `Shtenco/sinergy-super-app`;
+- `Shtenco/synergy_chain`;
+- `Shtenco/synergy_chain.github.io`;
+- `Shtenco/sinergy_super_app`;
 - public showcase repositories.
 
 Presentation may verify and display authoritative artifacts.
