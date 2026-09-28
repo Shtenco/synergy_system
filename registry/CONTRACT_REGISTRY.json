@@ -1,0 +1,221 @@
+{
+  "schema": "synergy.contract-registry/v1",
+  "as_of": "2026-09-28",
+  "contracts": [
+    {
+      "contract_id": "synergy.trading.portfolio-decision/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_midas_ai",
+      "consumers": [
+        "Shtenco/synergy_quantlab"
+      ],
+      "authority": "trading_intelligence",
+      "schema_path": "contracts/schemas/trading-portfolio-decision-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.trading.validation-decision/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_quantlab",
+      "consumers": [
+        "Shtenco/synergy_riskguard"
+      ],
+      "authority": "trading_validation",
+      "schema_path": "contracts/schemas/trading-validation-decision-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.trading.risk-decision/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_riskguard",
+      "consumers": [
+        "Shtenco/synergy_trademux"
+      ],
+      "authority": "trading_risk",
+      "schema_path": "contracts/schemas/trading-risk-decision-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.trading.execution-plan/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_trademux",
+      "consumers": [
+        "Shtenco/synergy_pay_system"
+      ],
+      "authority": "trade_execution",
+      "schema_path": "contracts/schemas/trading-execution-plan-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.trading.execution-result/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_trademux",
+      "consumers": [
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_financial_os"
+      ],
+      "authority": "trade_execution",
+      "schema_path": "contracts/schemas/trading-execution-result-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.settlement.evidence/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_pay_system",
+      "consumers": [
+        "Shtenco/synergy_financial_os"
+      ],
+      "authority": "payment_settlement",
+      "schema_path": "contracts/schemas/settlement-evidence-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.accounting.recognition/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_financial_os",
+      "consumers": [
+        "Shtenco/synergy_ai_blockchain",
+        "Shtenco/synergy_apps"
+      ],
+      "authority": "canonical_accounting",
+      "schema_path": "contracts/schemas/accounting-recognition-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.trust.commitment/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_ai_blockchain",
+      "consumers": [
+        "Shtenco/synergy_metachain",
+        "Shtenco/synergy_apps"
+      ],
+      "authority": "blockchain_trust",
+      "schema_path": "contracts/schemas/trust-commitment-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.ai.proposal/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_agi_nexus",
+      "consumers": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_nexus_science_agent",
+        "Shtenco/synergy_eurasian"
+      ],
+      "authority": "nexus_core",
+      "schema_path": "contracts/schemas/ai-proposal-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.science.evidence-package/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_nexus_science_agent",
+      "consumers": [
+        "Shtenco/synergy_megaproject"
+      ],
+      "authority": "science_research",
+      "schema_path": "contracts/schemas/science-evidence-package-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.economy.project-proposal/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_eurasian",
+      "consumers": [
+        "Shtenco/synergy_financial_os"
+      ],
+      "authority": "productive_economy",
+      "schema_path": "contracts/schemas/economy-project-proposal-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.engineering.requirement-trace/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_ai_language",
+      "consumers": [
+        "Shtenco/synergy_ai_coder"
+      ],
+      "authority": "requirements_semantics",
+      "schema_path": "contracts/schemas/engineering-requirement-trace-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.engineering.change-evidence/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_ai_coder",
+      "consumers": [
+        "Shtenco/synergy_meta_os"
+      ],
+      "authority": "engineering_evidence",
+      "schema_path": "contracts/schemas/engineering-change-evidence-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.runtime.node-manifest/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_meta_os",
+      "consumers": [
+        "Shtenco/synergy_turbo_linux"
+      ],
+      "authority": "runtime_orchestration",
+      "schema_path": "contracts/schemas/runtime-node-manifest-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.transport.evidence/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_net",
+      "consumers": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_blockchain"
+      ],
+      "authority": "p2p_transport",
+      "schema_path": "contracts/schemas/transport-evidence-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    },
+    {
+      "contract_id": "synergy.archive.evidence/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synegy_ai_compress",
+      "consumers": [
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_meta_os"
+      ],
+      "authority": "compression_identity",
+      "schema_path": "contracts/schemas/archive-evidence-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true
+    }
+  ]
+}
