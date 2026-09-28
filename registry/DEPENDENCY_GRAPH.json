@@ -1252,7 +1252,7 @@
       "from": "Shtenco/synergy_agi_nexus",
       "to": "Shtenco/synergy_midas_ai",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.ai.proposal/v1",
       "evidence": [
@@ -1462,6 +1462,18 @@
       "evidence": [
         "contracts/schemas/economy-funding-authorization-v1.schema.json"
       ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_nexus",
+      "to": "Shtenco/synergy_midas_ai",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.ai.proposal/v1",
+      "evidence": [
+        "Shtenco/synergy_agi_nexus:contracts/ai_proposal_v1.py",
+        "Shtenco/synergy_midas_ai:contracts/nexus_advisory_v1.py"
+      ]
     }
   ],
   "semantics": {
@@ -1482,7 +1494,7 @@
   "integration_summary": {
     "repositories": 75,
     "typed_contracts": 17,
-    "adapter_implemented_runtime_edges": 6,
+    "adapter_implemented_runtime_edges": 7,
     "e2e_tested_runtime_edges": 0,
     "deployed_runtime_edges": 0
   }
