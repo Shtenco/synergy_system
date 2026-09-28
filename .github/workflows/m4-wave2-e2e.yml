@@ -1,0 +1,55 @@
+name: SYNERGY M4 Wave 2 E2E
+
+on:
+  workflow_dispatch:
+
+jobs:
+  m4-wave2:
+    runs-on: ubuntu-latest
+    env:
+      FEDERATION_TOKEN: ${{ secrets.SYNERGY_FEDERATION_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: synergy_system
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Require federation token
+        run: |
+          test -n "$FEDERATION_TOKEN" || (echo "SYNERGY_FEDERATION_TOKEN required" && exit 1)
+      - name: Checkout pinned Wave 2 federation
+        env:
+          GH_TOKEN: ${{ env.FEDERATION_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json,os,subprocess
+          from pathlib import Path
+          lock=json.loads(Path("synergy_system/integration/m4_wave2/integration_lock_v1.json").read_text())
+          for item in lock["repositories"]:
+              repo=item["repo"]; name=repo.split("/",1)[1]
+              subprocess.run(["git","clone",f"https://x-access-token:{os.environ['GH_TOKEN']}@github.com/{repo}.git",name],check=True)
+              subprocess.run(["git","checkout",item["commit"]],cwd=name,check=True)
+          PY
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest numpy pandas scikit-learn joblib
+          pip install -e ./synergy_midas_institutional
+          pip install -e ./synergy_crypto_pump
+          pip install -e ./synergy_blochain_budget
+      - name: Run Wave 2 E2E
+        env:
+          SYNERGY_REPOS_ROOT: ${{ github.workspace }}
+          SYNERGY_VERIFY_LOCK: "1"
+        run: python synergy_system/integration/m4_wave2/run.py
+      - name: Verify evidence
+        run: python synergy_system/integration/m4_wave2/verify_evidence.py
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: synergy-m4-wave2-evidence
+          path: synergy_system/integration/m4_wave2/evidence/m4_wave2_result.json
+          if-no-files-found: warn
