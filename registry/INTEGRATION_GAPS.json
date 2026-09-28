@@ -5,7 +5,7 @@
     "contracts": 17,
     "no_missing_endpoints": 8,
     "contracts_with_gaps": 9,
-    "runtime_adapter_edges": 9,
+    "runtime_adapter_edges": 10,
     "e2e_tested_edges": 0
   },
   "contracts": [
@@ -47,7 +47,7 @@
         "Shtenco/synergy_trademux"
       ],
       "missing_endpoints": [],
-      "next_gate": "Keep as intra-repository contract; no federation runtime edge required"
+      "next_gate": "Keep intra-repository; no federation runtime edge required"
     },
     {
       "contract_id": "synergy.trading.execution-result/v1",
@@ -249,7 +249,7 @@
     },
     {
       "contract_id": "synergy.archive.evidence/v1",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED_PARTIAL",
       "producer": "Shtenco/synegy_ai_compress",
       "consumers": [
         "Shtenco/synergy_net",
@@ -257,18 +257,8 @@
       ],
       "missing_endpoints": [
         {
-          "kind": "PRODUCER",
-          "repo": "Shtenco/synegy_ai_compress",
-          "status": "DEFINED"
-        },
-        {
           "kind": "CONSUMER",
           "repo": "Shtenco/synergy_net",
-          "status": "DEFINED"
-        },
-        {
-          "kind": "CONSUMER",
-          "repo": "Shtenco/synergy_meta_os",
           "status": "DEFINED"
         }
       ],
