@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Agent Economy Simulation V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "tick",
+    "active_agents",
+    "external_assets",
+    "internal_assets",
+    "external_revenue",
+    "mandate_mode",
+    "per_transaction_limit",
+    "daily_limit",
+    "allowed_actions",
+    "simulation_only",
+    "payment_authority",
+    "accounting_authority"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tick": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "active_agents": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "external_assets": {
+      "type": "string"
+    },
+    "internal_assets": {
+      "type": "string"
+    },
+    "external_revenue": {
+      "type": "string"
+    },
+    "mandate_mode": {
+      "enum": [
+        "simulation",
+        "shadow",
+        "live"
+      ]
+    },
+    "per_transaction_limit": {
+      "type": "string"
+    },
+    "daily_limit": {
+      "type": "string"
+    },
+    "allowed_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "simulation_only": {
+      "type": "boolean"
+    },
+    "payment_authority": {
+      "const": false
+    },
+    "accounting_authority": {
+      "const": false
+    }
+  }
+}
