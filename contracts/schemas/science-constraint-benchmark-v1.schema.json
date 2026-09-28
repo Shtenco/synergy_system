@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Science Constraint Benchmark V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "benchmark_id",
+    "problem_family",
+    "candidate_bits",
+    "constrained_bits",
+    "surviving_candidates",
+    "information_gain_bits",
+    "elapsed_s",
+    "method",
+    "reproducible_command",
+    "epistemic_status",
+    "cryptographic_break_claim"
+  ],
+  "properties": {
+    "benchmark_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "problem_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_bits": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "constrained_bits": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "surviving_candidates": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "information_gain_bits": {
+      "type": "number",
+      "minimum": 0
+    },
+    "elapsed_s": {
+      "type": "number",
+      "minimum": 0
+    },
+    "method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reproducible_command": {
+      "type": "string",
+      "minLength": 1
+    },
+    "epistemic_status": {
+      "const": "MEASURED"
+    },
+    "cryptographic_break_claim": {
+      "const": false
+    }
+  }
+}
