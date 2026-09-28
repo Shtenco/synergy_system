@@ -1,0 +1,268 @@
+{
+  "schema": "synergy.authority-registry/v1",
+  "as_of": "2026-09-28",
+  "policy": {
+    "one_fact_one_canonical_authority": true,
+    "consumers_must_not_self_promote": true,
+    "ai_is_not_authorization": true,
+    "blockchain_is_not_accounting": true,
+    "ui_is_not_domain_truth": true,
+    "root_is_not_treasury_authority": true
+  },
+  "authorities": {
+    "architecture_governance": {
+      "owner": "Shtenco/synergy_system",
+      "facts": [
+        "repository_registry",
+        "authority_registry",
+        "contract_registry",
+        "dependency_graph",
+        "architecture_policy"
+      ],
+      "forbidden": [
+        "ledger_posting",
+        "payment_execution",
+        "trading_execution",
+        "scientific_confirmation"
+      ]
+    },
+    "runtime_orchestration": {
+      "owner": "Shtenco/synergy_meta_os",
+      "facts": [
+        "node_manifest_validation",
+        "service_lifecycle",
+        "capability_assignment",
+        "artifact_activation_state"
+      ],
+      "forbidden": [
+        "treasury_authorization_from_root",
+        "accounting_interpretation",
+        "model_truth"
+      ]
+    },
+    "host_kernel": {
+      "owner": "Shtenco/synergy_turbo_linux",
+      "facts": [
+        "host_capability_state",
+        "kernel_runtime_state",
+        "artifact_execution_environment"
+      ],
+      "forbidden": [
+        "financial_authority",
+        "validator_authority_from_process_privilege"
+      ]
+    },
+    "p2p_transport": {
+      "owner": "Shtenco/synergy_net",
+      "facts": [
+        "transport_delivery",
+        "peer_route",
+        "content_chunk_availability",
+        "network_timing"
+      ],
+      "forbidden": [
+        "settlement_finality",
+        "accounting_truth",
+        "revenue"
+      ]
+    },
+    "nexus_core": {
+      "owner": "Shtenco/synergy_agi_nexus",
+      "facts": [
+        "model_identity",
+        "inference_result",
+        "benchmark_artifact",
+        "model_provenance"
+      ],
+      "forbidden": [
+        "payment_authorization",
+        "ledger_mutation",
+        "capital_approval",
+        "deployment_permission"
+      ]
+    },
+    "science_research": {
+      "owner": "Shtenco/synergy_nexus_science_agent",
+      "facts": [
+        "evidence_graph",
+        "hypothesis",
+        "falsification_report",
+        "reproducible_research_package"
+      ],
+      "forbidden": [
+        "simulation_as_experiment",
+        "hypothesis_as_fact"
+      ]
+    },
+    "trading_intelligence": {
+      "owner": "Shtenco/synergy_midas_ai",
+      "facts": [
+        "trading_proposal",
+        "portfolio_proposal",
+        "strategy_artifact",
+        "bounded_market_decision"
+      ],
+      "forbidden": [
+        "risk_override",
+        "settlement_finality",
+        "recognized_pnl"
+      ]
+    },
+    "trading_validation": {
+      "owner": "Shtenco/synergy_quantlab",
+      "facts": [
+        "validation_protocol_result",
+        "oos_metrics",
+        "deployment_gate_recommendation"
+      ],
+      "forbidden": [
+        "future_return_guarantee",
+        "live_execution_authorization"
+      ]
+    },
+    "trading_risk": {
+      "owner": "Shtenco/synergy_riskguard",
+      "facts": [
+        "risk_decision",
+        "approved_notional",
+        "risk_veto",
+        "kill_switch_state"
+      ],
+      "forbidden": [
+        "strategy_alpha_claim",
+        "payment_settlement",
+        "accounting_recognition"
+      ]
+    },
+    "trade_execution": {
+      "owner": "Shtenco/synergy_trademux",
+      "facts": [
+        "execution_plan",
+        "child_order_intent",
+        "fill_aggregation",
+        "execution_trace"
+      ],
+      "forbidden": [
+        "risk_override",
+        "revenue_recognition",
+        "accounting_truth"
+      ]
+    },
+    "payment_settlement": {
+      "owner": "Shtenco/synergy_pay_system",
+      "facts": [
+        "payment_intent_identity",
+        "route_status",
+        "settlement_status",
+        "provider_evidence",
+        "reconciliation_breaks"
+      ],
+      "forbidden": [
+        "revenue_recognition",
+        "hardnav",
+        "distribution_capacity"
+      ]
+    },
+    "canonical_accounting": {
+      "owner": "Shtenco/synergy_financial_os",
+      "facts": [
+        "revenue_recognition",
+        "double_entry",
+        "hardnav",
+        "liquidnav",
+        "economicnav",
+        "solvency",
+        "liquidity",
+        "distribution_capacity",
+        "period_close"
+      ],
+      "forbidden": [
+        "external_payment_execution_without_authorization"
+      ]
+    },
+    "productive_economy": {
+      "owner": "Shtenco/synergy_eurasian",
+      "facts": [
+        "project_proposal",
+        "physical_constraint_state",
+        "productive_cashflow_evidence"
+      ],
+      "forbidden": [
+        "funding_authorization",
+        "recognized_revenue"
+      ]
+    },
+    "blockchain_trust": {
+      "owner": "Shtenco/synergy_ai_blockchain",
+      "facts": [
+        "typed_payload_commitment",
+        "chain_state",
+        "consensus_finality",
+        "cryptographic_provenance"
+      ],
+      "forbidden": [
+        "accounting_interpretation",
+        "revenue_recognition"
+      ]
+    },
+    "cross_chain_trust": {
+      "owner": "Shtenco/synergy_metachain",
+      "facts": [
+        "cross_chain_proof",
+        "bridge_uniqueness_state",
+        "destination_claim_state"
+      ],
+      "forbidden": [
+        "accounting_interpretation"
+      ]
+    },
+    "requirements_semantics": {
+      "owner": "Shtenco/synergy_ai_language",
+      "facts": [
+        "requirement_identity",
+        "requirement_change_trace",
+        "requirement_test_trace"
+      ],
+      "forbidden": [
+        "production_deployment_permission"
+      ]
+    },
+    "engineering_evidence": {
+      "owner": "Shtenco/synergy_ai_coder",
+      "facts": [
+        "change_artifact",
+        "review_artifact",
+        "build_test_evidence"
+      ],
+      "forbidden": [
+        "production_deployment_permission",
+        "domain_business_truth"
+      ]
+    },
+    "compression_identity": {
+      "owner": "Shtenco/synegy_ai_compress",
+      "facts": [
+        "codec_identity",
+        "archive_hash",
+        "round_trip_fact",
+        "compression_benchmark"
+      ],
+      "forbidden": [
+        "archived_domain_authority"
+      ]
+    },
+    "presentation": {
+      "owner": "Shtenco/synergy_apps",
+      "facts": [
+        "presentation_build_identity",
+        "client_release_identity"
+      ],
+      "forbidden": [
+        "ledger_truth",
+        "payment_finality",
+        "model_authority",
+        "blockchain_finality"
+      ]
+    }
+  }
+}
