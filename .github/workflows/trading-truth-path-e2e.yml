@@ -1,0 +1,43 @@
+name: SYNERGY Trading Truth Path E2E
+
+on:
+  workflow_dispatch:
+
+jobs:
+  e2e:
+    if: ${{ secrets.SYNERGY_FEDERATION_TOKEN != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: synergy_system
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Checkout federation repositories at locked commits
+        env:
+          GH_TOKEN: ${{ secrets.SYNERGY_FEDERATION_TOKEN }}
+        run: |
+          python - <<'PY'
+          import json, os, subprocess
+          from pathlib import Path
+          lock=json.loads(Path("synergy_system/integration/trading_truth_path/integration_lock_v1.json").read_text())
+          for item in lock["repositories"]:
+              repo=item["repo"]
+              name=repo.split("/",1)[1]
+              subprocess.run(["git","clone",f"https://x-access-token:{os.environ['GH_TOKEN']}@github.com/{repo}.git",name],check=True)
+              subprocess.run(["git","checkout",item["commit"]],cwd=name,check=True)
+          PY
+      - name: Install Python packages
+        run: |
+          python -m pip install --upgrade pip
+          for d in synergy_quantlab synergy_riskguard synergy_trademux synergy_pay_system; do
+            pip install -e "./$d"
+          done
+          pip install pytest
+      - name: Execute cross-repo adapter E2E
+        env:
+          SYNERGY_REPOS_ROOT: ${{ github.workspace }}
+          SYNERGY_VERIFY_LOCK: "1"
+        run: python synergy_system/integration/trading_truth_path/run.py
