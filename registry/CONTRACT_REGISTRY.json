@@ -161,16 +161,20 @@
       ],
       "authority": "nexus_core",
       "schema_path": "contracts/schemas/ai-proposal-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "PRODUCER_IMPLEMENTED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
       "evidence_required": true,
-      "producer_status": "DEFINED",
+      "producer_status": "IMPLEMENTED",
       "consumer_status": {
         "Shtenco/synergy_midas_ai": "DEFINED",
         "Shtenco/synergy_nexus_science_agent": "DEFINED",
         "Shtenco/synergy_eurasian": "DEFINED"
       },
-      "scope": "CROSS_REPOSITORY"
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_agi_nexus:contracts/ai_proposal_v1.py",
+        "Shtenco/synergy_agi_nexus:tests/test_ai_proposal_contract.py"
+      ]
     },
     {
       "contract_id": "synergy.science.evidence-package/v1",
@@ -195,18 +199,23 @@
       "schema_version": 1,
       "producer": "Shtenco/synergy_eurasian",
       "consumers": [
-        "Shtenco/synergy_financial_os"
+        "Shtenco/synergy_project"
       ],
       "authority": "productive_economy",
       "schema_path": "contracts/schemas/economy-project-proposal-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "PRODUCER_IMPLEMENTED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
       "evidence_required": true,
-      "producer_status": "DEFINED",
+      "producer_status": "IMPLEMENTED",
       "consumer_status": {
-        "Shtenco/synergy_financial_os": "DEFINED"
+        "Shtenco/synergy_project": "DEFINED"
       },
-      "scope": "CROSS_REPOSITORY"
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_eurasian:interfaces/project_proposal.schema.json",
+        "Shtenco/synergy_eurasian:interfaces/synergy_contracts.py",
+        "Shtenco/synergy_eurasian:tests/test_synergy_contracts.py"
+      ]
     },
     {
       "contract_id": "synergy.engineering.requirement-trace/v1",
@@ -309,6 +318,24 @@
       "consumer_status": {
         "Shtenco/synergy_net": "DEFINED",
         "Shtenco/synergy_meta_os": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
+    },
+    {
+      "contract_id": "synergy.economy.funding-authorization/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_project",
+      "consumers": [
+        "Shtenco/synergy_pay_system"
+      ],
+      "authority": "capital_governance",
+      "schema_path": "contracts/schemas/economy-funding-authorization-v1.schema.json",
+      "lifecycle_status": "CONTRACT_DEFINED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "DEFINED",
+      "consumer_status": {
+        "Shtenco/synergy_pay_system": "DEFINED"
       },
       "scope": "CROSS_REPOSITORY"
     }
