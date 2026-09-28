@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/economy-funding-authorization-v1.schema.json",
+  "title": "Economy Funding Authorization V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.economy.funding-authorization/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_project"
+        },
+        "authority": {
+          "const": "capital_governance"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "project_event_id",
+            "authorization_id",
+            "decision",
+            "max_amount",
+            "currency",
+            "authorized_rails",
+            "expires_at",
+            "conditions",
+            "approver_refs"
+          ],
+          "properties": {
+            "project_event_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "authorization_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "decision": {
+              "enum": [
+                "AUTHORIZE",
+                "REJECT",
+                "DEFER"
+              ]
+            },
+            "max_amount": {
+              "type": "string",
+              "pattern": "^[0-9]+(\\.[0-9]+)?$"
+            },
+            "currency": {
+              "type": "string",
+              "minLength": 3
+            },
+            "authorized_rails": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "expires_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "conditions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "approver_refs": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
+            "policy_version": {
+              "type": "string"
+            },
+            "underwriting_evidence_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
