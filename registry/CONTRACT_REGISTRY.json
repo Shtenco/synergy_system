@@ -11,9 +11,14 @@
       ],
       "authority": "trading_intelligence",
       "schema_path": "contracts/schemas/trading-portfolio-decision-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_quantlab": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.trading.validation-decision/v1",
@@ -24,9 +29,14 @@
       ],
       "authority": "trading_validation",
       "schema_path": "contracts/schemas/trading-validation-decision-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_riskguard": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.trading.risk-decision/v1",
@@ -37,36 +47,50 @@
       ],
       "authority": "trading_risk",
       "schema_path": "contracts/schemas/trading-risk-decision-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_trademux": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.trading.execution-plan/v1",
       "schema_version": 1,
       "producer": "Shtenco/synergy_trademux",
       "consumers": [
-        "Shtenco/synergy_pay_system"
+        "Shtenco/synergy_trademux"
       ],
       "authority": "trade_execution",
       "schema_path": "contracts/schemas/trading-execution-plan-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_trademux": "IMPLEMENTED"
+      },
+      "scope": "INTRA_REPOSITORY"
     },
     {
       "contract_id": "synergy.trading.execution-result/v1",
       "schema_version": 1,
       "producer": "Shtenco/synergy_trademux",
       "consumers": [
-        "Shtenco/synergy_pay_system",
-        "Shtenco/synergy_financial_os"
+        "Shtenco/synergy_pay_system"
       ],
       "authority": "trade_execution",
       "schema_path": "contracts/schemas/trading-execution-result-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_pay_system": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.settlement.evidence/v1",
@@ -77,9 +101,14 @@
       ],
       "authority": "payment_settlement",
       "schema_path": "contracts/schemas/settlement-evidence-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_financial_os": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.accounting.recognition/v1",
@@ -91,9 +120,15 @@
       ],
       "authority": "canonical_accounting",
       "schema_path": "contracts/schemas/accounting-recognition-v1.schema.json",
-      "lifecycle_status": "CONTRACT_DEFINED",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED_PARTIAL",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_ai_blockchain": "IMPLEMENTED",
+        "Shtenco/synergy_apps": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.trust.commitment/v1",
@@ -107,7 +142,13 @@
       "schema_path": "contracts/schemas/trust-commitment-v1.schema.json",
       "lifecycle_status": "CONTRACT_DEFINED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "PARTIAL",
+      "consumer_status": {
+        "Shtenco/synergy_metachain": "DEFINED",
+        "Shtenco/synergy_apps": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.ai.proposal/v1",
@@ -122,7 +163,14 @@
       "schema_path": "contracts/schemas/ai-proposal-v1.schema.json",
       "lifecycle_status": "CONTRACT_DEFINED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "DEFINED",
+      "consumer_status": {
+        "Shtenco/synergy_midas_ai": "DEFINED",
+        "Shtenco/synergy_nexus_science_agent": "DEFINED",
+        "Shtenco/synergy_eurasian": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.science.evidence-package/v1",
@@ -135,7 +183,12 @@
       "schema_path": "contracts/schemas/science-evidence-package-v1.schema.json",
       "lifecycle_status": "CONTRACT_DEFINED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "DEFINED",
+      "consumer_status": {
+        "Shtenco/synergy_megaproject": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.economy.project-proposal/v1",
@@ -148,7 +201,12 @@
       "schema_path": "contracts/schemas/economy-project-proposal-v1.schema.json",
       "lifecycle_status": "CONTRACT_DEFINED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "DEFINED",
+      "consumer_status": {
+        "Shtenco/synergy_financial_os": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.engineering.requirement-trace/v1",
@@ -161,7 +219,12 @@
       "schema_path": "contracts/schemas/engineering-requirement-trace-v1.schema.json",
       "lifecycle_status": "CONTRACT_DEFINED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "DEFINED",
+      "consumer_status": {
+        "Shtenco/synergy_ai_coder": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.engineering.change-evidence/v1",
@@ -174,7 +237,12 @@
       "schema_path": "contracts/schemas/engineering-change-evidence-v1.schema.json",
       "lifecycle_status": "CONTRACT_DEFINED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "DEFINED",
+      "consumer_status": {
+        "Shtenco/synergy_meta_os": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.runtime.node-manifest/v1",
@@ -187,7 +255,12 @@
       "schema_path": "contracts/schemas/runtime-node-manifest-v1.schema.json",
       "lifecycle_status": "CONTRACT_DEFINED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "DEFINED",
+      "consumer_status": {
+        "Shtenco/synergy_turbo_linux": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.transport.evidence/v1",
@@ -201,7 +274,13 @@
       "schema_path": "contracts/schemas/transport-evidence-v1.schema.json",
       "lifecycle_status": "CONTRACT_DEFINED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "DEFINED",
+      "consumer_status": {
+        "Shtenco/synergy_meta_os": "DEFINED",
+        "Shtenco/synergy_ai_blockchain": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
     },
     {
       "contract_id": "synergy.archive.evidence/v1",
@@ -215,7 +294,22 @@
       "schema_path": "contracts/schemas/archive-evidence-v1.schema.json",
       "lifecycle_status": "CONTRACT_DEFINED",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
-      "evidence_required": true
+      "evidence_required": true,
+      "producer_status": "DEFINED",
+      "consumer_status": {
+        "Shtenco/synergy_net": "DEFINED",
+        "Shtenco/synergy_meta_os": "DEFINED"
+      },
+      "scope": "CROSS_REPOSITORY"
     }
+  ],
+  "integration_status_vocabulary": [
+    "CONTRACT_DEFINED",
+    "PRODUCER_IMPLEMENTED",
+    "CONSUMER_IMPLEMENTED",
+    "ADAPTER_IMPLEMENTED",
+    "ADAPTER_IMPLEMENTED_PARTIAL",
+    "E2E_TESTED",
+    "DEPLOYED"
   ]
 }
