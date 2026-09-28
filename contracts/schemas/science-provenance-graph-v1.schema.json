@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Science Provenance Graph V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "snapshot_id",
+    "nodes",
+    "edges",
+    "records_scanned",
+    "nodes_sha256",
+    "edges_sha256",
+    "evidence_sha256",
+    "relationship_semantics_preserved",
+    "wrongdoing_inference_authority",
+    "identity_claim_authority"
+  ],
+  "properties": {
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nodes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "edges": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "records_scanned": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "nodes_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "edges_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "evidence_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "relationship_semantics_preserved": {
+      "const": true
+    },
+    "wrongdoing_inference_authority": {
+      "const": false
+    },
+    "identity_claim_authority": {
+      "const": false
+    }
+  }
+}
