@@ -1,0 +1,1292 @@
+{
+  "schema": "synergy.repository-interfaces/v1",
+  "as_of": "2026-09-28",
+  "repository_count": 75,
+  "semantics": {
+    "ARCHITECTURAL_ONLY": "No typed producer/consumer interface is defined yet.",
+    "CONTRACT_DEFINED": "At least one typed contract is defined but no endpoint adapter is proven.",
+    "PARTIAL_IMPLEMENTATION": "At least one producer or consumer implementation exists.",
+    "ADAPTER_INTEGRATED": "At least one runtime dependency has executable adapters on both endpoints."
+  },
+  "repositories": [
+    {
+      "repo": "Shtenco/shtenco.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичная web-витрина и навигационный интерфейс к проектам Shtenco.",
+      "federation_parent": "Shtenco/synergy_apps",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/shtencoauantai.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичный web-интерфейс/сайт для представления отдельных направлений экосистемы.",
+      "federation_parent": "Shtenco/synergy_apps",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/sinergy_app",
+      "domain": "APPS_INTERFACES",
+      "role": "Приложенческий shell/концепт SINERGY.",
+      "federation_parent": "Shtenco/synergy_apps",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/sinergy_super_app",
+      "domain": "APPS_INTERFACES",
+      "role": "Концептуальная/продуктовая оболочка super-app для пользовательских сервисов SINERGY.",
+      "federation_parent": "Shtenco/synergy_apps",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_app",
+      "domain": "APPS_INTERFACES",
+      "role": "Пользовательский финансовый интерфейс/приложение SINERGY.",
+      "federation_parent": "Shtenco/synergy_apps",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_app_family",
+      "domain": "APPS_INTERFACES",
+      "role": "Концептуальный семейный продуктовый слой/семейство приложений.",
+      "federation_parent": "Shtenco/synergy_apps",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_messenger",
+      "domain": "APPS_INTERFACES",
+      "role": "Мессенджер/коммуникационный слой SYNERGY и пользовательская клиентская оболочка.",
+      "federation_parent": "Shtenco/synergy_apps",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergychain.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичная web-витрина SINERGYCHAIN.",
+      "federation_parent": "Shtenco/synergy_apps",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/print_money_synergychain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "R&D по программируемой эмиссии, ликвидности, mint/burn и внешне обеспеченному экономическому эффекту.",
+      "federation_parent": "Shtenco/synergy_ai_blockchain",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_2chain_qe",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Двухцепочечный QE/арбитражный R&D и модели ликвидности на fork/DeFi окружениях.",
+      "federation_parent": "Shtenco/synergy_ai_blockchain",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_blockchain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Блокчейн/доверительный слой SYNERGY, включая PQ/EVM и привязку проверяемых состояний.",
+      "federation_parent": "Shtenco/synergy_ai_blockchain",
+      "authorities_owned": [
+        "blockchain_trust"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.trust.commitment/v1",
+          "status": "PARTIAL",
+          "authority": "blockchain_trust"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.accounting.recognition/v1",
+          "status": "IMPLEMENTED",
+          "authority": "canonical_accounting"
+        },
+        {
+          "contract_id": "synergy.transport.evidence/v1",
+          "status": "DEFINED",
+          "authority": "p2p_transport"
+        }
+      ],
+      "runtime_out": [],
+      "runtime_in": [
+        {
+          "from": "Shtenco/synergy_financial_os",
+          "contract_id": "synergy.accounting.recognition/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_financial_os:contracts/accounting_recognition_v1.py",
+            "Shtenco/synergy_ai_blockchain:src/domain_commitment.rs"
+          ]
+        }
+      ],
+      "interface_status": "ADAPTER_INTEGRATED"
+    },
+    {
+      "repo": "Shtenco/synergy_blochain_budget",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Блокчейн-трассируемость бюджетов/потоков и provenance финансовых операций.",
+      "federation_parent": "Shtenco/synergy_ai_blockchain",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_chain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Экспериментальная блокчейн- и token/economic-ветка SINERGYCHAIN.",
+      "federation_parent": "Shtenco/synergy_ai_blockchain",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_chain_print_money",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Концептуальный узел интеграции chain-механики и monetary/emission R&D.",
+      "federation_parent": "Shtenco/synergy_ai_blockchain",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_graph_print_money",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Графовый Economic OS / денежная топология и исследование внешне-обеспеченных контуров эмиссии.",
+      "federation_parent": "Shtenco/synergy_ai_blockchain",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_metachain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Cross-chain/bridge архитектура и правила уникального lock/burn → mint/claim соответствия.",
+      "federation_parent": "Shtenco/synergy_ai_blockchain",
+      "authorities_owned": [
+        "cross_chain_trust"
+      ],
+      "produces": [],
+      "consumes": [
+        {
+          "contract_id": "synergy.trust.commitment/v1",
+          "status": "DEFINED",
+          "authority": "blockchain_trust"
+        }
+      ],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "CONTRACT_DEFINED"
+    },
+    {
+      "repo": "Shtenco/synergy_qe",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Концептуальный узел QE Engine; текущий main содержит только минимальный README.",
+      "federation_parent": "Shtenco/synergy_ai_blockchain",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_usds",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Экспериментальная денежная/стейблкоин-модель USDS и Base-fork экономика.",
+      "federation_parent": "Shtenco/synergy_ai_blockchain",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_financial_system",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "R&D по AI-управлению финансовыми моделями, капиталом и экономическими контурами.",
+      "federation_parent": "Shtenco/synergy_financial_os",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_cashero",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Финансово-экономическая R&D-ветка, связанная с денежными потоками и платёжными сценариями.",
+      "federation_parent": "Shtenco/synergy_financial_os",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_eurasian",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Контур реальной экономики/индустрии и долгосрочной экономической архитектуры EURASIAN.",
+      "federation_parent": "Shtenco/synergy_financial_os",
+      "authorities_owned": [
+        "productive_economy"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.economy.project-proposal/v1",
+          "status": "DEFINED",
+          "authority": "productive_economy"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.ai.proposal/v1",
+          "status": "DEFINED",
+          "authority": "nexus_core"
+        }
+      ],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "CONTRACT_DEFINED"
+    },
+    {
+      "repo": "Shtenco/synergy_financial_os",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Канонический финансовый слой: учёт, NAV, обязательства, ликвидность, риск и экономическая истинность.",
+      "federation_parent": "Shtenco/synergy_financial_os",
+      "authorities_owned": [
+        "canonical_accounting"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.accounting.recognition/v1",
+          "status": "IMPLEMENTED",
+          "authority": "canonical_accounting"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.economy.project-proposal/v1",
+          "status": "DEFINED",
+          "authority": "productive_economy"
+        },
+        {
+          "contract_id": "synergy.settlement.evidence/v1",
+          "status": "IMPLEMENTED",
+          "authority": "payment_settlement"
+        }
+      ],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_ai_blockchain",
+          "contract_id": "synergy.accounting.recognition/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_financial_os:contracts/accounting_recognition_v1.py",
+            "Shtenco/synergy_ai_blockchain:src/domain_commitment.rs"
+          ]
+        }
+      ],
+      "runtime_in": [
+        {
+          "from": "Shtenco/synergy_pay_system",
+          "contract_id": "synergy.settlement.evidence/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_pay_system:src/synergy_pay/synergy_contracts.py",
+            "Shtenco/synergy_financial_os:contracts/accounting_recognition_v1.py"
+          ]
+        }
+      ],
+      "interface_status": "ADAPTER_INTEGRATED"
+    },
+    {
+      "repo": "Shtenco/synergy_matrix_sota",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Владелец части debt/credit lifecycle механизмов и матричной оценки зрелости/архитектуры.",
+      "federation_parent": "Shtenco/synergy_financial_os",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_pay_system",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Платёжные маршруты, котировки, settlement/reconciliation и MetaPay-подобные контуры.",
+      "federation_parent": "Shtenco/synergy_financial_os",
+      "authorities_owned": [
+        "payment_settlement"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.settlement.evidence/v1",
+          "status": "IMPLEMENTED",
+          "authority": "payment_settlement"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.trading.execution-result/v1",
+          "status": "IMPLEMENTED",
+          "authority": "trade_execution"
+        }
+      ],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_financial_os",
+          "contract_id": "synergy.settlement.evidence/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_pay_system:src/synergy_pay/synergy_contracts.py",
+            "Shtenco/synergy_financial_os:contracts/accounting_recognition_v1.py"
+          ]
+        }
+      ],
+      "runtime_in": [
+        {
+          "from": "Shtenco/synergy_trademux",
+          "contract_id": "synergy.trading.execution-result/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_trademux:src/synergy_trademux/synergy_contracts.py",
+            "Shtenco/synergy_pay_system:src/synergy_pay/synergy_contracts.py"
+          ]
+        }
+      ],
+      "interface_status": "ADAPTER_INTEGRATED"
+    },
+    {
+      "repo": "Shtenco/dlp_solver",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Reverse-EXP / anti-exponential cryptographic research lab с эпистемической дисциплиной и воспроизводимыми экспериментами.",
+      "federation_parent": "Shtenco/synergy_meta_os",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synegy_ai_compress",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "R&D по компрессии AI-данных/моделей и архивному субстрату.",
+      "federation_parent": "Shtenco/synergy_meta_os",
+      "authorities_owned": [
+        "compression_identity"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.archive.evidence/v1",
+          "status": "DEFINED",
+          "authority": "compression_identity"
+        }
+      ],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "CONTRACT_DEFINED"
+    },
+    {
+      "repo": "Shtenco/synergy_gguf_compress",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Лаборатория компрессии GGUF/LLM-моделей; на текущем main README остаётся минимальным, поэтому зрелость не предполагается.",
+      "federation_parent": "Shtenco/synergy_meta_os",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_motherboard_xpu_xml",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Экспериментальный аппаратно-описательный слой XPU/EML и конфигурация вычислительной платформы.",
+      "federation_parent": "Shtenco/synergy_meta_os",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_net",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "P2P/mesh/data-plane сеть и транспорт между узлами SYNERGY.",
+      "federation_parent": "Shtenco/synergy_meta_os",
+      "authorities_owned": [
+        "p2p_transport"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.transport.evidence/v1",
+          "status": "DEFINED",
+          "authority": "p2p_transport"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.archive.evidence/v1",
+          "status": "DEFINED",
+          "authority": "compression_identity"
+        }
+      ],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "CONTRACT_DEFINED"
+    },
+    {
+      "repo": "Shtenco/synergy_post_quantum_radio",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Концептуальный узел post-quantum radio/physical transport; текущий main пока не доказывает готовую реализацию.",
+      "federation_parent": "Shtenco/synergy_meta_os",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_qr_compress",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Temporal dictionary / QR-compression R&D и повторное использование общей структуры данных.",
+      "federation_parent": "Shtenco/synergy_meta_os",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_shhts",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Экспериментальный security/transport placeholder; назначение должно подтверждаться будущими артефактами, а не названием.",
+      "federation_parent": "Shtenco/synergy_meta_os",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_shttps",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Экспериментальный secure-transport/HTTPS-like placeholder; реализация пока не должна считаться доказанной по одному названию.",
+      "federation_parent": "Shtenco/synergy_meta_os",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_turbo_linux",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Хостовый/OS-слой SYNERGY: системная изоляция, сервисы, устройство узла и экспериментальный runtime.",
+      "federation_parent": "Shtenco/synergy_meta_os",
+      "authorities_owned": [
+        "host_kernel"
+      ],
+      "produces": [],
+      "consumes": [
+        {
+          "contract_id": "synergy.runtime.node-manifest/v1",
+          "status": "DEFINED",
+          "authority": "runtime_orchestration"
+        }
+      ],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "CONTRACT_DEFINED"
+    },
+    {
+      "repo": "Shtenco/synergy_agentic_ai_economy",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Экономика AI-агентов: задания, контракты, рынки, заработок и agent-to-agent workflows.",
+      "federation_parent": "Shtenco/synergy_agi_nexus",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_autopilot",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Агентный автопилот: планирование задач, DAG/оркестрация и ограниченное автономное исполнение.",
+      "federation_parent": "Shtenco/synergy_agi_nexus",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_nexus",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Каноническая архитектура AGI NEXUS и поколений reasoning/world-model исследований.",
+      "federation_parent": "Shtenco/synergy_agi_nexus",
+      "authorities_owned": [
+        "nexus_core"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.ai.proposal/v1",
+          "status": "DEFINED",
+          "authority": "nexus_core"
+        }
+      ],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "CONTRACT_DEFINED"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_olga",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Историческая линия OLGA/AGI и источник части поколений NEXUS.",
+      "federation_parent": "Shtenco/synergy_agi_nexus",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_coder",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Подсистема AI Coder и воспроизводимый compiler/build-tooling контур.",
+      "federation_parent": "Shtenco/synergy_agi_nexus",
+      "authorities_owned": [
+        "engineering_evidence"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.engineering.change-evidence/v1",
+          "status": "DEFINED",
+          "authority": "engineering_evidence"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.engineering.requirement-trace/v1",
+          "status": "DEFINED",
+          "authority": "requirements_semantics"
+        }
+      ],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "CONTRACT_DEFINED"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_company",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Концепт AI-native компании: агенты, процессы, контракты и автоматизация организации.",
+      "federation_parent": "Shtenco/synergy_agi_nexus",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_language",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Семантический и языковой слой: формализация, язык взаимодействия и AI language tooling.",
+      "federation_parent": "Shtenco/synergy_agi_nexus",
+      "authorities_owned": [
+        "requirements_semantics"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.engineering.requirement-trace/v1",
+          "status": "IMPLEMENTED",
+          "authority": "requirements_semantics"
+        }
+      ],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "PARTIAL_IMPLEMENTATION"
+    },
+    {
+      "repo": "Shtenco/synergy_gllm_nexus",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Активный research runtime NEXUS/GLLM, бенчмарки, замороженные OOS-протоколы и генерации.",
+      "federation_parent": "Shtenco/synergy_agi_nexus",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_nexus_science_agent",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Научный агент NEXUS: поиск, гипотезы, доказательства и исследовательская оркестрация.",
+      "federation_parent": "Shtenco/synergy_agi_nexus",
+      "authorities_owned": [
+        "science_research"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.science.evidence-package/v1",
+          "status": "DEFINED",
+          "authority": "science_research"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.ai.proposal/v1",
+          "status": "DEFINED",
+          "authority": "nexus_core"
+        }
+      ],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "CONTRACT_DEFINED"
+    },
+    {
+      "repo": "Shtenco/synergy_apps",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Реестр и master-слой пользовательских приложений SYNERGY.",
+      "federation_parent": "Shtenco/synergy_system",
+      "authorities_owned": [
+        "presentation"
+      ],
+      "produces": [],
+      "consumes": [
+        {
+          "contract_id": "synergy.accounting.recognition/v1",
+          "status": "DEFINED",
+          "authority": "canonical_accounting"
+        },
+        {
+          "contract_id": "synergy.trust.commitment/v1",
+          "status": "DEFINED",
+          "authority": "blockchain_trust"
+        }
+      ],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "CONTRACT_DEFINED"
+    },
+    {
+      "repo": "Shtenco/synergy_megaproject",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Цивилизационный master-graph: мегапроекты, фронтирные технологии, научные идеи и их доказательные связи.",
+      "federation_parent": "Shtenco/synergy_system",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [
+        {
+          "contract_id": "synergy.science.evidence-package/v1",
+          "status": "DEFINED",
+          "authority": "science_research"
+        }
+      ],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "CONTRACT_DEFINED"
+    },
+    {
+      "repo": "Shtenco/synergy_meta_os",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Runtime-оркестратор полного узла SYNERGY поверх host OS и сетевых/AI/финансовых сервисов.",
+      "federation_parent": "Shtenco/synergy_system",
+      "authorities_owned": [
+        "runtime_orchestration"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.runtime.node-manifest/v1",
+          "status": "IMPLEMENTED",
+          "authority": "runtime_orchestration"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.archive.evidence/v1",
+          "status": "DEFINED",
+          "authority": "compression_identity"
+        },
+        {
+          "contract_id": "synergy.engineering.change-evidence/v1",
+          "status": "DEFINED",
+          "authority": "engineering_evidence"
+        },
+        {
+          "contract_id": "synergy.transport.evidence/v1",
+          "status": "DEFINED",
+          "authority": "p2p_transport"
+        }
+      ],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "PARTIAL_IMPLEMENTATION"
+    },
+    {
+      "repo": "Shtenco/synergy_project",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Master dossier: экономическая и продуктовая картина SYNERGY поверх архитектурного корня.",
+      "federation_parent": "Shtenco/synergy_system",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_system",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Главный архитектурный и governance-корень всей федерации SYNERGY.",
+      "federation_parent": null,
+      "authorities_owned": [
+        "architecture_governance"
+      ],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/binary_quantum_theory",
+      "domain": "SCIENCE_RESEARCH",
+      "role": "Теоретико-физическая исследовательская ветка Binary Quantum Gravity.",
+      "federation_parent": "Shtenco/synergy_megaproject",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/epstein_network",
+      "domain": "SCIENCE_RESEARCH",
+      "role": "Отдельный исследовательский knowledge-graph/дистиллированный граф источников; не runtime-компонент финансовой системы.",
+      "federation_parent": "Shtenco/synergy_megaproject",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_cold_nuclear",
+      "domain": "SCIENCE_RESEARCH",
+      "role": "Воспроизводимый вычислительный R&D-контур для исследований низкоэнергетических/«cold nuclear» гипотез.",
+      "federation_parent": "Shtenco/synergy_megaproject",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/3D_bars_market_structure",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Эксперименты с трёхмерным представлением цена-время-объём и рыночной структурой.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/computer_vision_trading_metatrader_5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Исследования компьютерного зрения для распознавания рыночных структур и торговых сигналов.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Исследовательский движок cross-FX и синтетического валютного арбитража.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/global_liquidity_dataminer",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Сбор и подготовка глобальных макроликвидностных данных для рыночных моделей.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/midas_lite",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Облегчённая исследовательская ветка MIDAS с торговыми прототипами и системами.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Многопоточный ML-прототип торгового робота на Python.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/quantum-trading_metatrader5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Ранняя R&D-линия квантово-ассистированного трейдинга и интеграции с MetaTrader 5.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/swap_arbitrage_metatrader_5",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "R&D по swap/carry-арбитражу и синтетическим портфелям в MetaTrader 5.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_adaptive_engine",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Адаптивный движок параметров/режимов и переключения политик по состоянию рынка.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_trader",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "AGI/AI трейдер: объединение reasoning и торговых контуров под риск-ограничениями.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_investment_committee",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "AI investment committee: агрегирование исследований и формирование ограниченных инвестиционных рекомендаций.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_trade_terminal",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Терминал и управляющий интерфейс для AI/algorithmic trading workloads.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_algotrading_graph_system",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Графовая архитектура алгоритмического трейдинга, маршрутов и взаимосвязанных рыночных состояний.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_crypto_pump",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "ML-исследования раннего обнаружения криптовалютных импульсов/pump-режимов.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_market_graph",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Граф рыночных сущностей, зависимостей и отношений для моделей/стратегий.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_market_maker",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Market-making R&D: котирование, inventory/risk и микроструктурные контуры.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_marketvision",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Рыночное восприятие/vision-layer для признаков, режимов и структур.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_ai",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Интегрированный слой MIDAS AI: рыночный интеллект, модели и стратегия.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [
+        "trading_intelligence"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.trading.portfolio-decision/v1",
+          "status": "IMPLEMENTED",
+          "authority": "trading_intelligence"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.ai.proposal/v1",
+          "status": "DEFINED",
+          "authority": "nexus_core"
+        }
+      ],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_quantlab",
+          "contract_id": "synergy.trading.portfolio-decision/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_midas_ai:contracts/portfolio_decision_v1.py",
+            "Shtenco/synergy_quantlab:src/synergy_quantlab/synergy_contracts.py"
+          ]
+        }
+      ],
+      "runtime_in": [],
+      "interface_status": "ADAPTER_INTEGRATED"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_ai_trading_system",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Техническая и экспериментальная ветка MIDAS AI trading system.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_institutional",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Институциональная архитектура MIDAS и интеграция data→model→portfolio→risk→execution.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_quantlab",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Quant R&D лаборатория для исследований стратегий, данных и статистических проверок.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [
+        "trading_validation"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.trading.validation-decision/v1",
+          "status": "IMPLEMENTED",
+          "authority": "trading_validation"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.trading.portfolio-decision/v1",
+          "status": "IMPLEMENTED",
+          "authority": "trading_intelligence"
+        }
+      ],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_riskguard",
+          "contract_id": "synergy.trading.validation-decision/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_quantlab:src/synergy_quantlab/synergy_contracts.py",
+            "Shtenco/synergy_riskguard:src/synergy_riskguard/synergy_contracts.py"
+          ]
+        }
+      ],
+      "runtime_in": [
+        {
+          "from": "Shtenco/synergy_midas_ai",
+          "contract_id": "synergy.trading.portfolio-decision/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_midas_ai:contracts/portfolio_decision_v1.py",
+            "Shtenco/synergy_quantlab:src/synergy_quantlab/synergy_contracts.py"
+          ]
+        }
+      ],
+      "interface_status": "ADAPTER_INTEGRATED"
+    },
+    {
+      "repo": "Shtenco/synergy_relative_value",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Relative-value/market-neutral исследования и сравнение относительных оценок.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [],
+      "produces": [],
+      "consumes": [],
+      "runtime_out": [],
+      "runtime_in": [],
+      "interface_status": "ARCHITECTURAL_ONLY"
+    },
+    {
+      "repo": "Shtenco/synergy_riskguard",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Независимый риск-контур, лимиты и veto-политики для торговых/финансовых систем.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [
+        "trading_risk"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.trading.risk-decision/v1",
+          "status": "IMPLEMENTED",
+          "authority": "trading_risk"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.trading.validation-decision/v1",
+          "status": "IMPLEMENTED",
+          "authority": "trading_validation"
+        }
+      ],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_trademux",
+          "contract_id": "synergy.trading.risk-decision/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_riskguard:src/synergy_riskguard/synergy_contracts.py",
+            "Shtenco/synergy_trademux:src/synergy_trademux/synergy_contracts.py"
+          ]
+        }
+      ],
+      "runtime_in": [
+        {
+          "from": "Shtenco/synergy_quantlab",
+          "contract_id": "synergy.trading.validation-decision/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_quantlab:src/synergy_quantlab/synergy_contracts.py",
+            "Shtenco/synergy_riskguard:src/synergy_riskguard/synergy_contracts.py"
+          ]
+        }
+      ],
+      "interface_status": "ADAPTER_INTEGRATED"
+    },
+    {
+      "repo": "Shtenco/synergy_trademux",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Маршрутизация и мультиплексирование торговых intents/стратегий к исполнимым каналам.",
+      "federation_parent": "Shtenco/synergy_midas_ai",
+      "authorities_owned": [
+        "trade_execution"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.trading.execution-plan/v1",
+          "status": "IMPLEMENTED",
+          "authority": "trade_execution"
+        },
+        {
+          "contract_id": "synergy.trading.execution-result/v1",
+          "status": "IMPLEMENTED",
+          "authority": "trade_execution"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.trading.execution-plan/v1",
+          "status": "IMPLEMENTED",
+          "authority": "trade_execution"
+        },
+        {
+          "contract_id": "synergy.trading.risk-decision/v1",
+          "status": "IMPLEMENTED",
+          "authority": "trading_risk"
+        }
+      ],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_pay_system",
+          "contract_id": "synergy.trading.execution-result/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_trademux:src/synergy_trademux/synergy_contracts.py",
+            "Shtenco/synergy_pay_system:src/synergy_pay/synergy_contracts.py"
+          ]
+        }
+      ],
+      "runtime_in": [
+        {
+          "from": "Shtenco/synergy_riskguard",
+          "contract_id": "synergy.trading.risk-decision/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_riskguard:src/synergy_riskguard/synergy_contracts.py",
+            "Shtenco/synergy_trademux:src/synergy_trademux/synergy_contracts.py"
+          ]
+        }
+      ],
+      "interface_status": "ADAPTER_INTEGRATED"
+    }
+  ]
+}
