@@ -1,22 +1,37 @@
 # 🔗 SYNERGY Integration Status V1
 
-> Срез: 28 сентября 2026.
+> Срез: 29 сентября 2026.
 > Документ отражает **фактически материализованные typed boundaries**, а не только архитектурные намерения.
 
 ## Текущий итог
 
 ```text
 Repositories                         75
-Typed contract families             17
-Contracts without endpoint gaps     17
+Typed contract families             22
+Contracts without endpoint gaps     22
 Contracts with endpoint gaps         0
-Runtime edges ADAPTER_IMPLEMENTED   22
+Runtime edges ADAPTER_IMPLEMENTED   27
 Runtime edges E2E_TESTED             0
 Runtime edges DEPLOYED               0
-Repos ADAPTER_INTEGRATED            20
+Repos ADAPTER_INTEGRATED            25
+Repos ARCHITECTURAL_ONLY            50
 ```
 
-## Материализованные вертикали
+## Исторический M2 baseline
+
+M2 остаётся закрытым и замороженным рубежом:
+
+```text
+17/17 contract families endpoint-complete
+22 runtime edges
+20 integrated repositories
+```
+
+Расширение M4 не переписывает M2 задним числом. Для M3 исходные 22 edge отдельно заморожены в:
+
+`integration/m3_federation/m3_edge_scope_v1.json`
+
+## Материализованные вертикали M2/M3
 
 ### Trading / finance
 
@@ -57,9 +72,60 @@ Financial OS → AI Blockchain → MetaChain
 Financial OS ─────────────────→ Apps read-only accounting
 ```
 
+## M3 — edge-complete promotion gate
+
+M3 harness усилен до фактического producer→consumer evidence.
+
+```text
+20 pinned repositories
+→ 6 executable verticals
+→ 22 exact edge witnesses
+→ evidence v2
+→ frozen-scope verifier
+```
+
+Trading path теперь передаёт один runtime flow через MIDAS → QuantLab → RiskGuard → TradeMux → Pay → Financial OS → AI Blockchain. Для Financial OS → AI Blockchain добавлен динамический Rust consumer фактического SHA-256 accounting payload.
+
+M3 всё ещё **не повышен до E2E_TESTED**, потому что наблюдаемого успешного pinned run пока нет.
+
+## M4 — Wave 1 Market Advisory
+
+В federation runtime добавлены пять ранее архитектурных репозиториев:
+
+```text
+MarketVision ───────────────┐
+Adaptive Engine ───────────┤
+Market Graph ──────────────┤
+Market Maker ──────────────┤→ MIDAS advisory inputs
+AI Investment Committee ───┘
+```
+
+Контракты:
+
+```text
+synergy.trading.market-features/v1
+synergy.trading.market-regime/v1
+synergy.trading.fair-value/v1
+synergy.trading.liquidity-quote/v1
+synergy.trading.investment-thesis/v1
+```
+
+Все пять producer и consumer endpoints реализованы. MIDAS сохраняет эти входы как advisory-only: `authorization=false`; risk veto Investment Committee не может превратиться в BUY/SELL.
+
+Создан отдельный pinned gate:
+
+```text
+integration/m4_market_advisory/
+.github/workflows/m4-market-advisory-e2e.yml
+```
+
+До фактического успешного запуска новые edge остаются `ADAPTER_IMPLEMENTED`, а не `E2E_TESTED`.
+
 ## Enforcement highlights
 
 - NEXUS proposals are advisory, never direct monetary authorization;
+- M4 market/perception/committee inputs are advisory-only;
+- Investment Committee veto cannot smuggle an executable action into MIDAS;
 - rejected validation / risk veto cannot become execution;
 - fill != settlement; unreconciled settlement cannot become accounting;
 - ProjectProposal cannot self-authorize funding;
@@ -72,28 +138,9 @@ Financial OS ─────────────────→ Apps read-on
 - MetaChain consumes finalized commitment once and rejects replay;
 - Apps remain read-only projections.
 
-## M2
+## Почему E2E_TESTED всё ещё 0
 
-**M2 Contract Endpoint Closure: COMPLETE.**
-
-`registry/INTEGRATION_GAPS.json` reports all 17 contract families with zero missing producer/consumer endpoints.
-
-## M3
-
-Created:
-
-```text
-integration/trading_truth_path/
-integration/m3_federation/
-.github/workflows/trading-truth-path-e2e.yml
-.github/workflows/m3-federation-e2e.yml
-```
-
-M3 harness includes real cross-repository payload transfer for Science, Engineering, Real Economy, Runtime/Network and Trust/UI. Rust fixtures are used for blockchain trust/transport boundaries so downstream consumers do not receive hand-written substitute payloads.
-
-## Why E2E_TESTED is still 0
-
-The available GitHub connector in this session does not expose workflow-dispatch. Earlier GitHub Actions runs on this private repository were created but terminated without executing job steps, with unavailable job logs. Therefore no runtime edge is promoted to `E2E_TESTED` without an observed successful pinned federation run.
+Доступный GitHub connector не предоставляет workflow-dispatch. Ранее GitHub Actions runs на private governance repo завершались до исполнения job steps, а usable job logs отсутствовали. Поэтому наличие harness, tests, workflow и adapters не считается runtime evidence.
 
 ## Promotion rule
 
@@ -106,4 +153,12 @@ CONTRACT_DEFINED
 → DEPLOYED
 ```
 
-Current frontier: **M3 — execute pinned multi-repository harnesses and persist evidence bundles.**
+Current frontier:
+
+```text
+M3: получить наблюдаемый PASS frozen 22-edge federation gate
++
+M4 Wave 1: получить наблюдаемый PASS 5-edge market advisory gate
++
+M4 Wave 2: продолжить уменьшать ARCHITECTURAL_ONLY = 50
+```
