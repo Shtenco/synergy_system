@@ -163,3 +163,19 @@ message TrustCommitment {
   optional string tx_id = 9;
   optional string authorization_profile = 10;
 }
+
+
+message FundingAuthorization {
+  EventMeta meta = 1;
+  string project_event_id = 2;
+  string authorization_id = 3;
+  string decision = 4;
+  string max_amount_decimal = 5;
+  string currency = 6;
+  repeated string authorized_rails = 7;
+  google.protobuf.Timestamp expires_at = 8;
+  repeated string conditions = 9;
+  repeated string approver_refs = 10;
+  optional string policy_version = 11;
+  repeated string underwriting_evidence_ids = 12;
+}
