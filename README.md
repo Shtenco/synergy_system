@@ -185,7 +185,7 @@ They are consumers/presentation surfaces, not accounting authorities.
 
 ## L0 — Host / kernel / hardware isolation
 
-**Owner:** `Shtenco/turbo_linux`
+**Owner:** `Shtenco/synergy_turbo_linux`
 
 Target responsibilities:
 
@@ -202,7 +202,7 @@ Target responsibilities:
 
 ## L1 — P2P network and content transport
 
-**Canonical target repo:** `Shtenco/synergynet`
+**Canonical target repo:** `Shtenco/synergy_net`
 
 SynergyNet is the planned P2P overlay in which a SYNERGY node may act as:
 
