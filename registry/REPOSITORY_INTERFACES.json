@@ -299,12 +299,32 @@
       "domain": "BLOCKCHAIN_MONETARY",
       "role": "Графовый Economic OS / денежная топология и исследование внешне-обеспеченных контуров эмиссии.",
       "federation_parent": "Shtenco/synergy_ai_blockchain",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "monetary_simulation"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.economy.monetary-simulation/v1",
+          "status": "IMPLEMENTED",
+          "authority": "monetary_simulation"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_financial_os",
+          "contract_id": "synergy.economy.monetary-simulation/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_graph_print_money:src/synergy_graph/synergy_contracts.py",
+            "Shtenco/synergy_graph_print_money:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_financial_os:contracts/research_inputs_v1.py",
+            "Shtenco/synergy_financial_os:tests/test_monetary_simulation_contract.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_metachain",
@@ -483,6 +503,11 @@
           "contract_id": "synergy.economy.scenario-evidence/v1",
           "status": "IMPLEMENTED",
           "authority": "financial_scenario_research"
+        },
+        {
+          "contract_id": "synergy.economy.monetary-simulation/v1",
+          "status": "IMPLEMENTED",
+          "authority": "monetary_simulation"
         }
       ],
       "runtime_out": [
@@ -536,6 +561,17 @@
             "Shtenco/synergy_ai_financial_system:tests/test_synergy_contracts.py",
             "Shtenco/synergy_financial_os:contracts/research_inputs_v1.py",
             "Shtenco/synergy_financial_os:tests/test_research_inputs_contract.py"
+          ]
+        },
+        {
+          "from": "Shtenco/synergy_graph_print_money",
+          "contract_id": "synergy.economy.monetary-simulation/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_graph_print_money:src/synergy_graph/synergy_contracts.py",
+            "Shtenco/synergy_graph_print_money:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_financial_os:contracts/research_inputs_v1.py",
+            "Shtenco/synergy_financial_os:tests/test_monetary_simulation_contract.py"
           ]
         }
       ],
@@ -702,12 +738,32 @@
       "domain": "INFRA_NETWORK_SECURITY",
       "role": "Экспериментальный аппаратно-описательный слой XPU/EML и конфигурация вычислительной платформы.",
       "federation_parent": "Shtenco/synergy_meta_os",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "hardware_architecture_model"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.runtime.hardware-model/v1",
+          "status": "IMPLEMENTED",
+          "authority": "hardware_architecture_model"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_meta_os",
+          "contract_id": "synergy.runtime.hardware-model/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_motherboard_xpu_xml:calculations/synergy_contracts.py",
+            "Shtenco/synergy_motherboard_xpu_xml:calculations/test_synergy_contracts.py",
+            "Shtenco/synergy_meta_os:runtime/hardware_model_contracts.py",
+            "Shtenco/synergy_meta_os:tests/test_hardware_model_contract.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_net",
@@ -932,6 +988,11 @@
           "contract_id": "synergy.agent.economy-simulation/v1",
           "status": "IMPLEMENTED",
           "authority": "agent_economy_simulation"
+        },
+        {
+          "contract_id": "synergy.ai.benchmark-suite/v1",
+          "status": "IMPLEMENTED",
+          "authority": "reasoning_benchmark_generation"
         }
       ],
       "runtime_out": [
@@ -976,6 +1037,17 @@
             "Shtenco/synergy_agi_nexus:contracts/agent_economy_context_v1.py",
             "Shtenco/synergy_agi_nexus:tests/test_agent_economy_context_contract.py"
           ]
+        },
+        {
+          "from": "Shtenco/synergy_agi_olga",
+          "contract_id": "synergy.ai.benchmark-suite/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_agi_olga:benchmarks/synergy_contracts.py",
+            "Shtenco/synergy_agi_olga:benchmarks/test_synergy_contracts.py",
+            "Shtenco/synergy_agi_nexus:contracts/benchmark_suite_v1.py",
+            "Shtenco/synergy_agi_nexus:tests/test_benchmark_suite_contract.py"
+          ]
         }
       ],
       "interface_status": "ADAPTER_INTEGRATED"
@@ -985,12 +1057,32 @@
       "domain": "INTELLIGENCE_AGENTS",
       "role": "Историческая линия OLGA/AGI и источник части поколений NEXUS.",
       "federation_parent": "Shtenco/synergy_agi_nexus",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "reasoning_benchmark_generation"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.ai.benchmark-suite/v1",
+          "status": "IMPLEMENTED",
+          "authority": "reasoning_benchmark_generation"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_agi_nexus",
+          "contract_id": "synergy.ai.benchmark-suite/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_agi_olga:benchmarks/synergy_contracts.py",
+            "Shtenco/synergy_agi_olga:benchmarks/test_synergy_contracts.py",
+            "Shtenco/synergy_agi_nexus:contracts/benchmark_suite_v1.py",
+            "Shtenco/synergy_agi_nexus:tests/test_benchmark_suite_contract.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_ai_coder",
@@ -1126,6 +1218,16 @@
           "contract_id": "synergy.science.model-consistency/v1",
           "status": "IMPLEMENTED",
           "authority": "scientific_model_consistency"
+        },
+        {
+          "contract_id": "synergy.science.quantum-reference-control/v1",
+          "status": "IMPLEMENTED",
+          "authority": "quantum_reference_research"
+        },
+        {
+          "contract_id": "synergy.science.provenance-graph/v1",
+          "status": "IMPLEMENTED",
+          "authority": "source_provenance_graph"
         }
       ],
       "runtime_out": [
@@ -1172,6 +1274,28 @@
             "Shtenco/synergy_cold_nuclear:models/test_synergy_contracts.py",
             "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
             "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave3_science_inputs.py"
+          ]
+        },
+        {
+          "from": "Shtenco/binary_quantum_theory",
+          "contract_id": "synergy.science.quantum-reference-control/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/binary_quantum_theory:scripts/synergy_contracts.py",
+            "Shtenco/binary_quantum_theory:scripts/test_synergy_contracts.py",
+            "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
+            "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
+          ]
+        },
+        {
+          "from": "Shtenco/epstein_network",
+          "contract_id": "synergy.science.provenance-graph/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/epstein_network:src/epstein_network/synergy_contracts.py",
+            "Shtenco/epstein_network:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
+            "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
           ]
         }
       ],
@@ -1289,6 +1413,11 @@
           "contract_id": "synergy.archive.benchmark-evidence/v1",
           "status": "IMPLEMENTED",
           "authority": "compression_benchmark"
+        },
+        {
+          "contract_id": "synergy.runtime.hardware-model/v1",
+          "status": "IMPLEMENTED",
+          "authority": "hardware_architecture_model"
         }
       ],
       "runtime_out": [
@@ -1344,6 +1473,17 @@
             "Shtenco/synergy_qr_compress:tests/test_synergy_contracts.py",
             "Shtenco/synergy_meta_os:runtime/archive_contracts.py",
             "Shtenco/synergy_meta_os:tests/test_archive_benchmark_contract.py"
+          ]
+        },
+        {
+          "from": "Shtenco/synergy_motherboard_xpu_xml",
+          "contract_id": "synergy.runtime.hardware-model/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_motherboard_xpu_xml:calculations/synergy_contracts.py",
+            "Shtenco/synergy_motherboard_xpu_xml:calculations/test_synergy_contracts.py",
+            "Shtenco/synergy_meta_os:runtime/hardware_model_contracts.py",
+            "Shtenco/synergy_meta_os:tests/test_hardware_model_contract.py"
           ]
         }
       ],
@@ -1414,24 +1554,64 @@
       "domain": "SCIENCE_RESEARCH",
       "role": "Теоретико-физическая исследовательская ветка Binary Quantum Gravity.",
       "federation_parent": "Shtenco/synergy_megaproject",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "quantum_reference_research"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.science.quantum-reference-control/v1",
+          "status": "IMPLEMENTED",
+          "authority": "quantum_reference_research"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_nexus_science_agent",
+          "contract_id": "synergy.science.quantum-reference-control/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/binary_quantum_theory:scripts/synergy_contracts.py",
+            "Shtenco/binary_quantum_theory:scripts/test_synergy_contracts.py",
+            "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
+            "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/epstein_network",
       "domain": "SCIENCE_RESEARCH",
       "role": "Отдельный исследовательский knowledge-graph/дистиллированный граф источников; не runtime-компонент финансовой системы.",
       "federation_parent": "Shtenco/synergy_megaproject",
-      "authorities_owned": [],
-      "produces": [],
+      "authorities_owned": [
+        "source_provenance_graph"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.science.provenance-graph/v1",
+          "status": "IMPLEMENTED",
+          "authority": "source_provenance_graph"
+        }
+      ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_nexus_science_agent",
+          "contract_id": "synergy.science.provenance-graph/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/epstein_network:src/epstein_network/synergy_contracts.py",
+            "Shtenco/epstein_network:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
+            "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_cold_nuclear",
