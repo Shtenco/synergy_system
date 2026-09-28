@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Economy Budget Proof V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dataset_id",
+    "snapshot_id",
+    "as_of",
+    "record_merkle_root",
+    "record_count",
+    "proof_bundle_schema",
+    "canonical_accounting_authority"
+  ],
+  "properties": {
+    "dataset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "as_of": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_merkle_root": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "record_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "proof_bundle_schema": {
+      "const": "sinergy.budget.record-proof-bundle/v1"
+    },
+    "canonical_accounting_authority": {
+      "const": false
+    }
+  }
+}
