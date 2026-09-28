@@ -2,10 +2,10 @@
   "schema": "synergy.integration-gaps/v1",
   "as_of": "2026-09-29",
   "totals": {
-    "contracts": 22,
-    "no_missing_endpoints": 22,
+    "contracts": 27,
+    "no_missing_endpoints": 27,
     "contracts_with_gaps": 0,
-    "runtime_adapter_edges": 27,
+    "runtime_adapter_edges": 32,
     "e2e_tested_edges": 0
   },
   "contracts": [
@@ -234,6 +234,56 @@
       ],
       "missing_endpoints": [],
       "next_gate": "M4 Wave-1 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.trading.institutional-assessment/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_midas_institutional",
+      "consumers": [
+        "Shtenco/synergy_midas_ai"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-2 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.trading.crypto-anomaly-score/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_crypto_pump",
+      "consumers": [
+        "Shtenco/synergy_midas_ai"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-2 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.economy.bridge-health/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_2chain_qe",
+      "consumers": [
+        "Shtenco/synergy_financial_os"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-2 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.economy.budget-proof/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_blochain_budget",
+      "consumers": [
+        "Shtenco/synergy_ai_blockchain"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-2 cross-repository E2E harness and evidence bundle"
+    },
+    {
+      "contract_id": "synergy.economy.scenario-evidence/v1",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "producer": "Shtenco/synergy_ai_financial_system",
+      "consumers": [
+        "Shtenco/synergy_financial_os"
+      ],
+      "missing_endpoints": [],
+      "next_gate": "M4 Wave-2 cross-repository E2E harness and evidence bundle"
     }
   ]
 }
