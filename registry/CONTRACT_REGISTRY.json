@@ -745,6 +745,126 @@
         "Shtenco/synergy_meta_os:runtime/archive_contracts.py",
         "Shtenco/synergy_meta_os:tests/test_archive_benchmark_contract.py"
       ]
+    },
+    {
+      "contract_id": "synergy.runtime.hardware-model/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_motherboard_xpu_xml",
+      "consumers": [
+        "Shtenco/synergy_meta_os"
+      ],
+      "authority": "hardware_architecture_model",
+      "schema_path": "contracts/schemas/runtime-hardware-model-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_meta_os": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_motherboard_xpu_xml:calculations/synergy_contracts.py",
+        "Shtenco/synergy_motherboard_xpu_xml:calculations/test_synergy_contracts.py",
+        "Shtenco/synergy_meta_os:runtime/hardware_model_contracts.py",
+        "Shtenco/synergy_meta_os:tests/test_hardware_model_contract.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.science.quantum-reference-control/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/binary_quantum_theory",
+      "consumers": [
+        "Shtenco/synergy_nexus_science_agent"
+      ],
+      "authority": "quantum_reference_research",
+      "schema_path": "contracts/schemas/science-quantum-reference-control-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_nexus_science_agent": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/binary_quantum_theory:scripts/synergy_contracts.py",
+        "Shtenco/binary_quantum_theory:scripts/test_synergy_contracts.py",
+        "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
+        "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.economy.monetary-simulation/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_graph_print_money",
+      "consumers": [
+        "Shtenco/synergy_financial_os"
+      ],
+      "authority": "monetary_simulation",
+      "schema_path": "contracts/schemas/economy-monetary-simulation-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_financial_os": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_graph_print_money:src/synergy_graph/synergy_contracts.py",
+        "Shtenco/synergy_graph_print_money:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_financial_os:contracts/research_inputs_v1.py",
+        "Shtenco/synergy_financial_os:tests/test_monetary_simulation_contract.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.science.provenance-graph/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/epstein_network",
+      "consumers": [
+        "Shtenco/synergy_nexus_science_agent"
+      ],
+      "authority": "source_provenance_graph",
+      "schema_path": "contracts/schemas/science-provenance-graph-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_nexus_science_agent": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/epstein_network:src/epstein_network/synergy_contracts.py",
+        "Shtenco/epstein_network:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
+        "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.ai.benchmark-suite/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_agi_olga",
+      "consumers": [
+        "Shtenco/synergy_agi_nexus"
+      ],
+      "authority": "reasoning_benchmark_generation",
+      "schema_path": "contracts/schemas/ai-benchmark-suite-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_agi_nexus": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_agi_olga:benchmarks/synergy_contracts.py",
+        "Shtenco/synergy_agi_olga:benchmarks/test_synergy_contracts.py",
+        "Shtenco/synergy_agi_nexus:contracts/benchmark_suite_v1.py",
+        "Shtenco/synergy_agi_nexus:tests/test_benchmark_suite_contract.py"
+      ]
     }
   ],
   "integration_status_vocabulary": [
