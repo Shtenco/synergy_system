@@ -1,0 +1,43 @@
+{
+  "schema": "synergy.integration-lock/v1",
+  "generated_at": "2026-09-28",
+  "vertical": "trading-truth-path",
+  "repositories": [
+    {
+      "repo": "Shtenco/synergy_midas_ai",
+      "commit": "e1f0ea725436e493e7c36919edacaec22b609170",
+      "role": "portfolio-decision producer"
+    },
+    {
+      "repo": "Shtenco/synergy_quantlab",
+      "commit": "ff28d92516478b5c12819ad35fdf15383982ba80",
+      "role": "validation consumer/producer"
+    },
+    {
+      "repo": "Shtenco/synergy_riskguard",
+      "commit": "ca1174f506701d2ba04d3d9299aec54011c6d4d6",
+      "role": "risk consumer/producer"
+    },
+    {
+      "repo": "Shtenco/synergy_trademux",
+      "commit": "a3c1fa7bd00786b042e5dd29d7aeb06977d05b3a",
+      "role": "execution consumer/producer"
+    },
+    {
+      "repo": "Shtenco/synergy_pay_system",
+      "commit": "d19deb2e4f3a5c2c599616cc36d9a49b0ab1b818",
+      "role": "settlement consumer/producer"
+    },
+    {
+      "repo": "Shtenco/synergy_financial_os",
+      "commit": "a9404a0b316843b91dfff07f70fda364852d7a40",
+      "role": "accounting consumer/producer"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_blockchain",
+      "commit": "22d06574346c5fd1a5c2038da77864a8d34cd2dd",
+      "role": "trust commitment consumer"
+    }
+  ],
+  "note": "Pinned provenance checkpoint. Later adapter commits may supersede these pins; update lock only after an integration run proves the new set."
+}
