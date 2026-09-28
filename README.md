@@ -7,8 +7,12 @@
 > - [⚙️ Federation V2](config/repository_federation_v2.yaml)
 > - [🛡️ Authority Boundaries](docs/AUTHORITY_BOUNDARIES.md)
 > - [📘 README Standard](docs/README_STANDARD.md)
+- [✅ README Deep Pass 75/75](docs/README_DEEPENING_PLAN_75.md)
+- [🔐 Security Hygiene Findings](docs/SECURITY_HYGIENE_FINDINGS.md)
 >
 > `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
+>
+> **Documentation deep pass:** **75/75 COMPLETE** — каждый репозиторий прошёл отдельный предметный аудит README/main/docs/tests/evidence по фактически доступным артефактам.
 
 
 **Architecture & Governance Root for the complete SYNERGY ecosystem**
