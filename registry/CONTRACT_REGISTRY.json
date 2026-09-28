@@ -161,19 +161,21 @@
       ],
       "authority": "nexus_core",
       "schema_path": "contracts/schemas/ai-proposal-v1.schema.json",
-      "lifecycle_status": "PRODUCER_IMPLEMENTED",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED_PARTIAL",
       "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
       "evidence_required": true,
       "producer_status": "IMPLEMENTED",
       "consumer_status": {
-        "Shtenco/synergy_midas_ai": "DEFINED",
+        "Shtenco/synergy_midas_ai": "IMPLEMENTED",
         "Shtenco/synergy_nexus_science_agent": "DEFINED",
         "Shtenco/synergy_eurasian": "DEFINED"
       },
       "scope": "CROSS_REPOSITORY",
       "implementation_evidence": [
         "Shtenco/synergy_agi_nexus:contracts/ai_proposal_v1.py",
-        "Shtenco/synergy_agi_nexus:tests/test_ai_proposal_contract.py"
+        "Shtenco/synergy_agi_nexus:tests/test_ai_proposal_contract.py",
+        "Shtenco/synergy_midas_ai:contracts/nexus_advisory_v1.py",
+        "Shtenco/synergy_midas_ai:tests/test_nexus_advisory_contract.py"
       ]
     },
     {
