@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Trading Relative Value Signal V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id",
+    "symbol_x",
+    "symbol_y",
+    "alpha",
+    "beta",
+    "spread_mean",
+    "spread_std",
+    "zscore",
+    "authorization",
+    "requires_domain_validation"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "symbol_x": {
+      "type": "string",
+      "minLength": 1
+    },
+    "symbol_y": {
+      "type": "string",
+      "minLength": 1
+    },
+    "alpha": {
+      "type": "number"
+    },
+    "beta": {
+      "type": "number"
+    },
+    "spread_mean": {
+      "type": "number"
+    },
+    "spread_std": {
+      "type": "number",
+      "minimum": 0
+    },
+    "zscore": {
+      "type": "number"
+    },
+    "authorization": {
+      "const": false
+    },
+    "requires_domain_validation": {
+      "const": true
+    }
+  }
+}
