@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Trading Crypto Anomaly Score V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id",
+    "timestamp",
+    "symbol",
+    "pump_probability",
+    "rank",
+    "model_ref",
+    "feature_snapshot_sha256",
+    "authorization",
+    "requires_domain_validation"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "symbol": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pump_probability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "rank": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "model_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "feature_snapshot_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "authorization": {
+      "const": false
+    },
+    "requires_domain_validation": {
+      "const": true
+    }
+  }
+}
