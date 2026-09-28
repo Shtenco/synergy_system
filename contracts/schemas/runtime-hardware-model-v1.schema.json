@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Runtime Hardware Model V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "model_id",
+    "model_status",
+    "config_sha256",
+    "eml_primitives_per_s",
+    "hbm_bytes_per_s",
+    "active_silicon_mm2",
+    "energy_sweep",
+    "measured_silicon",
+    "deployment_authority"
+  ],
+  "properties": {
+    "model_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_status": {
+      "const": "MODEL_NOT_SILICON"
+    },
+    "config_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "eml_primitives_per_s": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "hbm_bytes_per_s": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "active_silicon_mm2": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "energy_sweep": {
+      "type": "array"
+    },
+    "measured_silicon": {
+      "const": false
+    },
+    "deployment_authority": {
+      "const": false
+    }
+  }
+}
