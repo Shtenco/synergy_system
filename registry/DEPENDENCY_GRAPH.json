@@ -1445,7 +1445,7 @@
       "from": "Shtenco/synergy_eurasian",
       "to": "Shtenco/synergy_project",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.economy.project-proposal/v1",
       "evidence": [
@@ -1456,7 +1456,7 @@
       "from": "Shtenco/synergy_project",
       "to": "Shtenco/synergy_pay_system",
       "type": "CONTRACT_FLOW",
-      "status": "CONTRACT_DEFINED",
+      "status": "ADAPTER_IMPLEMENTED",
       "authority_transfer": false,
       "contract_id": "synergy.economy.funding-authorization/v1",
       "evidence": [
@@ -1473,6 +1473,30 @@
       "evidence": [
         "Shtenco/synergy_agi_nexus:contracts/ai_proposal_v1.py",
         "Shtenco/synergy_midas_ai:contracts/nexus_advisory_v1.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_eurasian",
+      "to": "Shtenco/synergy_project",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.economy.project-proposal/v1",
+      "evidence": [
+        "Shtenco/synergy_eurasian:interfaces/synergy_contracts.py",
+        "Shtenco/synergy_project:contracts/capital_governance_v1.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_project",
+      "to": "Shtenco/synergy_pay_system",
+      "type": "RUNTIME_DEPENDENCY",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.economy.funding-authorization/v1",
+      "evidence": [
+        "Shtenco/synergy_project:contracts/capital_governance_v1.py",
+        "Shtenco/synergy_pay_system:src/synergy_pay/synergy_contracts.py"
       ]
     }
   ],
@@ -1494,7 +1518,7 @@
   "integration_summary": {
     "repositories": 75,
     "typed_contracts": 17,
-    "adapter_implemented_runtime_edges": 7,
+    "adapter_implemented_runtime_edges": 9,
     "e2e_tested_runtime_edges": 0,
     "deployed_runtime_edges": 0
   }
