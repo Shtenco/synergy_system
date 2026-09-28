@@ -1,0 +1,25 @@
+name: SYNERGY Federation Maturity Gate
+
+on:
+  push:
+    paths:
+      - "registry/**"
+      - "integration/federation_maturity_gate.py"
+  pull_request:
+    paths:
+      - "registry/**"
+      - "integration/federation_maturity_gate.py"
+  workflow_dispatch:
+
+jobs:
+  maturity-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify federation registries
+        run: python integration/federation_maturity_gate.py
+      - name: Verify security blockers
+        run: python integration/security_gate.py
