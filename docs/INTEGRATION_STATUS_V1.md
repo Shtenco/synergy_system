@@ -1,53 +1,104 @@
 # 🔗 SYNERGY Integration Status V1
 
 > Срез: 28 сентября 2026.
-> Этот документ отвечает только на вопрос **что реально связано кодом**, а не что нарисовано в архитектуре.
+> Документ отражает **фактически материализованные typed boundaries**, а не только архитектурные намерения.
 
 ## Текущий итог
 
 ```text
-Repositories                        75
-Typed contract families            16
-Runtime edges ADAPTER_IMPLEMENTED   6
-Runtime edges E2E_TESTED            0
-Runtime edges DEPLOYED              0
+Repositories                         75
+Typed contract families             17
+Contracts without endpoint gaps     17
+Contracts with endpoint gaps         0
+Runtime edges ADAPTER_IMPLEMENTED   22
+Runtime edges E2E_TESTED             0
+Runtime edges DEPLOYED               0
+Repos ADAPTER_INTEGRATED            20
 ```
 
-## Первая материализованная вертикаль
+## Материализованные вертикали
 
-```mermaid
-flowchart LR
-    M[📈 MIDAS] -->|portfolio-decision/v1| Q[🧪 QuantLab]
-    Q -->|validation-decision/v1| R[🛡️ RiskGuard]
-    R -->|risk-decision/v1| X[🔀 TradeMux]
-    X -->|execution-result/v1| P[💳 Pay]
-    P -->|settlement-evidence/v1| F[💰 Financial OS]
-    F -->|accounting-recognition/v1| B[⛓️ AI Blockchain]
-```
-
-### Что уже реализовано
-
-| Edge | Status | Реальная enforcement-логика |
-|---|---|---|
-| MIDAS → QuantLab | `ADAPTER_IMPLEMENTED` | QuantLab валидирует bounded portfolio candidate |
-| QuantLab → RiskGuard | `ADAPTER_IMPLEMENTED` | только `PAPER/CANARY` может стать order intent |
-| RiskGuard → TradeMux | `ADAPTER_IMPLEMENTED` | `REJECT/KILL_SWITCH` fail closed; `RESIZE` ограничивает notional |
-| TradeMux → Pay | `ADAPTER_IMPLEMENTED` | fill превращается только в expected internal settlement evidence |
-| Pay → Financial OS | `ADAPTER_IMPLEMENTED` | только reconciled `SETTLED` допускается к recognition |
-| Financial OS → AI Blockchain | `ADAPTER_IMPLEMENTED` | blockchain commits authoritative bytes; бухгалтерский смысл не переопределяется |
-
-## Что намеренно НЕ считается связанным
-
-- `execution-plan/v1` — внутренний контракт TradeMux, не межрепозиторный edge;
-- TradeMux → Financial OS — запрещённый shortcut; accounting идёт только через Pay settlement evidence;
-- AI recommendation → execution — прямого edge нет;
-- blockchain commitment → accounting — направление authority обратное не допускается.
-
-## Статусы интеграции
+### Trading / finance
 
 ```text
-DOCUMENTED
-→ CONTRACT_DEFINED
+NEXUS → MIDAS → QuantLab → RiskGuard → TradeMux → Pay → Financial OS → AI Blockchain
+```
+
+### Real economy
+
+```text
+NEXUS advisory → Eurasian → Capital Governance → Pay → Financial OS → AI Blockchain
+```
+
+### Science
+
+```text
+NEXUS → Science Agent → Megaproject curated review queue
+```
+
+### Engineering
+
+```text
+AI Language → AI Coder → Meta-OS
+```
+
+### Runtime / network
+
+```text
+AI Compress → SynergyNet → Meta-OS → TURBO Linux
+                    └────→ AI Blockchain transport consumer
+```
+
+### Trust / UI
+
+```text
+Financial OS → AI Blockchain → MetaChain
+                         └────→ Apps
+Financial OS ─────────────────→ Apps read-only accounting
+```
+
+## Enforcement highlights
+
+- NEXUS proposals are advisory, never direct monetary authorization;
+- rejected validation / risk veto cannot become execution;
+- fill != settlement; unreconciled settlement cannot become accounting;
+- ProjectProposal cannot self-authorize funding;
+- Science hypotheses/simulations cannot auto-create canonical graph edges;
+- AI Coder `APPROVED` requires all checks PASS;
+- Meta-OS does not infer deployment permission from generated code alone;
+- TURBO dangerous capabilities require attestation;
+- transport evidence requires authenticated delivery and content hash;
+- blockchain trust commitment does not reinterpret accounting;
+- MetaChain consumes finalized commitment once and rejects replay;
+- Apps remain read-only projections.
+
+## M2
+
+**M2 Contract Endpoint Closure: COMPLETE.**
+
+`registry/INTEGRATION_GAPS.json` reports all 17 contract families with zero missing producer/consumer endpoints.
+
+## M3
+
+Created:
+
+```text
+integration/trading_truth_path/
+integration/m3_federation/
+.github/workflows/trading-truth-path-e2e.yml
+.github/workflows/m3-federation-e2e.yml
+```
+
+M3 harness includes real cross-repository payload transfer for Science, Engineering, Real Economy, Runtime/Network and Trust/UI. Rust fixtures are used for blockchain trust/transport boundaries so downstream consumers do not receive hand-written substitute payloads.
+
+## Why E2E_TESTED is still 0
+
+The available GitHub connector in this session does not expose workflow-dispatch. Earlier GitHub Actions runs on this private repository were created but terminated without executing job steps, with unavailable job logs. Therefore no runtime edge is promoted to `E2E_TESTED` without an observed successful pinned federation run.
+
+## Promotion rule
+
+```text
+CONTRACT_DEFINED
 → PRODUCER_IMPLEMENTED
 → CONSUMER_IMPLEMENTED
 → ADAPTER_IMPLEMENTED
@@ -55,36 +106,4 @@ DOCUMENTED
 → DEPLOYED
 ```
 
-`ADAPTER_IMPLEMENTED` означает: обе стороны имеют executable adapter/enforcement code.
-Это **не** означает, что семь независимых репозиториев уже были запущены одним end-to-end тестом.
-
-## Cross-repo promotion gate
-
-Создан:
-
-```text
-integration/trading_truth_path/
-  integration_lock_v1.json
-  run.py
-  README.md
-```
-
-и ручной workflow `.github/workflows/trading-truth-path-e2e.yml`.
-
-После успешного запуска pinned cross-repo harness соответствующие 6 runtime edges можно повысить до `E2E_TESTED`.
-
-## CI status
-
-Первый automatic `Validate SYNERGY Typed Contracts` run был создан GitHub Actions, но job завершился без выполненных steps (`steps: []`), а download job log вернул `BlobNotFound`. Поэтому этот run **не помечен GREEN** и не используется как доказательство прохождения tests.
-
-Старый federation-validator ранее также завершился без steps. До успешного фактического runner execution статус CI остаётся `UNRESOLVED_RUNNER_EXECUTION`.
-
-## Следующие вертикали
-
-1. `NEXUS → domain proposal → deterministic validator`;
-2. `Science Agent → Megaproject evidence graph`;
-3. `Eurasian → governance → Pay → Financial OS`;
-4. `AI Language → AI Coder → Meta-OS deployment evidence`;
-5. `AI Compress → SynergyNet → Meta-OS`;
-6. `Meta-OS → TURBO Linux capability manifest`;
-7. `Financial OS → Blockchain → MetaChain → Apps` read-only trust path.
+Current frontier: **M3 — execute pinned multi-repository harnesses and persist evidence bundles.**
