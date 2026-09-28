@@ -1,0 +1,433 @@
+schema: synergy.repository-federation/v2
+as_of: 2026-09-28
+repository_count: 75
+architecture_root: Shtenco/synergy_system
+master_dossier: Shtenco/synergy_project
+civilization_graph: Shtenco/synergy_megaproject
+runtime_orchestrator: Shtenco/synergy_meta_os
+
+policy:
+  federation_not_monorepo: true
+  preserve_legacy_snapshots: true
+  one_authority_per_fact: true
+  presentation_is_not_authority: true
+  ai_is_not_execution_authority: true
+  blockchain_is_not_accounting_authority: true
+  architecture_relation_is_not_runtime_dependency: true
+  green_requires_reproducible_evidence: true
+
+exclusive_authorities:
+  architecture_governance: Shtenco/synergy_system
+  master_dossier: Shtenco/synergy_project
+  civilization_graph: Shtenco/synergy_megaproject
+  runtime_orchestration: Shtenco/synergy_meta_os
+  host_kernel: Shtenco/synergy_turbo_linux
+  p2p_transport: Shtenco/synergy_net
+  nexus_core: Shtenco/synergy_agi_nexus
+  nexus_research_runtime: Shtenco/synergy_gllm_nexus
+  science_research_orchestration: Shtenco/synergy_nexus_science_agent
+  trading_intelligence: Shtenco/synergy_midas_ai
+  trading_validation: Shtenco/synergy_quantlab
+  trading_risk: Shtenco/synergy_riskguard
+  payment_execution_settlement: Shtenco/synergy_pay_system
+  canonical_accounting: Shtenco/synergy_financial_os
+  household_capital: Shtenco/synergy_matrix_sota
+  productive_economy: Shtenco/synergy_eurasian
+  blockchain_trust: Shtenco/synergy_ai_blockchain
+  cross_chain_trust: Shtenco/synergy_metachain
+  requirement_semantics: Shtenco/synergy_ai_language
+  engineering_change_evidence: Shtenco/synergy_ai_coder
+  apps_master: Shtenco/synergy_apps
+
+repositories:
+  - repo: Shtenco/shtenco.github.io
+    domain: APPS_INTERFACES
+    visibility: public
+    federation_parent: Shtenco/synergy_apps
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/shtencoauantai.github.io
+    domain: APPS_INTERFACES
+    visibility: public
+    federation_parent: Shtenco/synergy_apps
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/sinergy_app
+    domain: APPS_INTERFACES
+    visibility: private
+    federation_parent: Shtenco/synergy_apps
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/sinergy_super_app
+    domain: APPS_INTERFACES
+    visibility: private
+    federation_parent: Shtenco/synergy_apps
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_app
+    domain: APPS_INTERFACES
+    visibility: private
+    federation_parent: Shtenco/synergy_apps
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_app_family
+    domain: APPS_INTERFACES
+    visibility: private
+    federation_parent: Shtenco/synergy_apps
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_messenger
+    domain: APPS_INTERFACES
+    visibility: private
+    federation_parent: Shtenco/synergy_apps
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergychain.github.io
+    domain: APPS_INTERFACES
+    visibility: public
+    federation_parent: Shtenco/synergy_apps
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/print_money_synergychain
+    domain: BLOCKCHAIN_MONETARY
+    visibility: private
+    federation_parent: Shtenco/synergy_ai_blockchain
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_2chain_qe
+    domain: BLOCKCHAIN_MONETARY
+    visibility: private
+    federation_parent: Shtenco/synergy_ai_blockchain
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_ai_blockchain
+    domain: BLOCKCHAIN_MONETARY
+    visibility: private
+    federation_parent: Shtenco/synergy_ai_blockchain
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_blochain_budget
+    domain: BLOCKCHAIN_MONETARY
+    visibility: private
+    federation_parent: Shtenco/synergy_ai_blockchain
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_chain
+    domain: BLOCKCHAIN_MONETARY
+    visibility: private
+    federation_parent: Shtenco/synergy_ai_blockchain
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_chain_print_money
+    domain: BLOCKCHAIN_MONETARY
+    visibility: private
+    federation_parent: Shtenco/synergy_ai_blockchain
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_graph_print_money
+    domain: BLOCKCHAIN_MONETARY
+    visibility: private
+    federation_parent: Shtenco/synergy_ai_blockchain
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_metachain
+    domain: BLOCKCHAIN_MONETARY
+    visibility: private
+    federation_parent: Shtenco/synergy_ai_blockchain
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_qe
+    domain: BLOCKCHAIN_MONETARY
+    visibility: private
+    federation_parent: Shtenco/synergy_ai_blockchain
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_usds
+    domain: BLOCKCHAIN_MONETARY
+    visibility: private
+    federation_parent: Shtenco/synergy_ai_blockchain
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_ai_financial_system
+    domain: FINANCE_REAL_ECONOMY
+    visibility: private
+    federation_parent: Shtenco/synergy_financial_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_cashero
+    domain: FINANCE_REAL_ECONOMY
+    visibility: private
+    federation_parent: Shtenco/synergy_financial_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_eurasian
+    domain: FINANCE_REAL_ECONOMY
+    visibility: private
+    federation_parent: Shtenco/synergy_financial_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_financial_os
+    domain: FINANCE_REAL_ECONOMY
+    visibility: private
+    federation_parent: Shtenco/synergy_financial_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_matrix_sota
+    domain: FINANCE_REAL_ECONOMY
+    visibility: public
+    federation_parent: Shtenco/synergy_financial_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_pay_system
+    domain: FINANCE_REAL_ECONOMY
+    visibility: private
+    federation_parent: Shtenco/synergy_financial_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/dlp_solver
+    domain: INFRA_NETWORK_SECURITY
+    visibility: private
+    federation_parent: Shtenco/synergy_meta_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synegy_ai_compress
+    domain: INFRA_NETWORK_SECURITY
+    visibility: private
+    federation_parent: Shtenco/synergy_meta_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_gguf_compress
+    domain: INFRA_NETWORK_SECURITY
+    visibility: private
+    federation_parent: Shtenco/synergy_meta_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_motherboard_xpu_xml
+    domain: INFRA_NETWORK_SECURITY
+    visibility: private
+    federation_parent: Shtenco/synergy_meta_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_net
+    domain: INFRA_NETWORK_SECURITY
+    visibility: private
+    federation_parent: Shtenco/synergy_meta_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_post_quantum_radio
+    domain: INFRA_NETWORK_SECURITY
+    visibility: private
+    federation_parent: Shtenco/synergy_meta_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_qr_compress
+    domain: INFRA_NETWORK_SECURITY
+    visibility: private
+    federation_parent: Shtenco/synergy_meta_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_shhts
+    domain: INFRA_NETWORK_SECURITY
+    visibility: private
+    federation_parent: Shtenco/synergy_meta_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_shttps
+    domain: INFRA_NETWORK_SECURITY
+    visibility: private
+    federation_parent: Shtenco/synergy_meta_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_turbo_linux
+    domain: INFRA_NETWORK_SECURITY
+    visibility: private
+    federation_parent: Shtenco/synergy_meta_os
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_agentic_ai_economy
+    domain: INTELLIGENCE_AGENTS
+    visibility: private
+    federation_parent: Shtenco/synergy_agi_nexus
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_agi_autopilot
+    domain: INTELLIGENCE_AGENTS
+    visibility: private
+    federation_parent: Shtenco/synergy_agi_nexus
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_agi_nexus
+    domain: INTELLIGENCE_AGENTS
+    visibility: private
+    federation_parent: Shtenco/synergy_agi_nexus
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_agi_olga
+    domain: INTELLIGENCE_AGENTS
+    visibility: private
+    federation_parent: Shtenco/synergy_agi_nexus
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_ai_coder
+    domain: INTELLIGENCE_AGENTS
+    visibility: private
+    federation_parent: Shtenco/synergy_agi_nexus
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_ai_company
+    domain: INTELLIGENCE_AGENTS
+    visibility: private
+    federation_parent: Shtenco/synergy_agi_nexus
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_ai_language
+    domain: INTELLIGENCE_AGENTS
+    visibility: public
+    federation_parent: Shtenco/synergy_agi_nexus
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_gllm_nexus
+    domain: INTELLIGENCE_AGENTS
+    visibility: private
+    federation_parent: Shtenco/synergy_agi_nexus
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_nexus_science_agent
+    domain: INTELLIGENCE_AGENTS
+    visibility: private
+    federation_parent: Shtenco/synergy_agi_nexus
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_apps
+    domain: MASTER_GOVERNANCE
+    visibility: private
+    federation_parent: Shtenco/synergy_system
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_megaproject
+    domain: MASTER_GOVERNANCE
+    visibility: public
+    federation_parent: Shtenco/synergy_system
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_meta_os
+    domain: MASTER_GOVERNANCE
+    visibility: private
+    federation_parent: Shtenco/synergy_system
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_project
+    domain: MASTER_GOVERNANCE
+    visibility: private
+    federation_parent: Shtenco/synergy_system
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_system
+    domain: MASTER_GOVERNANCE
+    visibility: private
+    federation_parent: NONE
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/binary_quantum_theory
+    domain: SCIENCE_RESEARCH
+    visibility: public
+    federation_parent: Shtenco/synergy_megaproject
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/epstein_network
+    domain: SCIENCE_RESEARCH
+    visibility: private
+    federation_parent: Shtenco/synergy_megaproject
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_cold_nuclear
+    domain: SCIENCE_RESEARCH
+    visibility: public
+    federation_parent: Shtenco/synergy_megaproject
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/3D_bars_market_structure
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: public
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/computer_vision_trading_metatrader_5
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: public
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/cross_forex_arbitrage_trading_metatrader_5
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: public
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/global_liquidity_dataminer
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: public
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/midas_lite
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/multi_threaded_trading_robot_with_machine_learning_python
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: public
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/quantum-trading_metatrader5
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: public
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/swap_arbitrage_metatrader_5
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: public
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_adaptive_engine
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_agi_trader
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_ai_investment_committee
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_ai_trade_terminal
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_algotrading_graph_system
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_crypto_pump
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_market_graph
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_market_maker
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_marketvision
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_midas_ai
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_midas_ai_trading_system
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_midas_institutional
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_quantlab
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_relative_value
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_riskguard
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+  - repo: Shtenco/synergy_trademux
+    domain: TRADING_MARKET_INTELLIGENCE
+    visibility: private
+    federation_parent: Shtenco/synergy_midas_ai
+    relation_semantics: ARCHITECTURAL_UNLESS_PROVEN_RUNTIME
+
+status_vocabulary:
+  - GREEN
+  - CANDIDATE
+  - RND
+  - STUB
+  - LEGACY
+  - RED
+
+verification_vocabulary:
+  - DOCUMENTED
+  - IMPLEMENTED
+  - TESTS_PRESENT
+  - RUNNER_EXECUTED
+  - VERIFIED
+  - PRODUCTION_READY
