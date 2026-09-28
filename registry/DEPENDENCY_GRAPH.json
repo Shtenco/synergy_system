@@ -1852,6 +1852,66 @@
         "registry/CONTRACT_REGISTRY.json",
         "registry/REPOSITORY_INTERFACES.json"
       ]
+    },
+    {
+      "from": "Shtenco/synergy_motherboard_xpu_xml",
+      "to": "Shtenco/synergy_meta_os",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.runtime.hardware-model/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/binary_quantum_theory",
+      "to": "Shtenco/synergy_nexus_science_agent",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.science.quantum-reference-control/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_graph_print_money",
+      "to": "Shtenco/synergy_financial_os",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.economy.monetary-simulation/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/epstein_network",
+      "to": "Shtenco/synergy_nexus_science_agent",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.science.provenance-graph/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_agi_olga",
+      "to": "Shtenco/synergy_agi_nexus",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.ai.benchmark-suite/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
     }
   ],
   "semantics": {
