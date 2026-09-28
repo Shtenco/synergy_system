@@ -506,6 +506,125 @@
         "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
         "Shtenco/synergy_midas_ai:tests/test_m4_market_advisory_contract.py"
       ]
+    },
+    {
+      "contract_id": "synergy.trading.institutional-assessment/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_midas_institutional",
+      "consumers": [
+        "Shtenco/synergy_midas_ai"
+      ],
+      "authority": "institutional_research",
+      "schema_path": "contracts/schemas/trading-institutional-assessment-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_midas_ai": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_midas_institutional:src/synergy_midas/synergy_contracts.py",
+        "Shtenco/synergy_midas_institutional:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+        "Shtenco/synergy_midas_ai:tests/test_m4_wave2_advisory_contract.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.trading.crypto-anomaly-score/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_crypto_pump",
+      "consumers": [
+        "Shtenco/synergy_midas_ai"
+      ],
+      "authority": "crypto_market_anomaly",
+      "schema_path": "contracts/schemas/trading-crypto-anomaly-score-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_midas_ai": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_crypto_pump:src/crypto_pump/synergy_contracts.py",
+        "Shtenco/synergy_crypto_pump:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_midas_ai:contracts/m4_market_advisory_v1.py",
+        "Shtenco/synergy_midas_ai:tests/test_m4_wave2_advisory_contract.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.economy.bridge-health/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_2chain_qe",
+      "consumers": [
+        "Shtenco/synergy_financial_os"
+      ],
+      "authority": "bridge_solvency_telemetry",
+      "schema_path": "contracts/schemas/economy-bridge-health-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_financial_os": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_2chain_qe:federation/bridge_health_contract.py",
+        "Shtenco/synergy_2chain_qe:federation/test_bridge_health_contract.py",
+        "Shtenco/synergy_financial_os:contracts/research_inputs_v1.py",
+        "Shtenco/synergy_financial_os:tests/test_research_inputs_contract.py"
+      ]
+    },
+    {
+      "contract_id": "synergy.economy.budget-proof/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_blochain_budget",
+      "consumers": [
+        "Shtenco/synergy_ai_blockchain"
+      ],
+      "authority": "public_budget_provenance",
+      "schema_path": "contracts/schemas/economy-budget-proof-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_ai_blockchain": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_blochain_budget:src/synergy_budget/synergy_contracts.py",
+        "Shtenco/synergy_blochain_budget:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_ai_blockchain:src/federation_contracts.rs"
+      ]
+    },
+    {
+      "contract_id": "synergy.economy.scenario-evidence/v1",
+      "schema_version": 1,
+      "producer": "Shtenco/synergy_ai_financial_system",
+      "consumers": [
+        "Shtenco/synergy_financial_os"
+      ],
+      "authority": "financial_scenario_research",
+      "schema_path": "contracts/schemas/economy-scenario-evidence-v1.schema.json",
+      "lifecycle_status": "ADAPTER_IMPLEMENTED",
+      "compatibility": "backward-compatible additions only within v1; breaking changes require v2",
+      "evidence_required": true,
+      "producer_status": "IMPLEMENTED",
+      "consumer_status": {
+        "Shtenco/synergy_financial_os": "IMPLEMENTED"
+      },
+      "scope": "CROSS_REPOSITORY",
+      "implementation_evidence": [
+        "Shtenco/synergy_ai_financial_system:simulation/synergy_contracts.py",
+        "Shtenco/synergy_ai_financial_system:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_financial_os:contracts/research_inputs_v1.py",
+        "Shtenco/synergy_financial_os:tests/test_research_inputs_contract.py"
+      ]
     }
   ],
   "integration_status_vocabulary": [
