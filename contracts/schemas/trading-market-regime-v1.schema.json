@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Trading Market Regime V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id",
+    "symbol",
+    "regime",
+    "sample_count",
+    "thresholds",
+    "authorization"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "symbol": {
+      "type": "string",
+      "minLength": 1
+    },
+    "regime": {
+      "enum": [
+        "UNKNOWN",
+        "LOW_VOL",
+        "NORMAL",
+        "HIGH_VOL"
+      ]
+    },
+    "sample_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "thresholds": {
+      "type": "object",
+      "required": [
+        "low",
+        "high"
+      ],
+      "properties": {
+        "low": {
+          "type": "number"
+        },
+        "high": {
+          "type": "number"
+        }
+      }
+    },
+    "authorization": {
+      "const": false
+    }
+  }
+}
