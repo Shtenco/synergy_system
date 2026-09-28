@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Economy Bridge Health V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id",
+    "source_chain",
+    "locked_usdc",
+    "locked_eth",
+    "minted_usds",
+    "minted_eths",
+    "health_factor_bps",
+    "emergency_stopped",
+    "status",
+    "execution_authorization",
+    "accounting_authority"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_chain": {
+      "type": "string",
+      "minLength": 1
+    },
+    "locked_usdc": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "locked_eth": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "minted_usds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "minted_eths": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "health_factor_bps": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "emergency_stopped": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "HEALTHY",
+        "BELOW_TARGET",
+        "EMERGENCY_STOP"
+      ]
+    },
+    "execution_authorization": {
+      "const": false
+    },
+    "accounting_authority": {
+      "const": false
+    }
+  }
+}
