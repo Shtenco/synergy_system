@@ -1,80 +1,49 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "SYNERGY M3 Federation Evidence V1",
+  "title": "SYNERGY M3 Federation Evidence V2",
   "type": "object",
   "additionalProperties": false,
-  "required": [
-    "schema",
-    "generated_at",
-    "lock_sha256",
-    "lock_repository_count",
-    "python",
-    "platform",
-    "results",
-    "all_pass"
-  ],
+  "required": ["schema","generated_at","lock_sha256","lock_repository_count","python","platform","results","edge_witnesses","edge_witness_count","expected_edge_count","all_pass"],
   "properties": {
-    "schema": {
-      "const": "synergy.m3-federation-evidence/v1"
-    },
-    "generated_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "lock_sha256": {
-      "type": "string",
-      "pattern": "^[0-9a-f]{64}$"
-    },
-    "lock_repository_count": {
-      "const": 20
-    },
-    "python": {
-      "type": "string",
-      "minLength": 1
-    },
-    "platform": {
-      "type": "string",
-      "minLength": 1
-    },
+    "schema": {"const": "synergy.m3-federation-evidence/v2"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "lock_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "lock_repository_count": {"const": 20},
+    "python": {"type": "string", "minLength": 1},
+    "platform": {"type": "string", "minLength": 1},
     "results": {
       "type": "array",
-      "minItems": 5,
-      "maxItems": 5,
+      "minItems": 6,
+      "maxItems": 6,
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": [
-          "name",
-          "status",
-          "error"
-        ],
+        "required": ["name","status","error"],
         "properties": {
-          "name": {
-            "enum": [
-              "science",
-              "engineering",
-              "real-economy",
-              "runtime-network",
-              "trust-ui"
-            ]
-          },
-          "status": {
-            "enum": [
-              "PASS",
-              "FAIL"
-            ]
-          },
-          "error": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
+          "name": {"enum": ["trading","science","engineering","real-economy","runtime-network","trust-ui"]},
+          "status": {"enum": ["PASS","FAIL"]},
+          "error": {"type": ["string","null"]}
         }
       }
     },
-    "all_pass": {
-      "type": "boolean"
-    }
+    "edge_witnesses": {
+      "type": "array",
+      "minItems": 22,
+      "maxItems": 22,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from","to","contract_id","evidence"],
+        "properties": {
+          "from": {"type": "string", "pattern": "^Shtenco/"},
+          "to": {"type": "string", "pattern": "^Shtenco/"},
+          "contract_id": {"type": "string", "pattern": "^synergy\\."},
+          "evidence": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "edge_witness_count": {"const": 22},
+    "expected_edge_count": {"const": 22},
+    "all_pass": {"const": true}
   }
 }
