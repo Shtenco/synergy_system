@@ -8,6 +8,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 EVIDENCE = HERE / "evidence" / "m3_federation_result.json"
 LOCK = HERE / "integration_lock_v1.json"
+SCOPE = HERE / "m3_edge_scope_v1.json"
 INTERFACES = HERE.parents[1] / "registry" / "REPOSITORY_INTERFACES.json"
 
 EXPECTED_VERTICALS = {
@@ -20,12 +21,23 @@ EXPECTED_VERTICALS = {
 }
 
 
-def expected_runtime_edges() -> set[tuple[str, str, str]]:
+def scoped_edges() -> set[tuple[str, str, str]]:
+    data = json.loads(SCOPE.read_text(encoding="utf-8"))
+    edges = {
+        (x["from"], x["to"], x["contract_id"])
+        for x in data["edges"]
+    }
+    if data.get("edge_count") != 22 or len(edges) != 22:
+        raise ValueError("invalid frozen M3 edge scope")
+    return edges
+
+
+def registry_edges() -> set[tuple[str, str, str]]:
     data = json.loads(INTERFACES.read_text(encoding="utf-8"))
     edges: set[tuple[str, str, str]] = set()
     for repository in data["repositories"]:
         for edge in repository.get("runtime_out", []):
-            if edge.get("status") == "ADAPTER_IMPLEMENTED":
+            if edge.get("status") in {"ADAPTER_IMPLEMENTED", "E2E_TESTED", "DEPLOYED"}:
                 edges.add((repository["repo"], edge["to"], edge["contract_id"]))
     return edges
 
@@ -70,14 +82,22 @@ def main() -> int:
         (x.get("from"), x.get("to"), x.get("contract_id"))
         for x in witnesses
     }
-    expected = expected_runtime_edges()
+    expected = scoped_edges()
+    current_registry = registry_edges()
+
+    if not expected.issubset(current_registry):
+        missing_from_registry = sorted(expected - current_registry)
+        print("ERROR: frozen M3 scope is no longer represented by current registry")
+        print("missing_from_registry", missing_from_registry)
+        return 1
+
     if len(witnesses) != 22 or len(actual) != 22:
         print(f"ERROR: witness cardinality mismatch witnesses={len(witnesses)} unique={len(actual)}")
         return 1
     if actual != expected:
         missing = sorted(expected - actual)
         extra = sorted(actual - expected)
-        print("ERROR: edge witness set does not match registry")
+        print("ERROR: edge witness set does not match frozen M3 scope")
         print("missing", missing)
         print("extra", extra)
         return 1
@@ -90,7 +110,7 @@ def main() -> int:
 
     print("M3 FEDERATION EVIDENCE V2: VERIFIED")
     print("lock_sha256", lock_hash)
-    print("runtime_edges", len(expected))
+    print("frozen_runtime_edges", len(expected))
     return 0
 
 
