@@ -1,6 +1,6 @@
 {
   "schema": "synergy.dependency-graph/v1",
-  "as_of": "2026-09-28",
+  "as_of": "2026-09-29",
   "nodes": [
     {
       "repo": "Shtenco/shtenco.github.io",
@@ -1671,6 +1671,66 @@
         "Shtenco/synegy_ai_compress:compression_lab/synergy_contracts.py",
         "Shtenco/synergy_net:runtime/synergy_contracts.py",
         "Shtenco/synergy_net:tests/test_synergy_contracts.py"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_marketvision",
+      "to": "Shtenco/synergy_midas_ai",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.market-features/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_adaptive_engine",
+      "to": "Shtenco/synergy_midas_ai",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.market-regime/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_market_graph",
+      "to": "Shtenco/synergy_midas_ai",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.fair-value/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_market_maker",
+      "to": "Shtenco/synergy_midas_ai",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.liquidity-quote/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
+      ]
+    },
+    {
+      "from": "Shtenco/synergy_ai_investment_committee",
+      "to": "Shtenco/synergy_midas_ai",
+      "type": "RUNTIME_CONTRACT",
+      "status": "ADAPTER_IMPLEMENTED",
+      "authority_transfer": false,
+      "contract_id": "synergy.trading.investment-thesis/v1",
+      "evidence": [
+        "registry/CONTRACT_REGISTRY.json",
+        "registry/REPOSITORY_INTERFACES.json"
       ]
     }
   ],
