@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Economy Monetary Simulation V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "packets",
+    "starting_hardnav_usd",
+    "modeled_consolidated_hardnav_usd",
+    "modeled_external_lp_value_usd",
+    "modeled_bridge_reserve_usd",
+    "transient_price_impact_fraction",
+    "simulation_only",
+    "external_profit_realized",
+    "accounting_authority",
+    "capital_authorization"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "packets": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "starting_hardnav_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "modeled_consolidated_hardnav_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "modeled_external_lp_value_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "modeled_bridge_reserve_usd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "transient_price_impact_fraction": {
+      "type": "number",
+      "minimum": 0
+    },
+    "simulation_only": {
+      "const": true
+    },
+    "external_profit_realized": {
+      "const": false
+    },
+    "accounting_authority": {
+      "const": false
+    },
+    "capital_authorization": {
+      "const": false
+    }
+  }
+}
