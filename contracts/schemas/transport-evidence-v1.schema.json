@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/transport-evidence-v1.schema.json",
+  "title": "Transport Evidence V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.transport.evidence/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_net"
+        },
+        "authority": {
+          "const": "p2p_transport"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "session_id",
+            "sender_peer",
+            "receiver_peer",
+            "content_sha256",
+            "delivered_at",
+            "transport_profile",
+            "authenticated"
+          ],
+          "properties": {
+            "session_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sender_peer": {
+              "type": "string"
+            },
+            "receiver_peer": {
+              "type": "string"
+            },
+            "content_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "delivered_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "transport_profile": {
+              "type": "string"
+            },
+            "authenticated": {
+              "type": "boolean"
+            },
+            "route": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "bytes_on_wire": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "latency_ms": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    }
+  ]
+}

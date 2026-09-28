@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/science-evidence-package-v1.schema.json",
+  "title": "Science Evidence Package V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.science.evidence-package/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_nexus_science_agent"
+        },
+        "authority": {
+          "const": "science_research"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "research_question",
+            "claims",
+            "sources",
+            "status"
+          ],
+          "properties": {
+            "research_question": {
+              "type": "string",
+              "minLength": 1
+            },
+            "claims": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "claim_id",
+                  "text",
+                  "epistemic_status"
+                ],
+                "properties": {
+                  "claim_id": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "epistemic_status": {
+                    "enum": [
+                      "SOURCE",
+                      "MEASURED",
+                      "DERIVED",
+                      "SIMULATION",
+                      "HYPOTHESIS",
+                      "FALSIFIED",
+                      "UNRESOLVED"
+                    ]
+                  },
+                  "source_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "sources": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "source_id",
+                  "locator",
+                  "sha256"
+                ],
+                "properties": {
+                  "source_id": {
+                    "type": "string"
+                  },
+                  "locator": {
+                    "type": "string"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              }
+            },
+            "status": {
+              "enum": [
+                "OPEN",
+                "CANDIDATE",
+                "FALSIFIED",
+                "REPRODUCED"
+              ]
+            },
+            "reproduction_command": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

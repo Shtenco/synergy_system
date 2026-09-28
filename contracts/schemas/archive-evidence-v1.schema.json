@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/archive-evidence-v1.schema.json",
+  "title": "Archive Evidence V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.archive.evidence/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synegy_ai_compress"
+        },
+        "authority": {
+          "const": "compression_identity"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_sha256",
+            "archive_sha256",
+            "codec_id",
+            "original_bytes",
+            "archive_bytes",
+            "round_trip_verified"
+          ],
+          "properties": {
+            "source_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "archive_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "codec_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "original_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "archive_bytes": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "round_trip_verified": {
+              "type": "boolean"
+            },
+            "benchmark_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "random_access_supported": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

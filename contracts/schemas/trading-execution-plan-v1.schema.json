@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/trading-execution-plan-v1.schema.json",
+  "title": "Trading Execution Plan V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.trading.execution-plan/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_trademux"
+        },
+        "authority": {
+          "const": "trade_execution"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "risk_event_id",
+            "correlation_id",
+            "symbol",
+            "side",
+            "requested_notional",
+            "slices",
+            "unfilled_notional"
+          ],
+          "properties": {
+            "risk_event_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "correlation_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "symbol": {
+              "type": "string"
+            },
+            "side": {
+              "enum": [
+                "BUY",
+                "SELL"
+              ]
+            },
+            "requested_notional": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "unfilled_notional": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "slices": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "venue",
+                  "notional",
+                  "expected_price",
+                  "expected_cost_bps"
+                ],
+                "properties": {
+                  "venue": {
+                    "type": "string"
+                  },
+                  "notional": {
+                    "type": "string",
+                    "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+                  },
+                  "expected_price": {
+                    "type": "string",
+                    "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+                  },
+                  "expected_cost_bps": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

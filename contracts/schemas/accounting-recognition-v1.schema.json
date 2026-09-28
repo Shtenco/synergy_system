@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/accounting-recognition-v1.schema.json",
+  "title": "Accounting Recognition V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.accounting.recognition/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_financial_os"
+        },
+        "authority": {
+          "const": "canonical_accounting"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_settlement_event_id",
+            "recognition_id",
+            "classification",
+            "entries",
+            "recognized_at",
+            "accounting_period",
+            "hardnav_delta"
+          ],
+          "properties": {
+            "source_settlement_event_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "recognition_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "classification": {
+              "enum": [
+                "REVENUE",
+                "EXPENSE",
+                "ASSET_TRANSFER",
+                "LIABILITY_CHANGE",
+                "TRADING_PNL",
+                "CAPITAL_FLOW",
+                "NON_RECOGNIZED"
+              ]
+            },
+            "entries": {
+              "type": "array",
+              "minItems": 0,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "account",
+                  "side",
+                  "asset",
+                  "amount"
+                ],
+                "properties": {
+                  "account": {
+                    "type": "string"
+                  },
+                  "side": {
+                    "enum": [
+                      "DEBIT",
+                      "CREDIT"
+                    ]
+                  },
+                  "asset": {
+                    "type": "string"
+                  },
+                  "amount": {
+                    "type": "string",
+                    "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+                  }
+                }
+              }
+            },
+            "recognized_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "accounting_period": {
+              "type": "string",
+              "minLength": 1
+            },
+            "hardnav_delta": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "liquidnav_delta": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "economicnav_delta": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "policy_refs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

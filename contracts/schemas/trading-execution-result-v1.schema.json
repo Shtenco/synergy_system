@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/trading-execution-result-v1.schema.json",
+  "title": "Trading Execution Result V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.trading.execution-result/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_trademux"
+        },
+        "authority": {
+          "const": "trade_execution"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "plan_event_id",
+            "symbol",
+            "side",
+            "requested_notional",
+            "filled_notional",
+            "fills",
+            "status"
+          ],
+          "properties": {
+            "plan_event_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "symbol": {
+              "type": "string"
+            },
+            "side": {
+              "enum": [
+                "BUY",
+                "SELL"
+              ]
+            },
+            "requested_notional": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "filled_notional": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "status": {
+              "enum": [
+                "FILLED",
+                "PARTIAL",
+                "REJECTED",
+                "FAILED"
+              ]
+            },
+            "fills": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "venue",
+                  "requested",
+                  "filled",
+                  "avg_price",
+                  "fee",
+                  "external_id"
+                ],
+                "properties": {
+                  "venue": {
+                    "type": "string"
+                  },
+                  "requested": {
+                    "type": "string",
+                    "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+                  },
+                  "filled": {
+                    "type": "string",
+                    "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+                  },
+                  "avg_price": {
+                    "type": "string",
+                    "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+                  },
+                  "fee": {
+                    "type": "string",
+                    "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+                  },
+                  "external_id": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

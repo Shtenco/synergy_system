@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/economy-project-proposal-v1.schema.json",
+  "title": "Economy Project Proposal V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.economy.project-proposal/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_eurasian"
+        },
+        "authority": {
+          "const": "productive_economy"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "project_id",
+            "country",
+            "sector",
+            "capital_required",
+            "currency",
+            "expected_external_cashflows",
+            "constraints",
+            "authorization_status"
+          ],
+          "properties": {
+            "project_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "country": {
+              "type": "string",
+              "minLength": 2
+            },
+            "sector": {
+              "type": "string",
+              "minLength": 1
+            },
+            "capital_required": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "currency": {
+              "type": "string",
+              "minLength": 3
+            },
+            "expected_external_cashflows": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+              }
+            },
+            "constraints": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "evidence_package_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "authorization_status": {
+              "enum": [
+                "PROPOSED",
+                "UNDER_REVIEW",
+                "AUTHORIZED",
+                "REJECTED"
+              ]
+            },
+            "optimizer_scenario_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

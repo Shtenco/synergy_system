@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/runtime-node-manifest-v1.schema.json",
+  "title": "Runtime Node Manifest V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.runtime.node-manifest/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_meta_os"
+        },
+        "authority": {
+          "const": "runtime_orchestration"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "node_id",
+            "profile",
+            "attested",
+            "development",
+            "generation",
+            "services"
+          ],
+          "properties": {
+            "node_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "profile": {
+              "enum": [
+                "EDGE_CLIENT",
+                "P2P_RELAY",
+                "CONTENT_CACHE",
+                "NEXUS_COMPUTE",
+                "BLOCKCHAIN_PEER",
+                "BLOCKCHAIN_VALIDATOR",
+                "METAPAY_GATEWAY",
+                "FINANCIAL_SERVICE",
+                "BUSINESS_AUTOPILOT",
+                "FULL_SYNERGY_NODE"
+              ]
+            },
+            "attested": {
+              "type": "boolean"
+            },
+            "development": {
+              "type": "boolean"
+            },
+            "generation": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "services": {
+              "type": "array",
+              "maxItems": 64,
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "role",
+                  "artifact",
+                  "sha256",
+                  "argv",
+                  "capabilities",
+                  "limits"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "artifact": {
+                    "type": "string"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "argv": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "capabilities": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "limits": {
+                    "type": "object",
+                    "required": [
+                      "memory_mib",
+                      "cpu_seconds",
+                      "open_files"
+                    ],
+                    "properties": {
+                      "memory_mib": {
+                        "type": "integer",
+                        "minimum": 16
+                      },
+                      "cpu_seconds": {
+                        "type": "integer",
+                        "minimum": 1
+                      },
+                      "open_files": {
+                        "type": "integer",
+                        "minimum": 16
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

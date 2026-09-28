@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/engineering-change-evidence-v1.schema.json",
+  "title": "Engineering Change Evidence V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.engineering.change-evidence/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_ai_coder"
+        },
+        "authority": {
+          "const": "engineering_evidence"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "change_id",
+            "repository",
+            "commit_sha",
+            "requirements",
+            "checks",
+            "review_status"
+          ],
+          "properties": {
+            "change_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "repository": {
+              "type": "string",
+              "pattern": "^Shtenco/[A-Za-z0-9_.-]+$"
+            },
+            "commit_sha": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$"
+            },
+            "requirements": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^REQ-[A-Za-z0-9_.-]+$"
+              }
+            },
+            "checks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "status"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "enum": [
+                      "PASS",
+                      "FAIL",
+                      "SKIP"
+                    ]
+                  },
+                  "evidence_id": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            },
+            "review_status": {
+              "enum": [
+                "DRAFT",
+                "REVIEWABLE",
+                "APPROVED",
+                "REJECTED"
+              ]
+            },
+            "artifact_sha256": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

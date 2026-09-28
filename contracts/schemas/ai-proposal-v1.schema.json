@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/ai-proposal-v1.schema.json",
+  "title": "AI Proposal V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.ai.proposal/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_agi_nexus"
+        },
+        "authority": {
+          "const": "nexus_core"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "proposal_id",
+            "task_type",
+            "model_id",
+            "proposal",
+            "confidence",
+            "limitations"
+          ],
+          "properties": {
+            "proposal_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "task_type": {
+              "enum": [
+                "TRADING",
+                "SCIENCE",
+                "ECONOMY",
+                "ENGINEERING",
+                "GENERAL"
+              ]
+            },
+            "model_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "proposal": {
+              "type": "object"
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "limitations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "benchmark_refs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "requires_human_authorization": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

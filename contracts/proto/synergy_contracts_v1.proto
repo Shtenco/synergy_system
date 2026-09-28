@@ -1,0 +1,165 @@
+syntax = "proto3";
+
+package synergy.contracts.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message EvidenceRef {
+  string evidence_id = 1;
+}
+
+message EventMeta {
+  string contract_id = 1;
+  uint32 schema_version = 2;
+  string event_id = 3;
+  string trace_id = 4;
+  string producer = 5;
+  string authority = 6;
+  google.protobuf.Timestamp produced_at = 7;
+  string payload_sha256 = 8;
+  repeated EvidenceRef evidence = 9;
+  repeated string parent_event_ids = 10;
+  optional string idempotency_key = 11;
+  optional string state_version = 12;
+  optional google.protobuf.Timestamp expires_at = 13;
+}
+
+enum Side {
+  SIDE_UNSPECIFIED = 0;
+  BUY = 1;
+  SELL = 2;
+  FLAT = 3;
+}
+
+message PositionIntent {
+  string symbol = 1;
+  Side side = 2;
+  string notional_decimal = 3;
+}
+
+message TradingPortfolioDecision {
+  EventMeta meta = 1;
+  string decision_id = 2;
+  google.protobuf.Timestamp as_of = 3;
+  string account_id = 4;
+  repeated PositionIntent positions = 5;
+  repeated string rationale = 6;
+  double confidence = 7;
+  repeated string model_refs = 8;
+  optional string market_state_id = 9;
+}
+
+message ValidationMetrics {
+  uint64 n = 1;
+  double total_return = 2;
+  double sharpe = 3;
+  double max_drawdown = 4;
+  double hit_rate = 5;
+}
+
+message TradingValidationDecision {
+  EventMeta meta = 1;
+  string candidate_event_id = 2;
+  string gate = 3;
+  ValidationMetrics metrics = 4;
+  string protocol_id = 5;
+  optional string dataset_manifest_sha256 = 6;
+  repeated string warnings = 7;
+}
+
+message TradingRiskDecision {
+  EventMeta meta = 1;
+  string source_event_id = 2;
+  string action = 3;
+  string approved_notional_decimal = 4;
+  repeated string reasons = 5;
+  map<string,string> metrics = 6;
+  string account_state_version = 7;
+  string policy_version = 8;
+}
+
+message ExecutionSlice {
+  string venue = 1;
+  string notional_decimal = 2;
+  string expected_price_decimal = 3;
+  double expected_cost_bps = 4;
+}
+
+message TradingExecutionPlan {
+  EventMeta meta = 1;
+  string risk_event_id = 2;
+  string correlation_id = 3;
+  string symbol = 4;
+  Side side = 5;
+  string requested_notional_decimal = 6;
+  repeated ExecutionSlice slices = 7;
+  string unfilled_notional_decimal = 8;
+}
+
+message Fill {
+  string venue = 1;
+  string requested_decimal = 2;
+  string filled_decimal = 3;
+  string avg_price_decimal = 4;
+  string fee_decimal = 5;
+  string external_id = 6;
+}
+
+message TradingExecutionResult {
+  EventMeta meta = 1;
+  string plan_event_id = 2;
+  string symbol = 3;
+  Side side = 4;
+  string requested_notional_decimal = 5;
+  string filled_notional_decimal = 6;
+  repeated Fill fills = 7;
+  string status = 8;
+}
+
+message SettlementEvidence {
+  EventMeta meta = 1;
+  string settlement_id = 2;
+  string reference = 3;
+  string asset = 4;
+  string amount_decimal = 5;
+  string provider = 6;
+  string status = 7;
+  google.protobuf.Timestamp occurred_at = 8;
+  bool reconciled = 9;
+  repeated string reconciliation_breaks = 10;
+  optional string provider_reference = 11;
+}
+
+message AccountingEntry {
+  string account = 1;
+  string side = 2;
+  string asset = 3;
+  string amount_decimal = 4;
+}
+
+message AccountingRecognition {
+  EventMeta meta = 1;
+  string source_settlement_event_id = 2;
+  string recognition_id = 3;
+  string classification = 4;
+  repeated AccountingEntry entries = 5;
+  google.protobuf.Timestamp recognized_at = 6;
+  string accounting_period = 7;
+  string hardnav_delta_decimal = 8;
+  string liquidnav_delta_decimal = 9;
+  string economicnav_delta_decimal = 10;
+  repeated string policy_refs = 11;
+}
+
+message TrustCommitment {
+  EventMeta meta = 1;
+  string source_event_id = 2;
+  string source_contract_id = 3;
+  string payload_sha256 = 4;
+  string chain_id = 5;
+  string commitment_id = 6;
+  string finality_status = 7;
+  optional uint64 block_height = 8;
+  optional string tx_id = 9;
+  optional string authorization_profile = 10;
+}

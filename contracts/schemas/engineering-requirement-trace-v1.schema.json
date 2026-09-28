@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/engineering-requirement-trace-v1.schema.json",
+  "title": "Engineering Requirement Trace V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.engineering.requirement-trace/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_ai_language"
+        },
+        "authority": {
+          "const": "requirements_semantics"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "requirement_id",
+            "statement",
+            "affected_repositories",
+            "validation_targets",
+            "status"
+          ],
+          "properties": {
+            "requirement_id": {
+              "type": "string",
+              "pattern": "^REQ-[A-Za-z0-9_.-]+$"
+            },
+            "statement": {
+              "type": "string",
+              "minLength": 1
+            },
+            "affected_repositories": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^Shtenco/[A-Za-z0-9_.-]+$"
+              }
+            },
+            "validation_targets": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "status": {
+              "enum": [
+                "OPEN",
+                "IMPLEMENTED",
+                "VERIFIED",
+                "REJECTED"
+              ]
+            },
+            "change_refs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

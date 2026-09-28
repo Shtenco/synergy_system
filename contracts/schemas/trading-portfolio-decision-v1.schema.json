@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/trading-portfolio-decision-v1.schema.json",
+  "title": "Trading Portfolio Decision V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.trading.portfolio-decision/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_midas_ai"
+        },
+        "authority": {
+          "const": "trading_intelligence"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "decision_id",
+            "as_of",
+            "account_id",
+            "positions",
+            "rationale",
+            "confidence"
+          ],
+          "properties": {
+            "decision_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "as_of": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "account_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "positions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "symbol",
+                  "side",
+                  "notional"
+                ],
+                "properties": {
+                  "symbol": {
+                    "type": "string"
+                  },
+                  "side": {
+                    "enum": [
+                      "BUY",
+                      "SELL",
+                      "FLAT"
+                    ]
+                  },
+                  "notional": {
+                    "type": "string",
+                    "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+                  }
+                }
+              }
+            },
+            "rationale": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "model_refs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "market_state_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

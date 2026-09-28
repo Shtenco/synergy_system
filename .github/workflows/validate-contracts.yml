@@ -1,0 +1,35 @@
+name: Validate SYNERGY Typed Contracts
+
+on:
+  push:
+    paths:
+      - "contracts/**"
+      - "registry/AUTHORITY_REGISTRY.json"
+      - "registry/CONTRACT_REGISTRY.json"
+      - "registry/DEPENDENCY_GRAPH.json"
+      - "scripts/validate_contract_architecture.py"
+      - "tests/test_contract_*.py"
+      - ".github/workflows/validate-contracts.yml"
+  pull_request:
+    paths:
+      - "contracts/**"
+      - "registry/AUTHORITY_REGISTRY.json"
+      - "registry/CONTRACT_REGISTRY.json"
+      - "registry/DEPENDENCY_GRAPH.json"
+      - "scripts/validate_contract_architecture.py"
+      - "tests/test_contract_*.py"
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip
+      - run: pip install "pydantic>=2,<3" "jsonschema>=4,<5" "pytest>=8,<9"
+      - name: Validate registries and graph
+        run: python scripts/validate_contract_architecture.py
+      - name: Validate schemas and typed trace
+        run: pytest -q tests/test_contract_schemas.py tests/test_contract_models.py

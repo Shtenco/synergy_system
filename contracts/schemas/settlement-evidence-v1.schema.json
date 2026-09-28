@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/settlement-evidence-v1.schema.json",
+  "title": "Settlement Evidence V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.settlement.evidence/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_pay_system"
+        },
+        "authority": {
+          "const": "payment_settlement"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "settlement_id",
+            "reference",
+            "asset",
+            "amount",
+            "provider",
+            "status",
+            "occurred_at",
+            "reconciled"
+          ],
+          "properties": {
+            "settlement_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "reference": {
+              "type": "string",
+              "minLength": 1
+            },
+            "asset": {
+              "type": "string",
+              "minLength": 2
+            },
+            "amount": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "provider": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "enum": [
+                "SETTLED",
+                "FAILED",
+                "COMPENSATED"
+              ]
+            },
+            "occurred_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reconciled": {
+              "type": "boolean"
+            },
+            "reconciliation_breaks": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "provider_reference": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/trust-commitment-v1.schema.json",
+  "title": "Trust Commitment V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.trust.commitment/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_ai_blockchain"
+        },
+        "authority": {
+          "const": "blockchain_trust"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_event_id",
+            "source_contract_id",
+            "payload_sha256",
+            "chain_id",
+            "commitment_id",
+            "finality_status"
+          ],
+          "properties": {
+            "source_event_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "source_contract_id": {
+              "type": "string"
+            },
+            "payload_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "chain_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "commitment_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "finality_status": {
+              "enum": [
+                "PENDING",
+                "FINALIZED",
+                "REORGED",
+                "REJECTED"
+              ]
+            },
+            "block_height": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "tx_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "authorization_profile": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

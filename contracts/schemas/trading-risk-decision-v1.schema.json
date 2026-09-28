@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Shtenco/synergy_system/contracts/schemas/trading-risk-decision-v1.schema.json",
+  "title": "Trading Risk Decision V1",
+  "allOf": [
+    {
+      "$ref": "./event-envelope-v1.schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contract_id": {
+          "const": "synergy.trading.risk-decision/v1"
+        },
+        "producer": {
+          "const": "Shtenco/synergy_riskguard"
+        },
+        "authority": {
+          "const": "trading_risk"
+        },
+        "payload": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_event_id",
+            "action",
+            "approved_notional",
+            "reasons",
+            "metrics",
+            "account_state_version"
+          ],
+          "properties": {
+            "source_event_id": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "action": {
+              "enum": [
+                "ALLOW",
+                "RESIZE",
+                "REJECT",
+                "KILL_SWITCH"
+              ]
+            },
+            "approved_notional": {
+              "type": "string",
+              "pattern": "^-?[0-9]+(\\.[0-9]+)?$"
+            },
+            "reasons": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "metrics": {
+              "type": "object"
+            },
+            "account_state_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "policy_version": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  ]
+}
