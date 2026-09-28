@@ -31,5 +31,7 @@ jobs:
       - run: pip install "pydantic>=2,<3" "jsonschema>=4,<5" "pytest>=8,<9"
       - name: Validate registries and graph
         run: python scripts/validate_contract_architecture.py
+      - name: Validate architecture invariants
+        run: python scripts/validate_system_invariants.py
       - name: Validate schemas and typed trace
         run: pytest -q tests/test_contract_schemas.py tests/test_contract_models.py
