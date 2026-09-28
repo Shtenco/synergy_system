@@ -117,6 +117,14 @@ def runtime_network_path():
         authenticated=True,route=["node-a","node-b"],bytes_on_wire=len(archive)+16,latency_ms=1.0
     )
     require_transport_delivery(te)
+    blockchain=repo("synergy_ai_blockchain")
+    out=subprocess.check_output([
+        "cargo","run","--quiet","--example","federation_transport_consumer","--",
+        te["session_id"],te["sender_peer"],te["receiver_peer"],te["content_sha256"],
+        "true" if te["authenticated"] else "false",",".join(te["route"]),
+        str(te["bytes_on_wire"]),str(te["latency_ms"])
+    ],cwd=blockchain,text=True)
+    assert out.strip().startswith("PASS ")
     with tempfile.TemporaryDirectory() as td:
         root=Path(td);artifact=root/"svc";artifact.write_bytes(b"svc")
         import hashlib
@@ -132,11 +140,25 @@ def runtime_network_path():
         assert host["host_authority"] is False
 
 def trust_ui_path():
+    financial=load(repo("synergy_financial_os")/"contracts"/"accounting_recognition_v1.py","financial_contract")
+    apps=load(repo("synergy_apps")/"runtime"/"read_models.py","apps_contract")
+    accounting=financial.accounting_recognition_payload(
+        source_settlement_event_id=UUID("55555555-5555-4555-8555-555555555555"),
+        recognition_id=UUID("66666666-6666-4666-8666-666666666666"),
+        classification="ASSET_TRANSFER",
+        entries=[
+            {"account":"asset:bank","side":"DEBIT","asset":"USD","amount":"80"},
+            {"account":"clearing:project","side":"CREDIT","asset":"USD","amount":"80"},
+        ],
+        recognized_at=datetime.now(timezone.utc),accounting_period="2026-09",
+        hardnav_delta="0",settlement_payload={"status":"SETTLED","reconciled":True,"reconciliation_breaks":[]}
+    )
+    view_accounting=apps.accounting_read_model(accounting)
+    assert view_accounting["read_only"] is True
     blockchain=repo("synergy_ai_blockchain")
     raw=subprocess.check_output(["cargo","run","--quiet","--example","federation_trust_fixture"],cwd=blockchain,text=True)
     trust=json.loads(raw.strip().splitlines()[-1])
     meta=load(repo("synergy_metachain")/"runtime"/"trust_contracts.py","metachain_contract")
-    apps=load(repo("synergy_apps")/"runtime"/"read_models.py","apps_contract")
     state=meta.CommitmentReplayState()
     claim=state.consume(trust)
     assert claim["claimable_once"] is True
