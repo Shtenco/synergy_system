@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY M3 Federation Evidence V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "generated_at",
+    "lock_sha256",
+    "lock_repository_count",
+    "python",
+    "platform",
+    "results",
+    "all_pass"
+  ],
+  "properties": {
+    "schema": {
+      "const": "synergy.m3-federation-evidence/v1"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lock_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "lock_repository_count": {
+      "const": 20
+    },
+    "python": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platform": {
+      "type": "string",
+      "minLength": 1
+    },
+    "results": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "status",
+          "error"
+        ],
+        "properties": {
+          "name": {
+            "enum": [
+              "science",
+              "engineering",
+              "real-economy",
+              "runtime-network",
+              "trust-ui"
+            ]
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL"
+            ]
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "all_pass": {
+      "type": "boolean"
+    }
+  }
+}
