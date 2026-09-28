@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY AI Benchmark Suite V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "benchmark_run_id",
+    "benchmark",
+    "seed",
+    "task_count",
+    "domains",
+    "suite_sha256",
+    "gold_not_sent_to_models",
+    "generated_suite_only",
+    "agi_claim_authority",
+    "model_quality_claim_authority"
+  ],
+  "properties": {
+    "benchmark_run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "benchmark": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "task_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "domains": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "suite_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "gold_not_sent_to_models": {
+      "type": "boolean"
+    },
+    "generated_suite_only": {
+      "const": true
+    },
+    "agi_claim_authority": {
+      "const": false
+    },
+    "model_quality_claim_authority": {
+      "const": false
+    }
+  }
+}
