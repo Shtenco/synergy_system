@@ -43,3 +43,11 @@ jobs:
           SYNERGY_REPOS_ROOT: ${{ github.workspace }}
           SYNERGY_VERIFY_LOCK: "1"
         run: python synergy_system/integration/m3_federation/run.py
+
+      - name: Upload M3 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: synergy-m3-federation-evidence
+          path: synergy_system/integration/m3_federation/evidence/m3_federation_result.json
+          if-no-files-found: warn
