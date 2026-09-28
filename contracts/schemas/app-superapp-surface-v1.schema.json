@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY App Superapp Surface V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "short_name",
+    "start_url",
+    "display",
+    "manifest_sha256",
+    "index_sha256",
+    "android_gradle_sha256",
+    "android_wrapper_sha256",
+    "source_surface_verified",
+    "android_artifact_built",
+    "deployment_authority"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "short_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "start_url": {
+      "type": "string",
+      "minLength": 1
+    },
+    "display": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "index_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "android_gradle_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "android_wrapper_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_surface_verified": {
+      "const": true
+    },
+    "android_artifact_built": {
+      "const": false
+    },
+    "deployment_authority": {
+      "const": false
+    }
+  }
+}
