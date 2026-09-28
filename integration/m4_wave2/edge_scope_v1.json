@@ -1,0 +1,31 @@
+{
+  "schema": "synergy.m4-wave2-scope/v1",
+  "edge_count": 5,
+  "edges": [
+    {
+      "from": "Shtenco/synergy_midas_institutional",
+      "to": "Shtenco/synergy_midas_ai",
+      "contract_id": "synergy.trading.institutional-assessment/v1"
+    },
+    {
+      "from": "Shtenco/synergy_crypto_pump",
+      "to": "Shtenco/synergy_midas_ai",
+      "contract_id": "synergy.trading.crypto-anomaly-score/v1"
+    },
+    {
+      "from": "Shtenco/synergy_2chain_qe",
+      "to": "Shtenco/synergy_financial_os",
+      "contract_id": "synergy.economy.bridge-health/v1"
+    },
+    {
+      "from": "Shtenco/synergy_blochain_budget",
+      "to": "Shtenco/synergy_ai_blockchain",
+      "contract_id": "synergy.economy.budget-proof/v1"
+    },
+    {
+      "from": "Shtenco/synergy_ai_financial_system",
+      "to": "Shtenco/synergy_financial_os",
+      "contract_id": "synergy.economy.scenario-evidence/v1"
+    }
+  ]
+}
