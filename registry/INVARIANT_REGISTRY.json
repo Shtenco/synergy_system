@@ -108,6 +108,23 @@
         "synergy.accounting.recognition/v1",
         "synergy.trust.commitment/v1"
       ]
+    },
+    {
+      "id": "INV-ECON-001",
+      "title": "Project proposal cannot bypass capital governance and settlement",
+      "severity": "CRITICAL",
+      "rule": "FORBID_EDGE",
+      "from_repos": [
+        "Shtenco/synergy_eurasian"
+      ],
+      "to_repos": [
+        "Shtenco/synergy_financial_os"
+      ],
+      "required_path": [
+        "Shtenco/synergy_project",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_financial_os"
+      ]
     }
   ]
 }
