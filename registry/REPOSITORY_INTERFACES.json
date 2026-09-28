@@ -297,7 +297,7 @@
       "produces": [
         {
           "contract_id": "synergy.economy.project-proposal/v1",
-          "status": "DEFINED",
+          "status": "IMPLEMENTED",
           "authority": "productive_economy"
         }
       ],
@@ -310,7 +310,7 @@
       ],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "CONTRACT_DEFINED"
+      "interface_status": "PARTIAL_IMPLEMENTATION"
     },
     {
       "repo": "Shtenco/synergy_financial_os",
@@ -328,11 +328,6 @@
         }
       ],
       "consumes": [
-        {
-          "contract_id": "synergy.economy.project-proposal/v1",
-          "status": "DEFINED",
-          "authority": "productive_economy"
-        },
         {
           "contract_id": "synergy.settlement.evidence/v1",
           "status": "IMPLEMENTED",
@@ -391,6 +386,11 @@
         }
       ],
       "consumes": [
+        {
+          "contract_id": "synergy.economy.funding-authorization/v1",
+          "status": "DEFINED",
+          "authority": "capital_governance"
+        },
         {
           "contract_id": "synergy.trading.execution-result/v1",
           "status": "IMPLEMENTED",
@@ -606,14 +606,24 @@
       "produces": [
         {
           "contract_id": "synergy.ai.proposal/v1",
-          "status": "DEFINED",
+          "status": "IMPLEMENTED",
           "authority": "nexus_core"
         }
       ],
       "consumes": [],
-      "runtime_out": [],
+      "runtime_out": [
+        {
+          "to": "Shtenco/synergy_midas_ai",
+          "contract_id": "synergy.ai.proposal/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_agi_nexus:contracts/ai_proposal_v1.py",
+            "Shtenco/synergy_midas_ai:contracts/nexus_advisory_v1.py"
+          ]
+        }
+      ],
       "runtime_in": [],
-      "interface_status": "CONTRACT_DEFINED"
+      "interface_status": "ADAPTER_INTEGRATED"
     },
     {
       "repo": "Shtenco/synergy_agi_olga",
@@ -807,12 +817,26 @@
       "domain": "MASTER_GOVERNANCE",
       "role": "Master dossier: экономическая и продуктовая картина SYNERGY поверх архитектурного корня.",
       "federation_parent": "Shtenco/synergy_system",
-      "authorities_owned": [],
-      "produces": [],
-      "consumes": [],
+      "authorities_owned": [
+        "capital_governance"
+      ],
+      "produces": [
+        {
+          "contract_id": "synergy.economy.funding-authorization/v1",
+          "status": "DEFINED",
+          "authority": "capital_governance"
+        }
+      ],
+      "consumes": [
+        {
+          "contract_id": "synergy.economy.project-proposal/v1",
+          "status": "DEFINED",
+          "authority": "productive_economy"
+        }
+      ],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "CONTRACT_DEFINED"
     },
     {
       "repo": "Shtenco/synergy_system",
@@ -1086,7 +1110,7 @@
       "consumes": [
         {
           "contract_id": "synergy.ai.proposal/v1",
-          "status": "DEFINED",
+          "status": "IMPLEMENTED",
           "authority": "nexus_core"
         }
       ],
@@ -1101,7 +1125,17 @@
           ]
         }
       ],
-      "runtime_in": [],
+      "runtime_in": [
+        {
+          "from": "Shtenco/synergy_agi_nexus",
+          "contract_id": "synergy.ai.proposal/v1",
+          "status": "ADAPTER_IMPLEMENTED",
+          "evidence": [
+            "Shtenco/synergy_agi_nexus:contracts/ai_proposal_v1.py",
+            "Shtenco/synergy_midas_ai:contracts/nexus_advisory_v1.py"
+          ]
+        }
+      ],
       "interface_status": "ADAPTER_INTEGRATED"
     },
     {
