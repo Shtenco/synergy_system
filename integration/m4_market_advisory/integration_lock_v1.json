@@ -1,0 +1,36 @@
+{
+  "schema": "synergy.m4-market-advisory-lock/v1",
+  "generated_at": "2026-09-29",
+  "repositories": [
+    {
+      "repo": "Shtenco/synergy_marketvision",
+      "commit": "2a855b293068402e77364ddf7e9193cdc9fe96a3",
+      "role": "market-features producer"
+    },
+    {
+      "repo": "Shtenco/synergy_adaptive_engine",
+      "commit": "02fc2d7c52677aec420abcfa5b8dfaf0f41677e0",
+      "role": "market-regime producer"
+    },
+    {
+      "repo": "Shtenco/synergy_market_graph",
+      "commit": "f874e96295db6ed79591d53b2702be047eaac5bc",
+      "role": "fair-value producer"
+    },
+    {
+      "repo": "Shtenco/synergy_market_maker",
+      "commit": "4f558bcf765bbf5f64b3c54abf1416ddcf57d809",
+      "role": "liquidity-quote producer"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_investment_committee",
+      "commit": "7dd6332958356dd26a9d0141444f82f718f80c6a",
+      "role": "investment-thesis producer"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_ai",
+      "commit": "b266a57ee9eed360f8195111802bb1b8bfc8cc38",
+      "role": "advisory consumer"
+    }
+  ]
+}
