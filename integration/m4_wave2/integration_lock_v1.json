@@ -1,0 +1,46 @@
+{
+  "schema": "synergy.m4-wave2-lock/v1",
+  "generated_at": "2026-09-29",
+  "repositories": [
+    {
+      "repo": "Shtenco/synergy_midas_institutional",
+      "commit": "65b6f5d70f2c93d36d95c2c4e3163cbbd1a2b34a",
+      "role": "institutional assessment producer"
+    },
+    {
+      "repo": "Shtenco/synergy_crypto_pump",
+      "commit": "5cb95305a869667c8280c38664e13135b047302d",
+      "role": "crypto anomaly producer"
+    },
+    {
+      "repo": "Shtenco/synergy_2chain_qe",
+      "commit": "444f62054081aaea43348da49add552cc073cd98",
+      "role": "bridge health producer"
+    },
+    {
+      "repo": "Shtenco/synergy_blochain_budget",
+      "commit": "c7340dad57a882a5b436f9347f205dc0229aef2e",
+      "role": "budget proof producer"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_financial_system",
+      "commit": "478797b55a5eafe326ae25d770167a9a5b115663",
+      "role": "scenario evidence producer"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_ai",
+      "commit": "6e08d071012cf9f853e5f3cff24fd95adbc96e6d",
+      "role": "trading advisory consumer"
+    },
+    {
+      "repo": "Shtenco/synergy_financial_os",
+      "commit": "fc7a0ec69543241946e37eafb5899b7f6538dd80",
+      "role": "research evidence consumer"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_blockchain",
+      "commit": "cb45b466c912bdc00001b356cf64df2e0b2271ef",
+      "role": "budget proof consumer"
+    }
+  ]
+}
