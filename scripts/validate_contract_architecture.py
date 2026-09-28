@@ -28,7 +28,8 @@ def main() -> int:
 
     repo_names = {r["full_name"] for r in repos["repositories"]}
     authority_names = set(auth["authorities"])
-    contract_ids = set()
+    contract_ids: set[str] = set()
+    cross_repo_ids: set[str] = set()
 
     for name, spec in auth["authorities"].items():
         if spec["owner"] not in repo_names:
@@ -39,6 +40,8 @@ def main() -> int:
         if cid in contract_ids:
             fail(f"duplicate contract_id {cid}")
         contract_ids.add(cid)
+        if c.get("scope", "CROSS_REPOSITORY") == "CROSS_REPOSITORY":
+            cross_repo_ids.add(cid)
         if c["producer"] not in repo_names:
             fail(f"{cid}: producer missing")
         for consumer in c["consumers"]:
@@ -56,28 +59,39 @@ def main() -> int:
     graph_contracts = {
         e["contract_id"]
         for e in graph["edges"]
-        if e["type"] == "CONTRACT_FLOW"
+        if e["type"] == "CONTRACT_FLOW" and e.get("contract_id")
     }
-    missing = contract_ids - graph_contracts
+    missing = cross_repo_ids - graph_contracts
     if missing:
-        fail(f"contracts absent from dependency graph: {sorted(missing)}")
+        fail(f"cross-repo contracts absent from dependency graph: {sorted(missing)}")
 
     runtime_edges = [e for e in graph["edges"] if e["type"] == "RUNTIME_DEPENDENCY"]
     for e in runtime_edges:
         if not e.get("evidence"):
             fail(f"runtime edge lacks evidence: {e}")
+        if e.get("status") in {"ADAPTER_IMPLEMENTED", "E2E_TESTED", "DEPLOYED"}:
+            if e.get("contract_id") not in contract_ids:
+                fail(f"runtime edge references unknown contract: {e}")
 
     envelope = load(SCHEMAS / "event-envelope-v1.schema.json")
     pattern = envelope["properties"]["contract_id"]["pattern"]
     rx = re.compile(pattern)
     for cid in contract_ids:
-        if not rx.match(cid):
+        if not rx.fullmatch(cid):
             fail(f"contract id violates envelope pattern: {cid}")
+
+    summary = graph.get("integration_summary", {})
+    actual_adapter = sum(
+        1 for e in runtime_edges if e.get("status") == "ADAPTER_IMPLEMENTED"
+    )
+    if summary and summary.get("adapter_implemented_runtime_edges") != actual_adapter:
+        fail("integration_summary adapter count drift")
 
     print(f"OK: {len(repo_names)} repositories")
     print(f"OK: {len(authority_names)} authorities")
     print(f"OK: {len(contract_ids)} typed contracts")
     print(f"OK: {len(graph['edges'])} dependency edges")
+    print(f"OK: {actual_adapter} runtime edges at ADAPTER_IMPLEMENTED")
     print("OK: all producers/consumers/authorities/schemas resolve")
     return 0
 
