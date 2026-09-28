@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SYNERGY Science Quantum Reference Control V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "benchmark_id",
+    "science_status",
+    "seed",
+    "random_trials",
+    "chsh_absolute_value",
+    "tsirelson_bound",
+    "max_reference_error",
+    "passed",
+    "experimental_result",
+    "novel_physics_claim"
+  ],
+  "properties": {
+    "benchmark_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "science_status": {
+      "const": "STANDARD_QM_REFERENCE_CONTROL"
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "random_trials": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "chsh_absolute_value": {
+      "type": "number"
+    },
+    "tsirelson_bound": {
+      "type": "number"
+    },
+    "max_reference_error": {
+      "type": "number",
+      "minimum": 0
+    },
+    "passed": {
+      "const": true
+    },
+    "experimental_result": {
+      "const": false
+    },
+    "novel_physics_claim": {
+      "const": false
+    }
+  }
+}
