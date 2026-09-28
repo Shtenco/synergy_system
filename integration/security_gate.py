@@ -17,7 +17,7 @@ def main()->int:
         b=unresolved.get(name)
         if not b:
             continue
-        if b.get("federation_promotion_blocked") and repo.get("interface_status")!="ARCHITECTURAL_ONLY":
+        if b.get("federation_promotion_blocked") and repo.get("interface_status") not in {"ARCHITECTURAL_ONLY","SECURITY_BLOCKED"}:
             violations.append((name,"federation promotion blocked",repo.get("interface_status")))
         if b.get("deployment_blocked"):
             deployed=[]
