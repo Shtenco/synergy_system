@@ -1,0 +1,51 @@
+{
+  "schema": "synergy.m4-wave3-lock/v1",
+  "generated_at": "2026-09-29",
+  "repositories": [
+    {
+      "repo": "Shtenco/synergy_relative_value",
+      "commit": "2e1f358157f70dfe82056e1d78467207d2992e2c",
+      "role": "relative-value producer"
+    },
+    {
+      "repo": "Shtenco/synergy_agentic_ai_economy",
+      "commit": "b0e552316ba03370c0fc5f497f81ea3ffb4dd431",
+      "role": "agent economy producer"
+    },
+    {
+      "repo": "Shtenco/dlp_solver",
+      "commit": "e086cea03b2c8602eb7c6ff10b2e7c7711296c97",
+      "role": "constraint benchmark producer"
+    },
+    {
+      "repo": "Shtenco/synergy_cold_nuclear",
+      "commit": "88cb60e29f1dc088e14c72e53c8f61d8b74830de",
+      "role": "scientific consistency producer"
+    },
+    {
+      "repo": "Shtenco/synergy_qr_compress",
+      "commit": "c3e5fb358fb12bbca105eb6a274038281fab252f",
+      "role": "compression benchmark producer"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_ai",
+      "commit": "04b1db5b52ed692f2f660911bec0c97d3a2c7174",
+      "role": "relative-value consumer"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_nexus",
+      "commit": "47cbdff1803e4e7c2ab18648636f0de1a5db7204",
+      "role": "agent economy consumer"
+    },
+    {
+      "repo": "Shtenco/synergy_nexus_science_agent",
+      "commit": "8112d7f38ce65e3028088fc9c33bdbff35ccb6d6",
+      "role": "science evidence consumer"
+    },
+    {
+      "repo": "Shtenco/synergy_meta_os",
+      "commit": "ab6f7cd3ef2f78fa8b909015a7eb17a6f6cb8621",
+      "role": "compression benchmark consumer"
+    }
+  ]
+}
