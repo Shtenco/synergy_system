@@ -168,11 +168,42 @@ def trust_ui_path():
 
 def main():
     check_lock()
-    science_path();print("PASS science")
-    engineering_path();print("PASS engineering")
-    real_economy_path();print("PASS real-economy")
-    runtime_network_path();print("PASS runtime-network")
-    trust_ui_path();print("PASS trust-ui")
+    cases=[
+        ("science",science_path),
+        ("engineering",engineering_path),
+        ("real-economy",real_economy_path),
+        ("runtime-network",runtime_network_path),
+        ("trust-ui",trust_ui_path),
+    ]
+    results=[]
+    all_pass=True
+    for name,fn in cases:
+        try:
+            fn()
+            print("PASS",name)
+            results.append({"name":name,"status":"PASS","error":None})
+        except Exception as exc:
+            all_pass=False
+            print("FAIL",name,repr(exc))
+            results.append({"name":name,"status":"FAIL","error":repr(exc)})
+    lock_bytes=(HERE/"integration_lock_v1.json").read_bytes()
+    evidence={
+        "schema":"synergy.m3-federation-evidence/v1",
+        "generated_at":datetime.now(timezone.utc).isoformat(),
+        "lock_sha256":hashlib.sha256(lock_bytes).hexdigest(),
+        "lock_repository_count":len(LOCK["repositories"]),
+        "python":sys.version,
+        "platform":platform.platform(),
+        "results":results,
+        "all_pass":all_pass,
+    }
+    evidence_dir=HERE/"evidence"
+    evidence_dir.mkdir(exist_ok=True)
+    out=evidence_dir/"m3_federation_result.json"
+    out.write_text(json.dumps(evidence,indent=2,sort_keys=True),encoding="utf-8")
+    print("EVIDENCE",out)
+    if not all_pass:
+        return 1
     print("SYNERGY M3 FEDERATION SEMANTIC E2E: PASS")
     return 0
 
