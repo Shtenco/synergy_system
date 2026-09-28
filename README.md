@@ -1294,3 +1294,27 @@ SHTENCO / SYNERGY ecosystem.
 - v3-MoE P1 пока доказывает качество **routing**, а не окончательный end-to-end прирост answer accuracy.
 
 <!-- NEXUS-REPORTS-BENCHMARKS:END -->
+
+
+---
+
+# 🧭 Канонический атлас 75 репозиториев
+
+Экосистема SYNERGY на текущем срезе включает **75 репозиториев**. Их архитектурные роли, домены, master-узлы и связи сведены в единый реестр:
+
+- 📚 [SYNERGY Repository Atlas — карта всех 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
+- 🧾 [Машиночитаемый реестр](registry/SYNERGY_REPOSITORIES.json)
+
+```mermaid
+flowchart LR
+    SYS[🧭 synergy_system] --> ATLAS[📚 75-repository atlas]
+    ATLAS --> AI[🧠 Intelligence]
+    ATLAS --> TRADE[📈 Trading]
+    ATLAS --> FIN[💰 Finance]
+    ATLAS --> CHAIN[⛓️ Blockchain]
+    ATLAS --> NET[🛡️ Infra / Network]
+    ATLAS --> APP[📱 Apps]
+    ATLAS --> SCI[🔬 Science]
+```
+
+Важно: связи в атласе разделяют **архитектурную принадлежность** и **доказанную runtime/code dependency**. Само наличие стрелки в системной карте не означает, что один репозиторий импортирует или запускает другой.
