@@ -5,6 +5,8 @@
 > - [🧠 System Semantic Model V1](docs/SYNERGY_SYSTEM_SEMANTIC_MODEL_V1.md)
 > - [⚙️ Executable Topology V1](docs/EXECUTABLE_TOPOLOGY_V1.md)
 > - [🔗 Integration Status V1](docs/INTEGRATION_STATUS_V1.md)
+> - [✅ M2 Contract Endpoint Closure](docs/M2_CONTRACT_ENDPOINT_CLOSURE.md)
+> - [🧪 M3 Federation E2E Gate](integration/m3_federation/README.md)
 > - [🧭 Атлас 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
 > - [🧾 Repository Registry](registry/SYNERGY_REPOSITORIES.json)
 > - [🏛️ Authority Registry](registry/AUTHORITY_REGISTRY.json)
@@ -21,7 +23,7 @@
 > `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
 >
 > **Documentation deep pass:** **75/75 COMPLETE**.
-> **Typed architecture:** **17 contract families · 10 runtime edges ADAPTER_IMPLEMENTED · 0 E2E_TESTED · 0 DEPLOYED**.
+> **Typed architecture:** **17/17 contract families endpoint-complete · 22 runtime edges ADAPTER_IMPLEMENTED · 20 repos ADAPTER_INTEGRATED · 0 E2E_TESTED · 0 DEPLOYED**.
 > **Rule:** ни один edge не повышается до `E2E_TESTED` без фактического cross-repo evidence.
 
 
