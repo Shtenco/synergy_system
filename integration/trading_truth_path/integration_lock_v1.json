@@ -1,11 +1,11 @@
 {
   "schema": "synergy.integration-lock/v1",
-  "generated_at": "2026-09-28",
+  "generated_at": "2026-09-29",
   "vertical": "trading-truth-path",
   "repositories": [
     {
       "repo": "Shtenco/synergy_midas_ai",
-      "commit": "e1f0ea725436e493e7c36919edacaec22b609170",
+      "commit": "1f7c50315e9f094a79331f2cc593a24ed3dcf08a",
       "role": "portfolio-decision producer"
     },
     {
@@ -25,7 +25,7 @@
     },
     {
       "repo": "Shtenco/synergy_pay_system",
-      "commit": "d19deb2e4f3a5c2c599616cc36d9a49b0ab1b818",
+      "commit": "bef1fdfa2c5fdd3aef3e1a2b5490066afc3f4fab",
       "role": "settlement consumer/producer"
     },
     {
@@ -35,9 +35,9 @@
     },
     {
       "repo": "Shtenco/synergy_ai_blockchain",
-      "commit": "22d06574346c5fd1a5c2038da77864a8d34cd2dd",
+      "commit": "7bcd284a43d9d17bb1d2cbb0ea7289ac85cf47ee",
       "role": "trust commitment consumer"
     }
   ],
-  "note": "Pinned provenance checkpoint. Later adapter commits may supersede these pins; update lock only after an integration run proves the new set."
+  "note": "Regression subset synchronized with the canonical M3 federation lock; M3 edge-complete evidence remains the promotion authority."
 }
