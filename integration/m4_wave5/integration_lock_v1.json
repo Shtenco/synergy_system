@@ -1,0 +1,21 @@
+{
+  "schema": "synergy.m4-wave5-lock/v1",
+  "generated_at": "2026-09-29",
+  "repositories": [
+    {
+      "repo": "Shtenco/synergy_app",
+      "commit": "25ba73d08ca4b37a320ade42486b1aadabea4f55",
+      "role": "store-source evidence producer"
+    },
+    {
+      "repo": "Shtenco/sinergy_super_app",
+      "commit": "584a3642dc2367da468e760f786bc33b12e1ad53",
+      "role": "super-app surface producer"
+    },
+    {
+      "repo": "Shtenco/synergy_meta_os",
+      "commit": "ed334e01d7bf039f96250482def522079aa461f4",
+      "role": "app evidence consumer"
+    }
+  ]
+}
