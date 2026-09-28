@@ -1,0 +1,31 @@
+{
+  "schema": "synergy.m4-wave3-scope/v1",
+  "edge_count": 5,
+  "edges": [
+    {
+      "from": "Shtenco/synergy_relative_value",
+      "to": "Shtenco/synergy_midas_ai",
+      "contract_id": "synergy.trading.relative-value-signal/v1"
+    },
+    {
+      "from": "Shtenco/synergy_agentic_ai_economy",
+      "to": "Shtenco/synergy_agi_nexus",
+      "contract_id": "synergy.agent.economy-simulation/v1"
+    },
+    {
+      "from": "Shtenco/dlp_solver",
+      "to": "Shtenco/synergy_nexus_science_agent",
+      "contract_id": "synergy.science.constraint-benchmark/v1"
+    },
+    {
+      "from": "Shtenco/synergy_cold_nuclear",
+      "to": "Shtenco/synergy_nexus_science_agent",
+      "contract_id": "synergy.science.model-consistency/v1"
+    },
+    {
+      "from": "Shtenco/synergy_qr_compress",
+      "to": "Shtenco/synergy_meta_os",
+      "contract_id": "synergy.archive.benchmark-evidence/v1"
+    }
+  ]
+}
