@@ -10,8 +10,8 @@
     "README SHA and audit metrics are recorded"
   ],
   "repository_count": 75,
-  "verified_count": 9,
-  "pending_count": 66,
+  "verified_count": 26,
+  "pending_count": 49,
   "entries": [
     {
       "repo": "Shtenco/shtenco.github.io",
@@ -39,11 +39,21 @@
     },
     {
       "repo": "Shtenco/sinergy_super_app",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "4ab5431e74668ffce0807edce7613678403bd8d7",
+      "chars": 8203,
+      "lines": 302,
+      "headings": 21,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_app",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "b275da63208368a335b87ec0bb7588011b392ccb",
+      "chars": 8234,
+      "lines": 333,
+      "headings": 21,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_app_family",
@@ -83,7 +93,12 @@
     },
     {
       "repo": "Shtenco/synergy_chain",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "8a110aacfbdabea607890ce50fd03c5f4c05ed57",
+      "chars": 8576,
+      "lines": 328,
+      "headings": 30,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_chain_print_money",
@@ -115,7 +130,12 @@
     },
     {
       "repo": "Shtenco/synergy_cashero",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "1300a9d7f45bffef583909d92afc65686bbae55c",
+      "chars": 13331,
+      "lines": 475,
+      "headings": 35,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_eurasian",
@@ -143,7 +163,12 @@
     },
     {
       "repo": "Shtenco/synegy_ai_compress",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "a5f7aeb8783a1b245554a1031593e8491c4e2007",
+      "chars": 8524,
+      "lines": 329,
+      "headings": 21,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_gguf_compress",
@@ -251,7 +276,12 @@
     },
     {
       "repo": "Shtenco/3D_bars_market_structure",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "b38ec21f3d1b0b8c42538eccb4fda72bba693e08",
+      "chars": 6544,
+      "lines": 244,
+      "headings": 22,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/computer_vision_trading_metatrader_5",
@@ -263,11 +293,21 @@
     },
     {
       "repo": "Shtenco/global_liquidity_dataminer",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "a36ef9363913b2a6375081d7b5c686d00e2992c5",
+      "chars": 7615,
+      "lines": 311,
+      "headings": 24,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/midas_lite",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "bbdcf4cd8ebfdc44de93fedc965393f4680923ee",
+      "chars": 8484,
+      "lines": 344,
+      "headings": 26,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
@@ -295,7 +335,12 @@
     },
     {
       "repo": "Shtenco/synergy_ai_investment_committee",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "4f61ba7ad2ad7c407e7e46c13a6486870db2062f",
+      "chars": 7048,
+      "lines": 289,
+      "headings": 21,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_ai_trade_terminal",
@@ -303,7 +348,12 @@
     },
     {
       "repo": "Shtenco/synergy_algotrading_graph_system",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "a473a759db2906b5658b28b2b5644428aab5ee3d",
+      "chars": 7361,
+      "lines": 347,
+      "headings": 30,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_crypto_pump",
@@ -311,15 +361,30 @@
     },
     {
       "repo": "Shtenco/synergy_market_graph",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "3e6d79f4a3404666a6bd74ed8c31b0c875399ce7",
+      "chars": 8435,
+      "lines": 370,
+      "headings": 27,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_market_maker",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "fc81c2ce8e7ee5bb674b4d58c4f20abc2a4bcbc8",
+      "chars": 7924,
+      "lines": 394,
+      "headings": 28,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_marketvision",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "31005f2f47239228b5edb86e414f5bb112dc81fa",
+      "chars": 8073,
+      "lines": 359,
+      "headings": 33,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_midas_ai",
@@ -331,15 +396,30 @@
     },
     {
       "repo": "Shtenco/synergy_midas_institutional",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "2ac0a94971f5a718164bbbe82b494ed858f19600",
+      "chars": 7911,
+      "lines": 328,
+      "headings": 30,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_quantlab",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "066582ac6e73595faf9431e31ec577cd4f0fdfc1",
+      "chars": 8441,
+      "lines": 372,
+      "headings": 31,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_relative_value",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "2661189d0237c60c278e8f2df8fe56e1097bf2c4",
+      "chars": 6721,
+      "lines": 352,
+      "headings": 25,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     },
     {
       "repo": "Shtenco/synergy_riskguard",
@@ -347,7 +427,18 @@
     },
     {
       "repo": "Shtenco/synergy_trademux",
-      "status": "PENDING_REAUDIT"
+      "status": "VERIFIED",
+      "readme_sha": "766384ff965c82cacb7da0227398ff1f40ffec3b",
+      "chars": 7789,
+      "lines": 374,
+      "headings": 32,
+      "verification_pass": "README_REAUDIT_WAVE_2"
     }
+  ],
+  "as_of": "2026-09-29",
+  "notes": [
+    "Wave 1: 9 originally weakest READMEs audited against actual trees/source/tests/evidence and rewritten.",
+    "Wave 2: 17 medium-depth READMEs audited and rewritten; committed credential material in synergy_cashero was confirmed and separately security-blocked.",
+    "Remaining repositories stay PENDING_REAUDIT regardless of README length until their actual repository contents are inspected."
   ]
 }
