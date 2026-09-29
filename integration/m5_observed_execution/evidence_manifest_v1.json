@@ -1,0 +1,71 @@
+{
+  "schema": "synergy.m5-observed-execution-manifest/v1",
+  "required_runtime_edges": 44,
+  "policy": "all suites must produce verifier-approved observed evidence before any runtime edge may be promoted to E2E_TESTED",
+  "suites": [
+    {
+      "id": "m3",
+      "edge_count": 22,
+      "scope": "integration/m3_federation/m3_edge_scope_v1.json",
+      "evidence": "integration/m3_federation/evidence/m3_federation_result.json",
+      "verifier": "integration/m3_federation/verify_evidence.py"
+    },
+    {
+      "id": "m4-market-advisory",
+      "edge_count": 5,
+      "scope": "integration/m4_market_advisory/edge_scope_v1.json",
+      "evidence": "integration/m4_market_advisory/evidence/m4_market_advisory_result.json",
+      "verifier": "integration/m4_market_advisory/verify_evidence.py"
+    },
+    {
+      "id": "m4-wave2",
+      "edge_count": 5,
+      "scope": "integration/m4_wave2/edge_scope_v1.json",
+      "evidence": "integration/m4_wave2/evidence/m4_wave2_result.json",
+      "verifier": "integration/m4_wave2/verify_evidence.py"
+    },
+    {
+      "id": "m4-wave3",
+      "edge_count": 5,
+      "scope": "integration/m4_wave3/edge_scope_v1.json",
+      "evidence": "integration/m4_wave3/evidence/m4_wave3_result.json",
+      "verifier": "integration/m4_wave3/verify_evidence.py"
+    },
+    {
+      "id": "m4-wave4",
+      "edge_count": 5,
+      "scope": "integration/m4_wave4/edge_scope_v1.json",
+      "evidence": "integration/m4_wave4/evidence/m4_wave4_result.json",
+      "verifier": "integration/m4_wave4/verify_evidence.py"
+    },
+    {
+      "id": "m4-wave5",
+      "edge_count": 2,
+      "scope": "integration/m4_wave5/edge_scope_v1.json",
+      "evidence": "integration/m4_wave5/evidence/m4_wave5_result.json",
+      "verifier": "integration/m4_wave5/verify_evidence.py"
+    }
+  ],
+  "observed_execution": {
+    "status": "BLOCKED_BY_RUNNER",
+    "successful_suites": 0,
+    "verified_runtime_edges": 0,
+    "github_actions_attempts": [
+      {
+        "run_id": 36495367465,
+        "workflow": "SYNERGY Federation Security Gate",
+        "attempt": 1,
+        "result": "failure-before-first-step",
+        "steps": 0
+      },
+      {
+        "run_id": 36495367465,
+        "workflow": "SYNERGY Federation Security Gate",
+        "attempt": 2,
+        "result": "failure-before-first-step",
+        "steps": 0
+      }
+    ],
+    "note": "Do not promote any edge until real suite evidence exists and passes all verifiers."
+  }
+}

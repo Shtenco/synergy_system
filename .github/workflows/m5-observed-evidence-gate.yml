@@ -1,0 +1,29 @@
+name: SYNERGY M5 Observed Evidence Gate
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - m5-observed-execution
+    paths:
+      - "integration/m5_observed_execution/**"
+      - "integration/m3_federation/**"
+      - "integration/m4_market_advisory/**"
+      - "integration/m4_wave2/**"
+      - "integration/m4_wave3/**"
+      - "integration/m4_wave4/**"
+      - "integration/m4_wave5/**"
+      - "registry/REPOSITORY_INTERFACES.json"
+
+jobs:
+  observed-evidence-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify federation maturity baseline
+        run: python integration/federation_maturity_gate.py
+      - name: Verify all observed evidence
+        run: python integration/m5_observed_execution/verify_observed_execution.py
