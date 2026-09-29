@@ -1,0 +1,353 @@
+{
+  "schema": "synergy.documentation-quality/v1",
+  "generated_at": "2026-09-29",
+  "definition_of_verified": [
+    "README exists on default branch",
+    "repository tree inspected",
+    "README is repository-specific, not passport-only",
+    "current implementation and missing components are separated",
+    "architecture, inputs/outputs, authority/invariants, evidence/tests, reproducibility, file map, SYNERGY links, roadmap and claim limits are documented",
+    "README SHA and audit metrics are recorded"
+  ],
+  "repository_count": 75,
+  "verified_count": 9,
+  "pending_count": 66,
+  "entries": [
+    {
+      "repo": "Shtenco/shtenco.github.io",
+      "status": "VERIFIED",
+      "chars": 8319,
+      "lines": 339,
+      "headings": 25,
+      "readme_sha": "7b37591d4089f08a50f283e97aedd9d00416d433"
+    },
+    {
+      "repo": "Shtenco/shtencoauantai.github.io",
+      "status": "VERIFIED",
+      "chars": 8114,
+      "lines": 298,
+      "headings": 20,
+      "readme_sha": "a073b020f6e6f7165f8b088e56d5b80c585507f0"
+    },
+    {
+      "repo": "Shtenco/sinergy_app",
+      "status": "VERIFIED",
+      "chars": 8435,
+      "lines": 207,
+      "headings": 16,
+      "readme_sha": "998c9de3bb97cdb3db508a08609123ef0fc4f78e"
+    },
+    {
+      "repo": "Shtenco/sinergy_super_app",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_app",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_app_family",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_messenger",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergychain.github.io",
+      "status": "VERIFIED",
+      "chars": 8263,
+      "lines": 293,
+      "headings": 28,
+      "readme_sha": "abb51cf604c371b107623cc1d9b7ac230fe5dc34"
+    },
+    {
+      "repo": "Shtenco/print_money_synergychain",
+      "status": "VERIFIED",
+      "chars": 8209,
+      "lines": 291,
+      "headings": 22,
+      "readme_sha": "8d8bdf77c577e5caac0b1c483627e61ce706c303"
+    },
+    {
+      "repo": "Shtenco/synergy_2chain_qe",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_blockchain",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_blochain_budget",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_chain",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_chain_print_money",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_graph_print_money",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_metachain",
+      "status": "VERIFIED",
+      "chars": 9059,
+      "lines": 311,
+      "headings": 23,
+      "readme_sha": "6823ebdb00d55e90a12c54fa56bf6616053fa764"
+    },
+    {
+      "repo": "Shtenco/synergy_qe",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_usds",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_financial_system",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_cashero",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_eurasian",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_financial_os",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_matrix_sota",
+      "status": "VERIFIED",
+      "chars": 7260,
+      "lines": 306,
+      "headings": 22,
+      "readme_sha": "caff472ff22702643e972893770f4f492eeef1fd"
+    },
+    {
+      "repo": "Shtenco/synergy_pay_system",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/dlp_solver",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synegy_ai_compress",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_gguf_compress",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_motherboard_xpu_xml",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_net",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_post_quantum_radio",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_qr_compress",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_shhts",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_shttps",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_turbo_linux",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_agentic_ai_economy",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_autopilot",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_nexus",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_olga",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_coder",
+      "status": "VERIFIED",
+      "chars": 7931,
+      "lines": 278,
+      "headings": 20,
+      "readme_sha": "01a04d952a7247eddade61f920d8d0a3e675f41a"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_company",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_language",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_gllm_nexus",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_nexus_science_agent",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_apps",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_megaproject",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_meta_os",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_project",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_system",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/binary_quantum_theory",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/epstein_network",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_cold_nuclear",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/3D_bars_market_structure",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/computer_vision_trading_metatrader_5",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/global_liquidity_dataminer",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/midas_lite",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/quantum-trading_metatrader5",
+      "status": "VERIFIED",
+      "chars": 9645,
+      "lines": 406,
+      "headings": 36,
+      "readme_sha": "34c71561fea9f4ea2ec27f1317b47c227c0713fb"
+    },
+    {
+      "repo": "Shtenco/swap_arbitrage_metatrader_5",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_adaptive_engine",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_trader",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_investment_committee",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_trade_terminal",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_algotrading_graph_system",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_crypto_pump",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_market_graph",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_market_maker",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_marketvision",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_ai",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_ai_trading_system",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_institutional",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_quantlab",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_relative_value",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_riskguard",
+      "status": "PENDING_REAUDIT"
+    },
+    {
+      "repo": "Shtenco/synergy_trademux",
+      "status": "PENDING_REAUDIT"
+    }
+  ]
+}
