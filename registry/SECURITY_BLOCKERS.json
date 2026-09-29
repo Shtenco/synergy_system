@@ -20,19 +20,22 @@
     },
     {
       "repo": "Shtenco/synergy_cashero",
-      "finding": "credential-like environment files present",
+      "finding": "confirmed non-placeholder credential/private-key-like material committed in environment files",
       "observed_path": ".env / owner.env / bot1.env / bot2.env",
-      "secret_contents_inspected": false,
+      "secret_contents_inspected": true,
       "status": "UNRESOLVED",
       "deployment_blocked": true,
       "federation_promotion_blocked": true,
       "remediation": [
-        "secret-scan files",
-        "rotate any real credentials",
-        "replace committed secrets with placeholders",
-        "remove sensitive history if applicable",
-        "enable secret scanning"
-      ]
+        "rotate/revoke every potentially real private key and affected RPC credential/token immediately",
+        "assume committed credentials are compromised even if later deleted from HEAD",
+        "replace tracked .env/private-key material with placeholder-only examples",
+        "remove secret material from current tree and purge sensitive Git history where applicable",
+        "invalidate any funded/on-chain authority tied to exposed keys and migrate to fresh keys",
+        "enable repository secret scanning and pre-commit/CI secret detection",
+        "verify bots/contracts/deployments no longer depend on old credentials before unblocking"
+      ],
+      "inspection_note": "Values were inspected only to classify placeholder vs non-placeholder material; secret values are intentionally not reproduced in documentation or registry."
     },
     {
       "repo": "Shtenco/synergy_turbo_linux",
