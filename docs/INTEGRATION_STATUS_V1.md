@@ -402,3 +402,10 @@ D. SECURITY_BLOCKED:
 E. DOCUMENTATION_ONLY:
    materialize code only where project genuinely needs runtime capability
 ```
+
+
+## M5 — Observed Federation Execution
+
+The aggregate M5 gate covers all 44 runtime edges represented by M3 plus M4 Waves 1–5. The current verified maturity remains `E2E_TESTED = 0`: GitHub-hosted jobs have been observed failing before their first workflow step, so no runtime edge is promoted without a physically produced evidence artifact and successful verifier result.
+
+Canonical gate: `integration/m5_observed_execution/verify_observed_execution.py`.
