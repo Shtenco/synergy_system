@@ -1,33 +1,33 @@
 # SYNERGY SYSTEM
-> ## 📚 Канонический комплект архитектуры — 29.09.2026
+> ##  Канонический комплект архитектуры — 29.09.2026
 >
-> - [🌐 Master Architecture V4](docs/MASTER_ARCHITECTURE_V4.md)
-> - [🧠 System Semantic Model V1](docs/SYNERGY_SYSTEM_SEMANTIC_MODEL_V1.md)
-> - [⚙️ Executable Topology V1](docs/EXECUTABLE_TOPOLOGY_V1.md)
-> - [🔗 Integration Status V1](docs/INTEGRATION_STATUS_V1.md)
-> - [✅ M2 Contract Endpoint Closure](docs/M2_CONTRACT_ENDPOINT_CLOSURE.md)
-> - [🧪 M3 Federation E2E Gate](integration/m3_federation/README.md)
-> - [🚀 M4 Wave 1 — Market Advisory Federation](integration/m4_market_advisory/README.md)
-> - [🧱 M4 Wave 2 — Institutional / Crypto / Economic Evidence](integration/m4_wave2/README.md)
-> - [🔬 M4 Wave 3 — Research / Intelligence / Compression](integration/m4_wave3/README.md)
-> - [🧪 M4 Wave 4 — Hardware / Physics / Monetary / Provenance / Benchmark](integration/m4_wave4/README.md)
-> - [📱 M4 Wave 5 — App Source Evidence](integration/m4_wave5/README.md)
-> - [🧾 M5 — Observed Federation Execution Gate](integration/m5_observed_execution/README.md)
-> - [📋 Federation Backlog V2](registry/FEDERATION_BACKLOG.json)
-> - [✅ Federation Maturity Gate](integration/federation_maturity_gate.py)
-> - [🔐 Federation Security Blockers](registry/SECURITY_BLOCKERS.json)
-> - [🧭 Атлас 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
-> - [🧾 Repository Registry](registry/SYNERGY_REPOSITORIES.json)
-> - [🏛️ Authority Registry](registry/AUTHORITY_REGISTRY.json)
-> - [📜 Contract Registry](registry/CONTRACT_REGISTRY.json)
-> - [🕸️ Dependency Graph](registry/DEPENDENCY_GRAPH.json)
-> - [🔌 Repository Interfaces — 75/75](registry/REPOSITORY_INTERFACES.json)
-> - [🧩 Integration Gaps](registry/INTEGRATION_GAPS.json)
-> - [🛡️ Invariant Registry](registry/INVARIANT_REGISTRY.json)
-> - [⚙️ Federation V2](config/repository_federation_v2.yaml)
-> - [📘 README Standard](docs/README_STANDARD.md)
-> - [✅ README Deep Pass 75/75](docs/README_DEEPENING_PLAN_75.md)
-> - [🔐 Security Hygiene Findings](docs/SECURITY_HYGIENE_FINDINGS.md)
+> - [ Master Architecture V4](docs/MASTER_ARCHITECTURE_V4.md)
+> - [ System Semantic Model V1](docs/SYNERGY_SYSTEM_SEMANTIC_MODEL_V1.md)
+> - [ Executable Topology V1](docs/EXECUTABLE_TOPOLOGY_V1.md)
+> - [ Integration Status V1](docs/INTEGRATION_STATUS_V1.md)
+> - [ M2 Contract Endpoint Closure](docs/M2_CONTRACT_ENDPOINT_CLOSURE.md)
+> - [ M3 Federation E2E Gate](integration/m3_federation/README.md)
+> - [ M4 Wave 1 — Market Advisory Federation](integration/m4_market_advisory/README.md)
+> - [ M4 Wave 2 — Institutional / Crypto / Economic Evidence](integration/m4_wave2/README.md)
+> - [ M4 Wave 3 — Research / Intelligence / Compression](integration/m4_wave3/README.md)
+> - [ M4 Wave 4 — Hardware / Physics / Monetary / Provenance / Benchmark](integration/m4_wave4/README.md)
+> - [ M4 Wave 5 — App Source Evidence](integration/m4_wave5/README.md)
+> - [ M5 — Observed Federation Execution Gate](integration/m5_observed_execution/README.md)
+> - [ Federation Backlog V2](registry/FEDERATION_BACKLOG.json)
+> - [ Federation Maturity Gate](integration/federation_maturity_gate.py)
+> - [ Federation Security Blockers](registry/SECURITY_BLOCKERS.json)
+> - [ Атлас 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
+> - [ Repository Registry](registry/SYNERGY_REPOSITORIES.json)
+> - [ Authority Registry](registry/AUTHORITY_REGISTRY.json)
+> - [ Contract Registry](registry/CONTRACT_REGISTRY.json)
+> - [ Dependency Graph](registry/DEPENDENCY_GRAPH.json)
+> - [ Repository Interfaces — 75/75](registry/REPOSITORY_INTERFACES.json)
+> - [ Integration Gaps](registry/INTEGRATION_GAPS.json)
+> - [ Invariant Registry](registry/INVARIANT_REGISTRY.json)
+> - [ Federation V2](config/repository_federation_v2.yaml)
+> - [ README Standard](docs/README_STANDARD.md)
+> - [ README Deep Pass 75/75](docs/README_DEEPENING_PLAN_75.md)
+> - [ Security Hygiene Findings](docs/SECURITY_HYGIENE_FINDINGS.md)
 >
 > `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
 >
@@ -307,7 +307,7 @@ Blockchain does **not** recompute HardNAV or silently promote a `REVIEWABLE` pro
 
 MetaPay / SYNERGIA Pay responsibilities:
 
-- fiat ↔ crypto ↔ CBDC abstraction;
+- fiat  crypto  CBDC abstraction;
 - omnichain route graph;
 - CEX / DEX / bridge adapters;
 - compliance and jurisdiction gates;
@@ -1337,23 +1337,23 @@ SHTENCO / SYNERGY ecosystem.
 
 ---
 
-# 🧭 Канонический атлас 75 репозиториев
+#  Канонический атлас 75 репозиториев
 
 Экосистема SYNERGY на текущем срезе включает **75 репозиториев**. Их архитектурные роли, домены, master-узлы и связи сведены в единый реестр:
 
-- 📚 [SYNERGY Repository Atlas — карта всех 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
-- 🧾 [Машиночитаемый реестр](registry/SYNERGY_REPOSITORIES.json)
+-  [SYNERGY Repository Atlas — карта всех 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
+-  [Машиночитаемый реестр](registry/SYNERGY_REPOSITORIES.json)
 
 ```mermaid
 flowchart LR
-    SYS[🧭 synergy_system] --> ATLAS[📚 75-repository atlas]
-    ATLAS --> AI[🧠 Intelligence]
-    ATLAS --> TRADE[📈 Trading]
-    ATLAS --> FIN[💰 Finance]
-    ATLAS --> CHAIN[⛓️ Blockchain]
-    ATLAS --> NET[🛡️ Infra / Network]
-    ATLAS --> APP[📱 Apps]
-    ATLAS --> SCI[🔬 Science]
+    SYS[ synergy_system] --> ATLAS[ 75-repository atlas]
+    ATLAS --> AI[ Intelligence]
+    ATLAS --> TRADE[ Trading]
+    ATLAS --> FIN[ Finance]
+    ATLAS --> CHAIN[ Blockchain]
+    ATLAS --> NET[ Infra / Network]
+    ATLAS --> APP[ Apps]
+    ATLAS --> SCI[ Science]
 ```
 
 Важно: связи в атласе разделяют **архитектурную принадлежность** и **доказанную runtime/code dependency**. Само наличие стрелки в системной карте не означает, что один репозиторий импортирует или запускает другой.
