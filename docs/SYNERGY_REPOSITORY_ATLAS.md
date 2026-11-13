@@ -1,11 +1,53 @@
-# 🧭 SYNERGY — Атлас 75 репозиториев
+# 🧭 SYNERGY — Атлас 89 репозиториев
 
 > **Каноническая карта федерации Shtenco/SYNERGY.**  
 > Архитектурный корень: [`Shtenco/synergy_system`](https://github.com/Shtenco/synergy_system)  
 > Экономический master dossier: [`Shtenco/synergy_project`](https://github.com/Shtenco/synergy_project)  
 > Цивилизационный граф: [`Shtenco/synergy_megaproject`](https://github.com/Shtenco/synergy_megaproject)  
 > Runtime-оркестратор узла: [`Shtenco/synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os)  
-> **Срез реестра: 28 сентября 2026 · 75 репозиториев.**
+> **Срез live-реестра: 14 ноября 2026 · 89 репозиториев.**  
+> Базовый глубокий паспорт: 75 репозиториев (28 сентября); 3 переименованных и 14 новых записей ожидают повторной глубокой проверки.
+
+---
+
+## Inventory refresh — 14 November 2026
+
+The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain **89 repositories**. This refresh does not claim that all 89 have completed the original deep documentation pass.
+
+- 72 entries retain a completed deep pass from the 75-repository September baseline.
+- 3 renamed repositories require lineage and README revalidation.
+- 14 newly inventoried repositories are classified provisionally and require the full README passport/deep pass.
+- `synergy_project` remains the economic master dossier, not a child technology asset.
+- `synergy_maps` is registered as a placeholder until an implementation appears.
+
+### Newly inventoried repositories
+
+| Repository | Provisional domain | Current role / evidence status |
+|---|---|---|
+| `synergy_complex_matrix_multiplication` | SCIENCE_RESEARCH | Structured complex-operator and matrix-free compute experiments |
+| `synergy_computing_topology` | INFRA_NETWORK_SECURITY | Compact descriptor/index computing experiments |
+| `synergy_search_engline` | INTELLIGENCE_AGENTS | Search/retrieval research shell |
+| `synergy_lead_search_engline` | APPS_INTERFACES | Offline lead discovery and approval-gated CRM workflow |
+| `synergy_triangle_money_system` | BLOCKCHAIN_MONETARY | Recursive collateral/liquidity simulation |
+| `synergy` | MASTER_GOVERNANCE | Umbrella navigation and governance |
+| `synergy_ai_llm_rwkv` | INTELLIGENCE_AGENTS | RWKV workflow and quantization research |
+| `synergy_ai_economic` | FINANCE_REAL_ECONOMY | Economic digital-twin simulations |
+| `synergy.github.io` | APPS_INTERFACES | Public presentation surface |
+| `synergy_meta_api` | INFRA_NETWORK_SECURITY | API/MCP gateway prototype |
+| `synergy_ai_workspace` | APPS_INTERFACES | Local AI workspace/desktop development |
+| `synergistic_economics` | FINANCE_REAL_ECONOMY | Economic OS and endogenous-economy research |
+| `synergy_metaverse` | APPS_INTERFACES | Spatial workspace projection/application |
+| `synergy_maps` | APPS_INTERFACES | README-only placeholder |
+
+### Repository rename reconciliation
+
+- `binary_quantum_theory` → `synergy_binary_quantum_theory`
+- `epstein_network` → `synergy_epstein_network`
+- `multi_threaded_trading_robot_with_machine_learning_python` → `shtenco_multi_threaded_trading_robot_with_machine_learning_python`
+
+These are identity/lineage updates, not additional assets. The registry keeps their deep-pass status pending until the renamed repository is revalidated.
+
+**Important:** `federation_parent` is an architectural navigation hint only. It does not prove a runtime dependency, ownership transfer, or shared executable service. The live registry is the population source; this atlas's historical sections remain the September baseline until each pending entry receives its own deep pass.
 
 ---
 
@@ -18,7 +60,7 @@ SYNERGY больше нельзя корректно описывать как �
 1. показывает место каждого репозитория в общей системе;
 2. отделяет архитектурную связь от доказанной runtime/code dependency;
 3. задаёт единый стандарт README, аналогичный по глубине `dlp_solver`;
-4. даёт человеку и AI-агенту единую точку входа в 75-репозиторную систему.
+4. даёт человеку и AI-агенту единую точку входа в 89-репозиторную систему; статус паспортизации каждого узла отражён в машиночитаемом registry.
 
 ---
 
