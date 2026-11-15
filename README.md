@@ -38,11 +38,12 @@
 >
 > `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
 >
+> **Live owner inventory:** **89 repositories**. The audited interface registry remains a separate **75-record** scope; 3 historical interface names are unverified rename candidates, and 14 newly inventoried repositories await initial deep review.  
 > **Documentation re-verification:** **26/75 VERIFIED · 49 PENDING_REAUDIT**. Первичная метка `75/75 COMPLETE` снята после повторного quality audit; канонический статус хранится в `registry/DOCUMENTATION_QUALITY.json`.
 > **M2 frozen baseline:** **17/17 contract families endpoint-complete · 22 runtime edges · 20 integrated repos**.  
 > **Current federation frontier:** **39/39 contract families endpoint-complete · 44 runtime edges ADAPTER_IMPLEMENTED · 42 repos ADAPTER_INTEGRATED · 0 UNCLASSIFIED/ARCHITECTURAL_ONLY · 0 E2E_TESTED · 0 DEPLOYED**.  
 **M5 observed-execution gate:** aggregate scope **44/44 runtime edges**; promotion remains blocked until real evidence artifacts pass every suite verifier.  
-> **75/75 maturity-classified:** 42 adapter-integrated · 11 external-runtime pending · 14 documentation-only · 3 non-runtime surfaces · 2 needs-hardening · 2 security-blocked · 1 governance-root.
+> **75/75 interface records maturity-classified:** 42 adapter-integrated · 11 external-runtime pending · 14 documentation-only · 3 non-runtime surfaces · 2 needs-hardening · 2 security-blocked · 1 governance-root.
 > **Rule:** ни один edge не повышается до `E2E_TESTED` без фактического cross-repo evidence.
 
 

@@ -1,0 +1,29 @@
+{
+  "schema": "synergy.repository-rename-candidates.v1",
+  "status": "UNVERIFIED_CANDIDATES_ONLY",
+  "as_of": "2026-11-14",
+  "policy": "A candidate pair is not proof of repository identity, legal title continuity, shared history, or runtime dependency. Do not consolidate valuation, ownership, secrets, or authority until immutable GitHub repository IDs, redirects, or Git ancestry establish lineage.",
+  "candidates": [
+    {
+      "legacy_full_name": "Shtenco/binary_quantum_theory",
+      "candidate_full_name": "Shtenco/synergy_binary_quantum_theory",
+      "status": "CANDIDATE_ONLY",
+      "identity_confirmed": false,
+      "required_evidence": ["immutable GitHub repository ID or redirect evidence", "Git ancestry or verified repository transfer history"]
+    },
+    {
+      "legacy_full_name": "Shtenco/epstein_network",
+      "candidate_full_name": "Shtenco/synergy_epstein_network",
+      "status": "CANDIDATE_ONLY",
+      "identity_confirmed": false,
+      "required_evidence": ["immutable GitHub repository ID or redirect evidence", "Git ancestry or verified repository transfer history"]
+    },
+    {
+      "legacy_full_name": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+      "candidate_full_name": "Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python",
+      "status": "CANDIDATE_ONLY",
+      "identity_confirmed": false,
+      "required_evidence": ["immutable GitHub repository ID or redirect evidence", "Git ancestry or verified repository transfer history"]
+    }
+  ]
+}
