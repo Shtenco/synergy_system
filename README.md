@@ -23,7 +23,7 @@
 > - [ Federation Backlog V2](registry/FEDERATION_BACKLOG.json)
 > - [ Federation Maturity Gate](integration/federation_maturity_gate.py)
 > - [ Federation Security Blockers](registry/SECURITY_BLOCKERS.json)
-> - [ Атлас 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
+> - [ Атлас 89 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
 > - [ Repository Registry](registry/SYNERGY_REPOSITORIES.json)
 > - [ Authority Registry](registry/AUTHORITY_REGISTRY.json)
 > - [ Contract Registry](registry/CONTRACT_REGISTRY.json)
