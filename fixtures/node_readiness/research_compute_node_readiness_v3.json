@@ -1,0 +1,16 @@
+{
+  "schema": "synergy.node-readiness/v3",
+  "readiness_id": "RESEARCH_COMPUTE_NODE_READINESS_ALL_INTERFACES_V3_20260822",
+  "previous_readiness_digest": "b590134ce5c6246bd686ff3bf3678a5ffc75524e7034f5dfdc14587cbfe16994",
+  "profile_digest": "406740705e853fa51ad4eacf7a01925fbe4b5cec491be35ea12ba777d217d714",
+  "base_source_lock_digest": "14c763218602585d49e12060e1e6cf21d33815fda0cb18711a6522a26157ace2",
+  "source_revision_digest": "82d4b40e2276b8095f7fd3ff2105181d9c038b3e2879265facd022ff30d9fb32",
+  "build_plan_digest": "5ac2d5a20428d5e3f88bf25b52137177122cb7d0d3feebf62efeb0576aedddd2",
+  "build_status": "BUILD_PLAN_NOT_REPRODUCIBLE_YET",
+  "service_status": "ALL_REQUIRED_SERVICE_INTERFACES_IMPLEMENTED_SOURCE_ONLY",
+  "node_status": "NODE_NOT_DEPLOYABLE",
+  "blockers": ["BUILD_ARTIFACTS_NOT_VERIFIED", "BUILD_TOOLCHAIN_NOT_FROZEN"],
+  "resolved_since_v2": ["NEXUS_SERVICE_INTERFACE_NOT_IMPLEMENTED"],
+  "execution_authority": "NONE",
+  "readiness_digest": "2d2622e82f0a818facdc46a2fac0773107d42b8d8e7b519b4d2fe4030efd1a89"
+}

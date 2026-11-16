@@ -1,0 +1,22 @@
+name: economic-os-rc2-local-testnet-execution
+
+on:
+  pull_request:
+    paths:
+      - 'releases/economic_os_rc2_local_testnet_execution_20260828.json'
+      - 'verify/verify_economic_os_rc2_local_testnet_execution.py'
+      - 'tests/test_economic_os_rc2_local_testnet_execution.py'
+      - 'docs/ECONOMIC_OS_RC2_LOCAL_TESTNET_EXECUTION_20260828.md'
+      - '.github/workflows/economic-os-rc2-local-testnet-execution.yml'
+  workflow_dispatch:
+
+jobs:
+  rc2-selftest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_economic_os_rc1_testnet_ready.py tests/test_economic_os_rc2_local_testnet_execution.py

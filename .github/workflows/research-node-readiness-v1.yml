@@ -1,0 +1,31 @@
+name: Research Node Readiness v1
+
+on:
+  pull_request:
+    paths:
+      - 'fixtures/node_readiness/research_compute_node_readiness_v1.json'
+      - 'fixtures/service_specs/**'
+      - 'src/synergy_system/node_readiness_v1.py'
+      - 'schemas/synergy_node_readiness_v1.schema.json'
+      - 'tests/test_research_node_readiness_v1.py'
+      - 'config/cross_repo_schema_overlay_node_readiness_v1.json'
+      - 'docs/RESEARCH_NODE_READINESS_V1.md'
+      - '.github/workflows/research-node-readiness-v1.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install --upgrade pip pytest jsonschema pyyaml
+      - run: python -m pip install -e .
+      - run: pytest -q tests/test_research_node_readiness_v1.py

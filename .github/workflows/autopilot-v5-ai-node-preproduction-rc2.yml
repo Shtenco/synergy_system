@@ -1,0 +1,20 @@
+name: AUTOPILOT V5 AI Node Pre-Production RC2
+on:
+  pull_request:
+    paths:
+      - 'releases/synergy_autopilot_v5_ai_node_preproduction_rc2.json'
+      - 'scripts/verify_autopilot_ai_node_preproduction_rc2.py'
+      - 'tests/test_autopilot_ai_node_preproduction_rc2.py'
+      - 'docs/AUTOPILOT_V5_AI_NODE_PREPRODUCTION_RC2_20260823.md'
+      - '.github/workflows/autopilot-v5-ai-node-preproduction-rc2.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/verify_autopilot_ai_node_preproduction_rc2.py
+      - run: python -m unittest tests/test_autopilot_ai_node_preproduction_rc2.py -v

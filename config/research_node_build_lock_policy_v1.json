@@ -1,0 +1,10 @@
+{
+  "schema": "synergy.node-build-lock-policy/v1",
+  "source_candidate_status": "SOURCE_CANDIDATE_NOT_BUILD_VERIFIED",
+  "build_verified_status": "BUILD_VERIFIED",
+  "source_candidate_execution_authority": "NONE",
+  "build_verified_execution_authority": "NONE",
+  "requires_new_generation_for_build_verification": true,
+  "requires_independent_build_evidence": true,
+  "allows_source_lock_as_executable_artifact": false
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "synergy.economic-os-canonicalization-surface/v1",
+  "surface_id": "SYNERGY_ECONOMIC_OS_CANONICALIZATION_SURFACE_V1_20260828",
+  "economic_os_rc4_digest": "51566c3c87f21b1a22ddef9bb6aea6abd9170042790f37ac3ff559bf7ad89c60",
+  "repositories": [
+    {
+      "repository": "Shtenco/synergy_financial_os",
+      "canonical_pr": 33,
+      "head": "d21ce6b5bd91422c45f938b2d4ec641974106944",
+      "base": "main",
+      "mergeable": true,
+      "draft": true
+    },
+    {
+      "repository": "Shtenco/synergy_pay_system",
+      "canonical_pr": 16,
+      "head": "a4b7b2876915e7f70089947a5b40f3cff81458d9",
+      "base": "main",
+      "mergeable": true,
+      "draft": true
+    },
+    {
+      "repository": "Shtenco/synergy_system",
+      "canonical_pr": 32,
+      "head": "d9487d2fbee51d3df15ef9aa73b6f6f95e854e8c",
+      "base": "main",
+      "mergeable": true,
+      "draft": true
+    },
+    {
+      "repository": "Shtenco/synergy_ai_blockchain",
+      "canonical_pr": 17,
+      "head": "72a7853fba49d20c208bd2d9776d6c107648b882",
+      "base": "main",
+      "mergeable": true,
+      "draft": true
+    }
+  ],
+  "all_canonical_prs_target_main": true,
+  "all_canonical_prs_mergeable": true,
+  "structural_canonicalization_status": "READY_NOT_MERGED",
+  "promotion_status": "POLICY_BLOCKED_NOT_AUTHORIZED",
+  "promotion_blockers": [
+    "HOSTED_CI_EXECUTED_PASS_EVIDENCE_MISSING",
+    "ONE_LIVE_EXTERNAL_VALUE_TO_NEXT_CAPACITY_EXECUTION_NOT_CAPTURED",
+    "HUMAN_MAINTAINER_PROMOTION_NOT_PERFORMED"
+  ],
+  "automatic_merge_allowed": false,
+  "ai_merge_authority": "NONE",
+  "observed_at": "2026-08-28T11:42:00Z",
+  "digest": "0af8c4768129948cd773ed3f7bab5706a1d936a352d659c84d8d85468fa9edb8"
+}

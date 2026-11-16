@@ -1,0 +1,18 @@
+{
+  "schema": "synergy.node-readiness/v1",
+  "readiness_id": "RESEARCH_COMPUTE_NODE_READINESS_20260822",
+  "profile_digest": "406740705e853fa51ad4eacf7a01925fbe4b5cec491be35ea12ba777d217d714",
+  "source_lock_digest": "14c763218602585d49e12060e1e6cf21d33815fda0cb18711a6522a26157ace2",
+  "build_plan_digest": "809a23879e9e314b835956ef96cec8ede1faaeef1e5c2c06fd7330df600417aa",
+  "service_specs": [
+    {"service_id":"content-cache","repository":"Shtenco/synergynet","source_commit":"a8fde01c19420dbe63ca30e1da3b009c0c10064d","service_spec_digest":"9ce8c608edd65f7c888809c49109fa3a4cecffe58d9434d6c9bf317150e7ee96","readiness_status":"SERVICE_INTERFACE_NOT_IMPLEMENTED"},
+    {"service_id":"nexus","repository":"Shtenco/agi_nexus","source_commit":"cbc06e83f7f9e242719667e446a090894e11eef1","service_spec_digest":"ab83e935b2cdd2eb855737a18f4e8e039ebb166cfe431d8d1652a44a63af522d","readiness_status":"SERVICE_INTERFACE_NOT_IMPLEMENTED"},
+    {"service_id":"synergynet","repository":"Shtenco/synergynet","source_commit":"a8fde01c19420dbe63ca30e1da3b009c0c10064d","service_spec_digest":"e74ae38f45d313b301b4f7b4c408485780d1c1f6ebdb68cbd7c0bd3ed13b391c","readiness_status":"SERVICE_INTERFACE_NOT_IMPLEMENTED"}
+  ],
+  "build_status": "BUILD_PLAN_NOT_REPRODUCIBLE_YET",
+  "service_status": "SERVICE_INTERFACES_INCOMPLETE",
+  "node_status": "NODE_NOT_DEPLOYABLE",
+  "blockers": ["BUILD_ARTIFACTS_NOT_VERIFIED","BUILD_TOOLCHAIN_NOT_FROZEN","CONTENT_CACHE_SERVICE_INTERFACE_NOT_IMPLEMENTED","NEXUS_SERVICE_INTERFACE_NOT_IMPLEMENTED","SYNERGYNET_SERVICE_INTERFACE_NOT_IMPLEMENTED"],
+  "execution_authority": "NONE",
+  "readiness_digest": "39a3405b4e5da9b79b260f67f9ec975433ed171d8801eb55edc648b1f38370d8"
+}

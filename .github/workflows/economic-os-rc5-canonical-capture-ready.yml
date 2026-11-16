@@ -1,0 +1,22 @@
+name: economic-os-rc5-canonical-capture-ready
+
+on:
+  pull_request:
+    paths:
+      - 'releases/economic_os_rc5_canonical_capture_ready_20260828.json'
+      - 'verify/verify_economic_os_rc5_canonical_capture_ready.py'
+      - 'tests/test_economic_os_rc5_canonical_capture_ready.py'
+      - 'docs/ECONOMIC_OS_RC5_CANONICAL_CAPTURE_READY_20260828.md'
+      - '.github/workflows/economic-os-rc5-canonical-capture-ready.yml'
+  workflow_dispatch:
+
+jobs:
+  rc5-selftest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pytest
+      - run: pytest -q tests/test_live_economic_cycle_capture_v1.py tests/test_economic_os_rc5_canonical_capture_ready.py

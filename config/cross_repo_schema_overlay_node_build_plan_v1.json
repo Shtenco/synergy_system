@@ -1,0 +1,22 @@
+{
+  "schema": "synergy.cross-repo-schema-overlay/v1",
+  "overlay_id": "RESEARCH_NODE_BUILD_PLAN_V1",
+  "contracts": [
+    {
+      "schema_id": "synergy.build-recipe/v1",
+      "producer_model": "DOMAIN_REPOSITORY_SELF_ONLY",
+      "producers": ["Shtenco/agi_nexus", "Shtenco/synergynet"],
+      "consumers": ["Shtenco/synergy_system"],
+      "authority": "DOMAIN_BUILD_METADATA_ONLY",
+      "execution_authority": "NONE"
+    },
+    {
+      "schema_id": "synergy.node-build-plan/v1",
+      "producer_model": "SINGLE_ARCHITECTURE_PRODUCER",
+      "producers": ["Shtenco/synergy_system"],
+      "consumers": ["Shtenco/synergy_meta_os"],
+      "authority": "ARCHITECTURE_BUILD_AGGREGATION_ONLY",
+      "execution_authority": "NONE"
+    }
+  ]
+}

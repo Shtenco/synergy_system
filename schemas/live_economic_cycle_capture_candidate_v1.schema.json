@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.live-economic-cycle-capture-candidate/v1",
+  "title": "SYNERGY Live Economic Cycle Capture Candidate v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "run_id", "economic_cycle_v1_digest", "economic_os_rc4_digest",
+    "started_at", "completed_at", "phases", "canonical_hard_nav_before",
+    "canonical_hard_nav_after", "realized_external_pnl_before", "realized_external_pnl_after",
+    "next_cycle_final_available_capacity", "next_cycle_capacity_status",
+    "internal_mint_or_revaluation_counted_as_profit", "capture_status",
+    "external_verification_status", "live_execution_claim", "authority",
+    "execution_authority", "ai_authority", "blockchain_submission_authority", "digest"
+  ],
+  "properties": {
+    "schema": {"const": "synergy.live-economic-cycle-capture-candidate/v1"},
+    "run_id": {"type": "string", "minLength": 1},
+    "economic_cycle_v1_digest": {"const": "83f9c3ee0c168ca50212ebaa1e64c58c08eb87fd040a8b5f214ee4987242f3f1"},
+    "economic_os_rc4_digest": {"const": "51566c3c87f21b1a22ddef9bb6aea6abd9170042790f37ac3ff559bf7ad89c60"},
+    "started_at": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T.*Z$"},
+    "completed_at": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T.*Z$"},
+    "phases": {
+      "type": "array", "minItems": 12, "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["ordinal", "phase", "owner", "schema", "artifact_digest", "observed_at"],
+        "properties": {
+          "ordinal": {"type": "integer", "minimum": 1, "maximum": 12},
+          "phase": {"type": "string", "minLength": 1},
+          "owner": {"type": "string", "minLength": 1},
+          "schema": {"type": "string", "minLength": 1},
+          "artifact_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "observed_at": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T.*Z$"},
+          "external_evidence": {
+            "type": ["object", "null"],
+            "properties": {
+              "provider": {"type": "string", "minLength": 1},
+              "provider_reference": {"type": "string", "minLength": 1},
+              "environment": {"const": "LIVE_EXTERNAL"},
+              "provider_evidence_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+              "verification_status": {"const": "PENDING_EXTERNAL_VERIFICATION"}
+            },
+            "required": ["provider", "provider_reference", "environment", "provider_evidence_digest", "verification_status"],
+            "additionalProperties": false
+          },
+          "decision_authority": {"enum": ["HUMAN_COMMITTEE", "MULTISIG_GOVERNANCE"]},
+          "ai_authority": {"const": "NONE"},
+          "authorization_consumption": {"const": "REMAINS_CONSUMED"}
+        }
+      }
+    },
+    "canonical_hard_nav_before": {"type": "string"},
+    "canonical_hard_nav_after": {"type": "string"},
+    "realized_external_pnl_before": {"type": "string"},
+    "realized_external_pnl_after": {"type": "string"},
+    "next_cycle_final_available_capacity": {"type": "string"},
+    "next_cycle_capacity_status": {"const": "CAPACITY_AVAILABLE"},
+    "internal_mint_or_revaluation_counted_as_profit": {"const": "0"},
+    "capture_status": {"const": "STRUCTURALLY_COMPLETE_PENDING_EXTERNAL_VERIFICATION"},
+    "external_verification_status": {"const": "PENDING"},
+    "live_execution_claim": {"const": false},
+    "authority": {"const": "PROVENANCE_ONLY"},
+    "execution_authority": {"const": "NONE"},
+    "ai_authority": {"const": "NONE"},
+    "blockchain_submission_authority": {"const": "NONE"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

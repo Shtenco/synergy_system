@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.node-build-plan/v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "plan_id", "profile_digest", "base_source_lock_digest", "source_revision_digest", "services", "plan_status", "build_blockers", "execution_authority", "plan_digest"],
+  "properties": {
+    "schema": {"const": "synergy.node-build-plan/v2"},
+    "plan_id": {"type": "string", "minLength": 1},
+    "profile_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "base_source_lock_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_revision_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "services": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["service_id", "repository", "runtime_source_commit", "build_source_commit", "service_spec_digest", "build_recipe_digest", "build_artifact_digest", "build_evidence_digest", "interface_status", "reproducibility_status"],
+        "properties": {
+          "service_id": {"enum": ["content-cache", "nexus", "synergynet"]},
+          "repository": {"type": "string", "pattern": "^Shtenco/"},
+          "runtime_source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "build_source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "service_spec_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "build_recipe_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "build_artifact_digest": {"type": "null"},
+          "build_evidence_digest": {"type": "null"},
+          "interface_status": {"type": "string", "minLength": 1},
+          "reproducibility_status": {"const": "NOT_REPRODUCIBLE_TOOLCHAIN_NOT_FROZEN"}
+        }
+      }
+    },
+    "plan_status": {"const": "BUILD_PLAN_NOT_REPRODUCIBLE_YET"},
+    "build_blockers": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string", "minLength": 1}},
+    "execution_authority": {"const": "NONE"},
+    "plan_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

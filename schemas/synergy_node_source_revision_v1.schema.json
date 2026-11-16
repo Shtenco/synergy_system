@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.node-source-revision/v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "revision_id", "profile_digest", "base_source_lock_digest", "services", "revision_status", "execution_authority", "revision_digest"],
+  "properties": {
+    "schema": {"const": "synergy.node-source-revision/v1"},
+    "revision_id": {"type": "string", "minLength": 1},
+    "profile_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "base_source_lock_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "services": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["service_id", "repository", "previous_source_commit", "runtime_source_commit", "build_source_commit", "source_ref", "source_role", "service_spec_digest", "interface_status", "revision_kind"],
+        "properties": {
+          "service_id": {"enum": ["content-cache", "nexus", "synergynet"]},
+          "repository": {"type": "string", "pattern": "^Shtenco/"},
+          "previous_source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "runtime_source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "build_source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "source_ref": {"type": "string", "minLength": 1},
+          "source_role": {"type": "string", "minLength": 1},
+          "service_spec_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "interface_status": {"type": "string", "minLength": 1},
+          "revision_kind": {"enum": ["UPDATED", "UNCHANGED"]}
+        }
+      }
+    },
+    "revision_status": {"const": "SOURCE_REVISION_FROZEN_BUILD_NOT_VERIFIED"},
+    "execution_authority": {"const": "NONE"},
+    "revision_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

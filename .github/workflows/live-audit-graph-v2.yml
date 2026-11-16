@@ -1,0 +1,49 @@
+name: SYNERGY Architecture Graph and Live Audit v2
+
+on:
+  pull_request:
+    paths:
+      - 'src/synergy_system/graph.py'
+      - 'src/synergy_system/live_audit.py'
+      - 'tests/test_live_audit_graph_v2.py'
+      - 'tools/live_repository_audit.py'
+      - 'docs/LIVE_REPOSITORY_AUDIT_AND_GRAPH_V2.md'
+      - '.github/workflows/live-audit-graph-v2.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: synergy-system-live-audit-graph-v2-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  offline-contracts:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e . pytest
+      - run: python -m pytest -q tests/test_live_audit_graph_v2.py
+
+  live-audit-status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -e .
+      - name: Report live audit credential status
+        env:
+          SYNERGY_GITHUB_READ_TOKEN: ${{ secrets.SYNERGY_GITHUB_READ_TOKEN }}
+        run: |
+          if [ -z "$SYNERGY_GITHUB_READ_TOKEN" ]; then
+            echo 'AUTH_REQUIRED: configure a read-only federation-wide GitHub credential to run the live private-repository audit.'
+            exit 0
+          fi
+          python tools/live_repository_audit.py

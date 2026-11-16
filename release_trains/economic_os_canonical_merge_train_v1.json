@@ -1,0 +1,42 @@
+{
+  "schema": "synergy.economic-os-canonical-merge-train/v1",
+  "train_id": "SYNERGY_ECONOMIC_OS_CANONICAL_MERGE_TRAIN_V1_20260828",
+  "release_candidate_digest": "060458d94b82afc4ce944b780e547dcd67c68499b0068eaeb2906446f4505913",
+  "promotion_policy": "NO_CANONICAL_MERGE_OR_STATUS_PROMOTION_WITHOUT_EXECUTED_PASS_EVIDENCE",
+  "financial_os_lane": {
+    "repository": "Shtenco/synergy_financial_os",
+    "prerequisite_pr": 25,
+    "prerequisite_head": "5e361546a680f139ed04a75209a544478813d7df",
+    "ordered_prs": [26, 27, 28, 29, 30, 31, 32],
+    "terminal_head": "d21ce6b5bd91422c45f938b2d4ec641974106944"
+  },
+  "metapay_lane": {
+    "repository": "Shtenco/synergy_pay_system",
+    "prerequisite_pr": 12,
+    "prerequisite_head": "3fc7bf98c5d0cb43401724d8be0bc4aafcad6571",
+    "ordered_prs": [13, 14],
+    "terminal_head": "a4b7b2876915e7f70089947a5b40f3cff81458d9"
+  },
+  "federation_promotion": [
+    {"repository": "Shtenco/synergy_system", "pr": 27, "head": "43760304d0f0c43e737cbe3bb717dd0f15eaa953"},
+    {"repository": "Shtenco/synergy_ai_blockchain", "pr": 12, "head": "b9c87e0a8b4da465e97994a97365f46ce994bd7f"},
+    {"repository": "Shtenco/synergy_ai_blockchain", "pr": 13, "head": "76fb024d7f9125809118541022e8da32fa3a2b9d"},
+    {"repository": "Shtenco/synergy_system", "pr": 28, "head": "9ead6f071a77be278910f48c98c79d2839a2b485"}
+  ],
+  "observed_ci_evidence": [
+    {"scope": "METAPAY_REVERSAL_V2", "run_id": 33157371835, "job_id": 98803263500, "steps_state": "NULL", "logs_state": "NULL", "classification": "NOT_EXECUTED_UNKNOWN"},
+    {"scope": "FINANCIAL_REVERSAL_ACCOUNTING_V2", "run_id": 33157911945, "job_id": 98805029153, "steps_state": "NULL", "logs_state": "NULL", "classification": "NOT_EXECUTED_UNKNOWN"},
+    {"scope": "FINANCIAL_BUDGET_STATE_V3", "run_id": 33158179161, "job_id": 98805901936, "steps_state": "NULL", "logs_state": "NULL", "classification": "NOT_EXECUTED_UNKNOWN"},
+    {"scope": "FINANCIAL_AVAILABLE_CAPACITY_V4", "run_id": 33158378306, "job_id": 98806566680, "steps_state": "NULL", "logs_state": "NULL", "classification": "NOT_EXECUTED_UNKNOWN"},
+    {"scope": "SYSTEM_ECONOMIC_CYCLE_V1", "run_id": 33158763290, "job_id": 98807829303, "steps_state": "NULL", "logs_state": "NULL", "classification": "NOT_EXECUTED_UNKNOWN"},
+    {"scope": "BLOCKCHAIN_ECONOMIC_COMMITMENT_V1", "run_id": 33162047473, "job_id": 98818568899, "steps_state": "NULL", "logs_state": "NULL", "classification": "NOT_EXECUTED_UNKNOWN"},
+    {"scope": "ECONOMIC_TESTNET_V1", "run_id": 33162283307, "job_id": 98819355204, "steps_state": "NULL", "logs_state": "NULL", "classification": "NOT_EXECUTED_UNKNOWN"},
+    {"scope": "ECONOMIC_OS_RC1", "run_id": 33162478567, "job_id": 98819990816, "steps_state": "NULL", "logs_state": "NULL", "classification": "NOT_EXECUTED_UNKNOWN"}
+  ],
+  "current_gate": "BLOCKED_GITHUB_ACTIONS_NO_STEP_EXECUTION_EVIDENCE",
+  "merge_authority": "HUMAN_MAINTAINER_ONLY",
+  "auto_merge": false,
+  "ai_merge_authority": "NONE",
+  "generated_at": "2026-08-28T10:20:00Z",
+  "digest": "ce8ea7aa41acdf08e2995ba1edec4167449de69f1ce0791afa249195f3a8aed6"
+}

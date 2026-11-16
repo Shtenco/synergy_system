@@ -1,0 +1,17 @@
+{
+  "schema": "synergy.live-economic-cycle-capture-readiness/v1",
+  "readiness_id": "SYNERGY_LIVE_ECONOMIC_CYCLE_CAPTURE_V1_20260828",
+  "economic_cycle_v1_digest": "83f9c3ee0c168ca50212ebaa1e64c58c08eb87fd040a8b5f214ee4987242f3f1",
+  "economic_os_rc4_digest": "51566c3c87f21b1a22ddef9bb6aea6abd9170042790f37ac3ff559bf7ad89c60",
+  "capture_schema": "synergy.live-economic-cycle-capture-candidate/v1",
+  "capture_protocol_status": "READY_NO_LIVE_FIXTURE",
+  "external_verification_status": "NOT_EXECUTED",
+  "live_execution_claim": false,
+  "current_blocker": "ONE_LIVE_EXTERNAL_VALUE_TO_NEXT_CAPACITY_EXECUTION_NOT_CAPTURED",
+  "authority": "PROVENANCE_ONLY",
+  "execution_authority": "NONE",
+  "ai_authority": "NONE",
+  "blockchain_submission_authority": "NONE",
+  "generated_at": "2026-08-28T11:45:00Z",
+  "digest": "252fe1f12f326a6b31d18bb9b16f2bd31a8a72d12ad2053ae437864db8ef2eef"
+}

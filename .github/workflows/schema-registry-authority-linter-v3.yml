@@ -1,0 +1,32 @@
+name: SYNERGY Schema Registry Authority Linter v3
+
+on:
+  pull_request:
+    paths:
+      - 'config/cross_repo_schema_registry_v1.json'
+      - 'config/authority_lint_policy_v1.json'
+      - 'src/synergy_system/governance_lint_v3.py'
+      - 'tests/test_schema_registry_authority_linter_v3.py'
+      - 'tools/lint_authority_patch.py'
+      - 'docs/SCHEMA_REGISTRY_AUTHORITY_LINTER_V3.md'
+      - '.github/workflows/schema-registry-authority-linter-v3.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: synergy-governance-lint-v3-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  governance:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e . pytest pyyaml
+      - run: python -m pytest -q tests/test_schema_registry_authority_linter_v3.py

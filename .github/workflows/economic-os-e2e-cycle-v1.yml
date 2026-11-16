@@ -1,0 +1,20 @@
+name: economic-os-e2e-cycle-v1
+on:
+  pull_request:
+    paths:
+      - 'evidence/economic_os_e2e_cycle_v1.json'
+      - 'src/synergy_system/economic_cycle_v1.py'
+      - 'tests/test_economic_cycle_v1.py'
+      - 'schemas/economic_cycle_v1.schema.json'
+      - 'docs/ECONOMIC_OS_E2E_CYCLE_V1_20260828.md'
+      - '.github/workflows/economic-os-e2e-cycle-v1.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e . pytest
+      - run: pytest -q tests/test_economic_cycle_v1.py

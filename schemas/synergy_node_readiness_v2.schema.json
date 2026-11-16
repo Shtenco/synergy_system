@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.node-readiness/v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "readiness_id", "previous_readiness_digest", "profile_digest", "base_source_lock_digest", "source_revision_digest", "build_plan_digest", "build_status", "service_status", "node_status", "blockers", "resolved_since_v1", "execution_authority", "readiness_digest"],
+  "properties": {
+    "schema": {"const": "synergy.node-readiness/v2"},
+    "readiness_id": {"type": "string", "minLength": 1},
+    "previous_readiness_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "profile_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "base_source_lock_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_revision_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "build_plan_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "build_status": {"const": "BUILD_PLAN_NOT_REPRODUCIBLE_YET"},
+    "service_status": {"const": "NEXUS_SERVICE_INTERFACE_INCOMPLETE"},
+    "node_status": {"const": "NODE_NOT_DEPLOYABLE"},
+    "blockers": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 1}},
+    "resolved_since_v1": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string", "minLength": 1}},
+    "execution_authority": {"const": "NONE"},
+    "readiness_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
