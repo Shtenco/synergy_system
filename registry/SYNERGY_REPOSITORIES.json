@@ -2,12 +2,12 @@
   "schema": "synergy.repository-registry.v1",
   "generated_date": "2026-11-20",
   "owner": "Shtenco",
-  "repository_count": 91,
+  "repository_count": 92,
   "architecture_root": "Shtenco/synergy_system",
   "master_dossier": "Shtenco/synergy_project",
   "civilization_graph": "Shtenco/synergy_megaproject",
   "runtime_orchestrator": "Shtenco/synergy_meta_os",
-  "note": "Live GitHub owner inventory refreshed 2026-11-20. The 91 owner-repository inventory, 75-record interface registry, and 1,292-branch census are separate scopes. federation_parent records architectural navigation only unless a repository proves a stronger code/runtime dependency. Newly added and renamed repositories remain pending deep documentation revalidation.",
+  "note": "Live GitHub owner inventory refreshed 2026-11-20: 92 owner repositories. The 92-owner inventory, 76-record interface registry, 1,294-branch census and 206-current-open-PR discovery are separate scopes. federation_parent records architectural navigation only unless code/runtime evidence proves a stronger dependency. Newly added and renamed repositories remain pending deep documentation revalidation.",
   "repositories": [
     {
       "name": "3D_bars_market_structure",
@@ -128,6 +128,21 @@
       "readme_federation_passport": true,
       "readme_deep_pass": "COMPLETE",
       "readme_deep_pass_date": "2026-09-28"
+    },
+    {
+      "name": "shtenco_micro_ai",
+      "full_name": "Shtenco/shtenco_micro_ai",
+      "url": "https://github.com/Shtenco/shtenco_micro_ai",
+      "visibility": "private",
+      "default_branch": "main",
+      "size_kb": 32,
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Локальный inference runtime для MNN-Pocket-0.3B INT4; веса загружаются отдельно, а benchmark и качество должны быть подтверждены на целевом устройстве.",
+      "federation_parent": null,
+      "classification_basis": "provisional inventory classification from current README/main tree and selected branch evidence; federation_parent is not proof of runtime dependency",
+      "readme_federation_passport": false,
+      "readme_deep_pass": "PENDING",
+      "readme_deep_pass_date": null
     },
     {
       "name": "shtenco_multi_threaded_trading_robot_with_machine_learning_python",
@@ -805,6 +820,21 @@
       "readme_deep_pass_date": "2026-09-28"
     },
     {
+      "name": "synergy_hierarchical_cognitive_memory_architecture",
+      "full_name": "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+      "url": "https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+      "visibility": "private",
+      "default_branch": "main",
+      "size_kb": 0,
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Provider-independent hierarchical cognitive memory candidate with dynamic context planning, FTS5/graph/vector retrieval and content-addressed source provenance. Main is README-only; implementation is on a Draft feature PR.",
+      "federation_parent": null,
+      "classification_basis": "provisional inventory classification from current main tree and live PR #1; federation_parent is not proof of runtime dependency",
+      "readme_federation_passport": false,
+      "readme_deep_pass": "PENDING",
+      "readme_deep_pass_date": null
+    },
+    {
       "name": "synergy_lead_search_engline",
       "full_name": "Shtenco/synergy_lead_search_engline",
       "url": "https://github.com/Shtenco/synergy_lead_search_engline",
@@ -815,6 +845,21 @@
       "role": "Offline Lead OS candidate: executable FastAPI/SQLite/FTS5 workflow, human-review and approval-gated CRM outbox; 14 tests passed on exact main SHA. Not a deployed lead discovery service.",
       "federation_parent": "synergy_apps",
       "classification_basis": "targeted source/branch/CI review on 2026-11-20; branch evidence does not imply merged main runtime or deployment",
+      "readme_federation_passport": false,
+      "readme_deep_pass": "PENDING",
+      "readme_deep_pass_date": null
+    },
+    {
+      "name": "synergy_long_term_harness",
+      "full_name": "Shtenco/synergy_long_term_harness",
+      "url": "https://github.com/Shtenco/synergy_long_term_harness",
+      "visibility": "private",
+      "default_branch": "main",
+      "size_kb": 225,
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Исследовательский harness долгосрочной памяти и маршрутизации агентов; текущий main содержит README-only, реализация присутствует только в неосновных ветках.",
+      "federation_parent": null,
+      "classification_basis": "provisional inventory classification from current README/main tree and selected branch evidence; federation_parent is not proof of runtime dependency",
       "readme_federation_passport": false,
       "readme_deep_pass": "PENDING",
       "readme_deep_pass_date": null
@@ -1343,46 +1388,16 @@
       "readme_federation_passport": true,
       "readme_deep_pass": "COMPLETE",
       "readme_deep_pass_date": "2026-09-28"
-    },
-    {
-      "name": "shtenco_micro_ai",
-      "full_name": "Shtenco/shtenco_micro_ai",
-      "url": "https://github.com/Shtenco/shtenco_micro_ai",
-      "visibility": "private",
-      "default_branch": "main",
-      "size_kb": 32,
-      "domain": "INTELLIGENCE_AGENTS",
-      "role": "Локальный inference runtime для MNN-Pocket-0.3B INT4; веса загружаются отдельно, а benchmark и качество должны быть подтверждены на целевом устройстве.",
-      "federation_parent": null,
-      "classification_basis": "provisional inventory classification from current README/main tree and selected branch evidence; federation_parent is not proof of runtime dependency",
-      "readme_federation_passport": false,
-      "readme_deep_pass": "PENDING",
-      "readme_deep_pass_date": null
-    },
-    {
-      "name": "synergy_long_term_harness",
-      "full_name": "Shtenco/synergy_long_term_harness",
-      "url": "https://github.com/Shtenco/synergy_long_term_harness",
-      "visibility": "private",
-      "default_branch": "main",
-      "size_kb": 225,
-      "domain": "INTELLIGENCE_AGENTS",
-      "role": "Исследовательский harness долгосрочной памяти и маршрутизации агентов; текущий main содержит README-only, реализация присутствует только в неосновных ветках.",
-      "federation_parent": null,
-      "classification_basis": "provisional inventory classification from current README/main tree and selected branch evidence; federation_parent is not proof of runtime dependency",
-      "readme_federation_passport": false,
-      "readme_deep_pass": "PENDING",
-      "readme_deep_pass_date": null
     }
   ],
   "documentation_status": {
     "standard": "Shtenco/synergy_system/docs/README_STANDARD.md",
     "deep_pass": "PARTIAL",
-    "repository_count": 91,
+    "repository_count": 92,
     "completed_date": "2026-09-28",
-    "definition": "The 75-repository baseline received a repository-specific documentation pass on 2026-09-28. Three current repository names require unverified lineage/README revalidation and sixteen additional owner repositories require the initial deep README/passport pass; the owner inventory remains separate from the 75-record interface registry.",
+    "definition": "The 75-repository baseline received a repository-specific documentation pass on 2026-09-28. Three current repository names require lineage/README revalidation and seventeen later owner repositories require initial deep README/passport review; the owner inventory is distinct from the 76-record interface registry.",
     "completed_count": 72,
-    "pending_count": 19,
+    "pending_count": 20,
     "inventory_refresh_date": "2026-11-20"
   }
 }
