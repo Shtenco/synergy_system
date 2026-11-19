@@ -37,6 +37,7 @@
 > - [ README Standard](docs/README_STANDARD.md)
 > - [ README Deep Pass 75/75](docs/README_DEEPENING_PLAN_75.md)
 > - [ Security Hygiene Findings](docs/SECURITY_HYGIENE_FINDINGS.md)
+> - [ Security re-audit — 2026-11-20](docs/SECURITY_REAUDIT_2026-11-20.md)
 >
 > `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
 >
@@ -44,9 +45,9 @@
 > **Branch census:** **1,292 refs across 91 repositories** (91 main + 1,201 non-main; 1,206 summed unique HEADs within repositories; 86 repeated refs). GitHub API marks **0/1,292 refs protected**, including all 91 main branches. Full names and SHAs: [branch JSON](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.json) · [branch CSV](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.csv) · [branch report](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_INVENTORY_2026-11-20.md). Open PR association: [548-PR JSON](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.json) · [CSV](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.csv) · [audit report](https://github.com/Shtenco/synergy/blob/main/docs/OPEN_PR_BRANCH_AUDIT_2026-11-20.md). **548 open PRs** (414 draft, 134 ready; 268 target main); all 548 PR head SHAs match inventoried branch HEADs at snapshot time.  
 > **Documentation re-verification:** **26/75 VERIFIED · 49 PENDING_REAUDIT**. Первичная метка `75/75 COMPLETE` снята после повторного quality audit; канонический статус хранится в `registry/DOCUMENTATION_QUALITY.json`.
 > **M2 frozen baseline:** **17/17 contract families endpoint-complete · 22 runtime edges · 20 integrated repos**.  
-> **Current federation frontier:** **39/39 contract families endpoint-complete · 44 runtime edges ADAPTER_IMPLEMENTED · 42 repos ADAPTER_INTEGRATED · 0 UNCLASSIFIED/ARCHITECTURAL_ONLY · 0 E2E_TESTED · 0 DEPLOYED**.  
+> **Current federation frontier:** **39/39 contract families endpoint-complete · 44 runtime edges ADAPTER_IMPLEMENTED · 41 repos ADAPTER_INTEGRATED · 0 UNCLASSIFIED/ARCHITECTURAL_ONLY · 0 E2E_TESTED · 0 DEPLOYED**.  
 **M5 observed-execution gate:** aggregate scope **44/44 runtime edges**; promotion remains blocked until real evidence artifacts pass every suite verifier.  
-> **75/75 interface records maturity-classified:** 42 adapter-integrated · 11 external-runtime pending · 14 documentation-only · 3 non-runtime surfaces · 2 needs-hardening · 2 security-blocked · 1 governance-root.
+> **75/75 interface records maturity-classified:** 42 adapter-integrated · 11 external-runtime pending · 14 documentation-only · 3 non-runtime surfaces · 2 needs-hardening · 3 security-blocked · 1 governance-root.
 > **Rule:** ни один edge не повышается до `E2E_TESTED` без фактического cross-repo evidence.
 > **Typed-contract registry caveat — 2026-11-20:** structural audit: 22/38 distinct contract authority labels absent from `AUTHORITY_REGISTRY.json`; 17/39 contract IDs lack `RUNTIME_CONTRACT` edges; 23/39 lack `CONTRACT_FLOW` IDs and 23/39 lack `RUNTIME_DEPENDENCY` contract IDs; 2 producer repository references do not resolve in the 91-record registry and require rename/lineage verification. These are P1 registry blockers, not proof that implementations are absent. See [full coverage audit](docs/CONTRACT_AUTHORITY_COVERAGE_AUDIT_2026-11-20.md). The 75-record interface maturity gate and 91-repository owner inventory remain separate scopes.
 
