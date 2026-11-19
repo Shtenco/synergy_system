@@ -24,6 +24,7 @@
 > - [ Federation Maturity Gate](integration/federation_maturity_gate.py)
 > - [ Federation Security Blockers](registry/SECURITY_BLOCKERS.json)
 > - [ Атлас 91 репозитория](docs/SYNERGY_REPOSITORY_ATLAS.md)
+> - [ Targeted new-repository source audit — 11/16](docs/NEW_REPOSITORY_SOURCE_AUDIT_2026-11-20.md)
 > - [ Repository Registry](registry/SYNERGY_REPOSITORIES.json)
 > - [ Authority Registry](registry/AUTHORITY_REGISTRY.json)
 > - [ Contract Registry](registry/CONTRACT_REGISTRY.json)
@@ -39,7 +40,7 @@
 >
 > `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
 >
-> **Live owner inventory:** **91 repositories**. The audited interface registry remains a separate **75-record** scope; 3 historical interface names remain unverified rename candidates, and 16 newly inventoried repositories await initial deep review. The owner inventory and interface registry must never be conflated.  
+> **Live owner inventory:** **91 repositories**. The audited interface registry remains a separate **75-record** scope; 3 historical interface names remain unverified rename candidates, and 16 newly inventoried repositories remain provisional; 11 have targeted source/branch/CI review and five have earlier audit deltas. Full README passports and integration evidence remain pending. The owner inventory and interface registry must never be conflated.  
 > **Branch census:** **1,292 refs across 91 repositories** (91 main + 1,201 non-main; 1,206 summed unique HEADs within repositories; 86 repeated refs). GitHub API marks **0/1,292 refs protected**, including all 91 main branches. Full names and SHAs: [branch JSON](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.json) · [branch CSV](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.csv) · [branch report](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_INVENTORY_2026-11-20.md). Open PR association: [548-PR JSON](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.json) · [CSV](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.csv) · [audit report](https://github.com/Shtenco/synergy/blob/main/docs/OPEN_PR_BRANCH_AUDIT_2026-11-20.md). **548 open PRs** (414 draft, 134 ready; 268 target main); all 548 PR head SHAs match inventoried branch HEADs at snapshot time.  
 > **Documentation re-verification:** **26/75 VERIFIED · 49 PENDING_REAUDIT**. Первичная метка `75/75 COMPLETE` снята после повторного quality audit; канонический статус хранится в `registry/DOCUMENTATION_QUALITY.json`.
 > **M2 frozen baseline:** **17/17 contract families endpoint-complete · 22 runtime edges · 20 integrated repos**.  
