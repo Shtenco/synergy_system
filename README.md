@@ -47,7 +47,7 @@
 > **M2 frozen baseline:** **17/17 contract families endpoint-complete · 22 runtime edges · 20 integrated repos**.  
 > **Current federation frontier:** **39/39 contract families endpoint-complete · 44 runtime edges ADAPTER_IMPLEMENTED · 41 repos ADAPTER_INTEGRATED · 0 UNCLASSIFIED/ARCHITECTURAL_ONLY · 0 E2E_TESTED · 0 DEPLOYED**.  
 **M5 observed-execution gate:** aggregate scope **44/44 runtime edges**; promotion remains blocked until real evidence artifacts pass every suite verifier.  
-> **75/75 interface records maturity-classified:** 42 adapter-integrated · 11 external-runtime pending · 14 documentation-only · 3 non-runtime surfaces · 2 needs-hardening · 3 security-blocked · 1 governance-root.
+> **75/75 interface records maturity-classified:** 41 adapter-integrated · 11 external-runtime pending · 14 documentation-only · 3 non-runtime surfaces · 2 needs-hardening · 3 security-blocked · 1 governance-root.
 > **Rule:** ни один edge не повышается до `E2E_TESTED` без фактического cross-repo evidence.
 > **Typed-contract registry caveat — 2026-11-20:** structural audit: 22/38 distinct contract authority labels absent from `AUTHORITY_REGISTRY.json`; 17/39 contract IDs lack `RUNTIME_CONTRACT` edges; 23/39 lack `CONTRACT_FLOW` IDs and 23/39 lack `RUNTIME_DEPENDENCY` contract IDs; 2 producer repository references do not resolve in the 91-record registry and require rename/lineage verification. These are P1 registry blockers, not proof that implementations are absent. See [full coverage audit](docs/CONTRACT_AUTHORITY_COVERAGE_AUDIT_2026-11-20.md). The 75-record interface maturity gate and 91-repository owner inventory remain separate scopes.
 
