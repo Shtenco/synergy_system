@@ -1,18 +1,18 @@
 # SYNERGY Security Re-audit — 2026-11-20
 
-**Scope:** path-only recheck of committed credential-like artifacts and security-remediation PRs in Cashero, USDS and TURBO Linux. Secret values and private-key bytes were not read or reproduced during this pass.
+**Scope:** recheck of committed credential-like artifacts and remediation evidence in Cashero, USDS, TURBO Linux and AI Trade Terminal. Credential values are intentionally not reproduced; no credential was tested or used.
 
 ## Executive status
 
 **UNRESOLVED — P0**
 
-All three repositories remain blocked for deployment pending external credential rotation/revocation and evidence. The current main branches still contain credential-like artifacts in all three repositories.
+Four repositories now have unresolved P0 credential/security blockers: the three previously tracked incidents in Cashero, USDS and TURBO Linux, plus a newly detected non-placeholder broker username/password exposure in AI Trade Terminal. Broker-side validity and external rotation/revocation for the new finding remain unverified.
 
 | Repository | Main-tree finding | Security PR | PR branch finding | Current result |
 |---|---|---|---|---|
 | synergy_cashero | .env, bot1.env, bot2.env, owner.env remain present | No dedicated security PR in current open-PR map | Open PR #8 is provenance-only; #6 is trading/simulation work | Main remains exposed; no rotation/revocation evidence |
 | synergy_usds | base-mainnet-deployer.key remains present | #6, ready-for-review | PR changes only .gitignore and SECURITY_KEY_ROTATION.md; key file remains in the PR branch tree | Remediation is incomplete; adding ignore rules does not remove a tracked key |
-| synergy_turbo_linux | Linux Ubuntu.ppk remains present | #13, draft | PR removes the key file from its branch and adds an incident report | Candidate repository cleanup only; PR is unmerged and external rotation/revocation is unverified |
+| synergy_turbo_linux | Linux Ubuntu.ppk remains present | #13, draft | PR removes the key file from its branch and adds an incident report | Candidate repository cleanup only; PR is unmerged and external rotation/revocation is unverified |\n| synergy_ai_trade_terminal | Non-placeholder broker username/password literals in `cassandra_v6_FIXED.py`; authentication and order-placement paths present | No dedicated remediation PR recorded | Not verified | Newly detected P0 candidate; broker-side validity, use and revocation are unverified |
 
 ## Repository evidence
 
@@ -49,7 +49,7 @@ The branch-side deletion is useful but does not change main until merged. More i
 
 **Required:** identify every authorized host/account, install a newly generated key, revoke the old public key everywhere, review access logs, merge repository cleanup after review and handle Git history under an approved plan.
 
-## Governance inconsistency corrected
+### AI Trade Terminal\n\nThe current `main` source contains literal, non-placeholder username and password values in `cassandra_v6_FIXED.py`. The same file implements broker authentication and order-placement methods. The credential values are intentionally omitted from this report.\n\n`MAIN.py` also catches failures to start the real collector/tester and enters an infinite heartbeat loop. This can make a failed functional component appear alive to a process-level supervisor.\n\n**Required:** treat the literals as compromised until the broker confirms otherwise; rotate/revoke externally, inspect broker sessions/API permissions and access logs, inspect all Git refs/history, remove the literals from source, and require explicit `READY`/`DEGRADED`/`FAILED` states instead of a healthy-looking fallback loop.\n\n## Governance inconsistency corrected
 
 The prior security blocker registry marked TURBO's deployment blocked but set federation_promotion_blocked=false, despite the confirmed unencrypted private key and the still-present main-tree file. This is inconsistent with the fail-closed security gate.
 
@@ -65,4 +65,4 @@ The registry has therefore been updated to set federation_promotion_blocked=true
 6. Secret scanning and CI/pre-commit denial rules active.
 7. Independent evidence attached to the incident record.
 
-Until then, all three remain UNRESOLVED and deployment-blocked. A file deletion, .gitignore entry, draft PR or written rotation checklist is not credential rotation.
+Until then, all four remain UNRESOLVED and deployment-blocked. A file deletion, .gitignore entry, draft PR or written rotation checklist is not credential rotation.
