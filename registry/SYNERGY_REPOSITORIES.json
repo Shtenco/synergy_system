@@ -827,7 +827,7 @@
       "default_branch": "main",
       "size_kb": 0,
       "domain": "APPS_INTERFACES",
-      "role": "Main is README-only; Overture ingestion, tile planning, Cesium sources and tests exist on non-main work branches. Latest inspected branch CI failed; implementation is not merged.",
+      "role": "Main is README-only; Overture/Cesium source and tests exist on work branches. All 9 open PR head branches are draft and their latest visible CI runs failed; logs are unavailable.",
       "federation_parent": "synergy_metaverse",
       "classification_basis": "targeted source/branch/CI review on 2026-11-20; branch evidence does not imply merged main runtime or deployment",
       "readme_federation_passport": false,
