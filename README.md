@@ -47,7 +47,7 @@
 **M5 observed-execution gate:** aggregate scope **44/44 runtime edges**; promotion remains blocked until real evidence artifacts pass every suite verifier.  
 > **75/75 interface records maturity-classified:** 42 adapter-integrated · 11 external-runtime pending · 14 documentation-only · 3 non-runtime surfaces · 2 needs-hardening · 2 security-blocked · 1 governance-root.
 > **Rule:** ни один edge не повышается до `E2E_TESTED` без фактического cross-repo evidence.
-> **Typed-contract registry caveat — 2026-11-20:** a separate structural audit found 22 contract authority labels absent from `AUTHORITY_REGISTRY.json`, 17 of 39 contract IDs without `CONTRACT_FLOW` edges in `DEPENDENCY_GRAPH.json`, and 2 contract producer references using legacy names that remain unverified rename candidates. The 75-record interface maturity gate and 91-repository owner inventory are separate checks; these contract/authority inconsistencies remain P1 blockers and are not promoted to E2E or DEPLOYED.
+> **Typed-contract registry caveat — 2026-11-20:** structural audit: 22/38 distinct contract authority labels absent from `AUTHORITY_REGISTRY.json`; 17/39 contract IDs lack `RUNTIME_CONTRACT` edges; 23/39 lack `CONTRACT_FLOW` IDs and 23/39 lack `RUNTIME_DEPENDENCY` contract IDs; 2 producer repository references do not resolve in the 91-record registry and require rename/lineage verification. These are P1 registry blockers, not proof that implementations are absent. See [full coverage audit](docs/CONTRACT_AUTHORITY_COVERAGE_AUDIT_2026-11-20.md). The 75-record interface maturity gate and 91-repository owner inventory remain separate scopes.
 
 
 **Architecture & Governance Root for the complete SYNERGY ecosystem**
