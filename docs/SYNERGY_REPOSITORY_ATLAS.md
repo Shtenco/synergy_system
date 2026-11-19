@@ -194,8 +194,7 @@ flowchart LR
 
 # 🧭 Полный реестр
 
-> Поле «родитель» ниже означает **архитектурный родитель в документации**, а не автоматически доказанную импортом/деплоем code dependency.
-
+> Полный owner inventory содержит 91 текущий репозиторий. 75 интерфейсных записей — отдельный contract/interface scope; 3 legacy interface names остаются unverified rename candidates. `federation_parent` — архитектурная навигация, не доказательство runtime dependency.
 
 ## 📱 Apps / interfaces
 
@@ -205,9 +204,14 @@ flowchart LR
 | [`shtencoauantai.github.io`](https://github.com/Shtenco/shtencoauantai.github.io) | Публичный web-интерфейс/сайт для представления отдельных направлений экосистемы. | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) |
 | [`sinergy_app`](https://github.com/Shtenco/sinergy_app) | Приложенческий shell/концепт SINERGY. | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) |
 | [`sinergy_super_app`](https://github.com/Shtenco/sinergy_super_app) | Концептуальная/продуктовая оболочка super-app для пользовательских сервисов SINERGY. | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) |
+| [`synergy_ai_workspace`](https://github.com/Shtenco/synergy_ai_workspace) | Local AI workspace and desktop application development; release/integration work remains branch-scoped. | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) |
 | [`synergy_app`](https://github.com/Shtenco/synergy_app) | Пользовательский финансовый интерфейс/приложение SINERGY. | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) |
 | [`synergy_app_family`](https://github.com/Shtenco/synergy_app_family) | Концептуальный семейный продуктовый слой/семейство приложений. | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) |
+| [`synergy_lead_search_engline`](https://github.com/Shtenco/synergy_lead_search_engline) | Offline lead-discovery workflow with FTS5, evidence review and approval-gated CRM hand-off. | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) |
+| [`synergy_maps`](https://github.com/Shtenco/synergy_maps) | Reserved geospatial/maps placeholder; no implementation present in the main branch at inventory refresh. | [`synergy_metaverse`](https://github.com/Shtenco/synergy_metaverse) |
 | [`synergy_messenger`](https://github.com/Shtenco/synergy_messenger) | Мессенджер/коммуникационный слой SYNERGY и пользовательская клиентская оболочка. | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) |
+| [`synergy_metaverse`](https://github.com/Shtenco/synergy_metaverse) | Spatial/metaverse application and economic workspace projection layer. | [`synergy_system`](https://github.com/Shtenco/synergy_system) |
+| [`synergy.github.io`](https://github.com/Shtenco/synergy.github.io) | Public Synergy web portal and presentation surface; not an economic authority. | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) |
 | [`synergychain.github.io`](https://github.com/Shtenco/synergychain.github.io) | Публичная web-витрина SINERGYCHAIN. | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) |
 
 ## ⛓️ Blockchain / monetary systems
@@ -223,12 +227,15 @@ flowchart LR
 | [`synergy_graph_print_money`](https://github.com/Shtenco/synergy_graph_print_money) | Графовый Economic OS / денежная топология и исследование внешне-обеспеченных контуров эмиссии. | [`synergy_ai_blockchain`](https://github.com/Shtenco/synergy_ai_blockchain) |
 | [`synergy_metachain`](https://github.com/Shtenco/synergy_metachain) | Cross-chain/bridge архитектура и правила уникального lock/burn → mint/claim соответствия. | [`synergy_ai_blockchain`](https://github.com/Shtenco/synergy_ai_blockchain) |
 | [`synergy_qe`](https://github.com/Shtenco/synergy_qe) | Концептуальный узел QE Engine; текущий main содержит только минимальный README. | [`synergy_ai_blockchain`](https://github.com/Shtenco/synergy_ai_blockchain) |
+| [`synergy_triangle_money_system`](https://github.com/Shtenco/synergy_triangle_money_system) | Experimental recursive collateral, liquidity and triangular money-system simulation. | [`synergy_financial_os`](https://github.com/Shtenco/synergy_financial_os) |
 | [`synergy_usds`](https://github.com/Shtenco/synergy_usds) | Экспериментальная денежная/стейблкоин-модель USDS и Base-fork экономика. | [`synergy_ai_blockchain`](https://github.com/Shtenco/synergy_ai_blockchain) |
 
 ## 💰 Finance / real economy
 
 | Репозиторий | Роль в системе | Архитектурный родитель |
 |---|---|---|
+| [`synergistic_economics`](https://github.com/Shtenco/synergistic_economics) | Economic OS research core for accounting, settlement-adjacent mechanisms and endogenous economy simulation. | [`synergy_financial_os`](https://github.com/Shtenco/synergy_financial_os) |
+| [`synergy_ai_economic`](https://github.com/Shtenco/synergy_ai_economic) | Economic digital-twin simulation and institutional regime experiments. | [`synergistic_economics`](https://github.com/Shtenco/synergistic_economics) |
 | [`synergy_ai_financial_system`](https://github.com/Shtenco/synergy_ai_financial_system) | R&D по AI-управлению финансовыми моделями, капиталом и экономическими контурами. | [`synergy_financial_os`](https://github.com/Shtenco/synergy_financial_os) |
 | [`synergy_cashero`](https://github.com/Shtenco/synergy_cashero) | Финансово-экономическая R&D-ветка, связанная с денежными потоками и платёжными сценариями. | [`synergy_financial_os`](https://github.com/Shtenco/synergy_financial_os) |
 | [`synergy_eurasian`](https://github.com/Shtenco/synergy_eurasian) | Контур реальной экономики/индустрии и долгосрочной экономической архитектуры EURASIAN. | [`synergy_financial_os`](https://github.com/Shtenco/synergy_financial_os) |
@@ -242,7 +249,9 @@ flowchart LR
 |---|---|---|
 | [`dlp_solver`](https://github.com/Shtenco/dlp_solver) | Reverse-EXP / anti-exponential cryptographic research lab с эпистемической дисциплиной и воспроизводимыми экспериментами. | [`synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os) |
 | [`synegy_ai_compress`](https://github.com/Shtenco/synegy_ai_compress) | R&D по компрессии AI-данных/моделей и архивному субстрату. | [`synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os) |
+| [`synergy_computing_topology`](https://github.com/Shtenco/synergy_computing_topology) | Compact descriptor/index computing topology and repeated-query optimization experiments. | [`synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os) |
 | [`synergy_gguf_compress`](https://github.com/Shtenco/synergy_gguf_compress) | Лаборатория компрессии GGUF/LLM-моделей; на текущем main README остаётся минимальным, поэтому зрелость не предполагается. | [`synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os) |
+| [`synergy_meta_api`](https://github.com/Shtenco/synergy_meta_api) | Local API/MCP gateway prototype with read-only integration boundaries. | [`synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os) |
 | [`synergy_motherboard_xpu_xml`](https://github.com/Shtenco/synergy_motherboard_xpu_xml) | Экспериментальный аппаратно-описательный слой XPU/EML и конфигурация вычислительной платформы. | [`synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os) |
 | [`synergy_net`](https://github.com/Shtenco/synergy_net) | P2P/mesh/data-plane сеть и транспорт между узлами SYNERGY. | [`synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os) |
 | [`synergy_post_quantum_radio`](https://github.com/Shtenco/synergy_post_quantum_radio) | Концептуальный узел post-quantum radio/physical transport; текущий main пока не доказывает готовую реализацию. | [`synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os) |
@@ -255,6 +264,7 @@ flowchart LR
 
 | Репозиторий | Роль в системе | Архитектурный родитель |
 |---|---|---|
+| [`shtenco_micro_ai`](https://github.com/Shtenco/shtenco_micro_ai) | Локальный inference runtime для MNN-Pocket-0.3B INT4; веса загружаются отдельно, а benchmark и качество должны быть подтверждены на целевом устройстве. | — |
 | [`synergy_agentic_ai_economy`](https://github.com/Shtenco/synergy_agentic_ai_economy) | Экономика AI-агентов: задания, контракты, рынки, заработок и agent-to-agent workflows. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
 | [`synergy_agi_autopilot`](https://github.com/Shtenco/synergy_agi_autopilot) | Агентный автопилот: планирование задач, DAG/оркестрация и ограниченное автономное исполнение. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
 | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) | Каноническая архитектура AGI NEXUS и поколений reasoning/world-model исследований. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
@@ -262,15 +272,17 @@ flowchart LR
 | [`synergy_ai_coder`](https://github.com/Shtenco/synergy_ai_coder) | Подсистема AI Coder и воспроизводимый compiler/build-tooling контур. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
 | [`synergy_ai_company`](https://github.com/Shtenco/synergy_ai_company) | Концепт AI-native компании: агенты, процессы, контракты и автоматизация организации. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
 | [`synergy_ai_language`](https://github.com/Shtenco/synergy_ai_language) | Семантический и языковой слой: формализация, язык взаимодействия и AI language tooling. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
+| [`synergy_ai_llm_rwkv`](https://github.com/Shtenco/synergy_ai_llm_rwkv) | RWKV model workflow and experimental quantization/serving research. | [`synergy_agi_olga`](https://github.com/Shtenco/synergy_agi_olga) |
 | [`synergy_gllm_nexus`](https://github.com/Shtenco/synergy_gllm_nexus) | Активный research runtime NEXUS/GLLM, бенчмарки, замороженные OOS-протоколы и генерации. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
+| [`synergy_long_term_harness`](https://github.com/Shtenco/synergy_long_term_harness) | Исследовательский harness долгосрочной памяти и маршрутизации агентов; текущий main содержит README-only, реализация присутствует только в неосновных ветках. | — |
 | [`synergy_nexus_science_agent`](https://github.com/Shtenco/synergy_nexus_science_agent) | Научный агент NEXUS: поиск, гипотезы, доказательства и исследовательская оркестрация. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
-| [`shtenco_micro_ai`](https://github.com/Shtenco/shtenco_micro_ai) | Локальный MNN-Pocket-0.3B INT4 inference tooling; веса внешние, аппаратная квалификация и качество требуют отдельной проверки. | — |
-| [`synergy_long_term_harness`](https://github.com/Shtenco/synergy_long_term_harness) | Исследовательский harness долгосрочной памяти/маршрутизации; текущий main README-only, реализация на неосновных ветках. | — |
+| [`synergy_search_engline`](https://github.com/Shtenco/synergy_search_engline) | Search engine research shell and retrieval experiments; main-branch implementation remains limited. | [`synergy_ai_language`](https://github.com/Shtenco/synergy_ai_language) |
 
 ## 🧭 Master / governance
 
 | Репозиторий | Роль в системе | Архитектурный родитель |
 |---|---|---|
+| [`synergy`](https://github.com/Shtenco/synergy) | Umbrella governance and portfolio navigation repository; not an authority over child-domain ledgers. | [`synergy_system`](https://github.com/Shtenco/synergy_system) |
 | [`synergy_apps`](https://github.com/Shtenco/synergy_apps) | Реестр и master-слой пользовательских приложений SYNERGY. | [`synergy_system`](https://github.com/Shtenco/synergy_system) |
 | [`synergy_megaproject`](https://github.com/Shtenco/synergy_megaproject) | Цивилизационный master-graph: мегапроекты, фронтирные технологии, научные идеи и их доказательные связи. | [`synergy_system`](https://github.com/Shtenco/synergy_system) |
 | [`synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os) | Runtime-оркестратор полного узла SYNERGY поверх host OS и сетевых/AI/финансовых сервисов. | [`synergy_system`](https://github.com/Shtenco/synergy_system) |
@@ -281,9 +293,10 @@ flowchart LR
 
 | Репозиторий | Роль в системе | Архитектурный родитель |
 |---|---|---|
-| [`binary_quantum_theory`](https://github.com/Shtenco/binary_quantum_theory) | Теоретико-физическая исследовательская ветка Binary Quantum Gravity. | [`synergy_megaproject`](https://github.com/Shtenco/synergy_megaproject) |
-| [`epstein_network`](https://github.com/Shtenco/epstein_network) | Отдельный исследовательский knowledge-graph/дистиллированный граф источников; не runtime-компонент финансовой системы. | [`synergy_megaproject`](https://github.com/Shtenco/synergy_megaproject) |
+| [`synergy_binary_quantum_theory`](https://github.com/Shtenco/synergy_binary_quantum_theory) | Теоретико-физическая исследовательская ветка Binary Quantum Gravity. | [`synergy_megaproject`](https://github.com/Shtenco/synergy_megaproject) |
 | [`synergy_cold_nuclear`](https://github.com/Shtenco/synergy_cold_nuclear) | Воспроизводимый вычислительный R&D-контур для исследований низкоэнергетических/«cold nuclear» гипотез. | [`synergy_megaproject`](https://github.com/Shtenco/synergy_megaproject) |
+| [`synergy_complex_matrix_multiplication`](https://github.com/Shtenco/synergy_complex_matrix_multiplication) | Structured complex-operator and matrix-free computation research; reported gains are scoped to measured kernels. | [`synergy_nexus_science_agent`](https://github.com/Shtenco/synergy_nexus_science_agent) |
+| [`synergy_epstein_network`](https://github.com/Shtenco/synergy_epstein_network) | Отдельный исследовательский knowledge-graph/дистиллированный граф источников; не runtime-компонент финансовой системы. | [`synergy_megaproject`](https://github.com/Shtenco/synergy_megaproject) |
 
 ## 📈 Trading / market intelligence
 
@@ -294,8 +307,8 @@ flowchart LR
 | [`cross_forex_arbitrage_trading_metatrader_5`](https://github.com/Shtenco/cross_forex_arbitrage_trading_metatrader_5) | Исследовательский движок cross-FX и синтетического валютного арбитража. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 | [`global_liquidity_dataminer`](https://github.com/Shtenco/global_liquidity_dataminer) | Сбор и подготовка глобальных макроликвидностных данных для рыночных моделей. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 | [`midas_lite`](https://github.com/Shtenco/midas_lite) | Облегчённая исследовательская ветка MIDAS с торговыми прототипами и системами. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
-| [`multi_threaded_trading_robot_with_machine_learning_python`](https://github.com/Shtenco/multi_threaded_trading_robot_with_machine_learning_python) | Многопоточный ML-прототип торгового робота на Python. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 | [`quantum-trading_metatrader5`](https://github.com/Shtenco/quantum-trading_metatrader5) | Ранняя R&D-линия квантово-ассистированного трейдинга и интеграции с MetaTrader 5. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
+| [`shtenco_multi_threaded_trading_robot_with_machine_learning_python`](https://github.com/Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python) | Многопоточный ML-прототип торгового робота на Python. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 | [`swap_arbitrage_metatrader_5`](https://github.com/Shtenco/swap_arbitrage_metatrader_5) | R&D по swap/carry-арбитражу и синтетическим портфелям в MetaTrader 5. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 | [`synergy_adaptive_engine`](https://github.com/Shtenco/synergy_adaptive_engine) | Адаптивный движок параметров/режимов и переключения политик по состоянию рынка. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 | [`synergy_agi_trader`](https://github.com/Shtenco/synergy_agi_trader) | AGI/AI трейдер: объединение reasoning и торговых контуров под риск-ограничениями. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
@@ -314,7 +327,7 @@ flowchart LR
 | [`synergy_riskguard`](https://github.com/Shtenco/synergy_riskguard) | Независимый риск-контур, лимиты и veto-политики для торговых/финансовых систем. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 | [`synergy_trademux`](https://github.com/Shtenco/synergy_trademux) | Маршрутизация и мультиплексирование торговых intents/стратегий к исполнимым каналам. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 
----
+**Branch inventory:** 1,292 refs across all 91 repositories; full names and HEAD SHAs are maintained in [JSON](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.json) and [CSV](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.csv).
 
 # 🔄 Главные межсистемные контуры
 
