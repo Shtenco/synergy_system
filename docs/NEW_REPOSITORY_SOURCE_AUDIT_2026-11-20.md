@@ -1,13 +1,13 @@
 # Newly Inventoried SYNERGY Repositories — Targeted Source / Branch / CI Audit
 
 **Snapshot:** 2026-11-20  
-**Scope:** 11 of the 16 repositories added in the November owner-inventory refresh. Five additional repositories had already received targeted audits in the earlier v1.4–v1.6 audit waves.  
+**Scope:** 12 of the 17 repositories added in the November owner-inventory refresh. Five additional repositories had already received targeted audits in the earlier v1.4–v1.6 audit waves.  
 **Method:** current main tree and README, selected implementation branches, tests/workflows, open-PR map and exact workflow runs.  
 **Mutation policy:** no child repository branches, source files, PRs or deployments were changed. Findings below do not promote any component to production or E2E status.
 
 ## Executive result
 
-The 11 repositories below are now source/branch inspected. Their maturity remains provisional until the full README passport, reproducibility and integration evidence gates are closed.
+The 12 repositories below are now source/branch inspected. Their maturity remains provisional until the full README passport, reproducibility and integration evidence gates are closed.
 
 | Repository | Main HEAD (abbreviated) | Branches | Open PRs | Evidence result |
 |---|---|---:|---:|---|
@@ -130,3 +130,8 @@ The remaining five newly inventoried repositories already have targeted findings
 3. Reclassify synergy_lead_search_engline from STUB_SPEC_ONLY to RND: main contains executable offline code and tests, and exact-main CI passed; deployment remains unproven.
 4. Keep synergy_maps, synergy_meta_api and synergy_ai_workspace as main-branch documentation/stub surfaces while explicitly recording their branch-only implementations and CI status.
 5. Do not promote any of these nodes to E2E_TESTED or DEPLOYED based solely on branch existence, green unit tests or research documentation.
+
+
+## Additional targeted source audit — cognitive memory repository
+
+`Shtenco/synergy_hierarchical_cognitive_memory_architecture` is the 92nd owner repository and the 17th November-added repository. Its main branch remains README-only; feature PR #1 contains the implementation (80 commits, 25 files, 1,538 additions). The feature includes L0 core, budgeted context retrieval, L2 FTS5/graph/vector retrieval, L3 content-addressed provenance and repository ingestion. Source inspection identified three unresolved promotion/security concerns: unauthenticated local API, no explicit symlink rejection/path-containment check in ingestion, and URI-only source identity that can collide across repositories. Latest CI was cancelled with no executed steps. It remains `CANDIDATE / PENDING deep README passport`, not an integrated runtime component.
