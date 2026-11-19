@@ -345,7 +345,7 @@ flowchart LR
 | [`synergy_riskguard`](https://github.com/Shtenco/synergy_riskguard) | Независимый риск-контур, лимиты и veto-политики для торговых/финансовых систем. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 | [`synergy_trademux`](https://github.com/Shtenco/synergy_trademux) | Маршрутизация и мультиплексирование торговых intents/стратегий к исполнимым каналам. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 
-**Branch inventory:** 1,294 refs across all 92 repositories; 1,084 SHAs have live audit/priority-PR provenance and 210 retain dated census provenance; full names and SHA provenance are maintained in [JSON](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.json) and [CSV](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.csv). Open PR snapshot: **549 currently open PRs** (414 draft, 134 ready; 268 target main); every PR head branch and SHA matched the branch census. See [PR map JSON](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.json), [CSV](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.csv), and [audit](https://github.com/Shtenco/synergy/blob/main/docs/OPEN_PR_BRANCH_AUDIT_2026-11-20.md). Per-repository coverage matrix: [branch/PR summary](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_PR_SUMMARY_2026-11-20.md).
+**Branch inventory:** 1,294 refs across all 92 repositories; 1,084 SHAs have live audit/priority-PR provenance and 210 retain dated census provenance; full names and SHA provenance are maintained in [JSON](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.json) and [CSV](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.csv). Current open PR discovery: **549 PRs** across 92 repositories; 18 have full head/base metadata and 531 remain discovery-only. The former 548-PR snapshot (414 draft, 134 ready, 268 target main) is historical and its 548/548 branch match applies only to that snapshot. See [PR map JSON](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.json), [CSV](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.csv), and [audit](https://github.com/Shtenco/synergy/blob/main/docs/OPEN_PR_BRANCH_AUDIT_2026-11-20.md). Per-repository coverage matrix: [branch/PR summary](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_PR_SUMMARY_2026-11-20.md).
 
 # 🔄 Главные межсистемные контуры
 
@@ -448,7 +448,7 @@ inputs / outputs / evidence
 
 После унификации README документация должна стать не только красивой, но и проверяемой машиной:
 
-1. проверять, что все 91 README содержат системный паспорт;
+1. проверять, что все 92 README содержат системный паспорт;
 2. проверять битые cross-repo links;
 3. проверять authority conflicts;
 4. строить Mermaid/Graphviz карту из JSON registry;
