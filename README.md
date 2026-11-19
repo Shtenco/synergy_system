@@ -42,6 +42,7 @@
 > - [ README Deep Pass 75/75](docs/README_DEEPENING_PLAN_75.md)
 > - [ Security Hygiene Findings](docs/SECURITY_HYGIENE_FINDINGS.md)
 > - [ Security re-audit — 2026-11-20 — 4 unresolved P0 blockers](docs/SECURITY_REAUDIT_2026-11-20.md)
+> - **Security gate:** 4 unresolved P0 blockers; newly detected broker-credential exposure in `synergy_ai_trade_terminal` is included in the central registry. External rotation/revocation is not verified.
 > - [High-branch / BQG audit](https://github.com/Shtenco/synergy/blob/main/docs/HIGH_BRANCH_REPOSITORY_AUDIT_2026-11-20.md)
 >
 > `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
