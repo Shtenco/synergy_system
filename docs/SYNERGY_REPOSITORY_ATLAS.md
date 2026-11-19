@@ -1,22 +1,22 @@
-# 🧭 SYNERGY — Атлас 89 репозиториев
+# 🧭 SYNERGY — Атлас 91 репозитория
 
 > **Каноническая карта федерации Shtenco/SYNERGY.**  
 > Архитектурный корень: [`Shtenco/synergy_system`](https://github.com/Shtenco/synergy_system)  
 > Экономический master dossier: [`Shtenco/synergy_project`](https://github.com/Shtenco/synergy_project)  
 > Цивилизационный граф: [`Shtenco/synergy_megaproject`](https://github.com/Shtenco/synergy_megaproject)  
 > Runtime-оркестратор узла: [`Shtenco/synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os)  
-> **Срез live-реестра: 14 ноября 2026 · 89 репозиториев.**  
-> Базовый глубокий паспорт: 75 репозиториев (28 сентября); 3 переименованных и 14 новых записей ожидают повторной глубокой проверки.
+> **Срез live-реестра: 20 ноября 2026 · 91 репозиторий.**  
+> Базовый глубокий паспорт: 75 репозиториев (28 сентября); 3 переименованных записи и 16 новых записей ожидают повторной глубокой проверки.
 
 ---
 
-## Inventory refresh — 14 November 2026
+## Inventory refresh — 20 November 2026
 
-The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain **89 repositories**. This refresh does not claim that all 89 have completed the original deep documentation pass.
+The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain **91 repositories**. This refresh does not claim that all 89 have completed the original deep documentation pass.
 
 - 72 entries retain a completed deep pass from the 75-repository September baseline.
 - 3 renamed repositories require lineage and README revalidation.
-- 14 newly inventoried repositories are classified provisionally and require the full README passport/deep pass.
+- 16 newly inventoried repositories are classified provisionally and require the full README passport/deep pass.
 - `synergy_project` remains the economic master dossier, not a child technology asset.
 - `synergy_maps` is registered as a placeholder until an implementation appears.
 
@@ -38,6 +38,8 @@ The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain *
 | `synergistic_economics` | FINANCE_REAL_ECONOMY | Economic OS and endogenous-economy research |
 | `synergy_metaverse` | APPS_INTERFACES | Spatial workspace projection/application |
 | `synergy_maps` | APPS_INTERFACES | README-only placeholder |
+| `shtenco_micro_ai` | INTELLIGENCE_AGENTS | MNN-Pocket-0.3B INT4 local inference tooling; external weights and device qualification pending |
+| `synergy_long_term_harness` | INTELLIGENCE_AGENTS | README-only main; implementation currently on non-main branches |
 
 ### Repository rename reconciliation
 
@@ -60,7 +62,7 @@ SYNERGY больше нельзя корректно описывать как �
 1. показывает место каждого репозитория в общей системе;
 2. отделяет архитектурную связь от доказанной runtime/code dependency;
 3. задаёт единый стандарт README, аналогичный по глубине `dlp_solver`;
-4. даёт человеку и AI-агенту единую точку входа в 89-репозиторную систему; статус паспортизации каждого узла отражён в машиночитаемом registry.
+4. даёт человеку и AI-агенту единую точку входа в 91-репозиторную систему; статус паспортизации каждого узла отражён в машиночитаемом registry.
 
 ---
 
@@ -262,6 +264,8 @@ flowchart LR
 | [`synergy_ai_language`](https://github.com/Shtenco/synergy_ai_language) | Семантический и языковой слой: формализация, язык взаимодействия и AI language tooling. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
 | [`synergy_gllm_nexus`](https://github.com/Shtenco/synergy_gllm_nexus) | Активный research runtime NEXUS/GLLM, бенчмарки, замороженные OOS-протоколы и генерации. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
 | [`synergy_nexus_science_agent`](https://github.com/Shtenco/synergy_nexus_science_agent) | Научный агент NEXUS: поиск, гипотезы, доказательства и исследовательская оркестрация. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
+| [`shtenco_micro_ai`](https://github.com/Shtenco/shtenco_micro_ai) | Локальный MNN-Pocket-0.3B INT4 inference tooling; веса внешние, аппаратная квалификация и качество требуют отдельной проверки. | — |
+| [`synergy_long_term_harness`](https://github.com/Shtenco/synergy_long_term_harness) | Исследовательский harness долгосрочной памяти/маршрутизации; текущий main README-only, реализация на неосновных ветках. | — |
 
 ## 🧭 Master / governance
 
@@ -370,7 +374,7 @@ flowchart LR
 
 # 🧪 Эпистемическая дисциплина
 
-Для всех 75 репозиториев действует единая шкала:
+Для всех 91 owner-inventory записей действует единая шкала:
 
 | Метка | Значение |
 |---|---|
@@ -404,7 +408,7 @@ inputs / outputs / evidence
 И обратную ссылку:
 
 - [SYNERGY SYSTEM](https://github.com/Shtenco/synergy_system)
-- [Канонический атлас 75 репозиториев](https://github.com/Shtenco/synergy_system/blob/main/docs/SYNERGY_REPOSITORY_ATLAS.md)
+- [Канонический атлас 91 репозитория](https://github.com/Shtenco/synergy_system/blob/main/docs/SYNERGY_REPOSITORY_ATLAS.md)
 - [Машиночитаемый реестр](https://github.com/Shtenco/synergy_system/blob/main/registry/SYNERGY_REPOSITORIES.json)
 
 ---
@@ -413,7 +417,7 @@ inputs / outputs / evidence
 
 После унификации README документация должна стать не только красивой, но и проверяемой машиной:
 
-1. проверять, что все 75 README содержат системный паспорт;
+1. проверять, что все 91 README содержат системный паспорт;
 2. проверять битые cross-repo links;
 3. проверять authority conflicts;
 4. строить Mermaid/Graphviz карту из JSON registry;
@@ -426,7 +430,7 @@ inputs / outputs / evidence
 ## Коротко
 
 ```text
-75 repositories
+91 repositories
       ↓
 one architecture root
       ↓
