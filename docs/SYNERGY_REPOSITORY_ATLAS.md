@@ -1,22 +1,22 @@
-# 🧭 SYNERGY — Атлас 91 репозитория
+# 🧭 SYNERGY — Атлас 92 репозиториев
 
 > **Каноническая карта федерации Shtenco/SYNERGY.**  
 > Архитектурный корень: [`Shtenco/synergy_system`](https://github.com/Shtenco/synergy_system)  
 > Экономический master dossier: [`Shtenco/synergy_project`](https://github.com/Shtenco/synergy_project)  
 > Цивилизационный граф: [`Shtenco/synergy_megaproject`](https://github.com/Shtenco/synergy_megaproject)  
 > Runtime-оркестратор узла: [`Shtenco/synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os)  
-> **Срез live-реестра: 20 ноября 2026 · 91 репозиторий.**  
+> **Срез live-реестра: 20 ноября 2026 · 92 репозитория.**  
 > Базовый глубокий паспорт: 75 репозиториев (28 сентября); 3 переименованных записи и 16 новых записей остаются provisional. Для 11/16 новых записей выполнен дополнительный source/branch/CI pass; пять уже имеют отдельные аудиторские дельты. Полный README-паспорт и интеграционные evidence gates ещё не закрыты.
 
 ---
 
 ## Inventory refresh — 20 November 2026
 
-The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain **91 repositories**. This refresh does not claim that all 91 have completed the original deep documentation pass.
+The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain **92 repositories**. This refresh does not claim that all 91 have completed the original deep documentation pass.
 
 - 72 entries retain a completed deep pass from the 75-repository September baseline.
 - 3 renamed repositories require lineage and README revalidation.
-- 16 newly inventoried repositories remain provisional; 11 have a targeted source/branch/CI pass and five have earlier audit deltas. Full README passports and integration evidence remain pending.
+- 17 newly inventoried repositories remain provisional; 11 have a targeted source/branch/CI pass and five have earlier audit deltas. Full README passports and integration evidence remain pending.
 - `synergy_project` remains the economic master dossier, not a child technology asset.
 - `synergy_maps` is registered as a placeholder until an implementation appears.
 
@@ -40,6 +40,7 @@ The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain *
 | `synergy_maps` | APPS_INTERFACES | Main is README-only; Overture/Cesium code and tests exist on work branches, with all 9 open PR head branches have latest visible CI failures; logs unavailable |
 | `shtenco_micro_ai` | INTELLIGENCE_AGENTS | MNN-Pocket-0.3B INT4 local inference tooling; external weights and device qualification pending |
 | `synergy_long_term_harness` | INTELLIGENCE_AGENTS | README-only main; implementation currently on non-main branches |
+| `synergy_hierarchical_cognitive_memory_architecture` | INTELLIGENCE_AGENTS | README-only main; hierarchical memory implementation exists on Draft PR #1; CI cancelled without executed steps; auth, symlink and provenance gates remain open |
 
 ## Targeted source / branch / CI pass — 20 November 2026
 
@@ -291,6 +292,7 @@ flowchart LR
 | [`synergy_ai_llm_rwkv`](https://github.com/Shtenco/synergy_ai_llm_rwkv) | RWKV model workflow and experimental quantization/serving research. | [`synergy_agi_olga`](https://github.com/Shtenco/synergy_agi_olga) |
 | [`synergy_gllm_nexus`](https://github.com/Shtenco/synergy_gllm_nexus) | Активный research runtime NEXUS/GLLM, бенчмарки, замороженные OOS-протоколы и генерации. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
 | [`synergy_long_term_harness`](https://github.com/Shtenco/synergy_long_term_harness) | Исследовательский harness долгосрочной памяти и маршрутизации агентов; текущий main содержит README-only, реализация присутствует только в неосновных ветках. | — |
+| [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) | Candidate hierarchical memory engine; main is README-only, feature implementation is Draft PR #1, no E2E contract is registered. | — |
 | [`synergy_nexus_science_agent`](https://github.com/Shtenco/synergy_nexus_science_agent) | Научный агент NEXUS: поиск, гипотезы, доказательства и исследовательская оркестрация. | [`synergy_agi_nexus`](https://github.com/Shtenco/synergy_agi_nexus) |
 | [`synergy_search_engline`](https://github.com/Shtenco/synergy_search_engline) | Search engine research shell and retrieval experiments; main-branch implementation remains limited. | [`synergy_ai_language`](https://github.com/Shtenco/synergy_ai_language) |
 
@@ -343,7 +345,7 @@ flowchart LR
 | [`synergy_riskguard`](https://github.com/Shtenco/synergy_riskguard) | Независимый риск-контур, лимиты и veto-политики для торговых/финансовых систем. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 | [`synergy_trademux`](https://github.com/Shtenco/synergy_trademux) | Маршрутизация и мультиплексирование торговых intents/стратегий к исполнимым каналам. | [`synergy_midas_ai`](https://github.com/Shtenco/synergy_midas_ai) |
 
-**Branch inventory:** 1,292 refs across all 91 repositories; full names and HEAD SHAs are maintained in [JSON](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.json) and [CSV](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.csv). Open PR snapshot: **548 PRs** (414 draft, 134 ready; 268 target main); every PR head branch and SHA matched the branch census. See [PR map JSON](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.json), [CSV](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.csv), and [audit](https://github.com/Shtenco/synergy/blob/main/docs/OPEN_PR_BRANCH_AUDIT_2026-11-20.md). Per-repository coverage matrix: [branch/PR summary](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_PR_SUMMARY_2026-11-20.md).
+**Branch inventory:** 1,292 refs across all 92 repositories; full names and HEAD SHAs are maintained in [JSON](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.json) and [CSV](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.csv). Open PR snapshot: **548 PRs** (414 draft, 134 ready; 268 target main); every PR head branch and SHA matched the branch census. See [PR map JSON](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.json), [CSV](https://github.com/Shtenco/synergy/blob/main/registry/OPEN_PR_BRANCH_MAP_2026-11-20.csv), and [audit](https://github.com/Shtenco/synergy/blob/main/docs/OPEN_PR_BRANCH_AUDIT_2026-11-20.md). Per-repository coverage matrix: [branch/PR summary](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_PR_SUMMARY_2026-11-20.md).
 
 # 🔄 Главные межсистемные контуры
 
@@ -403,7 +405,7 @@ flowchart LR
 
 # 🧪 Эпистемическая дисциплина
 
-Для всех 91 owner-inventory записей действует единая шкала:
+Для всех 92 owner-inventory записей действует единая шкала:
 
 | Метка | Значение |
 |---|---|
