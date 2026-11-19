@@ -7,7 +7,8 @@
     "contracts_with_gaps": 0,
     "runtime_adapter_edges": 44,
     "e2e_tested_edges": 0,
-    "uncontracted_components": 1
+    "uncontracted_components": 1,
+    "observed_contract_risks": 3
   },
   "contracts": [
     {
@@ -432,6 +433,73 @@
         "No cross-repository E2E execution and independent evidence receipt"
       ],
       "next_gate": "Define a versioned producer/consumer schema, authority and trust model; align source identity and namespace semantics; add authenticated adapters; then run exact-head cross-repository E2E tests. Do not count as a runtime edge before evidence."
+    }
+  ],
+  "observed_contract_risks": [
+    {
+      "id": "PAYMENT-SETTLEMENT-LIFECYCLE-2026-11-20",
+      "producer": "Shtenco/synergy_pay_system",
+      "consumer": "Shtenco/synergy_financial_os",
+      "contract_id": "synergy.settlement.evidence/v1",
+      "status": "ADAPTER_PRESENT_LIFECYCLE_UNVERIFIED",
+      "severity": "CRITICAL",
+      "source_evidence": [
+        "Shtenco/synergy_pay_system:docs/audits/PAY_SYSTEM_SETTLEMENT_AUDIT_2026-11-11.md",
+        "Shtenco/synergy_pay_system:PR#24"
+      ],
+      "findings": [
+        "Main API settlement path does not invoke the settlement evidence adapter and reconciliation engine before terminal settlement.",
+        "Actual received amount can diverge from planned route output; audit also identifies zero-as-missing fallback to planned amount.",
+        "Provider result status is not constrained to a terminal-success allowlist before ledger posting.",
+        "Accounting-recognition payload can be constructed without a resolved, independently reconciled settlement payload.",
+        "Pay System settlement evidence v1 is not directly interchangeable with the Financial OS canonical settlement receipt v2 without an explicit verified adapter.",
+        "Webhook acknowledgement, live coordinator and main settlement route are not yet one canonical durable lifecycle."
+      ],
+      "ci_evidence": "AUDIT_DOCUMENT_ONLY; PR#24 changes one audit document and does not implement remediation; no source tests or provider E2E were run by that PR.",
+      "deployment_blocked": true,
+      "next_gate": "One canonical flow must bind provider transaction/finality evidence, actual fills, independent reconciliation, balanced ledger posting, durable outbox and Financial OS recognition. Add negative tests for pending/partial/zero/duplicate/mismatched receipts and exact-head E2E."
+    },
+    {
+      "id": "FINANCIAL-OUTBOX-AUTHENTICITY-AND-CONCURRENCY-2026-11-20",
+      "producer": "Shtenco/synergy_financial_os",
+      "consumer": "Shtenco/synergy_system",
+      "contract_id": "synergy.accounting.recognition/v1",
+      "status": "IMPLEMENTED_WITH_VERIFICATION_GAPS",
+      "severity": "P1",
+      "source_evidence": [
+        "Shtenco/synergy_financial_os:src/synergy_financial_os/federation_outbox.py",
+        "Shtenco/synergy_financial_os:src/synergy_financial_os/contracts.py",
+        "Shtenco/synergy_financial_os:PR#39"
+      ],
+      "findings": [
+        "AccountingTransactionalOutbox validates event_bytes against a caller-supplied SHA-256 digest; the inspected outbox method does not itself verify a cryptographic signature or signer identity. Hash integrity is not signature authenticity.",
+        "The SQLite connection is shared with check_same_thread=False; transaction() has no explicit per-connection mutex. Concurrent transaction callers need dedicated serialization tests or separate connections."
+      ],
+      "ci_evidence": "PR#39 workflow job failed with steps=null; no tests are attested as executed.",
+      "deployment_blocked": true,
+      "next_gate": "Bind event authenticity to a verifier/key policy and explicit signer identity; test concurrent writers, crash recovery, idempotent replay, outbox publication and cross-repository consumer verification."
+    },
+    {
+      "id": "AGENTIC-ECONOMY-HARDNAV-V4-ACCOUNTING-CORRECTION-2026-11-20",
+      "producer": "Shtenco/synergy_agentic_ai_economy",
+      "consumer": "Shtenco/synergy_financial_os",
+      "contract_id": "synergy.agent.economy-simulation/v1",
+      "status": "ACCOUNTING_CORRECTION_CODE_PRESENT_REPLAY_PENDING",
+      "severity": "P1",
+      "source_evidence": [
+        "Shtenco/synergy_agentic_ai_economy:docs/HARDNAV_V4_ACCOUNTING_AUDIT_2026-11-16.md",
+        "Shtenco/synergy_agentic_ai_economy:PR#10",
+        "Shtenco/synergy_agentic_ai_economy:tests/test_multimarket_hardnav.py"
+      ],
+      "findings": [
+        "Prior V4 report recognized modeled bridge volume and inferred AMM fee estimates as external revenue without transaction-level receipts; those reported fee figures are superseded.",
+        "PR#10 separates modeled fee estimates from HardNAV and adds a fail-closed verified-receipt path with durable SQLite journal and replay/tamper tests.",
+        "The injected receipt verifier is still an external trust boundary; it is not itself a production chain verifier.",
+        "The corrected 13,000-block replay and new return/drawdown report are explicitly pending; no corrected performance number is claimed."
+      ],
+      "ci_evidence": "Latest associated workflow jobs failed with steps=null; no tests or replay are attested as executed.",
+      "deployment_blocked": true,
+      "next_gate": "Run exact-head tests and full pinned 13,000-block replay; validate the external chain verifier against canonical receipt/finality data; publish a new manifest/report and preserve the old report as superseded."
     }
   ]
 }
