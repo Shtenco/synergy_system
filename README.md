@@ -23,12 +23,13 @@
 > - [ Federation Backlog V2](registry/FEDERATION_BACKLOG.json)
 > - [ Federation Maturity Gate](integration/federation_maturity_gate.py)
 > - [ Federation Security Blockers](registry/SECURITY_BLOCKERS.json)
-> - [ Атлас 89 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
+> - [ Атлас 91 репозитория](docs/SYNERGY_REPOSITORY_ATLAS.md)
 > - [ Repository Registry](registry/SYNERGY_REPOSITORIES.json)
 > - [ Authority Registry](registry/AUTHORITY_REGISTRY.json)
 > - [ Contract Registry](registry/CONTRACT_REGISTRY.json)
 > - [ Dependency Graph](registry/DEPENDENCY_GRAPH.json)
 > - [ Repository Interfaces — 75/75](registry/REPOSITORY_INTERFACES.json)
+> - [ Live branch inventory — 91 repos / 1,292 branches](https://github.com/Shtenco/synergy/tree/main/registry)
 > - [ Integration Gaps](registry/INTEGRATION_GAPS.json)
 > - [ Invariant Registry](registry/INVARIANT_REGISTRY.json)
 > - [ Federation V2](config/repository_federation_v2.yaml)
@@ -38,7 +39,8 @@
 >
 > `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
 >
-> **Live owner inventory:** **89 repositories**. The audited interface registry remains a separate **75-record** scope; 3 historical interface names are unverified rename candidates, and 14 newly inventoried repositories await initial deep review.  
+> **Live owner inventory:** **91 repositories**. The audited interface registry remains a separate **75-record** scope; 3 historical interface names remain unverified rename candidates, and 16 newly inventoried repositories await initial deep review. The owner inventory and interface registry must never be conflated.  
+> **Branch census:** **1,292 refs across 91 repositories** (1,206 summed unique HEADs within repositories; 86 repeated refs). Full names and SHAs: [JSON](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.json) · [CSV](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.csv) · [report](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_INVENTORY_2026-11-20.md).  
 > **Documentation re-verification:** **26/75 VERIFIED · 49 PENDING_REAUDIT**. Первичная метка `75/75 COMPLETE` снята после повторного quality audit; канонический статус хранится в `registry/DOCUMENTATION_QUALITY.json`.
 > **M2 frozen baseline:** **17/17 contract families endpoint-complete · 22 runtime edges · 20 integrated repos**.  
 > **Current federation frontier:** **39/39 contract families endpoint-complete · 44 runtime edges ADAPTER_IMPLEMENTED · 42 repos ADAPTER_INTEGRATED · 0 UNCLASSIFIED/ARCHITECTURAL_ONLY · 0 E2E_TESTED · 0 DEPLOYED**.  
