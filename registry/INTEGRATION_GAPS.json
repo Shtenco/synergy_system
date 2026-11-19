@@ -1,12 +1,13 @@
 {
   "schema": "synergy.integration-gaps/v1",
-  "as_of": "2026-09-29",
+  "as_of": "2026-11-20",
   "totals": {
     "contracts": 39,
     "no_missing_endpoints": 39,
     "contracts_with_gaps": 0,
     "runtime_adapter_edges": 44,
-    "e2e_tested_edges": 0
+    "e2e_tested_edges": 0,
+    "uncontracted_components": 1
   },
   "contracts": [
     {
@@ -404,6 +405,33 @@
       ],
       "missing_endpoints": [],
       "next_gate": "M4 Wave-5 app-source E2E harness and evidence bundle"
+    }
+  ],
+  "uncontracted_components": [
+    {
+      "component": "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+      "status": "UNCONTRACTED_CANDIDATE",
+      "proposed_contract_family": "synergy.memory.context/v1",
+      "candidate_consumers": [
+        "Shtenco/synergy_ai_language",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_agi_autopilot"
+      ],
+      "observed_related_work": [
+        "synergy_ai_language PR #35 semantic memory record v1",
+        "synergy_ai_coder PR #7 recursive context archive integration",
+        "synergy_long_term_harness PR #1-#4 durable memory and model-role history"
+      ],
+      "gaps": [
+        "No shared canonical record schema between MemoryRecord and synergy.semantic-memory-record/v1",
+        "No authenticated/authorized network API contract",
+        "No namespace-safe cross-repository source identity contract",
+        "Repository ingestion lacks explicit symlink rejection",
+        "No exact-provider tokenizer/context accounting contract",
+        "No cross-repository E2E execution and independent evidence receipt"
+      ],
+      "next_gate": "Define a versioned producer/consumer schema, authority and trust model; align source identity and namespace semantics; add authenticated adapters; then run exact-head cross-repository E2E tests. Do not count as a runtime edge before evidence."
     }
   ]
 }
