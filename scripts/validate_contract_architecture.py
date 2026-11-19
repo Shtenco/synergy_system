@@ -14,7 +14,6 @@ GRAPH = ROOT / "registry" / "DEPENDENCY_GRAPH.json"
 SCHEMAS = ROOT / "contracts" / "schemas"
 INTERFACES = ROOT / "registry" / "REPOSITORY_INTERFACES.json"
 GAPS = ROOT / "registry" / "INTEGRATION_GAPS.json"
-RENAMES = ROOT / "registry" / "REPOSITORY_RENAME_CANDIDATES.json""
 INVARIANTS = ROOT / "registry" / "INVARIANT_REGISTRY.json"
 
 def fail(msg: str) -> None:
@@ -33,22 +32,10 @@ def main() -> int:
     gaps = load(GAPS)
     invariants = load(INVARIANTS)
 
-    repo_records = repos["repositories"]
-    repo_names = {r["full_name"] for r in repo_records}
-    if len(repo_records) != 91 or repos.get("repository_count") != 91 or len(repo_names) != 91:
-        fail("current owner inventory must contain 91 unique repositories")
-    interface_records = interfaces["repositories"]
-    interface_names = {r["repo"] for r in interface_records}
-    if interfaces.get("repository_count") != len(interface_records) or len(interface_records) != 75 or len(interface_names) != 75:
-        fail("repository interface registry must retain its separate 75-record scope")
-    rename_data = load(RENAMES)
-    legacy_names = {x["legacy_full_name"] for x in rename_data.get("candidates", [])}
-    unmatched_interfaces = interface_names - repo_names
-    if unmatched_interfaces != legacy_names:
-        fail("interface/owner inventory mismatch differs from explicitly unverified rename candidates")
-    for item in rename_data.get("candidates", []):
-        if item.get("identity_confirmed") is not False or item.get("candidate_full_name") not in repo_names:
-            fail("rename candidate target or unverified status is inconsistent")
+    repo_names = {r["full_name"] for r in repos["repositories"]}
+    interface_names = {r["repo"] for r in interfaces["repositories"]}
+    if interfaces.get("repository_count") != len(repo_names) or interface_names != repo_names:
+        fail("repository interface registry drift")
     if gaps.get("totals", {}).get("contracts") != len(contracts["contracts"]):
         fail("integration gap registry contract count drift")
     invariant_ids = [x["id"] for x in invariants.get("invariants", [])]
