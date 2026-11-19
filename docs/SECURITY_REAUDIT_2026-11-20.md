@@ -4,9 +4,9 @@
 
 ## Executive status
 
-**UNRESOLVED — P0**
+**UNRESOLVED — 4 P0 + 1 P1**
 
-Four repositories now have unresolved P0 credential/security blockers: the three previously tracked incidents in Cashero, USDS and TURBO Linux, plus a newly detected non-placeholder broker username/password exposure in AI Trade Terminal. Broker-side validity and external rotation/revocation for the new finding remain unverified.
+Four repositories have unresolved P0 credential/security blockers: the three previously tracked incidents in Cashero, USDS and TURBO Linux, plus a newly detected non-placeholder broker username/password exposure in AI Trade Terminal. Broker-side validity and external rotation/revocation for the new finding remain unverified.
 
 | Repository | Main-tree finding | Security PR | PR branch finding | Current result |
 |---|---|---|---|---|
@@ -65,4 +65,17 @@ The registry has therefore been updated to set federation_promotion_blocked=true
 6. Secret scanning and CI/pre-commit denial rules active.
 7. Independent evidence attached to the incident record.
 
-Until then, all four remain UNRESOLVED and deployment-blocked. A file deletion, .gitignore entry, draft PR or written rotation checklist is not credential rotation.
+Until then, all four P0 credential incidents remain UNRESOLVED and deployment-blocked. A file deletion, .gitignore entry, draft PR or written rotation checklist is not credential rotation.
+
+
+## Additional P1 — cognitive-memory promotion gate (not a credential incident)
+
+Repository: `Shtenco/synergy_hierarchical_cognitive_memory_architecture`, feature PR #1, current head `2d6d7872653b9d525a74046e992a843b2a905d57`.
+
+This P1 is separate from the four committed-credential P0 incidents and is currently present on the Draft feature branch, not established as a main-tree exposure:
+
+1. `synergy_memory/api.py` exposes local API routes without authentication or authorization. The repository documents this as a local-development adapter; do not expose it on a network or promote it as a federated service.
+2. Repository ingestion reads files discovered by recursive path traversal without explicit symlink rejection and resolved-path containment enforcement. A crafted symlink can make an ingestion process read outside the declared repository root.
+3. The current source index uses URI as a primary key while ingestion stores repository-relative paths. Two repositories ingested into one shared store can collide on the same relative URI and overwrite current provenance.
+
+**Required before promotion:** loopback-only boundary until authenticated identity/authorization exists; reject symlinks and enforce resolved-path containment; namespace source identity by repository ID + normalized path + immutable revision; add adversarial multi-repository regression tests; obtain executed exact-head CI. No external exposure or exploitation is claimed.
