@@ -109,7 +109,7 @@ Main contains only README and one NMEA test. The selected work/global-world-plat
 
 Main contains only README. The work/overture-global-divisions-ingest-20261116 branch contains TypeScript/Cesium sources, Python Overture ingestion and tile-planning scripts, tests and a CI workflow. The workflow covers npm tests, Python unittest, py_compile and npm build.
 
-The latest selected branch run 43932082338 failed; GitHub logs returned BlobNotFound, so the failure cause is unknown. Nine PRs are open and all are draft, with a stacked branch chain from planner → resumable runner → Overture ingestion → Cesium rendering → EAEU coverage. The implementation has not been merged to main.
+All nine open PR head branches have latest visible workflow runs with conclusion=failure. The selected run 44338339348 also failed; GitHub job logs returned BlobNotFound, so exact causes remain unknown. All nine PRs are draft, with a stacked branch chain from planner → resumable runner → Overture ingestion → Cesium rendering → EAEU coverage. The implementation has not been merged to main.
 
 **Status:** branch-level implementation candidate; main remains README-only; CI currently red on the inspected branch.
 
