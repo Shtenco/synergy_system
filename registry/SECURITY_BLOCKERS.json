@@ -1,6 +1,6 @@
 {
   "schema": "synergy.security-blockers/v1",
-  "as_of": "2026-09-29",
+  "as_of": "2026-11-20",
   "blockers": [
     {
       "repo": "Shtenco/synergy_usds",
@@ -16,7 +16,20 @@
         "purge sensitive history if applicable",
         "enable secret scanning",
         "verify dependents no longer use old credential"
-      ]
+      ],
+      "last_reaudited": "2026-11-20",
+      "external_rotation_verified": false,
+      "priority": "P0",
+      "main_tree_present": true,
+      "security_pr": 6,
+      "security_pr_state": "OPEN_READY_FOR_REVIEW",
+      "security_pr_changed_files": [
+        ".gitignore",
+        "SECURITY_KEY_ROTATION.md"
+      ],
+      "security_pr_branch_still_contains_key": true,
+      "security_pr_removes_key_file": false,
+      "rotation_or_revocation_evidence": false
     },
     {
       "repo": "Shtenco/synergy_cashero",
@@ -35,7 +48,23 @@
         "enable repository secret scanning and pre-commit/CI secret detection",
         "verify bots/contracts/deployments no longer depend on old credentials before unblocking"
       ],
-      "inspection_note": "Values were inspected only to classify placeholder vs non-placeholder material; secret values are intentionally not reproduced in documentation or registry."
+      "inspection_note": "Values were inspected only to classify placeholder vs non-placeholder material; secret values are intentionally not reproduced in documentation or registry.",
+      "last_reaudited": "2026-11-20",
+      "external_rotation_verified": false,
+      "priority": "P0",
+      "main_tree_present": true,
+      "current_paths": [
+        ".env",
+        "bot1.env",
+        "bot2.env",
+        "owner.env"
+      ],
+      "security_remediation_pr": null,
+      "related_open_prs": [
+        6,
+        8
+      ],
+      "rotation_or_revocation_evidence": false
     },
     {
       "repo": "Shtenco/synergy_turbo_linux",
@@ -44,14 +73,23 @@
       "secret_contents_inspected": false,
       "status": "UNRESOLVED",
       "deployment_blocked": true,
-      "federation_promotion_blocked": false,
+      "federation_promotion_blocked": true,
       "remediation": [
         "verify whether credential is real",
         "rotate/revoke if real",
         "remove private key from repository/history",
         "use external secret store",
         "enable secret scanning"
-      ]
+      ],
+      "last_reaudited": "2026-11-20",
+      "external_rotation_verified": false,
+      "priority": "P0",
+      "main_tree_present": true,
+      "security_pr": 13,
+      "security_pr_state": "OPEN_DRAFT",
+      "security_pr_branch_removes_key_file": true,
+      "security_pr_merged": false,
+      "rotation_or_revocation_evidence": false
     }
   ]
 }
