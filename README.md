@@ -1,3 +1,31 @@
+<!-- LIVE-FEDERATION-SNAPSHOT-2026-11-20:START -->
+# Live federation governance snapshot — 2026-11-20
+
+**Owner inventory:** [92 repositories](https://github.com/Shtenco/synergy/blob/main/registry/repos.json) (16 public / 76 private / 0 archived). This is distinct from the architecture/interface registry below.
+
+| Governance registry | Current value |
+|---|---:|
+| Registered interface components | **76** |
+| Canonical contract families | **39** |
+| Runtime adapter edges | **44** |
+| E2E-tested edges | **0** |
+| Uncontracted candidate components | **1** |
+| Security blockers | **4 P0 + 1 P1** |
+
+**New candidate:** [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) is registered as `ARCHITECTURAL_ONLY`. Its current PR #1 is Draft; no authenticated runtime contract, cross-repository adapter or E2E execution is proven. See [integration gaps](registry/INTEGRATION_GAPS.json) and [security blockers](registry/SECURITY_BLOCKERS.json).
+
+**Authority rule:** owner inventory membership, an interface record, a defined contract, an adapter and an E2E-tested edge are separate states. The 76 interface rows are not the 92-repository owner inventory. Existing 39 contract families remain unchanged; the memory component is recorded separately as one uncontracted candidate rather than being misrepresented as a registered contract.
+
+Canonical current reports:
+- [92-repository owner inventory](https://github.com/Shtenco/synergy/blob/main/README.md)
+- [Live branch / PR reconciliation](https://github.com/Shtenco/synergy/blob/main/docs/LIVE_RECONCILIATION_2026-11-20.md)
+- [76-component interface registry](registry/REPOSITORY_INTERFACES.json)
+- [39 contract families and uncontracted components](registry/INTEGRATION_GAPS.json)
+- [4 P0 + 1 P1 security blockers](registry/SECURITY_BLOCKERS.json)
+
+Historical counts in older sections and dated reports remain provenance snapshots; use the live registry links above for current scope.
+<!-- LIVE-FEDERATION-SNAPSHOT-2026-11-20:END -->
+
 <!-- SCIENTIFIC-PROFILE-2026:START -->
 <img src="assets/readme/research-architecture.svg" width="100%" alt="SYNERGY SYSTEM / FEDERATION ARCHITECTURE"/>
 
