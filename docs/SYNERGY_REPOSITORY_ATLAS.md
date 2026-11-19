@@ -12,7 +12,7 @@
 
 ## Inventory refresh — 20 November 2026
 
-The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain **91 repositories**. This refresh does not claim that all 89 have completed the original deep documentation pass.
+The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain **91 repositories**. This refresh does not claim that all 91 have completed the original deep documentation pass.
 
 - 72 entries retain a completed deep pass from the 75-repository September baseline.
 - 3 renamed repositories require lineage and README revalidation.
