@@ -37,7 +37,7 @@ The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain *
 | `synergy_ai_workspace` | APPS_INTERFACES | Local AI workspace/desktop development |
 | `synergistic_economics` | FINANCE_REAL_ECONOMY | Economic OS and endogenous-economy research |
 | `synergy_metaverse` | APPS_INTERFACES | Spatial workspace projection/application |
-| `synergy_maps` | APPS_INTERFACES | Main is README-only; Overture/Cesium code and tests exist on work branches, with latest inspected CI failure |
+| `synergy_maps` | APPS_INTERFACES | Main is README-only; Overture/Cesium code and tests exist on work branches, with all 9 open PR head branches have latest visible CI failures; logs unavailable |
 | `shtenco_micro_ai` | INTELLIGENCE_AGENTS | MNN-Pocket-0.3B INT4 local inference tooling; external weights and device qualification pending |
 | `synergy_long_term_harness` | INTELLIGENCE_AGENTS | README-only main; implementation currently on non-main branches |
 
