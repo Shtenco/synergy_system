@@ -963,7 +963,8 @@
           ]
         }
       ],
-      "interface_status": "ADAPTER_INTEGRATED"
+      "interface_status": "SECURITY_BLOCKED",
+      "security_blocker": "Committed unencrypted SSH private-key artifact remains on main; cleanup PR #13 is draft and external rotation is unverified."
     },
     {
       "repo": "Shtenco/synergy_agentic_ai_economy",
