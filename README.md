@@ -33,6 +33,7 @@
 > - [Live branch inventory — 91 repos / 1,292 branches (CSV)](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.csv)
 > - [Branch inventory — JSON with names, HEAD SHAs and protection flags](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.json)
 > - [Branch inventory report](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_INVENTORY_2026-11-20.md)
+> - [Live branch-name recheck — all 91 repositories](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_LIVE_RECHECK_2026-11-20.md)
 > - [Eight-repository source audit delta](https://github.com/Shtenco/synergy/blob/main/docs/REPOSITORY_AUDIT_DELTA_2026-11-20.md)
 > - [ Integration Gaps](registry/INTEGRATION_GAPS.json)
 > - [ Invariant Registry](registry/INVARIANT_REGISTRY.json)
