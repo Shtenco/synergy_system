@@ -13,14 +13,24 @@
 | Observed contract / lifecycle risks | **3** |
 | Current open PRs in owner inventory | **549** (18 priority PRs enriched) |
 | Security blockers | **4 P0 + 1 P1** |
+| Live branch refs | **1,294 across 92 repositories** |
+| Live branch SHA coverage | **1,294 / 1,294** |
+| Fresh main-vs-branch ancestry comparisons | **99 / 1,202 non-main refs** |
+| Remaining ancestry comparisons | **1103** |
+| Priority PRs with exact-head workflow metadata | **14** |
+| Merge-ready PRs in reviewed priority set | **0** |
 
-**New candidate:** [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) is registered as `ARCHITECTURAL_ONLY`. Its current PR #1 is Draft; no authenticated runtime contract, cross-repository adapter or E2E execution is proven. See [integration gaps](registry/INTEGRATION_GAPS.json) and [security blockers](registry/SECURITY_BLOCKERS.json).
+**New candidate:** [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) is registered as `ARCHITECTURAL_ONLY`. Its current PR #1 is Draft, 135 commits ahead of main, and its latest inspected CI run was cancelled before any test step; no runtime contract, adapter or E2E execution is proven.
 
 **Authority rule:** owner inventory membership, an interface record, a defined contract, an adapter and an E2E-tested edge are separate states. The 76 interface rows are not the 92-repository owner inventory. Current owner-wide open PR discovery is 549; only 18 priority PRs have full metadata enrichment, while 531 remain discovery-only. Existing 39 contract families remain unchanged; the memory component is recorded separately as one uncontracted candidate rather than being misrepresented as a registered contract.
 
 Canonical current reports:
 - [92-repository owner inventory](https://github.com/Shtenco/synergy/blob/main/README.md)
 - [Live branch / PR reconciliation](https://github.com/Shtenco/synergy/blob/main/docs/LIVE_RECONCILIATION_2026-11-20.md)
+- [1,294 live branch SHAs](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_SHA_LIVE_RECHECK_2026-11-20.json)
+- [Incremental ancestry comparison ledger](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_ANCESTRY_COMPARE_2026-11-20.json)
+- [Duplicate branch HEAD groups](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_DUPLICATE_HEADS_2026-11-20.json)
+- [Priority PR dependency and CI audit](https://github.com/Shtenco/synergy/blob/main/registry/PR_BRANCH_DEPENDENCY_AUDIT_2026-11-20.json)
 - [76-component interface registry](registry/REPOSITORY_INTERFACES.json)
 - [39 contract families and uncontracted components](registry/INTEGRATION_GAPS.json)
 - [4 P0 + 1 P1 security blockers](registry/SECURITY_BLOCKERS.json)
