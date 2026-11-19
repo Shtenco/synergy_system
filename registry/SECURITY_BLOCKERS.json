@@ -90,6 +90,34 @@
       "security_pr_branch_removes_key_file": true,
       "security_pr_merged": false,
       "rotation_or_revocation_evidence": false
+    },
+    {
+      "repo": "Shtenco/synergy_ai_trade_terminal",
+      "finding": "non-placeholder broker API username/password literals committed in Python source; authentication and live order-placement paths are present; broker-side validity is unverified",
+      "observed_path": "cassandra_v6_FIXED.py (credential literals and authentication/order methods)",
+      "secret_contents_inspected": true,
+      "status": "UNRESOLVED",
+      "deployment_blocked": true,
+      "federation_promotion_blocked": true,
+      "remediation": [
+        "rotate/revoke the broker API credentials externally before any further use",
+        "verify account activity, active sessions, API permissions and access logs with the broker",
+        "remove credential literals from the current source tree and use an external secret store",
+        "inspect all Git refs/history and address committed secret material under an approved incident plan",
+        "confirm dependent services use only newly generated credentials",
+        "enable secret scanning and CI/pre-commit secret detection"
+      ],
+      "inspection_note": "Literal username/password values were classified as non-placeholder; values are intentionally not reproduced. Broker-side validity, use and revocation were not tested or verified.",
+      "last_reaudited": "2026-11-20",
+      "external_rotation_verified": false,
+      "priority": "P0",
+      "main_tree_present": true,
+      "current_paths": [
+        "cassandra_v6_FIXED.py"
+      ],
+      "security_remediation_pr": null,
+      "related_open_prs": [],
+      "rotation_or_revocation_evidence": false
     }
   ]
 }
