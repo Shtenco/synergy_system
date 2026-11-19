@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the live 89-repository owner inventory and its 75-record interface scope.
+"""Validate the live 91-repository owner inventory and its 75-record interface scope.
 
 The owner inventory is not the same thing as the runtime/interface maturity registry.
 Legacy names are retained as explicitly unverified rename candidates until immutable
@@ -51,6 +51,9 @@ def main() -> int:
             f"repositories has {len(repos) if isinstance(repos, list) else 'non-list'} entries"
         )
 
+    if len(repos) != 91:
+        fail(f"expected 91 current owner repositories, got {len(repos)}")
+
     full_names = [r.get("full_name") for r in repos]
     names = [r.get("name") for r in repos]
     if None in full_names or None in names:
@@ -95,8 +98,8 @@ def main() -> int:
     interfaces = load(INTERFACES)
     interface_repos = interfaces.get("repositories", [])
     interface_names = [r.get("repo") for r in interface_repos]
-    if interfaces.get("repository_count") != len(interface_repos):
-        fail("interface repository_count differs from its rows")
+    if interfaces.get("repository_count") != len(interface_repos) or len(interface_repos) != 75:
+        fail("interface registry must retain its separate 75-record scope")
     if len(interface_names) != len(set(interface_names)):
         fail("duplicate repository names in interface registry")
 
@@ -107,6 +110,8 @@ def main() -> int:
     legacy_names = [x.get("legacy_full_name") for x in candidates]
     if len(legacy_names) != len(set(legacy_names)):
         fail("duplicate legacy names in rename candidates")
+    if len(candidates) != 3:
+        fail(f"expected 3 explicitly unverified historical rename candidates, got {len(candidates)}")
     for item in candidates:
         if item.get("status") != "CANDIDATE_ONLY" or item.get("identity_confirmed") is not False:
             fail("rename candidate must remain explicitly unconfirmed")
