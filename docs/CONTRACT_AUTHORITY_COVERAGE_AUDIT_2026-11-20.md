@@ -86,7 +86,7 @@ The previous README wording that said “17 of 39 contract IDs without CONTRACT_
 - 17/39 contract IDs lack `RUNTIME_CONTRACT` edges.
 - 23/39 contract IDs lack `CONTRACT_FLOW` edges.
 - 23/39 contract IDs lack `RUNTIME_DEPENDENCY` contract IDs.
-- 2 producer repository references do not resolve in the current 91-repository registry.
+- 2 producer repository references do not resolve in the current 92-repository registry.
 
 ## Recommended remediation order
 
@@ -107,3 +107,14 @@ The previous README wording that said “17 of 39 contract IDs without CONTRACT_
 ## Owner-inventory update — 2026-11-20
 
 The owner registry now contains 92 repositories. The newly registered cognitive-memory repository is not one of the 39 existing contract definitions and is intentionally recorded as one uncontracted component in `INTEGRATION_GAPS.json`. This structural audit's contract and authority findings remain scoped to the 39 registered contracts; no new runtime edge is credited.
+
+
+## Observed contract and lifecycle risks — 2026-11-20
+
+These findings do not change the count of 39 registered contract families. They record implementation and verification risks where a contract/adapter record already exists:
+
+1. **Pay System → Financial OS settlement lifecycle (CRITICAL):** Pay System audit F-064–F-076 identifies that provider finality, actual received amounts, independent reconciliation, terminal-success allowlisting, balanced ledger posting and Financial OS recognition are not one proven durable E2E flow. PR #24 is an audit-document change, not runtime remediation. Keep deployment blocked until the canonical path and negative tests are implemented.
+2. **Financial OS transactional outbox (P1):** inspected outbox validates event bytes against a caller-supplied SHA-256 digest but does not itself verify signer identity/signature. Hash integrity is not authenticity. The shared SQLite connection also requires explicit concurrency/serialization testing.
+3. **Agentic Economy HardNAV V4 (P1):** modeled bridge/AMM fee estimates were previously included as external revenue without transaction-level receipts. PR #10 separates modeled fees and adds a verified-receipt journal, but the corrected 13,000-block replay and production chain verifier remain pending; prior fee-inclusive performance figures are superseded.
+
+The current integration-gap registry records these three observed contract/lifecycle risks plus one uncontracted cognitive-memory candidate. Runtime adapter edges remain 44 and E2E-tested edges remain 0.
