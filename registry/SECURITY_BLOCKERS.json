@@ -118,6 +118,32 @@
       "security_remediation_pr": null,
       "related_open_prs": [],
       "rotation_or_revocation_evidence": false
+    },
+    {
+      "repo": "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+      "finding": "production API and repository-ingestion isolation controls incomplete",
+      "observed_path": "synergy_memory/api.py; synergy_memory/ingest.py; synergy_memory/store.py",
+      "source_ref": "feat/hierarchical-cognitive-memory-v1",
+      "pr_number": 1,
+      "status": "UNRESOLVED",
+      "deployment_blocked": true,
+      "federation_promotion_blocked": true,
+      "priority": "P1",
+      "main_tree_present": false,
+      "external_exposure_verified": false,
+      "findings": [
+        "API routes have no authentication or authorization; the repository documents the API as a local development adapter only.",
+        "ingest_path uses Path.rglob/is_file/read_text without rejecting symlink files or proving resolved targets remain under the repository root; a crafted symlink can cause out-of-root file ingestion.",
+        "sources uses URI as its current-row primary key while ingest stores repository-relative URIs; ingesting multiple repositories into a shared store can collide across namespaces and overwrite current source provenance."
+      ],
+      "remediation": [
+        "Keep the API bound to loopback/local development until authenticated caller identity, authorization, tenant isolation and rate limits are implemented.",
+        "Reject symlinks before reading and enforce resolved-path containment under the declared repository root.",
+        "Namespace source identity by repository ID plus normalized path and immutable revision; add collision and multi-repository regression tests.",
+        "Add security tests and obtain exact-head CI with executed steps before promotion."
+      ],
+      "last_reaudited": "2026-11-20",
+      "external_rotation_verified": false
     }
   ]
 }
