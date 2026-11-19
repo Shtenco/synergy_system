@@ -4,7 +4,7 @@
 
 ## Executive status
 
-<badge>UNRESOLVED — P0</badge>
+**UNRESOLVED — P0**
 
 All three repositories remain blocked for deployment pending external credential rotation/revocation and evidence. The current main branches still contain credential-like artifacts in all three repositories.
 
