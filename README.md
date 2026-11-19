@@ -10,11 +10,13 @@
 | Runtime adapter edges | **44** |
 | E2E-tested edges | **0** |
 | Uncontracted candidate components | **1** |
+| Observed contract / lifecycle risks | **3** |
+| Current open PRs in owner inventory | **549** (18 priority PRs enriched) |
 | Security blockers | **4 P0 + 1 P1** |
 
 **New candidate:** [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) is registered as `ARCHITECTURAL_ONLY`. Its current PR #1 is Draft; no authenticated runtime contract, cross-repository adapter or E2E execution is proven. See [integration gaps](registry/INTEGRATION_GAPS.json) and [security blockers](registry/SECURITY_BLOCKERS.json).
 
-**Authority rule:** owner inventory membership, an interface record, a defined contract, an adapter and an E2E-tested edge are separate states. The 76 interface rows are not the 92-repository owner inventory. Existing 39 contract families remain unchanged; the memory component is recorded separately as one uncontracted candidate rather than being misrepresented as a registered contract.
+**Authority rule:** owner inventory membership, an interface record, a defined contract, an adapter and an E2E-tested edge are separate states. The 76 interface rows are not the 92-repository owner inventory. Current owner-wide open PR discovery is 549; only 18 priority PRs have full metadata enrichment, while 531 remain discovery-only. Existing 39 contract families remain unchanged; the memory component is recorded separately as one uncontracted candidate rather than being misrepresented as a registered contract.
 
 Canonical current reports:
 - [92-repository owner inventory](https://github.com/Shtenco/synergy/blob/main/README.md)
