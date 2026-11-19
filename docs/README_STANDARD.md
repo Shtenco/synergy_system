@@ -63,7 +63,7 @@ repository name       != proof of implementation
 ## Обязательная федерационная навигация
 
 - [SYNERGY SYSTEM](https://github.com/Shtenco/synergy_system)
-- [Атлас всех 75 репозиториев](https://github.com/Shtenco/synergy_system/blob/main/docs/SYNERGY_REPOSITORY_ATLAS.md)
+- [Атлас 89 репозиториев](https://github.com/Shtenco/synergy_system/blob/main/docs/SYNERGY_REPOSITORY_ATLAS.md)
 - [Машиночитаемый registry](https://github.com/Shtenco/synergy_system/blob/main/registry/SYNERGY_REPOSITORIES.json)
 
 ## Критерий качества
@@ -71,3 +71,13 @@ repository name       != proof of implementation
 Эталоном по глубине служит `dlp_solver`: README должен отделять **что измерено** от **что предполагается**, показывать конкретные числа, bottleneck, отрицательные результаты и следующий проверяемый рубеж.
 
 Большой README допустим, но при очень больших объёмах детали следует выносить в `docs/`, оставляя в корне навигационную карту и краткий evidence-led summary.
+
+
+## Статус реестра на 14 ноября 2026
+
+- Live GitHub inventory: **89 repositories**.
+- Deep documentation pass completed: **72**.
+- Pending revalidation: **17** (3 renamed + 14 newly inventoried).
+- New/renamed entries must not be marked COMPLETE until their own README, main tree, tests, evidence and branch lineage have been reviewed.
+
+The canonical count and per-repository pass status are maintained in [SYNERGY_REPOSITORIES.json](../registry/SYNERGY_REPOSITORIES.json).

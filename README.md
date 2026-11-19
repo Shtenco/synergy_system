@@ -23,12 +23,13 @@
 > - [ Federation Backlog V2](registry/FEDERATION_BACKLOG.json)
 > - [ Federation Maturity Gate](integration/federation_maturity_gate.py)
 > - [ Federation Security Blockers](registry/SECURITY_BLOCKERS.json)
-> - [ Атлас 75 репозиториев](docs/SYNERGY_REPOSITORY_ATLAS.md)
+> - [ Атлас 91 репозитория](docs/SYNERGY_REPOSITORY_ATLAS.md)
 > - [ Repository Registry](registry/SYNERGY_REPOSITORIES.json)
 > - [ Authority Registry](registry/AUTHORITY_REGISTRY.json)
 > - [ Contract Registry](registry/CONTRACT_REGISTRY.json)
 > - [ Dependency Graph](registry/DEPENDENCY_GRAPH.json)
 > - [ Repository Interfaces — 75/75](registry/REPOSITORY_INTERFACES.json)
+> - [ Live branch inventory — 91 repos / 1,292 branches](https://github.com/Shtenco/synergy/tree/main/registry)
 > - [ Integration Gaps](registry/INTEGRATION_GAPS.json)
 > - [ Invariant Registry](registry/INVARIANT_REGISTRY.json)
 > - [ Federation V2](config/repository_federation_v2.yaml)
@@ -38,12 +39,15 @@
 >
 > `repository_federation_v1.yaml` и старые 45/46-repo документы сохраняются только как исторический provenance.
 >
+> **Live owner inventory:** **91 repositories**. The audited interface registry remains a separate **75-record** scope; 3 historical interface names remain unverified rename candidates, and 16 newly inventoried repositories await initial deep review. The owner inventory and interface registry must never be conflated.  
+> **Branch census:** **1,292 refs across 91 repositories** (91 main + 1,201 non-main; 1,206 summed unique HEADs within repositories; 86 repeated refs). GitHub API marks **0/1,292 refs protected**, including all 91 main branches. Full names and SHAs: [JSON](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.json) · [CSV](https://github.com/Shtenco/synergy/blob/main/registry/BRANCH_INVENTORY_2026-11-20.csv) · [report](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_INVENTORY_2026-11-20.md).  
 > **Documentation re-verification:** **26/75 VERIFIED · 49 PENDING_REAUDIT**. Первичная метка `75/75 COMPLETE` снята после повторного quality audit; канонический статус хранится в `registry/DOCUMENTATION_QUALITY.json`.
 > **M2 frozen baseline:** **17/17 contract families endpoint-complete · 22 runtime edges · 20 integrated repos**.  
 > **Current federation frontier:** **39/39 contract families endpoint-complete · 44 runtime edges ADAPTER_IMPLEMENTED · 42 repos ADAPTER_INTEGRATED · 0 UNCLASSIFIED/ARCHITECTURAL_ONLY · 0 E2E_TESTED · 0 DEPLOYED**.  
 **M5 observed-execution gate:** aggregate scope **44/44 runtime edges**; promotion remains blocked until real evidence artifacts pass every suite verifier.  
-> **75/75 maturity-classified:** 42 adapter-integrated · 11 external-runtime pending · 14 documentation-only · 3 non-runtime surfaces · 2 needs-hardening · 2 security-blocked · 1 governance-root.
+> **75/75 interface records maturity-classified:** 42 adapter-integrated · 11 external-runtime pending · 14 documentation-only · 3 non-runtime surfaces · 2 needs-hardening · 2 security-blocked · 1 governance-root.
 > **Rule:** ни один edge не повышается до `E2E_TESTED` без фактического cross-repo evidence.
+> **Typed-contract registry caveat — 2026-11-20:** a separate structural audit found 22 contract authority labels absent from `AUTHORITY_REGISTRY.json`, 17 of 39 contract IDs without `CONTRACT_FLOW` edges in `DEPENDENCY_GRAPH.json`, and 2 contract producer references using legacy names that remain unverified rename candidates. The 75-record interface maturity gate and 91-repository owner inventory are separate checks; these contract/authority inconsistencies remain P1 blockers and are not promoted to E2E or DEPLOYED.
 
 
 **Architecture & Governance Root for the complete SYNERGY ecosystem**

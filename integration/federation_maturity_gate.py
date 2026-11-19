@@ -10,6 +10,15 @@ def load(name:str):
     return json.loads((REG/name).read_text(encoding="utf-8"))
 
 def main()->int:
+    owner_inventory=load("SYNERGY_REPOSITORIES.json")
+    owner_repos=owner_inventory.get("repositories",[])
+    if len(owner_repos)!=91 or owner_inventory.get("repository_count")!=91:
+        print("OWNER INVENTORY GATE: FAIL",len(owner_repos),owner_inventory.get("repository_count"))
+        return 1
+    if len({r.get("full_name") for r in owner_repos})!=91:
+        print("OWNER INVENTORY GATE: duplicate/missing full_name")
+        return 1
+
     interfaces=load("REPOSITORY_INTERFACES.json")
     contracts=load("CONTRACT_REGISTRY.json")
     gaps=load("INTEGRATION_GAPS.json")
