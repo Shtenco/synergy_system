@@ -1,6 +1,6 @@
 # 🔐 SYNERGY — Documentation Security Hygiene Findings
 
-> Срез: 29 сентября 2026.
+> Срез: 20 ноября 2026; исходные findings сохранены как исторический baseline.
 > Цель: зафиксировать наличие потенциально чувствительных credential artifacts в Git, не публикуя содержимое секретов.
 
 ## Правило
@@ -77,3 +77,16 @@ Gate fail-closed проверяет, что:
 - repository с `deployment_blocked=true` не имеет edge со статусом `DEPLOYED`.
 
 Для `Shtenco/synergy_usds` дополнительно добавлены `.gitignore` patterns для credential-файлов и локальный `SECURITY_FEDERATION_BLOCKER.md`. Это предотвращает новые случайные коммиты такого типа, но **не считается rotation или history cleanup**.
+
+
+## Re-audit — 20 November 2026
+
+The current main trees were rechecked by path only; no secret values or private-key bytes were read or reproduced.
+
+- **Cashero:** .env, bot1.env, bot2.env and owner.env remain in main. No dedicated security-remediation PR is open. Existing PR #8 is provenance-only and PR #6 is trading/simulation work. Status remains UNRESOLVED / P0.
+- **USDS:** base-mainnet-deployer.key remains in main and also remains in the security PR #6 branch. PR #6 changes only .gitignore and SECURITY_KEY_ROTATION.md; it does not remove the tracked key. Status remains UNRESOLVED / P0.
+- **TURBO Linux:** Linux Ubuntu.ppk remains in main. Draft PR #13 removes it from the PR branch and adds an incident report, but is unmerged. The incident report does not prove external rotation, host revocation or history sanitization. Status remains UNRESOLVED / P0.
+
+TURBO's federation-promotion flag is now fail-closed and its interface status is SECURITY_BLOCKED. This aligns the registry with the documented unencrypted SSH-key incident. No deployment or key rotation was performed by this audit.
+
+See [SECURITY_REAUDIT_2026-11-20.md](SECURITY_REAUDIT_2026-11-20.md) and [SECURITY_BLOCKERS.json](../registry/SECURITY_BLOCKERS.json).
