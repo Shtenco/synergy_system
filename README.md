@@ -35,6 +35,7 @@
 > - [Branch inventory report](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_INVENTORY_2026-11-20.md)
 > - [Live branch-name recheck — all 91 repositories](https://github.com/Shtenco/synergy/blob/main/docs/BRANCH_LIVE_RECHECK_2026-11-20.md)
 > - [Live branch audit — core federation (117 branches / 95 open PRs)](https://github.com/Shtenco/synergy/blob/main/docs/LIVE_BRANCH_AUDIT_CORE_FEDERATION_2026-11-20.md)
+> - [Live branch audit — agent systems (125 branches / 45 open PRs)](https://github.com/Shtenco/synergy/blob/main/docs/LIVE_BRANCH_AUDIT_AGENT_SYSTEMS_2026-11-20.md)
 > - [Eight-repository source audit delta](https://github.com/Shtenco/synergy/blob/main/docs/REPOSITORY_AUDIT_DELTA_2026-11-20.md)
 > - [ Integration Gaps](registry/INTEGRATION_GAPS.json)
 > - [ Invariant Registry](registry/INVARIANT_REGISTRY.json)
