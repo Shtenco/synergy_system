@@ -7,7 +7,7 @@
   "master_dossier": "Shtenco/synergy_project",
   "civilization_graph": "Shtenco/synergy_megaproject",
   "runtime_orchestrator": "Shtenco/synergy_meta_os",
-  "note": "Live GitHub owner inventory refreshed 2026-11-20: 92 owner repositories. The 92-owner inventory, 76-record interface registry, 1,294-branch census and 206-current-open-PR discovery are separate scopes. federation_parent records architectural navigation only unless code/runtime evidence proves a stronger dependency. Newly added and renamed repositories remain pending deep documentation revalidation.",
+  "note": "Live GitHub owner inventory refreshed 2026-11-20: 92 owner repositories. The 92-owner inventory, 76-record interface registry, 1,294-branch census and 549-current-open-PR discovery are separate scopes. federation_parent records architectural navigation only unless code/runtime evidence proves a stronger dependency. Newly added and renamed repositories remain pending deep documentation revalidation.",
   "repositories": [
     {
       "name": "3D_bars_market_structure",
