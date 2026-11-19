@@ -5,7 +5,7 @@
 
 ## Scope and source objects
 
-- `registry/SYNERGY_REPOSITORIES.json`: 91 current repository records.
+- `registry/SYNERGY_REPOSITORIES.json`: 92 current repository records.
 - `registry/CONTRACT_REGISTRY.json`: 39 contract definitions.
 - `registry/AUTHORITY_REGISTRY.json`: 20 authority keys.
 - `registry/DEPENDENCY_GRAPH.json`: 136 graph edges.
@@ -102,3 +102,8 @@ The previous README wording that said “17 of 39 contract IDs without CONTRACT_
 - `registry/AUTHORITY_REGISTRY.json`
 - `registry/DEPENDENCY_GRAPH.json`
 - `registry/SYNERGY_REPOSITORIES.json`
+
+
+## Owner-inventory update — 2026-11-20
+
+The owner registry now contains 92 repositories. The newly registered cognitive-memory repository is not one of the 39 existing contract definitions and is intentionally recorded as one uncontracted component in `INTEGRATION_GAPS.json`. This structural audit's contract and authority findings remain scoped to the 39 registered contracts; no new runtime edge is credited.
