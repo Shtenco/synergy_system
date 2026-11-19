@@ -1203,7 +1203,7 @@
       "size_kb": 39,
       "domain": "BLOCKCHAIN_MONETARY",
       "role": "HardNAV multiplier / triangular non-inflationary economy simulator; not a search engine. Main contains a Solidity lab contract and Python simulation, with simulated-only results and no CI workflow.",
-      "federation_parent": "synergy_ai_language",
+      "federation_parent": "synergy_system",
       "classification_basis": "targeted source/branch/CI review on 2026-11-20; branch evidence does not imply merged main runtime or deployment",
       "readme_federation_passport": false,
       "readme_deep_pass": "PENDING",
