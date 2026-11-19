@@ -6,7 +6,7 @@
 > Цивилизационный граф: [`Shtenco/synergy_megaproject`](https://github.com/Shtenco/synergy_megaproject)  
 > Runtime-оркестратор узла: [`Shtenco/synergy_meta_os`](https://github.com/Shtenco/synergy_meta_os)  
 > **Срез live-реестра: 20 ноября 2026 · 91 репозиторий.**  
-> Базовый глубокий паспорт: 75 репозиториев (28 сентября); 3 переименованных записи и 16 новых записей ожидают повторной глубокой проверки.
+> Базовый глубокий паспорт: 75 репозиториев (28 сентября); 3 переименованных записи и 16 новых записей остаются provisional. Для 11/16 новых записей выполнен дополнительный source/branch/CI pass; пять уже имеют отдельные аудиторские дельты. Полный README-паспорт и интеграционные evidence gates ещё не закрыты.
 
 ---
 
@@ -16,7 +16,7 @@ The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain *
 
 - 72 entries retain a completed deep pass from the 75-repository September baseline.
 - 3 renamed repositories require lineage and README revalidation.
-- 16 newly inventoried repositories are classified provisionally and require the full README passport/deep pass.
+- 16 newly inventoried repositories remain provisional; 11 have a targeted source/branch/CI pass and five have earlier audit deltas. Full README passports and integration evidence remain pending.
 - `synergy_project` remains the economic master dossier, not a child technology asset.
 - `synergy_maps` is registered as a placeholder until an implementation appears.
 
@@ -26,7 +26,7 @@ The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain *
 |---|---|---|
 | `synergy_complex_matrix_multiplication` | SCIENCE_RESEARCH | Structured complex-operator and matrix-free compute experiments |
 | `synergy_computing_topology` | INFRA_NETWORK_SECURITY | Compact descriptor/index computing experiments |
-| `synergy_search_engline` | INTELLIGENCE_AGENTS | Search/retrieval research shell |
+| `synergy_search_engline` | BLOCKCHAIN_MONETARY | HardNAV multiplier / triangular non-inflationary economy simulator; not a search engine |
 | `synergy_lead_search_engline` | APPS_INTERFACES | Offline lead discovery and approval-gated CRM workflow |
 | `synergy_triangle_money_system` | BLOCKCHAIN_MONETARY | Recursive collateral/liquidity simulation |
 | `synergy` | MASTER_GOVERNANCE | Umbrella navigation and governance |
@@ -37,9 +37,25 @@ The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain *
 | `synergy_ai_workspace` | APPS_INTERFACES | Local AI workspace/desktop development |
 | `synergistic_economics` | FINANCE_REAL_ECONOMY | Economic OS and endogenous-economy research |
 | `synergy_metaverse` | APPS_INTERFACES | Spatial workspace projection/application |
-| `synergy_maps` | APPS_INTERFACES | README-only placeholder |
+| `synergy_maps` | APPS_INTERFACES | Main is README-only; Overture/Cesium code and tests exist on work branches, with latest inspected CI failure |
 | `shtenco_micro_ai` | INTELLIGENCE_AGENTS | MNN-Pocket-0.3B INT4 local inference tooling; external weights and device qualification pending |
 | `synergy_long_term_harness` | INTELLIGENCE_AGENTS | README-only main; implementation currently on non-main branches |
+
+## Targeted source / branch / CI pass — 20 November 2026
+
+[Full evidence report: NEW_REPOSITORY_SOURCE_AUDIT_2026-11-20.md](NEW_REPOSITORY_SOURCE_AUDIT_2026-11-20.md).
+
+Key corrections from the targeted pass:
+
+- `synergy_search_engline` is a HardNAV / triangular-economy simulator, not a search engine; its domain is corrected to `BLOCKCHAIN_MONETARY`.
+- `synergy_lead_search_engline` has executable offline main-branch code and 14 passing tests; exact-main CI is green. It is an R&D candidate, not a specification-only stub or deployed service.
+- `synergy_maps`, `synergy_meta_api`, and `synergy_ai_workspace` have implementation work on non-main branches; their main branches remain README-only and the selected branch CI checks are failing.
+- `synergy_triangle_money_system` is a simulation/EVM lab; the latest main CI is failing and its liquidity multiplier is not HardNAV growth.
+- `synergy_ai_llm_rwkv` quantization code is feature-branch-only and has not passed full-checkpoint or task-quality validation.
+- `synergy_metaverse` remains documentation/catalogue research; no spatial runtime was found on the inspected work branch.
+- `synergistic_economics` has five passing validation workflows on its exact integration-branch SHA, but remains R&D/prototype evidence rather than production deployment.
+
+These checks improve source classification only. They do not promote any new node to E2E_TESTED or DEPLOYED.
 
 ### Repository rename reconciliation
 
