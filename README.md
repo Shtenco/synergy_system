@@ -20,6 +20,8 @@
 | Remaining ancestry comparisons | **1,015** |
 | Priority PRs with exact-head workflow metadata | **14** |
 | Complete AI Language + BQT PR inventory | **122 / 122** |
+| Complete Financial OS + System PR inventory | **93 / 93** |
+| Direct dependency edges across four audited PR inventories | **102** |
 | Merge-ready PRs in reviewed priority set | **0** |
 
 **Memory candidates:** [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) and [`synergy_long_term_harness`](https://github.com/Shtenco/synergy_long_term_harness) are both registered as `ARCHITECTURAL_ONLY`. Both main branches are README-only while implementations sit on Draft feature branches. Their memory/archive/context capabilities overlap but are complementary; a single memory subsystem contract is still missing, and no runtime adapter or E2E execution is proven. A second uncontracted candidate is the Autopilot/Long-Term Harness mission lifecycle boundary.
