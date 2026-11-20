@@ -260,7 +260,10 @@
       "GREEN": 0
     },
     "priority_pr_ci": {
-      "BLOCKED_INFRA": 2,
+      "BLOCKED_INFRA": 11,
+      "CANCELLED_BEFORE_STEPS": 1,
+      "PENDING": 1,
+      "NO_WORKFLOW_VISIBLE": 1,
       "MERGE_READY": 0
     },
     "archive_candidates": 0,
@@ -735,5 +738,12 @@
     "runtime_edge_proven": false,
     "decision": "DEVELOP",
     "caveat": "Both code paths are on Draft feature branches; current main branches do not contain the full implementations."
+  },
+  "priority_pr_ci_scope": {
+    "blocked_infra": "Long Term Harness PR #1-#4, AGI Autopilot PR #12/#13/#14/#18/#21/#24, AI Language PR #35",
+    "cancelled": "Hierarchical Cognitive Memory PR #1",
+    "pending": "Motherboard XPU XML PR #4",
+    "no_workflow_visible": "synergy_system PR #54",
+    "source_registry": "Shtenco/synergy_system/registry/PR_BRANCH_DEPENDENCY_AUDIT_2026-11-20.json"
   }
 }
