@@ -86,6 +86,18 @@ The five signal/research components converge into the MIDAS intelligence aggrega
 5. Add contract tests proving each product's adapter implements the shared interface, and integration tests at the actual producer/consumer boundaries.
 6. Do not create a new shared repository until ownership, dependency direction, release policy and migration tests are agreed. Avoid a hurried bulk extraction.
 
+
+
+## Central registry validator and identifier reconciliation
+
+A live consistency check found and corrected two independent validator/registry defects:
+
+1. The owner inventory contains 92 repositories while the curated interface registry contains 76 components. The 76-row registry is an intentional subset, but the old validator required exact set equality. It now checks unique rows, declared count, and that every interface row belongs to the 92-repository owner inventory. The interface generator now uses the current interface registry as an explicit scope allowlist, so adding an owner repository does not silently turn it into a federation component.
+2. Three interface/graph/contract references used pre-rename repository names. These have been reconciled to the canonical GitHub names: `Shtenco/synergy_binary_quantum_theory`, `Shtenco/synergy_epstein_network`, and `Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python`. Contract evidence paths retain their actual internal paths.
+3. The old validator checked only `CONTRACT_FLOW` edges when requiring every cross-repository contract to appear in the dependency graph. The graph also represents typed contracts as `RUNTIME_CONTRACT`; after correction, all contract-bearing graph edges are considered. The live graph contains 38 unique cross-repository contract IDs across `CONTRACT_FLOW` and `RUNTIME_CONTRACT`; the one intra-repository contract (`execution-plan/v1`) correctly does not require a cross-repository edge.
+
+Post-edit static reconciliation: 92 owner repos; 76 unique interface rows; all 76 are a subset of owner inventory; zero unknown graph endpoints; zero unknown contract producer/consumer names; all 38 cross-repository contracts have graph representation; 39 contract records match 39 integration-gap records; adapter edge count remains 22. These are static registry checks, **not** a successful Actions run. The latest federation gate runs were still queued when inspected, and earlier failed runs had `runner_id=0` with no steps.
+
 ## CI / missed-test evidence
 
 ### `synergy_long_term_harness`, PR #1 exact head `bdc26413d886fb026bdc22c3a6f76dc2df873a1c`
