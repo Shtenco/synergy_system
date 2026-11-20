@@ -267,6 +267,12 @@
     "mobile_ci": {
       "BLOCKED_INFRA": 2,
       "MERGE_READY": 0
+    },
+    "mission_lifecycle": {
+      "KEEP": 2,
+      "DEVELOP": 1,
+      "MERGE_READY": 0,
+      "BLOCKED_INFRA": 10
     }
   },
   "limitations": [
@@ -526,7 +532,7 @@
       "runtime_edges": 44,
       "e2e_tested_runtime_edges": 0,
       "contracts_with_gaps": 0,
-      "uncontracted_candidates": 1,
+      "uncontracted_candidates": 2,
       "observed_contract_risks": 3
     },
     "authority_definitions_added": 22,
@@ -681,5 +687,53 @@
         "classification": "BLOCKED_INFRA"
       }
     ]
+  },
+  "mission_lifecycle_comparison": {
+    "repositories": [
+      {
+        "repo": "Shtenco/synergy_agi_autopilot",
+        "branch": "hardening/m12-business-runtime-execution-idempotency-v1",
+        "head_sha": "36556ad239930ff1a7b43f1bf60d0e0bbddb2ebd",
+        "responsibilities": [
+          "TaskStore",
+          "capability policy and approvals",
+          "idempotent replay fingerprint",
+          "single-winner execution claim",
+          "uncertain task fencing"
+        ],
+        "decision": "KEEP"
+      },
+      {
+        "repo": "Shtenco/synergy_long_term_harness",
+        "branch": "feat/company-autopilot-memory-v1",
+        "head_sha": "bdc26413d886fb026bdc22c3a6f76dc2df873a1c",
+        "responsibilities": [
+          "MissionStore",
+          "company-scoped idempotency",
+          "worker/epoch leases",
+          "stale-lease fencing",
+          "result digest",
+          "independent signed verifier receipt"
+        ],
+        "decision": "KEEP"
+      }
+    ],
+    "overlap": [
+      "SQLite task/mission state",
+      "idempotent submission/replay",
+      "append-only lifecycle events",
+      "execution claim fencing",
+      "uncertain-outcome handling"
+    ],
+    "distinct_capabilities": [
+      "Autopilot owns capability registry, policy decisions, approval and external-effect runtime.",
+      "Long-Term Harness owns lease epochs, independent HMAC verifier receipt and content-addressed source archive."
+    ],
+    "recommendation": "Develop a shared mission lifecycle protocol while keeping policy, archive and execution authorities separate.",
+    "proposed_contract_family": "synergy.agent.mission-lifecycle/v1",
+    "contract_registered": false,
+    "runtime_edge_proven": false,
+    "decision": "DEVELOP",
+    "caveat": "Both code paths are on Draft feature branches; current main branches do not contain the full implementations."
   }
 }
