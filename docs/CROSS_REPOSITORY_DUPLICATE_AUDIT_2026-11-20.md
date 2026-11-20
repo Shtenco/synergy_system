@@ -276,3 +276,37 @@ Fourteen live main-vs-branch comparisons were added to the central ancestry ledg
 The `production/v3.0.0` unique commits inspected in the compare response are design documents, not product implementation changes. The design documents identify real production-hardening gaps: caller-controlled risk limits/kill switch (RiskGuard), ambiguous POST retry and missing persistent OMS state (TradeMux), caller-supplied inventory/market data and no quote lifecycle (Market Maker), in-memory adaptive allocation state (Adaptive Engine), missing immutable feature artifacts/lineage (MarketVision), and missing model identity/freshness/OOS lifecycle (Relative Value). These branches remain `DEVELOP`, not merge-ready.
 
 The `enterprise/v2.0.0` refs are behind-only and are marked `ARCHIVE-CANDIDATE` for review only. This does not authorize deletion: tags, releases, deployments and external references must be checked first. No merge-ready branch was identified.
+
+
+## Main-branch CI root-cause pass — 2026-11-20
+
+Seven latest inspected main-branch CI runs were examined at job and log level. Six executed pytest; one Market Maker job never acquired a runner.
+
+| Repository | Run | pytest result | Root cause evidence |
+|---|---:|---:|---|
+| Adaptive Engine | [40047566286](https://github.com/Shtenco/synergy_adaptive_engine/actions/runs/40047566286) | 1 failed, 20 passed | FastAPI `_IncludedRouter` has no `.path`; route test inspects framework internals |
+| RiskGuard | [40047487688](https://github.com/Shtenco/synergy_riskguard/actions/runs/40047487688) | 1 failed, 23 passed | Same fragile route test |
+| TradeMux | [40054795636](https://github.com/Shtenco/synergy_trademux/actions/runs/40054795636) | 3 failed, 20 passed | Same route test; missing README `Version: 2.0.0`; `unfilled_notional` integral zero serialized as `0` rather than canonical `0.0` |
+| Relative Value | [40047520007](https://github.com/Shtenco/synergy_relative_value/actions/runs/40047520007) | 2 failed, 19 passed | Same route test; missing README version marker |
+| MIDAS Institutional | [40047508720](https://github.com/Shtenco/synergy_midas_institutional/actions/runs/40047508720) | 2 failed, 19 passed | Same route test; missing README version marker |
+| MarketVision | [40054785764](https://github.com/Shtenco/synergy_marketvision/actions/runs/40054785764) | 2 failed, 18 passed | Same route test; missing README version marker |
+| Market Maker | [42536892178](https://github.com/Shtenco/synergy_market_maker/actions/runs/42536892178) | Not executed | `runner_id=0`, empty steps; log download returned 404 BlobNotFound |
+
+The common route-test defect is in `tests/test_enterprise_product.py`: it iterated over `app.routes` and read each `.path`. This relies on FastAPI's internal route object shape. The test was updated in all six repositories to inspect `app.openapi()["paths"]`, which checks the public API contract.
+
+Release metadata markers were restored in the four affected README files (TradeMux, Relative Value, MIDAS Institutional, MarketVision). TradeMux's contract serializer now emits finite decimal strings in a canonical fixed-point form, including `0.0` for integral zero, and rejects non-finite monetary values.
+
+### Remediation commits and revalidation
+
+| Repository | Source/test/doc commit | New CI run |
+|---|---|---|
+| Adaptive Engine | `f0622aa6d60be3c47d2ac752b9ef686e6dac6c5b` | [44670168704](https://github.com/Shtenco/synergy_adaptive_engine/actions/runs/44670168704) |
+| RiskGuard | `e5ba5eab09e42ac25c695740bdc464ef3617c33c` | [44670174126](https://github.com/Shtenco/synergy_riskguard/actions/runs/44670174126) |
+| TradeMux | `0aafb097d3d442a4a5f0fc735e52bfa2c3071b8d` | [44670248392](https://github.com/Shtenco/synergy_trademux/actions/runs/44670248392) |
+| Relative Value | `c9916f809ca60493b9c66a434e64ca8d8cb3d483` | [44670185726](https://github.com/Shtenco/synergy_relative_value/actions/runs/44670185726) |
+| MIDAS Institutional | `a1c57d0466daf0e5e23c4ab4640d6a630d43ec67` | [44670191861](https://github.com/Shtenco/synergy_midas_institutional/actions/runs/44670191861) |
+| MarketVision | `d7c2d66dd4ab7015230ad08139c6589740933e0b` | [44670201147](https://github.com/Shtenco/synergy_marketvision/actions/runs/44670201147) |
+
+All six new runs were queued at the last status read; no success is claimed yet. Market Maker's failed job was explicitly re-run (attempt 2) and was queued at the last status read. The original test result remains unknown until that rerun obtains a runner and publishes steps/logs.
+
+**Current classification:** all seven product repositories remain `DEVELOP` until the reruns are green. No product is `MERGE-READY`.
