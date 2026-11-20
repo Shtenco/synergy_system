@@ -113,6 +113,18 @@ A live consistency check found and corrected two independent validator/registry 
 
 Post-edit static reconciliation: 92 owner repos; 76 unique interface rows; all 76 are a subset of owner inventory; zero unknown graph endpoints; zero unknown contract producer/consumer names; all 38 cross-repository contracts have graph representation; 39 contract records match 39 integration-gap records; adapter edge count remains 22. These are static registry checks, **not** a successful Actions run. The latest federation gate runs were still queued when inspected, and earlier failed runs had `runner_id=0` with no steps.
 
+
+
+### Central validation runs after registry corrections
+
+The latest exact-head validation runs are not yet executing:
+
+- [Federation Maturity Gate run 44643358335](https://github.com/Shtenco/synergy_system/actions/runs/44643358335): queued; job `maturity-gate` has no runner ID and no steps.
+- [Typed Contracts validation run 44643347370](https://github.com/Shtenco/synergy_system/actions/runs/44643347370): queued; job `contracts` has no runner ID and no steps.
+- The preceding completed Federation validation run 44638380402 and Typed Contracts run 44635463730 both failed with `runner_id=0` and empty step arrays.
+
+**Status:** central static registry reconciliation is internally consistent, but the code/registry fixes remain **BLOCKED_INFRA / CI-PENDING** until GitHub Actions assigns runners and the actual validators execute. Do not treat a queued job as green.
+
 ## CI / missed-test evidence
 
 ### `synergy_long_term_harness`, PR #1 exact head `bdc26413d886fb026bdc22c3a6f76dc2df873a1c`
