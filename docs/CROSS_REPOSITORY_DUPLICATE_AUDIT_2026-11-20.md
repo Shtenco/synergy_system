@@ -2,11 +2,11 @@
 
 ## Scope and method
 
-This is a focused, source-backed pass over seven active trading/runtime repositories. It is not yet a claim that all 92 repositories have been compared file-by-file. Git Trees were read from each repository's `main` at the SHAs listed below. Paths under `src/<package-name>/` were normalized to `src/PACKAGE/`; Git blob SHA equality was used as an exact-content test. Similar path names alone were not counted as duplicates.
+This is a focused, source-backed pass over nine active trading/runtime repositories. It is not yet a claim that all 92 repositories have been compared file-by-file. Git Trees were read from each repository's `main` at the SHAs listed below. Paths under `src/<package-name>/` were normalized to `src/PACKAGE/`; Git blob SHA equality was used as an exact-content test. Similar path names alone were not counted as duplicates.
 
 ## Executive finding
 
-Seven separately named trading products share a highly repeated enterprise/runtime scaffold. Across the 21 repository pairs:
+Seven separately named trading products share a highly repeated enterprise/runtime scaffold. Across the 21 pairs in the initial seven-repository matrix:
 
 - each pair has 63–65 common normalized file paths;
 - each pair has 29–30 byte-identical Git blobs;
@@ -26,6 +26,8 @@ This is a confirmed shared-code duplication pattern, not proof that the seven pr
 | `synergy_relative_value` | `0f37ef55ac989933acd63a0954b5cf521eec4449` | `synergy.trading.relative-value-signal/v1` | `relative_value_research` | KEEP |
 | `synergy_midas_institutional` | `75f646380cd0a1478e5093216615b1af8ded1fbf` | `synergy.trading.institutional-assessment/v1` | `institutional_research` | KEEP |
 | `synergy_marketvision` | `1baf9fa65c9974bb241f3a4fb2a352424bfe9bcc` | `synergy.trading.market-features/v1` | `market_perception` | KEEP |
+| `synergy_ai_investment_committee` | `7dbec0202badf1afce60ada83b5402f8d8ed9f14` | `synergy.trading.investment-thesis/v1` | `investment_committee` | KEEP |
+| `synergy_quantlab` | `57ee40a6879c0db6550b573aacadad27347fb2db` | `synergy.trading.validation-decision/v1` | `trading_validation` | KEEP |
 
 The distinct contracts are evidence that the intended product responsibilities differ: quoting, regime adaptation, risk authorization, execution routing, relative-value signals, institutional assessment and market perception. Do not merge these product cores merely because their delivery scaffolding is similar.
 
@@ -46,9 +48,9 @@ Representative identical shared files include the CI workflow, enterprise adapte
 
 
 
-### Seven-way common-code intersection
+### Nine-way common-code intersection
 
-A second intersection check across all seven repositories confirms **63 normalized paths are present in every repository and 29 of those paths have the same blob SHA in all seven**. The 29-way identical set is:
+A second intersection check across all nine repositories confirms **63 normalized paths are present in every repository and 29 of those paths have the same blob SHA in all seven**. The 29-way identical set is:
 
 - `.env.enterprise.example`, `.github/workflows/ci.yml`, `.gitignore`, `CHANGELOG.md`;
 - `deploy/clickhouse/001_audit.sql`, `deploy/postgres/001_audit.sql`;
@@ -57,7 +59,7 @@ A second intersection check across all seven repositories confirms **63 normaliz
 - `src/PACKAGE/__init__.py` and the common enterprise package initializers, Bybit/CCXT/MT5 adapters, audit, auth, metrics, models, resilience and service modules;
 - `tests/test_customer_demo.py`, `tests/test_enterprise_deployment.py`.
 
-The seven `core.py`, `api.py` and `synergy_contracts.py` files each have **seven distinct blob SHAs**. This independently supports keeping the seven product domains separate while treating the enterprise scaffold as shared code to extract.
+The nine `core.py`, `api.py` and `synergy_contracts.py` files each have **nine distinct blob SHAs**. This independently supports keeping the seven product domains separate while treating the enterprise scaffold as shared code to extract.
 
 All seven product contract IDs are present in the central contract registry. Their producer/consumer implementation metadata is recorded, but the federation governance snapshot still reports **zero E2E-tested runtime edges**. Therefore registry presence and adapter declarations are not treated as proof of live end-to-end execution.
 
@@ -83,7 +85,7 @@ The source specification in `Shtenco/synergy_midas_institutional/docs/superpower
 
 ## Corrected architecture recommendation
 
-1. Keep all seven product repositories and their domain-specific cores, API surfaces, contracts and independent release cycles.
+1. Keep all nine product repositories and their domain-specific cores, API surfaces, contracts and independent release cycles.
 2. Do not introduce a mandatory shared runtime dependency or centralize product execution.
 3. Develop a versioned **Production Contract specification** covering auth, tenant/RBAC, authoritative control stores, idempotency, audit, readiness/liveness, observability, migrations and failure semantics.
 4. Build a reusable **conformance test suite** that each repository runs locally/in CI against its own implementation; test behavior, not shared code identity.
@@ -373,3 +375,13 @@ Ten additional branch comparisons were added to the central ancestry ledger. All
 - AI Language semantic-memory bridge (152 ahead / 63 behind) and accounting-close requirements branch (20 ahead / 56 behind) are divergent; the semantic-memory schema candidate is not yet in canonical main or central contract registry.
 
 All ten branches are `DEVELOP`; none is `MERGE-READY`. The central branch ledger now contains **137 / 1,202** non-main comparisons, with **1,065 pending** (ahead 7 / behind 17 / diverged 113).
+
+
+### Additional two product repositories in the exact duplicate intersection
+
+A second tree comparison added `synergy_ai_investment_committee` and `synergy_quantlab`. Across all nine repositories, **63 normalized paths exist in every tree and 29 have identical blob SHA in all nine**. The added products retain distinct product contracts:
+
+- Investment Committee: `synergy.trading.investment-thesis/v1`, authority `investment_committee`.
+- QuantLab: `synergy.trading.validation-decision/v1`, authority `trading_validation`.
+
+The pairwise matrix above remains the detailed 21-pair matrix for the original seven repositories; the nine-way intersection is an additional exact common-core proof. All nine products remain separate and `KEEP`.
