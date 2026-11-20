@@ -243,12 +243,12 @@
       "role": "Главный архитектурный и governance-корень всей федерации SYNERGY."
     },
     {
-      "repo": "Shtenco/binary_quantum_theory",
+      "repo": "Shtenco/synergy_binary_quantum_theory",
       "domain": "SCIENCE_RESEARCH",
       "role": "Теоретико-физическая исследовательская ветка Binary Quantum Gravity."
     },
     {
-      "repo": "Shtenco/epstein_network",
+      "repo": "Shtenco/synergy_epstein_network",
       "domain": "SCIENCE_RESEARCH",
       "role": "Отдельный исследовательский knowledge-graph/дистиллированный граф источников; не runtime-компонент финансовой системы."
     },
@@ -283,7 +283,7 @@
       "role": "Облегчённая исследовательская ветка MIDAS с торговыми прототипами и системами."
     },
     {
-      "repo": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+      "repo": "Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python",
       "domain": "TRADING_MARKET_INTELLIGENCE",
       "role": "Многопоточный ML-прототип торгового робота на Python."
     },
@@ -865,7 +865,7 @@
     },
     {
       "from": "Shtenco/synergy_megaproject",
-      "to": "Shtenco/binary_quantum_theory",
+      "to": "Shtenco/synergy_binary_quantum_theory",
       "type": "ARCHITECTURAL_PARENT",
       "status": "DOCUMENTED",
       "authority_transfer": false,
@@ -876,7 +876,7 @@
     },
     {
       "from": "Shtenco/synergy_megaproject",
-      "to": "Shtenco/epstein_network",
+      "to": "Shtenco/synergy_epstein_network",
       "type": "ARCHITECTURAL_PARENT",
       "status": "DOCUMENTED",
       "authority_transfer": false,
@@ -953,7 +953,7 @@
     },
     {
       "from": "Shtenco/synergy_midas_ai",
-      "to": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+      "to": "Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python",
       "type": "ARCHITECTURAL_PARENT",
       "status": "DOCUMENTED",
       "authority_transfer": false,
@@ -1866,7 +1866,7 @@
       ]
     },
     {
-      "from": "Shtenco/binary_quantum_theory",
+      "from": "Shtenco/synergy_binary_quantum_theory",
       "to": "Shtenco/synergy_nexus_science_agent",
       "type": "RUNTIME_CONTRACT",
       "status": "ADAPTER_IMPLEMENTED",
@@ -1890,7 +1890,7 @@
       ]
     },
     {
-      "from": "Shtenco/epstein_network",
+      "from": "Shtenco/synergy_epstein_network",
       "to": "Shtenco/synergy_nexus_science_agent",
       "type": "RUNTIME_CONTRACT",
       "status": "ADAPTER_IMPLEMENTED",
