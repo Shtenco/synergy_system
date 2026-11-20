@@ -1072,6 +1072,22 @@
         "status": "failure",
         "runner_id": 0,
         "steps": 0
+      },
+      {
+        "repo": "Shtenco/synergy_financial_os",
+        "run_id": 44671467993,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0,
+        "head_sha": "5338ded06c76e574d8061c13a7e42b9b470f23fc"
+      },
+      {
+        "repo": "Shtenco/synergy_financial_os",
+        "run_id": 44671468005,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0,
+        "head_sha": "5338ded06c76e574d8061c13a7e42b9b470f23fc"
       }
     ],
     "interpretation": "Runner assignment/initialization is the current blocking layer; new failures have no recorded test execution. Do not classify source changes as failed tests until exact-head runs execute."
@@ -1430,12 +1446,17 @@
       {
         "id": 44671467993,
         "name": "canonical-core-ci",
-        "status": "queued"
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
       },
       {
         "id": 44671468005,
         "name": "External Profit Import v1",
-        "status": "queued"
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0,
+        "cancelled_matrix_jobs": 1
       }
     ],
     "ancestry_vs_main": {
@@ -1444,6 +1465,7 @@
       "status": "diverged"
     },
     "decision": "DEVELOP",
-    "merge_ready": false
+    "merge_ready": false,
+    "revalidation": "BLOCKED_INFRA — no runner assigned, no steps; packaging fix not yet tested"
   }
 }
