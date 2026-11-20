@@ -500,7 +500,27 @@
       "Contract graph coverage now considers all typed contract-bearing graph edges rather than CONTRACT_FLOW only.",
       "Interface generator now uses current REPOSITORY_INTERFACES registry as explicit scope allowlist."
     ],
-    "verification": "Static live-data reconciliation only; Actions validation is still pending and has not been claimed green."
+    "verification": "Live JSON/graph consistency cross-check performed in this pass; actual Python validator execution awaits queued Actions runners.",
+    "authorities": 42,
+    "contract_authority_coverage": true,
+    "contract_authority_owner_matches_producer": true,
+    "all_authority_owners_resolve": true,
+    "static_check_errors": 0,
+    "static_check_counts": {
+      "owner_repositories": 92,
+      "interface_components": 77,
+      "authorities": 42,
+      "contracts": 39,
+      "cross_repository_contracts": 38,
+      "graph_contract_ids": 38,
+      "dependency_edges": 136,
+      "runtime_dependency_edges": 22,
+      "runtime_contract_edges": 22,
+      "adapter_implemented_runtime_edges": 22,
+      "integration_gap_contracts": 39,
+      "invariants": 11
+    },
+    "authority_definitions_added": 22
   },
   "memory_subsystem_comparison": {
     "repositories": [
