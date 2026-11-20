@@ -77,14 +77,22 @@ The central `REPOSITORY_INTERFACES.json` and `CONTRACT_REGISTRY.json` confirm th
 
 The five signal/research components converge into the MIDAS intelligence aggregator; the risk decision then gates execution routing, and the execution result flows to settlement. These are typed, registered, adapter-evidenced edges. They are not yet E2E-tested in the central governance snapshot (0 E2E-tested edges), so the architecture map must not present them as fully validated live flows.
 
-## Recommended architecture change
+## Architecture correction from the product-line V3 master specification
 
-1. Keep all seven product repositories and their domain-specific cores.
-2. Develop one versioned shared enterprise foundation package for reusable auth, audit, metrics, adapter interfaces, resilience, service plumbing and common deployment/test helpers.
-3. Keep each product's `core.py`, product API surface and SYNERGY contract owned by its domain repository.
-4. Give the shared package a stable semantic version and compatibility policy; migrate one product at a time.
-5. Add contract tests proving each product's adapter implements the shared interface, and integration tests at the actual producer/consumer boundaries.
-6. Do not create a new shared repository until ownership, dependency direction, release policy and migration tests are agreed. Avoid a hurried bulk extraction.
+The source specification in `Shtenco/synergy_midas_institutional/docs/superpowers/specs/2026-09-21-final-product-line-3.0-master.md` explicitly requires independently deployable/licensable products and says there SHALL NOT be a mandatory shared runtime repository. Common concepts may be copied consistently across products. Therefore the initial suggestion to extract a shared mandatory runtime package is withdrawn: it would contradict the product-line architecture.
+
+## Corrected architecture recommendation
+
+1. Keep all seven product repositories and their domain-specific cores, API surfaces, contracts and independent release cycles.
+2. Do not introduce a mandatory shared runtime dependency or centralize product execution.
+3. Develop a versioned **Production Contract specification** covering auth, tenant/RBAC, authoritative control stores, idempotency, audit, readiness/liveness, observability, migrations and failure semantics.
+4. Build a reusable **conformance test suite** that each repository runs locally/in CI against its own implementation; test behavior, not shared code identity.
+5. Use code-generation/templates only for non-authoritative boilerplate where it does not create runtime coupling; generated files remain owned and released by each product.
+6. Maintain a compatibility matrix and explicit versioned adoption status per repository. Security fixes propagate as reviewed per-repository changes.
+7. Keep domain contract tests and add E2E tests at real producer/consumer boundaries. Registry declarations and matching adapter files do not prove runtime integration.
+
+This resolves the exact-code duplication without violating independent deployment. The duplication is real; a shared runtime package is not the chosen remedy.
+
 
 
 
@@ -249,3 +257,22 @@ The complete per-PR metadata and exact-head workflow records remain in [PR_BRANC
 - Git tree SHA equality proves exact blob identity for the compared files, not runtime equivalence of the whole products.
 - The current CI connector surface exposed job metadata and an empty logs response; it did not expose readable runner logs or test annotations for these failed jobs.
 - Continue with the remaining repository families (apps/web surfaces, AI agents/memory, blockchain/economic systems, compression/compute and science) using the same tree/SHA and contract/interface comparison method.
+
+
+## Follow-up branch evidence — seven product repositories
+
+Fourteen live main-vs-branch comparisons were added to the central ancestry ledger:
+
+| Product | `enterprise/v2.0.0` | `production/v3.0.0` |
+|---|---|---|
+| RiskGuard | behind 11, ahead 0 | diverged, ahead 1 / behind 11 |
+| TradeMux | behind 14, ahead 0 | diverged, ahead 1 / behind 14 |
+| Market Maker | behind 13, ahead 0 | diverged, ahead 1 / behind 13 |
+| Adaptive Engine | behind 10, ahead 0 | diverged, ahead 1 / behind 10 |
+| MarketVision | behind 13, ahead 0 | diverged, ahead 1 / behind 13 |
+| Relative Value | behind 12, ahead 0 | diverged, ahead 1 / behind 12 |
+| MIDAS Institutional | behind 13, ahead 0 | diverged, ahead 2 / behind 11 |
+
+The `production/v3.0.0` unique commits inspected in the compare response are design documents, not product implementation changes. The design documents identify real production-hardening gaps: caller-controlled risk limits/kill switch (RiskGuard), ambiguous POST retry and missing persistent OMS state (TradeMux), caller-supplied inventory/market data and no quote lifecycle (Market Maker), in-memory adaptive allocation state (Adaptive Engine), missing immutable feature artifacts/lineage (MarketVision), and missing model identity/freshness/OOS lifecycle (Relative Value). These branches remain `DEVELOP`, not merge-ready.
+
+The `enterprise/v2.0.0` refs are behind-only and are marked `ARCHIVE-CANDIDATE` for review only. This does not authorize deletion: tags, releases, deployments and external references must be checked first. No merge-ready branch was identified.
