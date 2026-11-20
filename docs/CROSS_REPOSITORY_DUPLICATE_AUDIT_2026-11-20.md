@@ -310,3 +310,23 @@ Release metadata markers were restored in the four affected README files (TradeM
 All six new runs were queued at the last status read; no success is claimed yet. Market Maker's failed job was explicitly re-run (attempt 2) and was queued at the last status read. The original test result remains unknown until that rerun obtains a runner and publishes steps/logs.
 
 **Current classification:** all seven product repositories remain `DEVELOP` until the reruns are green. No product is `MERGE-READY`.
+
+
+## Additional branch ancestry pass — Midas AI, AI Coder and Science Agent
+
+Eight more exact `main...branch` comparisons were recorded in the central branch ledger:
+
+| Repository / branch | Ahead | Behind | Decision |
+|---|---:|---:|---|
+| `synergy_midas_ai/feat/historical-strategy-evidence-registry-v1-20260821` | 29 | 63 | DEVELOP |
+| `synergy_midas_ai/feat/independent-risk-decision-v1-20260821` | 39 | 63 | DEVELOP |
+| `synergy_ai_coder/feat/autonomous-engineering-foundation-20261114` | 10 | 0 | DEVELOP |
+| `synergy_ai_coder/feat/change-set-review-protocol-20260818` | 10 | 10 | DEVELOP |
+| `synergy_ai_coder/feat/recursive-context-archive-integration-20261118` | 177 | 0 | DEVELOP |
+| `synergy_nexus_science_agent/feat/science-service-protocol-v4-20260821` | 22 | 17 | DEVELOP |
+| `synergy_nexus_science_agent/feat/search-evidence-graph-core-v1-20260821` | 8 | 17 | DEVELOP |
+| `synergy_nexus_science_agent/feat/source-quality-identity-v3-20260821` | 16 | 17 | DEVELOP |
+
+AI Coder's recursive context archive branch is 177 commits ahead and contains the archive codecs, byte-oriented context archive, semantic memory, scale benchmarks and integration tests; it is substantial, not a scratch branch. It still needs exact-head CI and a dependency/contract review before merge consideration. The two Midas branches share a large common V10 baseline and introduce historical-strategy registry and independent-risk-decision work; because they diverge and overlap, inspect their dependency/stack relationship rather than treating them as independent merge candidates. Science Agent's three branches share a common science core baseline but add service protocol, evidence graph and source-quality identity layers; their shared base and overlapping workflow additions require stack-aware integration.
+
+The ancestry ledger now contains **127 / 1,202** non-main comparisons; **1,075 remain pending**. Counts: ahead 7, behind 17, diverged 103. No branch in this batch is merge-ready.
