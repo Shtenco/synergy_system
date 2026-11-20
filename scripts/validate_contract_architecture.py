@@ -85,10 +85,13 @@ def main() -> int:
             if repo and repo not in repo_names:
                 fail(f"dependency graph {endpoint} repository missing: {repo}")
 
+    # Cross-repository contracts may be represented as CONTRACT_FLOW or
+    # RUNTIME_CONTRACT edges. Intra-repository contracts need not have a
+    # cross-repository graph edge.
     graph_contracts = {
         e["contract_id"]
         for e in graph["edges"]
-        if e["type"] == "CONTRACT_FLOW" and e.get("contract_id")
+        if e.get("contract_id")
     }
     missing = cross_repo_ids - graph_contracts
     if missing:
