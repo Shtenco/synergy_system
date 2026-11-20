@@ -42,6 +42,15 @@ The live GitHub inventory and `registry/SYNERGY_REPOSITORIES.json` now contain *
 | `synergy_long_term_harness` | INTELLIGENCE_AGENTS | README-only main; implementation currently on non-main branches |
 | `synergy_hierarchical_cognitive_memory_architecture` | INTELLIGENCE_AGENTS | README-only main; hierarchical memory implementation exists on Draft PR #1; CI cancelled without executed steps; auth, symlink and provenance gates remain open |
 
+## Memory, archive and mission boundary map — 20 November 2026
+
+[Full source-backed audit](MEMORY_ARCHIVE_MISSION_BOUNDARY_AUDIT_2026-11-20.md) · [Machine-readable boundary registry](../registry/MEMORY_ARCHIVE_MISSION_BOUNDARY_AUDIT_2026-11-20.json).
+
+- `synergy_ai_coder`: engineering requirements/change evidence are adapter-integrated; its context archive and semantic-memory adapter are not yet a federation-wide memory service.
+- `synergy_long_term_harness`: mission lifecycle, leases/fencing, idempotency and approvals; implementation remains on feature branches.
+- `synergy_hierarchical_cognitive_memory_architecture`: general knowledge records, graph/trust retrieval, embeddings, source snapshots and model-context budgeting; implementation remains on feature branch.
+- These roles overlap in durable memory/provenance but are not interchangeable. No canonical cross-repository memory or mission contract/E2E path is yet proven. Keep all repositories separate; classify integration work as DEVELOP.
+
 ## Targeted source / branch / CI pass — 20 November 2026
 
 [Full evidence report: NEW_REPOSITORY_SOURCE_AUDIT_2026-11-20.md](NEW_REPOSITORY_SOURCE_AUDIT_2026-11-20.md).
