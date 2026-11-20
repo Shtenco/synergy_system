@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": "2026-11-20",
+  "scope": "Focused live source/tree comparison of seven trading/runtime repositories; not a completed 92-repository code audit",
+  "method": "GitHub recursive Git Trees on main; normalize package directory names to src/PACKAGE; compare exact Git blob SHA for common normalized paths",
+  "pairwise_summary": {
+    "pairs": 21,
+    "common_paths_min": 63,
+    "common_paths_max": 65,
+    "identical_blobs_min": 29,
+    "identical_blobs_max": 30,
+    "identical_shared_foundation_files_per_pair": 17
+  },
+  "repositories": [
+    {
+      "repo": "Shtenco/synergy_market_maker",
+      "main_sha": "3edcea187c45866d55a65b74dc707b7b1009a69b",
+      "contract_ids": [
+        "synergy.trading.liquidity-quote/v1"
+      ],
+      "authority": "market_making",
+      "decision": "KEEP"
+    },
+    {
+      "repo": "Shtenco/synergy_adaptive_engine",
+      "main_sha": "c4af6194eedfbf9b9c0824822abe42306ba9f6b8",
+      "contract_ids": [
+        "synergy.trading.market-regime/v1"
+      ],
+      "authority": "adaptive_policy",
+      "decision": "KEEP"
+    },
+    {
+      "repo": "Shtenco/synergy_riskguard",
+      "main_sha": "bc3ef1810c5d77f54b8a9ecf2f1b8adc35231f2b",
+      "contract_ids": [
+        "synergy.trading.risk-decision/v1"
+      ],
+      "authority": "trading_risk",
+      "decision": "KEEP"
+    },
+    {
+      "repo": "Shtenco/synergy_trademux",
+      "main_sha": "fe584afeba1410f40640672f277be4ab16e76b8c",
+      "contract_ids": [
+        "synergy.trading.execution-plan/v1",
+        "synergy.trading.execution-result/v1"
+      ],
+      "authority": "trade_execution",
+      "decision": "KEEP"
+    },
+    {
+      "repo": "Shtenco/synergy_relative_value",
+      "main_sha": "0f37ef55ac989933acd63a0954b5cf521eec4449",
+      "contract_ids": [
+        "synergy.trading.relative-value-signal/v1"
+      ],
+      "authority": "relative_value_research",
+      "decision": "KEEP"
+    },
+    {
+      "repo": "Shtenco/synergy_midas_institutional",
+      "main_sha": "75f646380cd0a1478e5093216615b1af8ded1fbf",
+      "contract_ids": [
+        "synergy.trading.institutional-assessment/v1"
+      ],
+      "authority": "institutional_research",
+      "decision": "KEEP"
+    },
+    {
+      "repo": "Shtenco/synergy_marketvision",
+      "main_sha": "1baf9fa65c9974bb241f3a4fb2a352424bfe9bcc",
+      "contract_ids": [
+        "synergy.trading.market-features/v1"
+      ],
+      "authority": "market_perception",
+      "decision": "KEEP"
+    }
+  ],
+  "pairwise": [
+    {
+      "a": "Shtenco/synergy_market_maker",
+      "b": "Shtenco/synergy_adaptive_engine",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_market_maker",
+      "b": "Shtenco/synergy_riskguard",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 30
+    },
+    {
+      "a": "Shtenco/synergy_market_maker",
+      "b": "Shtenco/synergy_trademux",
+      "common_normalized_paths": 63,
+      "identical_blob_shas": 30
+    },
+    {
+      "a": "Shtenco/synergy_market_maker",
+      "b": "Shtenco/synergy_relative_value",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_market_maker",
+      "b": "Shtenco/synergy_midas_institutional",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_market_maker",
+      "b": "Shtenco/synergy_marketvision",
+      "common_normalized_paths": 63,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_adaptive_engine",
+      "b": "Shtenco/synergy_riskguard",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_adaptive_engine",
+      "b": "Shtenco/synergy_trademux",
+      "common_normalized_paths": 63,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_adaptive_engine",
+      "b": "Shtenco/synergy_relative_value",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 30
+    },
+    {
+      "a": "Shtenco/synergy_adaptive_engine",
+      "b": "Shtenco/synergy_midas_institutional",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 30
+    },
+    {
+      "a": "Shtenco/synergy_adaptive_engine",
+      "b": "Shtenco/synergy_marketvision",
+      "common_normalized_paths": 63,
+      "identical_blob_shas": 30
+    },
+    {
+      "a": "Shtenco/synergy_riskguard",
+      "b": "Shtenco/synergy_trademux",
+      "common_normalized_paths": 63,
+      "identical_blob_shas": 30
+    },
+    {
+      "a": "Shtenco/synergy_riskguard",
+      "b": "Shtenco/synergy_relative_value",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_riskguard",
+      "b": "Shtenco/synergy_midas_institutional",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_riskguard",
+      "b": "Shtenco/synergy_marketvision",
+      "common_normalized_paths": 63,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_trademux",
+      "b": "Shtenco/synergy_relative_value",
+      "common_normalized_paths": 63,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_trademux",
+      "b": "Shtenco/synergy_midas_institutional",
+      "common_normalized_paths": 63,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_trademux",
+      "b": "Shtenco/synergy_marketvision",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 29
+    },
+    {
+      "a": "Shtenco/synergy_relative_value",
+      "b": "Shtenco/synergy_midas_institutional",
+      "common_normalized_paths": 65,
+      "identical_blob_shas": 30
+    },
+    {
+      "a": "Shtenco/synergy_relative_value",
+      "b": "Shtenco/synergy_marketvision",
+      "common_normalized_paths": 63,
+      "identical_blob_shas": 30
+    },
+    {
+      "a": "Shtenco/synergy_midas_institutional",
+      "b": "Shtenco/synergy_marketvision",
+      "common_normalized_paths": 63,
+      "identical_blob_shas": 30
+    }
+  ],
+  "shared_foundation_decision": {
+    "status": "DEVELOP",
+    "keep_domain_cores": true,
+    "scope": [
+      "enterprise auth",
+      "audit",
+      "metrics",
+      "adapter interfaces",
+      "resilience",
+      "service plumbing",
+      "shared deployment and test helpers"
+    ],
+    "prohibited_shortcut": "Do not merge or archive product repositories based only on shared scaffolding"
+  },
+  "ci_blockers": [
+    {
+      "repo": "Shtenco/synergy_long_term_harness",
+      "pr": 1,
+      "head_sha": "bdc26413d886fb026bdc22c3a6f76dc2df873a1c",
+      "run_id": 44395090855,
+      "run_url": "https://github.com/Shtenco/synergy_long_term_harness/actions/runs/44395090855",
+      "jobs": 4,
+      "steps_observed": 0,
+      "runner_id_observed": 0,
+      "log_body": "empty",
+      "decision": "BLOCKED",
+      "interpretation": "Failed before first recorded step; tests not evidenced as executed"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_language",
+      "pr": 35,
+      "head_sha": "f0d724f6cc2a84afa09049dc889bcd3eb753b5eb",
+      "run_id": 44451534644,
+      "run_url": "https://github.com/Shtenco/synergy_ai_language/actions/runs/44451534644",
+      "jobs": 4,
+      "steps_observed": 0,
+      "runner_id_observed": 0,
+      "log_body": "empty",
+      "decision": "BLOCKED",
+      "interpretation": "Failed before first recorded step; lint and pytest not evidenced as executed"
+    }
+  ],
+  "status_counts": {
+    "KEEP": 7,
+    "DEVELOP": 1,
+    "BLOCKED": 2,
+    "MERGE_READY": 0,
+    "ARCHIVE_CANDIDATE": 0
+  },
+  "limitations": [
+    "Focused seven-repository comparison only; no claim of completed 92-repository file audit",
+    "Exact blob identity does not establish whole-product equivalence",
+    "Readable runner logs were unavailable from the inspected Actions endpoints"
+  ]
+}
