@@ -5,7 +5,7 @@
 
 | Governance registry | Current value |
 |---|---:|
-| Registered interface components | **76** |
+| Registered interface components | **77** |
 | Canonical contract families | **39** |
 | Runtime adapter edges | **44** |
 | E2E-tested edges | **0** |
