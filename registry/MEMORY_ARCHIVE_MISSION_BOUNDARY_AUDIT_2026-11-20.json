@@ -134,5 +134,50 @@
     "MERGE_READY": 0,
     "BLOCKED": 3,
     "ARCHIVE_CANDIDATE": 0
+  },
+  "semantic_memory_interchange_candidate": {
+    "contract_id": "synergy.semantic-memory-record/v1",
+    "producer": {
+      "repo": "Shtenco/synergy_ai_language",
+      "branch": "feat/semantic-memory-context-bridge-20261118",
+      "path": "src/ai_language/context_memory.py",
+      "function": "export_semantic_memory",
+      "schema_path": "contracts/semantic-memory-record-v1.schema.json"
+    },
+    "consumer": {
+      "repo": "Shtenco/synergy_ai_coder",
+      "branch": "feat/recursive-context-archive-integration-20261118",
+      "path": "synergy_coder/semantic_memory.py",
+      "function": "append_semantic_record"
+    },
+    "envelope_fields": [
+      "record_id",
+      "namespace",
+      "kind",
+      "schema",
+      "source_ref",
+      "payload",
+      "payload_sha256"
+    ],
+    "verified_design_match": true,
+    "producer_tests": [
+      "deterministic export",
+      "prompt opt-in",
+      "credential redaction",
+      "tamper detection",
+      "malformed record rejection"
+    ],
+    "consumer_tests": "No dedicated semantic-memory adapter test file found in the inspected branch tree; existing tests/test_contracts.py covers requirement/change evidence instead.",
+    "canonical_registry_entry": false,
+    "runtime_edge_registered": false,
+    "e2e_round_trip_proven": false,
+    "status": "DEVELOP",
+    "promotion_gates": [
+      "promote schema to canonical main",
+      "add Coder consumer tests for valid/invalid/tampered/redacted records",
+      "register canonical contract and producer/consumer ownership",
+      "add real cross-repository E2E round-trip into archive and restore",
+      "confirm exact-head green CI"
+    ]
   }
 }
