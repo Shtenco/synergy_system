@@ -464,7 +464,7 @@
   },
   "central_registry_validation": {
     "owner_repositories": 92,
-    "interface_components": 76,
+    "interface_components": 77,
     "interface_rows_unique": true,
     "interface_scope_is_subset": true,
     "unknown_graph_endpoints_after_rename": 0,
@@ -501,5 +501,51 @@
       "Interface generator now uses current REPOSITORY_INTERFACES registry as explicit scope allowlist."
     ],
     "verification": "Static live-data reconciliation only; Actions validation is still pending and has not been claimed green."
+  },
+  "memory_subsystem_comparison": {
+    "repositories": [
+      {
+        "repo": "Shtenco/synergy_long_term_harness",
+        "main_tree": "README-only",
+        "implementation_branch": "feat/company-autopilot-memory-v1",
+        "responsibilities": [
+          "content-addressed append-only source archive",
+          "SHA-256 chunk manifests and restore",
+          "bounded byte-oriented context assembly",
+          "mission idempotency and lease fencing",
+          "local capability bridge"
+        ],
+        "decision": "KEEP"
+      },
+      {
+        "repo": "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+        "main_tree": "README-only",
+        "implementation_branch": "feat/hierarchical-cognitive-memory-v1",
+        "responsibilities": [
+          "versioned semantic memory records",
+          "source snapshots and provenance",
+          "FTS5 and optional vector retrieval",
+          "graph traversal and trust states",
+          "model-specific context/token planner",
+          "consolidation candidate review"
+        ],
+        "decision": "KEEP"
+      }
+    ],
+    "overlaps": [
+      "SQLite-backed MemoryStore",
+      "namespaces and SHA-256 provenance",
+      "retrieval",
+      "bounded context assembly"
+    ],
+    "distinct_capabilities": [
+      "Long-Term Harness owns mission state, idempotency, lease fencing, independent verification primitive and exact chunk restore.",
+      "Hierarchical Memory owns semantic knowledge versioning, graph/vector retrieval, trust/consolidation and model-profile token budgeting."
+    ],
+    "recommendation": "Keep both repositories separate and develop a typed layered memory integration: immutable archive/evidence source layer plus semantic index/retrieval/context-planning layer.",
+    "contract_registered": false,
+    "runtime_edge_proven": false,
+    "decision": "DEVELOP",
+    "caveat": "Both implementations are on Draft feature branches while their main branches are README-only."
   }
 }
