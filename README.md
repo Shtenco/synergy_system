@@ -12,13 +12,14 @@
 | E2E-tested edges | **0** |
 | Uncontracted candidate components | **2** |
 | Observed contract / lifecycle risks | **3** |
-| Current open PRs in owner inventory | **549** (14 priority PRs enriched in the current evidence register) |
+| Current open PRs in owner inventory | **549** (14 priority PRs enriched in the trading-product audit; 122 PRs inventoried in AI Language + BQT) |
 | Security blockers | **4 P0 + 1 P1** |
 | Live branch refs | **1,294 across 92 repositories** |
 | Live branch SHA coverage | **1,294 / 1,294** |
-| Fresh main-vs-branch ancestry comparisons | **137 / 1,202 non-main refs** |
-| Remaining ancestry comparisons | **1,065** |
+| Fresh main-vs-branch ancestry comparisons | **187 / 1,202 non-main refs** |
+| Remaining ancestry comparisons | **1,015** |
 | Priority PRs with exact-head workflow metadata | **14** |
+| Complete AI Language + BQT PR inventory | **122 / 122** |
 | Merge-ready PRs in reviewed priority set | **0** |
 
 **Memory candidates:** [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) and [`synergy_long_term_harness`](https://github.com/Shtenco/synergy_long_term_harness) are both registered as `ARCHITECTURAL_ONLY`. Both main branches are README-only while implementations sit on Draft feature branches. Their memory/archive/context capabilities overlap but are complementary; a single memory subsystem contract is still missing, and no runtime adapter or E2E execution is proven. A second uncontracted candidate is the Autopilot/Long-Term Harness mission lifecycle boundary.
@@ -30,6 +31,8 @@
 **CI evidence status:** latest federation maturity and typed-contract workflow attempts have failed before runner steps (`runner_id=0` / empty steps). The validators have not yet supplied assertion-level results. Financial OS PR #38's canonical CI also exposed a setuptools flat-layout package-discovery error; a scoped package-discovery fix is committed, but its rerun failed before steps. See [CI evidence audit](docs/CROSS_REPOSITORY_DUPLICATE_AUDIT_2026-11-20.md).
 
 **Authority rule:** owner inventory membership, an interface record, a defined contract, an adapter and an E2E-tested edge are separate states. The 77 interface rows are not the 92-repository owner inventory. Current owner-wide open PR discovery is 549; 14 priority PRs have full metadata enrichment in this evidence pass; 535 remain discovery-only or not yet individually enriched. Existing 39 contract families remain unchanged; the memory and mission-lifecycle boundaries are recorded as two uncontracted candidates rather than being misrepresented as registered contracts.
+
+**AI Language + BQT PR audit:** [122-PR inventory](https://github.com/Shtenco/synergy/blob/main/registry/PR_INVENTORY_AI_LANGUAGE_BQT_2026-11-20.json) · [dependency and CI audit](https://github.com/Shtenco/synergy/blob/main/docs/AI_LANGUAGE_BQT_PR_CI_AUDIT_2026-11-20.md). Twenty-four direct PR stack edges were identified. AI Language PR #33 has 195 Ruff lint errors; BQT PR #87's 59/60 successful jobs are held by an intentional strict physicalization gate; PR #84 has incomplete production/shadow evidence; PR #86 has ten queued duplicate matrix runs across five SHAs.
 
 Canonical current reports:
 - [92-repository owner inventory](https://github.com/Shtenco/synergy/blob/main/README.md)
