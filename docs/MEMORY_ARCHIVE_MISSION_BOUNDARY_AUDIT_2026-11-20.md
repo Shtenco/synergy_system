@@ -67,3 +67,12 @@ The inspected AI Coder feature branches have substantive code, but their PR work
 | MERGE-READY | None | Exact-head green CI and E2E contract closure are absent |
 | ARCHIVE-CANDIDATE | None | These are complementary active responsibilities, not redundant repos |
 
+
+
+## Newly identified semantic-memory interchange candidate
+
+The AI Language feature branch `feat/semantic-memory-context-bridge-20261118` defines `synergy.semantic-memory-record/v1` in `contracts/semantic-memory-record-v1.schema.json`. Its producer is `src/ai_language/context_memory.py::export_semantic_memory`. The AI Coder feature branch `feat/recursive-context-archive-integration-20261118` independently declares the same schema identifier in `synergy_coder/semantic_memory.py` and exposes `append_semantic_record()` to validate and append the exact JSON envelope as an L0 archive record.
+
+The envelope fields match exactly: `record_id`, `namespace`, `kind`, `schema`, `source_ref`, `payload`, `payload_sha256`. Both sides enforce a deterministic `smem:<sha256>` identity, a payload SHA-256, safe namespace/source references and credential redaction. The producer's `tests/test_context_memory.py` covers deterministic export, prompt opt-in, secret redaction, tamper detection and malformed records.
+
+**Important gap:** the Coder branch has no dedicated semantic-memory adapter test file in its current 31-file tree. Its `tests/test_contracts.py` tests requirement-trace/change-evidence contracts, not `append_semantic_record()`. There is also no central `CONTRACT_REGISTRY.json` entry, no canonical `REPOSITORY_INTERFACES.json` edge for this memory interchange, and no cross-repository E2E test. Therefore this is a promising **candidate contract defined on two feature branches**, not an integrated production contract. Keep its lifecycle status at DEVELOP until the schema is promoted to canonical main, Coder consumer tests are added, the registries are updated and an E2E round-trip is observed.
