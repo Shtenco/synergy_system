@@ -773,7 +773,7 @@
     {
       "contract_id": "synergy.science.quantum-reference-control/v1",
       "schema_version": 1,
-      "producer": "Shtenco/binary_quantum_theory",
+      "producer": "Shtenco/synergy_binary_quantum_theory",
       "consumers": [
         "Shtenco/synergy_nexus_science_agent"
       ],
@@ -788,8 +788,8 @@
       },
       "scope": "CROSS_REPOSITORY",
       "implementation_evidence": [
-        "Shtenco/binary_quantum_theory:scripts/synergy_contracts.py",
-        "Shtenco/binary_quantum_theory:scripts/test_synergy_contracts.py",
+        "Shtenco/synergy_binary_quantum_theory:scripts/synergy_contracts.py",
+        "Shtenco/synergy_binary_quantum_theory:scripts/test_synergy_contracts.py",
         "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
         "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
       ]
@@ -821,7 +821,7 @@
     {
       "contract_id": "synergy.science.provenance-graph/v1",
       "schema_version": 1,
-      "producer": "Shtenco/epstein_network",
+      "producer": "Shtenco/synergy_epstein_network",
       "consumers": [
         "Shtenco/synergy_nexus_science_agent"
       ],
@@ -836,8 +836,8 @@
       },
       "scope": "CROSS_REPOSITORY",
       "implementation_evidence": [
-        "Shtenco/epstein_network:src/epstein_network/synergy_contracts.py",
-        "Shtenco/epstein_network:tests/test_synergy_contracts.py",
+        "Shtenco/synergy_epstein_network:src/epstein_network/synergy_contracts.py",
+        "Shtenco/synergy_epstein_network:tests/test_synergy_contracts.py",
         "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
         "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
       ]
