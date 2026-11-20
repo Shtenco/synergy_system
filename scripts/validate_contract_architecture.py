@@ -72,6 +72,8 @@ def main() -> int:
                 fail(f"{cid}: consumer missing {consumer}")
         if c["authority"] not in authority_names:
             fail(f"{cid}: unknown authority {c['authority']}")
+        if auth["authorities"][c["authority"]]["owner"] != c["producer"]:
+            fail(f"{cid}: authority owner does not match producer")
         path = ROOT / c["schema_path"]
         if not path.is_file():
             fail(f"{cid}: schema missing {path}")
@@ -118,6 +120,27 @@ def main() -> int:
     )
     if summary and summary.get("adapter_implemented_runtime_edges") != actual_adapter:
         fail("integration_summary adapter count drift")
+
+    all_runtime_edges = [
+        e for e in graph["edges"]
+        if e["type"] in {"RUNTIME_DEPENDENCY", "RUNTIME_CONTRACT"}
+    ]
+    actual_all_adapters = sum(1 for e in all_runtime_edges if e.get("status") == "ADAPTER_IMPLEMENTED")
+    actual_e2e = sum(1 for e in all_runtime_edges if e.get("status") == "E2E_TESTED")
+    if gaps.get("totals", {}).get("runtime_adapter_edges") != actual_all_adapters:
+        fail("integration gap registry runtime adapter count drift")
+    if gaps.get("totals", {}).get("e2e_tested_edges") != actual_e2e:
+        fail("integration gap registry E2E count drift")
+    gap_rows = gaps.get("contracts", [])
+    contracts_with_gaps = sum(1 for row in gap_rows if row.get("missing_endpoints"))
+    if gaps.get("totals", {}).get("contracts_with_gaps") != contracts_with_gaps:
+        fail("integration gap registry contracts-with-gaps count drift")
+    if gaps.get("totals", {}).get("no_missing_endpoints") != len(gap_rows) - contracts_with_gaps:
+        fail("integration gap registry no-missing-endpoints count drift")
+    if gaps.get("totals", {}).get("uncontracted_components") != len(gaps.get("uncontracted_components", [])):
+        fail("integration gap registry uncontracted component count drift")
+    if gaps.get("totals", {}).get("observed_contract_risks") != len(gaps.get("observed_contract_risks", [])):
+        fail("integration gap registry risk count drift")
 
     print(f"OK: {len(repo_names)} repositories")
     print(f"OK: {len(authority_names)} authorities")
