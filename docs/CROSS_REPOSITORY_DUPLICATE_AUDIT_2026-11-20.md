@@ -330,3 +330,14 @@ Eight more exact `main...branch` comparisons were recorded in the central branch
 AI Coder's recursive context archive branch is 177 commits ahead and contains the archive codecs, byte-oriented context archive, semantic memory, scale benchmarks and integration tests; it is substantial, not a scratch branch. It still needs exact-head CI and a dependency/contract review before merge consideration. The two Midas branches share a large common V10 baseline and introduce historical-strategy registry and independent-risk-decision work; because they diverge and overlap, inspect their dependency/stack relationship rather than treating them as independent merge candidates. Science Agent's three branches share a common science core baseline but add service protocol, evidence graph and source-quality identity layers; their shared base and overlapping workflow additions require stack-aware integration.
 
 The ancestry ledger now contains **127 / 1,202** non-main comparisons; **1,075 remain pending**. Counts: ahead 7, behind 17, diverged 103. No branch in this batch is merge-ready.
+
+
+## Feature-branch Actions retry eligibility
+
+The eight inspected feature-branch PR runs all failed/cancelled before a runner step (`runner_id=0`, empty steps). I attempted reruns where GitHub still permitted them:
+
+- AI Coder run `43561808615` (autonomous engineering foundation): rerun accepted, attempt 2 queued.
+- AI Coder run `44452576244` (recursive context archive integration): rerun accepted, attempt 2 queued.
+- Midas AI runs `32453096236` and `32470135785`, AI Coder change-set run `32176942797`, and Science Agent runs `32506472197`, `32453305218`, `32470329120`: GitHub rejected rerun because each run was created over one month ago.
+
+At the last status read, both accepted AI Coder reruns remained queued with no runner ID or steps. No new test execution is yet proven. The old-run retention/retry restriction is recorded as an evidence limitation, not a source-code failure.
