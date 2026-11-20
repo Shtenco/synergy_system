@@ -126,7 +126,7 @@ The contract registry referenced 22 authority names absent from `AUTHORITY_REGIS
 - every contract authority owner matches that contract's producer;
 - all producer and consumer names resolve to canonical owner repositories.
 
-This preserves the policy that a producer may assert only its bounded domain facts; market signals, research, simulations, benchmark results and source-integrity evidence do not gain payment, accounting, capital, risk or execution authority.
+This preserves the policy that a producer may assert only its bounded domain facts; market signals, research, simulations, benchmark results and source-integrity evidence do not gain payment, accounting, capital, risk or execution authority. The validator now also enforces authority-owner/producer identity and cross-checks adapter, E2E, gap, uncontracted-component and risk totals against the dependency graph and integration-gap registry.
 
 ### Central validation runs after registry corrections
 
