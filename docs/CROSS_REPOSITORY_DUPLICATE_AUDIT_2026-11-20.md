@@ -341,3 +341,10 @@ The eight inspected feature-branch PR runs all failed/cancelled before a runner 
 - Midas AI runs `32453096236` and `32470135785`, AI Coder change-set run `32176942797`, and Science Agent runs `32506472197`, `32453305218`, `32470329120`: GitHub rejected rerun because each run was created over one month ago.
 
 At the last status read, both accepted AI Coder reruns remained queued with no runner ID or steps. No new test execution is yet proven. The old-run retention/retry restriction is recorded as an evidence limitation, not a source-code failure.
+
+
+### CI revalidation outcome — runner allocation remains the blocker
+
+The new main-branch runs were polled after the fixes. Adaptive Engine (`44670168704`), RiskGuard (`44670174126`), Relative Value (`44670215047`) and MarketVision (`44670223496`) completed as failure with `runner_id=0` and empty steps. TradeMux (`44670775412`) and MIDAS Institutional (`44670219074`) were still queued at the last read; their job payloads had no executed steps. Market Maker's retry attempt 2 (`42536892178`) failed again with `runner_id=0`, empty steps. AI Coder's two accepted retry attempts (`43561808615`, `44452576244`) also failed with `runner_id=0`, empty steps.
+
+This means the source/test fixes are committed but cannot yet be validated by Actions. The new CI failures are not test regressions: there are no test-step results. Do not revert the fixes based on these infrastructure-only run outcomes. Re-run exact HEADs when GitHub provides an assigned runner; only then assess whether the route assertions, release metadata and TradeMux decimal tests pass.
