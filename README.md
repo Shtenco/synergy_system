@@ -41,7 +41,7 @@ Canonical current reports:
 Historical counts in older sections and dated reports remain provenance snapshots; use the live registry links above for current scope.
 
 
-**New source-backed duplication audit:** [seven-repository exact Git-blob comparison](docs/CROSS_REPOSITORY_DUPLICATE_AUDIT_2026-11-20.md) and [machine-readable duplicate/CI register](registry/FUNCTIONAL_DUPLICATE_AUDIT_2026-11-20.json). Seven trading products remain separate (KEEP); their repeated enterprise scaffold is DEVELOP; two reviewed PR CI pipelines are BLOCKED before test steps.
+**New source-backed duplication audit:** [seven-repository exact Git-blob comparison](docs/CROSS_REPOSITORY_DUPLICATE_AUDIT_2026-11-20.md) and [machine-readable duplicate/CI register](registry/FUNCTIONAL_DUPLICATE_AUDIT_2026-11-20.json). Seven trading products remain separate (KEEP); their repeated enterprise scaffold is DEVELOP. Current main CI is BLOCKED in all seven: six reached pytest and failed, one failed before steps. Two additional priority PR pipelines are BLOCKED before test steps.
 <!-- LIVE-FEDERATION-SNAPSHOT-2026-11-20:END -->
 
 <!-- SCIENTIFIC-PROFILE-2026:START -->
