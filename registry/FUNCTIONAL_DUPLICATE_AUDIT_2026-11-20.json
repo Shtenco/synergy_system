@@ -987,5 +987,88 @@
     "revalidation_status": "All six new main runs were queued at last status read; Market Maker rerun attempt 2 was queued. No green result claimed.",
     "decision": "DEVELOP",
     "merge_ready": false
+  },
+  "additional_branch_pass": {
+    "comparisons": [
+      {
+        "repo": "Shtenco/synergy_midas_ai",
+        "branch": "feat/historical-strategy-evidence-registry-v1-20260821",
+        "ahead_by": 29,
+        "behind_by": 63,
+        "decision": "DEVELOP",
+        "merge_ready": false
+      },
+      {
+        "repo": "Shtenco/synergy_midas_ai",
+        "branch": "feat/independent-risk-decision-v1-20260821",
+        "ahead_by": 39,
+        "behind_by": 63,
+        "decision": "DEVELOP",
+        "merge_ready": false
+      },
+      {
+        "repo": "Shtenco/synergy_ai_coder",
+        "branch": "feat/autonomous-engineering-foundation-20261114",
+        "ahead_by": 10,
+        "behind_by": 0,
+        "decision": "DEVELOP",
+        "merge_ready": false
+      },
+      {
+        "repo": "Shtenco/synergy_ai_coder",
+        "branch": "feat/change-set-review-protocol-20260818",
+        "ahead_by": 10,
+        "behind_by": 10,
+        "decision": "DEVELOP",
+        "merge_ready": false
+      },
+      {
+        "repo": "Shtenco/synergy_ai_coder",
+        "branch": "feat/recursive-context-archive-integration-20261118",
+        "ahead_by": 177,
+        "behind_by": 0,
+        "decision": "DEVELOP",
+        "merge_ready": false
+      },
+      {
+        "repo": "Shtenco/synergy_nexus_science_agent",
+        "branch": "feat/science-service-protocol-v4-20260821",
+        "ahead_by": 22,
+        "behind_by": 17,
+        "decision": "DEVELOP",
+        "merge_ready": false
+      },
+      {
+        "repo": "Shtenco/synergy_nexus_science_agent",
+        "branch": "feat/search-evidence-graph-core-v1-20260821",
+        "ahead_by": 8,
+        "behind_by": 17,
+        "decision": "DEVELOP",
+        "merge_ready": false
+      },
+      {
+        "repo": "Shtenco/synergy_nexus_science_agent",
+        "branch": "feat/source-quality-identity-v3-20260821",
+        "ahead_by": 16,
+        "behind_by": 17,
+        "decision": "DEVELOP",
+        "merge_ready": false
+      }
+    ],
+    "ancestry_progress": {
+      "completed": 127,
+      "total_non_main": 1202,
+      "pending": 1075,
+      "counts": {
+        "ahead": 7,
+        "behind": 17,
+        "diverged": 103
+      }
+    },
+    "review_notes": [
+      "AI Coder recursive context archive branch has 177 unique commits and requires exact-head CI plus integration/contract review.",
+      "Midas AI historical strategy and independent risk branches share a large baseline and require stack/dependency review.",
+      "Science Agent service protocol, search evidence graph and source-quality branches overlap on a common science core; review stack/dependency order."
+    ]
   }
 }
