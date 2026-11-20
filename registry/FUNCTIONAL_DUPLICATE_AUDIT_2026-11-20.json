@@ -461,5 +461,45 @@
     ],
     "e2e_tested_edges": 0,
     "caveat": "Adapter evidence and registered schemas do not establish end-to-end runtime validation"
+  },
+  "central_registry_validation": {
+    "owner_repositories": 92,
+    "interface_components": 76,
+    "interface_rows_unique": true,
+    "interface_scope_is_subset": true,
+    "unknown_graph_endpoints_after_rename": 0,
+    "unknown_contract_producer_consumer_names": 0,
+    "canonical_rename_reconciliations": [
+      {
+        "old": "Shtenco/binary_quantum_theory",
+        "canonical": "Shtenco/synergy_binary_quantum_theory"
+      },
+      {
+        "old": "Shtenco/epstein_network",
+        "canonical": "Shtenco/synergy_epstein_network"
+      },
+      {
+        "old": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+        "canonical": "Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python"
+      }
+    ],
+    "graph_contract_representation": {
+      "cross_repository_contracts": 38,
+      "unique_contract_ids_in_contract_flow": 16,
+      "unique_contract_ids_in_runtime_contract": 22,
+      "all_cross_repository_contracts_represented": true,
+      "intra_repository_contracts": 1,
+      "intra_repository_contracts_requiring_cross_repo_edge": 0
+    },
+    "integration_gap_contracts": 39,
+    "contract_registry_records": 39,
+    "adapter_implemented_runtime_edges": 22,
+    "fixes": [
+      "Validator now permits curated interface registry to be a subset of owner inventory while checking uniqueness, count and membership.",
+      "Dependency graph endpoint validation added.",
+      "Contract graph coverage now considers all typed contract-bearing graph edges rather than CONTRACT_FLOW only.",
+      "Interface generator now uses current REPOSITORY_INTERFACES registry as explicit scope allowlist."
+    ],
+    "verification": "Static live-data reconciliation only; Actions validation is still pending and has not been claimed green."
   }
 }
