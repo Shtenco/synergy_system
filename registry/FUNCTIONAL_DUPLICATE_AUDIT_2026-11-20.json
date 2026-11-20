@@ -258,5 +258,50 @@
     "Focused seven-repository comparison only; no claim of completed 92-repository file audit",
     "Exact blob identity does not establish whole-product equivalence",
     "Readable runner logs were unavailable from the inspected Actions endpoints"
-  ]
+  ],
+  "all_seven_intersection": {
+    "common_normalized_paths": 63,
+    "identical_blob_shas": 29,
+    "unique_blob_shas_for_each_of": [
+      "src/PACKAGE/core.py",
+      "src/PACKAGE/api.py",
+      "src/PACKAGE/synergy_contracts.py"
+    ],
+    "all_seven_identical_paths": [
+      ".env.enterprise.example",
+      ".github/workflows/ci.yml",
+      ".gitignore",
+      "CHANGELOG.md",
+      "deploy/clickhouse/001_audit.sql",
+      "deploy/postgres/001_audit.sql",
+      "docs/AUDIT_DATA_MODEL.md",
+      "docs/ENTERPRISE_DEPLOYMENT.md",
+      "docs/LOAD_TESTS.md",
+      "docs/PRODUCT_STATUS.md",
+      "docs/RBAC.md",
+      "docs/SECURITY.md",
+      "loadtests/benchmark.py",
+      "loadtests/k6_smoke.js",
+      "src/PACKAGE/__init__.py",
+      "src/PACKAGE/enterprise/__init__.py",
+      "src/PACKAGE/enterprise/adapters/__init__.py",
+      "src/PACKAGE/enterprise/adapters/base.py",
+      "src/PACKAGE/enterprise/adapters/bybit.py",
+      "src/PACKAGE/enterprise/adapters/ccxt.py",
+      "src/PACKAGE/enterprise/adapters/mt5.py",
+      "src/PACKAGE/enterprise/audit.py",
+      "src/PACKAGE/enterprise/auth.py",
+      "src/PACKAGE/enterprise/metrics.py",
+      "src/PACKAGE/enterprise/models.py",
+      "src/PACKAGE/enterprise/resilience.py",
+      "src/PACKAGE/enterprise/service.py",
+      "tests/test_customer_demo.py",
+      "tests/test_enterprise_deployment.py"
+    ]
+  },
+  "contract_registry_crosscheck": {
+    "all_seven_product_contracts_registered": true,
+    "e2e_tested_runtime_edges_in_governance_snapshot": 0,
+    "interpretation": "Registry and adapter metadata do not prove end-to-end runtime execution"
+  }
 }
