@@ -17,11 +17,13 @@
 | Live branch refs | **1,294 across 92 repositories** |
 | Live branch SHA coverage | **1,294 / 1,294** |
 | Fresh main-vs-branch ancestry comparisons | **119 / 1,202 non-main refs** |
-| Remaining ancestry comparisons | **1,097** |
+| Remaining ancestry comparisons | **1,083** |
 | Priority PRs with exact-head workflow metadata | **14** |
 | Merge-ready PRs in reviewed priority set | **0** |
 
 **Memory candidates:** [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) and [`synergy_long_term_harness`](https://github.com/Shtenco/synergy_long_term_harness) are both registered as `ARCHITECTURAL_ONLY`. Both main branches are README-only while implementations sit on Draft feature branches. Their memory/archive/context capabilities overlap but are complementary; a single memory subsystem contract is still missing, and no runtime adapter or E2E execution is proven. A second uncontracted candidate is the Autopilot/Long-Term Harness mission lifecycle boundary.
+
+**Trading product duplication audit:** seven product repos share 29 exact enterprise/runtime blobs across all seven, but their core/API/contract blobs are distinct. Product repositories remain independent. The V3 product-line master spec rules out a mandatory shared runtime; the remediation is a versioned production-contract specification plus per-repository conformance tests. [Audit and machine-readable evidence](docs/CROSS_REPOSITORY_DUPLICATE_AUDIT_2026-11-20.md).
 
 **Authority rule:** owner inventory membership, an interface record, a defined contract, an adapter and an E2E-tested edge are separate states. The 76 interface rows are not the 92-repository owner inventory. Current owner-wide open PR discovery is 549; only 18 priority PRs have full metadata enrichment, while 531 remain discovery-only. Existing 39 contract families remain unchanged; the memory component is recorded separately as one uncontracted candidate rather than being misrepresented as a registered contract.
 
