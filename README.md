@@ -21,7 +21,7 @@
 | Priority PRs with exact-head workflow metadata | **14** |
 | Complete AI Language + BQT PR inventory | **122 / 122** |
 | Complete Financial OS + System PR inventory | **93 / 93** |
-| Direct dependency edges across four audited PR inventories | **102** |
+| Direct dependency edges across six audited PR inventories | **120** |
 | Merge-ready PRs in reviewed priority set | **0** |
 
 **Memory candidates:** [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) and [`synergy_long_term_harness`](https://github.com/Shtenco/synergy_long_term_harness) are both registered as `ARCHITECTURAL_ONLY`. Both main branches are README-only while implementations sit on Draft feature branches. Their memory/archive/context capabilities overlap but are complementary; a single memory subsystem contract is still missing, and no runtime adapter or E2E execution is proven. A second uncontracted candidate is the Autopilot/Long-Term Harness mission lifecycle boundary.
@@ -33,6 +33,8 @@
 **CI evidence status:** latest federation maturity and typed-contract workflow attempts have failed before runner steps (`runner_id=0` / empty steps). The validators have not yet supplied assertion-level results. Financial OS PR #38's canonical CI also exposed a setuptools flat-layout package-discovery error; a scoped package-discovery fix is committed, but its rerun failed before steps. See [CI evidence audit](docs/CROSS_REPOSITORY_DUPLICATE_AUDIT_2026-11-20.md).
 
 **Authority rule:** owner inventory membership, an interface record, a defined contract, an adapter and an E2E-tested edge are separate states. The 77 interface rows are not the 92-repository owner inventory. Current owner-wide open PR discovery is 549; 14 priority PRs have full metadata enrichment in this evidence pass; 535 remain discovery-only or not yet individually enriched. Existing 39 contract families remain unchanged; the memory and mission-lifecycle boundaries are recorded as two uncontracted candidates rather than being misrepresented as registered contracts.
+
+**Pay System + AI Financial System PR audit:** [48-PR inventory](https://github.com/Shtenco/synergy/blob/main/registry/PR_INVENTORY_PAY_SYSTEM_AI_FINANCIAL_2026-11-20.json) · [18-edge PR/CI audit](https://github.com/Shtenco/synergy/blob/main/docs/PAY_SYSTEM_AI_FINANCIAL_PR_CI_AUDIT_2026-11-20.md). Pay System PR #20's three Ruff findings were fixed on its feature branch; its new checks are queued. PR #18/#19 retain 402/405 Ruff errors across maintained source/tests. AI Financial System PR #22 and several older branches failed before runner steps; PR #7 has 12 green workflows and one failed artifact-materialization check with expired logs.
 
 **Financial OS + federation PR audit:** [93-PR inventory](https://github.com/Shtenco/synergy/blob/main/registry/PR_INVENTORY_FINANCIAL_OS_SYNERGY_SYSTEM_2026-11-20.json) · [78-edge dependency and CI audit](https://github.com/Shtenco/synergy/blob/main/docs/FINANCIAL_OS_FEDERATION_PR_CI_AUDIT_2026-11-20.md). Financial OS has 39 open PRs (36 Draft) and a 35-edge dependency chain; the System repo has 47 open PRs (48 Draft across all states) and 43 dependency edges. The External Profit Import metadata override flaw and setuptools package discovery failure were fixed on the PR branches; subsequent exact-head CI attempts failed before runner allocation (`runner_id=0`) or remain queued, so neither fix is CI-verified yet. Federation PR #46→#47→#48 has historical green checks but is stale against current main.
 
