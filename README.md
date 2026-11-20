@@ -16,7 +16,7 @@
 | Security blockers | **4 P0 + 1 P1** |
 | Live branch refs | **1,294 across 92 repositories** |
 | Live branch SHA coverage | **1,294 / 1,294** |
-| Fresh main-vs-branch ancestry comparisons | **105 / 1,202 non-main refs** |
+| Fresh main-vs-branch ancestry comparisons | **119 / 1,202 non-main refs** |
 | Remaining ancestry comparisons | **1,097** |
 | Priority PRs with exact-head workflow metadata | **14** |
 | Merge-ready PRs in reviewed priority set | **0** |
