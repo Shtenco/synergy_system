@@ -385,3 +385,14 @@ A second tree comparison added `synergy_ai_investment_committee` and `synergy_qu
 - QuantLab: `synergy.trading.validation-decision/v1`, authority `trading_validation`.
 
 The pairwise matrix above remains the detailed 21-pair matrix for the original seven repositories; the nine-way intersection is an additional exact common-core proof. All nine products remain separate and `KEEP`.
+
+
+## Financial OS PR #38 — exact canonical CI failure and packaging fix
+
+The External Profit Import feature is PR #38, based on `feat/distribution-available-capacity-v4-refund-restored-20260828`, with `HUMAN_MAINTAINER_ONLY` and no autonomous posting authority. Its isolated workflow [33987930535](https://github.com/Shtenco/synergy_financial_os/actions/runs/33987930535) passed on Python 3.11 and 3.12, including importer tests, ReportingLedger regressions and compile.
+
+The separate repository-wide [canonical-core-ci run 33987930501](https://github.com/Shtenco/synergy_financial_os/actions/runs/33987930501) did execute and failed during `pip install -e '.[dev]'`, before pytest. The actual log says setuptools auto-discovered multiple top-level packages/directories in flat layout: `config`, `schemas`, `fixtures`, `sinergy_financial_os`. The pytest step was explicitly skipped. This is a packaging configuration defect, not an importer test failure.
+
+I committed a targeted fix on the PR branch `feat/external-profit-import-v1-20260905`: `pyproject.toml` now explicitly includes `sinergy_financial_os*` and excludes `tests*` for setuptools package discovery. Fix commit: `5338ded06c76e574d8061c13a7e42b9b470f23fc`. The branch SHA and all central branch SHA/inventory/CSV/ancestry/decision registries were refreshed; it is now 450 ahead / 24 behind main. The branch remains stacked on distribution-capacity V4.
+
+New exact-head workflows [44671467993](https://github.com/Shtenco/synergy_financial_os/actions/runs/44671467993) (canonical core CI) and [44671468005](https://github.com/Shtenco/synergy_financial_os/actions/runs/44671468005) (isolated importer) were queued at the last check. No post-fix pass is claimed until they execute.
