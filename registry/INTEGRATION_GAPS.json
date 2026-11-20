@@ -422,17 +422,23 @@
       "observed_related_work": [
         "synergy_ai_language PR #35 semantic memory record v1",
         "synergy_ai_coder PR #7 recursive context archive integration",
-        "synergy_long_term_harness PR #1-#4 durable memory and model-role history"
+        "synergy_long_term_harness PR #1-#4 durable memory and model-role history",
+        "synergy_long_term_harness feature branches: append-only content-addressed chunk archive, bounded context assembly, durable mission state, idempotency, lease fencing and local capability bridge"
       ],
       "gaps": [
-        "No shared canonical record schema between MemoryRecord and synergy.semantic-memory-record/v1",
+        "No shared canonical record schema across hierarchical MemoryRecord, Long-Term Harness chunk-manifest MemoryStore and synergy.semantic-memory-record/v1.",
         "No authenticated/authorized network API contract",
         "No namespace-safe cross-repository source identity contract",
         "Repository ingestion lacks explicit symlink rejection",
         "No exact-provider tokenizer/context accounting contract",
-        "No cross-repository E2E execution and independent evidence receipt"
+        "No cross-repository E2E execution and independent evidence receipt",
+        "No typed boundary yet separates semantic retrieval/context planning from immutable source archive and mission-state lifecycle."
       ],
-      "next_gate": "Define a versioned producer/consumer schema, authority and trust model; align source identity and namespace semantics; add authenticated adapters; then run exact-head cross-repository E2E tests. Do not count as a runtime edge before evidence."
+      "next_gate": "Define one versioned memory subsystem contract with separate record/archive and retrieval/context operations; assign authority and trust; bind immutable source identities; add authenticated adapters and cross-repository E2E tests. Keep mission lifecycle and semantic indexing as separate bounded capabilities.",
+      "related_repositories": [
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+        "Shtenco/synergy_long_term_harness"
+      ]
     }
   ],
   "observed_contract_risks": [
