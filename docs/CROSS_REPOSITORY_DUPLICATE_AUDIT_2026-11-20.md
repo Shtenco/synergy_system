@@ -44,6 +44,23 @@ Each cell is `common normalized paths / identical blob SHAs`.
 
 Representative identical shared files include the CI workflow, enterprise adapter implementations for Bybit/CCXT/MT5, enterprise auth/audit/metrics/models/resilience/service modules, SQL audit table definitions, load-test harnesses, and parts of the acceptance tests. The two-repository deep check of market maker vs adaptive engine found 29 identical blobs across 65 common normalized paths; `core.py`, API, product logic and product contract are not identical.
 
+
+
+### Seven-way common-code intersection
+
+A second intersection check across all seven repositories confirms **63 normalized paths are present in every repository and 29 of those paths have the same blob SHA in all seven**. The 29-way identical set is:
+
+- `.env.enterprise.example`, `.github/workflows/ci.yml`, `.gitignore`, `CHANGELOG.md`;
+- `deploy/clickhouse/001_audit.sql`, `deploy/postgres/001_audit.sql`;
+- `docs/AUDIT_DATA_MODEL.md`, `docs/ENTERPRISE_DEPLOYMENT.md`, `docs/LOAD_TESTS.md`, `docs/PRODUCT_STATUS.md`, `docs/RBAC.md`, `docs/SECURITY.md`;
+- `loadtests/benchmark.py`, `loadtests/k6_smoke.js`;
+- `src/PACKAGE/__init__.py` and the common enterprise package initializers, Bybit/CCXT/MT5 adapters, audit, auth, metrics, models, resilience and service modules;
+- `tests/test_customer_demo.py`, `tests/test_enterprise_deployment.py`.
+
+The seven `core.py`, `api.py` and `synergy_contracts.py` files each have **seven distinct blob SHAs**. This independently supports keeping the seven product domains separate while treating the enterprise scaffold as shared code to extract.
+
+All seven product contract IDs are present in the central contract registry. Their producer/consumer implementation metadata is recorded, but the federation governance snapshot still reports **zero E2E-tested runtime edges**. Therefore registry presence and adapter declarations are not treated as proof of live end-to-end execution.
+
 ## Recommended architecture change
 
 1. Keep all seven product repositories and their domain-specific cores.
