@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.exchange.AccountingSnapshot/v1",
+  "title": "SYNERGY AccountingSnapshot v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "object_id",
+    "created_at",
+    "producer",
+    "trace_id",
+    "snapshot_id",
+    "period_end",
+    "base_currency",
+    "hard_nav",
+    "liabilities",
+    "liquid_nav",
+    "recognized_profit",
+    "accounting_owner",
+    "source_receipts"
+  ],
+  "properties": {
+    "schema": {
+      "const": "synergy.exchange.AccountingSnapshot/v1"
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "producer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trace_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "snapshot_id": {
+      "type": "string"
+    },
+    "period_end": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "base_currency": {
+      "type": "string"
+    },
+    "hard_nav": {
+      "type": "number"
+    },
+    "liabilities": {
+      "type": "number"
+    },
+    "liquid_nav": {
+      "type": "number"
+    },
+    "recognized_profit": {
+      "type": "number"
+    },
+    "accounting_owner": {
+      "const": "synergy_financial_os"
+    },
+    "source_receipts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

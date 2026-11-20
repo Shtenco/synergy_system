@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.exchange.SettlementReceipt/v1",
+  "title": "SYNERGY SettlementReceipt v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "object_id",
+    "created_at",
+    "producer",
+    "trace_id",
+    "payment_intent_id",
+    "settlement_id",
+    "status",
+    "settled_amount",
+    "currency",
+    "settlement_provider",
+    "external_refs"
+  ],
+  "properties": {
+    "schema": {
+      "const": "synergy.exchange.SettlementReceipt/v1"
+    },
+    "object_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "producer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trace_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "payment_intent_id": {
+      "type": "string"
+    },
+    "settlement_id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "SETTLED",
+        "FAILED",
+        "REVERSED",
+        "PARTIAL"
+      ]
+    },
+    "settled_amount": {
+      "type": "number",
+      "minimum": 0
+    },
+    "currency": {
+      "type": "string"
+    },
+    "settlement_provider": {
+      "const": "synergy_pay_system"
+    },
+    "external_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

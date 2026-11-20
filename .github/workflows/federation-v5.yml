@@ -1,0 +1,40 @@
+name: Federation V5
+
+on:
+  pull_request:
+    paths:
+      - "config/**"
+      - "generated/**"
+      - "scripts/federation_v5.py"
+      - "scripts/generate_federation_v5.py"
+      - "scripts/check_federation_v5.py"
+      - "tests/test_*v5*.py"
+      - "tests/test_capability_registry_v2.py"
+      - "tests/test_exchange_objects_v1.py"
+      - ".github/workflows/federation-v5.yml"
+  push:
+    branches:
+      - "feat/federation-trust-registry-v1"
+
+permissions:
+  contents: read
+
+jobs:
+  federation-v5:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile governance scripts
+        run: |
+          python -m py_compile scripts/federation_v5.py scripts/generate_federation_v5.py scripts/check_federation_v5.py
+      - name: Run Federation V5 tests
+        run: |
+          python -m unittest -v             tests.test_repository_catalog_v5             tests.test_federation_v5_policy             tests.test_capability_registry_v2             tests.test_exchange_objects_v1             tests.test_federation_v5_generation             tests.test_federation_v5_trust_projection             tests.test_federation_v5_regression
+      - name: Validate generated drift
+        run: python scripts/check_federation_v5.py
+      - name: Validate V5 trust source
+        run: python scripts/validate_federation_trust_source.py generated/federation_trust_source_v5.json

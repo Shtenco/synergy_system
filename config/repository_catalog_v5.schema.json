@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.repository-catalog/v5",
+  "title": "SYNERGY Repository Catalog V5",
+  "type": "object",
+  "required": [
+    "schema",
+    "as_of",
+    "architecture_root",
+    "policy",
+    "repositories"
+  ],
+  "properties": {
+    "schema": {
+      "const": "synergy.repository-catalog/v5"
+    },
+    "repositories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "github_id",
+          "repo_url",
+          "default_branch",
+          "visibility",
+          "lifecycle_status",
+          "system_kind",
+          "domain",
+          "role",
+          "risk_class",
+          "federation_membership",
+          "trust_enabled",
+          "authority",
+          "capabilities_provided",
+          "capabilities_consumed",
+          "allowed_exchange_objects",
+          "canonical_successor",
+          "provenance_sources",
+          "verification"
+        ],
+        "properties": {
+          "lifecycle_status": {
+            "enum": [
+              "CANONICAL",
+              "CANDIDATE",
+              "R&D",
+              "LEGACY",
+              "ARCHIVE"
+            ]
+          },
+          "authority": {
+            "type": "object",
+            "required": [
+              "execution",
+              "financial",
+              "accounting",
+              "payment",
+              "settlement",
+              "blockchain_submission",
+              "code_write",
+              "external_side_effect"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synergy.capability-result.v2",
+  "title": "SYNERGY Capability Result V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol",
+    "request_id",
+    "provider",
+    "capability",
+    "status",
+    "result_objects",
+    "evidence",
+    "usage",
+    "cost",
+    "trace_id",
+    "authority_statement"
+  ],
+  "properties": {
+    "protocol": {
+      "const": "synergy.capability-result.v2"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "capability": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "ACCEPTED",
+        "REJECTED",
+        "RUNNING",
+        "COMPLETED",
+        "FAILED"
+      ]
+    },
+    "result_objects": {
+      "type": "array"
+    },
+    "evidence": {
+      "type": "array"
+    },
+    "usage": {
+      "type": "object"
+    },
+    "cost": {
+      "type": "object"
+    },
+    "trace_id": {
+      "type": "string"
+    },
+    "authority_statement": {
+      "type": "object"
+    }
+  }
+}

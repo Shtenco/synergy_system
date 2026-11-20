@@ -1,0 +1,500 @@
+{
+  "catalog_digest": "b46e99c76d887957648521427934f4296ffe4ca0f29850b7410d15852839aa0f",
+  "edges": [
+    {
+      "capability": "memory.search",
+      "from": "agi_autopilot",
+      "to": "agi_nexus",
+      "type": "capability"
+    },
+    {
+      "capability": "reasoning.infer",
+      "from": "agi_autopilot",
+      "to": "agi_nexus",
+      "type": "capability"
+    },
+    {
+      "from": "ai_financial_system",
+      "to": "synergy_financial_os",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "ai_trade_terminal",
+      "to": "midas_ai",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "cashero",
+      "to": "synergy_financial_os",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "computer_vision_trading_metatrader_5",
+      "to": "midas_ai",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "cross_forex_arbitrage_trading_metatrader_5",
+      "to": "midas_ai",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "midas_ai_trading_system",
+      "to": "midas_ai",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "midas_lite",
+      "to": "midas_ai",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "multi_threaded_trading_robot_with_machine_learning_python",
+      "to": "midas_ai",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "print_money_synergychain",
+      "to": "synergy_graph_print_money",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "quantum-trading_metatrader5",
+      "to": "midas_ai",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "shhts",
+      "to": "shttps",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "sinergy_app",
+      "to": "synergy_app",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "sinergy-super-app",
+      "to": "synergy_app",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "swap_arbitrage_metatrader_5",
+      "to": "midas_ai",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "synergy_agi_trader",
+      "to": "midas_ai",
+      "type": "canonical_successor"
+    },
+    {
+      "capability": "business.execute_approved_task",
+      "from": "synergy_ai_company",
+      "to": "agi_autopilot",
+      "type": "capability"
+    },
+    {
+      "capability": "memory.search",
+      "from": "synergy_ai_company",
+      "to": "agi_nexus",
+      "type": "capability"
+    },
+    {
+      "capability": "memory.upsert",
+      "from": "synergy_ai_company",
+      "to": "agi_nexus",
+      "type": "capability"
+    },
+    {
+      "capability": "reasoning.infer",
+      "from": "synergy_ai_company",
+      "to": "agi_nexus",
+      "type": "capability"
+    },
+    {
+      "from": "synergy_app_family",
+      "to": "synergy_app",
+      "type": "canonical_successor"
+    },
+    {
+      "from": "synergy_chain_print_money",
+      "to": "synergy_graph_print_money",
+      "type": "canonical_successor"
+    },
+    {
+      "capability": "science.build_evidence_package",
+      "from": "synergy_eurasian",
+      "to": "nexus_science_agent",
+      "type": "capability"
+    },
+    {
+      "capability": "finance.authorize_capital",
+      "from": "synergy_pay_system",
+      "to": "synergy_financial_os",
+      "type": "capability"
+    },
+    {
+      "from": "usds",
+      "to": "synergy_financial_os",
+      "type": "canonical_successor"
+    }
+  ],
+  "nodes": [
+    {
+      "lifecycle_status": "R&D",
+      "name": "3D_bars_market_structure",
+      "system_kind": "RESEARCH",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "agi_autopilot",
+      "system_kind": "CONTROL_PLANE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "agi_nexus",
+      "system_kind": "CONTROL_PLANE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "R&D",
+      "name": "agi_olga",
+      "system_kind": "RESEARCH",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANDIDATE",
+      "name": "ai_coder",
+      "system_kind": "CONTROL_PLANE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "ai_compress",
+      "system_kind": "INFRASTRUCTURE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "ai_financial_system",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "ai_language",
+      "system_kind": "CONTROL_PLANE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "ai_trade_terminal",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANDIDATE",
+      "name": "algotrading_graph_system",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "R&D",
+      "name": "binary_quantum_theory",
+      "system_kind": "RESEARCH",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANDIDATE",
+      "name": "blochain_budget",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "cashero",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "R&D",
+      "name": "cold_nuclear",
+      "system_kind": "RESEARCH",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "computer_vision_trading_metatrader_5",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "cross_forex_arbitrage_trading_metatrader_5",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "R&D",
+      "name": "crypto_pump",
+      "system_kind": "RESEARCH",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "R&D",
+      "name": "dlp_solver",
+      "system_kind": "RESEARCH",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANDIDATE",
+      "name": "gguf_compress",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "R&D",
+      "name": "global_liquidity_dataminer",
+      "system_kind": "RESEARCH",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "midas_ai",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "midas_ai_trading_system",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "midas_lite",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANDIDATE",
+      "name": "motherboard_xpu_xml",
+      "system_kind": "INFRASTRUCTURE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "multi_threaded_trading_robot_with_machine_learning_python",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "nexus_science_agent",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "ARCHIVE",
+      "name": "print_money_synergychain",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANDIDATE",
+      "name": "qr_compress",
+      "system_kind": "INFRASTRUCTURE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "quantum-trading_metatrader5",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "ARCHIVE",
+      "name": "shhts",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "shtenco.github.io",
+      "system_kind": "PRESENTATION",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "shtencoauantai.github.io",
+      "system_kind": "PRESENTATION",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "shttps",
+      "system_kind": "INFRASTRUCTURE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "ARCHIVE",
+      "name": "sinergy_app",
+      "system_kind": "CLIENT",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "sinergy-super-app",
+      "system_kind": "CLIENT",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "swap_arbitrage_metatrader_5",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "R&D",
+      "name": "synergy_agi_trader",
+      "system_kind": "RESEARCH",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_ai_blockchain",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_ai_company",
+      "system_kind": "CONTROL_PLANE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_app",
+      "system_kind": "CLIENT",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "ARCHIVE",
+      "name": "synergy_app_family",
+      "system_kind": "CLIENT",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANDIDATE",
+      "name": "synergy_apps",
+      "system_kind": "CLIENT",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "ARCHIVE",
+      "name": "synergy_chain_print_money",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_eurasian",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_financial_os",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "CANDIDATE",
+      "name": "synergy_gllm_nexus",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "R&D",
+      "name": "synergy_graph_print_money",
+      "system_kind": "RESEARCH",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANDIDATE",
+      "name": "synergy_matrix_sota",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_messenger",
+      "system_kind": "CLIENT",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_meta_os",
+      "system_kind": "INFRASTRUCTURE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "CANDIDATE",
+      "name": "synergy_metachain",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_pay_system",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "R&D",
+      "name": "synergy_project",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergy_system",
+      "system_kind": "INFRASTRUCTURE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergychain",
+      "system_kind": "DOMAIN_SERVICE",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergychain.github.io",
+      "system_kind": "PRESENTATION",
+      "trust_enabled": false
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "synergynet",
+      "system_kind": "INFRASTRUCTURE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "CANONICAL",
+      "name": "turbo_linux",
+      "system_kind": "INFRASTRUCTURE",
+      "trust_enabled": true
+    },
+    {
+      "lifecycle_status": "LEGACY",
+      "name": "usds",
+      "system_kind": "PROVENANCE",
+      "trust_enabled": false
+    }
+  ],
+  "schema": "synergy.federation-graph/v5"
+}
