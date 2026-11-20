@@ -7,7 +7,7 @@
     "contracts_with_gaps": 0,
     "runtime_adapter_edges": 44,
     "e2e_tested_edges": 0,
-    "uncontracted_components": 1,
+    "uncontracted_components": 2,
     "observed_contract_risks": 3
   },
   "contracts": [
@@ -439,6 +439,28 @@
         "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
         "Shtenco/synergy_long_term_harness"
       ]
+    },
+    {
+      "component": "Shtenco/synergy_agi_autopilot",
+      "related_repositories": [
+        "Shtenco/synergy_agi_autopilot",
+        "Shtenco/synergy_long_term_harness"
+      ],
+      "status": "UNCONTRACTED_CANDIDATE",
+      "proposed_contract_family": "synergy.agent.mission-lifecycle/v1",
+      "candidate_consumers": [],
+      "observed_related_work": [
+        "synergy_agi_autopilot PR #12/#13/#14/#18/#21/#24: TaskStore, policy decisions, approvals, single-winner execution claims, idempotent replay and uncertain-state fencing",
+        "synergy_long_term_harness PR #1-#4: MissionStore, company-scoped idempotency, epoch/worker leases, stale-lease fencing, result digests and independent signed verification receipts"
+      ],
+      "gaps": [
+        "No canonical shared task/mission state machine or versioned lifecycle event schema",
+        "Idempotency-key scope and replay fingerprint semantics differ between TaskStore and MissionStore",
+        "Autopilot uses conditional single-winner execution claims; Long-Term Harness uses worker/epoch leases and stale-lease fencing; no common lease protocol",
+        "Independent verification receipt and HMAC signer identity exist in Long-Term Harness but are not a shared Autopilot contract",
+        "No cross-repository crash/retry/uncertain-outcome reconciliation or E2E evidence"
+      ],
+      "next_gate": "Define a shared mission lifecycle protocol for identity, idempotency, state transitions, events, lease epochs, uncertain outcomes, result digests and independent verification. Keep product-specific policy, capabilities and execution authority local to each repository. Add exact-head cross-repository retry/fencing tests before registering a runtime edge."
     }
   ],
   "observed_contract_risks": [
