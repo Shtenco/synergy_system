@@ -1188,5 +1188,44 @@
       }
     ],
     "interpretation": "Original jobs failed/cancelled before steps; accepted retries remain queued, rejected retries are not evidence of source/test failure. CI blocked pending runner execution."
+  },
+  "central_federation_ci": {
+    "runs": [
+      {
+        "workflow": "SYNERGY Federation Maturity Gate",
+        "run_id": 44669941281,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
+      },
+      {
+        "workflow": "Validate SYNERGY Typed Contracts",
+        "run_id": 44644066903,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
+      },
+      {
+        "workflow": "SYNERGY Federation Maturity Gate",
+        "run_id": 44644066897,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
+      },
+      {
+        "workflow": "Validate SYNERGY Federation",
+        "run_id": 44670752433,
+        "status": "queued",
+        "steps": 0
+      },
+      {
+        "workflow": "SYNERGY Federation Maturity Gate",
+        "run_id": 44670862728,
+        "status": "queued",
+        "steps": 0
+      }
+    ],
+    "decision": "BLOCKED",
+    "interpretation": "No validator step executed in failed runs; queued runs have no results. No claim of schema/assertion failure or green validation."
   }
 }
