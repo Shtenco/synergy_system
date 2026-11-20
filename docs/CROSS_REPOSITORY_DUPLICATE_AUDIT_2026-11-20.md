@@ -92,6 +92,24 @@ The five signal/research components converge into the MIDAS intelligence aggrega
 
 
 
+
+
+## Mission/task lifecycle overlap: Autopilot and Long-Term Harness
+
+A branch-level comparison found a second functional overlap beyond memory storage:
+
+| Capability | `synergy_agi_autopilot` Business Runtime | `synergy_long_term_harness` |
+|---|---|---|
+| Durable SQLite state | `TaskStore` with tasks and append-only events | `MissionStore` with missions and append-only events |
+| Idempotency | Unique idempotency key; replay must match capability and params | Unique (company, key); replay must match a canonical fingerprint of capability, role and payload |
+| Dispatch fencing | Conditional one-winner transition to running; uncertain tasks fenced | Worker/epoch lease; stale external lease moves to uncertain; completion must match current worker and epoch |
+| Approval/policy | Capability registry, policy decision, approval and external-effects gate | Capability/role allowlist; external/financial actions gated; local bridge is no-network |
+| Verification | Evidence verifier capability and task results | Result digest plus independent HMAC-signed verifier receipt, verifier must differ from worker |
+
+These are **not identical implementations**. Autopilot owns the product's capability/policy/approval and external-effect runtime; Long-Term Harness owns mission-level lease epochs, result integrity and independent verification, as well as the memory archive. But they duplicate important lifecycle primitives: SQLite task state, idempotent replay, append-only events, execution claims and uncertain-outcome fencing.
+
+**Decision:** KEEP both repositories; DEVELOP a shared, versioned mission lifecycle protocol (identity, idempotency, state machine, events, leases/epochs, uncertain outcomes, result digest and verifier receipt). Keep Autopilot's capability policy and Long-Term Harness's archive/verifier responsibilities local. Do not merge repositories or assume exactly-once external effects without provider reconciliation. Neither side currently has a registered cross-repository mission contract or E2E edge.
+
 ## Web and mobile surface duplicate spot checks
 
 A separate exact-tree comparison covered four GitHub Pages repositories (`shtenco.github.io`, `shtencoauantai.github.io`, `synergychain.github.io`, `synergy.github.io`) and the two mobile app repositories:
