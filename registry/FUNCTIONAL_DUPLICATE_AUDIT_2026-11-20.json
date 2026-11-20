@@ -1391,5 +1391,59 @@
       "Shtenco/synergy_quantlab": "synergy.trading.validation-decision/v1"
     },
     "method": "Normalize each product's src package directory to src/PACKAGE; compare exact Git blob SHA across all nine main branch trees."
+  },
+  "financial_os_pr38": {
+    "pr": 38,
+    "url": "https://github.com/Shtenco/synergy_financial_os/pull/38",
+    "state": "open",
+    "draft": true,
+    "base": "feat/distribution-available-capacity-v4-refund-restored-20260828",
+    "head": "feat/external-profit-import-v1-20260905",
+    "original_head_sha": "bf67bf9b2a5e98d44bd02e40e9a704b44492a3a6",
+    "isolated_workflow": {
+      "run_id": 33987930535,
+      "conclusion": "success",
+      "python": [
+        "3.11",
+        "3.12"
+      ],
+      "tests": [
+        "External Profit Import v1",
+        "ReportingLedger regression",
+        "compile"
+      ]
+    },
+    "canonical_ci": {
+      "run_id": 33987930501,
+      "conclusion": "failure",
+      "failed_step": "pip install -e '.[dev]'",
+      "pytest": "skipped",
+      "root_cause": "setuptools auto-discovery found config, schemas, fixtures and sinergy_financial_os in flat layout"
+    },
+    "fix": {
+      "commit": "5338ded06c76e574d8061c13a7e42b9b470f23fc",
+      "path": "pyproject.toml",
+      "change": "[tool.setuptools.packages.find] include=['sinergy_financial_os*'], exclude=['tests*']"
+    },
+    "new_head_sha": "5338ded06c76e574d8061c13a7e42b9b470f23fc",
+    "new_runs": [
+      {
+        "id": 44671467993,
+        "name": "canonical-core-ci",
+        "status": "queued"
+      },
+      {
+        "id": 44671468005,
+        "name": "External Profit Import v1",
+        "status": "queued"
+      }
+    ],
+    "ancestry_vs_main": {
+      "ahead": 450,
+      "behind": 24,
+      "status": "diverged"
+    },
+    "decision": "DEVELOP",
+    "merge_ready": false
   }
 }
