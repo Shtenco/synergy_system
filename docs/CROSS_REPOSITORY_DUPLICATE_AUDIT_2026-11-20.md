@@ -6,14 +6,14 @@ This is a focused, source-backed pass over nine active trading/runtime repositor
 
 ## Executive finding
 
-Seven separately named trading products share a highly repeated enterprise/runtime scaffold. Across the 21 pairs in the initial seven-repository matrix:
+Nine separately named trading products share a highly repeated enterprise/runtime scaffold. Across the 21 pairs in the initial seven-repository matrix:
 
 - each pair has 63–65 common normalized file paths;
 - each pair has 29–30 byte-identical Git blobs;
 - 17 identical files per pair are in the common enterprise/runtime/test/CI foundation;
 - product core modules and product contract modules differ, and each product declares a distinct contract/authority.
 
-This is a confirmed shared-code duplication pattern, not proof that the seven product domains are interchangeable.
+This is a confirmed shared-code duplication pattern, not proof that the nine product domains are interchangeable.
 
 ## Product boundaries and decisions
 
@@ -50,7 +50,7 @@ Representative identical shared files include the CI workflow, enterprise adapte
 
 ### Nine-way common-code intersection
 
-A second intersection check across all nine repositories confirms **63 normalized paths are present in every repository and 29 of those paths have the same blob SHA in all seven**. The 29-way identical set is:
+A second intersection check across all nine repositories confirms **63 normalized paths are present in every repository and 29 of those paths have the same blob SHA in all nine**. The 29-way identical set is:
 
 - `.env.enterprise.example`, `.github/workflows/ci.yml`, `.gitignore`, `CHANGELOG.md`;
 - `deploy/clickhouse/001_audit.sql`, `deploy/postgres/001_audit.sql`;
@@ -59,15 +59,15 @@ A second intersection check across all nine repositories confirms **63 normalize
 - `src/PACKAGE/__init__.py` and the common enterprise package initializers, Bybit/CCXT/MT5 adapters, audit, auth, metrics, models, resilience and service modules;
 - `tests/test_customer_demo.py`, `tests/test_enterprise_deployment.py`.
 
-The nine `core.py`, `api.py` and `synergy_contracts.py` files each have **nine distinct blob SHAs**. This independently supports keeping the seven product domains separate while treating the enterprise scaffold as shared code to extract.
+The nine `core.py`, `api.py` and `synergy_contracts.py` files each have **nine distinct blob SHAs**. This independently supports keeping all nine product domains separate. The repeated scaffold is governed by a versioned Production Contract specification and per-repository conformance tests; no mandatory shared runtime package will be introduced.
 
-All seven product contract IDs are present in the central contract registry. Their producer/consumer implementation metadata is recorded, but the federation governance snapshot still reports **zero E2E-tested runtime edges**. Therefore registry presence and adapter declarations are not treated as proof of live end-to-end execution.
+All nine product contract IDs are present in the central contract registry. Their producer/consumer implementation metadata is recorded, but the federation governance snapshot still reports **zero E2E-tested runtime edges**. Therefore registry presence and adapter declarations are not treated as proof of live end-to-end execution.
 
 
 
 ## API, contract and runtime topology cross-check
 
-The central `REPOSITORY_INTERFACES.json` and `CONTRACT_REGISTRY.json` confirm that the seven repositories are not seven interchangeable copies. Their declared boundaries form this typed flow:
+The central `REPOSITORY_INTERFACES.json` and `CONTRACT_REGISTRY.json` confirm that the nine repositories are not interchangeable copies. Their declared boundaries form this typed flow:
 
 - `synergy_market_maker` → `synergy_midas_ai`: `synergy.trading.liquidity-quote/v1`.
 - `synergy_adaptive_engine` → `synergy_midas_ai`: `synergy.trading.market-regime/v1`.
@@ -77,7 +77,7 @@ The central `REPOSITORY_INTERFACES.json` and `CONTRACT_REGISTRY.json` confirm th
 - `synergy_riskguard` → `synergy_trademux`: `synergy.trading.risk-decision/v1`; Riskguard consumes `synergy.trading.validation-decision/v1` from `synergy_quantlab`.
 - `synergy_trademux` → `synergy_pay_system`: `synergy.trading.execution-result/v1`; Trademux also owns the intra-repository execution-plan contract.
 
-The five signal/research components converge into the MIDAS intelligence aggregator; the risk decision then gates execution routing, and the execution result flows to settlement. These are typed, registered, adapter-evidenced edges. They are not yet E2E-tested in the central governance snapshot (0 E2E-tested edges), so the architecture map must not present them as fully validated live flows.
+Six signal/research components converge into the MIDAS intelligence aggregator, including the investment-thesis producer; QuantLab supplies the validation-decision consumed by RiskGuard, which then gates TradeMux execution. The execution result flows to settlement. These are typed, registered, adapter-evidenced edges. They are not yet E2E-tested in the central governance snapshot (0 E2E-tested edges), so the architecture map must not present them as fully validated live flows.
 
 ## Architecture correction from the product-line V3 master specification
 
@@ -151,11 +151,11 @@ A branch-level source comparison found overlapping memory primitives in two proj
 
 A live consistency check found and corrected two independent validator/registry defects:
 
-1. The owner inventory contains 92 repositories while the curated interface registry contains 76 components. The 76-row registry is an intentional subset, but the old validator required exact set equality. It now checks unique rows, declared count, and that every interface row belongs to the 92-repository owner inventory. The interface generator now uses the current interface registry as an explicit scope allowlist, so adding an owner repository does not silently turn it into a federation component.
+1. The owner inventory contains 92 repositories while the curated interface registry contains 77 components. The 77-row registry is an intentional subset, but the old validator required exact set equality. It now checks unique rows, declared count, and that every interface row belongs to the 92-repository owner inventory. The interface generator now uses the current interface registry as an explicit scope allowlist, so adding an owner repository does not silently turn it into a federation component.
 2. Three interface/graph/contract references used pre-rename repository names. These have been reconciled to the canonical GitHub names: `Shtenco/synergy_binary_quantum_theory`, `Shtenco/synergy_epstein_network`, and `Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python`. Contract evidence paths retain their actual internal paths.
 3. The old validator checked only `CONTRACT_FLOW` edges when requiring every cross-repository contract to appear in the dependency graph. The graph also represents typed contracts as `RUNTIME_CONTRACT`; after correction, all contract-bearing graph edges are considered. The live graph contains 38 unique cross-repository contract IDs across `CONTRACT_FLOW` and `RUNTIME_CONTRACT`; the one intra-repository contract (`execution-plan/v1`) correctly does not require a cross-repository edge.
 
-Post-edit static reconciliation: 92 owner repos; 77 unique interface rows; all 76 are a subset of owner inventory; zero unknown graph endpoints; zero unknown contract producer/consumer names; all 38 cross-repository contracts have graph representation; 42 authorities; 39 contract records match 39 integration-gap records; adapter edge count remains 22. A direct static cross-check of the validator's current invariants returned zero errors. These are static registry checks, **not** a successful Actions run. The latest federation gate runs were still queued when inspected, and earlier failed runs had `runner_id=0` with no steps.
+Post-edit static reconciliation: 92 owner repos; 77 unique interface rows; all 77 are a subset of owner inventory; zero unknown graph endpoints; zero unknown contract producer/consumer names; all 38 cross-repository contracts have graph representation; 42 authorities; 39 contract records match 39 integration-gap records; 22 RUNTIME_DEPENDENCY edges and 22 CONTRACT_FLOW edges in the dependency graph; 44 runtime_out adapter records in the interface registry. A direct static cross-check of the validator's current invariants returned zero errors. These are static registry checks, **not** a successful Actions run. The latest federation gate runs were still queued when inspected, and earlier failed runs had `runner_id=0` with no steps.
 
 
 
@@ -224,9 +224,9 @@ The latest inspected workflow runs for the seven repositories' current `main` SH
 | `synergy_midas_institutional` | `75f646380cd0a1478e5093216615b1af8ded1fbf` | [40047508720](https://github.com/Shtenco/synergy_midas_institutional/actions/runs/40047508720) | BLOCKED_TEST_FAILURE | runner allocated; install succeeded; `pytest -q` failed |
 | `synergy_marketvision` | `1baf9fa65c9974bb241f3a4fb2a352424bfe9bcc` | [40054785764](https://github.com/Shtenco/synergy_marketvision/actions/runs/40054785764) | BLOCKED_TEST_FAILURE | runner allocated; install succeeded; `pytest -q` failed |
 
-For the six test-failure rows, checkout, Python setup and dependency installation succeeded; the failed step is explicitly `pytest -q`. The run log archive endpoints returned empty bodies in this inspection, so the exact failing test names, tracebacks and assertions are not yet known. Do not label a specific test as the cause without its log. For Market Maker, no step ran, so no pytest conclusion can be drawn.
+For the six original pytest runs, checkout, Python setup and dependency installation succeeded. The exact failures were recovered from the logs: the route test read `.path` from FastAPI's internal `_IncludedRouter`; TradeMux also lacked the README version marker and serialized integral `unfilled_notional` as `0` instead of `0.0`; Relative Value, MIDAS Institutional and MarketVision lacked the version marker. These defects were patched in the six repositories. Post-fix reruns for Adaptive Engine, RiskGuard, Relative Value, MarketVision, Market Maker and AI Coder again failed or queued before steps (`runner_id=0` / empty steps); TradeMux and MIDAS Institutional remained queued at the latest poll. Thus no post-fix green test result is proven. Market Maker's original and retry jobs never reached pytest.
 
-**Impact:** all seven product domains remain KEEP as architectural components, but their current main-branch validation state is BLOCKED. Their adapter declarations and contract-registry entries are not a substitute for green tests or E2E evidence. No product is MERGE-READY on this evidence.
+**Impact:** all nine product domains remain KEEP as architectural components. The seven products in the main-branch CI sample are BLOCKED pending post-fix runner execution; the two additional products (Investment Committee and QuantLab) were included in the source/contract duplicate comparison but not in this main-CI remediation sample. Adapter declarations and contract-registry entries are not a substitute for green tests or E2E evidence. No product is MERGE-READY on this evidence.
 
 
 
@@ -247,7 +247,7 @@ The complete per-PR metadata and exact-head workflow records remain in [PR_BRANC
 | Scope | Status | Rationale |
 |---|---|---|
 | Seven product repositories | KEEP / CI BLOCKED | Distinct product contracts and domain authorities; preserve boundaries, but current main CI is red or never started |
-| Shared enterprise/runtime scaffold | DEVELOP | Confirmed repeated code; extract/version common foundation with migration tests |
+| Shared delivery scaffold / Production Contract specification | DEVELOP | Preserve independent releases; version behavior contracts and per-repository conformance tests; no mandatory shared runtime |
 | Long Term Harness PR #1 CI | BLOCKED_INFRA | All jobs failed before first recorded step; no test result |
 | AI Language PR #35 CI | BLOCKED_INFRA | All jobs failed before first recorded step; no test result |
 | MERGE-READY | None in this audit | No exact-head green CI plus complete review/evidence closure |
@@ -255,9 +255,9 @@ The complete per-PR metadata and exact-head workflow records remain in [PR_BRANC
 
 ## Limitations and next pass
 
-- This focused pass covers seven trading repositories, not every source file in all 92 repositories.
+- This focused pass covers nine trading product repositories, not every source file in all 92 repositories.
 - Git tree SHA equality proves exact blob identity for the compared files, not runtime equivalence of the whole products.
-- The current CI connector surface exposed job metadata and an empty logs response; it did not expose readable runner logs or test annotations for these failed jobs.
+- Some historical pre-runner failures expose no logs or annotations; the six original trading pytest logs were readable and yielded concrete failures. Post-fix runner failures again have no executed steps, so they cannot validate the patches.
 - Continue with the remaining repository families (apps/web surfaces, AI agents/memory, blockchain/economic systems, compression/compute and science) using the same tree/SHA and contract/interface comparison method.
 
 
@@ -311,7 +311,7 @@ Release metadata markers were restored in the four affected README files (TradeM
 
 All six new runs were queued at the last status read; no success is claimed yet. Market Maker's failed job was explicitly re-run (attempt 2) and was queued at the last status read. The original test result remains unknown until that rerun obtains a runner and publishes steps/logs.
 
-**Current classification:** all seven product repositories remain `DEVELOP` until the reruns are green. No product is `MERGE-READY`.
+**Current classification:** all nine product repositories remain `KEEP` as separate product domains. The seven repositories in the CI remediation sample remain `BLOCKED` for validation until post-fix Actions steps execute; no branch is `MERGE-READY`.
 
 
 ## Additional branch ancestry pass — Midas AI, AI Coder and Science Agent
