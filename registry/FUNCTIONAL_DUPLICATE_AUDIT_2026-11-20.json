@@ -248,11 +248,22 @@
     }
   ],
   "status_counts": {
-    "KEEP": 7,
-    "DEVELOP": 1,
-    "BLOCKED": 2,
-    "MERGE_READY": 0,
-    "ARCHIVE_CANDIDATE": 0
+    "product_repositories": {
+      "KEEP": 7
+    },
+    "shared_foundation": {
+      "DEVELOP": 1
+    },
+    "main_ci": {
+      "BLOCKED_INFRA": 1,
+      "BLOCKED_TEST_FAILURE": 6,
+      "GREEN": 0
+    },
+    "priority_pr_ci": {
+      "BLOCKED_INFRA": 2,
+      "MERGE_READY": 0
+    },
+    "archive_candidates": 0
   },
   "limitations": [
     "Focused seven-repository comparison only; no claim of completed 92-repository file audit",
@@ -303,5 +314,97 @@
     "all_seven_product_contracts_registered": true,
     "e2e_tested_runtime_edges_in_governance_snapshot": 0,
     "interpretation": "Registry and adapter metadata do not prove end-to-end runtime execution"
+  },
+  "main_ci_snapshot": {
+    "repositories": 7,
+    "green_runs": 0,
+    "blocked_infra": 1,
+    "blocked_test_failure": 6,
+    "records": [
+      {
+        "repo": "Shtenco/synergy_market_maker",
+        "main_sha": "3edcea187c45866d55a65b74dc707b7b1009a69b",
+        "run_id": 42536892178,
+        "run_url": "https://github.com/Shtenco/synergy_market_maker/actions/runs/42536892178",
+        "job_count": 1,
+        "runner_id": 0,
+        "steps_observed": 0,
+        "failed_step": null,
+        "classification": "BLOCKED_INFRA",
+        "log_archive_body": "empty"
+      },
+      {
+        "repo": "Shtenco/synergy_adaptive_engine",
+        "main_sha": "c4af6194eedfbf9b9c0824822abe42306ba9f6b8",
+        "run_id": 40047566286,
+        "run_url": "https://github.com/Shtenco/synergy_adaptive_engine/actions/runs/40047566286",
+        "job_count": 1,
+        "runner_allocated": true,
+        "install_steps": "success",
+        "failed_step": "pytest -q",
+        "classification": "BLOCKED_TEST_FAILURE",
+        "log_archive_body": "empty"
+      },
+      {
+        "repo": "Shtenco/synergy_riskguard",
+        "main_sha": "bc3ef1810c5d77f54b8a9ecf2f1b8adc35231f2b",
+        "run_id": 40047487688,
+        "run_url": "https://github.com/Shtenco/synergy_riskguard/actions/runs/40047487688",
+        "job_count": 1,
+        "runner_allocated": true,
+        "install_steps": "success",
+        "failed_step": "pytest -q",
+        "classification": "BLOCKED_TEST_FAILURE",
+        "log_archive_body": "empty"
+      },
+      {
+        "repo": "Shtenco/synergy_trademux",
+        "main_sha": "fe584afeba1410f40640672f277be4ab16e76b8c",
+        "run_id": 40054795636,
+        "run_url": "https://github.com/Shtenco/synergy_trademux/actions/runs/40054795636",
+        "job_count": 1,
+        "runner_allocated": true,
+        "install_steps": "success",
+        "failed_step": "pytest -q",
+        "classification": "BLOCKED_TEST_FAILURE",
+        "log_archive_body": "empty"
+      },
+      {
+        "repo": "Shtenco/synergy_relative_value",
+        "main_sha": "0f37ef55ac989933acd63a0954b5cf521eec4449",
+        "run_id": 40047520007,
+        "run_url": "https://github.com/Shtenco/synergy_relative_value/actions/runs/40047520007",
+        "job_count": 1,
+        "runner_allocated": true,
+        "install_steps": "success",
+        "failed_step": "pytest -q",
+        "classification": "BLOCKED_TEST_FAILURE",
+        "log_archive_body": "empty"
+      },
+      {
+        "repo": "Shtenco/synergy_midas_institutional",
+        "main_sha": "75f646380cd0a1478e5093216615b1af8ded1fbf",
+        "run_id": 40047508720,
+        "run_url": "https://github.com/Shtenco/synergy_midas_institutional/actions/runs/40047508720",
+        "job_count": 1,
+        "runner_allocated": true,
+        "install_steps": "success",
+        "failed_step": "pytest -q",
+        "classification": "BLOCKED_TEST_FAILURE",
+        "log_archive_body": "empty"
+      },
+      {
+        "repo": "Shtenco/synergy_marketvision",
+        "main_sha": "1baf9fa65c9974bb241f3a4fb2a352424bfe9bcc",
+        "run_id": 40054785764,
+        "run_url": "https://github.com/Shtenco/synergy_marketvision/actions/runs/40054785764",
+        "job_count": 1,
+        "runner_allocated": true,
+        "install_steps": "success",
+        "failed_step": "pytest -q",
+        "classification": "BLOCKED_TEST_FAILURE",
+        "log_archive_body": "empty"
+      }
+    ]
   }
 }
