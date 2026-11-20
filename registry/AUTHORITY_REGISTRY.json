@@ -276,6 +276,271 @@
         "settlement_finality",
         "accounting_recognition"
       ]
+    },
+    "market_perception": {
+      "owner": "Shtenco/synergy_marketvision",
+      "facts": [
+        "market_feature_observation",
+        "feature_window_summary"
+      ],
+      "forbidden": [
+        "trade_authorization",
+        "risk_override",
+        "settlement_finality"
+      ]
+    },
+    "adaptive_policy": {
+      "owner": "Shtenco/synergy_adaptive_engine",
+      "facts": [
+        "market_regime_classification",
+        "regime_threshold_evidence"
+      ],
+      "forbidden": [
+        "trade_authorization",
+        "risk_override",
+        "capital_release"
+      ]
+    },
+    "market_graph": {
+      "owner": "Shtenco/synergy_market_graph",
+      "facts": [
+        "graph_derived_fair_value",
+        "path_and_hop_evidence"
+      ],
+      "forbidden": [
+        "execution_authorization",
+        "settlement_finality",
+        "accounting_recognition"
+      ]
+    },
+    "market_making": {
+      "owner": "Shtenco/synergy_market_maker",
+      "facts": [
+        "bounded_liquidity_quote",
+        "inventory_skew",
+        "spread_estimate"
+      ],
+      "forbidden": [
+        "order_execution",
+        "fill_claim",
+        "risk_override"
+      ]
+    },
+    "investment_committee": {
+      "owner": "Shtenco/synergy_ai_investment_committee",
+      "facts": [
+        "investment_thesis_score",
+        "committee_vote_summary"
+      ],
+      "forbidden": [
+        "capital_release",
+        "trade_authorization",
+        "risk_override"
+      ]
+    },
+    "institutional_research": {
+      "owner": "Shtenco/synergy_midas_institutional",
+      "facts": [
+        "institutional_assessment",
+        "target_notional_and_risk_estimate"
+      ],
+      "forbidden": [
+        "risk_approval",
+        "execution_authorization",
+        "settlement_finality"
+      ]
+    },
+    "crypto_market_anomaly": {
+      "owner": "Shtenco/synergy_crypto_pump",
+      "facts": [
+        "crypto_anomaly_score",
+        "pump_probability_and_rank"
+      ],
+      "forbidden": [
+        "trade_authorization",
+        "market_manipulation",
+        "execution"
+      ]
+    },
+    "bridge_solvency_telemetry": {
+      "owner": "Shtenco/synergy_2chain_qe",
+      "facts": [
+        "bridge_reserve_observation",
+        "health_factor_and_emergency_state"
+      ],
+      "forbidden": [
+        "mint_authorization",
+        "bridge_execution",
+        "accounting_recognition"
+      ]
+    },
+    "public_budget_provenance": {
+      "owner": "Shtenco/synergy_blochain_budget",
+      "facts": [
+        "budget_snapshot_provenance",
+        "record_merkle_root"
+      ],
+      "forbidden": [
+        "budget_authorization",
+        "funding_release",
+        "accounting_recognition"
+      ]
+    },
+    "financial_scenario_research": {
+      "owner": "Shtenco/synergy_ai_financial_system",
+      "facts": [
+        "scenario_assumptions_and_outputs",
+        "model_and_config_hashes"
+      ],
+      "forbidden": [
+        "recognized_revenue",
+        "settlement_finality",
+        "capital_authorization"
+      ]
+    },
+    "relative_value_research": {
+      "owner": "Shtenco/synergy_relative_value",
+      "facts": [
+        "pairwise_relative_value_signal",
+        "spread_and_zscore_estimate"
+      ],
+      "forbidden": [
+        "trade_authorization",
+        "risk_override",
+        "execution"
+      ]
+    },
+    "agent_economy_simulation": {
+      "owner": "Shtenco/synergy_agentic_ai_economy",
+      "facts": [
+        "simulated_agent_economy_state",
+        "simulation_only_results"
+      ],
+      "forbidden": [
+        "payment_authority",
+        "accounting_authority",
+        "capital_authorization",
+        "external_execution"
+      ]
+    },
+    "cryptographic_research": {
+      "owner": "Shtenco/dlp_solver",
+      "facts": [
+        "constraint_benchmark_results",
+        "reproducible_method_and_epistemic_status"
+      ],
+      "forbidden": [
+        "cryptographic_break_claim_without_evidence",
+        "production_security_approval"
+      ]
+    },
+    "scientific_model_consistency": {
+      "owner": "Shtenco/synergy_cold_nuclear",
+      "facts": [
+        "model_consistency_metrics",
+        "table_graph_gate_results"
+      ],
+      "forbidden": [
+        "causal_claim_authority",
+        "experimental_result_authority",
+        "deployment_authority"
+      ]
+    },
+    "compression_benchmark": {
+      "owner": "Shtenco/synergy_qr_compress",
+      "facts": [
+        "archive_round_trip_evidence",
+        "compression_benchmark_metrics"
+      ],
+      "forbidden": [
+        "archived_domain_authority",
+        "deployment_authority"
+      ]
+    },
+    "hardware_architecture_model": {
+      "owner": "Shtenco/synergy_motherboard_xpu_xml",
+      "facts": [
+        "hardware_model_parameters",
+        "measurement_and_energy_sweep"
+      ],
+      "forbidden": [
+        "hardware_certification",
+        "deployment_authority",
+        "runtime_execution_permission"
+      ]
+    },
+    "quantum_reference_research": {
+      "owner": "Shtenco/synergy_binary_quantum_theory",
+      "facts": [
+        "quantum_reference_benchmark",
+        "reference_error_and_chsh_metrics"
+      ],
+      "forbidden": [
+        "experimental_result_claim",
+        "novel_physics_claim",
+        "scientific_confirmation"
+      ]
+    },
+    "monetary_simulation": {
+      "owner": "Shtenco/synergy_graph_print_money",
+      "facts": [
+        "monetary_scenario_simulation",
+        "modeled_reserve_and_price_impact"
+      ],
+      "forbidden": [
+        "realized_external_profit_claim",
+        "accounting_authority",
+        "capital_authorization",
+        "token_mint_authorization"
+      ]
+    },
+    "source_provenance_graph": {
+      "owner": "Shtenco/synergy_epstein_network",
+      "facts": [
+        "source_provenance_nodes_and_edges",
+        "evidence_hashes_and_relationship_semantics"
+      ],
+      "forbidden": [
+        "wrongdoing_inference",
+        "identity_claim",
+        "legal_finding"
+      ]
+    },
+    "reasoning_benchmark_generation": {
+      "owner": "Shtenco/synergy_agi_olga",
+      "facts": [
+        "generated_benchmark_suite",
+        "task_domain_and_seed_provenance"
+      ],
+      "forbidden": [
+        "agi_claim",
+        "model_quality_claim",
+        "deployment_authority"
+      ]
+    },
+    "mobile_source_integrity": {
+      "owner": "Shtenco/synergy_app",
+      "facts": [
+        "mobile_source_artifact_hashes",
+        "source_verified_build_status"
+      ],
+      "forbidden": [
+        "store_publication_authority",
+        "release_authorization",
+        "deployment_authority"
+      ]
+    },
+    "superapp_source_surface": {
+      "owner": "Shtenco/sinergy_super_app",
+      "facts": [
+        "superapp_source_manifest_hashes",
+        "surface_verification_and_build_status"
+      ],
+      "forbidden": [
+        "deployment_authority",
+        "release_authorization",
+        "client_claim_as_domain_truth"
+      ]
     }
   }
 }
