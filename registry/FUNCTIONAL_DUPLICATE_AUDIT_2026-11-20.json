@@ -547,5 +547,42 @@
     "runtime_edge_proven": false,
     "decision": "DEVELOP",
     "caveat": "Both implementations are on Draft feature branches while their main branches are README-only."
+  },
+  "central_actions_status": {
+    "latest_maturity_gate": {
+      "run_id": 44643358335,
+      "url": "https://github.com/Shtenco/synergy_system/actions/runs/44643358335",
+      "status": "queued",
+      "job": "maturity-gate",
+      "runner_id": null,
+      "steps_observed": 0,
+      "classification": "BLOCKED_INFRA"
+    },
+    "latest_contract_validation": {
+      "run_id": 44643347370,
+      "url": "https://github.com/Shtenco/synergy_system/actions/runs/44643347370",
+      "status": "queued",
+      "job": "contracts",
+      "runner_id": null,
+      "steps_observed": 0,
+      "classification": "BLOCKED_INFRA"
+    },
+    "previous_completed_failures": [
+      {
+        "run_id": 44638380402,
+        "workflow": "Validate SYNERGY Federation",
+        "conclusion": "failure",
+        "runner_id": 0,
+        "steps_observed": 0
+      },
+      {
+        "run_id": 44635463730,
+        "workflow": "Validate SYNERGY Typed Contracts",
+        "conclusion": "failure",
+        "runner_id": 0,
+        "steps_observed": 0
+      }
+    ],
+    "interpretation": "Static registry reconciliation passed the explicit cross-checks in this audit; Actions validation has not executed. Queued runs are not green."
   }
 }
