@@ -61,6 +61,22 @@ The seven `core.py`, `api.py` and `synergy_contracts.py` files each have **seven
 
 All seven product contract IDs are present in the central contract registry. Their producer/consumer implementation metadata is recorded, but the federation governance snapshot still reports **zero E2E-tested runtime edges**. Therefore registry presence and adapter declarations are not treated as proof of live end-to-end execution.
 
+
+
+## API, contract and runtime topology cross-check
+
+The central `REPOSITORY_INTERFACES.json` and `CONTRACT_REGISTRY.json` confirm that the seven repositories are not seven interchangeable copies. Their declared boundaries form this typed flow:
+
+- `synergy_market_maker` → `synergy_midas_ai`: `synergy.trading.liquidity-quote/v1`.
+- `synergy_adaptive_engine` → `synergy_midas_ai`: `synergy.trading.market-regime/v1`.
+- `synergy_marketvision` → `synergy_midas_ai`: `synergy.trading.market-features/v1`.
+- `synergy_relative_value` → `synergy_midas_ai`: `synergy.trading.relative-value-signal/v1`.
+- `synergy_midas_institutional` → `synergy_midas_ai`: `synergy.trading.institutional-assessment/v1`.
+- `synergy_riskguard` → `synergy_trademux`: `synergy.trading.risk-decision/v1`; Riskguard consumes `synergy.trading.validation-decision/v1` from `synergy_quantlab`.
+- `synergy_trademux` → `synergy_pay_system`: `synergy.trading.execution-result/v1`; Trademux also owns the intra-repository execution-plan contract.
+
+The five signal/research components converge into the MIDAS intelligence aggregator; the risk decision then gates execution routing, and the execution result flows to settlement. These are typed, registered, adapter-evidenced edges. They are not yet E2E-tested in the central governance snapshot (0 E2E-tested edges), so the architecture map must not present them as fully validated live flows.
+
 ## Recommended architecture change
 
 1. Keep all seven product repositories and their domain-specific cores.
