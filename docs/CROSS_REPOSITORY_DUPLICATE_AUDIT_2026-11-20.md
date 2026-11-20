@@ -396,3 +396,8 @@ The separate repository-wide [canonical-core-ci run 33987930501](https://github.
 I committed a targeted fix on the PR branch `feat/external-profit-import-v1-20260905`: `pyproject.toml` now explicitly includes `sinergy_financial_os*` and excludes `tests*` for setuptools package discovery. Fix commit: `5338ded06c76e574d8061c13a7e42b9b470f23fc`. The branch SHA and all central branch SHA/inventory/CSV/ancestry/decision registries were refreshed; it is now 450 ahead / 24 behind main. The branch remains stacked on distribution-capacity V4.
 
 New exact-head workflows [44671467993](https://github.com/Shtenco/synergy_financial_os/actions/runs/44671467993) (canonical core CI) and [44671468005](https://github.com/Shtenco/synergy_financial_os/actions/runs/44671468005) (isolated importer) were queued at the last check. No post-fix pass is claimed until they execute.
+
+
+### Financial OS post-fix CI outcome
+
+Both exact-head runs triggered by the packaging fix — canonical core CI `44671467993` and isolated External Profit Import `44671468005` — completed as failure with `runner_id=0` and zero recorded steps (the second matrix job was cancelled, also with no runner). This did not execute the new package-discovery configuration or importer tests. The fix is committed and SHA-registered, but remains unverified until a runner is assigned.
