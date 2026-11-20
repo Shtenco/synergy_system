@@ -218,6 +218,20 @@ For the six test-failure rows, checkout, Python setup and dependency installatio
 
 **Impact:** all seven product domains remain KEEP as architectural components, but their current main-branch validation state is BLOCKED. Their adapter declarations and contract-registry entries are not a substitute for green tests or E2E evidence. No product is MERGE-READY on this evidence.
 
+
+
+### Other priority PR CI states
+
+The broader priority-PR evidence register also records:
+
+- `synergy_long_term_harness` PRs #1–#4: failed workflows; all observed Python matrix jobs have empty step lists, so no compile/unit/CLI test execution is evidenced.
+- `synergy_agi_autopilot` PRs #12, #13, #14, #18, #21 and #24: failures across desktop-renderer, Python sidecars, browser bridge and Rust platform jobs; the job-step endpoint returned empty step lists, so the test/build assertions are not evidenced as run.
+- `synergy_hierarchical_cognitive_memory_architecture` PR #1: cancelled before steps; no test result.
+- `synergy_motherboard_xpu_xml` PR #4: workflows were queued at inspection; no conclusion.
+- `synergy_system` PR #54: no workflow run was visible for the exact inspected head.
+
+The complete per-PR metadata and exact-head workflow records remain in [PR_BRANCH_DEPENDENCY_AUDIT_2026-11-20.json](../registry/PR_BRANCH_DEPENDENCY_AUDIT_2026-11-20.json). These states are not merge evidence; no PR in the inspected priority set is MERGE-READY.
+
 ## Status register
 
 | Scope | Status | Rationale |
