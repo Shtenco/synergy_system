@@ -27,7 +27,9 @@
 
 **Trading product duplication audit:** seven product repos share 29 exact enterprise/runtime blobs across all seven, but their core/API/contract blobs are distinct. Product repositories remain independent. The V3 product-line master spec rules out a mandatory shared runtime; the remediation is a versioned production-contract specification plus per-repository conformance tests. [Audit and machine-readable evidence](docs/CROSS_REPOSITORY_DUPLICATE_AUDIT_2026-11-20.md).
 
-**Authority rule:** owner inventory membership, an interface record, a defined contract, an adapter and an E2E-tested edge are separate states. The 76 interface rows are not the 92-repository owner inventory. Current owner-wide open PR discovery is 549; only 18 priority PRs have full metadata enrichment, while 531 remain discovery-only. Existing 39 contract families remain unchanged; the memory component is recorded separately as one uncontracted candidate rather than being misrepresented as a registered contract.
+**CI evidence status:** latest federation maturity and typed-contract workflow attempts have failed or remained queued before runner steps (`runner_id=0` / empty steps). The validators have not yet supplied assertion-level results; see [CI evidence audit](docs/CROSS_REPOSITORY_DUPLICATE_AUDIT_2026-11-20.md).
+
+**Authority rule:** owner inventory membership, an interface record, a defined contract, an adapter and an E2E-tested edge are separate states. The 77 interface rows are not the 92-repository owner inventory. Current owner-wide open PR discovery is 549; 14 priority PRs have full metadata enrichment in this evidence pass; 535 remain discovery-only or not yet individually enriched. Existing 39 contract families remain unchanged; the memory and mission-lifecycle boundaries are recorded as two uncontracted candidates rather than being misrepresented as registered contracts.
 
 Canonical current reports:
 - [92-repository owner inventory](https://github.com/Shtenco/synergy/blob/main/README.md)
