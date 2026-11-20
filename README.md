@@ -7,6 +7,7 @@
 |---|---:|
 | Registered interface components | **77** |
 | Canonical contract families | **39** |
+| Registered authorities | **42** |
 | Runtime adapter edges | **44** |
 | E2E-tested edges | **0** |
 | Uncontracted candidate components | **1** |
