@@ -12,16 +12,16 @@
 | E2E-tested edges | **0** |
 | Uncontracted candidate components | **1** |
 | Observed contract / lifecycle risks | **3** |
-| Current open PRs in owner inventory | **549** (18 priority PRs enriched) |
+| Current open PRs in owner inventory | **549** (14 priority PRs enriched in the current evidence register) |
 | Security blockers | **4 P0 + 1 P1** |
 | Live branch refs | **1,294 across 92 repositories** |
 | Live branch SHA coverage | **1,294 / 1,294** |
 | Fresh main-vs-branch ancestry comparisons | **105 / 1,202 non-main refs** |
-| Remaining ancestry comparisons | **1103** |
+| Remaining ancestry comparisons | **1,097** |
 | Priority PRs with exact-head workflow metadata | **14** |
 | Merge-ready PRs in reviewed priority set | **0** |
 
-**New candidate:** [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) is registered as `ARCHITECTURAL_ONLY`. Its current PR #1 is Draft, 135 commits ahead of main, and its latest inspected CI run was cancelled before any test step; no runtime contract, adapter or E2E execution is proven.
+**Memory candidates:** [`synergy_hierarchical_cognitive_memory_architecture`](https://github.com/Shtenco/synergy_hierarchical_cognitive_memory_architecture) and [`synergy_long_term_harness`](https://github.com/Shtenco/synergy_long_term_harness) are both registered as `ARCHITECTURAL_ONLY`. Both main branches are README-only while implementations sit on Draft feature branches. Their memory/archive/context capabilities overlap but are complementary; a single memory subsystem contract is still missing, and no runtime adapter or E2E execution is proven.
 
 **Authority rule:** owner inventory membership, an interface record, a defined contract, an adapter and an E2E-tested edge are separate states. The 76 interface rows are not the 92-repository owner inventory. Current owner-wide open PR discovery is 549; only 18 priority PRs have full metadata enrichment, while 531 remain discovery-only. Existing 39 contract families remain unchanged; the memory component is recorded separately as one uncontracted candidate rather than being misrepresented as a registered contract.
 
