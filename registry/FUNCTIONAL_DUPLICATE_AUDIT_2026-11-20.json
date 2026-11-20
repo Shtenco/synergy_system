@@ -1070,5 +1070,53 @@
       "Midas AI historical strategy and independent risk branches share a large baseline and require stack/dependency review.",
       "Science Agent service protocol, search evidence graph and source-quality branches overlap on a common science core; review stack/dependency order."
     ]
+  },
+  "feature_branch_ci_retry": {
+    "attempted_at": "2026-11-20",
+    "rerun_accepted": [
+      {
+        "repo": "Shtenco/synergy_ai_coder",
+        "run_id": 43561808615,
+        "attempt": 2,
+        "status_at_last_check": "queued",
+        "runner_id": null,
+        "steps": 0
+      },
+      {
+        "repo": "Shtenco/synergy_ai_coder",
+        "run_id": 44452576244,
+        "attempt": 2,
+        "status_at_last_check": "queued",
+        "runner_id": null,
+        "steps": 0
+      }
+    ],
+    "rerun_rejected_as_older_than_one_month": [
+      {
+        "repo": "Shtenco/synergy_midas_ai",
+        "run_id": 32453096236
+      },
+      {
+        "repo": "Shtenco/synergy_midas_ai",
+        "run_id": 32470135785
+      },
+      {
+        "repo": "Shtenco/synergy_ai_coder",
+        "run_id": 32176942797
+      },
+      {
+        "repo": "Shtenco/synergy_nexus_science_agent",
+        "run_id": 32506472197
+      },
+      {
+        "repo": "Shtenco/synergy_nexus_science_agent",
+        "run_id": 32453305218
+      },
+      {
+        "repo": "Shtenco/synergy_nexus_science_agent",
+        "run_id": 32470329120
+      }
+    ],
+    "interpretation": "Original jobs failed/cancelled before steps; accepted retries remain queued, rejected retries are not evidence of source/test failure. CI blocked pending runner execution."
   }
 }
