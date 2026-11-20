@@ -75,6 +75,24 @@
       ],
       "authority": "market_perception",
       "decision": "KEEP"
+    },
+    {
+      "repo": "Shtenco/synergy_ai_investment_committee",
+      "main_sha": "7dbec0202badf1afce60ada83b5402f8d8ed9f14",
+      "contract_ids": [
+        "synergy.trading.investment-thesis/v1"
+      ],
+      "authority": "investment_committee",
+      "decision": "KEEP"
+    },
+    {
+      "repo": "Shtenco/synergy_quantlab",
+      "main_sha": "57ee40a6879c0db6550b573aacadad27347fb2db",
+      "contract_ids": [
+        "synergy.trading.validation-decision/v1"
+      ],
+      "authority": "trading_validation",
+      "decision": "KEEP"
     }
   ],
   "pairwise": [
@@ -248,7 +266,7 @@
     }
   ],
   "status_counts": {
-    "KEEP": 7,
+    "KEEP": 9,
     "DEVELOP": 8,
     "BLOCKED": 2,
     "MERGE_READY": 0,
@@ -1348,5 +1366,30 @@
       }
     },
     "status": "DEVELOP"
+  },
+  "all_nine_intersection": {
+    "repositories": [
+      "Shtenco/synergy_market_maker",
+      "Shtenco/synergy_adaptive_engine",
+      "Shtenco/synergy_riskguard",
+      "Shtenco/synergy_trademux",
+      "Shtenco/synergy_relative_value",
+      "Shtenco/synergy_midas_institutional",
+      "Shtenco/synergy_marketvision",
+      "Shtenco/synergy_ai_investment_committee",
+      "Shtenco/synergy_quantlab"
+    ],
+    "common_normalized_paths": 63,
+    "identical_blob_shas": 29,
+    "unique_blob_sha_counts": {
+      "core_py": 9,
+      "api_py": 9,
+      "synergy_contracts_py": 9
+    },
+    "contracts": {
+      "Shtenco/synergy_ai_investment_committee": "synergy.trading.investment-thesis/v1",
+      "Shtenco/synergy_quantlab": "synergy.trading.validation-decision/v1"
+    },
+    "method": "Normalize each product's src package directory to src/PACKAGE; compare exact Git blob SHA across all nine main branch trees."
   }
 }
