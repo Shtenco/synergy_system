@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": "2026-11-20",
+  "scope": "Focused live branch-source audit of AI Coder, Long Term Harness and Hierarchical Cognitive Memory",
+  "sources": [
+    {
+      "repo": "Shtenco/synergy_ai_coder",
+      "branch": "feat/recursive-context-archive-integration-20261118",
+      "sha": "ef6b0911337610773d3915ed93431ed98c897e6e",
+      "main_sha": "4ccdae38ff831d7b3f2e4e4872b593a5f58609e7",
+      "ahead": 177,
+      "behind": 0,
+      "observed_files": 31,
+      "decision": "DEVELOP"
+    },
+    {
+      "repo": "Shtenco/synergy_long_term_harness",
+      "branch": "feat/company-autopilot-memory-v1",
+      "sha": "bdc26413d886fb026bdc22c3a6f76dc2df873a1c",
+      "main_sha": "cc56a44e78e6af1f0d9f03ee81104c7d468593e3",
+      "ahead": 7,
+      "behind": 0,
+      "observed_files": 14,
+      "decision": "DEVELOP"
+    },
+    {
+      "repo": "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+      "branch": "feat/hierarchical-cognitive-memory-v1",
+      "sha": "6a55da91afafa27a005dd662617696b890ae5955",
+      "main_sha": "74b518c85d3a69fdc2e868737cbe9f4f2cac761c",
+      "ahead": 135,
+      "behind": 0,
+      "observed_files": 32,
+      "decision": "DEVELOP"
+    }
+  ],
+  "functional_boundaries": {
+    "ai_coder": {
+      "authority": "engineering workflow evidence",
+      "modules": [
+        "synergy_coder/context_archive.py",
+        "synergy_coder/context_archive_bytes.py",
+        "synergy_coder/archive_codecs.py",
+        "synergy_coder/semantic_memory.py",
+        "runtime/contracts.py"
+      ],
+      "existing_contracts": [
+        "synergy.engineering.requirement-trace/v1",
+        "synergy.engineering.change-evidence/v1"
+      ],
+      "memory_contract": false
+    },
+    "long_term_harness": {
+      "authority": "mission lifecycle and long-horizon agent harness",
+      "modules": [
+        "synergy_harness/memory.py",
+        "synergy_harness/context.py",
+        "synergy_harness/missions.py",
+        "synergy_harness/longhorizon.py"
+      ],
+      "features": [
+        "content-addressed chunk store",
+        "bounded context bundle",
+        "idempotency",
+        "lease fencing",
+        "approval",
+        "signed verification"
+      ],
+      "canonical_cross_repo_contract": false
+    },
+    "hierarchical_memory": {
+      "authority": "general knowledge memory and retrieval",
+      "modules": [
+        "synergy_memory/context_planner.py",
+        "synergy_memory/retrieval.py",
+        "synergy_memory/store.py",
+        "synergy_memory/api.py"
+      ],
+      "features": [
+        "versioned key/value records",
+        "graph edges",
+        "trust ranking",
+        "source snapshots",
+        "embeddings",
+        "model context budget",
+        "system core history"
+      ],
+      "canonical_cross_repo_contract": false
+    }
+  },
+  "overlap": [
+    "append-only durable records",
+    "content hashes and provenance",
+    "namespace separation",
+    "SQLite persistence",
+    "bounded context retrieval"
+  ],
+  "distinct_authorities": [
+    "engineering change/release evidence",
+    "mission execution lifecycle",
+    "general knowledge memory"
+  ],
+  "exact_duplicate_code": "Not established by this focused pass; implementations/data models differ in inspected source modules",
+  "registry_state": {
+    "synergy_ai_coder": "ADAPTER_INTEGRATED for engineering evidence only; not memory",
+    "synergy_long_term_harness": "ARCHITECTURAL_ONLY",
+    "synergy_hierarchical_cognitive_memory_architecture": "ARCHITECTURAL_ONLY"
+  },
+  "recommendation": {
+    "status": "DEVELOP",
+    "shared_runtime": false,
+    "proposed_contracts": [
+      "Memory Record Interchange",
+      "Context Retrieval Request/Result",
+      "Mission Lifecycle"
+    ],
+    "required_tests": [
+      "tenant/namespace isolation",
+      "digest/tamper and restore",
+      "bounded decompression",
+      "prompt-injection",
+      "cross-process restart",
+      "producer-consumer conformance",
+      "real E2E memory retrieval + mission resume"
+    ]
+  },
+  "ci": {
+    "status": "BLOCKED",
+    "details": "AI Coder and Long Term Harness PR jobs failed before steps; two AI Coder retries queued; older runs in Midas/Science cannot be rerun after one-month retry window"
+  },
+  "decisions": {
+    "KEEP": 0,
+    "DEVELOP": 3,
+    "MERGE_READY": 0,
+    "BLOCKED": 3,
+    "ARCHIVE_CANDIDATE": 0
+  }
+}
