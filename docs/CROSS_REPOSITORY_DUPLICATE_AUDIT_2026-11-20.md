@@ -348,3 +348,15 @@ At the last status read, both accepted AI Coder reruns remained queued with no r
 The new main-branch runs were polled after the fixes. Adaptive Engine (`44670168704`), RiskGuard (`44670174126`), Relative Value (`44670215047`) and MarketVision (`44670223496`) completed as failure with `runner_id=0` and empty steps. TradeMux (`44670775412`) and MIDAS Institutional (`44670219074`) were still queued at the last read; their job payloads had no executed steps. Market Maker's retry attempt 2 (`42536892178`) failed again with `runner_id=0`, empty steps. AI Coder's two accepted retry attempts (`43561808615`, `44452576244`) also failed with `runner_id=0`, empty steps.
 
 This means the source/test fixes are committed but cannot yet be validated by Actions. The new CI failures are not test regressions: there are no test-step results. Do not revert the fixes based on these infrastructure-only run outcomes. Re-run exact HEADs when GitHub provides an assigned runner; only then assess whether the route assertions, release metadata and TradeMux decimal tests pass.
+
+
+## Central federation workflow evidence
+
+The central repository's latest federation/contract validation runs were also inspected:
+
+- [Federation Maturity Gate 44669941281](https://github.com/Shtenco/synergy_system/actions/runs/44669941281): failed with `runner_id=0`, no steps.
+- [Typed Contracts 44644066903](https://github.com/Shtenco/synergy_system/actions/runs/44644066903): failed with `runner_id=0`, no steps.
+- [Federation Maturity Gate 44644066897](https://github.com/Shtenco/synergy_system/actions/runs/44644066897): failed with `runner_id=0`, no steps.
+- Newer runs [44670752433](https://github.com/Shtenco/synergy_system/actions/runs/44670752433) and [44670862728](https://github.com/Shtenco/synergy_system/actions/runs/44670862728) were queued at the last check.
+
+The central validators therefore have not yet supplied evidence that the latest registry/doc updates pass or fail their assertions. Their current state is `BLOCKED — runner not assigned / no step execution evidence`; do not report the typed contract validator as failing schema assertions.
