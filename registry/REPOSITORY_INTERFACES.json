@@ -23,7 +23,7 @@
       "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
-      "repo": "Shtenco/binary_quantum_theory",
+      "repo": "Shtenco/synergy_binary_quantum_theory",
       "domain": "SCIENCE_RESEARCH",
       "role": "Теоретико-физическая исследовательская ветка Binary Quantum Gravity.",
       "federation_parent": "Shtenco/synergy_megaproject",
@@ -44,8 +44,8 @@
           "contract_id": "synergy.science.quantum-reference-control/v1",
           "status": "ADAPTER_IMPLEMENTED",
           "evidence": [
-            "Shtenco/binary_quantum_theory:scripts/synergy_contracts.py",
-            "Shtenco/binary_quantum_theory:scripts/test_synergy_contracts.py",
+            "Shtenco/synergy_binary_quantum_theory:scripts/synergy_contracts.py",
+            "Shtenco/synergy_binary_quantum_theory:scripts/test_synergy_contracts.py",
             "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
             "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
           ]
@@ -111,7 +111,7 @@
       "interface_status": "ADAPTER_INTEGRATED"
     },
     {
-      "repo": "Shtenco/epstein_network",
+      "repo": "Shtenco/synergy_epstein_network",
       "domain": "SCIENCE_RESEARCH",
       "role": "Отдельный исследовательский knowledge-graph/дистиллированный граф источников; не runtime-компонент финансовой системы.",
       "federation_parent": "Shtenco/synergy_megaproject",
@@ -132,8 +132,8 @@
           "contract_id": "synergy.science.provenance-graph/v1",
           "status": "ADAPTER_IMPLEMENTED",
           "evidence": [
-            "Shtenco/epstein_network:src/epstein_network/synergy_contracts.py",
-            "Shtenco/epstein_network:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_epstein_network:src/epstein_network/synergy_contracts.py",
+            "Shtenco/synergy_epstein_network:tests/test_synergy_contracts.py",
             "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
             "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
           ]
@@ -167,7 +167,7 @@
       "interface_status": "EXTERNAL_RUNTIME_PENDING"
     },
     {
-      "repo": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
+      "repo": "Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python",
       "domain": "TRADING_MARKET_INTELLIGENCE",
       "role": "Многопоточный ML-прототип торгового робота на Python.",
       "federation_parent": "Shtenco/synergy_midas_ai",
@@ -1993,23 +1993,23 @@
           ]
         },
         {
-          "from": "Shtenco/binary_quantum_theory",
+          "from": "Shtenco/synergy_binary_quantum_theory",
           "contract_id": "synergy.science.quantum-reference-control/v1",
           "status": "ADAPTER_IMPLEMENTED",
           "evidence": [
-            "Shtenco/binary_quantum_theory:scripts/synergy_contracts.py",
-            "Shtenco/binary_quantum_theory:scripts/test_synergy_contracts.py",
+            "Shtenco/synergy_binary_quantum_theory:scripts/synergy_contracts.py",
+            "Shtenco/synergy_binary_quantum_theory:scripts/test_synergy_contracts.py",
             "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
             "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
           ]
         },
         {
-          "from": "Shtenco/epstein_network",
+          "from": "Shtenco/synergy_epstein_network",
           "contract_id": "synergy.science.provenance-graph/v1",
           "status": "ADAPTER_IMPLEMENTED",
           "evidence": [
-            "Shtenco/epstein_network:src/epstein_network/synergy_contracts.py",
-            "Shtenco/epstein_network:tests/test_synergy_contracts.py",
+            "Shtenco/synergy_epstein_network:src/epstein_network/synergy_contracts.py",
+            "Shtenco/synergy_epstein_network:tests/test_synergy_contracts.py",
             "Shtenco/synergy_nexus_science_agent:contracts/science_contracts.py",
             "Shtenco/synergy_nexus_science_agent:tests/test_m4_wave4_science_inputs.py"
           ]
