@@ -360,3 +360,16 @@ The central repository's latest federation/contract validation runs were also in
 - Newer runs [44670752433](https://github.com/Shtenco/synergy_system/actions/runs/44670752433) and [44670862728](https://github.com/Shtenco/synergy_system/actions/runs/44670862728) were queued at the last check.
 
 The central validators therefore have not yet supplied evidence that the latest registry/doc updates pass or fail their assertions. Their current state is `BLOCKED — runner not assigned / no step execution evidence`; do not report the typed contract validator as failing schema assertions.
+
+
+## Finance, blockchain and Meta OS branch relationships
+
+Ten additional branch comparisons were added to the central ancestry ledger. All ten are diverged from their current `main`; the key branch-to-branch comparisons reveal:
+
+- Financial OS `feat/distribution-available-capacity-v4-refund-restored-20260828` is **219 commits ahead** of `feat/accounting-close-merkle-v1-20260818` with no commits behind: it is a direct descendant/stack continuation, not an independent feature line.
+- Financial OS `feat/external-profit-import-v1-20260905` is **6 commits ahead** of the distribution-capacity V4 branch with no commits behind. Treat the three as an ordered stack: accounting-close Merkle → distribution capacity/refund restoration → external-profit import.
+- Meta OS `feat/autopilot-v5-ai-node-production-bootstrap-v5-rc5-20260824` and `feat/durable-supervisor-state-v3-20260821` are diverged relative to each other (121 ahead / 14 behind); they are not a clean linear stack and require conflict-aware integration.
+- Blockchain persistent-restart evidence and trust-state proof branches are each extremely far behind current main (932 commits) while retaining 37 and 18 unique commits respectively. Preserve the evidence work, but do not treat it as merge-ready without rebase/port strategy and current tests.
+- AI Language semantic-memory bridge (152 ahead / 63 behind) and accounting-close requirements branch (20 ahead / 56 behind) are divergent; the semantic-memory schema candidate is not yet in canonical main or central contract registry.
+
+All ten branches are `DEVELOP`; none is `MERGE-READY`. The central branch ledger now contains **137 / 1,202** non-main comparisons, with **1,065 pending** (ahead 7 / behind 17 / diverged 113).
