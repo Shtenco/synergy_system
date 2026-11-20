@@ -350,7 +350,7 @@
     {
       "contract_id": "synergy.science.quantum-reference-control/v1",
       "lifecycle_status": "ADAPTER_IMPLEMENTED",
-      "producer": "Shtenco/binary_quantum_theory",
+      "producer": "Shtenco/synergy_binary_quantum_theory",
       "consumers": [
         "Shtenco/synergy_nexus_science_agent"
       ],
@@ -370,7 +370,7 @@
     {
       "contract_id": "synergy.science.provenance-graph/v1",
       "lifecycle_status": "ADAPTER_IMPLEMENTED",
-      "producer": "Shtenco/epstein_network",
+      "producer": "Shtenco/synergy_epstein_network",
       "consumers": [
         "Shtenco/synergy_nexus_science_agent"
       ],
