@@ -16,8 +16,8 @@
 | Security blockers | **4 P0 + 1 P1** |
 | Live branch refs | **1,294 across 92 repositories** |
 | Live branch SHA coverage | **1,294 / 1,294** |
-| Fresh main-vs-branch ancestry comparisons | **187 / 1,202 non-main refs** |
-| Remaining ancestry comparisons | **1,015** |
+| Fresh main-vs-branch ancestry comparisons | **207 / 1,202 non-main refs** |
+| Remaining ancestry comparisons | **995** |
 | Priority PRs with exact-head workflow metadata | **14** |
 | Complete AI Language + BQT PR inventory | **122 / 122** |
 | Complete Financial OS + System PR inventory | **93 / 93** |
