@@ -111,9 +111,22 @@ A live consistency check found and corrected two independent validator/registry 
 2. Three interface/graph/contract references used pre-rename repository names. These have been reconciled to the canonical GitHub names: `Shtenco/synergy_binary_quantum_theory`, `Shtenco/synergy_epstein_network`, and `Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python`. Contract evidence paths retain their actual internal paths.
 3. The old validator checked only `CONTRACT_FLOW` edges when requiring every cross-repository contract to appear in the dependency graph. The graph also represents typed contracts as `RUNTIME_CONTRACT`; after correction, all contract-bearing graph edges are considered. The live graph contains 38 unique cross-repository contract IDs across `CONTRACT_FLOW` and `RUNTIME_CONTRACT`; the one intra-repository contract (`execution-plan/v1`) correctly does not require a cross-repository edge.
 
-Post-edit static reconciliation: 92 owner repos; 76 unique interface rows; all 76 are a subset of owner inventory; zero unknown graph endpoints; zero unknown contract producer/consumer names; all 38 cross-repository contracts have graph representation; 39 contract records match 39 integration-gap records; adapter edge count remains 22. These are static registry checks, **not** a successful Actions run. The latest federation gate runs were still queued when inspected, and earlier failed runs had `runner_id=0` with no steps.
+Post-edit static reconciliation: 92 owner repos; 77 unique interface rows; all 76 are a subset of owner inventory; zero unknown graph endpoints; zero unknown contract producer/consumer names; all 38 cross-repository contracts have graph representation; 42 authorities; 39 contract records match 39 integration-gap records; adapter edge count remains 22. A direct static cross-check of the validator's current invariants returned zero errors. These are static registry checks, **not** a successful Actions run. The latest federation gate runs were still queued when inspected, and earlier failed runs had `runner_id=0` with no steps.
 
 
+
+
+
+### Authority registry completion
+
+The contract registry referenced 22 authority names absent from `AUTHORITY_REGISTRY.json`. I added all 22 with canonical owner, bounded `facts` and explicit `forbidden` claims derived from each contract's domain and payload schema. The authority registry now contains **42 authorities**. A static reconciliation against the live registries found:
+
+- all 42 authority owners exist in the 92-repository owner inventory;
+- every one of the 39 contract records resolves to a known authority;
+- every contract authority owner matches that contract's producer;
+- all producer and consumer names resolve to canonical owner repositories.
+
+This preserves the policy that a producer may assert only its bounded domain facts; market signals, research, simulations, benchmark results and source-integrity evidence do not gain payment, accounting, capital, risk or execution authority.
 
 ### Central validation runs after registry corrections
 
