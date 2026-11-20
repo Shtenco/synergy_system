@@ -32,10 +32,19 @@ def main() -> int:
     gaps = load(GAPS)
     invariants = load(INVARIANTS)
 
-    repo_names = {r["full_name"] for r in repos["repositories"]}
-    interface_names = {r["repo"] for r in interfaces["repositories"]}
-    if interfaces.get("repository_count") != len(repo_names) or interface_names != repo_names:
-        fail("repository interface registry drift")
+    repo_rows = repos["repositories"]
+    repo_names = {r["full_name"] for r in repo_rows}
+    interface_rows = interfaces["repositories"]
+    interface_names = {r["repo"] for r in interface_rows}
+    if len(repo_names) != len(repo_rows):
+        fail("duplicate repository names in owner inventory")
+    if len(interface_names) != len(interface_rows):
+        fail("duplicate repository interface rows")
+    if interfaces.get("repository_count") != len(interface_names):
+        fail("repository interface registry count drift")
+    unknown_interfaces = interface_names - repo_names
+    if unknown_interfaces:
+        fail(f"repository interfaces reference unknown owner repositories: {sorted(unknown_interfaces)}")
     if gaps.get("totals", {}).get("contracts") != len(contracts["contracts"]):
         fail("integration gap registry contract count drift")
     invariant_ids = [x["id"] for x in invariants.get("invariants", [])]
@@ -69,6 +78,12 @@ def main() -> int:
         schema = load(path)
         if schema.get("$schema") != "https://json-schema.org/draft/2020-12/schema":
             fail(f"{cid}: schema draft mismatch")
+
+    for edge in graph["edges"]:
+        for endpoint in ("from", "to"):
+            repo = edge.get(endpoint)
+            if repo and repo not in repo_names:
+                fail(f"dependency graph {endpoint} repository missing: {repo}")
 
     graph_contracts = {
         e["contract_id"]
