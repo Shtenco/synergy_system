@@ -406,5 +406,60 @@
         "log_archive_body": "empty"
       }
     ]
+  },
+  "runtime_topology_crosscheck": {
+    "source": "Shtenco/synergy_system registry/REPOSITORY_INTERFACES.json and registry/CONTRACT_REGISTRY.json",
+    "edges": [
+      {
+        "from": "Shtenco/synergy_market_maker",
+        "to": "Shtenco/synergy_midas_ai",
+        "contract_id": "synergy.trading.liquidity-quote/v1",
+        "status": "ADAPTER_IMPLEMENTED"
+      },
+      {
+        "from": "Shtenco/synergy_adaptive_engine",
+        "to": "Shtenco/synergy_midas_ai",
+        "contract_id": "synergy.trading.market-regime/v1",
+        "status": "ADAPTER_IMPLEMENTED"
+      },
+      {
+        "from": "Shtenco/synergy_marketvision",
+        "to": "Shtenco/synergy_midas_ai",
+        "contract_id": "synergy.trading.market-features/v1",
+        "status": "ADAPTER_IMPLEMENTED"
+      },
+      {
+        "from": "Shtenco/synergy_relative_value",
+        "to": "Shtenco/synergy_midas_ai",
+        "contract_id": "synergy.trading.relative-value-signal/v1",
+        "status": "ADAPTER_IMPLEMENTED"
+      },
+      {
+        "from": "Shtenco/synergy_midas_institutional",
+        "to": "Shtenco/synergy_midas_ai",
+        "contract_id": "synergy.trading.institutional-assessment/v1",
+        "status": "ADAPTER_IMPLEMENTED"
+      },
+      {
+        "from": "Shtenco/synergy_quantlab",
+        "to": "Shtenco/synergy_riskguard",
+        "contract_id": "synergy.trading.validation-decision/v1",
+        "status": "ADAPTER_IMPLEMENTED"
+      },
+      {
+        "from": "Shtenco/synergy_riskguard",
+        "to": "Shtenco/synergy_trademux",
+        "contract_id": "synergy.trading.risk-decision/v1",
+        "status": "ADAPTER_IMPLEMENTED"
+      },
+      {
+        "from": "Shtenco/synergy_trademux",
+        "to": "Shtenco/synergy_pay_system",
+        "contract_id": "synergy.trading.execution-result/v1",
+        "status": "ADAPTER_IMPLEMENTED"
+      }
+    ],
+    "e2e_tested_edges": 0,
+    "caveat": "Adapter evidence and registered schemas do not establish end-to-end runtime validation"
   }
 }
