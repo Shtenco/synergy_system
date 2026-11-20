@@ -876,5 +876,116 @@
       "merge_ready": false,
       "notes": "Unique commit(s) are design-spec documents; implementation and exact-head CI evidence remain outstanding."
     }
-  ]
+  ],
+  "main_ci_root_cause_audit": {
+    "inspected_at": "2026-11-20",
+    "main_runs": [
+      {
+        "repo": "Shtenco/synergy_adaptive_engine",
+        "run_id": 40047566286,
+        "pytest": {
+          "failed": 1,
+          "passed": 20
+        },
+        "failures": [
+          "tests/test_enterprise_product.py::test_api_exposes_enterprise_control_routes: _IncludedRouter has no attribute path"
+        ],
+        "fix_commit": "f0622aa6d60be3c47d2ac752b9ef686e6dac6c5b",
+        "rerun_id": 44670168704
+      },
+      {
+        "repo": "Shtenco/synergy_riskguard",
+        "run_id": 40047487688,
+        "pytest": {
+          "failed": 1,
+          "passed": 23
+        },
+        "failures": [
+          "tests/test_enterprise_product.py::test_api_exposes_enterprise_control_routes: _IncludedRouter has no attribute path"
+        ],
+        "fix_commit": "e5ba5eab09e42ac25c695740bdc464ef3617c33c",
+        "rerun_id": 44670174126
+      },
+      {
+        "repo": "Shtenco/synergy_trademux",
+        "run_id": 40054795636,
+        "pytest": {
+          "failed": 3,
+          "passed": 20
+        },
+        "failures": [
+          "route test reads app.routes[].path; FastAPI _IncludedRouter lacks path",
+          "README version marker absent",
+          "unfilled_notional serialized as 0 while test expects canonical 0.0"
+        ],
+        "fix_commit": "0aafb097d3d442a4a5f0fc735e52bfa2c3071b8d",
+        "readme_commit": "70e08f117544b8c9c3650252e482620e37bf1d59",
+        "test_commit": "2aba48aacae3f4e89353dbc129f3bb4935838bef",
+        "rerun_id": 44670248392
+      },
+      {
+        "repo": "Shtenco/synergy_relative_value",
+        "run_id": 40047520007,
+        "pytest": {
+          "failed": 2,
+          "passed": 19
+        },
+        "failures": [
+          "route test reads app.routes[].path",
+          "README version marker absent"
+        ],
+        "fix_commit": "c9916f809ca60493b9c66a434e64ca8d8cb3d483",
+        "readme_commit": "ef2a44ea4d5551dccbda4b24d9b0a0d06d9a6a77",
+        "rerun_id": 44670185726
+      },
+      {
+        "repo": "Shtenco/synergy_midas_institutional",
+        "run_id": 40047508720,
+        "pytest": {
+          "failed": 2,
+          "passed": 19
+        },
+        "failures": [
+          "route test reads app.routes[].path",
+          "README version marker absent"
+        ],
+        "fix_commit": "a1c57d0466daf0e5e23c4ab4640d6a630d43ec67",
+        "readme_commit": "6eb09ac2b2c72bf7ec6aaa26390136f9013efd58",
+        "rerun_id": 44670191861
+      },
+      {
+        "repo": "Shtenco/synergy_marketvision",
+        "run_id": 40054785764,
+        "pytest": {
+          "failed": 2,
+          "passed": 18
+        },
+        "failures": [
+          "route test reads app.routes[].path",
+          "README version marker absent"
+        ],
+        "fix_commit": "d7c2d66dd4ab7015230ad08139c6589740933e0b",
+        "readme_commit": "d1018cba6b6c977ba8dce43ba8257601c0e2fe64",
+        "rerun_id": 44670201147
+      },
+      {
+        "repo": "Shtenco/synergy_market_maker",
+        "run_id": 42536892178,
+        "pytest": null,
+        "runner_id": 0,
+        "steps": 0,
+        "log_download": "404 BlobNotFound",
+        "rerun_attempt": 2,
+        "status_at_last_check": "queued"
+      }
+    ],
+    "remediation": {
+      "route_test": "All six repositories changed route assertions to app.openapi()['paths']",
+      "readme_version": "Restored Version: 2.0.0 in TradeMux, Relative Value, MIDAS Institutional and MarketVision",
+      "decimal_contract": "TradeMux now emits finite fixed-point decimal strings, preserving .0 for integral values"
+    },
+    "revalidation_status": "All six new main runs were queued at last status read; Market Maker rerun attempt 2 was queued. No green result claimed.",
+    "decision": "DEVELOP",
+    "merge_ready": false
+  }
 }
