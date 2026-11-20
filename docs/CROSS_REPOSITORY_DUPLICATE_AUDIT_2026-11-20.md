@@ -96,14 +96,34 @@ All seven product contract IDs are present in the central contract registry. The
 
 The absence of recorded steps means the intended tests were skipped before execution; it does not mean tests passed or failed. For the two PRs above, missing evidence includes checkout, dependency installation, compile/lint, unit tests and CLI/API smoke. The next validation must rerun the exact head SHAs after the runner issue is resolved, then inspect step-level output and test reports. Do not mark either PR MERGE-READY on the current evidence.
 
+
+
+### Seven-product main-branch CI pass
+
+The latest inspected workflow runs for the seven repositories' current `main` SHAs show **zero green runs in this sample**:
+
+| Repository | Exact main SHA | Run | Observed job result | Evidence |
+|---|---|---:|---|---|
+| `synergy_market_maker` | `3edcea187c45866d55a65b74dc707b7b1009a69b` | [42536892178](https://github.com/Shtenco/synergy_market_maker/actions/runs/42536892178) | BLOCKED_INFRA | 1 job, failure in ~3s, runner_id=0, no steps |
+| `synergy_adaptive_engine` | `c4af6194eedfbf9b9c0824822abe42306ba9f6b8` | [40047566286](https://github.com/Shtenco/synergy_adaptive_engine/actions/runs/40047566286) | BLOCKED_TEST_FAILURE | runner allocated; install succeeded; `pytest -q` failed |
+| `synergy_riskguard` | `bc3ef1810c5d77f54b8a9ecf2f1b8adc35231f2b` | [40047487688](https://github.com/Shtenco/synergy_riskguard/actions/runs/40047487688) | BLOCKED_TEST_FAILURE | runner allocated; install succeeded; `pytest -q` failed |
+| `synergy_trademux` | `fe584afeba1410f40640672f277be4ab16e76b8c` | [40054795636](https://github.com/Shtenco/synergy_trademux/actions/runs/40054795636) | BLOCKED_TEST_FAILURE | runner allocated; install succeeded; `pytest -q` failed |
+| `synergy_relative_value` | `0f37ef55ac989933acd63a0954b5cf521eec4449` | [40047520007](https://github.com/Shtenco/synergy_relative_value/actions/runs/40047520007) | BLOCKED_TEST_FAILURE | runner allocated; install succeeded; `pytest -q` failed |
+| `synergy_midas_institutional` | `75f646380cd0a1478e5093216615b1af8ded1fbf` | [40047508720](https://github.com/Shtenco/synergy_midas_institutional/actions/runs/40047508720) | BLOCKED_TEST_FAILURE | runner allocated; install succeeded; `pytest -q` failed |
+| `synergy_marketvision` | `1baf9fa65c9974bb241f3a4fb2a352424bfe9bcc` | [40054785764](https://github.com/Shtenco/synergy_marketvision/actions/runs/40054785764) | BLOCKED_TEST_FAILURE | runner allocated; install succeeded; `pytest -q` failed |
+
+For the six test-failure rows, checkout, Python setup and dependency installation succeeded; the failed step is explicitly `pytest -q`. The run log archive endpoints returned empty bodies in this inspection, so the exact failing test names, tracebacks and assertions are not yet known. Do not label a specific test as the cause without its log. For Market Maker, no step ran, so no pytest conclusion can be drawn.
+
+**Impact:** all seven product domains remain KEEP as architectural components, but their current main-branch validation state is BLOCKED. Their adapter declarations and contract-registry entries are not a substitute for green tests or E2E evidence. No product is MERGE-READY on this evidence.
+
 ## Status register
 
 | Scope | Status | Rationale |
 |---|---|---|
-| Seven product repositories | KEEP | Distinct product contracts and domain authorities; preserve boundaries |
+| Seven product repositories | KEEP / CI BLOCKED | Distinct product contracts and domain authorities; preserve boundaries, but current main CI is red or never started |
 | Shared enterprise/runtime scaffold | DEVELOP | Confirmed repeated code; extract/version common foundation with migration tests |
-| Long Term Harness PR #1 CI | BLOCKED | All jobs failed before first recorded step; no test result |
-| AI Language PR #35 CI | BLOCKED | All jobs failed before first recorded step; no test result |
+| Long Term Harness PR #1 CI | BLOCKED_INFRA | All jobs failed before first recorded step; no test result |
+| AI Language PR #35 CI | BLOCKED_INFRA | All jobs failed before first recorded step; no test result |
 | MERGE-READY | None in this audit | No exact-head green CI plus complete review/evidence closure |
 | ARCHIVE-CANDIDATE | None in this audit | Duplication is not sufficient evidence to archive a domain product |
 
