@@ -516,11 +516,23 @@
       "dependency_edges": 136,
       "runtime_dependency_edges": 22,
       "runtime_contract_edges": 22,
-      "adapter_implemented_runtime_edges": 22,
+      "adapter_implemented_runtime_edges": 44,
       "integration_gap_contracts": 39,
-      "invariants": 11
+      "invariants": 11,
+      "runtime_edges": 44,
+      "e2e_tested_runtime_edges": 0,
+      "contracts_with_gaps": 0,
+      "uncontracted_candidates": 1,
+      "observed_contract_risks": 3
     },
-    "authority_definitions_added": 22
+    "authority_definitions_added": 22,
+    "validator_invariants_added": [
+      "authority owner must match contract producer",
+      "adapter count must match runtime dependency plus runtime contract edges",
+      "E2E count must match graph",
+      "contracts-with-gaps and no-missing-endpoints totals must match registry rows",
+      "uncontracted component and observed risk totals must match registry rows"
+    ]
   },
   "memory_subsystem_comparison": {
     "repositories": [
