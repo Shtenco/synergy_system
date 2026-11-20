@@ -88,6 +88,21 @@ The five signal/research components converge into the MIDAS intelligence aggrega
 
 
 
+
+
+## Memory subsystem overlap: two candidates, complementary layers
+
+A branch-level source comparison found overlapping memory primitives in two projects, but not identical products:
+
+| Repository | Implemented branch-level responsibility | Distinctive boundary | Current maturity |
+|---|---|---|---|
+| `synergy_long_term_harness` | SHA-256 chunked, compressed append-only source archive; immutable record IDs; namespace checks; linked summaries; bounded byte-oriented context bundle; durable mission state, idempotency, lease fencing and local capability bridge | Evidence archive + mission/audit lifecycle; no network API and no shared typed federation contract | Main README-only; implementation on Draft stacked PR branches |
+| `synergy_hierarchical_cognitive_memory_architecture` | Versioned semantic records; source snapshots; trust states; graph edges; FTS5 and optional vector retrieval; dynamic model-specific context/token budget planner; consolidation candidates | Semantic index/retrieval + context planning; optional API adapter warns against public exposure without auth/TLS/rate limits | Main README-only; implementation on Draft PR #1 |
+
+**Overlap:** both define a SQLite-backed `MemoryStore`, namespaces, hashes/provenance, retrieval and bounded context assembly. **Not duplicates:** Long-Term Harness additionally owns mission idempotency/leases/verification and exact source chunk restoration; Hierarchical Memory additionally owns versioned knowledge records, graph/vector retrieval, trust/consolidation and model-profile token budgeting. Their main product files are not interchangeable.
+
+**Decision:** KEEP both as separate candidate components; DEVELOP one shared typed memory boundary and an explicit layered integration. Preferred direction: immutable source archive and mission evidence remain the durable source layer; hierarchical memory becomes the semantic index/retrieval/context-planning layer over source references. Do not merge repositories or duplicate storage authority. Both remain uncontracted and no runtime edge is claimed until schema, namespace/source identity, auth, adapters and E2E evidence exist.
+
 ## Central registry validator and identifier reconciliation
 
 A live consistency check found and corrected two independent validator/registry defects:
