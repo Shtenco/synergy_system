@@ -984,9 +984,79 @@
       "readme_version": "Restored Version: 2.0.0 in TradeMux, Relative Value, MIDAS Institutional and MarketVision",
       "decimal_contract": "TradeMux now emits finite fixed-point decimal strings, preserving .0 for integral values"
     },
-    "revalidation_status": "All six new main runs were queued at last status read; Market Maker rerun attempt 2 was queued. No green result claimed.",
+    "revalidation_status": "Fixes committed; revalidation blocked by runner allocation/initialization",
     "decision": "DEVELOP",
-    "merge_ready": false
+    "merge_ready": false,
+    "revalidation_runs": [
+      {
+        "repo": "Shtenco/synergy_adaptive_engine",
+        "run_id": 44670168704,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
+      },
+      {
+        "repo": "Shtenco/synergy_riskguard",
+        "run_id": 44670174126,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
+      },
+      {
+        "repo": "Shtenco/synergy_trademux",
+        "run_id": 44670775412,
+        "status": "queued",
+        "runner_id": null,
+        "steps": 0,
+        "head_sha": "3ef2e4ac61215fcf0ad073b4b59cc7938482b08e"
+      },
+      {
+        "repo": "Shtenco/synergy_relative_value",
+        "run_id": 44670215047,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
+      },
+      {
+        "repo": "Shtenco/synergy_midas_institutional",
+        "run_id": 44670219074,
+        "status": "queued",
+        "runner_id": 0,
+        "steps": 0
+      },
+      {
+        "repo": "Shtenco/synergy_marketvision",
+        "run_id": 44670223496,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
+      },
+      {
+        "repo": "Shtenco/synergy_market_maker",
+        "run_id": 42536892178,
+        "attempt": 2,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
+      },
+      {
+        "repo": "Shtenco/synergy_ai_coder",
+        "run_id": 43561808615,
+        "attempt": 2,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
+      },
+      {
+        "repo": "Shtenco/synergy_ai_coder",
+        "run_id": 44452576244,
+        "attempt": 2,
+        "status": "failure",
+        "runner_id": 0,
+        "steps": 0
+      }
+    ],
+    "interpretation": "Runner assignment/initialization is the current blocking layer; new failures have no recorded test execution. Do not classify source changes as failed tests until exact-head runs execute."
   },
   "additional_branch_pass": {
     "comparisons": [
