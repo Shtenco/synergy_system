@@ -248,35 +248,11 @@
     }
   ],
   "status_counts": {
-    "product_repositories": {
-      "KEEP": 7
-    },
-    "shared_foundation": {
-      "DEVELOP": 1
-    },
-    "main_ci": {
-      "BLOCKED_INFRA": 1,
-      "BLOCKED_TEST_FAILURE": 6,
-      "GREEN": 0
-    },
-    "priority_pr_ci": {
-      "BLOCKED_INFRA": 11,
-      "CANCELLED_BEFORE_STEPS": 1,
-      "PENDING": 1,
-      "NO_WORKFLOW_VISIBLE": 1,
-      "MERGE_READY": 0
-    },
-    "archive_candidates": 0,
-    "mobile_ci": {
-      "BLOCKED_INFRA": 2,
-      "MERGE_READY": 0
-    },
-    "mission_lifecycle": {
-      "KEEP": 2,
-      "DEVELOP": 1,
-      "MERGE_READY": 0,
-      "BLOCKED_INFRA": 10
-    }
+    "KEEP": 7,
+    "DEVELOP": 8,
+    "BLOCKED": 2,
+    "MERGE_READY": 0,
+    "ARCHIVE_CANDIDATE": 7
   },
   "limitations": [
     "Focused seven-repository comparison only; no claim of completed 92-repository file audit",
@@ -745,5 +721,160 @@
     "pending": "Motherboard XPU XML PR #4",
     "no_workflow_visible": "synergy_system PR #54",
     "source_registry": "Shtenco/synergy_system/registry/PR_BRANCH_DEPENDENCY_AUDIT_2026-11-20.json"
-  }
+  },
+  "architecture_correction": {
+    "source": "Shtenco/synergy_midas_institutional/docs/superpowers/specs/2026-09-21-final-product-line-3.0-master.md",
+    "decision": "Do not create mandatory shared runtime package",
+    "rationale": "Product line V3 requires independently deployable/licensable repositories and explicitly permits consistent copying of common concepts; no mandatory shared runtime repository",
+    "replacement": [
+      "Versioned production contract specification",
+      "Cross-repository conformance tests",
+      "Per-repository implementation ownership and releases",
+      "Compatibility/adoption matrix",
+      "Reviewed security-fix propagation"
+    ],
+    "status": "DEVELOP"
+  },
+  "branch_followup": [
+    {
+      "repo": "Shtenco/synergy_riskguard",
+      "branch": "enterprise/v2.0.0",
+      "status": "behind",
+      "ahead_by": 0,
+      "behind_by": 11,
+      "decision": "ARCHIVE-CANDIDATE",
+      "merge_ready": false,
+      "notes": "Review only; verify tags, releases, deployments, PRs and external refs before any archival action."
+    },
+    {
+      "repo": "Shtenco/synergy_riskguard",
+      "branch": "production/v3.0.0",
+      "status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 11,
+      "decision": "DEVELOP",
+      "merge_ready": false,
+      "notes": "Unique commit(s) are design-spec documents; implementation and exact-head CI evidence remain outstanding."
+    },
+    {
+      "repo": "Shtenco/synergy_trademux",
+      "branch": "enterprise/v2.0.0",
+      "status": "behind",
+      "ahead_by": 0,
+      "behind_by": 14,
+      "decision": "ARCHIVE-CANDIDATE",
+      "merge_ready": false,
+      "notes": "Review only; verify tags, releases, deployments, PRs and external refs before any archival action."
+    },
+    {
+      "repo": "Shtenco/synergy_trademux",
+      "branch": "production/v3.0.0",
+      "status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 14,
+      "decision": "DEVELOP",
+      "merge_ready": false,
+      "notes": "Unique commit(s) are design-spec documents; implementation and exact-head CI evidence remain outstanding."
+    },
+    {
+      "repo": "Shtenco/synergy_market_maker",
+      "branch": "enterprise/v2.0.0",
+      "status": "behind",
+      "ahead_by": 0,
+      "behind_by": 13,
+      "decision": "ARCHIVE-CANDIDATE",
+      "merge_ready": false,
+      "notes": "Review only; verify tags, releases, deployments, PRs and external refs before any archival action."
+    },
+    {
+      "repo": "Shtenco/synergy_market_maker",
+      "branch": "production/v3.0.0",
+      "status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 13,
+      "decision": "DEVELOP",
+      "merge_ready": false,
+      "notes": "Unique commit(s) are design-spec documents; implementation and exact-head CI evidence remain outstanding."
+    },
+    {
+      "repo": "Shtenco/synergy_adaptive_engine",
+      "branch": "enterprise/v2.0.0",
+      "status": "behind",
+      "ahead_by": 0,
+      "behind_by": 10,
+      "decision": "ARCHIVE-CANDIDATE",
+      "merge_ready": false,
+      "notes": "Review only; verify tags, releases, deployments, PRs and external refs before any archival action."
+    },
+    {
+      "repo": "Shtenco/synergy_adaptive_engine",
+      "branch": "production/v3.0.0",
+      "status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 10,
+      "decision": "DEVELOP",
+      "merge_ready": false,
+      "notes": "Unique commit(s) are design-spec documents; implementation and exact-head CI evidence remain outstanding."
+    },
+    {
+      "repo": "Shtenco/synergy_marketvision",
+      "branch": "enterprise/v2.0.0",
+      "status": "behind",
+      "ahead_by": 0,
+      "behind_by": 13,
+      "decision": "ARCHIVE-CANDIDATE",
+      "merge_ready": false,
+      "notes": "Review only; verify tags, releases, deployments, PRs and external refs before any archival action."
+    },
+    {
+      "repo": "Shtenco/synergy_marketvision",
+      "branch": "production/v3.0.0",
+      "status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 13,
+      "decision": "DEVELOP",
+      "merge_ready": false,
+      "notes": "Unique commit(s) are design-spec documents; implementation and exact-head CI evidence remain outstanding."
+    },
+    {
+      "repo": "Shtenco/synergy_relative_value",
+      "branch": "enterprise/v2.0.0",
+      "status": "behind",
+      "ahead_by": 0,
+      "behind_by": 12,
+      "decision": "ARCHIVE-CANDIDATE",
+      "merge_ready": false,
+      "notes": "Review only; verify tags, releases, deployments, PRs and external refs before any archival action."
+    },
+    {
+      "repo": "Shtenco/synergy_relative_value",
+      "branch": "production/v3.0.0",
+      "status": "diverged",
+      "ahead_by": 1,
+      "behind_by": 12,
+      "decision": "DEVELOP",
+      "merge_ready": false,
+      "notes": "Unique commit(s) are design-spec documents; implementation and exact-head CI evidence remain outstanding."
+    },
+    {
+      "repo": "Shtenco/synergy_midas_institutional",
+      "branch": "enterprise/v2.0.0",
+      "status": "behind",
+      "ahead_by": 0,
+      "behind_by": 13,
+      "decision": "ARCHIVE-CANDIDATE",
+      "merge_ready": false,
+      "notes": "Review only; verify tags, releases, deployments, PRs and external refs before any archival action."
+    },
+    {
+      "repo": "Shtenco/synergy_midas_institutional",
+      "branch": "production/v3.0.0",
+      "status": "diverged",
+      "ahead_by": 2,
+      "behind_by": 11,
+      "decision": "DEVELOP",
+      "merge_ready": false,
+      "notes": "Unique commit(s) are design-spec documents; implementation and exact-head CI evidence remain outstanding."
+    }
+  ]
 }
