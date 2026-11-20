@@ -90,6 +90,22 @@ The five signal/research components converge into the MIDAS intelligence aggrega
 
 
 
+
+
+## Web and mobile surface duplicate spot checks
+
+A separate exact-tree comparison covered four GitHub Pages repositories (`shtenco.github.io`, `shtencoauantai.github.io`, `synergychain.github.io`, `synergy.github.io`) and the two mobile app repositories:
+
+- Across the six website pairs, common path counts range from 2 to 4 and the only identical blob is the shared `LICENSE` file between `shtenco.github.io` and `shtencoauantai.github.io`. No identical `index.html`, README or application asset was found. These are separate portfolio/research/central-platform surfaces, not a merge candidate on current evidence.
+- `synergy_app` (Finance Android/iOS/web source, release verification) and `sinergy_super_app` (PWA/Android local mobile surface) share only the `README.md` and `LICENSE` paths, and neither blob is identical. Their release contracts are also distinct: `synergy.app.store-source-evidence/v1` vs `synergy.app.superapp-surface/v1`. Both accurately separate source verification from build/deployment authority. Decision: KEEP both; no repository merge. A future shared source-evidence schema fragment may reduce conceptual duplication, but should not collapse their platform-specific evidence.
+
+### Mobile CI evidence
+
+- `synergy_app` [run 42536928143](https://github.com/Shtenco/synergy_app/actions/runs/42536928143): `Verify store source` failed in ~3 seconds, `runner_id=0`, empty steps. Source verification tests were not evidenced as executed.
+- `sinergy_super_app` [run 40031082442](https://github.com/Shtenco/sinergy_super_app/actions/runs/40031082442): `Build APK` failed in ~3 seconds, `runner_id=0`, empty steps. APK build was not evidenced as started.
+
+Both are `BLOCKED_INFRA`, not evidence of failed source assertions or a failed APK compilation.
+
 ## Memory subsystem overlap: two candidates, complementary layers
 
 A branch-level source comparison found overlapping memory primitives in two projects, but not identical products:
