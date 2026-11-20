@@ -263,7 +263,11 @@
       "BLOCKED_INFRA": 2,
       "MERGE_READY": 0
     },
-    "archive_candidates": 0
+    "archive_candidates": 0,
+    "mobile_ci": {
+      "BLOCKED_INFRA": 2,
+      "MERGE_READY": 0
+    }
   },
   "limitations": [
     "Focused seven-repository comparison only; no claim of completed 92-repository file audit",
@@ -616,5 +620,66 @@
       }
     ],
     "interpretation": "Static registry reconciliation passed the explicit cross-checks in this audit; Actions validation has not executed. Queued runs are not green."
+  },
+  "surface_spot_checks": {
+    "websites": {
+      "repositories": [
+        "Shtenco/shtenco.github.io",
+        "Shtenco/shtencoauantai.github.io",
+        "Shtenco/synergychain.github.io",
+        "Shtenco/synergy.github.io"
+      ],
+      "pair_comparisons": 6,
+      "common_paths_min": 2,
+      "common_paths_max": 4,
+      "identical_blob_count_max": 1,
+      "only_identical_blob": "LICENSE",
+      "decision": "KEEP"
+    },
+    "mobile_apps": {
+      "repositories": [
+        {
+          "repo": "Shtenco/synergy_app",
+          "role": "Finance multi-platform source/release surface",
+          "contract_id": "synergy.app.store-source-evidence/v1",
+          "decision": "KEEP"
+        },
+        {
+          "repo": "Shtenco/sinergy_super_app",
+          "role": "PWA and Android mobile surface",
+          "contract_id": "synergy.app.superapp-surface/v1",
+          "decision": "KEEP"
+        }
+      ],
+      "common_paths": 2,
+      "identical_blobs": 0,
+      "common_paths_are": [
+        "README.md",
+        "LICENSE"
+      ],
+      "semantic_overlap": "Source-integrity and build/deployment maturity fields; platform-specific evidence remains distinct"
+    },
+    "mobile_ci": [
+      {
+        "repo": "Shtenco/synergy_app",
+        "run_id": 42536928143,
+        "url": "https://github.com/Shtenco/synergy_app/actions/runs/42536928143",
+        "job": "verify",
+        "conclusion": "failure",
+        "runner_id": 0,
+        "steps_observed": 0,
+        "classification": "BLOCKED_INFRA"
+      },
+      {
+        "repo": "Shtenco/sinergy_super_app",
+        "run_id": 40031082442,
+        "url": "https://github.com/Shtenco/sinergy_super_app/actions/runs/40031082442",
+        "job": "build",
+        "conclusion": "failure",
+        "runner_id": 0,
+        "steps_observed": 0,
+        "classification": "BLOCKED_INFRA"
+      }
+    ]
   }
 }
