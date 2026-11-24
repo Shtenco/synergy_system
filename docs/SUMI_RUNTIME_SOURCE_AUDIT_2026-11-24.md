@@ -160,3 +160,5 @@ A separate design note, `docs/SUMI_COMPUTE_LEASE_FEDERATION_BRIDGE_2026-11-25.md
 
 Source review found that lease issuance, expiry maintenance and admission accepted caller-supplied epochs without retaining a monotonic floor. A stale caller could move the in-process scheduler backwards after expiry maintenance. Agent Fabric PR #32 now stores the highest accepted epoch, rejects backwards lease issuance/expiry requests, and rejects stale admission epochs. The floor advances on successful admission only; invalid worker/lease probes do not mutate scheduler time. Regression tests cover epoch rollback and invalid-probe clock poisoning. The epoch remains caller-supplied: production federation still requires an authenticated monotonic epoch authority shared across nodes.
 Latest Agent Fabric source commit: `b33c6362d8d40a502e140dbd607b5636c53e6938`.
+
+- Latest Agent Fabric epoch-hardening head `b33c6362d8d40a502e140dbd607b5636c53e6938`: runs #45500564475 and #45500564470 failed before steps; `rust-portable`, `agent-fabric-runtime`, `solidity-core`, and `rust-core` returned empty step arrays. No Rust command executed and no test pass is claimed.
