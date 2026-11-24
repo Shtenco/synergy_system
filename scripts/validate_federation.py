@@ -25,6 +25,7 @@ ALLOWED_CLASSIFICATION_BASES = {
     "architectural documentation classification; not proof of runtime dependency",
     "renamed repository lineage; revalidate README passport, active branches and runtime dependency before marking complete",
     "provisional inventory classification from current README/main tree and selected branch evidence; federation_parent is not proof of runtime dependency",
+    "targeted source/branch/CI review on 2026-11-20; branch evidence does not imply merged main runtime or deployment",
 }
 ALLOWED_DEEP_PASS = {"COMPLETE", "PENDING_RENAME_REVALIDATION", "PENDING"}
 
@@ -98,8 +99,8 @@ def main() -> int:
     interfaces = load(INTERFACES)
     interface_repos = interfaces.get("repositories", [])
     interface_names = [r.get("repo") for r in interface_repos]
-    if interfaces.get("repository_count") != len(interface_repos) or len(interface_repos) != 75:
-        fail("interface registry must retain its separate 75-record scope")
+    if interfaces.get("repository_count") != len(interface_repos) or len(interface_repos) != 77:
+        fail("interface registry must retain its separate 77-record scope")
     if len(interface_names) != len(set(interface_names)):
         fail("duplicate repository names in interface registry")
 
