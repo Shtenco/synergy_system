@@ -665,12 +665,12 @@
         {
           "target_repository": "Shtenco/synergy_system",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Use governance registries and evidence boundaries to keep the 112-repository portfolio navigable and auditable."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_megaproject",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Expose domain products through user-facing applications without moving authority into the presentation layer."
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
@@ -991,14 +991,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_financial_os",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Bind protocol execution and settlement to canonical accounting and payment evidence."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_net",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Add resilient network transport and explicit service lifecycle controls around chain operations."
         }
       ],
       "dependencies_from_2026_11_20_registry": [
@@ -1639,14 +1639,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_financial_os",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Bind protocol execution and settlement to canonical accounting and payment evidence."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_net",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Add resilient network transport and explicit service lifecycle controls around chain operations."
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
@@ -1709,14 +1709,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_nexus_science_agent",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Route unusual research questions through a scientific agent with provenance, reproducible experiments and falsification."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_binary_quantum_theory",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Compare physical or mathematical hypotheses with independent research lines; keep claims within evidence."
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
@@ -1845,14 +1845,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_market_graph",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Combine graph structure with market/economic state to model dependencies, flows and constrained allocation."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Connect graph models to agent workflows and real-economy accounting rather than treating graph scores as value."
         }
       ],
       "dependencies_from_2026_11_20_registry": [
@@ -2106,14 +2106,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_maps",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Turn lead and web discovery into consent-aware, source-linked prospecting and regional service workflows."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_ai_browser-",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Add geographic context and bounded browser automation to verify and qualify discovered opportunities."
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
@@ -2354,14 +2354,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_ai_investment_committee",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Convert strategy theses into independently reviewed investment cases with explicit assumptions and evidence."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_quantlab",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Connect investment research to a broader economic and scientific scenario graph."
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
@@ -2422,14 +2422,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_net",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Connect secure peer transport with node lifecycle, identity, routing and observability."
         },
         {
           "target_repository": "Shtenco/synergy_meta_os",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Use post-quantum transport research as a separately qualified security option, not an assumed guarantee."
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
@@ -2497,14 +2497,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_financial_os",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Bind protocol execution and settlement to canonical accounting and payment evidence."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_net",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Add resilient network transport and explicit service lifecycle controls around chain operations."
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
@@ -2721,14 +2721,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_meta_os",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Connect secure peer transport with node lifecycle, identity, routing and observability."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_post_quantum_radio",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Use post-quantum transport research as a separately qualified security option, not an assumed guarantee."
         }
       ],
       "dependencies_from_2026_11_20_registry": [
@@ -2834,14 +2834,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_net",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Connect secure peer transport with node lifecycle, identity, routing and observability."
         },
         {
           "target_repository": "Shtenco/synergy_meta_os",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Use post-quantum transport research as a separately qualified security option, not an assumed guarantee."
         }
       ],
       "dependencies_from_2026_11_20_registry": [
@@ -2875,12 +2875,12 @@
         {
           "target_repository": "Shtenco/synergy_system",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Use governance registries and evidence boundaries to keep the 112-repository portfolio navigable and auditable."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_megaproject",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Expose domain products through user-facing applications without moving authority into the presentation layer."
         }
       ],
       "dependencies_from_2026_11_20_registry": [
@@ -3132,14 +3132,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_net",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Connect secure peer transport with node lifecycle, identity, routing and observability."
         },
         {
           "target_repository": "Shtenco/synergy_meta_os",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Use post-quantum transport research as a separately qualified security option, not an assumed guarantee."
         }
       ],
       "dependencies_from_2026_11_20_registry": [
@@ -3175,14 +3175,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_net",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Connect secure peer transport with node lifecycle, identity, routing and observability."
         },
         {
           "target_repository": "Shtenco/synergy_meta_os",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Use post-quantum transport research as a separately qualified security option, not an assumed guarantee."
         }
       ],
       "dependencies_from_2026_11_20_registry": [
@@ -3219,14 +3219,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_megaproject",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Use governance registries and evidence boundaries to keep the 112-repository portfolio navigable and auditable."
         },
         {
-          "target_repository": "Shtenco/synergy_megaproject",
+          "target_repository": "Shtenco/synergy_apps",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Expose domain products through user-facing applications without moving authority into the presentation layer."
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
@@ -3439,14 +3439,14 @@
       },
       "associations": [
         {
-          "target_repository": "Shtenco/synergy_system",
+          "target_repository": "Shtenco/synergy_financial_os",
           "relationship": "operational_complement",
-          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+          "opportunity": "Bind protocol execution and settlement to canonical accounting and payment evidence."
         },
         {
-          "target_repository": "Shtenco/synergy_meta_os",
+          "target_repository": "Shtenco/synergy_net",
           "relationship": "cross_domain_value_creation",
-          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+          "opportunity": "Add resilient network transport and explicit service lifecycle controls around chain operations."
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
