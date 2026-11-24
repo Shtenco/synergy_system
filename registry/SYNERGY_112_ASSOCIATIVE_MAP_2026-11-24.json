@@ -779,7 +779,16 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          "README.md"
+        ],
+        "source_files": 0,
+        "tests": false,
+        "status": "PLACEHOLDER_ONLY",
+        "note": "README is a 32-byte title only; no source, tests, or runtime."
+      }
     },
     {
       "repository": "Shtenco/synergy_agentic_ai_economy",
@@ -1035,7 +1044,24 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          ".gitignore",
+          "AGENTS.md",
+          "README.md",
+          "docs",
+          "examples",
+          "pyproject.toml",
+          "synergy_browser",
+          "tests"
+        ],
+        "source_files": "present",
+        "tests": true,
+        "status": "SOURCE_AND_TEST_TREE_PRESENT",
+        "note": "Playwright-based evidence-first browser automation; bounded actions and extraction."
+      }
     },
     {
       "repository": "Shtenco/synergy_ai_coder",
@@ -3480,7 +3506,26 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "experiments",
+          "requirements.txt",
+          "results",
+          "tests"
+        ],
+        "source_files": "present",
+        "tests": true,
+        "status": "EXPERIMENT_AND_TEST_TREE_PRESENT",
+        "note": "Exactly-once delivery research; experiment module and tests are present."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_agent_long_term_memory",
@@ -3510,7 +3555,29 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CHANGELOG.md",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "SECURITY.md",
+          "SOURCE_MANIFEST.json",
+          "docs",
+          "experiments",
+          "prototypes",
+          "requirements.txt",
+          "results",
+          "tests"
+        ],
+        "source_manifest_files": 9,
+        "tests": true,
+        "status": "LIMITED_PROTOTYPE",
+        "note": "Source manifest identifies a small shared prototype harness and article-13 experiment; not production memory."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_ai_infrastructure_agent",
@@ -3540,7 +3607,25 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt"
+        ],
+        "source_manifest_files": 9,
+        "tests": true,
+        "status": "LIMITED_PROTOTYPE",
+        "note": "Allowlist-oriented infrastructure operator prototype; no production operator claim."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_backtest_oos_lab",
@@ -3570,7 +3655,25 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt"
+        ],
+        "source_manifest_files": 9,
+        "tests": true,
+        "status": "LIMITED_PROTOTYPE",
+        "note": "Article-10 experiment and shared prototype tests; OOS validation research."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_benchmark_statistics",
@@ -3600,7 +3703,26 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt",
+          "results"
+        ],
+        "source_manifest_files": 12,
+        "tests": true,
+        "status": "MEASURED_LOCAL_EXPERIMENT",
+        "note": "Article-15 measured uncertainty and retained result artifacts."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_binary_neural_networks",
@@ -3630,7 +3752,26 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt",
+          "results"
+        ],
+        "source_manifest_files": 16,
+        "tests": true,
+        "status": "MEASURED_LOCAL_EXPERIMENT",
+        "note": "Binary Digits experiment, tests and result JSON; one image excluded from public manifest."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_codebase_intelligence",
@@ -3660,7 +3801,25 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt"
+        ],
+        "source_manifest_files": 9,
+        "tests": true,
+        "status": "LIMITED_PROTOTYPE",
+        "note": "Article-04 codebase search/navigation experiment."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_cpu_gpu_cost_benchmark",
@@ -3690,7 +3849,25 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt"
+        ],
+        "source_manifest_files": 9,
+        "tests": true,
+        "status": "LIMITED_PROTOTYPE",
+        "note": "Article-12 CPU/GPU cost experiment; target hardware replication required."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_cpu_language_model",
@@ -3720,7 +3897,27 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "evidence",
+          "prototypes",
+          "requirements.txt",
+          "results"
+        ],
+        "source_manifest_files": 14,
+        "tests": true,
+        "status": "MEASURED_LOCAL_EXPERIMENT",
+        "note": "CPU toy language model, proof/evidence script and retained results."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_fault_injection_lab",
@@ -3750,7 +3947,27 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "experiments",
+          "qa",
+          "requirements.txt",
+          "results"
+        ],
+        "source_manifest_files": 7,
+        "tests": true,
+        "status": "MEASURED_LOCAL_EXPERIMENT",
+        "note": "Fault injection experiment, QA validator and retained request/result data."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_llm_memory_lab",
@@ -3780,7 +3997,26 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "evidence",
+          "prototypes",
+          "requirements.txt"
+        ],
+        "source_manifest_files": 11,
+        "tests": true,
+        "status": "LIMITED_PROTOTYPE",
+        "note": "BM25/LSA/graph retrieval experiment; synthetic retrieval does not establish production memory quality."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_ml_validation_lab",
@@ -3810,7 +4046,26 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt",
+          "results"
+        ],
+        "source_manifest_files": 19,
+        "tests": true,
+        "status": "MEASURED_LOCAL_EXPERIMENT",
+        "note": "Grouped leakage and overfitting experiments with CSV/JSON artifacts."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_multiagent_benchmark",
@@ -3840,7 +4095,25 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt"
+        ],
+        "source_manifest_files": 9,
+        "tests": true,
+        "status": "LIMITED_PROTOTYPE",
+        "note": "Article-03 coordination-cost benchmark; conclusions depend on task and compute budget."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_python_cpp_performance",
@@ -3870,7 +4143,26 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt",
+          "results"
+        ],
+        "source_manifest_files": 31,
+        "tests": true,
+        "status": "MEASURED_LOCAL_EXPERIMENT",
+        "note": "C++ kernels, Python benchmark harness, multiple raw/processed measurement artifacts."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_rag_quality_cost",
@@ -3900,7 +4192,25 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt"
+        ],
+        "source_manifest_files": 9,
+        "tests": true,
+        "status": "LIMITED_PROTOTYPE",
+        "note": "Article-14 RAG quality/cost experiment."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_retry_storm_lab",
@@ -3930,7 +4240,26 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "LICENSE",
+          "Makefile",
+          "README.md",
+          "docs",
+          "figures_editorial",
+          "pyproject.toml",
+          "results",
+          "scripts",
+          "src",
+          "tests"
+        ],
+        "source_files": "present",
+        "tests": true,
+        "status": "SOURCE_AND_TEST_TREE_PRESENT",
+        "note": "Runnable local HTTP retry-storm experiment with source, tests and results."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_rnn_transformer_benchmark",
@@ -3960,7 +4289,26 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt",
+          "results"
+        ],
+        "source_manifest_files": 12,
+        "tests": true,
+        "status": "MEASURED_LOCAL_EXPERIMENT",
+        "note": "GRU/Transformer equal-budget comparison with result artifact."
+      }
     },
     {
       "repository": "Shtenco/timeweb_synergy_service_recovery",
@@ -3990,7 +4338,33 @@
         }
       ],
       "dependencies_from_2026_11_20_registry": [],
-      "risks_from_2026_11_20_registry": []
+      "risks_from_2026_11_20_registry": [],
+      "source_tree_review": {
+        "root_entries": [
+          ".github",
+          "CITATION.cff",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "PUBLIC_SOURCE_MANIFEST.json",
+          "README.md",
+          "SECURITY.md",
+          "docs",
+          "prototypes",
+          "requirements.txt"
+        ],
+        "source_manifest_files": 9,
+        "tests": true,
+        "status": "LIMITED_PROTOTYPE",
+        "note": "Article-11 service recovery experiment; not a production SLO."
+      }
     }
-  ]
+  ],
+  "source_review_scope": {
+    "new_repositories_reviewed": 20,
+    "root_tree_listing_reviewed": 20,
+    "manifest_reviewed": 16,
+    "source_tree_reviewed_as": "repository root directory plus selected source manifests; not full code/test execution",
+    "key_finding": "The 17 timeweb_synergy_* research repositories largely share an identical small experiment runner/scaffold, while experiment modules and evidence artifacts differ. This is an opportunity to standardize the harness and retain independent research modules.",
+    "caveat": "File presence and source manifests do not prove tests pass, external reproduction, production readiness or external authorization."
+  }
 }
