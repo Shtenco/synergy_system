@@ -172,3 +172,5 @@ Latest Agent Fabric source commit: `b33c6362d8d40a502e140dbd607b5636c53e6938`.
 - Meta-OS manifest canonicalization follow-up: duplicate capability entries are now rejected rather than silently deduplicated; a regression test was added. Latest Meta-OS PR #31 head: `bb7acd529bdea1665b88b2b6171e55a080d6f9d6`. No Python test execution is available yet.
 
 - Second retry on current Agent Fabric head `b33c6362d8d40a502e140dbd607b5636c53e6938` was accepted for Portable Rust gates (#45500564475) and PQ-EVM consensus core (#45500564470); both are queued at this audit update. Results pending.
+
+- Second retry outcome on Agent Fabric head `b33c6362d8d40a502e140dbd607b5636c53e6938`: runs #45500564475 and #45500564470 again failed before steps; all four retried jobs returned empty step arrays. Repeated runner allocation failure means source validation remains blocked; no code-level failure or pass can be inferred.
