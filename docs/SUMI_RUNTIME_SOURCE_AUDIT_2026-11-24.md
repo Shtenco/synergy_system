@@ -136,3 +136,13 @@ A separate design note, `docs/SUMI_COMPUTE_LEASE_FEDERATION_BRIDGE_2026-11-25.md
 - Latest Agent Fabric head `12a962a8293e6f12211dd48de926b085a4f0739b` was rechecked: workflow runs #45479580186 and #45479580290 failed before any job step; `rust-core`, `solidity-core`, `rust-portable`, and `agent-fabric-runtime` all returned empty step arrays. No source-level test or build result is available.
 
 - Agent Fabric stdio parser follow-up: recursive Serde decoding now rejects duplicate JSON keys at all nesting levels and trailing JSON values; duplicate tool declarations are rejected rather than normalized. Regression tests and protocol documentation added. Latest Agent Fabric head: `c5eafdb61d6868ed35e7a10348422e881504b8d2`. Rust toolchain unavailable in the editing environment; changes remain uncompiled and untested.
+
+
+## 8. Follow-up hardening — 2026-11-25
+
+- Agent Fabric stdio previously returned `409` for "no eligible idle agent". That is HTTP-like and outside JSON-RPC's server-error range. PR #32 now returns `-32009`, adds a regression test, and documents the error-code mapping.
+- Meta-OS manifest parsing now rejects Python's non-standard JSON numeric constants (`NaN`, `Infinity`, `-Infinity`) at any nesting depth, including ignored metadata. A regression test covers nested `NaN`.
+- Latest inspected source heads: Agent Fabric `c9060aecae637f113613aec0f1bb133ac75b8909` at the time of source review; Meta-OS `828538053bbcfe7d5355605901cedf025fdec20d`.
+- CI on Agent Fabric head `c9060aecae637f113613aec0f1bb133ac75b8909`: runs #45500139984 and #45500140111 failed before any steps. All four jobs (`rust-core`, `solidity-core`, `agent-fabric-runtime`, `rust-portable`) returned empty step arrays. No source-level validation result is available.
+- No Meta-OS workflow run was returned for its latest head. Python tests remain unexecuted.
+- The above changes are proposed on Draft PRs; none is merged or production-validated.
