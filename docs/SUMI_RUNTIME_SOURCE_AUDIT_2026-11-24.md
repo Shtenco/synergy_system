@@ -118,7 +118,7 @@ The current limits cover address-space memory, CPU seconds and open files. They 
 
 ## 6. Follow-up evidence update — 2026-11-25
 
-- Agent Fabric PR #32 latest head: `12a962a8293e6f12211dd48de926b085a4f0739b`; latest Portable Rust workflow run #45478667661 failed with empty step arrays for both jobs, so no source-level CI result is available.
+- Agent Fabric PR #32 latest head: `c5eafdb61d6868ed35e7a10348422e881504b8d2`; latest Portable Rust workflow run #45478667661 failed with empty step arrays for both jobs, so no source-level CI result is available.
 - Meta-OS PR #31 latest head: `5d1949407c00396866c7e4c63eaafabf744ff936`; process-tree cleanup, duplicate JSON object-key rejection at all nesting levels, duplicate service-name rejection, and corresponding regression tests are proposed but unexecuted.
 - Both PRs remain Draft and unmerged. Their code is not production-ready and has not passed executable validation in this work session.
 
@@ -134,3 +134,5 @@ A separate design note, `docs/SUMI_COMPUTE_LEASE_FEDERATION_BRIDGE_2026-11-25.md
 - Agent Fabric `TaskLease` deserialization now rejects unknown object fields, with regression coverage; legacy records may still omit `commitment_version` and default to V2 for audit/migration only. Latest Agent Fabric head: `12a962a8293e6f12211dd48de926b085a4f0739b`.
 
 - Latest Agent Fabric head `12a962a8293e6f12211dd48de926b085a4f0739b` was rechecked: workflow runs #45479580186 and #45479580290 failed before any job step; `rust-core`, `solidity-core`, `rust-portable`, and `agent-fabric-runtime` all returned empty step arrays. No source-level test or build result is available.
+
+- Agent Fabric stdio parser follow-up: recursive Serde decoding now rejects duplicate JSON keys at all nesting levels and trailing JSON values; duplicate tool declarations are rejected rather than normalized. Regression tests and protocol documentation added. Latest Agent Fabric head: `c5eafdb61d6868ed35e7a10348422e881504b8d2`. Rust toolchain unavailable in the editing environment; changes remain uncompiled and untested.
