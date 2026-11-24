@@ -32,7 +32,13 @@
       "rotation_or_revocation_evidence": false,
       "current_main_sha": "0234edac62492ceff8af8195506aa1cef672ada1",
       "current_path_present": true,
-      "security_pr_head_sha": "0b63b7fc057907cd5df70089a577a5bd9557584f"
+      "security_pr_head_sha": "0b63b7fc057907cd5df70089a577a5bd9557584f",
+      "git_path_history": {
+        "path": "base-mainnet-deployer.key",
+        "commit_count": 1,
+        "latest_commit": "a5cf6cb65f89dd57b356a3af3af52590a5b8dbe3",
+        "latest_date": "2026-08-12T12:35:26Z"
+      }
     },
     {
       "repo": "Shtenco/synergy_cashero",
@@ -74,7 +80,25 @@
         "bot1.env": true,
         "bot2.env": true
       },
-      "pr6_state": "CLOSED_NOT_MERGED"
+      "pr6_state": "CLOSED_NOT_MERGED",
+      "git_path_history": {
+        ".env": {
+          "commit_count": 1,
+          "latest_commit": "7ff01e4aba280153826c91482c6dcf4087ecb497"
+        },
+        "owner.env": {
+          "commit_count": 2,
+          "latest_commit": "7ff01e4aba280153826c91482c6dcf4087ecb497"
+        },
+        "bot1.env": {
+          "commit_count": 1,
+          "latest_commit": "013b5d99f0d157457c5e9941b68407d97cc97e02"
+        },
+        "bot2.env": {
+          "commit_count": 1,
+          "latest_commit": "013b5d99f0d157457c5e9941b68407d97cc97e02"
+        }
+      }
     },
     {
       "repo": "Shtenco/synergy_turbo_linux",
@@ -103,7 +127,15 @@
       "current_main_sha": "c5ee1119369cd90c9ff23b346a405ac3e8bc6cad",
       "observed_path_present_main": false,
       "security_pr_head_sha": "006cd6b48dbf4be8b6f2003f66240dc662e67126",
-      "note": "Key-like path absent from both current main and remediation PR tree on 2026-11-24; Git history purge and credential revocation/rotation remain unverified."
+      "note": "Key-like path absent from both current main and remediation PR tree on 2026-11-24; Git history purge and credential revocation/rotation remain unverified.",
+      "git_path_history": {
+        "path": "Linux Ubuntu.ppk",
+        "commit_count": 2,
+        "latest_commit": "c5ee1119369cd90c9ff23b346a405ac3e8bc6cad",
+        "latest_date": "2026-11-21T20:36:50Z",
+        "latest_message": "fix(security): remove committed SSH private key from main tree",
+        "note": "Path is absent from current main and remediation branch, but path history still contains two commits; no history purge or credential revocation evidence."
+      }
     },
     {
       "repo": "Shtenco/synergy_ai_trade_terminal",
@@ -133,7 +165,13 @@
       "related_open_prs": [],
       "rotation_or_revocation_evidence": false,
       "current_main_sha": "e53064ec6741dce47ee10a5f30b798c0cf4daa2a",
-      "current_path_present": true
+      "current_path_present": true,
+      "git_path_history": {
+        "path": "cassandra_v6_FIXED.py",
+        "commit_count": 2,
+        "latest_commit": "7e3f6ed434f4cdc0aca09ece1124f15aab45fb9a",
+        "latest_date": "2026-02-27T20:37:55Z"
+      }
     },
     {
       "repo": "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
