@@ -56,7 +56,7 @@ The module imports Python's `resource` at module import time and uses `preexec_f
 
 `verify_service` verifies the declared `artifact` path and SHA-256, but activation launches the supplied `argv` list. Only arguments exactly equal to `$ARTIFACT` are substituted. The manifest can therefore name and hash one artifact while supplying a different executable/command in `argv[0]`.
 
-**Required remediation:** make the executable identity unambiguous. Either require `argv[0]` to be the verified artifact placeholder, or define and verify a separately pinned executable artifact for every permitted command. Reject shell invocation and unapproved executable paths. Add adversarial tests where the declared artifact and launched executable differ.
+**Remediation proposed in Meta-OS PR #31:** require `argv[0]` to be exactly the verified `$ARTIFACT`, validate argv shape/length/NULs and SHA-256 syntax, and add an executable-mismatch regression test. This narrows the manifest mismatch but does not eliminate filesystem TOCTOU between hashing and process launch; immutable artifact staging or descriptor-based execution remains necessary for a stronger guarantee. The PR is unmerged and untested.
 
 ### MOS-03 — Capability declarations are not enforced by the OS boundary (CRITICAL for untrusted workers)
 
@@ -74,7 +74,7 @@ High-value roles require `attested` to be truthy, but the inspected code does no
 
 Processes are started with `stdout=PIPE` and `stderr=PIPE`, but the orchestrator does not consume these streams. A child that writes enough output can fill a pipe and block indefinitely.
 
-**Required remediation:** route output to bounded rotating logs or actively drain both streams with explicit byte/rate limits. Add a test child that writes beyond the OS pipe capacity and verify that supervision remains responsive.
+**Remediation proposed in Meta-OS PR #31:** switch child stdout/stderr to `DEVNULL` in the development compatibility runtime, avoiding unread-pipe deadlock, and add a >1 MiB output regression test. This intentionally discards logs; a production runtime still needs a bounded drain/log sink. The PR is unmerged and untested.
 
 ### MOS-06 — Failure cleanup is not synchronous or fully transactional (MEDIUM)
 
@@ -100,8 +100,8 @@ The current limits cover address-space memory, CPU seconds and open files. They 
 
 ## 5. Evidence status
 
-- Agent Fabric source was fetched from GitHub `main`; PR #32 contains a focused proposed patch on a separate branch.
-- Meta-OS source and its current test file were inspected from GitHub `main`.
+- Agent Fabric source was fetched from GitHub `main`; PR #32 contains proposed registration, lease-commitment and stdio-boundary hardening on a separate branch.
+- Meta-OS source and its current test file were inspected from GitHub `main`; PR #31 contains proposed executable binding, strict manifest/limit validation and output-pipe hardening on a separate branch.
 - The P7 status file records prior test results but also records remote execution, production sandboxing and independent-device deployment as pending.
 - No Rust tests, Python tests, clippy, Windows build, Linux sandbox test, or cross-host execution were run in this review.
 - No merge was performed.
