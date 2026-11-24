@@ -108,7 +108,30 @@ P7 explicitly lists remaining gates:
 
 The P7 feature branch is 24 commits behind main and 1 commit ahead. The only ahead-of-merge-base file reported by GitHub compare is `node-runtime/crates/synergy-node/src/bin/agent-fabric-stdio.rs`. The shared agent-fabric library is present on main at `node-runtime/crates/agent-fabric/src/lib.rs`. Review the one-commit delta and port only what remains needed; do not merge the stale branch wholesale.
 
-The inspected scheduler data model currently describes CPU millis, memory, tools and local/remote placement. It does not yet describe GPU memory, accelerator backend, model residency, bandwidth-aware partitioning or real remote execution. The current scheduler is a useful control-plane foundation, not yet a heterogeneous AI compute fabric.
+#### M1 distributed-AI foundation already present on current `main`
+
+An important reconciliation: the older distributed-AI foundation PR #21 is fully incorporated into current `main` (its PR head is 0 commits ahead and 240 commits behind main). SUMI must reuse these primitives rather than invent a parallel model/inference protocol.
+
+The current main source contains the following distinct capabilities:
+
+- `src/scheduling.rs`: deterministic `NodeCapacity` and `WorkRequirements` admission/placement primitives. Node classes include Mobile, Desktop, Gpu and Accelerator; capacity includes memory, accelerator memory, storage, input/output limits, compute units, locality domain and capability root.
+- `src/model_shard.rs`: model manifest commitments, immutable shard outputs, content hashes, storage object IDs, codec commitments and model-lineage transitions.
+- `src/inference.rs`: inference jobs, stage assignments, execution plans, worker receipts, work aggregation, outcome commitments and replay-consuming authorization.
+- `src/kv_cache.rs`: KV-cache leases and replica receipts with worker authorization and replay protection.
+- `src/agent_mesh.rs`: signed/committed service advertisements that include CPU, RAM, GPU memory, toolset/model/policy roots, epoch, sequence and expiry; plus task delegation packets.
+- `src/agent_execution.rs`: task commitments and worker execution receipts binding worker identity, result/trace roots and measured CPU/memory usage.
+- `src/verification.rs`, `src/agent_reward.rs` and `src/compute_settlement.rs`: independent verifier receipts/aggregates, replay-protected reward eligibility and a typed compute settlement split.
+
+These are valuable typed commitment, admission, placement and verification primitives. They do **not** by themselves prove that a remote worker was launched, that a model shard or KV page was transferred over a real network, or that execution happened inside an OS-enforced sandbox. The roadmap `docs/MVP_GLOBAL_ROADMAP.md` still explicitly places M3 PQ P2P/DHT, M4 model-shard network and M5 real three-node distributed inference behind the executable M2 gate. `docs/M2_READINESS_CHECKPOINT.md` labels M2 YELLOW and states that no Cargo/Solidity executable evidence has been produced because the runner/toolchain did not start.
+
+#### Two scheduler/control planes must be reconciled
+
+Do not conflate:
+1. the chain/core scheduler in `src/scheduling.rs`, which already models GPU/accelerator memory and locality;
+2. the Node Runtime Agent Fabric scheduler in `node-runtime/crates/agent-fabric/src/lib.rs`, which currently matches CPU millis, memory MiB, role, tools and local/remote eligibility;
+3. the missing OS worker runtime that actually discovers devices, enforces quotas, fetches inputs/models, launches tasks, returns results and emits receipts.
+
+The critical integration gap is the typed adapter from real Meta-OS resource discovery and owner-granted capabilities into the core `NodeCapacity`/`WorkRequirements` and Agent Fabric admission model, followed by a real execution path that binds an Agent Fabric lease to an `InferenceStageAssignment` and then to an independently verified `InferenceStageReceipt`. Bandwidth-aware partitioning, actual accelerator discovery, model residency and cross-host execution remain unproven.
 
 ### 2.4 Node orchestration — `Shtenco/synergy_meta_os`
 
