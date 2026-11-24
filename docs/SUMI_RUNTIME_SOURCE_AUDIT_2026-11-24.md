@@ -166,3 +166,5 @@ Latest Agent Fabric source commit: `b33c6362d8d40a502e140dbd607b5636c53e6938`.
 - Agent Fabric scheduler epoch hardening follow-up: `SwarmScheduler` now enforces a monotonic logical-epoch floor; backwards lease issuance/expiry operations are rejected, and only successful lease admission advances the floor. Regression tests cover rollback and invalid-probe clock poisoning. Latest PR head: `b33c6362d8d40a502e140dbd607b5636c53e6938`.
 
 - CI for Agent Fabric head `b33c6362d8d40a502e140dbd607b5636c53e6938`: runs #45500564475 and #45500564470 failed before any job steps; `rust-portable`, `agent-fabric-runtime`, `rust-core`, and `solidity-core` all returned empty step arrays. No source-level validation result.
+
+- Meta-OS PR #31 actual current head rechecked: `ae8d2238cf358e4336669945824fcf7b1265f150`. The current `runtime/orchestrator.py` contains `parse_constant` rejection for NaN/Infinity and the test file contains the nested-NaN regression. No workflow run is associated with this head; Python tests remain unexecuted.
