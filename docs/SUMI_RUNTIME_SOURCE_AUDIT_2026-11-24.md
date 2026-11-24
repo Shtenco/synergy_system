@@ -118,7 +118,7 @@ The current limits cover address-space memory, CPU seconds and open files. They 
 
 ## 6. Follow-up evidence update — 2026-11-25
 
-- Agent Fabric PR #32 latest head: `6287cdce08ba23e1cda5e3bc678e3cc26984de17`; latest Portable Rust workflow run #45478667661 failed with empty step arrays for both jobs, so no source-level CI result is available.
+- Agent Fabric PR #32 latest head: `12a962a8293e6f12211dd48de926b085a4f0739b`; latest Portable Rust workflow run #45478667661 failed with empty step arrays for both jobs, so no source-level CI result is available.
 - Meta-OS PR #31 latest head: `5d1949407c00396866c7e4c63eaafabf744ff936`; process-tree cleanup, duplicate JSON object-key rejection at all nesting levels, duplicate service-name rejection, and corresponding regression tests are proposed but unexecuted.
 - Both PRs remain Draft and unmerged. Their code is not production-ready and has not passed executable validation in this work session.
 
@@ -130,3 +130,5 @@ The current limits cover address-space memory, CPU seconds and open files. They 
 ## 7. Compute lease federation bridge
 
 A separate design note, `docs/SUMI_COMPUTE_LEASE_FEDERATION_BRIDGE_2026-11-25.md`, maps the existing Agent Fabric `TaskSpec`/`TaskLease` to the existing `InferenceJob`/`InferenceStageAssignment`/`InferenceStageReceipt` without duplicating domain types. It documents the incompatibility between logical scheduler epochs and inference expiry timestamps, the missing binding of model/input/resource/stage commitments into the current V3 task lease, the need for authenticated worker identity and durable lease authority, and the required receipt/replay/verification lifecycle. This is DESIGN ONLY; it is intentionally not registered as an implemented contract or runtime edge.
+
+- Agent Fabric `TaskLease` deserialization now rejects unknown object fields, with regression coverage; legacy records may still omit `commitment_version` and default to V2 for audit/migration only. Latest Agent Fabric head: `12a962a8293e6f12211dd48de926b085a4f0739b`.
