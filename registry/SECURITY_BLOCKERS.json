@@ -1,6 +1,6 @@
 {
   "schema": "synergy.security-blockers/v1",
-  "as_of": "2026-11-20",
+  "as_of": "2026-11-24",
   "blockers": [
     {
       "repo": "Shtenco/synergy_usds",
@@ -17,7 +17,7 @@
         "enable secret scanning",
         "verify dependents no longer use old credential"
       ],
-      "last_reaudited": "2026-11-20",
+      "last_reaudited": "2026-11-24",
       "external_rotation_verified": false,
       "priority": "P0",
       "main_tree_present": true,
@@ -29,7 +29,10 @@
       ],
       "security_pr_branch_still_contains_key": true,
       "security_pr_removes_key_file": false,
-      "rotation_or_revocation_evidence": false
+      "rotation_or_revocation_evidence": false,
+      "current_main_sha": "0234edac62492ceff8af8195506aa1cef672ada1",
+      "current_path_present": true,
+      "security_pr_head_sha": "0b63b7fc057907cd5df70089a577a5bd9557584f"
     },
     {
       "repo": "Shtenco/synergy_cashero",
@@ -49,7 +52,7 @@
         "verify bots/contracts/deployments no longer depend on old credentials before unblocking"
       ],
       "inspection_note": "Values were inspected only to classify placeholder vs non-placeholder material; secret values are intentionally not reproduced in documentation or registry.",
-      "last_reaudited": "2026-11-20",
+      "last_reaudited": "2026-11-24",
       "external_rotation_verified": false,
       "priority": "P0",
       "main_tree_present": true,
@@ -61,10 +64,17 @@
       ],
       "security_remediation_pr": null,
       "related_open_prs": [
-        6,
         8
       ],
-      "rotation_or_revocation_evidence": false
+      "rotation_or_revocation_evidence": false,
+      "current_main_sha": "4be5080ccf7516e3130ed2b7a53b95a32cdf57fd",
+      "current_paths_present": {
+        ".env": true,
+        "owner.env": true,
+        "bot1.env": true,
+        "bot2.env": true
+      },
+      "pr6_state": "CLOSED_NOT_MERGED"
     },
     {
       "repo": "Shtenco/synergy_turbo_linux",
@@ -81,15 +91,19 @@
         "use external secret store",
         "enable secret scanning"
       ],
-      "last_reaudited": "2026-11-20",
+      "last_reaudited": "2026-11-24",
       "external_rotation_verified": false,
       "priority": "P0",
-      "main_tree_present": true,
+      "main_tree_present": false,
       "security_pr": 13,
       "security_pr_state": "OPEN_DRAFT",
       "security_pr_branch_removes_key_file": true,
       "security_pr_merged": false,
-      "rotation_or_revocation_evidence": false
+      "rotation_or_revocation_evidence": false,
+      "current_main_sha": "c5ee1119369cd90c9ff23b346a405ac3e8bc6cad",
+      "observed_path_present_main": false,
+      "security_pr_head_sha": "006cd6b48dbf4be8b6f2003f66240dc662e67126",
+      "note": "Key-like path absent from both current main and remediation PR tree on 2026-11-24; Git history purge and credential revocation/rotation remain unverified."
     },
     {
       "repo": "Shtenco/synergy_ai_trade_terminal",
@@ -108,7 +122,7 @@
         "enable secret scanning and CI/pre-commit secret detection"
       ],
       "inspection_note": "Literal username/password values were classified as non-placeholder; values are intentionally not reproduced. Broker-side validity, use and revocation were not tested or verified.",
-      "last_reaudited": "2026-11-20",
+      "last_reaudited": "2026-11-24",
       "external_rotation_verified": false,
       "priority": "P0",
       "main_tree_present": true,
@@ -117,33 +131,39 @@
       ],
       "security_remediation_pr": null,
       "related_open_prs": [],
-      "rotation_or_revocation_evidence": false
+      "rotation_or_revocation_evidence": false,
+      "current_main_sha": "e53064ec6741dce47ee10a5f30b798c0cf4daa2a",
+      "current_path_present": true
     },
     {
       "repo": "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
       "finding": "production API and repository-ingestion isolation controls incomplete",
       "observed_path": "synergy_memory/api.py; synergy_memory/ingest.py; synergy_memory/store.py",
-      "source_ref": "feat/hierarchical-cognitive-memory-v1",
-      "pr_number": 1,
+      "source_ref": "main",
+      "pr_number": 7,
       "status": "UNRESOLVED",
       "deployment_blocked": true,
       "federation_promotion_blocked": true,
       "priority": "P1",
-      "main_tree_present": false,
+      "main_tree_present": true,
       "external_exposure_verified": false,
       "findings": [
-        "API routes have no authentication or authorization; the repository documents the API as a local development adapter only.",
-        "ingest_path uses Path.rglob/is_file/read_text without rejecting symlink files or proving resolved targets remain under the repository root; a crafted symlink can cause out-of-root file ingestion.",
-        "sources uses URI as its current-row primary key while ingest stores repository-relative URIs; ingesting multiple repositories into a shared store can collide across namespaces and overwrite current source provenance."
+        "Current main still exposes API routes without general caller authentication/authorization; docs restrict this API to local development. This is not a production-safe network boundary.",
+        "Current main ingest_path follows symlinked files and does not prove resolved-path containment. Draft PR #7 adds symlink rejection and root containment checks.",
+        "Current main uses relative source URI as the globally keyed sources identity; multiple repositories with the same relative path can collide. Draft PR #7 namespaces source URIs by repository namespace."
       ],
       "remediation": [
         "Keep the API bound to loopback/local development until authenticated caller identity, authorization, tenant isolation and rate limits are implemented.",
         "Reject symlinks before reading and enforce resolved-path containment under the declared repository root.",
-        "Namespace source identity by repository ID plus normalized path and immutable revision; add collision and multi-repository regression tests.",
+        "Namespace source identity by repository namespace plus normalized path and immutable revision; add collision and multi-repository regression tests.",
         "Add security tests and obtain exact-head CI with executed steps before promotion."
       ],
-      "last_reaudited": "2026-11-20",
-      "external_rotation_verified": false
+      "last_reaudited": "2026-11-24",
+      "external_rotation_verified": false,
+      "current_main_sha": "8c23bcb41199f89bb9afb57ca5e0766787154fd",
+      "security_remediation_pr": 7,
+      "security_remediation_pr_state": "OPEN_DRAFT",
+      "security_remediation_pr_head_sha": "536b18ecae65ec565007f825ee964ea073d44095"
     }
   ]
 }
