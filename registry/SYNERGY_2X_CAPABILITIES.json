@@ -423,8 +423,7 @@
       "implementation_status": "RESEARCH",
       "depends_on": [
         "HUM-10",
-        "DEFI-23",
-        "ECON-26"
+        "DEFI-23"
       ],
       "first_gate": "conservation, collateral valuation, liquidation, bad-debt and stress tests",
       "revenue_models": [
@@ -592,7 +591,7 @@
   "validation": {
     "unique_capability_ids": 30,
     "unique_divisions": 6,
-    "dependency_cycle_check": "not_yet_run",
+    "dependency_cycle_check": "acyclic_dag_verified_2026-11-24",
     "repository_anchor_semantics": "candidate_mapping_not_runtime_edge"
   }
 }
