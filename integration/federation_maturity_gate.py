@@ -12,10 +12,13 @@ def load(name:str):
 def main()->int:
     owner_inventory=load("SYNERGY_REPOSITORIES.json")
     owner_repos=owner_inventory.get("repositories",[])
-    if len(owner_repos)!=91 or owner_inventory.get("repository_count")!=91:
-        print("OWNER INVENTORY GATE: FAIL",len(owner_repos),owner_inventory.get("repository_count"))
+    # This is the federation-reviewed inventory snapshot, not the live 112-repository
+    # owner inventory maintained in Shtenco/synergy. Keep the scopes explicit.
+    expected_owner_count=92
+    if len(owner_repos)!=expected_owner_count or owner_inventory.get("repository_count")!=expected_owner_count:
+        print("OWNER INVENTORY GATE: FAIL",len(owner_repos),owner_inventory.get("repository_count"),"expected",expected_owner_count)
         return 1
-    if len({r.get("full_name") for r in owner_repos})!=91:
+    if len({r.get("full_name") for r in owner_repos})!=expected_owner_count:
         print("OWNER INVENTORY GATE: duplicate/missing full_name")
         return 1
 
