@@ -26,6 +26,7 @@ ALLOWED_CLASSIFICATION_BASES = {
     "renamed repository lineage; revalidate README passport, active branches and runtime dependency before marking complete",
     "provisional inventory classification from current README/main tree and selected branch evidence; federation_parent is not proof of runtime dependency",
     "targeted source/branch/CI review on 2026-11-20; branch evidence does not imply merged main runtime or deployment",
+    "provisional inventory classification from current main tree and live PR #1; federation_parent is not proof of runtime dependency",
     "targeted source/branch/CI review on 2026-11-20; branch evidence does not imply merged main runtime or deployment",
 }
 ALLOWED_DEEP_PASS = {"COMPLETE", "PENDING_RENAME_REVALIDATION", "PENDING"}
