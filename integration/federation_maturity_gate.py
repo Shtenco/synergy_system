@@ -30,10 +30,10 @@ def main()->int:
 
     errors=[]
     repos=interfaces.get("repositories",[])
-    if len(repos)!=75 or interfaces.get("repository_count")!=75:
+    if len(repos)!=77 or interfaces.get("repository_count")!=77:
         errors.append(f"repository count mismatch: {len(repos)} / {interfaces.get('repository_count')}")
     names=[r.get("repo") for r in repos]
-    if len(set(names))!=75:
+    if len(set(names))!=77:
         errors.append("repository names are not unique")
 
     allowed=set(interfaces.get("interface_status_vocabulary",[]))
