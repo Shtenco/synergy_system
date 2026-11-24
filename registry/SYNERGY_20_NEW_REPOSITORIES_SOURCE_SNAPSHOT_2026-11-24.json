@@ -344,7 +344,7 @@
       "tree_sha": "e69ce454424c4d29da54dc649d7379ec24b9bef0",
       "branches": 2,
       "files": 19,
-      "source_files": 9,
+      "source_files": 10,
       "test_files": [
         "tests/test_cli.py",
         "tests/test_core.py",
