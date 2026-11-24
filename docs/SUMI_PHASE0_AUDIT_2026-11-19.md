@@ -34,6 +34,8 @@ The README's 2026-09-29 snapshot reported 75 repositories, 39 contract families 
 
 A zero missing-endpoint count only means that the listed contracts have declared producer/consumer endpoints. It does not mean every relevant subsystem has a contract: no compute-job, compute-resource, worker-lease, model-artifact, execution-receipt or independent-compute-verification family appears in the 39-entry contract registry. Adapter presence must not be confused with observed cross-repository execution.
 
+The two currently named uncontracted candidates are the hierarchical cognitive-memory subsystem (proposed `synergy.memory.context/v1`) and the Autopilot mission-lifecycle subsystem (proposed `synergy.agent.mission-lifecycle/v1`). They are separate integration gaps and must not be treated as substitutes for a compute execution contract. The three observed risks in the November gap registry concern payment-settlement lifecycle, financial outbox authenticity/concurrency, and agentic-economy accounting correction/replay. These are relevant federation trust/economic blockers, but none is a compute-worker authorization or reward contract.
+
 Relevant canonical files:
 - `registry/REPOSITORY_INTERFACES.json`
 - `registry/INTEGRATION_GAPS.json`
