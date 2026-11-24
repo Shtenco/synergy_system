@@ -135,7 +135,7 @@ A separate design note, `docs/SUMI_COMPUTE_LEASE_FEDERATION_BRIDGE_2026-11-25.md
 
 - Latest Agent Fabric head `12a962a8293e6f12211dd48de926b085a4f0739b` was rechecked: workflow runs #45479580186 and #45479580290 failed before any job step; `rust-core`, `solidity-core`, `rust-portable`, and `agent-fabric-runtime` all returned empty step arrays. No source-level test or build result is available.
 
-- Agent Fabric stdio parser follow-up: recursive Serde decoding now rejects duplicate JSON keys at all nesting levels and trailing JSON values; duplicate tool declarations are rejected rather than normalized. Regression tests and protocol documentation added. Latest Agent Fabric head: `4e3b3244bce80b2ba4cc5d30939d0c6df3c3b942`. Rust toolchain unavailable in the editing environment; changes remain uncompiled and untested.
+- Agent Fabric stdio parser follow-up: recursive Serde decoding now rejects duplicate JSON keys at all nesting levels and trailing JSON values; duplicate tool declarations are rejected rather than normalized. Regression tests and protocol documentation added. Latest Agent Fabric head: `b78880255da7aec84d60aca538f95fe498153d80`. Rust toolchain unavailable in the editing environment; changes remain uncompiled and untested.
 
 
 ## 8. Follow-up hardening — 2026-11-25
@@ -176,3 +176,5 @@ Latest Agent Fabric source commit: `b33c6362d8d40a502e140dbd607b5636c53e6938`.
 - Second retry outcome on Agent Fabric head `b33c6362d8d40a502e140dbd607b5636c53e6938`: runs #45500564475 and #45500564470 again failed before steps; all four retried jobs returned empty step arrays. Repeated runner allocation failure means source validation remains blocked; no code-level failure or pass can be inferred.
 
 - Agent Fabric root Rust CI reproducibility improvement: added `--locked` to `cargo check`, default `cargo test`, `cargo clippy`, and `reference-pq` feature tests. Verified both root and `node-runtime` Cargo.lock files are present. Latest PR #32 head: `4e3b3244bce80b2ba4cc5d30939d0c6df3c3b942`; no workflow run returned for this exact head at inspection.
+
+- Agent Fabric parser regression suite additionally verifies escaped duplicate keys (`id` and `\\u0069d`) collide after JSON string decoding. Latest PR #32 head: `b78880255da7aec84d60aca538f95fe498153d80`.
