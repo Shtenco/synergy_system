@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "schema": "synergy.2x-capability-portfolio/v1",
   "as_of": "2026-11-24",
   "status": "architecture_proposal_not_production_evidence",
@@ -13,7 +12,15 @@
   "semantics": {
     "anchors": "Candidate repository anchors only; not proof of code dependency, runtime integration, deployment or ownership of every listed capability.",
     "implementation_status": "Evidence-oriented classification for planning; must be revalidated against exact current main/PR SHAs.",
-    "depends_on": "Portfolio sequencing dependencies; not runtime edges."
+    "depends_on": "Portfolio sequencing dependencies; not runtime edges.",
+    "implementation_status_values": {
+      "EXISTING_VERIFY": "A relevant implementation/repository exists; current source, tests, integration and deployment must be revalidated.",
+      "PROTOTYPE_RND": "Code or research exists, but product-level readiness is not established.",
+      "ADJACENT_REUSE_REQUIRED": "An adjacent component exists but does not yet implement this capability's complete authority or workflow.",
+      "GAP": "No sufficiently evidenced canonical implementation was identified in the inspected material.",
+      "RESEARCH": "Research or simulation exists; production capability and external validity are not established.",
+      "BLOCKED_SECURITY_REVIEW": "Candidate repositories include unresolved security findings; deployment and federation promotion are blocked pending verified remediation."
+    }
   },
   "capabilities": [
     {
@@ -581,5 +588,11 @@
         "institutional_api"
       ]
     }
-  ]
+  ],
+  "validation": {
+    "unique_capability_ids": 30,
+    "unique_divisions": 6,
+    "dependency_cycle_check": "not_yet_run",
+    "repository_anchor_semantics": "candidate_mapping_not_runtime_edge"
+  }
 }
