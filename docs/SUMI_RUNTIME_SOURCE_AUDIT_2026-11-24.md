@@ -118,7 +118,7 @@ The current limits cover address-space memory, CPU seconds and open files. They 
 
 ## 6. Follow-up evidence update — 2026-11-25
 
-- Agent Fabric PR #32 latest head: `c5eafdb61d6868ed35e7a10348422e881504b8d2`; latest Portable Rust workflow run #45478667661 failed with empty step arrays for both jobs, so no source-level CI result is available.
+- Agent Fabric PR #32 latest head: `f53cfd75a724254181025eb285027fe131ddf267`; latest Portable Rust workflow run #45478667661 failed with empty step arrays for both jobs, so no source-level CI result is available.
 - Meta-OS PR #31 latest head: `5d1949407c00396866c7e4c63eaafabf744ff936`; process-tree cleanup, duplicate JSON object-key rejection at all nesting levels, duplicate service-name rejection, and corresponding regression tests are proposed but unexecuted.
 - Both PRs remain Draft and unmerged. Their code is not production-ready and has not passed executable validation in this work session.
 
@@ -152,3 +152,5 @@ A separate design note, `docs/SUMI_COMPUTE_LEASE_FEDERATION_BRIDGE_2026-11-25.md
 - Agent Fabric latest-head CI recheck (`c5eafdb61d6868ed35e7a10348422e881504b8d2`): runs #45500218712 and #45500218478 failed with all four jobs returning empty step arrays. No Rust, Solidity, formatting, test or Clippy command executed. Workflow job logs were unavailable from the artifact endpoint; no source-level diagnosis is inferred.
 
 - PR #32 latest head was re-fetched as `c5eafdb61d6868ed35e7a10348422e881504b8d2`. Runs #45500218712 and #45500218478 failed before steps; `rust-portable`, `agent-fabric-runtime`, `rust-core`, and `solidity-core` all returned empty step arrays. No build/test/Clippy result is available for the actual current PR head.
+
+- Agent Fabric retry result: GitHub accepted reruns of #45500218712 and #45500218478, but a subsequent workflow attempt on latest PR head `f53cfd75a724254181025eb285027fe131ddf267` again failed before any steps (#45500489321, #45500489432). All four jobs returned empty step arrays. This remains infrastructure/runner failure evidence, not a code-level test result.
