@@ -25,9 +25,11 @@ These are structural counts. They do not certify test success, scientific validi
 
 `tiimeweb_synergy_exactly_once_delivery` contains a substantive SQLite experiment: transactional deduplication, concurrent duplicate deliveries, crash-before/after-commit probes and payload-conflict rejection. But its only unit-test module checks helper functions (`fingerprint` and `quantile`), and the inspected `research-ci.yml` does not run tests. The experiment itself correctly limits its claim to exactly-once effects inside one SQLite transaction, not transport delivery or external API side effects. Add CI tests for duplicate delivery, crash/restart, concurrent contention, payload conflict and invariant-preserving recovery.
 
-### P1 — Long-term-memory naming/ownership ambiguity
+### P1 — Long-term-memory branch promotion and explicit ownership boundary
 
-`synergy_agent_long_term_memory` has one file on `main` (README only), two branches, no source/tests/CI. A separate `timeweb_synergy_agent_long_term_memory` repository has an executable SQLite cross-session persistence experiment, tests and CI. Its own source explicitly limits the claim: SQLite persistence, not LLM semantic memory or full agent long-term memory. Confirm whether the stub is a superseded concept, an independent product boundary or a duplicate; record the canonical owner and lineage before treating both as separate capabilities.
+`synergy_agent_long_term_memory` still has only README on `main`, but its non-default branch `feat/persistent-mission-runtime-v1` contains a substantive 10-file implementation: SQLite WAL mission journal, idempotent events, checkpoints, a bounded ring buffer, a typed transition contract, three test modules and CI. Its exact branch head `04e666038ac7` passed package installation, compilation and the full unittest suite (run 45473683807). Draft PR #2 proposes promotion to `main`.
+
+This is not a duplicate of `timeweb_synergy_agent_long_term_memory`: the former owns durable mission lifecycle/event journaling and checkpoint recovery; the latter is a SQLite cross-session memory experiment. The latter explicitly does not claim semantic LLM memory. Keep the two capabilities separate and connect them through versioned contracts. Review migration compatibility, process-crash recovery and service-boundary authorization before merging.
 
 ### P2 — Research CI commonly checks syntax, not behavior
 
