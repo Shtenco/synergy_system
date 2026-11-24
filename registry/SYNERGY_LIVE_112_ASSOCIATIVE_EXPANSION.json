@@ -1,0 +1,3829 @@
+{
+  "schema": "synergy.live-112-associative-expansion/v1",
+  "as_of": "2026-11-24",
+  "source": "GitHub installed-repository search owner:Shtenco, pages 1-2",
+  "live_repository_count": 112,
+  "previous_registry_count": 92,
+  "delta_count": 20,
+  "all_112_readmes_fetched": true,
+  "full_source_review_complete": false,
+  "semantics": {
+    "two_x_levers": "Two proposed value multipliers per existing repository; proposals are not implemented features or verified revenue.",
+    "association_candidates": "Candidate cross-repository relationships, not runtime dependencies.",
+    "maturity": "Inherited/inferred labels are planning hints only; exact source, tests, branches, CI and security must be audited before promotion."
+  },
+  "new_repositories": [
+    "Shtenco/timeweb_synergy_llm_memory_lab",
+    "Shtenco/timeweb_synergy_ml_validation_lab",
+    "Shtenco/timeweb_synergy_python_cpp_performance",
+    "Shtenco/timeweb_synergy_benchmark_statistics",
+    "Shtenco/synergy_agent_long_term_memory",
+    "Shtenco/timeweb_synergy_binary_neural_networks",
+    "Shtenco/timeweb_synergy_ai_infrastructure_agent",
+    "Shtenco/timeweb_synergy_fault_injection_lab",
+    "Shtenco/timeweb_synergy_codebase_intelligence",
+    "Shtenco/timeweb_synergy_service_recovery",
+    "Shtenco/timeweb_synergy_rag_quality_cost",
+    "Shtenco/timeweb_synergy_multiagent_benchmark",
+    "Shtenco/timeweb_synergy_backtest_oos_lab",
+    "Shtenco/timeweb_synergy_cpu_language_model",
+    "Shtenco/timeweb_synergy_cpu_gpu_cost_benchmark",
+    "Shtenco/timeweb_synergy_rnn_transformer_benchmark",
+    "Shtenco/timeweb_synergy_retry_storm_lab",
+    "Shtenco/synergy_ai_browser-",
+    "Shtenco/tiimeweb_synergy_exactly_once_delivery",
+    "Shtenco/timeweb_synergy_agent_long_term_memory"
+  ],
+  "portfolio": [
+    {
+      "repository": "Shtenco/quantum-trading_metatrader5",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "LEGACY_RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "LEGACY_RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/computer_vision_trading_metatrader_5",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "LEGACY_RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_language",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "agentic-module",
+      "observed_maturity": "RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "architecture-governance",
+      "node_type": "architecture-registry",
+      "observed_maturity": "ARCHITECTURAL_MASTER",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "registry",
+        "federation",
+        "architecture",
+        "governance"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Add an executable portfolio control plane: ownership, contracts, dependency health, security gates, release provenance and drift detection."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a public/private procurement and investment evidence room with standardized technical, economic, security and impact scorecards."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_project",
+        "Shtenco/synergy_megaproject",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_nexus_science_agent"
+      ],
+      "acceptance_gate": "Live source SHAs, machine-checked schemas, owner approvals, no false runtime edges and audit history.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_maps",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "apps-interface",
+      "node_type": "maps-concept",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "maps-concept"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the interface into a unified consent-aware client workflow with one identity, one navigation model and scoped access to canonical services."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add verticalized B2B workspaces and partner distribution: onboarding, billing, referral attribution, support and conversion analytics."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_meta_api",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "End-to-end user journey, authorization checks, accessibility, privacy export/deletion and payment reconciliation.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_investment_committee",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "portfolio-governance"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "LEGACY_RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_llm_memory_lab",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "agi-agentic",
+      "node_type": "research-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "memory-retrieval",
+        "LLM-evaluation"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_ml_validation_lab",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "science-research",
+      "node_type": "validation-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "ML-validation",
+        "leakage-detection"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Create a reproducible evidence package with preregistered hypotheses, raw data, baselines, uncertainty and independent replication."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Convert validated methods into an institutional research service: datasets, simulation API, technical reports and expert review."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_nexus_science_agent",
+        "Shtenco/synergy_gllm_nexus",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_megaproject"
+      ],
+      "acceptance_gate": "Frozen experiment manifest, baseline, confidence intervals, falsification criteria and independent replication.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/synergy_apps",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "apps-interface",
+      "node_type": "application",
+      "observed_maturity": "ARCHITECTURAL_MASTER",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "client-ui",
+        "control-plane"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the interface into a unified consent-aware client workflow with one identity, one navigation model and scoped access to canonical services."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add verticalized B2B workspaces and partner distribution: onboarding, billing, referral attribution, support and conversion analytics."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_meta_api",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "End-to-end user journey, authorization checks, accessibility, privacy export/deletion and payment reconciliation.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_epstein_network",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "graph-research",
+      "node_type": "research",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "graph",
+        "provenance",
+        "research"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Promote graph representations into reusable graph query/feature services with versioned schemas."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add graph simulation and decision support for industrial supply chains, capital allocation and infrastructure planning."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_market_graph",
+        "Shtenco/synergy_algotrading_graph_system",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_epstein_network"
+      ],
+      "acceptance_gate": "Graph correctness, entity provenance, scalability benchmarks and domain-specific validation.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_midas_ai",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "midas"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_matrix_sota",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_coder",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "agentic-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/sinergy_super_app",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "apps-interface",
+      "node_type": "application",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "client-ui",
+        "control-plane"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the interface into a unified consent-aware client workflow with one identity, one navigation model and scoped access to canonical services."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add verticalized B2B workspaces and partner distribution: onboarding, billing, referral attribution, support and conversion analytics."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_meta_api",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "End-to-end user journey, authorization checks, accessibility, privacy export/deletion and payment reconciliation.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_python_cpp_performance",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "compute-os",
+      "node_type": "benchmark-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "runtime-benchmark",
+        "language-performance"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_financial_system",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "RND_LOCAL_TESTING",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_graph_print_money",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_financial_os",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "RND_FEDERATION",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_benchmark_statistics",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "science-research",
+      "node_type": "benchmark-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "benchmark-statistics",
+        "confidence-intervals"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Create a reproducible evidence package with preregistered hypotheses, raw data, baselines, uncertainty and independent replication."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Convert validated methods into an institutional research service: datasets, simulation API, technical reports and expert review."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_nexus_science_agent",
+        "Shtenco/synergy_gllm_nexus",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_megaproject"
+      ],
+      "acceptance_gate": "Frozen experiment manifest, baseline, confidence intervals, falsification criteria and independent replication.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/synergy_computing_topology",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "compute-runtime",
+      "observed_maturity": "ACTIVE_EXPERIMENTAL",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_meta_api",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "protocol-transport",
+      "node_type": "api-gateway-research",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "api-catalogue-design",
+        "mcp-gateway-research",
+        "policy-bound-tool-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Build a unified secure node communication profile with transport negotiation, PQ-ready identity, telemetry and interoperable failover."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Offer a managed private mesh for industrial, municipal and enterprise deployments with service-level metering and offline operation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_post_quantum_radio",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_turbo_linux"
+      ],
+      "acceptance_gate": "Threat model, cryptographic review, interoperability, failover and real hardware/network measurements.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_app",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "apps-interface",
+      "node_type": "application",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "client-ui",
+        "control-plane"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the interface into a unified consent-aware client workflow with one identity, one navigation model and scoped access to canonical services."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add verticalized B2B workspaces and partner distribution: onboarding, billing, referral attribution, support and conversion analytics."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_meta_api",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "End-to-end user journey, authorization checks, accessibility, privacy export/deletion and payment reconciliation.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_midas_ai_trading_system",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "LEGACY_RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "midas"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_agi_olga",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "agentic-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_chain_print_money",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_gllm_nexus",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "agentic-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration",
+        "nexus"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_messenger",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "apps-interface",
+      "node_type": "application",
+      "observed_maturity": "HARDENED_ALPHA",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "client-ui",
+        "control-plane",
+        "messaging"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the interface into a unified consent-aware client workflow with one identity, one navigation model and scoped access to canonical services."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add verticalized B2B workspaces and partner distribution: onboarding, billing, referral attribution, support and conversion analytics."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_meta_api",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "End-to-end user journey, authorization checks, accessibility, privacy export/deletion and payment reconciliation.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_motherboard_xpu_xml",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "compute-runtime",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_midas_institutional",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "midas"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_blochain_budget",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_company",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_economic",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "finance-economy",
+      "node_type": "economic-model-documentation",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model-documentation",
+        "scenario-visualization"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_adaptive_engine",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "regime-adaptation"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_app_family",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "apps-interface",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "client-ui",
+        "control-plane"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the interface into a unified consent-aware client workflow with one identity, one navigation model and scoped access to canonical services."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add verticalized B2B workspaces and partner distribution: onboarding, billing, referral attribution, support and conversion analytics."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_meta_api",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "End-to-end user journey, authorization checks, accessibility, privacy export/deletion and payment reconciliation.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_shttps",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "protocol-transport",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "networking",
+        "secure-transport",
+        "protocol"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Build a unified secure node communication profile with transport negotiation, PQ-ready identity, telemetry and interoperable failover."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Offer a managed private mesh for industrial, municipal and enterprise deployments with service-level metering and offline operation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_post_quantum_radio",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_turbo_linux"
+      ],
+      "acceptance_gate": "Threat model, cryptographic review, interoperability, failover and real hardware/network measurements.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/shtencoauantai.github.io",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "presentation",
+      "node_type": "presentation",
+      "observed_maturity": "PRESENTATION_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "public-presentation",
+        "navigation"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make every claim traceable to a live source artifact and maturity status; dynamically surface verified evidence instead of static superlatives."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add conversion-grade product funnels: role-specific demos, sandbox access, partner onboarding and measurable calls to action."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy.github.io",
+        "Shtenco/shtenco.github.io",
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "Claim-to-source coverage, accessibility, analytics consent, conversion events and no unsupported claims.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_crypto_pump",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_eurasian",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "MODEL_SPEC_READY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_trademux",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "execution-planning"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_marketvision",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "market-feature-cube"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_agent_long_term_memory",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "agi-agentic",
+      "node_type": "memory-research",
+      "observed_maturity": "STUB_OR_RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agent-memory",
+        "long-term-context"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/synegy_ai_compress",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "compute-runtime",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os",
+        "compression"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_workspace",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "apps-interface",
+      "node_type": "desktop-workspace-research",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "local-workspace-design",
+        "task-lead-finance-ui"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the interface into a unified consent-aware client workflow with one identity, one navigation model and scoped access to canonical services."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add verticalized B2B workspaces and partner distribution: onboarding, billing, referral attribution, support and conversion analytics."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_meta_api",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "End-to-end user journey, authorization checks, accessibility, privacy export/deletion and payment reconciliation.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_nexus_science_agent",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "agentic-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration",
+        "nexus"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_binary_quantum_theory",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "science-research",
+      "node_type": "research",
+      "observed_maturity": "ACTIVE_EXPERIMENTAL",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "scientific-research",
+        "evidence"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Create a reproducible evidence package with preregistered hypotheses, raw data, baselines, uncertainty and independent replication."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Convert validated methods into an institutional research service: datasets, simulation API, technical reports and expert review."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_nexus_science_agent",
+        "Shtenco/synergy_gllm_nexus",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_megaproject"
+      ],
+      "acceptance_gate": "Frozen experiment manifest, baseline, confidence intervals, falsification criteria and independent replication.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_binary_neural_networks",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "compute-os",
+      "node_type": "model-research",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "binary-neural-networks",
+        "quantization"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/synergy_turbo_linux",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "compute-runtime",
+      "observed_maturity": "SECURITY_BLOCKED",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_net",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "protocol-transport",
+      "node_type": "protocol-runtime",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "networking",
+        "secure-transport",
+        "protocol"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Build a unified secure node communication profile with transport negotiation, PQ-ready identity, telemetry and interoperable failover."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Offer a managed private mesh for industrial, municipal and enterprise deployments with service-level metering and offline operation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_post_quantum_radio",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_turbo_linux"
+      ],
+      "acceptance_gate": "Threat model, cryptographic review, interoperability, failover and real hardware/network measurements.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy.github.io",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "presentation",
+      "node_type": "web-portal",
+      "observed_maturity": "PRESENTATION_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "public-web-portal",
+        "product-navigation",
+        "static-ui"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make every claim traceable to a live source artifact and maturity status; dynamically surface verified evidence instead of static superlatives."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add conversion-grade product funnels: role-specific demos, sandbox access, partner onboarding and measurable calls to action."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy.github.io",
+        "Shtenco/shtenco.github.io",
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "Claim-to-source coverage, accessibility, analytics consent, conversion events and no unsupported claims.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_metaverse",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "apps-interface",
+      "node_type": "metaverse-concept",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "metaverse-concept"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the interface into a unified consent-aware client workflow with one identity, one navigation model and scoped access to canonical services."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add verticalized B2B workspaces and partner distribution: onboarding, billing, referral attribution, support and conversion analytics."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_meta_api",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "End-to-end user journey, authorization checks, accessibility, privacy export/deletion and payment reconciliation.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/shtenco_micro_ai",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "local-ai-inference-runtime",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "local-model-inference",
+        "MNN-runtime",
+        "INT4-model-download",
+        "benchmarking"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_shhts",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "protocol-transport",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "networking",
+        "secure-transport",
+        "protocol"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Build a unified secure node communication profile with transport negotiation, PQ-ready identity, telemetry and interoperable failover."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Offer a managed private mesh for industrial, municipal and enterprise deployments with service-level metering and offline operation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_post_quantum_radio",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_turbo_linux"
+      ],
+      "acceptance_gate": "Threat model, cryptographic review, interoperability, failover and real hardware/network measurements.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_market_maker",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "market-making"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/3D_bars_market_structure",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "LEGACY_RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_ai_infrastructure_agent",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "agi-agentic",
+      "node_type": "infrastructure-agent",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "infrastructure-automation",
+        "allowlist-safety"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_fault_injection_lab",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "compute-os",
+      "node_type": "reliability-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "fault-injection",
+        "resilience-testing"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/synergy_complex_matrix_multiplication",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "compute-runtime",
+      "observed_maturity": "ACTIVE_EXPERIMENTAL",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_post_quantum_radio",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "protocol-transport",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "networking",
+        "secure-transport",
+        "protocol"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Build a unified secure node communication profile with transport negotiation, PQ-ready identity, telemetry and interoperable failover."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Offer a managed private mesh for industrial, municipal and enterprise deployments with service-level metering and offline operation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_post_quantum_radio",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_turbo_linux"
+      ],
+      "acceptance_gate": "Threat model, cryptographic review, interoperability, failover and real hardware/network measurements.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_agi_nexus",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "agentic-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration",
+        "nexus"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/swap_arbitrage_metatrader_5",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "LEGACY_RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_agentic_ai_economy",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "agentic-module",
+      "observed_maturity": "RND_SIMULATION",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_pay_system",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow",
+        "payments"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_algotrading_graph_system",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_long_term_harness",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "long-horizon-agent-harness-design",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "long-horizon-agent-evaluation-design",
+        "memory-harness-design",
+        "provider-routing-research"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_codebase_intelligence",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "agi-agentic",
+      "node_type": "code-intelligence",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "repository-indexing",
+        "code-navigation"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_service_recovery",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "compute-os",
+      "node_type": "reliability-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "service-recovery",
+        "restart-safety"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/midas_lite",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "LEGACY_RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "midas"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_usds",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "SECURITY_BLOCKED",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_llm_rwkv",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "model-compression-research",
+      "observed_maturity": "RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "model-weights",
+        "checkpoint-provenance",
+        "quantization-research"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_gguf_compress",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os",
+        "compression"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_trade_terminal",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_chain",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "blockchain-protocol",
+      "node_type": "protocol-runtime",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "smart-contracts",
+        "protocol",
+        "chain-runtime"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Expose a formal protocol conformance kit: invariant tests, cross-client compatibility, state proofs, replay/finality and recovery scenarios."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a compliant institutional integration layer: custody/identity boundaries, treasury policy, monitoring, incident response and reporting."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_chain",
+        "Shtenco/synergy_metachain",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Independent contract audit, fork tests, formal invariants, key lifecycle and adversarial bridge tests.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_rag_quality_cost",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "agi-agentic",
+      "node_type": "evaluation-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "RAG-quality",
+        "retrieval-cost"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/synergy_metachain",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "blockchain-protocol",
+      "node_type": "protocol-runtime",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "smart-contracts",
+        "protocol",
+        "chain-runtime"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Expose a formal protocol conformance kit: invariant tests, cross-client compatibility, state proofs, replay/finality and recovery scenarios."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a compliant institutional integration layer: custody/identity boundaries, treasury policy, monitoring, incident response and reporting."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_chain",
+        "Shtenco/synergy_metachain",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Independent contract audit, fork tests, formal invariants, key lifecycle and adversarial bridge tests.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_triangle_money_system",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "ACTIVE_EXPERIMENTAL",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow",
+        "hardnav",
+        "triangular-economy"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_quantlab",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "validation-lab",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "benchmark-validation"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_riskguard",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "risk-gating"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_system",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "architecture-governance",
+      "node_type": "architecture-registry",
+      "observed_maturity": "ARCHITECTURAL_MASTER",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "registry",
+        "federation",
+        "architecture",
+        "governance"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Add an executable portfolio control plane: ownership, contracts, dependency health, security gates, release provenance and drift detection."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a public/private procurement and investment evidence room with standardized technical, economic, security and impact scorecards."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_project",
+        "Shtenco/synergy_megaproject",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_nexus_science_agent"
+      ],
+      "acceptance_gate": "Live source SHAs, machine-checked schemas, owner approvals, no false runtime edges and audit history.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_lead_search_engline",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "search-growth",
+      "node_type": "lead-discovery-module",
+      "observed_maturity": "RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "search",
+        "lead-discovery",
+        "hardnav",
+        "triangular-economy"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Convert search and lead discovery into a consent-aware CRM pipeline with deduplication and source freshness."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a closed-loop revenue workflow: lead scoring, outreach approvals, sales attribution and CAC/LTV analytics."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_lead_search_engline",
+        "Shtenco/synergy_ai_browser-",
+        "Shtenco/synergy_ai_workspace",
+        "Shtenco/synergy_ai_company",
+        "Shtenco/synergy_apps"
+      ],
+      "acceptance_gate": "Lawful data sourcing, opt-out, provenance, false-positive audit and CRM conversion measurement.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_relative_value",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_agi_autopilot",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/sinergy_app",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "apps-interface",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "client-ui",
+        "control-plane"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the interface into a unified consent-aware client workflow with one identity, one navigation model and scoped access to canonical services."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add verticalized B2B workspaces and partner distribution: onboarding, billing, referral attribution, support and conversion analytics."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_meta_api",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "End-to-end user journey, authorization checks, accessibility, privacy export/deletion and payment reconciliation.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergychain.github.io",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "blockchain-protocol",
+      "node_type": "protocol-runtime",
+      "observed_maturity": "PRESENTATION_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "smart-contracts",
+        "protocol",
+        "chain-runtime"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Expose a formal protocol conformance kit: invariant tests, cross-client compatibility, state proofs, replay/finality and recovery scenarios."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a compliant institutional integration layer: custody/identity boundaries, treasury policy, monitoring, incident response and reporting."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_chain",
+        "Shtenco/synergy_metachain",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Independent contract audit, fork tests, formal invariants, key lifecycle and adversarial bridge tests.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/print_money_synergychain",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergistic_economics",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "finance-economy",
+      "node_type": "economic-simulation",
+      "observed_maturity": "RND_SIMULATION",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "stock-flow-consistent-model",
+        "cellular-coordination",
+        "physical-financial-balance",
+        "economic-simulation"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_megaproject",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "research-strategy",
+      "node_type": "research",
+      "observed_maturity": "ACTIVE_RESEARCH",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "strategic-research",
+        "graph"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Build an auditable strategy registry that maps hypotheses to experiments, source revisions and independent results."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Provide a portfolio-level strategy review service with resource allocation, milestone gates and risk-adjusted expected value."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_project",
+        "Shtenco/synergy_megaproject",
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_ai_investment_committee"
+      ],
+      "acceptance_gate": "Decision provenance, uncertainty ranges, conflict disclosure and milestone outcome review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_multiagent_benchmark",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "agi-agentic",
+      "node_type": "benchmark-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "multi-agent-evaluation",
+        "coordination-cost"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_backtest_oos_lab",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "trading-quant",
+      "node_type": "validation-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "backtest-validation",
+        "out-of-sample"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/shtenco.github.io",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "presentation",
+      "node_type": "presentation",
+      "observed_maturity": "PRESENTATION_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "public-presentation",
+        "navigation"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make every claim traceable to a live source artifact and maturity status; dynamically surface verified evidence instead of static superlatives."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add conversion-grade product funnels: role-specific demos, sandbox access, partner onboarding and measurable calls to action."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy.github.io",
+        "Shtenco/shtenco.github.io",
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_ai_company"
+      ],
+      "acceptance_gate": "Claim-to-source coverage, accessibility, analytics consent, conversion events and no unsupported claims.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/global_liquidity_dataminer",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "LEGACY_RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_project",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "architecture-governance",
+      "node_type": "architecture-registry",
+      "observed_maturity": "RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "registry",
+        "federation",
+        "architecture",
+        "governance"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Add an executable portfolio control plane: ownership, contracts, dependency health, security gates, release provenance and drift detection."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a public/private procurement and investment evidence room with standardized technical, economic, security and impact scorecards."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_project",
+        "Shtenco/synergy_megaproject",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_nexus_science_agent"
+      ],
+      "acceptance_gate": "Live source SHAs, machine-checked schemas, owner approvals, no false runtime edges and audit history.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_cashero",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "SECURITY_BLOCKED",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_agi_trader",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "agentic-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_qe",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "specification",
+      "observed_maturity": "STUB_SPEC_ONLY",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "agi-agentic",
+      "node_type": "memory-system",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "hierarchical-cognitive-memory",
+        "dynamic-context-planning",
+        "lexical-and-vector-retrieval",
+        "content-addressed-provenance",
+        "read-only-repository-ingestion"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_cpu_language_model",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "compute-os",
+      "node_type": "model-research",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "CPU-inference",
+        "small-language-model"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_cpu_gpu_cost_benchmark",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "compute-os",
+      "node_type": "benchmark-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "CPU-GPU-cost",
+        "performance-measurement"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/synergy_meta_os",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "compute-runtime",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_cold_nuclear",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "research-other",
+      "node_type": "research",
+      "observed_maturity": "RND_SCIENCE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "research"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the research artifact into a source-attributed graph dataset with explicit confidence and provenance."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose an analyst workflow and institutional evidence API with audit and privacy controls."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_nexus_science_agent",
+        "Shtenco/synergy_search_engline",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_system"
+      ],
+      "acceptance_gate": "Source lineage, entity resolution precision/recall, bias audit and reproducible exports.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/dlp_solver",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "science-research",
+      "node_type": "research",
+      "observed_maturity": "ACTIVE_EXPERIMENTAL",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "scientific-research",
+        "evidence"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Create a reproducible evidence package with preregistered hypotheses, raw data, baselines, uncertainty and independent replication."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Convert validated methods into an institutional research service: datasets, simulation API, technical reports and expert review."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_nexus_science_agent",
+        "Shtenco/synergy_gllm_nexus",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_megaproject"
+      ],
+      "acceptance_gate": "Frozen experiment manifest, baseline, confidence intervals, falsification criteria and independent replication.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_qr_compress",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "compute-os",
+      "node_type": "compute-runtime",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os",
+        "compression"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_2chain_qe",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_search_engline",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "finance-economy",
+      "node_type": "financial-economic-module",
+      "observed_maturity": "RND",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "economic-model",
+        "hardnav",
+        "triangular-economy",
+        "canonical-dividend-simulation"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Connect the model to a reconciled double-entry ledger and external cash-flow evidence so simulated value, internal transfers and realized income cannot be conflated."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose policy-controlled scenario APIs for treasury, SMEs, cooperatives and public-sector procurement, with audit trails and stress testing."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "acceptance_gate": "Conservation laws, ledger reconciliation, external-value proof, default/liquidity stress and legal review.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_market_graph",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "trading-quant",
+      "node_type": "trading-module",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "fair-value-graph"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the repository's market representation or strategy logic into a point-in-time data product with provenance, normalized schemas and paid API access."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Add a shared validation/execution evidence pack: purged walk-forward, realistic costs, broker/exchange shadow fills, drift monitoring and kill-switch integration."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Frozen datasets, timestamp/availability audit, OOS metrics with costs, shadow execution and no look-ahead.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_blockchain",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "blockchain-protocol",
+      "node_type": "protocol-runtime",
+      "observed_maturity": "CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "smart-contracts",
+        "protocol",
+        "chain-runtime"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Expose a formal protocol conformance kit: invariant tests, cross-client compatibility, state proofs, replay/finality and recovery scenarios."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a compliant institutional integration layer: custody/identity boundaries, treasury policy, monitoring, incident response and reporting."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_chain",
+        "Shtenco/synergy_metachain",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_financial_os"
+      ],
+      "acceptance_gate": "Independent contract audit, fork tests, formal invariants, key lifecycle and adversarial bridge tests.",
+      "classification_note": "category inherited from 2026-11-20 inventory; revalidate against current source"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_rnn_transformer_benchmark",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "science-research",
+      "node_type": "benchmark-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "sequence-model-benchmark",
+        "compute-budget"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Create a reproducible evidence package with preregistered hypotheses, raw data, baselines, uncertainty and independent replication."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Convert validated methods into an institutional research service: datasets, simulation API, technical reports and expert review."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_nexus_science_agent",
+        "Shtenco/synergy_gllm_nexus",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_megaproject"
+      ],
+      "acceptance_gate": "Frozen experiment manifest, baseline, confidence intervals, falsification criteria and independent replication.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_retry_storm_lab",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "compute-os",
+      "node_type": "reliability-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "retry-policy",
+        "circuit-breaker-testing"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/synergy_ai_browser-",
+      "default_branch": "main",
+      "visibility": "private",
+      "category": "research-other",
+      "node_type": "unclassified",
+      "observed_maturity": "PENDING_CLASSIFICATION",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Turn the research artifact into a source-attributed graph dataset with explicit confidence and provenance."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Expose an analyst workflow and institutional evidence API with audit and privacy controls."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_nexus_science_agent",
+        "Shtenco/synergy_search_engline",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_system"
+      ],
+      "acceptance_gate": "Source lineage, entity resolution precision/recall, bias audit and reproducible exports.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/tiimeweb_synergy_exactly_once_delivery",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "compute-os",
+      "node_type": "reliability-lab",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "exactly-once-delivery",
+        "idempotency"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Package the capability as a portable runtime module with signed manifests, reproducible builds, device/CPU profiles and hardware-aware scheduling."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Create a metered infrastructure service: benchmarked capacity, workload placement, energy/cost accounting and remote attestation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_motherboard_xpu_xml",
+        "Shtenco/synegy_ai_compress"
+      ],
+      "acceptance_gate": "Reproducible build, isolation, resource accounting, fault injection, matched-hardware benchmarks and rollback.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_agent_long_term_memory",
+      "default_branch": "main",
+      "visibility": "public",
+      "category": "agi-agentic",
+      "node_type": "memory-research",
+      "observed_maturity": "RND_CANDIDATE",
+      "readme_review": "README_FETCHED_2026-11-24",
+      "source_review": "PENDING_FULL_SOURCE_AND_TEST_AUDIT",
+      "capabilities": [
+        "agent-memory",
+        "cross-session-retrieval"
+      ],
+      "two_x_levers": [
+        {
+          "id": "X2-A",
+          "proposal": "Make the component a least-privilege agent tool with typed inputs/outputs, approval gates, replay protection and source-linked decision traces."
+        },
+        {
+          "id": "X2-B",
+          "proposal": "Turn it into a measurable agent service: benchmark suite, tenant isolation, usage metering, task marketplace listing and human escalation."
+        }
+      ],
+      "association_candidates": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture"
+      ],
+      "acceptance_gate": "Permission tests, tenant isolation, traceable outputs, idempotency, adversarial tests and measured task success/cost.",
+      "classification_note": "new repository absent from 2026-11-20 92-repo registry; category inferred from current README; verify source tree"
+    }
+  ]
+}
