@@ -187,28 +187,32 @@ The inspected registry already has these relevant contracts:
 - `synergy.runtime.hardware-model/v1`: XPU hardware model → Meta-OS.
 - `synergy.trust.commitment/v1`: PQ blockchain → MetaChain.
 
-The inspected `INTEGRATION_GAPS.json` contains no canonical contract family for:
+The inspected `CONTRACT_REGISTRY.json` and `INTEGRATION_GAPS.json` contain no federation-level JSON Schema contract family for:
 - compute resource advertisement;
-- compute job submission/lease;
-- remote execution authorization;
+- cross-runtime job submission and lease binding;
+- remote worker authorization;
 - model artifact manifest/distribution;
-- execution result/receipt;
+- execution result/receipt interchange;
 - independent compute verification;
-- compute reward eligibility.
+- compute reward evidence.
 
-This gap should be closed before cross-repository implementation spreads.
+This is a **cross-repository contract gap**, not an absence of all compute code. The blockchain core already has Rust commitment/state primitives: `NodeCapacity`/`WorkRequirements`, `AgentServiceAdvertisement`/`AgentDelegation`, `InferenceJob`/`InferenceStageAssignment`/`InferenceStageReceipt`, `ModelManifestCommitment`/`ModelShardOutput`, `KvCacheLease`/`KvReplicaReceipt`, `AgentTaskCommitment`/`AgentExecutionReceipt`, verifier aggregates, `SynaAgentMintAuthorization` and `ComputeSettlement`. These are not yet a shared, versioned JSON contract connecting Meta-OS, SynergyNet, Agent Fabric, model storage and worker execution.
 
-## 4. Proposed SUMI contracts (design proposal; not yet registered)
+The next step is to map existing types to federation schemas and add adapters. Do not create duplicate Rust primitives or a second scheduler.
 
-Create versioned contracts under `synergy_system` and corresponding producers/consumers only after schema review:
+## 4. Proposed SUMI federation contracts (design proposal; not yet registered)
 
-1. `synergy.compute.resource-profile/v1` — signed, privacy-minimized resource advertisement (CPU, RAM, GPU/accelerator, runtimes, quotas, availability, network class).
-2. `synergy.compute.job/v1` — immutable task manifest (input/model hashes, runtime, limits, privacy, budget, expiry, retry and verification policy).
-3. `synergy.compute.lease/v1` — exclusive bounded assignment with epoch/expiry, worker identity and replay protection.
-4. `synergy.model.artifact/v1` — model identity, architecture, format, version, hashes, license/provenance, runtime compatibility and access policy.
-5. `synergy.compute.execution-receipt/v1` — worker-signed execution statement bound to exact job, lease, model, inputs, output and runtime.
-6. `synergy.compute.verification/v1` — independent verifier/challenge result; worker must not self-verify rewarded work.
-7. `synergy.compute.reward-eligibility/v1` — evidence-only eligibility input for the authoritative economic layer; it must not directly mint or settle funds.
+Create schemas under `synergy_system` only after compatibility review. Each schema should map to existing core types instead of replacing them:
+
+1. `synergy.compute.resource-profile/v1` — maps Meta-OS's owner-authorized resource discovery to core `NodeCapacity` and `AgentServiceAdvertisement`; include CPU/RAM/GPU/accelerator, storage, bandwidth class, runtime support, hard quotas, consent scope, expiry and privacy-minimized locality.
+2. `synergy.compute.job/v1` — maps the external job manifest to `InferenceJob` and/or `AgentTaskCommitment`; binds input/model roots, stage plan, runtime digest, privacy/egress policy, hard limits, deadline, retry/idempotency and verification policy.
+3. `synergy.compute.lease/v1` — bridges Agent Fabric `TaskLease` to core `InferenceStageAssignment`; binds exact job/plan root, worker identity/keyset, stage, resource profile, monotonic fencing epoch, expiry and one-shot consumption.
+4. `synergy.model.artifact/v1` — maps model registry/storage manifests to `ModelManifestCommitment` and `ModelShardOutput`; binds architecture/tokenizer/numeric format, shard ordering, content hash, storage object ID, codec/version, provenance, license and runtime compatibility.
+5. `synergy.compute.execution-receipt/v1` — maps worker output to `InferenceStageReceipt` and/or `AgentExecutionReceipt`; binds exact job/lease/stage, worker, model/input/output/trace roots, measured resource usage, runtime digest and signed authorization.
+6. `synergy.compute.verification/v1` — maps independent challenges and verifier aggregates to `VerificationAggregate`/outcome evidence; verifier identity and quorum policy must be independent of the worker.
+7. `synergy.compute.reward-eligibility/v1` — maps evidence to the existing reward/settlement state; it is an evidence-only input, never direct mint/payment authority. Keep `SynaAgentMintAuthorization` and `ComputeSettlement` as the authoritative on-chain state transitions.
+
+Contract authority boundaries:
 
 Contract authority boundaries:
 - Meta-OS owns node/service capability grants and lifecycle.
