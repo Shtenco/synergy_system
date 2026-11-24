@@ -125,3 +125,8 @@ The current limits cover address-space memory, CPU seconds and open files. They 
 - Meta-OS manifest parsing now rejects duplicate object keys (including nested objects) rather than accepting last-key-wins ambiguity, and rejects duplicate service names before activation.
 
 - The Linux process-tree regression test was made resilient to the `/proc/<pid>/stat` entry disappearing between the existence check and read; latest Meta-OS head is `5d1949407c00396866c7e4c63eaafabf744ff936`.
+
+
+## 7. Compute lease federation bridge
+
+A separate design note, `docs/SUMI_COMPUTE_LEASE_FEDERATION_BRIDGE_2026-11-25.md`, maps the existing Agent Fabric `TaskSpec`/`TaskLease` to the existing `InferenceJob`/`InferenceStageAssignment`/`InferenceStageReceipt` without duplicating domain types. It documents the incompatibility between logical scheduler epochs and inference expiry timestamps, the missing binding of model/input/resource/stage commitments into the current V3 task lease, the need for authenticated worker identity and durable lease authority, and the required receipt/replay/verification lifecycle. This is DESIGN ONLY; it is intentionally not registered as an implemented contract or runtime edge.
