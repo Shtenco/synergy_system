@@ -103,5 +103,7 @@ The current limits cover address-space memory, CPU seconds and open files. They 
 - Agent Fabric source was fetched from GitHub `main`; PR #32 contains proposed registration, lease-commitment and stdio-boundary hardening on a separate branch.
 - Meta-OS source and its current test file were inspected from GitHub `main`; PR #31 contains proposed executable binding, strict manifest/limit validation and output-pipe hardening on a separate branch.
 - The P7 status file records prior test results but also records remote execution, production sandboxing and independent-device deployment as pending.
+- Agent Fabric PR #32 Actions runs #1881 (45429061557) and #33 (45429061539) created jobs but failed before the first workflow step; all job records had `steps=null` and `logs_url=null`. A rerun of both workflows was accepted and reproduced the same pre-step failure. No Cargo/Solidity command executed.
+- Meta-OS PR #31 and the SUMI documentation PR #55 had no associated workflow runs at the time of this check.
 - No Rust tests, Python tests, clippy, Windows build, Linux sandbox test, or cross-host execution were run in this review.
 - No merge was performed.
