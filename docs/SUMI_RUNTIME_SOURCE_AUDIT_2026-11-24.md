@@ -30,13 +30,13 @@ The V2 lease root committed to task ID, goal, agent ID, and epochs, but omitted 
 
 In `agent-fabric-stdio.rs`, JSON unsigned integers are read as `u64` and cast to `u32` for CPU and memory. Values above `u32::MAX` truncate rather than being rejected. Missing or wrongly typed values also fall back to defaults. This weakens the boundary between an untrusted JSON-RPC request and scheduler policy.
 
-**Required remediation:** validate required fields, reject out-of-range values, impose explicit upper bounds, validate non-empty bounded identifiers/strings and tool arrays, and return JSON-RPC invalid-params errors. Do not silently coerce malformed resource declarations.
+**Remediation proposed in Agent Fabric PR #32:** strict numeric conversion/range checks, bounded identifiers and tool arrays, and JSON-RPC invalid-params errors. The change is not yet merged or test-verified. Do not silently coerce malformed resource declarations.
 
 ### AF-04 — JSONL request size is unbounded (MEDIUM)
 
 The stdio loop reads each request as a complete line without a configured maximum length. A local client able to write to the process stdin can force excessive allocation before JSON parsing.
 
-**Required remediation:** define a conservative maximum frame size, reject oversized requests before parsing, and test boundary sizes and malformed UTF-8/JSON behavior.
+**Remediation proposed in Agent Fabric PR #32:** a bounded 64 KiB frame reader and a regression test for oversized input. The current behavior fails closed by returning an I/O error (terminating the stdio process); production supervision/restart policy remains to be specified. Malformed UTF-8/JSON and exact boundary behavior still require CI/runtime verification.
 
 ### AF-05 — Scheduler is not a remote execution protocol (ARCHITECTURAL GATE)
 
