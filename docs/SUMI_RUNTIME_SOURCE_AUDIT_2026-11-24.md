@@ -24,15 +24,17 @@ The V2 lease root committed to task ID, goal, agent ID, and epochs, but omitted 
 
 **Remediation prepared:** PR #32 introduces the `SYNERGY/AGENT-LEASE/V3` domain and deterministically commits to all current execution-relevant `TaskSpec` fields plus worker identity and lease epochs. Required tools are a `BTreeSet`, so iteration order is deterministic. Regression tests cover policy-field changes.
 
-**Compatibility remediation added to PR #32:** the public legacy root helpers retain their original V2 hash domain; newly issued leases explicitly carry `commitment_version=V3`; a missing version field on a deserialized legacy `TaskLease` defaults to V2; V2 roots can be checked for migration/audit, but `validate_for_execution` rejects V2. New scheduler leases are always V3. This avoids silently reinterpreting persisted V2 roots as V3.
+**Compatibility remediation added to PR #32:** the public legacy root helpers retain their original V2 hash domain; newly issued leases explicitly carry `commitment_version=V3`; a missing version field on a deserialized legacy `TaskLease` defaults to V2; V2 roots can be checked for migration/audit, but execution admission rejects V2. New scheduler leases are always V3. Regression tests cover both legacy JSON defaulting and V3 serialization.
 
-**Remaining compatibility gate:** source inspection found the `TaskLease` producer in Agent Fabric and its stdio JSON serialization boundary; `AgentDelegation` carries an opaque lease root and must be validated against authoritative scheduler state at the destination. GitHub code search returned no indexed results, so this is not a complete repository-wide search of evidence archives, external consumers, or persisted deployments. Before merge, validate real historical serialized V2 records and all external consumers. Never execute a V2 lease; re-issue it as V3 after checking current task policy and worker identity.
+**Execution-admission hardening added to PR #32:** `validate_for_execution` now requires the expected worker identity and current epoch, rejects not-yet-valid and expired leases, and checks the V3 commitment. `SwarmScheduler::validate_active_lease` additionally requires the worker to remain registered and the exact lease object to equal the scheduler's current active lease; released/replaced leases therefore fail admission. `lease_until` now reclaims expired leases before placement so a missed periodic expiry sweep cannot leave workers blocked indefinitely. Tests cover wrong worker, early/expired epochs, changed lease fields, release/replay rejection and expired-lease reclamation.
+
+**Remaining compatibility gate:** source inspection found the `TaskLease` producer in Agent Fabric and its stdio JSON serialization boundary; `AgentDelegation` carries an opaque lease root and the destination must consult the authoritative scheduler before execution. GitHub code search returned no indexed results, so this is not a complete repository-wide search of evidence archives, external consumers, or persisted deployments. Before merge, validate real historical serialized V2 records and all external consumers. The scheduler check is authoritative only within the lifetime and trust boundary of that scheduler instance; a distributed deployment still needs authenticated, durable lease-state replication or a signed scheduler authority protocol.
 
 ### AF-03 — stdio adapter narrows untrusted numeric inputs without range checks (MEDIUM)
 
 In `agent-fabric-stdio.rs`, JSON unsigned integers are read as `u64` and cast to `u32` for CPU and memory. Values above `u32::MAX` truncate rather than being rejected. Missing or wrongly typed values also fall back to defaults. This weakens the boundary between an untrusted JSON-RPC request and scheduler policy.
 
-**Remediation proposed in Agent Fabric PR #32:** strict numeric conversion/range checks, bounded identifiers and tool arrays, and JSON-RPC invalid-params errors. The change is not yet merged or test-verified. Do not silently coerce malformed resource declarations.
+**Remediation proposed in Agent Fabric PR #32:** strict numeric conversion/range checks, bounded identifiers and tool arrays, and JSON-RPC invalid-params errors. The change is not yet merged or test-verified. The portable CI workflow now includes a separate locked `node-runtime` workspace job (format, metadata, check, tests and Clippy); prior workflow runs failed before runner allocation, so the new gates still need a functioning runner. Do not silently coerce malformed resource declarations.
 
 ### AF-04 — JSONL request size is unbounded (MEDIUM)
 
@@ -44,7 +46,7 @@ The stdio loop reads each request as a complete line without a configured maximu
 
 The inspected shared scheduler tracks CPU millis, memory MiB, tools, remote eligibility and leases. It does not itself establish authenticated remote execution, input/model delivery, sandbox launch, output return, independent verification, or durable receipt consumption. The current P7 evidence also explicitly lists remote execution over PQ-MESH and three-independent-device evidence as pending.
 
-**Required gate:** keep the scheduler as control plane. Do not represent a lease as proof that work ran. A separate worker protocol must bind job, lease, worker identity, input/model hashes, runtime policy, output hash and independent verification.
+**Required gate:** keep the scheduler as control plane. Do not represent a lease as proof that work ran. The local scheduler now has a V3 active-lease admission check, but it is not a distributed authority protocol and does not persist/replicate state. A separate worker protocol must bind job, lease, worker identity, input/model hashes, runtime policy, output hash and independent verification.
 
 ## 3. Meta-OS — `runtime/orchestrator.py`
 
