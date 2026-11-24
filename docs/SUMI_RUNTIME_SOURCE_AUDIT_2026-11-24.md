@@ -135,7 +135,7 @@ A separate design note, `docs/SUMI_COMPUTE_LEASE_FEDERATION_BRIDGE_2026-11-25.md
 
 - Latest Agent Fabric head `12a962a8293e6f12211dd48de926b085a4f0739b` was rechecked: workflow runs #45479580186 and #45479580290 failed before any job step; `rust-core`, `solidity-core`, `rust-portable`, and `agent-fabric-runtime` all returned empty step arrays. No source-level test or build result is available.
 
-- Agent Fabric stdio parser follow-up: recursive Serde decoding now rejects duplicate JSON keys at all nesting levels and trailing JSON values; duplicate tool declarations are rejected rather than normalized. Regression tests and protocol documentation added. Latest Agent Fabric head: `c5eafdb61d6868ed35e7a10348422e881504b8d2`. Rust toolchain unavailable in the editing environment; changes remain uncompiled and untested.
+- Agent Fabric stdio parser follow-up: recursive Serde decoding now rejects duplicate JSON keys at all nesting levels and trailing JSON values; duplicate tool declarations are rejected rather than normalized. Regression tests and protocol documentation added. Latest Agent Fabric head: `b33c6362d8d40a502e140dbd607b5636c53e6938`. Rust toolchain unavailable in the editing environment; changes remain uncompiled and untested.
 
 
 ## 8. Follow-up hardening — 2026-11-25
@@ -162,3 +162,7 @@ Source review found that lease issuance, expiry maintenance and admission accept
 Latest Agent Fabric source commit: `b33c6362d8d40a502e140dbd607b5636c53e6938`.
 
 - Latest Agent Fabric epoch-hardening head `b33c6362d8d40a502e140dbd607b5636c53e6938`: runs #45500564475 and #45500564470 failed before steps; `rust-portable`, `agent-fabric-runtime`, `solidity-core`, and `rust-core` returned empty step arrays. No Rust command executed and no test pass is claimed.
+
+- Agent Fabric scheduler epoch hardening follow-up: `SwarmScheduler` now enforces a monotonic logical-epoch floor; backwards lease issuance/expiry operations are rejected, and only successful lease admission advances the floor. Regression tests cover rollback and invalid-probe clock poisoning. Latest PR head: `b33c6362d8d40a502e140dbd607b5636c53e6938`.
+
+- CI for Agent Fabric head `b33c6362d8d40a502e140dbd607b5636c53e6938`: runs #45500564475 and #45500564470 failed before any job steps; `rust-portable`, `agent-fabric-runtime`, `rust-core`, and `solidity-core` all returned empty step arrays. No source-level validation result.
