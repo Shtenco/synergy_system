@@ -82,7 +82,7 @@ Processes are started with `stdout=PIPE` and `stderr=PIPE`, but the orchestrator
 
 On partial activation failure, already launched processes receive `terminate()`, but the code does not wait for termination, escalate to kill after a deadline, or verify that every process exited. The previous active manifest is copied for rollback, but activation failure does not restore a complete previous process set.
 
-**Required remediation:** use a supervisor transaction: stage and validate all launch specifications, start under a tracked activation generation, health-check, commit only after readiness, and on failure terminate/wait/kill all newly started processes while preserving the old generation. Test child crash, timeout, hung shutdown and partial launch.
+**Partial remediation added in Meta-OS PR #31:** activation failure now sends termination to every process started by that activation, waits for exit, escalates to kill after a bounded timeout, and reaps the child. A failure-injection regression test launches one long-running child, forces the next launch to fail, and asserts the first child has exited and been waited on. This closes the immediate terminate-without-wait leak for partial launch failures, but is not a complete supervisor transaction. **Still required:** stage and validate all launch specifications, track activation generations, health-check before commit, preserve the old generation, and test child crash, timeout, hung shutdown and rollback.
 
 ### MOS-07 — Resource limits are incomplete for compute workers (HIGH)
 
@@ -106,6 +106,6 @@ The current limits cover address-space memory, CPU seconds and open files. They 
 - Meta-OS source and its current test file were inspected from GitHub `main`; PR #31 contains proposed executable binding, strict manifest/limit validation and output-pipe hardening on a separate branch.
 - The P7 status file records prior test results but also records remote execution, production sandboxing and independent-device deployment as pending.
 - Agent Fabric PR #32 has since been extended with explicit V2/V3 lease-version compatibility and V3-only execution admission. Latest observed Actions runs #1890 (45430878757) and #41 (45430878898) created jobs but failed before the first workflow step; all job records had `runner_id=0`, empty runner name and `steps=[]`. No Cargo/Solidity command executed. Earlier pre-step failures were reproduced on multiple commits.
-- Meta-OS PR #31 and the SUMI documentation PR #55 had no associated workflow runs at the time of this check.
-- No Rust tests, Python tests, clippy, Windows build, Linux sandbox test, or cross-host execution were run in this review.
+- Meta-OS PR #31 now includes synchronous terminate/wait/kill/reap cleanup for partial activation failure and a failure-injection regression test. Its branch currently has no associated workflow runs; the new Python test has not been executed in this environment.
+- The new stdio regression tests explicitly cover legacy JSON without `commitment_version` defaulting to V2 and scheduler-issued JSON declaring V3. The new Meta-OS failure-injection test is committed but not executed. No Rust tests, Python tests, clippy, Windows build, Linux sandbox test, or cross-host execution were run in this review.
 - No merge was performed.
