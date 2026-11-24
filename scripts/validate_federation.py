@@ -79,7 +79,10 @@ def main() -> int:
             fail(f"{r['name']} has an unknown readme_deep_pass status")
         if r["readme_deep_pass"] == "PENDING_RENAME_REVALIDATION" and not r.get("classification_basis", "").startswith("renamed repository lineage"):
             fail(f"{r['name']} is pending rename review without rename-lineage classification")
-        if r["readme_deep_pass"] == "PENDING" and not r.get("classification_basis", "").startswith("provisional inventory classification"):
+        if r["readme_deep_pass"] == "PENDING" and not (
+            r.get("classification_basis", "").startswith("provisional inventory classification")
+            or r.get("classification_basis", "").startswith("targeted source/branch/CI review")
+        ):
             fail(f"{r['name']} is pending initial review without provisional classification")
 
     expected = {
