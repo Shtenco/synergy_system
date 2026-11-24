@@ -127,10 +127,10 @@ def main() -> int:
             fail(f"rename candidate target missing from inventory: {item.get('candidate_full_name')}")
 
     unmatched_interfaces = set(interface_names) - full_name_set
-    if unmatched_interfaces != set(legacy_names):
+    if unmatched_interfaces:
         fail(
-            "interface/inventory name mismatch differs from explicit unverified rename candidates: "
-            f"unmatched={sorted(unmatched_interfaces)} candidates={sorted(legacy_names)}"
+            "interface registry references repositories absent from the federation owner inventory: "
+            f"{sorted(unmatched_interfaces)}"
         )
 
     print(f"OK: {len(repos)} unique current owner-inventory entries")
