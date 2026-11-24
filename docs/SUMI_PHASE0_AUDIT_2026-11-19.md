@@ -30,7 +30,9 @@ This is a documentation/source inspection, not a fresh local build or execution 
 
 The repository is the federation governance and contract root, not the network daemon, AI runtime, ledger or OS kernel.
 
-Its current registries describe 75 repositories, 39 contract families and 44 runtime adapter edges. The README reports 0 E2E-tested edges and 0 deployed edges at its 2026-09-29 snapshot. Therefore, adapter presence must not be confused with observed cross-repository execution.
+The README's 2026-09-29 snapshot reported 75 repositories, 39 contract families and 44 runtime adapter edges, with 0 E2E-tested edges and 0 deployed edges. The newer `registry/REPOSITORY_INTERFACES.json` is dated 2026-11-20 and reports 77 repositories. The newer `registry/INTEGRATION_GAPS.json` (2026-11-20) reports 39 registered contracts, 0 missing endpoints among those registered contracts, 44 runtime adapter edges, 0 E2E-tested edges, 2 uncontracted candidates and 3 observed contract risks. The `CONTRACT_REGISTRY.json` remains dated 2026-09-29 with 39 contract families. These snapshots must not be collapsed into one date or treated as a complete current runtime inventory.
+
+A zero missing-endpoint count only means that the listed contracts have declared producer/consumer endpoints. It does not mean every relevant subsystem has a contract: no compute-job, compute-resource, worker-lease, model-artifact, execution-receipt or independent-compute-verification family appears in the 39-entry contract registry. Adapter presence must not be confused with observed cross-repository execution.
 
 Relevant canonical files:
 - `registry/REPOSITORY_INTERFACES.json`
