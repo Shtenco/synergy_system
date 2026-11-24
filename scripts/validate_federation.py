@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the live 91-repository owner inventory and its 75-record interface scope.
+"""Validate the 92-record federation-reviewed owner inventory and its 75-record interface scope.
 
 The owner inventory is not the same thing as the runtime/interface maturity registry.
 Legacy names are retained as explicitly unverified rename candidates until immutable
@@ -25,6 +25,9 @@ ALLOWED_CLASSIFICATION_BASES = {
     "architectural documentation classification; not proof of runtime dependency",
     "renamed repository lineage; revalidate README passport, active branches and runtime dependency before marking complete",
     "provisional inventory classification from current README/main tree and selected branch evidence; federation_parent is not proof of runtime dependency",
+    "targeted source/branch/CI review on 2026-11-20; branch evidence does not imply merged main runtime or deployment",
+    "provisional inventory classification from current main tree and live PR #1; federation_parent is not proof of runtime dependency",
+    "targeted source/branch/CI review on 2026-11-20; branch evidence does not imply merged main runtime or deployment",
 }
 ALLOWED_DEEP_PASS = {"COMPLETE", "PENDING_RENAME_REVALIDATION", "PENDING"}
 
@@ -51,8 +54,8 @@ def main() -> int:
             f"repositories has {len(repos) if isinstance(repos, list) else 'non-list'} entries"
         )
 
-    if len(repos) != 91:
-        fail(f"expected 91 current owner repositories, got {len(repos)}")
+    if len(repos) != 92:
+        fail(f"expected 92 federation-reviewed owner repositories, got {len(repos)}")
 
     full_names = [r.get("full_name") for r in repos]
     names = [r.get("name") for r in repos]
@@ -77,7 +80,10 @@ def main() -> int:
             fail(f"{r['name']} has an unknown readme_deep_pass status")
         if r["readme_deep_pass"] == "PENDING_RENAME_REVALIDATION" and not r.get("classification_basis", "").startswith("renamed repository lineage"):
             fail(f"{r['name']} is pending rename review without rename-lineage classification")
-        if r["readme_deep_pass"] == "PENDING" and not r.get("classification_basis", "").startswith("provisional inventory classification"):
+        if r["readme_deep_pass"] == "PENDING" and not (
+            r.get("classification_basis", "").startswith("provisional inventory classification")
+            or r.get("classification_basis", "").startswith("targeted source/branch/CI review")
+        ):
             fail(f"{r['name']} is pending initial review without provisional classification")
 
     expected = {
@@ -98,8 +104,8 @@ def main() -> int:
     interfaces = load(INTERFACES)
     interface_repos = interfaces.get("repositories", [])
     interface_names = [r.get("repo") for r in interface_repos]
-    if interfaces.get("repository_count") != len(interface_repos) or len(interface_repos) != 75:
-        fail("interface registry must retain its separate 75-record scope")
+    if interfaces.get("repository_count") != len(interface_repos) or len(interface_repos) != 77:
+        fail("interface registry must retain its separate 77-record scope")
     if len(interface_names) != len(set(interface_names)):
         fail("duplicate repository names in interface registry")
 
@@ -121,10 +127,10 @@ def main() -> int:
             fail(f"rename candidate target missing from inventory: {item.get('candidate_full_name')}")
 
     unmatched_interfaces = set(interface_names) - full_name_set
-    if unmatched_interfaces != set(legacy_names):
+    if unmatched_interfaces:
         fail(
-            "interface/inventory name mismatch differs from explicit unverified rename candidates: "
-            f"unmatched={sorted(unmatched_interfaces)} candidates={sorted(legacy_names)}"
+            "interface registry references repositories absent from the federation owner inventory: "
+            f"{sorted(unmatched_interfaces)}"
         )
 
     print(f"OK: {len(repos)} unique current owner-inventory entries")

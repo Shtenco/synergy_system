@@ -750,7 +750,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "EXTERNAL_RUNTIME_PENDING"
+      "interface_status": "SECURITY_BLOCKED"
     },
     {
       "repo": "Shtenco/synergy_algotrading_graph_system",
@@ -1267,7 +1267,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "SECURITY_BLOCKED"
     },
     {
       "repo": "Shtenco/synergy_long_term_harness",
@@ -1279,7 +1279,7 @@
       "consumes": [],
       "runtime_out": [],
       "runtime_in": [],
-      "interface_status": "ARCHITECTURAL_ONLY"
+      "interface_status": "DOCUMENTATION_ONLY"
     },
     {
       "repo": "Shtenco/synergy_market_graph",

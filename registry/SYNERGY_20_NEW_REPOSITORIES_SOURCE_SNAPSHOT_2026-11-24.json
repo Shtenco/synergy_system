@@ -1,0 +1,424 @@
+{
+  "schema": "synergy.new-repository-source-snapshot/v1",
+  "as_of": "2026-11-24",
+  "scope": "Structural source-tree and branch inventory for the 20 repositories added to the live 112-repository owner inventory. Selected workflow/source files were inspected. This is not a full security, dependency, semantic correctness or production audit.",
+  "repository_count": 20,
+  "limitations": [
+    "Main-branch tree snapshots only; no full Git history scan in this pass.",
+    "Branch counts are current API observations, not a complete branch/commit lineage audit.",
+    "Presence of tests or workflows does not prove that tests pass or that workflows execute them.",
+    "Most Timeweb research labs still need per-repository workflow execution review and independent experiment reproduction.",
+    "No credentials were read, rotated or remediated in this pass."
+  ],
+  "repositories": [
+    {
+      "name": "timeweb_synergy_llm_memory_lab",
+      "visibility": "public",
+      "tree_sha": "b67b34f30a48a1a8b4bf1277a273da432711b725",
+      "branches": 1,
+      "files": 22,
+      "source_files": 8,
+      "test_files": [
+        "prototypes/tests/test_articles_01_05.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "research-ci inspected: syntax compilation and documentation checks; does not execute unit tests",
+      "findings": [
+        "Research/prototype package; test file exists but CI does not run it."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_ml_validation_lab",
+      "visibility": "public",
+      "tree_sha": "ba93cabf4d2ec15886c7c524669c851f546e73d7",
+      "branches": 1,
+      "files": 30,
+      "source_files": 11,
+      "test_files": [
+        "prototypes/tests/test_article08_dataset_extract.py",
+        "prototypes/tests/test_article08_group_leakage.py",
+        "prototypes/tests/test_article08_real.py",
+        "prototypes/tests/test_articles_06_08.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "research-ci inspected: syntax compilation and documentation checks; does not execute unit tests",
+      "findings": [
+        "Contains focused dataset-extraction and group-leakage test files; CI test execution is not configured in the inspected workflow."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_python_cpp_performance",
+      "visibility": "public",
+      "tree_sha": "ea477e276c7339931864b8cea54b34756ae663b5",
+      "branches": 1,
+      "files": 42,
+      "source_files": 13,
+      "test_files": [
+        "prototypes/tests/test_article07_multi_kernel.py",
+        "prototypes/tests/test_article07_real_benchmark.py",
+        "prototypes/tests/test_articles_06_08.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Includes C++ benchmark sources and Python wrappers; benchmark comparability and compiler/environment pinning need a deeper source review."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_benchmark_statistics",
+      "visibility": "public",
+      "tree_sha": "9d6db41edc273189fe4795b3803f98181cff02be",
+      "branches": 1,
+      "files": 23,
+      "source_files": 8,
+      "test_files": [
+        "prototypes/tests/test_article15_measured_uncertainty.py",
+        "prototypes/tests/test_articles_13_15.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Contains a measured-uncertainty test and a stored experiment result; independent reproduction remains pending."
+      ]
+    },
+    {
+      "name": "synergy_agent_long_term_memory",
+      "visibility": "public",
+      "tree_sha": "a3c4f4aebc69f741f6c380682b882b9a106f0d17",
+      "branches": 2,
+      "files": 1,
+      "source_files": 0,
+      "test_files": [],
+      "workflows": [],
+      "ci_tests_review": "main has no CI; non-default feature branch CI passes on exact head 04e666038ac7 (run 45473683807), including package install, compile and full unittest suite.",
+      "findings": [
+        "Default main remains README-only, but the non-default feat/persistent-mission-runtime-v1 branch contains a 10-file durable mission runtime with SQLite journal, idempotent events, checkpoints, ring buffer, typed contract, three test modules and CI.",
+        "The branch is now proposed in Draft PR #2; main remains unchanged until review and merge.",
+        "This is a mission lifecycle/event-journal runtime, not the same capability as timeweb_synergy_agent_long_term_memory's SQLite cross-session memory experiment. The two have adjacent persistence concerns but distinct ownership boundaries; integrate through explicit contracts rather than collapsing repositories."
+      ],
+      "reviewed_non_default_branches": [
+        {
+          "branch": "feat/persistent-mission-runtime-v1",
+          "tree_sha": "76e2e77b57009c69491a0597e047fe274110dc1d",
+          "files": 10,
+          "source_files": 4,
+          "test_files": [
+            "tests/test_contracts.py",
+            "tests/test_ring_buffer.py",
+            "tests/test_runtime.py"
+          ],
+          "workflows": [
+            ".github/workflows/tests.yml"
+          ],
+          "exact_head_ci": {
+            "sha": "04e666038ac7cd0652ea77ce4de2c2f1ec706dcf",
+            "run_id": 45473683807,
+            "conclusion": "success"
+          }
+        }
+      ]
+    },
+    {
+      "name": "timeweb_synergy_binary_neural_networks",
+      "visibility": "public",
+      "tree_sha": "e391b2f2809e8033a39258303017c23d023fe93a",
+      "branches": 1,
+      "files": 27,
+      "source_files": 8,
+      "test_files": [
+        "prototypes/tests/test_article02_real.py",
+        "prototypes/tests/test_articles_01_05.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Prototype and real-experiment paths exist; empirical scope and baseline strength require review."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_ai_infrastructure_agent",
+      "visibility": "public",
+      "tree_sha": "6fb12232e07a82d86a6689d8aa0d1c6efde453d3",
+      "branches": 1,
+      "files": 20,
+      "source_files": 6,
+      "test_files": [
+        "prototypes/tests/test_articles_09_12.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "One grouped scenario test file; no dedicated agent integration or fault/recovery test was identified from tree structure."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_fault_injection_lab",
+      "visibility": "public",
+      "tree_sha": "53585459cefbc3956f1601feaaece80d68da7170",
+      "branches": 1,
+      "files": 18,
+      "source_files": 2,
+      "test_files": [],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "research-ci inspected: syntax compilation and documentation checks; does not execute qa/validate.py",
+      "findings": [
+        "qa/validate.py references manuscripts_md/, html/, word/ and results/16 artifacts absent from the complete main tree; requirements.txt lists pytest only although validator imports python-docx and BeautifulSoup. Validator is not runnable in a clean checkout as currently published.",
+        "Experiment uses two local HTTP processes on one host; README correctly disclaims multi-host partitions and production-cluster conclusions."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_codebase_intelligence",
+      "visibility": "public",
+      "tree_sha": "9eca8881fa15cd8e14c5e4a714014adc0df95029",
+      "branches": 1,
+      "files": 20,
+      "source_files": 6,
+      "test_files": [
+        "prototypes/tests/test_articles_01_05.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Prototype/scenario and grouped test surface; production-grade repository intelligence not established by tree presence alone."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_service_recovery",
+      "visibility": "public",
+      "tree_sha": "d350865dbf602c3b518ec0a1f6e183e6d0438d80",
+      "branches": 1,
+      "files": 20,
+      "source_files": 6,
+      "test_files": [
+        "prototypes/tests/test_articles_09_12.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Grouped scenario tests exist; recovery semantics and restart/fencing behavior need direct source and fault tests."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_rag_quality_cost",
+      "visibility": "public",
+      "tree_sha": "a5ec554db4f10ec5076be74f8283603cb1fedf3d",
+      "branches": 1,
+      "files": 20,
+      "source_files": 6,
+      "test_files": [
+        "prototypes/tests/test_articles_13_15.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Article/scenario-level test file present; retrieval quality, cost accounting and evaluation-set leakage need direct review."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_multiagent_benchmark",
+      "visibility": "public",
+      "tree_sha": "a493423ec344819de485b50d26eb7f85511bd54b",
+      "branches": 1,
+      "files": 20,
+      "source_files": 6,
+      "test_files": [
+        "prototypes/tests/test_articles_01_05.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Grouped scenario test exists; benchmark independence, task equivalence and statistical replication remain unverified."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_backtest_oos_lab",
+      "visibility": "public",
+      "tree_sha": "1c116e449ca992f5bccbaa70ae98d65972a08e69",
+      "branches": 1,
+      "files": 20,
+      "source_files": 6,
+      "test_files": [
+        "prototypes/tests/test_articles_09_12.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Grouped scenario test exists; no claim of full walk-forward, purge/embargo, multiple-testing correction or external-market validity is made from tree evidence."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_cpu_language_model",
+      "visibility": "public",
+      "tree_sha": "bcde48c89e60cd0498dbf33a969d009fe6e98df8",
+      "branches": 1,
+      "files": 25,
+      "source_files": 8,
+      "test_files": [
+        "prototypes/tests/test_article05_real_text.py",
+        "prototypes/tests/test_articles_01_05.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Includes a real-text experiment and stored results; CPU benchmark claims require matched hardware/runtime baselines."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_cpu_gpu_cost_benchmark",
+      "visibility": "public",
+      "tree_sha": "5c25ddb97838a1d14e40dc9458847743fa94191f",
+      "branches": 1,
+      "files": 20,
+      "source_files": 6,
+      "test_files": [
+        "prototypes/tests/test_articles_09_12.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Grouped scenario test exists; no direct evidence yet of controlled CPU/GPU parity, energy metering or cost normalization."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_rnn_transformer_benchmark",
+      "visibility": "public",
+      "tree_sha": "76ec7c407f2015b391b9f0d4561ce3caa54e5c05",
+      "branches": 1,
+      "files": 23,
+      "source_files": 8,
+      "test_files": [
+        "prototypes/tests/test_article06_real_sequence.py",
+        "prototypes/tests/test_articles_06_08.py"
+      ],
+      "workflows": [
+        "research-ci.yml",
+        "source-integrity.yml"
+      ],
+      "ci_tests_review": "workflow semantics not individually inspected in this pass",
+      "findings": [
+        "Contains a real sequence experiment and stored UCI HAR results; split discipline, leakage control and repeated-seed uncertainty require direct review."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_retry_storm_lab",
+      "visibility": "public",
+      "tree_sha": "b601f79db253751e4c7d99d671420bf95d840d3c",
+      "branches": 1,
+      "files": 35,
+      "source_files": 15,
+      "test_files": [
+        "tests/test_faults.py",
+        "tests/test_integration.py",
+        "tests/test_policies.py"
+      ],
+      "workflows": [
+        "ci.yml"
+      ],
+      "ci_tests_review": "inspected: unittest suite runs on Python 3.10, 3.12 and 3.13; compileall also runs",
+      "findings": [
+        "Stronger test/CI surface than the generic research labs; still a localhost controlled workload, not a distributed multi-region production SLO proof."
+      ]
+    },
+    {
+      "name": "synergy_ai_browser-",
+      "visibility": "private",
+      "tree_sha": "e69ce454424c4d29da54dc649d7379ec24b9bef0",
+      "branches": 2,
+      "files": 19,
+      "source_files": 10,
+      "test_files": [
+        "tests/test_cli.py",
+        "tests/test_core.py",
+        "tests/test_detectors.py",
+        "tests/test_regressions.py",
+        "tests/test_remote_cdp.py"
+      ],
+      "workflows": [
+        "live-smoke.yml",
+        "tests.yml"
+      ],
+      "ci_tests_review": "test workflow present; exact commands not inspected in this pass",
+      "findings": [
+        "Private repository with five test modules and live-smoke/tests workflows; review requires authenticated exact-head workflow evidence and browser safety/permission tests."
+      ]
+    },
+    {
+      "name": "tiimeweb_synergy_exactly_once_delivery",
+      "visibility": "public",
+      "tree_sha": "35e834a7b4bcabdc6c656a8beb3a167c1ced2b99",
+      "branches": 1,
+      "files": 17,
+      "source_files": 4,
+      "test_files": [
+        "tests/test_invariants.py"
+      ],
+      "workflows": [
+        "research-ci.yml"
+      ],
+      "ci_tests_review": "research-ci inspected: syntax compilation and documentation checks; does not execute unit tests",
+      "findings": [
+        "Core experiment implements SQLite transactional dedupe and crash-redelivery probes, but the only unit-test module covers fingerprint/quantile helpers; core idempotency/crash/payload-conflict assertions live in the experiment runner and are not exercised by CI. The claim is transaction-scoped, not transport-level or external-API exactly-once."
+      ]
+    },
+    {
+      "name": "timeweb_synergy_agent_long_term_memory",
+      "visibility": "public",
+      "tree_sha": "2bcb732a92fe8053c18f913edb1318ac21ef3620",
+      "branches": 1,
+      "files": 25,
+      "source_files": 9,
+      "test_files": [
+        "tests/test_memory.py"
+      ],
+      "workflows": [
+        "research-ci.yml"
+      ],
+      "ci_tests_review": "inspected: unittest, compileall, SQLite fixture smoke and documentation checks run",
+      "findings": [
+        "SQLite persistence across four connections is tested; the source explicitly says this is not LLM semantic memory, not multi-day agent memory and not multi-process memory. Distinct from the one-file synergy_agent_long_term_memory stub."
+      ]
+    }
+  ]
+}

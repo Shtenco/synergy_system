@@ -1,0 +1,597 @@
+{
+  "schema": "synergy.2x-capability-portfolio/v1",
+  "as_of": "2026-11-24",
+  "status": "architecture_proposal_not_production_evidence",
+  "owner": "Shtenco",
+  "architecture_root": "Shtenco/synergy_system",
+  "umbrella_registry": "Shtenco/synergy",
+  "inventory_snapshot": "2026-11-20",
+  "inventory_repositories": 92,
+  "capability_count": 30,
+  "division_count": 6,
+  "semantics": {
+    "anchors": "Candidate repository anchors only; not proof of code dependency, runtime integration, deployment or ownership of every listed capability.",
+    "implementation_status": "Evidence-oriented classification for planning; must be revalidated against exact current main/PR SHAs.",
+    "depends_on": "Portfolio sequencing dependencies; not runtime edges.",
+    "implementation_status_values": {
+      "EXISTING_VERIFY": "A relevant implementation/repository exists; current source, tests, integration and deployment must be revalidated.",
+      "PROTOTYPE_RND": "Code or research exists, but product-level readiness is not established.",
+      "ADJACENT_REUSE_REQUIRED": "An adjacent component exists but does not yet implement this capability's complete authority or workflow.",
+      "GAP": "No sufficiently evidenced canonical implementation was identified in the inspected material.",
+      "RESEARCH": "Research or simulation exists; production capability and external validity are not established.",
+      "BLOCKED_SECURITY_REVIEW": "Candidate repositories include unresolved security findings; deployment and federation promotion are blocked pending verified remediation."
+    }
+  },
+  "capabilities": [
+    {
+      "capability_id": "BUS-01",
+      "division": "AUTONOMOUS_BUSINESS",
+      "name": "CEO AI / Executive Copilot",
+      "anchors": [
+        "Shtenco/synergy_ai_company",
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_agi_autopilot"
+      ],
+      "implementation_status": "PROTOTYPE_RND",
+      "depends_on": [
+        "HUM-10",
+        "HUM-07"
+      ],
+      "first_gate": "source-linked decision trace, approval workflow, permission boundary and rollback tests",
+      "revenue_models": [
+        "enterprise_saas",
+        "deployment_license"
+      ]
+    },
+    {
+      "capability_id": "BUS-02",
+      "division": "AUTONOMOUS_BUSINESS",
+      "name": "Workforce & Agent Operations",
+      "anchors": [
+        "Shtenco/synergy_ai_company",
+        "Shtenco/synergy_agi_autopilot",
+        "Shtenco/synergy_long_term_harness"
+      ],
+      "implementation_status": "PROTOTYPE_RND",
+      "depends_on": [
+        "HUM-07",
+        "HUM-10"
+      ],
+      "first_gate": "lease expiry, fencing, duplicate-task, escalation and unauthorized-action tests",
+      "revenue_models": [
+        "per_seat_saas",
+        "per_agent_saas"
+      ]
+    },
+    {
+      "capability_id": "BUS-03",
+      "division": "AUTONOMOUS_BUSINESS",
+      "name": "Procurement Intelligence",
+      "anchors": [
+        "Shtenco/synergy_lead_search_engline"
+      ],
+      "implementation_status": "ADJACENT_REUSE_REQUIRED",
+      "depends_on": [
+        "HUM-10",
+        "HUM-07"
+      ],
+      "first_gate": "supplier provenance, normalized quote comparison, conflict checks and approved purchase flow",
+      "revenue_models": [
+        "subscription",
+        "workflow_fee"
+      ]
+    },
+    {
+      "capability_id": "BUS-04",
+      "division": "AUTONOMOUS_BUSINESS",
+      "name": "Supply Chain Control Tower",
+      "anchors": [
+        "Shtenco/synergy_financial_os"
+      ],
+      "implementation_status": "GAP",
+      "depends_on": [
+        "BUS-03",
+        "CAP-14",
+        "ECON-29"
+      ],
+      "first_gate": "reconciled inventory events, disruption simulation and forecast error report",
+      "revenue_models": [
+        "enterprise_saas",
+        "api"
+      ]
+    },
+    {
+      "capability_id": "BUS-05",
+      "division": "AUTONOMOUS_BUSINESS",
+      "name": "Legal & Contract Operations AI",
+      "anchors": [],
+      "implementation_status": "GAP",
+      "depends_on": [
+        "HUM-07",
+        "HUM-10"
+      ],
+      "first_gate": "clause-level citations, jurisdiction tagging, version comparison and human approval",
+      "revenue_models": [
+        "per_seat_saas",
+        "enterprise_license"
+      ]
+    },
+    {
+      "capability_id": "HUM-06",
+      "division": "HUMAN_OS",
+      "name": "Life AI / Personal Operations",
+      "anchors": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_app_family",
+        "Shtenco/sinergy_super_app"
+      ],
+      "implementation_status": "PROTOTYPE_RND",
+      "depends_on": [
+        "HUM-07",
+        "HUM-10"
+      ],
+      "first_gate": "consent, export/deletion, action preview, permission revocation and recovery tests",
+      "revenue_models": [
+        "freemium",
+        "premium_subscription"
+      ]
+    },
+    {
+      "capability_id": "HUM-07",
+      "division": "HUMAN_OS",
+      "name": "Personal & Organizational Knowledge",
+      "anchors": [
+        "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+        "Shtenco/synergy_long_term_harness",
+        "Shtenco/synergy_ai_coder"
+      ],
+      "implementation_status": "PROTOTYPE_RND",
+      "depends_on": [
+        "HUM-10"
+      ],
+      "first_gate": "tenant isolation, source revision binding, symlink containment, retrieval provenance and deletion propagation",
+      "revenue_models": [
+        "storage_api",
+        "enterprise_license"
+      ]
+    },
+    {
+      "capability_id": "HUM-08",
+      "division": "HUMAN_OS",
+      "name": "Adaptive Education",
+      "anchors": [],
+      "implementation_status": "GAP",
+      "depends_on": [
+        "HUM-07"
+      ],
+      "first_gate": "held-out learning assessment, bias review, source attribution and learner data controls",
+      "revenue_models": [
+        "b2c_subscription",
+        "institutional_license"
+      ]
+    },
+    {
+      "capability_id": "HUM-09",
+      "division": "HUMAN_OS",
+      "name": "Health Information Assistant",
+      "anchors": [],
+      "implementation_status": "GAP",
+      "depends_on": [
+        "HUM-07",
+        "HUM-10"
+      ],
+      "first_gate": "clinical safety review, source traceability, consent and non-diagnostic behavior tests",
+      "revenue_models": [
+        "subscription",
+        "provider_integration"
+      ]
+    },
+    {
+      "capability_id": "HUM-10",
+      "division": "HUMAN_OS",
+      "name": "Digital Identity & Verifiable Credentials",
+      "anchors": [
+        "Shtenco/synergy_ai_blockchain",
+        "Shtenco/synergy_chain",
+        "Shtenco/synergy_metachain"
+      ],
+      "implementation_status": "RESEARCH",
+      "depends_on": [],
+      "first_gate": "key lifecycle, revocation, replay protection, privacy threat model and crypto review",
+      "revenue_models": [
+        "verification_api",
+        "enterprise_identity"
+      ]
+    },
+    {
+      "capability_id": "CAP-11",
+      "division": "CAPITAL_INVESTMENT",
+      "name": "Investment Intelligence",
+      "anchors": [
+        "Shtenco/synergy_ai_investment_committee",
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_financial_os"
+      ],
+      "implementation_status": "EXISTING_VERIFY",
+      "depends_on": [
+        "HUM-07",
+        "QUANT-16",
+        "QUANT-20"
+      ],
+      "first_gate": "source provenance, valuation sensitivity, conflicts disclosure and analyst review",
+      "revenue_models": [
+        "research_subscription",
+        "enterprise_license"
+      ]
+    },
+    {
+      "capability_id": "CAP-12",
+      "division": "CAPITAL_INVESTMENT",
+      "name": "Venture & Private-Market Workflow",
+      "anchors": [],
+      "implementation_status": "GAP",
+      "depends_on": [
+        "CAP-11",
+        "HUM-10"
+      ],
+      "first_gate": "legal rights model, investor eligibility, audit trail and transfer restrictions",
+      "revenue_models": [
+        "saas",
+        "administration_fee"
+      ]
+    },
+    {
+      "capability_id": "CAP-13",
+      "division": "CAPITAL_INVESTMENT",
+      "name": "Real-World Asset Lifecycle",
+      "anchors": [
+        "Shtenco/synergy_ai_blockchain",
+        "Shtenco/synergy_chain",
+        "Shtenco/synergy_pay_system"
+      ],
+      "implementation_status": "RESEARCH",
+      "depends_on": [
+        "HUM-10",
+        "DEFI-23",
+        "DEFI-21"
+      ],
+      "first_gate": "jurisdictional legal opinion, custody/registry reconciliation, redemption and default tests",
+      "revenue_models": [
+        "issuance_fee",
+        "servicing_fee",
+        "api"
+      ]
+    },
+    {
+      "capability_id": "CAP-14",
+      "division": "CAPITAL_INVESTMENT",
+      "name": "Treasury AI",
+      "anchors": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_blochain_budget"
+      ],
+      "implementation_status": "PROTOTYPE_RND",
+      "depends_on": [
+        "QUANT-20"
+      ],
+      "first_gate": "ledger reconciliation, cash forecast backtest, approval matrix and payment idempotency",
+      "revenue_models": [
+        "enterprise_saas"
+      ]
+    },
+    {
+      "capability_id": "CAP-15",
+      "division": "CAPITAL_INVESTMENT",
+      "name": "Portfolio Constructor",
+      "anchors": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_quantlab"
+      ],
+      "implementation_status": "PROTOTYPE_RND",
+      "depends_on": [
+        "QUANT-16",
+        "QUANT-20"
+      ],
+      "first_gate": "frozen data, OOS evaluation, turnover/cost modeling, constraints and benchmark comparison",
+      "revenue_models": [
+        "subscription",
+        "enterprise_license"
+      ]
+    },
+    {
+      "capability_id": "QUANT-16",
+      "division": "QUANT_MARKET_INTELLIGENCE",
+      "name": "Quant Lab / Strategy Research Factory",
+      "anchors": [
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_midas_ai"
+      ],
+      "implementation_status": "EXISTING_VERIFY",
+      "depends_on": [
+        "QUANT-20"
+      ],
+      "first_gate": "dataset and commit hashes, frozen OOS, purge/embargo, bootstrap intervals and reproducible reports",
+      "revenue_models": [
+        "research_platform_license"
+      ]
+    },
+    {
+      "capability_id": "QUANT-17",
+      "division": "QUANT_MARKET_INTELLIGENCE",
+      "name": "Market-Making Network",
+      "anchors": [
+        "Shtenco/synergy_market_maker",
+        "Shtenco/synergy_adaptive_engine",
+        "Shtenco/synergy_midas_institutional"
+      ],
+      "implementation_status": "PROTOTYPE_RND",
+      "depends_on": [
+        "QUANT-20",
+        "QUANT-18"
+      ],
+      "first_gate": "fill quality, adverse selection, inventory, fees, latency and kill-switch evidence",
+      "revenue_models": [
+        "license",
+        "lawful_performance_fee"
+      ]
+    },
+    {
+      "capability_id": "QUANT-18",
+      "division": "QUANT_MARKET_INTELLIGENCE",
+      "name": "Arbitrage Intelligence",
+      "anchors": [
+        "Shtenco/synergy_market_graph",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_algotrading_graph_system"
+      ],
+      "implementation_status": "PROTOTYPE_RND",
+      "depends_on": [
+        "QUANT-20"
+      ],
+      "first_gate": "atomicity, stale quote, partial-fill, gas/fee, bridge and counterparty failure tests",
+      "revenue_models": [
+        "api",
+        "enterprise_license"
+      ]
+    },
+    {
+      "capability_id": "QUANT-19",
+      "division": "QUANT_MARKET_INTELLIGENCE",
+      "name": "Derivatives & Volatility Analytics",
+      "anchors": [
+        "Shtenco/synergy_midas_institutional",
+        "Shtenco/synergy_midas_ai"
+      ],
+      "implementation_status": "RESEARCH",
+      "depends_on": [
+        "QUANT-16",
+        "QUANT-20"
+      ],
+      "first_gate": "independent pricing checks, timestamp binding, stress scenarios and model-risk report",
+      "revenue_models": [
+        "data_subscription",
+        "api"
+      ]
+    },
+    {
+      "capability_id": "QUANT-20",
+      "division": "QUANT_MARKET_INTELLIGENCE",
+      "name": "Risk OS",
+      "anchors": [
+        "Shtenco/synergy_riskguard"
+      ],
+      "implementation_status": "EXISTING_VERIFY",
+      "depends_on": [],
+      "first_gate": "stale-state fail-closed, policy provenance, adversarial tests, signed decision trace and customer shadow evidence",
+      "revenue_models": [
+        "enterprise_license",
+        "paid_pilot"
+      ]
+    },
+    {
+      "capability_id": "DEFI-21",
+      "division": "DEFI_BLOCKCHAIN",
+      "name": "Universal DEX & Liquidity Router",
+      "anchors": [
+        "Shtenco/synergy_chain",
+        "Shtenco/synergy_metachain",
+        "Shtenco/synergy_ai_blockchain"
+      ],
+      "implementation_status": "RESEARCH",
+      "depends_on": [
+        "HUM-10",
+        "DEFI-24",
+        "DEFI-25"
+      ],
+      "first_gate": "invariant/property tests, MEV/slippage analysis, fork tests, audits and reconciliation",
+      "revenue_models": [
+        "protocol_fee",
+        "integration_license"
+      ]
+    },
+    {
+      "capability_id": "DEFI-22",
+      "division": "DEFI_BLOCKCHAIN",
+      "name": "Credit Protocol",
+      "anchors": [
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergy_chain",
+        "Shtenco/synergistic_economics"
+      ],
+      "implementation_status": "RESEARCH",
+      "depends_on": [
+        "HUM-10",
+        "DEFI-23"
+      ],
+      "first_gate": "conservation, collateral valuation, liquidation, bad-debt and stress tests",
+      "revenue_models": [
+        "origination_fee",
+        "servicing_fee"
+      ]
+    },
+    {
+      "capability_id": "DEFI-23",
+      "division": "DEFI_BLOCKCHAIN",
+      "name": "Stable Assets & Reserve Management",
+      "anchors": [
+        "Shtenco/synergy_usds",
+        "Shtenco/synergy_cashero",
+        "Shtenco/synergy_triangle_money_system"
+      ],
+      "implementation_status": "BLOCKED_SECURITY_REVIEW",
+      "depends_on": [
+        "HUM-10",
+        "DEFI-25"
+      ],
+      "first_gate": "credential remediation, legal structure, independent reserve reconciliation, redemption stress and contract audit",
+      "revenue_models": [
+        "issuance_fee",
+        "servicing_fee"
+      ]
+    },
+    {
+      "capability_id": "DEFI-24",
+      "division": "DEFI_BLOCKCHAIN",
+      "name": "Cross-Chain Messaging & Settlement",
+      "anchors": [
+        "Shtenco/synergy_chain",
+        "Shtenco/synergy_metachain",
+        "Shtenco/synergy_ai_blockchain"
+      ],
+      "implementation_status": "RESEARCH",
+      "depends_on": [
+        "HUM-10",
+        "DEFI-25"
+      ],
+      "first_gate": "adversarial bridge tests, finality assumptions, replay protection and recovery proofs",
+      "revenue_models": [
+        "message_fee",
+        "settlement_fee"
+      ]
+    },
+    {
+      "capability_id": "DEFI-25",
+      "division": "DEFI_BLOCKCHAIN",
+      "name": "On-Chain Governance & Treasury Controls",
+      "anchors": [
+        "Shtenco/synergy_ai_blockchain",
+        "Shtenco/synergy_chain",
+        "Shtenco/synergy_financial_os"
+      ],
+      "implementation_status": "RESEARCH",
+      "depends_on": [
+        "HUM-10",
+        "CAP-14"
+      ],
+      "first_gate": "Sybil/capture analysis, quorum, timelock, emergency pause and ledger reconciliation",
+      "revenue_models": [
+        "governance_tooling_license"
+      ]
+    },
+    {
+      "capability_id": "ECON-26",
+      "division": "COOPERATIVE_ECONOMY",
+      "name": "Mutual Credit & Multilateral Clearing",
+      "anchors": [
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_triangle_money_system"
+      ],
+      "implementation_status": "RESEARCH",
+      "depends_on": [
+        "CAP-14",
+        "DEFI-22"
+      ],
+      "first_gate": "double-entry conservation, exposure caps, default waterfall, disputes and liquidity stress tests",
+      "revenue_models": [
+        "clearing_fee",
+        "membership_fee"
+      ]
+    },
+    {
+      "capability_id": "ECON-27",
+      "division": "COOPERATIVE_ECONOMY",
+      "name": "Value Network & Contribution Accounting",
+      "anchors": [
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_ai_economic",
+        "Shtenco/synergy_agentic_ai_economy"
+      ],
+      "implementation_status": "RESEARCH",
+      "depends_on": [
+        "ECON-30"
+      ],
+      "first_gate": "no double counting, causal attribution limits, auditability and appeal workflow",
+      "revenue_models": [
+        "analytics_license",
+        "institutional_license"
+      ]
+    },
+    {
+      "capability_id": "ECON-28",
+      "division": "COOPERATIVE_ECONOMY",
+      "name": "Cooperative Marketplace",
+      "anchors": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_ai_company"
+      ],
+      "implementation_status": "GAP",
+      "depends_on": [
+        "HUM-10",
+        "ECON-26",
+        "ECON-27"
+      ],
+      "first_gate": "participant identity, escrow/settlement, dispute process and unit economics",
+      "revenue_models": [
+        "marketplace_commission",
+        "saas"
+      ]
+    },
+    {
+      "capability_id": "ECON-29",
+      "division": "COOPERATIVE_ECONOMY",
+      "name": "Resource & Capacity Exchange",
+      "anchors": [
+        "Shtenco/synergy_computing_topology"
+      ],
+      "implementation_status": "GAP",
+      "depends_on": [
+        "HUM-10",
+        "CAP-14",
+        "ECON-27"
+      ],
+      "first_gate": "resource attestation, availability, metering, SLA, dispute and settlement evidence",
+      "revenue_models": [
+        "usage_fee",
+        "marketplace_commission"
+      ]
+    },
+    {
+      "capability_id": "ECON-30",
+      "division": "COOPERATIVE_ECONOMY",
+      "name": "Economic Simulator & Policy Lab",
+      "anchors": [
+        "Shtenco/synergistic_economics",
+        "Shtenco/synergy_ai_economic",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergy_search_engline"
+      ],
+      "implementation_status": "RESEARCH",
+      "depends_on": [],
+      "first_gate": "historical calibration, frozen benchmarks, sensitivity, OOS scenarios, conservation and falsification report",
+      "revenue_models": [
+        "research_license",
+        "consulting",
+        "institutional_api"
+      ]
+    }
+  ],
+  "validation": {
+    "unique_capability_ids": 30,
+    "unique_divisions": 6,
+    "dependency_cycle_check": "acyclic_dag_verified_2026-11-24",
+    "repository_anchor_semantics": "candidate_mapping_not_runtime_edge"
+  }
+}

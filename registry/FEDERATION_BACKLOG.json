@@ -1,187 +1,19 @@
 {
   "schema": "synergy.federation-backlog/v2",
-  "as_of": "2026-09-29",
-  "repository_count": 75,
-  "integrated_count": 42,
-  "non_integrated_count": 33,
+  "as_of": "2026-11-24",
+  "repository_count": 77,
+  "integrated_count": 41,
+  "non_integrated_count": 36,
   "unclassified_count": 0,
   "totals": {
+    "EXTERNAL_RUNTIME_PENDING": 10,
+    "DOCUMENTATION_ONLY": 15,
     "NON_RUNTIME_SURFACE": 3,
-    "DOCUMENTATION_ONLY": 14,
+    "SECURITY_BLOCKED": 5,
     "NEEDS_HARDENING": 2,
-    "SECURITY_BLOCKED": 2,
-    "GOVERNANCE_ROOT": 1,
-    "EXTERNAL_RUNTIME_PENDING": 11
+    "GOVERNANCE_ROOT": 1
   },
   "entries": [
-    {
-      "repo": "Shtenco/shtenco.github.io",
-      "domain": "APPS_INTERFACES",
-      "role": "Публичная web-витрина и навигационный интерфейс к проектам Shtenco.",
-      "maturity_status": "NON_RUNTIME_SURFACE",
-      "reason": "requires capability-level audit before promotion",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/shtencoauantai.github.io",
-      "domain": "APPS_INTERFACES",
-      "role": "Публичный web-интерфейс/сайт для представления отдельных направлений экосистемы.",
-      "maturity_status": "NON_RUNTIME_SURFACE",
-      "reason": "requires capability-level audit before promotion",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/sinergy_app",
-      "domain": "APPS_INTERFACES",
-      "role": "Приложенческий shell/концепт SINERGY.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "requires capability-level audit before promotion",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_app_family",
-      "domain": "APPS_INTERFACES",
-      "role": "Концептуальный семейный продуктовый слой/семейство приложений.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "requires capability-level audit before promotion",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_messenger",
-      "domain": "APPS_INTERFACES",
-      "role": "Мессенджер/коммуникационный слой SYNERGY и пользовательская клиентская оболочка.",
-      "maturity_status": "NEEDS_HARDENING",
-      "reason": "release evidence mismatch: package.json references missing scripts/tests while RELEASE-MANIFEST claims 249/249 tests passed",
-      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
-    },
-    {
-      "repo": "Shtenco/synergychain.github.io",
-      "domain": "APPS_INTERFACES",
-      "role": "Публичная web-витрина SINERGYCHAIN.",
-      "maturity_status": "NON_RUNTIME_SURFACE",
-      "reason": "requires capability-level audit before promotion",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/print_money_synergychain",
-      "domain": "BLOCKCHAIN_MONETARY",
-      "role": "R&D по программируемой эмиссии, ликвидности, mint/burn и внешне обеспеченному экономическому эффекту.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "current main exposes no executable source/test surface",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_chain",
-      "domain": "BLOCKCHAIN_MONETARY",
-      "role": "Экспериментальная блокчейн- и token/economic-ветка SINERGYCHAIN.",
-      "maturity_status": "NEEDS_HARDENING",
-      "reason": "qe_v10 remains a toy monetary model; unrestricted test-token mint surface must not be treated as production authority",
-      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
-    },
-    {
-      "repo": "Shtenco/synergy_chain_print_money",
-      "domain": "BLOCKCHAIN_MONETARY",
-      "role": "Концептуальный узел интеграции chain-механики и monetary/emission R&D.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "requires capability-level audit before promotion",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_qe",
-      "domain": "BLOCKCHAIN_MONETARY",
-      "role": "Концептуальный узел QE Engine; текущий main содержит только минимальный README.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "current main is minimal README",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_usds",
-      "domain": "BLOCKCHAIN_MONETARY",
-      "role": "Экспериментальная денежная/стейблкоин-модель USDS и Base-fork экономика.",
-      "maturity_status": "SECURITY_BLOCKED",
-      "reason": "credential-like deployer key filename; rotation/cleanup evidence required",
-      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
-    },
-    {
-      "repo": "Shtenco/synergy_cashero",
-      "domain": "FINANCE_REAL_ECONOMY",
-      "role": "Финансово-экономическая R&D-ветка, связанная с денежными потоками и платёжными сценариями.",
-      "maturity_status": "SECURITY_BLOCKED",
-      "reason": "credential-like env files require scan/rotation/cleanup",
-      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
-    },
-    {
-      "repo": "Shtenco/synergy_matrix_sota",
-      "domain": "FINANCE_REAL_ECONOMY",
-      "role": "Владелец части debt/credit lifecycle механизмов и матричной оценки зрелости/архитектуры.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "current main is documentation-only",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_gguf_compress",
-      "domain": "INFRA_NETWORK_SECURITY",
-      "role": "Лаборатория компрессии GGUF/LLM-моделей; на текущем main README остаётся минимальным, поэтому зрелость не предполагается.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "current main is minimal README",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_post_quantum_radio",
-      "domain": "INFRA_NETWORK_SECURITY",
-      "role": "Концептуальный узел post-quantum radio/physical transport; текущий main пока не доказывает готовую реализацию.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "requires capability-level audit before promotion",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_shhts",
-      "domain": "INFRA_NETWORK_SECURITY",
-      "role": "Экспериментальный security/transport placeholder; назначение должно подтверждаться будущими артефактами, а не названием.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "requires capability-level audit before promotion",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_shttps",
-      "domain": "INFRA_NETWORK_SECURITY",
-      "role": "Экспериментальный secure-transport/HTTPS-like placeholder; реализация пока не должна считаться доказанной по одному названию.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "requires capability-level audit before promotion",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_agi_autopilot",
-      "domain": "INTELLIGENCE_AGENTS",
-      "role": "Агентный автопилот: планирование задач, DAG/оркестрация и ограниченное автономное исполнение.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "current main does not expose the claimed runtime implementation",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_ai_company",
-      "domain": "INTELLIGENCE_AGENTS",
-      "role": "Концепт AI-native компании: агенты, процессы, контракты и автоматизация организации.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "current main is documentation-only",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_gllm_nexus",
-      "domain": "INTELLIGENCE_AGENTS",
-      "role": "Активный research runtime NEXUS/GLLM, бенчмарки, замороженные OOS-протоколы и генерации.",
-      "maturity_status": "DOCUMENTATION_ONLY",
-      "reason": "current main did not expose a pinned executable runtime during audit",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
-    {
-      "repo": "Shtenco/synergy_system",
-      "domain": "MASTER_GOVERNANCE",
-      "role": "Главный архитектурный и governance-корень всей федерации SYNERGY.",
-      "maturity_status": "GOVERNANCE_ROOT",
-      "reason": "requires capability-level audit before promotion",
-      "promotion_target": "no forced runtime promotion; preserve truthful role"
-    },
     {
       "repo": "Shtenco/3D_bars_market_structure",
       "domain": "TRADING_MARKET_INTELLIGENCE",
@@ -223,12 +55,12 @@
       "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
     },
     {
-      "repo": "Shtenco/multi_threaded_trading_robot_with_machine_learning_python",
-      "domain": "TRADING_MARKET_INTELLIGENCE",
-      "role": "Многопоточный ML-прототип торгового робота на Python.",
-      "maturity_status": "EXTERNAL_RUNTIME_PENDING",
-      "reason": "trading runtime must be isolated from broker/runtime dependencies",
-      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
+      "repo": "Shtenco/print_money_synergychain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "R&D по программируемой эмиссии, ликвидности, mint/burn и внешне обеспеченному экономическому эффекту.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "current main exposes no executable source/test surface",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
     },
     {
       "repo": "Shtenco/quantum-trading_metatrader5",
@@ -239,12 +71,52 @@
       "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
     },
     {
+      "repo": "Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python",
+      "domain": "TRADING_MARKET_INTELLIGENCE",
+      "role": "Многопоточный ML-прототип торгового робота на Python.",
+      "maturity_status": "EXTERNAL_RUNTIME_PENDING",
+      "reason": "trading runtime must be isolated from broker/runtime dependencies before federation promotion",
+      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/shtenco.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичная web-витрина и навигационный интерфейс к проектам Shtenco.",
+      "maturity_status": "NON_RUNTIME_SURFACE",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/shtencoauantai.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичный web-интерфейс/сайт для представления отдельных направлений экосистемы.",
+      "maturity_status": "NON_RUNTIME_SURFACE",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/sinergy_app",
+      "domain": "APPS_INTERFACES",
+      "role": "Приложенческий shell/концепт SINERGY.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
       "repo": "Shtenco/swap_arbitrage_metatrader_5",
       "domain": "TRADING_MARKET_INTELLIGENCE",
       "role": "R&D по swap/carry-арбитражу и синтетическим портфелям в MetaTrader 5.",
       "maturity_status": "EXTERNAL_RUNTIME_PENDING",
       "reason": "MetaTrader5-bound swap/carry research",
       "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_agi_autopilot",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Агентный автопилот: планирование задач, DAG/оркестрация и ограниченное автономное исполнение.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "current main does not expose the claimed runtime implementation",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
     },
     {
       "repo": "Shtenco/synergy_agi_trader",
@@ -255,11 +127,19 @@
       "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
     },
     {
+      "repo": "Shtenco/synergy_ai_company",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Концепт AI-native компании: агенты, процессы, контракты и автоматизация организации.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "current main is documentation-only",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
       "repo": "Shtenco/synergy_ai_trade_terminal",
       "domain": "TRADING_MARKET_INTELLIGENCE",
       "role": "Терминал и управляющий интерфейс для AI/algorithmic trading workloads.",
-      "maturity_status": "EXTERNAL_RUNTIME_PENDING",
-      "reason": "terminal/control runtime requires isolated non-executing contract first",
+      "maturity_status": "SECURITY_BLOCKED",
+      "reason": "unresolved P0: broker credential literals were identified in source; external revocation, account review and history remediation are not verified",
       "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
     },
     {
@@ -271,12 +151,157 @@
       "promotion_target": "no forced runtime promotion; preserve truthful role"
     },
     {
+      "repo": "Shtenco/synergy_app_family",
+      "domain": "APPS_INTERFACES",
+      "role": "Концептуальный семейный продуктовый слой/семейство приложений.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_cashero",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Финансово-экономическая R&D-ветка, связанная с денежными потоками и платёжными сценариями.",
+      "maturity_status": "SECURITY_BLOCKED",
+      "reason": "credential-like env files require scan/rotation/cleanup",
+      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_chain",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Экспериментальная блокчейн- и token/economic-ветка SINERGYCHAIN.",
+      "maturity_status": "NEEDS_HARDENING",
+      "reason": "qe_v10 remains a toy monetary model; unrestricted test-token mint surface must not be treated as production authority",
+      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_chain_print_money",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Концептуальный узел интеграции chain-механики и monetary/emission R&D.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_gguf_compress",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Лаборатория компрессии GGUF/LLM-моделей; на текущем main README остаётся минимальным, поэтому зрелость не предполагается.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "current main is minimal README",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_gllm_nexus",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Активный research runtime NEXUS/GLLM, бенчмарки, замороженные OOS-протоколы и генерации.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "current main did not expose a pinned executable runtime during audit",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+      "domain": "AI_MEMORY",
+      "role": "Provider-independent hierarchical cognitive memory research component: L0 system core, budgeted context retrieval, L2 graph/FTS/vector retrieval and L3 content-addressed source provenance. Candidate only; no cross-repository runtime contract is yet registered.",
+      "maturity_status": "SECURITY_BLOCKED",
+      "reason": "unresolved P1: API authentication/authorization, symlink containment and repository-scoped source identity require fixes and exact-head tests",
+      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_long_term_harness",
+      "domain": "INTELLIGENCE_AGENTS",
+      "role": "Исследовательский harness долгосрочной памяти и маршрутизации агентов; текущий main содержит README-only, реализация присутствует в неосновных ветках.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "current main is README-only; implementation on non-main branches is not merged release evidence",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_matrix_sota",
+      "domain": "FINANCE_REAL_ECONOMY",
+      "role": "Владелец части debt/credit lifecycle механизмов и матричной оценки зрелости/архитектуры.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "current main is documentation-only",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_messenger",
+      "domain": "APPS_INTERFACES",
+      "role": "Мессенджер/коммуникационный слой SYNERGY и пользовательская клиентская оболочка.",
+      "maturity_status": "NEEDS_HARDENING",
+      "reason": "release evidence mismatch: package.json references missing scripts/tests while RELEASE-MANIFEST claims 249/249 tests passed",
+      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
+    },
+    {
       "repo": "Shtenco/synergy_midas_ai_trading_system",
       "domain": "TRADING_MARKET_INTELLIGENCE",
       "role": "Техническая и экспериментальная ветка MIDAS AI trading system.",
       "maturity_status": "EXTERNAL_RUNTIME_PENDING",
       "reason": "large legacy/experimental trading surface requires capability extraction before federation",
       "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_post_quantum_radio",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Концептуальный узел post-quantum radio/physical transport; текущий main пока не доказывает готовую реализацию.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_qe",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Концептуальный узел QE Engine; текущий main содержит только минимальный README.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "current main is minimal README",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_shhts",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Экспериментальный security/transport placeholder; назначение должно подтверждаться будущими артефактами, а не названием.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_shttps",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Экспериментальный secure-transport/HTTPS-like placeholder; реализация пока не должна считаться доказанной по одному названию.",
+      "maturity_status": "DOCUMENTATION_ONLY",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_system",
+      "domain": "MASTER_GOVERNANCE",
+      "role": "Главный архитектурный и governance-корень всей федерации SYNERGY.",
+      "maturity_status": "GOVERNANCE_ROOT",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
+    },
+    {
+      "repo": "Shtenco/synergy_turbo_linux",
+      "domain": "INFRA_NETWORK_SECURITY",
+      "role": "Хостовый/OS-слой SYNERGY: системная изоляция, сервисы, устройство узла и экспериментальный runtime.",
+      "maturity_status": "SECURITY_BLOCKED",
+      "reason": "unresolved P0: private-key-like artifact and external rotation/history-remediation evidence remain unverified",
+      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergy_usds",
+      "domain": "BLOCKCHAIN_MONETARY",
+      "role": "Экспериментальная денежная/стейблкоин-модель USDS и Base-fork экономика.",
+      "maturity_status": "SECURITY_BLOCKED",
+      "reason": "credential-like deployer key filename; rotation/cleanup evidence required",
+      "promotion_target": "resolve blocker → isolate typed capability → consumer → tests → pinned evidence"
+    },
+    {
+      "repo": "Shtenco/synergychain.github.io",
+      "domain": "APPS_INTERFACES",
+      "role": "Публичная web-витрина SINERGYCHAIN.",
+      "maturity_status": "NON_RUNTIME_SURFACE",
+      "reason": "requires capability-level audit before promotion",
+      "promotion_target": "no forced runtime promotion; preserve truthful role"
     }
-  ]
+  ],
+  "note": "Structural reconciliation performed 2026-11-24 against the 77-row interface registry. Underlying repository/source/security observations remain dated per each finding; this reconciliation does not claim external credential rotation or security remediation."
 }
