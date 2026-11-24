@@ -178,3 +178,5 @@ Latest Agent Fabric source commit: `b33c6362d8d40a502e140dbd607b5636c53e6938`.
 - Agent Fabric root Rust CI reproducibility improvement: added `--locked` to `cargo check`, default `cargo test`, `cargo clippy`, and `reference-pq` feature tests. Verified both root and `node-runtime` Cargo.lock files are present. Latest PR #32 head: `4e3b3244bce80b2ba4cc5d30939d0c6df3c3b942`; no workflow run returned for this exact head at inspection.
 
 - Agent Fabric parser regression suite additionally verifies escaped duplicate keys (`id` and `\\u0069d`) collide after JSON string decoding. Latest PR #32 head: `b78880255da7aec84d60aca538f95fe498153d80`.
+
+- Latest Agent Fabric head `b78880255da7aec84d60aca538f95fe498153d80` CI: Portable Rust gates #45501205342 and PQ-EVM consensus core #45501205672 again failed before any job steps; all four jobs returned empty step arrays. Repeated runner/infrastructure failure continues to block source validation.
