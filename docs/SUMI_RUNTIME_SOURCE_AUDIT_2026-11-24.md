@@ -119,5 +119,7 @@ The current limits cover address-space memory, CPU seconds and open files. They 
 ## 6. Follow-up evidence update — 2026-11-25
 
 - Agent Fabric PR #32 latest head: `6287cdce08ba23e1cda5e3bc678e3cc26984de17`; latest Portable Rust workflow run #45478667661 failed with empty step arrays for both jobs, so no source-level CI result is available.
-- Meta-OS PR #31 latest head: `98c166f4bd8f6e54ef8b3ce1d969ae64437f9b6a`; process-tree cleanup and its regression test are proposed but unexecuted.
+- Meta-OS PR #31 latest head: `e013d09244d949891a7888fb23c3f2162f808781`; process-tree cleanup, duplicate JSON object-key rejection at all nesting levels, duplicate service-name rejection, and corresponding regression tests are proposed but unexecuted.
 - Both PRs remain Draft and unmerged. Their code is not production-ready and has not passed executable validation in this work session.
+
+- Meta-OS manifest parsing now rejects duplicate object keys (including nested objects) rather than accepting last-key-wins ambiguity, and rejects duplicate service names before activation.
