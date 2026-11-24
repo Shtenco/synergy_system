@@ -146,3 +146,7 @@ A separate design note, `docs/SUMI_COMPUTE_LEASE_FEDERATION_BRIDGE_2026-11-25.md
 - CI on Agent Fabric head `c9060aecae637f113613aec0f1bb133ac75b8909`: runs #45500139984 and #45500140111 failed before any steps. All four jobs (`rust-core`, `solidity-core`, `agent-fabric-runtime`, `rust-portable`) returned empty step arrays. No source-level validation result is available.
 - No Meta-OS workflow run was returned for its latest head. Python tests remain unexecuted.
 - The above changes are proposed on Draft PRs; none is merged or production-validated.
+
+- Meta-OS PR #31 follow-up: service process-group/session creation now uses `Popen(start_new_session=True)` rather than calling `setsid()` inside `preexec_fn`; the rlimit pre-exec hook remains and still requires replacement by a dedicated launcher for thread-safe production supervision. Latest Meta-OS head: `ae8d2238cf358e4336669945824fcf7b1265f150`; no workflow run returned.
+
+- Agent Fabric latest-head CI recheck (`c5eafdb61d6868ed35e7a10348422e881504b8d2`): runs #45500218712 and #45500218478 failed with all four jobs returning empty step arrays. No Rust, Solidity, formatting, test or Clippy command executed. Workflow job logs were unavailable from the artifact endpoint; no source-level diagnosis is inferred.
