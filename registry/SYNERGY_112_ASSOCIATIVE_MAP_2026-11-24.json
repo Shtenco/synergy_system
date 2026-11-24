@@ -1,0 +1,3996 @@
+{
+  "schema": "synergy.repository-associative-expansion/v1",
+  "generated_at": "2026-11-24",
+  "owner": "Shtenco",
+  "live_owner_inventory_count": 112,
+  "previous_registry_count": 92,
+  "newly_discovered_since_previous_registry": [
+    "Shtenco/synergy_agent_long_term_memory",
+    "Shtenco/synergy_ai_browser-",
+    "Shtenco/tiimeweb_synergy_exactly_once_delivery",
+    "Shtenco/timeweb_synergy_agent_long_term_memory",
+    "Shtenco/timeweb_synergy_ai_infrastructure_agent",
+    "Shtenco/timeweb_synergy_backtest_oos_lab",
+    "Shtenco/timeweb_synergy_benchmark_statistics",
+    "Shtenco/timeweb_synergy_binary_neural_networks",
+    "Shtenco/timeweb_synergy_codebase_intelligence",
+    "Shtenco/timeweb_synergy_cpu_gpu_cost_benchmark",
+    "Shtenco/timeweb_synergy_cpu_language_model",
+    "Shtenco/timeweb_synergy_fault_injection_lab",
+    "Shtenco/timeweb_synergy_llm_memory_lab",
+    "Shtenco/timeweb_synergy_ml_validation_lab",
+    "Shtenco/timeweb_synergy_multiagent_benchmark",
+    "Shtenco/timeweb_synergy_python_cpp_performance",
+    "Shtenco/timeweb_synergy_rag_quality_cost",
+    "Shtenco/timeweb_synergy_retry_storm_lab",
+    "Shtenco/timeweb_synergy_rnn_transformer_benchmark",
+    "Shtenco/timeweb_synergy_service_recovery"
+  ],
+  "source_scope": "All 112 main/README.md files fetched and reviewed in this pass; 92 existing records enriched from 2026-11-20 umbrella inventory. This is a README-level portfolio audit, not a source-code, branch, CI, security or deployment audit.",
+  "association_policy": "Each repository receives two proposed associative links: an operational complement and a cross-domain value-creation route. Links are strategic hypotheses, not verified runtime dependencies.",
+  "principles": [
+    "Do not create duplicate repositories when an existing canonical domain can be extended.",
+    "Keep one authority per fact: identity, accounting, settlement, model inference, execution, risk and governance.",
+    "Separate proposal, authorization, execution, settlement, accounting and external realized value.",
+    "Public-sector workflows require lawful data access, procurement neutrality, auditability, privacy, accessibility and human appeal.",
+    "Every new integration must become a versioned contract with conformance tests before being called an executable dependency."
+  ],
+  "counts": {
+    "total_repositories": 112,
+    "old_registry": 92,
+    "new_since_previous_registry": 20,
+    "association_edges": 224,
+    "repositories_with_two_associations": 112
+  },
+  "repositories": [
+    {
+      "repository": "Shtenco/3D_bars_market_structure",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "LEGACY_RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/computer_vision_trading_metatrader_5",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "LEGACY_RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "LEGACY_RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/dlp_solver",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "science-research",
+      "maturity": "ACTIVE_EXPERIMENTAL",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "scientific-research",
+        "evidence"
+      ],
+      "current_role": "research",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_nexus_science_agent",
+          "relationship": "operational_complement",
+          "opportunity": "Make experiments discoverable, reproducible and falsifiable through a shared scientific evidence pipeline."
+        },
+        {
+          "target_repository": "Shtenco/synergy_gllm_nexus",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Convert validated research artifacts into versioned developer or product capabilities without promoting hypotheses as facts."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/global_liquidity_dataminer",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "LEGACY_RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/midas_lite",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "LEGACY_RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "midas"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/print_money_synergychain",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/quantum-trading_metatrader5",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "LEGACY_RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/shtenco_micro_ai",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "RND_CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "local-model-inference",
+        "MNN-runtime",
+        "INT4-model-download",
+        "benchmarking"
+      ],
+      "current_role": "local-ai-inference-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "model weights are external and not stored in Git",
+        "main inference workflow failed on the inspected main SHA; log cause unavailable",
+        "no device-specific throughput or accuracy qualification established"
+      ]
+    },
+    {
+      "repository": "Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "LEGACY_RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/shtenco.github.io",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "presentation",
+      "maturity": "PRESENTATION_CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "public-presentation",
+        "navigation"
+      ],
+      "current_role": "presentation",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy",
+          "relationship": "operational_complement",
+          "opportunity": "Create a single evidence-linked portfolio and public-service navigation layer from canonical registries."
+        },
+        {
+          "target_repository": "Shtenco/synergy_megaproject",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Convert technical assets into investor, partner and public-sector demonstrations with claims tied to proof."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/shtencoauantai.github.io",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "presentation",
+      "maturity": "PRESENTATION_CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "public-presentation",
+        "navigation"
+      ],
+      "current_role": "presentation",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy",
+          "relationship": "operational_complement",
+          "opportunity": "Create a single evidence-linked portfolio and public-service navigation layer from canonical registries."
+        },
+        {
+          "target_repository": "Shtenco/synergy_megaproject",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Convert technical assets into investor, partner and public-sector demonstrations with claims tied to proof."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/sinergy_app",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "apps-interface",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "client-ui",
+        "control-plane"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_api",
+          "relationship": "operational_complement",
+          "opportunity": "Unify user journeys through authenticated API surfaces while keeping domain authorities outside the UI."
+        },
+        {
+          "target_repository": "Shtenco/synergy_messenger",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Attach spatial, communication and location context to consent-based services and civic/enterprise workflows."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_apps",
+        "Shtenco/synergy_app",
+        "Shtenco/sinergy_super_app",
+        "Shtenco/synergy_messenger",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_pay_system"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/sinergy_super_app",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "apps-interface",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "client-ui",
+        "control-plane"
+      ],
+      "current_role": "application",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_api",
+          "relationship": "operational_complement",
+          "opportunity": "Unify user journeys through authenticated API surfaces while keeping domain authorities outside the UI."
+        },
+        {
+          "target_repository": "Shtenco/synergy_messenger",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Attach spatial, communication and location context to consent-based services and civic/enterprise workflows."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/swap_arbitrage_metatrader_5",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "LEGACY_RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synegy_ai_compress",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os",
+        "compression"
+      ],
+      "current_role": "compute-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergistic_economics",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "RND_SIMULATION",
+      "activity_band": "UNVERIFIED",
+      "current_capabilities": [
+        "stock-flow-consistent-model",
+        "cellular-coordination",
+        "physical-financial-balance",
+        "economic-simulation"
+      ],
+      "current_role": "economic-simulation",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergy_blochain_budget",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "preliminary simulation results require independent replication and calibration"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "architecture-governance",
+      "maturity": "ARCHITECTURAL_MASTER",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "registry",
+        "federation",
+        "architecture",
+        "governance"
+      ],
+      "current_role": "architecture-registry",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_2chain_qe",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "RND_CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_adaptive_engine",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "regime-adaptation"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_riskguard",
+        "Shtenco/synergy_ai_investment_committee"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_agent_long_term_memory",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "intelligence-memory",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_agi_nexus",
+          "relationship": "operational_complement",
+          "opportunity": "Separate durable knowledge, mission state and engineering evidence while linking them through source revisions."
+        },
+        {
+          "target_repository": "Shtenco/synergy_ai_coder",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose retrieval and memory as a governed service for agents, organizations and user-controlled workspaces."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_agentic_ai_economy",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "RND_SIMULATION",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "current_role": "agentic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_ai_coder",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_agi_autopilot",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergy_ai_coder",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_system",
+        "Shtenco/dlp_solver"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_agi_nexus",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration",
+        "nexus"
+      ],
+      "current_role": "agentic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_agi_olga",
+        "Shtenco/synergy_nexus_science_agent",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_chain",
+        "Shtenco/synergy_gllm_nexus"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_agi_olga",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "current_role": "agentic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_gllm_nexus"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_agi_trader",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "current_role": "agentic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_ai_blockchain",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "blockchain-protocol",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "smart-contracts",
+        "protocol",
+        "chain-runtime"
+      ],
+      "current_role": "protocol-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_agi_olga",
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_ai_browser-",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agent-automation",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_agi_autopilot",
+          "relationship": "operational_complement",
+          "opportunity": "Use bounded browser actions as a tool adapter inside mission planning and human approval workflows."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_api",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Make browser operations reproducible, source-linked and commercially useful for procurement, support and public-service tasks."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_ai_coder",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "current_role": "agentic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_agi_nexus"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_ai_company",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_agentic_ai_economy",
+        "Shtenco/synergy_agi_autopilot",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_system",
+        "Shtenco/dlp_solver"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_ai_economic",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "UNVERIFIED",
+      "current_capabilities": [
+        "economic-model-documentation",
+        "scenario-visualization"
+      ],
+      "current_role": "economic-model-documentation",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "no executable model in current main"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_ai_financial_system",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "RND_LOCAL_TESTING",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_ai_investment_committee",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "portfolio-governance"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_ai_language",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration"
+      ],
+      "current_role": "agentic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_ai_llm_rwkv",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "RND",
+      "activity_band": "UNVERIFIED",
+      "current_capabilities": [
+        "model-weights",
+        "checkpoint-provenance",
+        "quantization-research"
+      ],
+      "current_role": "model-compression-research",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "mainline does not establish full inference or quality-preserving compression"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_ai_trade_terminal",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_ai_workspace",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "apps-interface",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "UNVERIFIED",
+      "current_capabilities": [
+        "local-workspace-design",
+        "task-lead-finance-ui"
+      ],
+      "current_role": "desktop-workspace-research",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_api",
+          "relationship": "operational_complement",
+          "opportunity": "Unify user journeys through authenticated API surfaces while keeping domain authorities outside the UI."
+        },
+        {
+          "target_repository": "Shtenco/synergy_messenger",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Attach spatial, communication and location context to consent-based services and civic/enterprise workflows."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "current main contains README only; desktop release and GUI E2E not confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_algotrading_graph_system",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_app",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "apps-interface",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "client-ui",
+        "control-plane"
+      ],
+      "current_role": "application",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_api",
+          "relationship": "operational_complement",
+          "opportunity": "Unify user journeys through authenticated API surfaces while keeping domain authorities outside the UI."
+        },
+        {
+          "target_repository": "Shtenco/synergy_messenger",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Attach spatial, communication and location context to consent-based services and civic/enterprise workflows."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_app_family",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "apps-interface",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "client-ui",
+        "control-plane"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_api",
+          "relationship": "operational_complement",
+          "opportunity": "Unify user journeys through authenticated API surfaces while keeping domain authorities outside the UI."
+        },
+        {
+          "target_repository": "Shtenco/synergy_messenger",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Attach spatial, communication and location context to consent-based services and civic/enterprise workflows."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_apps"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_apps",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "apps-interface",
+      "maturity": "ARCHITECTURAL_MASTER",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "client-ui",
+        "control-plane"
+      ],
+      "current_role": "application",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_api",
+          "relationship": "operational_complement",
+          "opportunity": "Unify user journeys through authenticated API surfaces while keeping domain authorities outside the UI."
+        },
+        {
+          "target_repository": "Shtenco/synergy_messenger",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Attach spatial, communication and location context to consent-based services and civic/enterprise workflows."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_app",
+        "Shtenco/sinergy_app",
+        "Shtenco/sinergy_super_app",
+        "Shtenco/synergy_app_family",
+        "Shtenco/synergy_messenger",
+        "Shtenco/dlp_solver"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_binary_quantum_theory",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "science-research",
+      "maturity": "ACTIVE_EXPERIMENTAL",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "scientific-research",
+        "evidence"
+      ],
+      "current_role": "research",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_nexus_science_agent",
+          "relationship": "operational_complement",
+          "opportunity": "Make experiments discoverable, reproducible and falsifiable through a shared scientific evidence pipeline."
+        },
+        {
+          "target_repository": "Shtenco/synergy_gllm_nexus",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Convert validated research artifacts into versioned developer or product capabilities without promoting hypotheses as facts."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_blochain_budget",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_cashero",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "SECURITY_BLOCKED",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "committed-credential-indicators",
+        "deployment-blocked"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_chain",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "blockchain-protocol",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "smart-contracts",
+        "protocol",
+        "chain-runtime"
+      ],
+      "current_role": "protocol-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_chain_print_money",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_ai_blockchain"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_cold_nuclear",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "research-other",
+      "maturity": "RND_SCIENCE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "research"
+      ],
+      "current_role": "research",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_complex_matrix_multiplication",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "ACTIVE_EXPERIMENTAL",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "current_role": "compute-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_computing_topology",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "ACTIVE_EXPERIMENTAL",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "current_role": "compute-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_net",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_crypto_pump",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_epstein_network",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "graph-research",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "graph",
+        "provenance",
+        "research"
+      ],
+      "current_role": "research",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_megaproject",
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_eurasian",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "MODEL_SPEC_READY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_financial_os",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "RND_FEDERATION",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergy_blochain_budget",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_gguf_compress",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os",
+        "compression"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_meta_os"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_gllm_nexus",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration",
+        "nexus"
+      ],
+      "current_role": "agentic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_graph_print_money",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_ai_blockchain",
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_hierarchical_cognitive_memory_architecture",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "hierarchical-cognitive-memory",
+        "dynamic-context-planning",
+        "lexical-and-vector-retrieval",
+        "content-addressed-provenance",
+        "read-only-repository-ingestion"
+      ],
+      "current_role": "memory-system",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "No authenticated API boundary; local development adapter only",
+        "Repository ingestion does not reject symlink files before reading",
+        "Current sources index is keyed by URI rather than repository namespace; provenance collision risk",
+        "No cross-repository memory contract or E2E integration is registered"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_lead_search_engline",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "search-growth",
+      "maturity": "RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "search",
+        "lead-discovery",
+        "hardnav",
+        "triangular-economy"
+      ],
+      "current_role": "lead-discovery-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "offline candidate only; no external crawling, production CRM dispatch or deployed service verified"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_long_term_harness",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "long-horizon-agent-evaluation-design",
+        "memory-harness-design",
+        "provider-routing-research"
+      ],
+      "current_role": "long-horizon-agent-harness-design",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "main contains README only",
+        "implementation is present on non-main branches and must not be treated as main runtime",
+        "draft implementation PR CI failed; production execution not established"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_maps",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "apps-interface",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "UNVERIFIED",
+      "current_capabilities": [
+        "maps-concept"
+      ],
+      "current_role": "maps-concept",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_api",
+          "relationship": "operational_complement",
+          "opportunity": "Unify user journeys through authenticated API surfaces while keeping domain authorities outside the UI."
+        },
+        {
+          "target_repository": "Shtenco/synergy_messenger",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Attach spatial, communication and location context to consent-based services and civic/enterprise workflows."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "no executable implementation in current main"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_market_graph",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "fair-value-graph"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_market_maker",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "market-making"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_marketvision",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "market-feature-cube"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_matrix_sota",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_megaproject",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "research-strategy",
+      "maturity": "ACTIVE_RESEARCH",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "strategic-research",
+        "graph"
+      ],
+      "current_role": "research",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_messenger",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "apps-interface",
+      "maturity": "HARDENED_ALPHA",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "client-ui",
+        "control-plane",
+        "messaging"
+      ],
+      "current_role": "application",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_api",
+          "relationship": "operational_complement",
+          "opportunity": "Unify user journeys through authenticated API surfaces while keeping domain authorities outside the UI."
+        },
+        {
+          "target_repository": "Shtenco/synergy_maps",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Attach spatial, communication and location context to consent-based services and civic/enterprise workflows."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_meta_api",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "protocol-transport",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "UNVERIFIED",
+      "current_capabilities": [
+        "api-catalogue-design",
+        "mcp-gateway-research",
+        "policy-bound-tool-execution"
+      ],
+      "current_role": "api-gateway-research",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "branch-only prototype; no production multi-tenant authorization or deployed gateway proven"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_meta_os",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "current_role": "compute-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_net",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_turbo_linux",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_gllm_nexus"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_metachain",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "blockchain-protocol",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "smart-contracts",
+        "protocol",
+        "chain-runtime"
+      ],
+      "current_role": "protocol-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_metaverse",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "apps-interface",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "UNVERIFIED",
+      "current_capabilities": [
+        "metaverse-concept"
+      ],
+      "current_role": "metaverse-concept",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_api",
+          "relationship": "operational_complement",
+          "opportunity": "Unify user journeys through authenticated API surfaces while keeping domain authorities outside the UI."
+        },
+        {
+          "target_repository": "Shtenco/synergy_messenger",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Attach spatial, communication and location context to consent-based services and civic/enterprise workflows."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "no executable implementation in current main"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_midas_ai",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "midas"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_financial_os",
+        "Shtenco/synergy_midas_ai_trading_system",
+        "Shtenco/midas_lite",
+        "Shtenco/synergy_ai_trade_terminal",
+        "Shtenco/synergy_algotrading_graph_system",
+        "Shtenco/3D_bars_market_structure",
+        "Shtenco/computer_vision_trading_metatrader_5",
+        "Shtenco/cross_forex_arbitrage_trading_metatrader_5",
+        "Shtenco/swap_arbitrage_metatrader_5",
+        "Shtenco/global_liquidity_dataminer",
+        "Shtenco/shtenco_multi_threaded_trading_robot_with_machine_learning_python",
+        "Shtenco/quantum-trading_metatrader5"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_midas_ai_trading_system",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "LEGACY_RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "midas"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_midas_institutional",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "midas"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_motherboard_xpu_xml",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "current_role": "compute-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_net",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "protocol-transport",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "networking",
+        "secure-transport",
+        "protocol"
+      ],
+      "current_role": "protocol-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_system",
+        "Shtenco/synegy_ai_compress",
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_turbo_linux"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_nexus_science_agent",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agi-agentic",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "agents",
+        "reasoning",
+        "orchestration",
+        "nexus"
+      ],
+      "current_role": "agentic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Give agents bounded mission lifecycle, revocable capabilities and auditable execution under Meta-OS."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn agent work into priced, measured and accountable workflows with economic outcomes and human approvals."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_agi_nexus",
+        "Shtenco/synergy_cold_nuclear"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_pay_system",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow",
+        "payments"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_post_quantum_radio",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "protocol-transport",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "networking",
+        "secure-transport",
+        "protocol"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_meta_os"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_project",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "architecture-governance",
+      "maturity": "RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "registry",
+        "federation",
+        "architecture",
+        "governance"
+      ],
+      "current_role": "architecture-registry",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_pay_system",
+        "Shtenco/synergy_algotrading_graph_system"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_qe",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_qr_compress",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os",
+        "compression"
+      ],
+      "current_role": "compute-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synegy_ai_compress"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_quantlab",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "benchmark-validation"
+      ],
+      "current_role": "validation-lab",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_relative_value",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_riskguard",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "risk-gating"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_midas_ai",
+        "Shtenco/synergy_system",
+        "Shtenco/synergy_quantlab",
+        "Shtenco/synergy_trademux",
+        "Shtenco/synergy_financial_os"
+      ],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_search_engline",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "RND",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "hardnav",
+        "triangular-economy",
+        "canonical-dividend-simulation"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "simulation-only; independent external opportunity and live execution are not verified",
+        "no CI workflow or automated test suite found in main"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_shhts",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "protocol-transport",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "networking",
+        "secure-transport",
+        "protocol"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_shttps",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_ai_blockchain",
+        "Shtenco/synergy_system",
+        "Shtenco/dlp_solver"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_shttps",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "protocol-transport",
+      "maturity": "STUB_SPEC_ONLY",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "networking",
+        "secure-transport",
+        "protocol"
+      ],
+      "current_role": "specification",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_shhts",
+        "Shtenco/synergy_net",
+        "Shtenco/synergy_post_quantum_radio",
+        "Shtenco/synergy_system",
+        "Shtenco/dlp_solver"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "no-executable-runtime-confirmed"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_system",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "architecture-governance",
+      "maturity": "ARCHITECTURAL_MASTER",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "registry",
+        "federation",
+        "architecture",
+        "governance"
+      ],
+      "current_role": "architecture-registry",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_megaproject",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_trademux",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "trading-quant",
+      "maturity": "CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "market-data",
+        "quant-research",
+        "validation-or-execution",
+        "execution-planning"
+      ],
+      "current_role": "trading-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "operational_complement",
+          "opportunity": "Route strategy outputs through independent RiskGuard veto and then into ledger-backed Financial OS records."
+        },
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Turn market intelligence into agent-managed, cost-aware research or portfolio workflows; preserve external P&L evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_triangle_money_system",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "ACTIVE_EXPERIMENTAL",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow",
+        "hardnav",
+        "triangular-economy"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/synergy_turbo_linux",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-os",
+      "maturity": "SECURITY_BLOCKED",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "compute",
+        "runtime",
+        "compression-or-os"
+      ],
+      "current_role": "compute-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "operational_complement",
+          "opportunity": "Combine resource topology, runtime scheduling and network transport into measurable compute services."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose compression and local inference as metered capacity with provenance, quotas and enterprise cost controls."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_meta_os",
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "committed unencrypted SSH private key remains on main; PR #13 draft removes file on branch only; external rotation/revocation and history remediation unverified"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy_usds",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "finance-economy",
+      "maturity": "SECURITY_BLOCKED",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "economic-model",
+        "financial-protocol",
+        "value-flow"
+      ],
+      "current_role": "financial-economic-module",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_financial_os",
+          "relationship": "operational_complement",
+          "opportunity": "Connect monetary/economic models to double-entry accounting, obligations and external settlement evidence."
+        },
+        {
+          "target_repository": "Shtenco/synergistic_economics",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Add public-finance traceability, industrial demand and real-economy constraints to model validation."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [
+        "Shtenco/synergy_ai_blockchain",
+        "Shtenco/synergy_system"
+      ],
+      "risks_from_2026_11_20_registry": [
+        "committed-credential-indicators",
+        "deployment-blocked"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergy.github.io",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "presentation",
+      "maturity": "PRESENTATION_CANDIDATE",
+      "activity_band": "UNVERIFIED",
+      "current_capabilities": [
+        "public-web-portal",
+        "product-navigation",
+        "static-ui"
+      ],
+      "current_role": "web-portal",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy",
+          "relationship": "operational_complement",
+          "opportunity": "Create a single evidence-linked portfolio and public-service navigation layer from canonical registries."
+        },
+        {
+          "target_repository": "Shtenco/synergy_megaproject",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Convert technical assets into investor, partner and public-sector demonstrations with claims tied to proof."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": [
+        "frontend source does not prove backend services or production business workflows"
+      ]
+    },
+    {
+      "repository": "Shtenco/synergychain.github.io",
+      "visibility": "private",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "blockchain-protocol",
+      "maturity": "PRESENTATION_CANDIDATE",
+      "activity_band": "ACTIVE_30D",
+      "current_capabilities": [
+        "smart-contracts",
+        "protocol",
+        "chain-runtime"
+      ],
+      "current_role": "protocol-runtime",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/tiimeweb_synergy_exactly_once_delivery",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "reliability-research",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Promote fault injection, retry budgets and recovery tests into the reliability gate for every SYNERGY service."
+        },
+        {
+          "target_repository": "Shtenco/synergy_net",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Package resilience evidence into a paid API/SRE assurance service for enterprise and government deployments."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_agent_long_term_memory",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "intelligence-memory",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_agi_nexus",
+          "relationship": "operational_complement",
+          "opportunity": "Separate durable knowledge, mission state and engineering evidence while linking them through source revisions."
+        },
+        {
+          "target_repository": "Shtenco/synergy_ai_coder",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose retrieval and memory as a governed service for agents, organizations and user-controlled workspaces."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_ai_infrastructure_agent",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "infra-research",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_system",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate this capability with a canonical operational owner and explicit contract."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a cross-sector application with measured value, human oversight and audit evidence."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_backtest_oos_lab",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "quant-validation",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_quantlab",
+          "relationship": "operational_complement",
+          "opportunity": "Use purged walk-forward and independent risk controls as a common release gate for all market models."
+        },
+        {
+          "target_repository": "Shtenco/synergy_riskguard",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Commercialize reproducible model-validation reports for funds, brokers and regulated counterparties."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_benchmark_statistics",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "benchmark-research",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_quantlab",
+          "relationship": "operational_complement",
+          "opportunity": "Standardize benchmark design, uncertainty intervals and evidence retention across model and compute projects."
+        },
+        {
+          "target_repository": "Shtenco/synergy_nexus_science_agent",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Offer a neutral certification/evaluation pipeline for enterprise procurement and public R&D programs."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_binary_neural_networks",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "ml-research",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_gllm_nexus",
+          "relationship": "operational_complement",
+          "opportunity": "Connect model experiments to codebase provenance and benchmark harnesses for reproducible model releases."
+        },
+        {
+          "target_repository": "Shtenco/synergy_quantlab",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Deploy qualified small models into local/offline inference and cost-bounded enterprise agents."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_codebase_intelligence",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "developer-tools",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_ai_language",
+          "relationship": "operational_complement",
+          "opportunity": "Integrate AST/code intelligence with AI Language and AI Coder to create repository-aware engineering workflows."
+        },
+        {
+          "target_repository": "Shtenco/synergy_ai_coder",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Offer secure codebase intelligence and change-impact analysis as an enterprise developer platform."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_cpu_gpu_cost_benchmark",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-economics",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Combine cost benchmarks with runtime scheduling and compression to optimize workload placement by cost/latency."
+        },
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a measured compute marketplace with verified usage, service levels and transparent billing."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_cpu_language_model",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "local-inference",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_agi_nexus",
+          "relationship": "operational_complement",
+          "opportunity": "Deploy compact inference under Meta-OS with signed model manifests, device benchmarks and rollback."
+        },
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Use NEXUS evaluation to route workloads between local CPU and remote inference under privacy and cost policy."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_fault_injection_lab",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "reliability-research",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Promote fault injection, retry budgets and recovery tests into the reliability gate for every SYNERGY service."
+        },
+        {
+          "target_repository": "Shtenco/synergy_net",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Package resilience evidence into a paid API/SRE assurance service for enterprise and government deployments."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_llm_memory_lab",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "intelligence-memory",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_agi_nexus",
+          "relationship": "operational_complement",
+          "opportunity": "Separate durable knowledge, mission state and engineering evidence while linking them through source revisions."
+        },
+        {
+          "target_repository": "Shtenco/synergy_ai_coder",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose retrieval and memory as a governed service for agents, organizations and user-controlled workspaces."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_ml_validation_lab",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "ml-research",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_gllm_nexus",
+          "relationship": "operational_complement",
+          "opportunity": "Connect model experiments to codebase provenance and benchmark harnesses for reproducible model releases."
+        },
+        {
+          "target_repository": "Shtenco/synergy_quantlab",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Deploy qualified small models into local/offline inference and cost-bounded enterprise agents."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_multiagent_benchmark",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "agent-benchmark",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_agi_autopilot",
+          "relationship": "operational_complement",
+          "opportunity": "Measure agent coordination overhead and use the result to choose the smallest effective team for each mission."
+        },
+        {
+          "target_repository": "Shtenco/synergy_agentic_ai_economy",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Connect multi-agent benchmarks to task economics, outcome pricing and enterprise workflow acceptance."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_python_cpp_performance",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "compute-economics",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Combine cost benchmarks with runtime scheduling and compression to optimize workload placement by cost/latency."
+        },
+        {
+          "target_repository": "Shtenco/synergy_computing_topology",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Create a measured compute marketplace with verified usage, service levels and transparent billing."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_rag_quality_cost",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "intelligence-memory",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_agi_nexus",
+          "relationship": "operational_complement",
+          "opportunity": "Separate durable knowledge, mission state and engineering evidence while linking them through source revisions."
+        },
+        {
+          "target_repository": "Shtenco/synergy_ai_coder",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Expose retrieval and memory as a governed service for agents, organizations and user-controlled workspaces."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_retry_storm_lab",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "reliability-research",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Promote fault injection, retry budgets and recovery tests into the reliability gate for every SYNERGY service."
+        },
+        {
+          "target_repository": "Shtenco/synergy_net",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Package resilience evidence into a paid API/SRE assurance service for enterprise and government deployments."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_rnn_transformer_benchmark",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "ml-research",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_gllm_nexus",
+          "relationship": "operational_complement",
+          "opportunity": "Connect model experiments to codebase provenance and benchmark harnesses for reproducible model releases."
+        },
+        {
+          "target_repository": "Shtenco/synergy_quantlab",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Deploy qualified small models into local/offline inference and cost-bounded enterprise agents."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    },
+    {
+      "repository": "Shtenco/timeweb_synergy_service_recovery",
+      "visibility": "public",
+      "archived": false,
+      "default_branch": "main",
+      "primary_domain": "reliability-research",
+      "maturity": "NEW_REPOSITORY_REQUIRES_DEEP_AUDIT",
+      "activity_band": "NOT_CLASSIFIED_IN_2026-11-20_REGISTRY",
+      "current_capabilities": [],
+      "current_role": "new_inventory_record",
+      "readme_review": {
+        "status": "FETCHED_AND_REVIEWED",
+        "ref": "main/README.md",
+        "sha": null
+      },
+      "associations": [
+        {
+          "target_repository": "Shtenco/synergy_meta_os",
+          "relationship": "operational_complement",
+          "opportunity": "Promote fault injection, retry budgets and recovery tests into the reliability gate for every SYNERGY service."
+        },
+        {
+          "target_repository": "Shtenco/synergy_net",
+          "relationship": "cross_domain_value_creation",
+          "opportunity": "Package resilience evidence into a paid API/SRE assurance service for enterprise and government deployments."
+        }
+      ],
+      "dependencies_from_2026_11_20_registry": [],
+      "risks_from_2026_11_20_registry": []
+    }
+  ]
+}
