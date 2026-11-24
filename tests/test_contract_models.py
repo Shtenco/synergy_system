@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 from hashlib import sha256
 import importlib.util
 import json
+import sys
 from pathlib import Path
 from uuid import UUID
 
@@ -12,6 +13,8 @@ MODULE = ROOT / "contracts" / "python" / "synergy_contracts_v1.py"
 spec = importlib.util.spec_from_file_location("synergy_contracts_v1", MODULE)
 mod = importlib.util.module_from_spec(spec)
 assert spec and spec.loader
+# Pydantic resolves postponed annotations through sys.modules for dynamically loaded modules.
+sys.modules[spec.name] = mod
 spec.loader.exec_module(mod)
 
 TRACE = UUID("00000000-0000-4000-8000-000000000001")
