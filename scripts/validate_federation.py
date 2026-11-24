@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the live 91-repository owner inventory and its 75-record interface scope.
+"""Validate the 92-record federation-reviewed owner inventory and its 75-record interface scope.
 
 The owner inventory is not the same thing as the runtime/interface maturity registry.
 Legacy names are retained as explicitly unverified rename candidates until immutable
@@ -51,8 +51,8 @@ def main() -> int:
             f"repositories has {len(repos) if isinstance(repos, list) else 'non-list'} entries"
         )
 
-    if len(repos) != 91:
-        fail(f"expected 91 current owner repositories, got {len(repos)}")
+    if len(repos) != 92:
+        fail(f"expected 92 federation-reviewed owner repositories, got {len(repos)}")
 
     full_names = [r.get("full_name") for r in repos]
     names = [r.get("name") for r in repos]
