@@ -24,7 +24,9 @@ The V2 lease root committed to task ID, goal, agent ID, and epochs, but omitted 
 
 **Remediation prepared:** PR #32 introduces the `SYNERGY/AGENT-LEASE/V3` domain and deterministically commits to all current execution-relevant `TaskSpec` fields plus worker identity and lease epochs. Required tools are a `BTreeSet`, so iteration order is deterministic. Regression tests cover policy-field changes.
 
-**Compatibility gate:** before merging, search every verifier, receipt producer/consumer, evidence fixture, and persisted record for V2 assumptions. V2 values must remain explicitly versioned legacy values; they must not be silently interpreted as V3. The repository code-search connector returned no matches during this pass, which is not sufficient proof that no references exist.
+**Compatibility remediation added to PR #32:** the public legacy root helpers retain their original V2 hash domain; newly issued leases explicitly carry `commitment_version=V3`; a missing version field on a deserialized legacy `TaskLease` defaults to V2; V2 roots can be checked for migration/audit, but `validate_for_execution` rejects V2. New scheduler leases are always V3. This avoids silently reinterpreting persisted V2 roots as V3.
+
+**Remaining compatibility gate:** source inspection found the `TaskLease` producer in Agent Fabric and its stdio JSON serialization boundary; `AgentDelegation` carries an opaque lease root and must be validated against authoritative scheduler state at the destination. GitHub code search returned no indexed results, so this is not a complete repository-wide search of evidence archives, external consumers, or persisted deployments. Before merge, validate real historical serialized V2 records and all external consumers. Never execute a V2 lease; re-issue it as V3 after checking current task policy and worker identity.
 
 ### AF-03 — stdio adapter narrows untrusted numeric inputs without range checks (MEDIUM)
 
@@ -103,7 +105,7 @@ The current limits cover address-space memory, CPU seconds and open files. They 
 - Agent Fabric source was fetched from GitHub `main`; PR #32 contains proposed registration, lease-commitment and stdio-boundary hardening on a separate branch.
 - Meta-OS source and its current test file were inspected from GitHub `main`; PR #31 contains proposed executable binding, strict manifest/limit validation and output-pipe hardening on a separate branch.
 - The P7 status file records prior test results but also records remote execution, production sandboxing and independent-device deployment as pending.
-- Agent Fabric PR #32 Actions runs #1881 (45429061557) and #33 (45429061539) created jobs but failed before the first workflow step; all job records had `steps=null` and `logs_url=null`. A rerun of both workflows was accepted and reproduced the same pre-step failure. No Cargo/Solidity command executed.
+- Agent Fabric PR #32 has since been extended with explicit V2/V3 lease-version compatibility and V3-only execution admission. Latest observed Actions runs #1890 (45430878757) and #41 (45430878898) created jobs but failed before the first workflow step; all job records had `runner_id=0`, empty runner name and `steps=[]`. No Cargo/Solidity command executed. Earlier pre-step failures were reproduced on multiple commits.
 - Meta-OS PR #31 and the SUMI documentation PR #55 had no associated workflow runs at the time of this check.
 - No Rust tests, Python tests, clippy, Windows build, Linux sandbox test, or cross-host execution were run in this review.
 - No merge was performed.
