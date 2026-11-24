@@ -102,9 +102,32 @@
       "source_files": 0,
       "test_files": [],
       "workflows": [],
-      "ci_tests_review": "no CI or test workflow present",
+      "ci_tests_review": "main has no CI; non-default feature branch CI passes on exact head 04e666038ac7 (run 45473683807), including package install, compile and full unittest suite.",
       "findings": [
-        "Main contains only README.md; no executable source, tests or CI. Potential naming/domain overlap with timeweb_synergy_agent_long_term_memory; lineage and intended ownership unresolved."
+        "Default main remains README-only, but the non-default feat/persistent-mission-runtime-v1 branch contains a 10-file durable mission runtime with SQLite journal, idempotent events, checkpoints, ring buffer, typed contract, three test modules and CI.",
+        "The branch is now proposed in Draft PR #2; main remains unchanged until review and merge.",
+        "This is a mission lifecycle/event-journal runtime, not the same capability as timeweb_synergy_agent_long_term_memory's SQLite cross-session memory experiment. The two have adjacent persistence concerns but distinct ownership boundaries; integrate through explicit contracts rather than collapsing repositories."
+      ],
+      "reviewed_non_default_branches": [
+        {
+          "branch": "feat/persistent-mission-runtime-v1",
+          "tree_sha": "76e2e77b57009c69491a0597e047fe274110dc1d",
+          "files": 10,
+          "source_files": 4,
+          "test_files": [
+            "tests/test_contracts.py",
+            "tests/test_ring_buffer.py",
+            "tests/test_runtime.py"
+          ],
+          "workflows": [
+            ".github/workflows/tests.yml"
+          ],
+          "exact_head_ci": {
+            "sha": "04e666038ac7cd0652ea77ce4de2c2f1ec706dcf",
+            "run_id": 45473683807,
+            "conclusion": "success"
+          }
+        }
       ]
     },
     {
