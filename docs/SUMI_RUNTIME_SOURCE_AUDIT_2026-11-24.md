@@ -180,3 +180,14 @@ Latest Agent Fabric source commit: `b33c6362d8d40a502e140dbd607b5636c53e6938`.
 - Agent Fabric parser regression suite additionally verifies escaped duplicate keys (`id` and `\\u0069d`) collide after JSON string decoding. Latest PR #32 head: `b78880255da7aec84d60aca538f95fe498153d80`.
 
 - Latest Agent Fabric head `b78880255da7aec84d60aca538f95fe498153d80` CI: Portable Rust gates #45501205342 and PQ-EVM consensus core #45501205672 again failed before any job steps; all four jobs returned empty step arrays. Repeated runner/infrastructure failure continues to block source validation.
+
+
+## 10. Lease re-issuance replay protection — 2026-11-27
+
+Source review found a deterministic replay edge case in Agent Fabric V3: after an active lease was released, issuing the same task to the same worker with the same issue/expiry epochs recreated the same lease root. Exact active-map equality alone therefore did not distinguish the revoked lease from its replacement.
+
+Agent Fabric PR #32 now adds TaskLease.lease_generation and a scheduler-local monotonic issuance counter. The generation is included in the V3 lease commitment; every successful issuance receives a new value, including same-task/same-worker/same-epoch re-issuance after release. V3 execution admission rejects generation zero. Legacy serialized records default the field to zero and remain V2 migration/audit-only. The public V3 helper without a generation remains available as a generation-zero commitment helper; scheduler-issued leases use the generation-aware helper.
+
+A regression test covers release followed by same-epoch re-issuance, verifies distinct roots/generations, rejects the old lease, and admits only the new active lease. Protocol documentation now states the limit: the counter is process-local and volatile. It prevents this replay within one scheduler lifetime, but does not provide restart-safe or distributed uniqueness. Production federation still needs durable active-lease state and a consensus-backed generation or unique lease nonce.
+
+Latest source changes are on the existing Draft PR #32 branch. No CI run has yet validated these new commits; no Rust compilation, formatting, test or Clippy pass is claimed.
